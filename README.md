@@ -1,11 +1,21 @@
-# STATIC
+# About FoxMaSk
 
-This directory contains your static files.
-Each file inside this directory is mapped to /.
+## Le Free de la passion
 
-Example: /static/robots.txt is mapped as /robots.txt.
+Projects
+~~~~~~~~
 
-More information about the usage of this directory in the documentation:
-https://nuxtjs.org/guide/assets#static
+[Trigger Happy blog](https://blog.trigger-happy.eu/)
+[Trigger Happy website](https://trigger-happy.eu/)
+[Trigger Happy source](https://github.com/foxmask/django-th)
+[FoxMaSk blog](https://foxmask.trigger-happy.eu)
+[FoxMaSk blog source](https://github.com/foxmask/foxmask.trigger-happy.eu)
 
-**This directory is not required, you can delete it if you don't want to use it.**
+
+Get in Touch
+~~~~~~~~~~~~
+
+[irc](irc://irc.freenode.net/sametmax)
+[mastodon](https://mamot.fr/foxmask)
+[twitter](https://twitter.com/foxxmask)
+[gitter](https://gitter.im/foxmask)
