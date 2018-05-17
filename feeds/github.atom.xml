@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - github</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/github.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-03-04T19:00:00+01:00</updated><entry><title>Intégration continue de Github à Pypi via Travis-CI</title><link href="https://foxmask.net/post/2016/03/04/integration-continue-de-github-a-pypi-via-travis-ci/" rel="alternate"></link><published>2016-03-04T19:00:00+01:00</published><updated>2016-03-04T19:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-03-04:/post/2016/03/04/integration-continue-de-github-a-pypi-via-travis-ci/</id><summary type="html">&lt;p&gt;Travis CI is magic, moins on en fait plus il en fait à notre place !&lt;/p&gt;</summary><content type="html">&lt;p&gt;L'an passé, lors de la release &lt;a href="https://blog.trigger-happy.eu/django-trigger-happy-0.11.0.html"&gt;0.11.0&lt;/a&gt; de &lt;a href="https://trigger-happy.eu"&gt;TriggerHappy&lt;/a&gt;, je n'étais pas parvenu à faire fonctionner &lt;a href="https://travis-ci.org/foxmask/django-th/"&gt;Travis-CI&lt;/a&gt; comme je l'escomptais, pour qu'il publie tout seul cette version sur &lt;a href="http://pypi.python.org"&gt;PyPi&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Du coup je m'étais bien pris la tête pour préparer le terrain pour la version suivante.&lt;/p&gt;
+&lt;p&gt;Et cette nuit, lors de la sortie de la &lt;a href="https://blog.trigger-happy.eu/django-trigger-happy-0.12.0.html"&gt;0.12.0&lt;/a&gt; j'étais zo zanges :)&lt;/p&gt;
+&lt;p&gt;Donc "Comment ça marche la fusée ariane ?" dirait &lt;a href="https://fr.wikipedia.org/wiki/Michel_Chevalet"&gt;Michel Chevalet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tout simplement en 2 temps :&lt;/p&gt;
+&lt;p&gt;1) le fichier .travis.yml sur son repository github&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;deploy&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+  &lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;pypi&lt;/span&gt;
+  &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;votre_login_pypi&lt;/span&gt;
+  &lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;secure&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;le_mot_de_passe_crypte&lt;/span&gt;
+  &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ici je ne vous ai mis que la tâche &lt;code&gt;deploy&lt;/code&gt; chargée de s'occuper de l'installation de vos sources sur pypi sous la forme d'une archive, en respectant le nommage défini dans votre &lt;code&gt;setup.py&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="creation de l'archive" src="/static/2016/03/django_th_uploaded_on_pypi_0.png"&gt;&lt;/p&gt;
+&lt;p&gt;2) sur Travis-CI, détection de l'application d'un tag sur le projet, via le déclencheur &lt;code&gt;on: tags: true&lt;/code&gt;, et enchaînement de la tâche &lt;code&gt;deploy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="deployment sur pypi" src="/static/2016/03/django_th_uploaded_on_pypi.png"&gt;&lt;/p&gt;
+&lt;p&gt;C'est tout QQ et tout simple comme on aime et, évidemment très efficace !&lt;/p&gt;</content><category term="pypi"></category><category term="travisci"></category><category term="github"></category></entry></feed>

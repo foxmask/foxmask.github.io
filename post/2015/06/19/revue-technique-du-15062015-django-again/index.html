@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Revue Technique du 15/06/2015 : Django (again) - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.net/post/2015/06/19/revue-technique-du-15062015-django-again/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="Django,python" />
+        <meta name="description" content="Django arround ze world &#34; J&#39;ai dix ans Si tu m&#39;crois pas , tartagueule à la récré &#34; Donc Django a(ura) 10 ans (cet été) !?! L&#39;occasion d&#39;une teuf ! Django asynchrone ? Un sujet lancé par ici. Cela dit avec Wamp/Crossbar on a déjà matière pour s&#39;éclater avec l&#39;asynchrone et le temps réel …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Revue Technique du 15/06/2015 : Django (again)"/>
+        <meta property="og:url" content="https://foxmask.net/post/2015/06/19/revue-technique-du-15062015-django-again/"/>
+        <meta property="og:description" content="Django arround ze world &#34; J&#39;ai dix ans Si tu m&#39;crois pas , tartagueule à la récré &#34; Donc Django a(ura) 10 ans (cet été) !?! L&#39;occasion d&#39;une teuf ! Django asynchrone ? Un sujet lancé par ici. Cela dit avec Wamp/Crossbar on a déjà matière pour s&#39;éclater avec l&#39;asynchrone et le temps réel …"/>
+        <meta property="article:published_time" content="2015-06-19" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="Django" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:author" content="foxmask" />
+
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@triggerhappyeu">
+        <meta name="twitter:creator" content="@triggerhappyeu">
+    <meta name="twitter:domain" content="https://foxmask.net">
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.net/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.net/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.net/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.net/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.net/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.net/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.net/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.net/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.net/post/2015/06/19/revue-technique-du-15062015-django-again/"
+                       rel="bookmark"
+                       title="Permalink to Revue Technique du 15/06/2015 : Django (again)">
+                        Revue Technique du 15/06/2015 : Django (again)
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-06-19T10:16:00+02:00"> Fri 19 June 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h3>Django arround ze world</h3>
+<p>" J'ai dix ans Si tu m'crois pas , tartagueule à la récré "</p>
+<p>Donc Django a(ura) 10 ans (cet été) !?! <a href="http://www.revsys.com/blog/2015/jun/17/django-birthday-party/">L'occasion d'une
+teuf</a> !</p>
+<p>Django asynchrone ? <a href="http://www.aeracode.org/2015/6/17/beyond-request-response/">Un sujet lancé par
+ici</a>. Cela
+dit avec Wamp/Crossbar on a déjà matière pour s'éclater avec
+l'asynchrone et le temps réel ;) Mais sujet à surveiller de près</p>
+<h3>From twitterLand</h3>
+<p>Python inspire des tigres blancs et d'un tas de monstres tout gentils</p>
+<p>https://twitter.com/beaucouplus/status/611477044740915200</p>
+<h3>SnakeLand</h3>
+<p>Une interview :</p>
+<p>Le dev de la semaine "cocorico" : <a href="http://www.blog.pythonlibrary.org/2015/06/15/pydev-of-the-week-tarek-ziade/">Tarek
+Ziadé</a>
+qui fut aussi le président de l'AFUP en passant ;)</p>
+<p>Dans la série "pydev of the week" "<a href="http://www.blog.pythonlibrary.org/2015/06/08/pydev-of-the-week-stephan-deibel/">dans les épisodes
+précédents</a>"
+vous trouverez tous les autres interviews avec les liens dans le pied de
+l'article.</p>
+<p>Un projet :<br>
+LFU implémenté en python <a href="http://www.laurentluce.com/posts/least-frequently-used-cache-eviction-scheme-with-complexity-o1-in-python/">Least frequently used cache eviction scheme
+with complexity O(1) in
+Python</a></p>
+<p>ou 2 ;)<br>
+Des closures pour un python + rapide ou tout du moins plus optimisé :<br>
+<a href="https://wrongsideofmemphis.wordpress.com/2015/05/08/optimise-python-with-closures/">Optimise Python with closures | Wrong Side of
+Memphis</a></p>
+<h3>Snake Tips</h3>
+<p><a href="http://pythontips.com/2015/06/06/why-should-you-use-namedtuple-instead-of-a-tuple/">Pourquoi utilisé des namedtuple plutot que des
+tuple</a></p>
+<h3>Monitoring Moniiiiiitooooooooooring !</h3>
+<p>Tant qu'à rester sur le monitoring, un article dans la lignée de
+<a href="/post/2015/06/19/supervisor-celery-django-orchestration/">Supervisor Celery Django :
+Orchestration</a>,
+donc un article très intéressant sur le service <a href="http://feedproxy.google.com/~r/LeBlogDeNicolargo/~3/rYM1ph5P1ns/a-la-decouverte-de-check-my-website.html">Check my
+website</a>
+par Nicolargo (l'article pas le service ;)</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
+        <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
+        <li><a href="https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/">History not to lose the thread : TrackingFields</a></li>
+        <li><a href="https://foxmask.net/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
+        <li><a href="https://foxmask.net/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'revue-technique-du-15062015-django-again';
+                var disqus_url = 'https://foxmask.net/post/2015/06/19/revue-technique-du-15062015-django-again/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Twitter Timeline -->
+<li class="list-group-item">
+  <h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
+  <div id="twitter_timeline">
+    <a class="twitter-timeline" data-width="250" data-height="300" data-dnt="true" data-theme="light" href="https://twitter.com/triggerhappyeu">Tweets by triggerhappyeu</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</li>
+<!-- End Sidebar/Twitter Timeline -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://sametmax.com" target="_blank">Sam et Max</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/stats.html" target="_blank">Stats</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.net/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.net/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.net/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.net/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

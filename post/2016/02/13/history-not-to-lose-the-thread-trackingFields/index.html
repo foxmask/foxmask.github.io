@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>History not to lose the thread : TrackingFields - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="django,python" />
+        <meta name="description" content="Introduction this post is an english version [of this post made on sam et max made last week. The goal of that post will be to show how, without changing anything in a form, we can track the modifications of the data made in the application the first part will …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="History not to lose the thread : TrackingFields"/>
+        <meta property="og:url" content="https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/"/>
+        <meta property="og:description" content="Introduction this post is an english version [of this post made on sam et max made last week. The goal of that post will be to show how, without changing anything in a form, we can track the modifications of the data made in the application the first part will …"/>
+        <meta property="article:published_time" content="2016-02-13" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="django" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:author" content="foxmask" />
+
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@triggerhappyeu">
+        <meta name="twitter:creator" content="@triggerhappyeu">
+    <meta name="twitter:domain" content="https://foxmask.net">
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.net/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.net/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.net/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.net/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.net/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.net/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.net/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.net/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/"
+                       rel="bookmark"
+                       title="Permalink to History not to lose the thread : TrackingFields">
+                        History not to lose the thread : TrackingFields
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-02-13T17:00:00+01:00"> Sat 13 February 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/django.html">django</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Introduction</h2>
+<p>this post is an english version [of this post made on <a href="http://sametmax.com/histoire-de-ne-pas-perdre-le-fil-trackingfields/">sam et max</a> made last week.</p>
+<p>The goal of that post will be to show how, without changing anything in a form, we can track the modifications of the data made in the application</p>
+<p>the first part will set the scene by starting to show you how articulates an application with a form, additionally, composed by a sub form. I will explain when later. </p>
+<p>To do so, I takes you into the world of the 7th art, come, we will redo StarWars!</p>
+<p>One model, one form, a view, a template and that will be finished </p>
+<h2>the models.py</h2>
+<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+
+    <span class="k">class</span> <span class="nc">Movie</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Movie</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+
+    <span class="k">class</span> <span class="nc">Episode</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">           Episode - for Trilogy and So on ;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+        <span class="n">scenario</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+        <span class="n">movie</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Movie</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+
+
+<h2>the forms.py, very mini mini</h2>
+<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+    <span class="kn">from</span> <span class="nn">django.forms.models</span> <span class="kn">import</span> <span class="n">inlineformset_factory</span>
+
+    <span class="kn">from</span> <span class="nn">starwars.models</span> <span class="kn">import</span> <span class="n">Movie</span><span class="p">,</span> <span class="n">Episode</span>
+
+
+    <span class="k">class</span> <span class="nc">MovieForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+
+        <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">                As I have to use : &quot;exclude&quot; or &quot;fields&quot;</span>
+<span class="sd">                As I&#39;m very lazy, I dont want to fill the list in the &quot;fields&quot;</span>
+<span class="sd">                so I say that I just want to exclude ... nothing :P</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">model</span> <span class="o">=</span> <span class="n">Movie</span>
+            <span class="n">exclude</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># a formeset based on the model of the Mother &quot;Movie&quot; and Child &quot;Episode&quot; + 1 new empty lines</span>
+    <span class="n">EpisodeFormSet</span> <span class="o">=</span> <span class="n">inlineformset_factory</span><span class="p">(</span><span class="n">Movie</span><span class="p">,</span> <span class="n">Episode</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;scenario&#39;</span><span class="p">),</span> <span class="n">extra</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<h2>the views.py very very very DRY :)</h2>
+<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
+    <span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+    <span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">,</span> <span class="n">ListView</span>
+
+    <span class="kn">from</span> <span class="nn">starwars.models</span> <span class="kn">import</span> <span class="n">Movie</span>
+    <span class="kn">from</span> <span class="nn">starwars.forms</span> <span class="kn">import</span> <span class="n">MovieForm</span><span class="p">,</span> <span class="n">EpisodeFormSet</span>
+
+
+    <span class="k">class</span> <span class="nc">MovieMixin</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Movie</span>
+        <span class="n">form_class</span> <span class="o">=</span> <span class="n">MovieForm</span>
+
+        <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">MovieMixin</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">:</span>
+                <span class="n">context</span><span class="p">[</span><span class="s1">&#39;episode_form&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">EpisodeFormSet</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">context</span><span class="p">[</span><span class="s1">&#39;episode_form&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">EpisodeFormSet</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">context</span>
+
+        <span class="k">def</span> <span class="nf">get_success_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+            <span class="n">formset</span> <span class="o">=</span> <span class="n">EpisodeFormSet</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span> <span class="ow">or</span> <span class="bp">None</span><span class="p">),</span> <span class="n">instance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">formset</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+                <span class="n">formset</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
+                <span class="n">formset</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+            <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">))</span>
+
+
+    <span class="k">class</span> <span class="nc">Movies</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Movie</span>
+        <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;movies&quot;</span>
+        <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;base.html&quot;</span>
+
+
+    <span class="k">class</span> <span class="nc">MovieCreate</span><span class="p">(</span><span class="n">MovieMixin</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            MovieMixin manage everything for me ...</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+
+    <span class="k">class</span> <span class="nc">MovieUpdate</span><span class="p">(</span><span class="n">MovieMixin</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            ... and I&#39;m DRY :D</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+</pre></div>
+
+
+<h2>To finish to set the scene and the costumes : the templates</h2>
+<h3>base.html</h3>
+<div class="highlight"><pre><span></span>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;fr&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Manage stories for StarWars<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Stories Manager for Starwars<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    {% block content %}
+    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;movie_create&#39; %}&quot;</span><span class="p">&gt;</span>Add a movie<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Movie list<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    {% for movie in movies %}
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;movie_edit&#39; movie.id %}&quot;</span><span class="p">&gt;</span>{{ movie.name }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    {% endfor %}
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+    {% endblock %}
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h3>movie_form.htlm (the template used by UpdateView &amp; CreateView)</h3>
+<div class="highlight"><pre><span></span>    {% extends &quot;base.html&quot; %}
+    {% block content %}
+    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
+        {% csrf_token %}
+        {{ formset.management_form }}
+        <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        {{ form.as_table }}
+        <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        {{ episode_form.as_table }}
+        <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Save<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    {% endblock %}
+</pre></div>
+
+
+<h2>Update of the database</h2>
+<p>this is necessary  :</p>
+<div class="highlight"><pre><span></span><span class="o">(</span>starwars<span class="o">)</span> foxmask@foxmask:~/DjangoVirtualEnv/starwars/starwars $  ./manage.py migrate
+
+Operations to perform:
+  Synchronize unmigrated apps: messages, starwars, staticfiles
+  Apply all migrations: contenttypes, admin, sessions, auth
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table starwars_movie
+    Creating table starwars_episode
+    Running deferred SQL...
+  Installing custom SQL...
+</pre></div>
+
+
+<p>Here we are, ready, I can now create my double Trilogy like Georges Lucas</p>
+<h2>Tracking the ungodly</h2>
+<p>But a day comes when me, George Lucas, I sell StarWars to Walt Disney, but I want to miss
+what they will do my "baby", I add a "tracker changes" in my application, not to lose the "field" of history.</p>
+<h3>Installation of Tracking Fields</h3>
+<p>as a prerequisites, if you want to also track who change thing, and not what data have been whanged, you will need<br>
+django-current-user, so the pip command to use will be this one </p>
+<div class="highlight"><pre><span></span>    <span class="p">(</span><span class="n">starwars</span><span class="p">)</span> <span class="n">foxmask</span><span class="nd">@foxmask</span><span class="p">:</span><span class="o">~/</span><span class="n">DjangoVirtualEnv</span><span class="o">/</span><span class="n">starwars</span><span class="o">/</span><span class="n">starwars</span> <span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span>
+    <span class="n">Collecting</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span>
+      <span class="n">Downloading</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mf">6.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="mi">58</span><span class="n">kB</span><span class="p">)</span>
+        <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">████████████████████████████████</span><span class="o">|</span> <span class="mi">61</span><span class="n">kB</span> <span class="mi">104</span><span class="n">kB</span><span class="o">/</span><span class="n">s</span> 
+    <span class="n">Collecting</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span>
+      <span class="n">Downloading</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span><span class="o">-</span><span class="mf">2014.9</span><span class="o">.</span><span class="mf">28.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+    <span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span> <span class="p">(</span><span class="n">use</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">to</span> <span class="n">upgrade</span><span class="p">):</span> <span class="n">Django</span><span class="o">&gt;=</span><span class="mf">1.5</span> <span class="ow">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">foxmask</span><span class="o">/</span><span class="n">DjangoVirtualEnv</span><span class="o">/</span><span class="n">starwars</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">django</span><span class="o">-</span><span class="n">cuser</span><span class="p">)</span>
+    <span class="n">Installing</span> <span class="n">collected</span> <span class="n">packages</span><span class="p">:</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span><span class="p">,</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span>
+      <span class="n">Running</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span> <span class="k">for</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span> <span class="o">...</span> <span class="n">done</span>
+      <span class="n">Running</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span> <span class="k">for</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span> <span class="o">...</span> <span class="n">done</span>
+    <span class="n">Successfully</span> <span class="n">installed</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span><span class="o">-</span><span class="mf">2014.9</span><span class="o">.</span><span class="mi">28</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">6</span>
+</pre></div>
+
+
+<p>the necessary changes in  <strong>settings.py</strong> :</p>
+<div class="highlight"><pre><span></span>    <span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="o">...</span>
+        <span class="s1">&#39;cuser&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;tracking_fields&#39;</span><span class="p">,</span>
+        <span class="o">...</span>
+    <span class="p">)</span>
+    <span class="n">MIDDLEWARE_CLASSES</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;django.contrib.sessions.middleware.SessionMiddleware&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.middleware.common.CommonMiddleware&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.middleware.csrf.CsrfViewMiddleware&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.contrib.auth.middleware.AuthenticationMiddleware&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.contrib.auth.middleware.SessionAuthenticationMiddleware&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.contrib.messages.middleware.MessageMiddleware&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.middleware.clickjacking.XFrameOptionsMiddleware&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;django.middleware.security.SecurityMiddleware&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cuser.middleware.CuserMiddleware&#39;</span><span class="p">,</span>  <span class="c1">## &lt;=== do not forget to catch the badass who make change on my movies;)</span>
+    <span class="p">)</span>
+</pre></div>
+
+
+<p>the little migrate that fit our needs, to add the tables for our modeles of django-tracking-fields</p>
+<div class="highlight"><pre><span></span>    <span class="p">(</span><span class="n">starwars</span><span class="p">)</span> <span class="n">foxmask</span><span class="nd">@foxmask</span><span class="p">:</span><span class="o">~/</span><span class="n">DjangoVirtualEnv</span><span class="o">/</span><span class="n">starwars</span><span class="o">/</span><span class="n">starwars</span> <span class="err">$</span>  <span class="o">./</span><span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
+    <span class="n">Operations</span> <span class="n">to</span> <span class="n">perform</span><span class="p">:</span>
+      <span class="n">Synchronize</span> <span class="n">unmigrated</span> <span class="n">apps</span><span class="p">:</span> <span class="n">staticfiles</span><span class="p">,</span> <span class="n">messages</span><span class="p">,</span> <span class="n">cuser</span><span class="p">,</span> <span class="n">starwars</span>
+      <span class="n">Apply</span> <span class="nb">all</span> <span class="n">migrations</span><span class="p">:</span> <span class="n">auth</span><span class="p">,</span> <span class="n">sessions</span><span class="p">,</span> <span class="n">contenttypes</span><span class="p">,</span> <span class="n">tracking_fields</span><span class="p">,</span> <span class="n">admin</span>
+    <span class="n">Synchronizing</span> <span class="n">apps</span> <span class="n">without</span> <span class="n">migrations</span><span class="p">:</span>
+      <span class="n">Creating</span> <span class="n">tables</span><span class="o">...</span>
+        <span class="n">Running</span> <span class="n">deferred</span> <span class="n">SQL</span><span class="o">...</span>
+      <span class="n">Installing</span> <span class="n">custom</span> <span class="n">SQL</span><span class="o">...</span>
+    <span class="n">Running</span> <span class="n">migrations</span><span class="p">:</span>
+      <span class="n">Rendering</span> <span class="n">model</span> <span class="n">states</span><span class="o">...</span> <span class="n">DONE</span>
+      <span class="n">Applying</span> <span class="n">tracking_fields</span><span class="o">.</span><span class="mo">0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
+      <span class="n">Applying</span> <span class="n">tracking_fields</span><span class="o">.</span><span class="mo">0002</span><span class="n">_auto_20160203_1048</span><span class="o">...</span> <span class="n">OK</span>
+</pre></div>
+
+
+<p>and here we are ready to play with the trackers</p>
+<h3>Usage</h3>
+<p>We cant dream a more simpler way to do, this can be summarize to a decorator on the model which identifies which data are changed, 
+and on field ̀<code>histo</code> which will link the model TrackingEvent of the application TrackingFields, to my tacle to watch.
+And here, even if my model has been changed with this new field, it's unecessary to do a new "python manage.py migrate", nothing will happen, 
+because histo will be a <a href="https://docs.djangoproject.com/en/1.8/ref/contrib/contenttypes/#generic-relations">GenericRelation()</a>. <br>
+Effectivly, TrackingEvent is based of <a href="https://docs.djangoproject.com/e,/1.9/ref/contrib/contenttypes/">ContenType</a> aka
+En effet, TrackingEvent repose sur <a href="https://docs.djangoproject.com/fr/1.9/ref/contrib/contenttypes/">ContenType</a> aka "The contenttypes framework". 
+If you already played with the permission management, you should have already  meet it before;)</p>
+<p>To make it short, this will give :</p>
+<h4>models.py</h4>
+<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+    <span class="kn">from</span> <span class="nn">django.contrib.contenttypes.fields</span> <span class="kn">import</span> <span class="n">GenericRelation</span>
+
+    <span class="kn">from</span> <span class="nn">tracking_fields.decorators</span> <span class="kn">import</span> <span class="n">track</span>
+    <span class="kn">from</span> <span class="nn">tracking_fields.models</span> <span class="kn">import</span> <span class="n">TrackingEvent</span>
+
+
+    <span class="nd">@track</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">)</span>
+    <span class="k">class</span> <span class="nc">Movie</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Movie</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+        <span class="n">histo</span> <span class="o">=</span> <span class="n">GenericRelation</span><span class="p">(</span><span class="n">TrackingEvent</span><span class="p">,</span> <span class="n">content_type_field</span><span class="o">=</span><span class="s1">&#39;object_content_type&#39;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">episodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Episode</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">movie</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+
+    <span class="nd">@track</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;scenario&#39;</span><span class="p">)</span>
+    <span class="k">class</span> <span class="nc">Episode</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">           Episode - for Trilogy and So on ;)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+        <span class="n">scenario</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+        <span class="n">movie</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Movie</span><span class="p">)</span>
+        <span class="n">histo</span> <span class="o">=</span> <span class="n">GenericRelation</span><span class="p">(</span><span class="n">TrackingEvent</span><span class="p">,</span> <span class="n">content_type_field</span><span class="o">=</span><span class="s1">&#39;object_content_type&#39;</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+
+
+<p>so, here, it is very simple like a pancake recipe: 3 imports, the decorator, the  GenericRelation, we mix all of them and that give what follow.
+I have, in the meantime, added a function <code>episodes</code> to my Movie class, I will explain it too later ;)</p>
+<h3>the template of the expected DetailView</h3>
+<div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>History of the modification of {{ object }} <span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Old Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>New Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>By<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>at<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+       <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    {% for h in object.histo.all %}
+       {% for f in h.fields.all %}
+           <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ f.old_value }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ f.new_value }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ h.user }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ h.date }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+       {% endfor %}
+    {% endfor %}
+       <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>Now if I go the my page to modify the story of one episode, my template below, wont display thoses modifications !
+But Why god ? Because until here, I just display the "histo" of Movie and not of the Episode. We now understand here my interest for the sub form.
+The issue </p>
+<h3>Let's fix it</h3>
+<p>this is here, that enter if the game, the function <code>episodes</code> of my Movie class to permit to loop on it and display of the needed stuff </p>
+<h3>the template of the expected DetailView (again :)</h3>
+<div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>History of the modifications of {{ object }} <span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Old Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>New Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>By<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>at<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    {% for h in object.histo.all %}
+       {% for f in h.fields.all %}
+           <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ f.old_value }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ f.new_value }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ h.user }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ h.date }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+       {% endfor %}
+    {% endfor %}
+        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+    {% for ep in object.episodes %}
+        {% if ep.histo.all %}
+    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>history of the modifications of Episode<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Old Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>New Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>By<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>at<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+            {% for h in ep.histo.all %}
+                {% for f in h.fields.all %}
+                {% if f.old_value == f.new_value %} {# they are the same when the new value is created to avoid to display &quot;null&quot; #}
+                {% else %}
+                <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ f.old_value }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ f.new_value }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ h.user }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ h.date }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                {% endif %}
+                {%  endfor %}
+            {% endfor %}
+        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+     <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+        {% endif %}
+    {% endfor %}
+</pre></div>
+
+
+<p>And voilà !
+Voili voilou ! As a bonus, if you're curious, of the admin side, you also have a list of all the changes if needed;)</p>
+<p>For the advanced users who would say:</p>
+<blockquote>
+<p>why have recoded the front side since this is already managed on the admin side without lifting a finger?</p>
+</blockquote>
+<p>Because George Lucas wants to show changes to his baby StarWars by Walt Disney, to the world of course </p>
+<p>Ho, and a last detail : in the admin, the view which displays the list of changes gives : "Episode Object" or "Movie Object".
+To avoid that, you shoud have notice that I have added the function  <strong><strong>str</strong></strong>  in my model which will return a more
+readable value of what have been changed</p>
+<h2>Conclusion :</h2>
+<p>IRL, I didnt see myself, create a History model linked physically by a FK on each model, I decide to search, arround the web, some ressources </p>
+<p>It's finally on <a href="irc://irc.freenode.net/django-fr">#django-fr@freenode</a> that I asked my question and got from <a href="https://github.com/gagaro">Gagaro</a> the grââl : 
+one application named <a href="https://github.com/makinacorpus/django-tracking-fields">tracking-fields</a>, his author.</p>
+<p>For once I do my lazy by not coding all by myself, <a href="https://github.com/makinacorpus/django-tracking-fields">it's nice to come across such an app</a> ! </p>
+<p>If you want to play with the code of this Movie manager <a href="https://github.com/foxmask/tracking-starwars">here is the tasty soup</a></p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
+        <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
+        <li><a href="https://foxmask.net/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
+        <li><a href="https://foxmask.net/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
+        <li><a href="https://foxmask.net/post/2015/08/18/django-trigger-happy-0-11-0-english-version/">Django Trigger Happy 0.11.0 English Version</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'history-not-to-lose-the-thread-trackingFields';
+                var disqus_url = 'https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Twitter Timeline -->
+<li class="list-group-item">
+  <h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
+  <div id="twitter_timeline">
+    <a class="twitter-timeline" data-width="250" data-height="300" data-dnt="true" data-theme="light" href="https://twitter.com/triggerhappyeu">Tweets by triggerhappyeu</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</li>
+<!-- End Sidebar/Twitter Timeline -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://sametmax.com" target="_blank">Sam et Max</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/stats.html" target="_blank">Stats</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.net/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.net/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.net/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.net/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

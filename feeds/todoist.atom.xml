@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - todoist</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/todoist.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-08-10T10:30:00+02:00</updated><entry><title>TODOIST vs Trello : rapidos prise en main</title><link href="https://foxmask.net/post/2015/08/10/todoist-vs-trello-rapidos-prise-en-main/" rel="alternate"></link><published>2015-08-10T10:30:00+02:00</published><updated>2015-08-10T10:30:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-08-10:/post/2015/08/10/todoist-vs-trello-rapidos-prise-en-main/</id><summary type="html">&lt;p&gt;&lt;a href="https://todoist.com/"&gt;TODOIST&lt;/a&gt; et &lt;a href="https://trello.com/"&gt;TRELLO&lt;/a&gt; joue
+dans le même crédo: celui de constituer des listes de trucs à faire,
+avec un coté plus organistation de boulot en d'equipe du coté de TRELLO.&lt;/p&gt;
+&lt;p&gt;Les 2 projets sont dispo aussi bien sur Android que Windows.&lt;/p&gt;
+&lt;p&gt;Sur Windows:&lt;/p&gt;
+&lt;p&gt;Bémoles :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Trello ne s'installe qu'à partir de …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://todoist.com/"&gt;TODOIST&lt;/a&gt; et &lt;a href="https://trello.com/"&gt;TRELLO&lt;/a&gt; joue
+dans le même crédo: celui de constituer des listes de trucs à faire,
+avec un coté plus organistation de boulot en d'equipe du coté de TRELLO.&lt;/p&gt;
+&lt;p&gt;Les 2 projets sont dispo aussi bien sur Android que Windows.&lt;/p&gt;
+&lt;p&gt;Sur Windows:&lt;/p&gt;
+&lt;p&gt;Bémoles :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Trello ne s'installe qu'à partir de windows 8 voire 10.&lt;/li&gt;
+&lt;li&gt;Todoist: interface très minimaliste, la même que celle du site web,
+    une fenêtre, au pif pas plus grande qu'une reso 640*480...&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;du coup ca limite l'utilisation. Mais ya pire (si c'est possible)&lt;/p&gt;
+&lt;p&gt;Sur Android:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Trello passe impeccablement, interface propre et agréable, ca donne
+    limite envie de le remplir dans tous les sens ;)&lt;/li&gt;
+&lt;li&gt;Todoist: interface toute aussi minimaliste, voire trop, là c'est
+    l'inverse, j'ai du mal à m'y faire&lt;br&gt;
+&lt;a href="/static/2015/08/Screenshot_2015-08-07-19-11-36.png"&gt;&lt;img alt="Todoist -
+    Accueil" src="/static/2015/08/Screenshot_2015-08-07-19-11-36-576x1024.png"&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Point noire chez Todoist :&lt;/p&gt;
+&lt;p&gt;on se mange quasiment constamment des popup "abonnez vous à Todoist
+premium" pour :&lt;br&gt;
+- Ajouter des pièces jointes ...&lt;br&gt;
+- utiliser des étiquettes&lt;br&gt;
+- Ajouter une filtre&lt;/p&gt;
+&lt;p&gt;&lt;a href="/static/2015/08/Screenshot_2015-08-07-19-11-56.png"&gt;&lt;img alt="Todoist -
+Fitres" src="/static/2015/08/Screenshot_2015-08-07-19-11-56-576x1024.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Je ne sais plus quel ergonome disait qu'il valait mieux NE PAS MONTRER
+que ces features EXISTENT pour éviter la frustration de ne pas pouvoir
+s'en servir et qu'on rejette au final l'outil tout entier, et par
+exemple dédiée une page qui détaille "version Free" vs "version Premium"&lt;/p&gt;
+&lt;p&gt;Quand un projet démarre, coller du "vazy paye pour ca et ca et ca" ; ca
+rebute.&lt;/p&gt;
+&lt;p&gt;A côté Trello, c'est tout propre, je n'ai pas encore vu de limitations
+et du coup ca m'a donné envie d'utiliser leur API pour l'intégrer à
+TriggerHappy&lt;/p&gt;
+&lt;p&gt;&lt;a href="/static/2015/08/Screenshot_2015-08-07-19-11-03.png"&gt;&lt;img alt="Trello -
+accueil" src="/static/2015/08/Screenshot_2015-08-07-19-11-03-576x1024.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="/static/2015/08/Screenshot_2015-08-07-19-11-14.png"&gt;&lt;img alt="Trello - Boad &amp;quot;To Read
+Later&amp;quot;" src="/static/2015/08/Screenshot_2015-08-07-19-11-14-576x1024.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Pour conclure, voici les liens pour télécharger pour votre plateforme :&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://trello.com/platforms"&gt;les plateformes chez Trello&lt;/a&gt; - &lt;a href="https://win.todoist.com/Help/Apps"&gt;les
+plateformes chez Todoist&lt;/a&gt;&lt;/p&gt;</content><category term="todoist"></category><category term="trello"></category><category term="TriggerHappy"></category></entry></feed>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Pandas</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/pandas.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-05-14T13:00:00+02:00</updated><entry><title>Panda, Le gros nounours noir et blanc est passé</title><link href="https://foxmask.net/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/" rel="alternate"></link><published>2016-05-14T13:00:00+02:00</published><updated>2016-05-14T13:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-05-14:/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/</id><summary type="html">&lt;p&gt;En lisant ma pile d'articles de veille techno dans mon instance &lt;a href="https://walabag.org"&gt;wallabag&lt;/a&gt;, je suis tombé sur un article mesurant le temps passé sur ses projets.
+Rien de nouveau au soleil puisque tout à chacun connait bien &lt;a href="https://pypi.python.org/pypi/pandas"&gt;pandas&lt;/a&gt; :)&lt;/p&gt;
+&lt;p&gt;Cependant, après un petit coup de &lt;code&gt;pip install git-pandas&lt;/code&gt; et en exécutant &lt;a href="https://github.com/wdm0006/git-pandas/blob/master/examples/hours_estimate.py"&gt;ce …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;En lisant ma pile d'articles de veille techno dans mon instance &lt;a href="https://walabag.org"&gt;wallabag&lt;/a&gt;, je suis tombé sur un article mesurant le temps passé sur ses projets.
+Rien de nouveau au soleil puisque tout à chacun connait bien &lt;a href="https://pypi.python.org/pypi/pandas"&gt;pandas&lt;/a&gt; :)&lt;/p&gt;
+&lt;p&gt;Cependant, après un petit coup de &lt;code&gt;pip install git-pandas&lt;/code&gt; et en exécutant &lt;a href="https://github.com/wdm0006/git-pandas/blob/master/examples/hours_estimate.py"&gt;ce script panda&lt;/a&gt; on peut donc mesurer le temps passé directos sur ses dépots, et donc pour bibi, il en ressort ceci &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python hours_estimate.py &lt;span class="p"&gt;|&lt;/span&gt;grep -v &lt;span class="m"&gt;0&lt;/span&gt;.00000
+
+            committer       hours         repository
+&lt;span class="m"&gt;0&lt;/span&gt;             foxmask    &lt;span class="m"&gt;2&lt;/span&gt;.603889          django-th
+&lt;span class="m"&gt;3&lt;/span&gt;       Olivier Demah  &lt;span class="m"&gt;134&lt;/span&gt;.288056          django-th
+&lt;span class="m"&gt;4&lt;/span&gt;             FoxMaSk    &lt;span class="m"&gt;3&lt;/span&gt;.017500          django-th
+&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;3&lt;/span&gt;.000000  django-th-ansible
+&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;3&lt;/span&gt;.877222       wallabag_api
+&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;8&lt;/span&gt;.882778        dj-diabetes
+&lt;span class="m"&gt;1&lt;/span&gt;             foxmask    &lt;span class="m"&gt;1&lt;/span&gt;.000000        dj-diabetes
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;En tout 140heures pour Trigger Happy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si je pars sur des journées de 6heures ca fait 23jours ou 46jours en codant "à temps perdu", en gros un bon mois et demi non stop quoi.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4hres pour l'API &lt;a href="https://github.com/foxmask/wallabag_api"&gt;wallabag&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;9hres pour le projet de "&lt;a href="https://github.com/foxmask/dj-diabetes"&gt;gestion de son diabete au quotidien&lt;/a&gt;"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pas de quoi fouetter un chat, mais ca donne une idée du temps que j'ai dépensé ;)
+Evidement la dedans on ne peut pas quantifier les durées pour le temps passé à tester moult techno pour arriver au resultat escompté. Mais ça donne un ordre de grandeur !&lt;/p&gt;</content><category term="TriggerHappy"></category><category term="python"></category><category term="Pandas"></category></entry></feed>

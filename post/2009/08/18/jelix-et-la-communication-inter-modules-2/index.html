@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Jelix et la Communication inter modules - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.net/post/2009/08/18/jelix-et-la-communication-inter-modules-2/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="Jelix" />
+        <meta name="description" content="Une pépite parmi tant d&#39;autres que renferme Jelix, est la communication inter module. Mais qu&#39;est-ce que cela ? Il arrive que des modules aient besoin de communiquer entre eux ou qu&#39;ils aient besoin d&#39;informations des uns et des autres. Imaginons un cas simple, une interface d&#39;administration listant les modules (articles,wiki …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Jelix et la Communication inter modules"/>
+        <meta property="og:url" content="https://foxmask.net/post/2009/08/18/jelix-et-la-communication-inter-modules-2/"/>
+        <meta property="og:description" content="Une pépite parmi tant d&#39;autres que renferme Jelix, est la communication inter module. Mais qu&#39;est-ce que cela ? Il arrive que des modules aient besoin de communiquer entre eux ou qu&#39;ils aient besoin d&#39;informations des uns et des autres. Imaginons un cas simple, une interface d&#39;administration listant les modules (articles,wiki …"/>
+        <meta property="article:published_time" content="2009-08-18" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="Jelix" />
+            <meta property="article:author" content="foxmask" />
+
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@triggerhappyeu">
+        <meta name="twitter:creator" content="@triggerhappyeu">
+    <meta name="twitter:domain" content="https://foxmask.net">
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.net/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.net/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.net/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.net/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.net/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.net/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.net/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.net/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.net/post/2009/08/18/jelix-et-la-communication-inter-modules-2/"
+                       rel="bookmark"
+                       title="Permalink to Jelix et la Communication inter modules">
+                        Jelix et la Communication inter modules
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-08-18T01:05:00+02:00"> Tue 18 August 2009</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Une pépite parmi tant d'autres que renferme Jelix, est la communication
+inter module.</p>
+<p>Mais qu'est-ce que cela ?</p>
+<p>Il arrive que des modules aient besoin de communiquer entre eux  </p>
+<p>ou qu'ils aient besoin d'informations des uns et des autres.</p>
+<p>Imaginons un cas simple, une interface d'administration listant les
+modules (articles,wiki,news), présents sur son site favori.</p>
+<p>La solution "Jelixienne" consiste à faire communiquer le module
+d'administration avec tous les autres.</p>
+<p>Le module d'administration va émettre un message et récupérera les
+réponses des modules.</p>
+<p><strong>Mise en place</strong> :  </p>
+<p>je ferai apparaitre ces infos sur une pages dédiées "Liste des
+modules".  </p>
+<p>Cette page sera constituée d'un template et les réponses des modules se
+feront à l'aide de zones  </p>
+<p>(<strong>rappel</strong> : les zones sont des portions de page)</p>
+<p>Donc pour cela je défini un contrôleur "modules" avec une action "index"
+par défaut :</p>
+<p><strong>le contrôleur</strong></p>
+<div class="highlight"><pre><span></span><span class="x">class modulesCtrl extends jController {</span>
+<span class="x"> </span>
+<span class="x">function index() {</span>
+<span class="x">$rep = $this-&gt;getResponse(&#39;html&#39;);</span>
+<span class="x">$tpl = new jTpl();</span>
+<span class="x">$tpl-&gt;assign(&#39;modules&#39;,jEvent::notify(&#39;HfnuAboutModule&#39;)-&gt;getResponse());         $rep-&gt;body-&gt;assign(&#39;MAIN&#39;,$tpl-&gt;fetch(&#39;modules&#39;));</span>
+<span class="x">return $rep;</span>
+<span class="x">}</span>
+<span class="x">}</span>
+</pre></div>
+
+
+<p>la ligne intéressante ici est :</p>
+<div class="highlight"><pre><span></span><span class="x">$tpl-&gt;assign(&#39;modules&#39;,jEvent::notify(&#39;HfnuAboutModule&#39;)-&gt;getResponse());</span>
+</pre></div>
+
+
+<p>cette ligne fait 3 choses en même temps :</p>
+<ol>
+<li>elle émet un message nommé <code>HfnuAboutModule</code></li>
+<li>elle récupère les données du message émis</li>
+<li>elle assigne ses données à la variable "modules" du template.</li>
+</ol>
+<p>la ligne suivante indique à Jelix, le nom du template "module", qui
+affichera les données</p>
+<div class="highlight"><pre><span></span><span class="x">$rep-&gt;body-&gt;assign(&#39;MAIN&#39;,$tpl-&gt;fetch(&#39;modules&#39;));</span>
+</pre></div>
+
+
+<p><strong>le template</strong></p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Liste des modules <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+{if count($modules)}
+{assign $count = count($modules)}
+{for $i=0; $i<span class="err">&lt;</span>$count;$i++}
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;two-cols&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col&quot;</span><span class="p">&gt;</span>
+{$modules[$i]}
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{/for}
+{/if}
+</pre></div>
+
+
+<p>Bon ok on visualise un peu ce qui va se passer "à la fin" mais comment
+nos modules "news","wiki","articles" vont ils répondre à l'evenement
+<code>HfnuAboutModule</code> ?</p>
+<p>A tout jEvent::notify, un listener peut répondre, donc nous allons
+définir un listener comme suite en 2 temps :</p>
+<ol>
+<li>définition d'un fichier events.xml décrivant le nom de l'évènement
+    et la classe y répondant, events.xml est donc le "liant"</li>
+<li>définition du listener lui-même.</li>
+</ol>
+<p><strong>fichier events.xml</strong></p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</span>
+<span class="nt">&lt;events</span> <span class="na">xmlns=</span><span class="s">&quot;http://jelix.org/ns/events/1.0&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;listener</span> <span class="na">name=</span><span class="s">&quot;hfnuadmin&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;HfnuAboutModule&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/listener&gt;</span>   <span class="nt">&lt;/events&gt;</span>
+</pre></div>
+
+
+<p>On retrouve bien ici le nom de l'évènement <code>HfnuAboutModule</code> auquel le
+listener <code>hfnuadmin</code> va se charger de répondre</p>
+<p><strong>le listener</strong></p>
+<div class="highlight"><pre><span></span><span class="x">class hfnuadminListener extends jEventListener{</span>
+<span class="x"> </span>
+<span class="x">function onHfnuAboutModule ($event) {</span>
+<span class="x">$event-&gt;add( jZone::get(&#39;hfnuadmin~about&#39;,array(&#39;modulename&#39;=&gt;&#39;hfnuadmin&#39;)) );</span>
+<span class="x">}   }</span>
+</pre></div>
+
+
+<p>lorsque <code>HfnuAboutModule</code> est déclenché, alors <code>onHfnuAboutModule</code> entre
+en oeuvre et répond à l'event (via \$event->add())</p>
+<p>\$event->add() peut recevoir tout type de données. Ici nous lui
+retournons une zone (<a href="/post/2009/07/15/Cr%C3%A9ation-de-Modules-G%C3%A9n%C3%A9riques-%22Jelix%22-%28partie-2/2%29">que nous avons précédemment abordés dans mes 2
+précédants
+articles</a>)
+nommée "about"</p>
+<p><strong>la zone</strong></p>
+<div class="highlight"><pre><span></span><span class="x">class aboutZone extends jZone {</span>
+<span class="x">protected $_tplname=&#39;zone.about&#39;;</span>
+<span class="x"> </span>
+<span class="x">protected function _prepareTpl(){</span>
+<span class="x">$moduleName = $this-&gt;param(&#39;modulename&#39;);</span>
+<span class="x"> </span>
+<span class="x">if ($moduleName == &#39;&#39;) return;</span>
+<span class="x">jClasses::inc(&#39;havefnubb~modulexml&#39;);</span>
+<span class="x">$moduleInfo = modulexml::parse($moduleName);                 $this-&gt;_tpl-&gt;assign(&#39;moduleInfo&#39;,$moduleInfo);             }</span>
+<span class="x">}</span>
+</pre></div>
+
+
+<p>notre zone ici récupère le paramètre du nom du module, puis parse le
+fichier module.xml et affecte le résultat au template zone.about</p>
+<p><strong>le template</strong></p>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{$moduleInfo[&#39;name&#39;]}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.version@} :<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> {$moduleInfo[&#39;version&#39;]} ({@hfnuadmin~hfnuabout.about.date.create@} {$moduleInfo[&#39;dateCreate&#39;]})<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.label@} :<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> {$moduleInfo[&#39;label&#39;]|escxml}<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.desc@} :<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> {$moduleInfo[&#39;desc&#39;]}<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.notes@} :<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> {$moduleInfo[&#39;notes&#39;]}<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.licence@} :<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> {if $moduleInfo[&#39;licenceURL&#39;] != &#39;&#39;}<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{$moduleInfo[&#39;licenceURL&#39;]}&quot;</span><span class="p">&gt;</span>{$moduleInfo[&#39;licence&#39;]}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>{else}{$moduleInfo[&#39;licence&#39;]}{/if}<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.copyright@} :<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> {$moduleInfo[&#39;copyright&#39;]}<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+{foreach $moduleInfo[&#39;creators&#39;] as $author}
+<span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.authors@} :<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> {if $author[&#39;email&#39;] != &#39;&#39;}<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;mailto:{$author[&#39;email&#39;]}&quot;</span><span class="p">&gt;</span>{$author[&#39;name&#39;]|escxml}{else}{$author[&#39;name&#39;]|escxml}{/if}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+{/foreach}
+<span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.links@}<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{$moduleInfo[&#39;homepageURL&#39;]}&quot;</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.homepageURL@}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> - <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{$moduleInfo[&#39;updateURL&#39;]}&quot;</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.updateURL@}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>Résultat :</p>
+<p>Liste des modules</p>
+<p>News!</p>
+<p>Version :</p>
+<div class="highlight"><pre><span></span>   stable 1.1.2 (du 2008-12-16)
+</pre></div>
+
+
+<p>Libellé :</p>
+<div class="highlight"><pre><span></span>   <span class="k">Module</span> <span class="nn">de</span> <span class="n">gestion</span> <span class="n">de</span> <span class="n">nouvelles</span>
+</pre></div>
+
+
+<p>Description :</p>
+<div class="highlight"><pre><span></span>   Ce module permet de gerer les nouvelles de son site web
+</pre></div>
+
+
+<p>Notes :</p>
+<div class="highlight"><pre><span></span>   N/A
+</pre></div>
+
+
+<p>License :</p>
+<div class="highlight"><pre><span></span>   GNU General Public Licence
+</pre></div>
+
+
+<p>Copyright :</p>
+<div class="highlight"><pre><span></span>   2008 FoxMaSk
+</pre></div>
+
+
+<p>Auteurs :</p>
+<div class="highlight"><pre><span></span>   FoxMaSk
+</pre></div>
+
+
+<p>Liens :</p>
+<div class="highlight"><pre><span></span>   Page d&#39;accueil du module - Lien mise à jour
+</pre></div>
+
+
+<p>Wiki</p>
+<p>Version :</p>
+<div class="highlight"><pre><span></span>   stable 1.0.2 (du 2009-01-25)
+</pre></div>
+
+
+<p>Libellé :</p>
+<div class="highlight"><pre><span></span>   Wiki
+</pre></div>
+
+
+<p>Description :</p>
+<div class="highlight"><pre><span></span>   Wiki maison pour la documentation du site web
+</pre></div>
+
+
+<p>Notes :</p>
+<div class="highlight"><pre><span></span>   N/A
+</pre></div>
+
+
+<p>License :</p>
+<div class="highlight"><pre><span></span>   GNU General Public Licence
+</pre></div>
+
+
+<p>Copyright :</p>
+<div class="highlight"><pre><span></span>   2008 FoxMaSk
+</pre></div>
+
+
+<p>Auteurs :</p>
+<div class="highlight"><pre><span></span>   FoxMaSk
+</pre></div>
+
+
+<p>Liens</p>
+<div class="highlight"><pre><span></span>   Page d&#39;accueil du module - Lien mise à jour
+</pre></div>
+
+
+<p>PS : ici je n'ai pas détaillé tous les events.xml des 3 modules ni les 3
+listeners mais le code est le même ;)</p>
+<p><strong>Conclusion</strong> :</p>
+<p>Voici donc la perle ; qui en quelques petites lignes ; a permis à tous
+les modules de se "trouver" et réunir des infos au même endroit.</p>
+<p>La même mécanique des jEvent::notify() permet par exemple d'enchainer
+des actions après l'inscription d'un membre (tels que lui envoyer un
+mail)<br>
+jEvent::notify() permet également d'enrichir les fonctionnalités d'un
+module A via d'autres modules B,C,D sans avoir à modifier le module A,
+etc...</p>
+<p><a href="http://jelix.org/articles/fr/manuel-1.1/events">en savoir plus sur la communication inter
+module</a></p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.net/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/">HaveFnuBB les archives  sont de retour du futur</a></li>
+        <li><a href="https://foxmask.net/post/2013/02/20/jelix-1-5-0-out/">Jelix PHP5 Framework : version 1.5.0 out</a></li>
+        <li><a href="https://foxmask.net/post/2013/02/07/havefnubb-sous-le-domaine-exactement/">HaveFnuBB sous le domaine exactement</a></li>
+        <li><a href="https://foxmask.net/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/">Jelix et un minify avant les fêtes</a></li>
+        <li><a href="https://foxmask.net/post/2012/04/02/havefnubb-1-5-0/">HaveFnuBB 1.5.0</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'jelix-et-la-communication-inter-modules-2';
+                var disqus_url = 'https://foxmask.net/post/2009/08/18/jelix-et-la-communication-inter-modules-2/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Twitter Timeline -->
+<li class="list-group-item">
+  <h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
+  <div id="twitter_timeline">
+    <a class="twitter-timeline" data-width="250" data-height="300" data-dnt="true" data-theme="light" href="https://twitter.com/triggerhappyeu">Tweets by triggerhappyeu</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</li>
+<!-- End Sidebar/Twitter Timeline -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://sametmax.com" target="_blank">Sam et Max</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/stats.html" target="_blank">Stats</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.net/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.net/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.net/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.net/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

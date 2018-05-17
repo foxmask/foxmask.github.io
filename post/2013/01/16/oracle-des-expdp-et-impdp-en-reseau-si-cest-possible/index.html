@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Oracle des expdp et impdp en réseau, si c'est possible - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="oracle" />
+        <meta name="description" content="A l&#39;heure actuelle, la version d&#39;Oracle est la 11G R2 (à tes souhaits pourrait rétorqué 6P0 à R2D2 :P), et avec cette version il est de coutume de ne plus employer pour ses sauvegardes/gestions de dumps, que le fameux duo expdp et impdp pour produire ce qu&#39;on appelle des …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Oracle des expdp et impdp en réseau, si c&#39;est possible"/>
+        <meta property="og:url" content="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/"/>
+        <meta property="og:description" content="A l&#39;heure actuelle, la version d&#39;Oracle est la 11G R2 (à tes souhaits pourrait rétorqué 6P0 à R2D2 :P), et avec cette version il est de coutume de ne plus employer pour ses sauvegardes/gestions de dumps, que le fameux duo expdp et impdp pour produire ce qu&#39;on appelle des …"/>
+        <meta property="article:published_time" content="2013-01-16" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="oracle" />
+            <meta property="article:author" content="foxmask" />
+
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@triggerhappyeu">
+        <meta name="twitter:creator" content="@triggerhappyeu">
+    <meta name="twitter:domain" content="https://foxmask.net">
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.net/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.net/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.net/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.net/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.net/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.net/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.net/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.net/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/"
+                       rel="bookmark"
+                       title="Permalink to Oracle des expdp et impdp en réseau, si c'est possible">
+                        Oracle des expdp et impdp en réseau, si c'est possible
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-01-16T16:49:00+01:00"> Wed 16 January 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>A l'heure actuelle, la version d'Oracle est la 11G R2 (à tes souhaits
+pourrait rétorqué 6P0 à R2D2 :P), et avec cette version il est de
+coutume de ne plus employer pour ses sauvegardes/gestions de dumps, que
+le fameux duo expdp et impdp pour produire ce qu'on appelle des
+datapumps (à tes souhaits encore ;)</p>
+<p>Tout ceci rend la gestion des dumps beaucoup plus funs qu'avec les
+commandes exp/imp qu'on se trainaient depuis Oracle 8i&amp;9i.</p>
+<p>Par contre un inconvénient majeur pour tout radin qui se respecte, ca
+bouffe l'espace disque !</p>
+<p><strong>Avant expdp / impdp</strong></p>
+<p>avec "exp", on pouvait compresser ses dumps like that :</p>
+<div class="highlight"><pre><span></span>mknod pipe p
+gzip &lt; pipe &gt; FOX_DUMP.gz  <span class="p">&amp;</span>
+nohup exp LOGIN/PASS <span class="nv">file</span><span class="o">=</span>pipe <span class="nv">grants</span><span class="o">=</span>n <span class="p">&amp;</span>
+</pre></div>
+
+
+<p>j'exporte mon dump dans le pipe qui le compresse à la volée, magie magie
+;) Qui dit mieux ? ben pas oracle 11G :P</p>
+<p>je vous note la même chose à l'envers pour un import avec imp</p>
+<div class="highlight"><pre><span></span>mknod pipe p
+gunzip &lt; FOX_DUMP.gz &gt; pipe  <span class="p">&amp;</span>
+nohup imp LOGIN/PASS <span class="nv">file</span><span class="o">=</span>pipe <span class="nv">grants</span><span class="o">=</span>n <span class="nv">ignore</span><span class="o">=</span>y <span class="nv">fromuser</span><span class="o">=</span>OLDLOGIN <span class="nv">touser</span><span class="o">=</span>LOGIN <span class="p">&amp;</span>
+</pre></div>
+
+
+<p>Bon ok on a pige la compression / décompression à la volée.</p>
+<p>A présent supposons que j'ai vraiment des soucis de place disque, même
+pour produire le dump compressé localement à mon serveur oracle.</p>
+<p>On procédait ainsi : depuis une autre machine disposant des outils
+oracle (il faut un minimum hein;)</p>
+<div class="highlight"><pre><span></span>mknod pipe p
+gunzip &lt; FOX_DUMP.gz &gt; pipe  <span class="p">&amp;</span>
+nohup imp LOGIN/PASS@FOX-SERV <span class="nv">file</span><span class="o">=</span>pipe <span class="nv">grants</span><span class="o">=</span>n <span class="nv">ignore</span><span class="o">=</span>y <span class="nv">fromuser</span><span class="o">=</span>OLDLOGIN <span class="nv">touser</span><span class="o">=</span>LOGIN <span class="p">&amp;</span>
+</pre></div>
+
+
+<p>Ici la subtilité réside dans ce qui suit le @ ; ceci demande à oracle
+"vas voir dans le fichier tnsnames.ora et trouves moi la référence
+FOX-SERV, puis quand tu l'as trouvé connectes-toi au serveur concerné".</p>
+<p>Ceci marche aussi bien localement (pour invoquer une instance Oracle
+local, l'ORACLE_SID quoi) qu'en réseau car le tnsnames.ora contient
+tout ce qu'il faut pour trouver le serveur, le port d'écoute et
+l'instance</p>
+<p>exemple :</p>
+<div class="highlight"><pre><span></span><span class="n">FOX</span><span class="o">-</span><span class="n">SERVER</span> <span class="o">=</span> <span class="p">(</span><span class="n">DESCRIPTION</span> <span class="o">=</span>
+            <span class="p">(</span><span class="n">ADDRESS_LIST</span> <span class="o">=</span>
+                <span class="p">(</span><span class="n">ADDRESS</span> <span class="o">=</span> <span class="p">(</span><span class="n">PROTOCOL</span> <span class="o">=</span> <span class="n">TCP</span><span class="p">)(</span><span class="k">HOST</span> <span class="o">=</span> <span class="n">fox</span><span class="p">.</span><span class="n">somewhere</span><span class="p">.</span><span class="n">other</span><span class="p">.</span><span class="n">the</span><span class="p">.</span><span class="n">rainbow</span><span class="p">)(</span><span class="n">PORT</span> <span class="o">=</span> <span class="mi">1523</span><span class="p">))</span>
+            <span class="p">)</span>
+            <span class="p">(</span><span class="n">CONNECT_DATA</span> <span class="o">=</span>
+                <span class="p">(</span><span class="n">SID</span> <span class="o">=</span> <span class="n">V11UTF8</span><span class="p">)</span>
+            <span class="p">)</span>
+    <span class="p">)</span>   
+</pre></div>
+
+
+<p>Ainsi, il m'etait facile de balancer un dump à trifouilli-les-oies avec
+exp :P</p>
+<p><strong>Depuis expdp et impdp</strong><br>
+Ok, super on a vu comment on gérait <em>avant</em>, à présent comment fait-on
+?</p>
+<p>Depuis l'arrivée du duo (ex|im)pdp, on ne peut plus :</p>
+<ul>
+<li>compresser les dumps à la volée</li>
+<li>exploiter le dernier cas précédemment évoqué, car la commande prend
+    des arguments qui demandent à Oracle de vérifier "localement" ses
+    ressources.</li>
+<li>bon ya aussi plein d'autres trucs qu'on peut plus faire mais
+    <abbr title="on s'en fou">OSEF</abbr> :P c'est pas le sujet du jour
+    ;)</li>
+</ul>
+<p>Le premier des paramètres oracle "vérifié" localement : <strong>DIRECTORY</strong></p>
+<p><strong>DIRECTORY</strong> est un <em>objet oracle</em> et pas un path qu'on peut indiquer à
+oracle à la volée pour lui dire "mon dump est là / est à mettre là", nan
+nan ça ça marche plus !</p>
+<p>Le directory oracle est donc localisable comme suit :</p>
+<div class="highlight"><pre><span></span><span class="k">SQL</span><span class="o">&gt;</span> <span class="n">conn</span> <span class="o">/</span><span class="k">AS</span> <span class="n">sysdba</span>
+<span class="n">Connected</span><span class="p">.</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">dba_directories</span><span class="p">;</span>
+
+<span class="k">OWNER</span>                  <span class="n">DIRECTORY_NAME</span>
+<span class="c1">------------------------------ ------------------------------</span>
+<span class="n">DIRECTORY_PATH</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="n">SYS</span>                <span class="n">ORACLE_OCM_CONFIG_DIR</span>
+<span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">oracle</span><span class="o">/</span><span class="n">product</span><span class="o">/</span><span class="mi">11</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="n">db</span><span class="o">/</span><span class="n">ccr</span><span class="o">/</span><span class="k">state</span>
+
+<span class="n">SYS</span>                <span class="n">DATA_PUMP_DIR</span>
+<span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">oracle</span><span class="o">/</span><span class="n">product</span><span class="o">/</span><span class="mi">11</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="n">db</span><span class="o">/</span><span class="n">rdbms</span><span class="o">/</span><span class="n">log</span><span class="o">/</span>
+</pre></div>
+
+
+<p>Donc comme on le voit ici, ce sont des dossiers propre à Oracle créés
+lors de l'installation.</p>
+<p>Mais moi je veux importer / exporter des dumps sur un NAS (allez :P)</p>
+<p>Donc pour arriver à mes fins, j'ajoute une ligne dans mon /etc/fstab
+pointant sur un des dossiers (qu'on dit "exportés") de mon NAS en NFS,
+disons que le dossier sera dans <em>/mnt/dump_oracle</em> et je le "mount" (of
+course)</p>
+<p>Reste alors à ajouter ce dossier à oracle :</p>
+<div class="highlight"><pre><span></span><span class="k">SQL</span><span class="o">&gt;</span> <span class="n">conn</span> <span class="o">/</span><span class="k">AS</span> <span class="n">sysdba</span>
+<span class="n">Connected</span><span class="p">.</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">create</span> <span class="n">directory</span> <span class="n">fox_dump_oracle</span> <span class="k">as</span> <span class="s1">&#39;/mnt/dump_oracle&#39;</span><span class="p">;</span>
+
+<span class="n">Directory</span> <span class="n">created</span><span class="p">.</span>
+
+<span class="k">SQL</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>A présent reste à finir ses affaires :</p>
+<div class="highlight"><pre><span></span>expdp LOGIN/PASS <span class="nv">dumpfile</span><span class="o">=</span>exp_FOX_SCHEMA.dmp <span class="nv">directory</span><span class="o">=</span>fox_dump_oracle <span class="nv">logfile</span><span class="o">=</span>fox_dump_oracle.log <span class="p">&amp;</span>
+</pre></div>
+
+
+<p>et là au joie, le dump partira clopin-clopant sur le NAS bouffer
+l'espace disque ailleurs ;)</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.net/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
+        <li><a href="https://foxmask.net/post/2014/10/09/installation-oracle-10g-gui/">Installation Oracle 10G en mode spéléo</a></li>
+        <li><a href="https://foxmask.net/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/">Importer un dump Oracle sans l'exporter physiquement avant</a></li>
+        <li><a href="https://foxmask.net/post/2013/11/15/sql-full-table-scan-vs-index/">SQL Full Table Scan vs Index - The Usual Suspects</a></li>
+        <li><a href="https://foxmask.net/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/">Oracle Migrer un schéma ISO en UTF8</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'oracle-des-expdp-et-impdp-en-reseau-si-cest-possible';
+                var disqus_url = 'https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Twitter Timeline -->
+<li class="list-group-item">
+  <h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
+  <div id="twitter_timeline">
+    <a class="twitter-timeline" data-width="250" data-height="300" data-dnt="true" data-theme="light" href="https://twitter.com/triggerhappyeu">Tweets by triggerhappyeu</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</li>
+<!-- End Sidebar/Twitter Timeline -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://sametmax.com" target="_blank">Sam et Max</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/stats.html" target="_blank">Stats</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.net/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.net/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.net/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.net/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

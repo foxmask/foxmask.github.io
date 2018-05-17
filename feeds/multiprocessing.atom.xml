@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - multiprocessing</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/multiprocessing.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-04-14T10:00:00+02:00</updated><entry><title>Quand Les "job queue" et les amis "brokers de messages" sont mis au rancart par la stdlib</title><link href="https://foxmask.net/post/2016/04/14/job-queue-and-messages-broker-out/" rel="alternate"></link><published>2016-04-14T10:00:00+02:00</published><updated>2016-04-14T10:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-04-14:/post/2016/04/14/job-queue-and-messages-broker-out/</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;Ce post n'est autre qu'un simple retour d'XP sur l'utilisation et tests de diverses solutions (almost)ready-to-use de job queue et brokers de messages.&lt;/p&gt;
+&lt;h1&gt;Présentation de l'archi du projet&lt;/h1&gt;
+&lt;p&gt;Comme vous pouvez l'imaginer avec IFTTT si vous connaissez ce service, j'ai des triggers qui permettent de récupérer des données …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;Ce post n'est autre qu'un simple retour d'XP sur l'utilisation et tests de diverses solutions (almost)ready-to-use de job queue et brokers de messages.&lt;/p&gt;
+&lt;h1&gt;Présentation de l'archi du projet&lt;/h1&gt;
+&lt;p&gt;Comme vous pouvez l'imaginer avec IFTTT si vous connaissez ce service, j'ai des triggers qui permettent de récupérer des données pour être publiées n'importe où. &lt;/p&gt;
+&lt;h1&gt;Des mécaniques, il ne faut pas rouler&lt;/h1&gt;
+&lt;p&gt;Pour que cela ne soit pas fait par des traitements en série &lt;strong&gt;et&lt;/strong&gt; bloquant, j'exploite le cache de Django à coup de &lt;code&gt;cache.set()&lt;/code&gt; et &lt;code&gt;cache.get()&lt;/code&gt; avec 2 tâches récurrentes, une qui récupère les données et fait donc le &lt;code&gt;cache.set()&lt;/code&gt; et une qui publie les données à partir des éléments récupérés par &lt;code&gt;cache.get()&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;Les "solutions" utilisées pour le traitement des tâches&lt;/h1&gt;
+&lt;p&gt;Depuis quelques semaines pour Trigger Happy, j'ai migré de "Job Queue", passant de &lt;a href="http://docs.celeryproject.org/"&gt;&lt;code&gt;Celery&lt;/code&gt;&lt;/a&gt; à &lt;a href="http://python-rq.org"&gt;&lt;code&gt;Python-rq&lt;/code&gt;&lt;/a&gt;.
+Celery cessant de fonctionner sans raison apparente (aucune info dans les logs ni dans la console), de guerrelasse, je suis passé à &lt;code&gt;RQ&lt;/code&gt;, plus léger et facile à manipuler.&lt;/p&gt;
+&lt;p&gt;Mais il y a 10jours j'en ai eu marre de voir RQ prendre des fins de non recevoir du serveur redis à coup de "connections timeout" pour des choses "futiles" (par exemple une pauvre tâche changeant version=2 à version=1 de 3 ou 4 données seulement).&lt;/p&gt;
+&lt;p&gt;Donc je suis parti creuser côté RQ ce qui pouvait poser problème, et, au hasard d'un ticket, je découvre qu'en fait... RQ ne gère qu'&lt;strong&gt;un worker à la fois&lt;/strong&gt; et pas toute une batterie comme avec celery. Ce ticket datant de 2012 (ouais 4ans hein) d'autres se sont lancés dans des projets parallèles (&lt;a href="https://github.com/Koed00/django-q"&gt;https://github.com/Koed00/django-q&lt;/a&gt; ,  &lt;a href="https://github.com/pricingassistant/mrq"&gt;https://github.com/pricingassistant/mrq&lt;/a&gt;) pour remédier au problème. &lt;/p&gt;
+&lt;p&gt;Je ne me suis pas amusé à tous les tester sinon j'y serai encore. Et surtout pour me faire installer mongodb en plus (le cas du projet mrq), j'ai trouvé ça trop lourd pour moi et ceux qui s'installeraient mon projet pour eux.&lt;/p&gt;
+&lt;p&gt;Je suis donc parti dans un (bad)road trip "broker / job queue" pour tenter de trouver mon bonheur.&lt;/p&gt;
+&lt;h1&gt;Road Trip Broker / Job Queue&lt;/h1&gt;
+&lt;p&gt;Ce n'est pas la route 66 mais vous allez voir que ya matière...&lt;/p&gt;
+&lt;h2&gt;1iere escale : &lt;a href="http://activemq.apache.org/"&gt;activeMQ&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pourquoi celui là ?&lt;/p&gt;
+&lt;p&gt;Parce-que la lib python gérant ce dernier, nommée &lt;code&gt;stomp.py&lt;/code&gt;, était limpide à mes yeux, (et si je parvenais à faire fonctionner la machinerie, ca permettrait que le code soit utilisable également pour &lt;a href="https://www.rabbitmq.com/"&gt;&lt;code&gt;RabbitMQ&lt;/code&gt;&lt;/a&gt; et &lt;a href="http://activemq.apache.org/apollo/"&gt;&lt;code&gt;Appolo&lt;/code&gt;&lt;/a&gt;), mais après avoir fini mon code et testé avec succès, comme pour &lt;code&gt;mongodb&lt;/code&gt;, faire installer &lt;code&gt;activeMQ&lt;/code&gt; et son giga de RAM à consommer, je ne me voyais pas mettre ce prérequis à installer pour le projet pour vous autres.&lt;/p&gt;
+&lt;h2&gt;2ieme escale : beanstalk&lt;/h2&gt;
+&lt;p&gt;Pourquoi celui là ? &lt;/p&gt;
+&lt;p&gt;Parce-que rapide, m'a-t-on rapporté, et faisant exactement ce pour quoi il a été écrit.&lt;/p&gt;
+&lt;p&gt;Comme mon projet est en python 3, la batterie de libs existantes ne convenait pas. Je me suis orienté sur &lt;a href="https://github.com/jonasvp/django-beanstalkd"&gt;https://github.com/jonasvp/django-beanstalkd&lt;/a&gt;, que j'ai forké pour switcher de beanstalkc à pystalkd, histoire de faire ma sorcellerie dans mon coin sans gêner personne ;)&lt;/p&gt;
+&lt;p&gt;Manque de bol chez moi après avoir arrangé le code, même si la rapidité était au rendez-vous, au premier lancement : &lt;code&gt;JOB_TOO_BIG&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Alors peut-être que ça venait de la lib cliente &lt;code&gt;pystalkd&lt;/code&gt; (en python 3 je rappelle), mais je n'ai plus eu l'envie de creuser celle-ci.&lt;/p&gt;
+&lt;p&gt;Du coup, après tout ça, il ne me restait plus rien comme solution existante, que je maîtrisais/connaissais ... Donc&lt;/p&gt;
+&lt;h2&gt;3ieme escale : la stdlib !&lt;/h2&gt;
+&lt;p&gt;Il y a quelques mois &lt;a href="http://sametmax.com/python-ubiuite-multiprocessing/"&gt;j'évoquais sur s&amp;amp;m le multiprocessing&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Donc c'est tout ce qu'il me restait, "quand faut y aller faut y aller" me dis-je.&lt;/p&gt;
+&lt;p&gt;Et au final ça n'a pas mal réussi puisque les temps de traitement sont passés de un peu moins d'une minute les 40 triggers à... 7sec (en moyenne haute ;)&lt;/p&gt;
+&lt;p&gt;Tout cela grâce à 9 lignes de code :)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;trigger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TriggerService&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user__is_active&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select_related&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;consumer__name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;provider__name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;multiprocessing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Pool&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TimeoutError&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;Pool&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;processes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DJANGO_TH&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;processes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;map_async&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;publishing&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;timeout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;360&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;TimeoutError&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;warn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;chez moi &lt;code&gt;settings.DJANGO_TH['processes']&lt;/code&gt; vaut 5. Je vous fais grâce de la fonction &lt;code&gt;publishing&lt;/code&gt; ;)&lt;/p&gt;
+&lt;h3&gt;Publication des données :&lt;/h3&gt;
+&lt;p&gt;j'ai voulu charger la mule (toute proportion gardée:) en rajoutant 21 triggers de plus (entre autre traquer #django sur twitter), hé bien je suis passé à 12 secondes pour publier les données de 61 consumers (quand ceux ci ont des données à fournir évidemment) (donc ca fait un coup de 305triggers/min)&lt;/p&gt;
+&lt;p&gt;quand rien n'est à faire, la liste est passée au crible en 1/10° de seconde... c'est plutôt ... correct :D&lt;/p&gt;
+&lt;h3&gt;Récupération des données :&lt;/h3&gt;
+&lt;p&gt;10secondes pour les 61 triggers (ca fait un coup de 360triggers/min)&lt;/p&gt;
+&lt;h3&gt;Tentative d'amélioration des perfs&lt;/h3&gt;
+&lt;p&gt;Pour éviter des accès à la base de données à tout prix, j'ai tenté de n'exploiter que le cache. 
+Du coup j'ai dû m'orienter vers &lt;code&gt;apply_async&lt;/code&gt; vs &lt;code&gt;map_async&lt;/code&gt;, mais les temps de traitements étaient pire que si je n'avais pas utilisé &lt;code&gt;multiprocessing.Pool.apply_async()&lt;/code&gt;. Ensuite j'ai rajouté plus d'info dans le cache pour arriver à ne passer que par &lt;code&gt;map_async()&lt;/code&gt; mais encore une fois le résultat n'était pas terrible.&lt;/p&gt;
+&lt;p&gt;Du coup j'en suis resté à mes 9 lignes de code ci dessus.&lt;/p&gt;
+&lt;h2&gt;Nota&lt;/h2&gt;
+&lt;p&gt;Ici je n'ai pas cherché à dézinguer un projet plus qu'un autre, chacun fonctionnant dans un univers, au final, très différent du mien, j'ai juste voulu souligner, qu'à aller chercher des solutions toutes faites, ce n'était pas forcément le plus bénéfique, si on prenait le temps de se pencher sur ce qu'offrait déjà le langage.&lt;/p&gt;
+&lt;p&gt;Par ailleurs, un truc qui ne transparait pas ici, c'est le temps que tout cela m'a pris pour tester et appréhender chaque solution de job queue / messages broker, de même que se pencher sur &lt;code&gt;apply_async&lt;/code&gt; et &lt;code&gt;map_async&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Ceci explique pourquoi, à un moment donné, je n'approfondis plus mes investigations dans la recherche de bug dans pystakld par exemple sur le &lt;code&gt;JOB_TOO_BIG&lt;/code&gt; pour continuer sur la voie &lt;code&gt;beanstalkd&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Last but not... toussa&lt;/h2&gt;
+&lt;p&gt;En l'état, si on veut un rafraichissement des données assez correct (toutes les 15minutes) alors le serveur est capable de gérer un petit contingent de ~3600triggers repartis sur 60 utilisateurs chacun ayant 60 triggers, lesquels seront engloutis en 10min. &lt;/p&gt;
+&lt;h3&gt;Ni trop&lt;/h3&gt;
+&lt;p&gt;De plus il ne faut pas non plus "publier" trop souvent, les accès aux API des services tiers comme Twitter, finiraient par vous envoyer aux pelotes avec un truc genre &lt;code&gt;User Limit Reached&lt;/code&gt;. &lt;/p&gt;
+&lt;h3&gt;Ni trop peu&lt;/h3&gt;
+&lt;p&gt;A l'inverse il ne faut pas non plus publier trop "rarement" car là vous amassez une quantité de données importante dans le cache, que vous ne pourrez pas publier correctement, avec le même genre d'erreur que précédemment.&lt;/p&gt;
+&lt;h3&gt;Dernière analyse&lt;/h3&gt;
+&lt;p&gt;Sur les 60triggers que j'ai défini, il y en a entre 3 et 11 qui sont utilisés de façon recurrente, par exemple ceux qui suivent des hashtags sur twitter ou suivent simplement un @compte_twitter, ou les gros sites de news. &lt;/p&gt;
+&lt;p&gt;Du coup ca fait pas bézef sur les 60, mais 1) ca me suffit 2) ca marche parfaitement pour mon besoin.&lt;/p&gt;
+&lt;p&gt;Voici tout de même quelques logs à se mettre sous la dent pour voir ce que donne les temps de réponses.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;toutes les 15min, la publication a lieu&lt;/li&gt;
+&lt;li&gt;toutes les 13min, la récupération des données a lieu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ne sont pas affichées, les logs qui n'ont pas de données à traiter, mais qui évidement, consomme du temps. Ce qui explique que de 14:00:00 à 14:00:06 il ne s'affiche rien.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:02,928 INFO tasks &lt;span class="m"&gt;3902&lt;/span&gt; foxmask - ServiceRss - ServicePocket - Frandroid - pocket - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:06,156 INFO tasks &lt;span class="m"&gt;3903&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - LinuxFr - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:06,802 INFO tasks &lt;span class="m"&gt;3902&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:07,137 INFO tasks &lt;span class="m"&gt;3906&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:08,504 INFO tasks &lt;span class="m"&gt;3903&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:03,616 INFO tasks &lt;span class="m"&gt;3946&lt;/span&gt; foxmask - ServiceRss - ServicePocket - Frandroid - pocket - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:04,152 INFO tasks &lt;span class="m"&gt;3949&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:04,931 INFO tasks &lt;span class="m"&gt;3947&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:07,977 INFO tasks &lt;span class="m"&gt;3948&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - LinuxFr - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:09,572 INFO tasks &lt;span class="m"&gt;3950&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:39:05,783 INFO tasks &lt;span class="m"&gt;4348&lt;/span&gt; foxmask - ServiceRss - ServicePocket - TheVerge - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:42:02,482 INFO tasks &lt;span class="m"&gt;4383&lt;/span&gt; recycle of cache &lt;span class="k"&gt;done&lt;/span&gt;!
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:03,933 INFO tasks &lt;span class="m"&gt;4462&lt;/span&gt; foxmask - ServiceRss - ServicePocket - TheVerge - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:06,910 INFO tasks &lt;span class="m"&gt;4462&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:07,632 INFO tasks &lt;span class="m"&gt;4461&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - Numerama - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:07,993 INFO tasks &lt;span class="m"&gt;4463&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:09,537 INFO tasks &lt;span class="m"&gt;4463&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:06,192 INFO tasks &lt;span class="m"&gt;4524&lt;/span&gt; recycle of cache &lt;span class="k"&gt;done&lt;/span&gt;!
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:06,309 INFO tasks &lt;span class="m"&gt;4539&lt;/span&gt; foxmask - ServiceRss - ServicePocket - TheVerge - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:06,788 INFO tasks &lt;span class="m"&gt;4540&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:07,321 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceRss - ServicePocket - TheVerge - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:07,497 INFO tasks &lt;span class="m"&gt;4538&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - Numerama - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:07,751 INFO tasks &lt;span class="m"&gt;4535&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:10,278 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;5&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:10,875 INFO tasks &lt;span class="m"&gt;4542&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - Korben - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:11,279 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - BeGeek - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:11,461 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - Google high-tech - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:11,717 INFO tasks &lt;span class="m"&gt;4543&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:11,793 INFO tasks &lt;span class="m"&gt;4542&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;5&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:12,634 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;5&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:14,414 INFO tasks &lt;span class="m"&gt;4537&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - Korden - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:15,533 INFO tasks &lt;span class="m"&gt;4534&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - Numerama - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:16,498 INFO tasks &lt;span class="m"&gt;4543&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - BeGeek - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:17,206 INFO tasks &lt;span class="m"&gt;4542&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - BeGeek - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Cette fois ci l'éternel insatisfait que je suis, se sent un peu mieux avec cette solution (... quoi que ya encore un truc à gratter pour que ca soit 'encore mieux';)&lt;/p&gt;</content><category term="TriggerHappy"></category><category term="multiprocessing"></category><category term="activemq"></category><category term="celery"></category><category term="rq"></category><category term="beanstalkd"></category></entry></feed>

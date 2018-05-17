@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>de PHP à Python : les tests unitaires - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.net/post/2013/02/12/de-php-a-python-les-tests-unitaires/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="ApacheMySqlPHP,python" />
+        <meta name="description" content="Nouvel épisode de la série de PHP à Python. Cette fois ci nous allons nous pencher sur l&#39;incontournable outil du dev voulant s&#39;assurer la qualité de son code et de sa non régression : le test unitaire. ](http://blog.pagesd.info/public/ContactManagement/unit-testing.png) J&#39;aborderai succinctement comment on s&#39;y prend …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="de PHP à Python : les tests unitaires"/>
+        <meta property="og:url" content="https://foxmask.net/post/2013/02/12/de-php-a-python-les-tests-unitaires/"/>
+        <meta property="og:description" content="Nouvel épisode de la série de PHP à Python. Cette fois ci nous allons nous pencher sur l&#39;incontournable outil du dev voulant s&#39;assurer la qualité de son code et de sa non régression : le test unitaire. ](http://blog.pagesd.info/public/ContactManagement/unit-testing.png) J&#39;aborderai succinctement comment on s&#39;y prend …"/>
+        <meta property="article:published_time" content="2013-02-12" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="ApacheMySqlPHP" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:author" content="foxmask" />
+
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@triggerhappyeu">
+        <meta name="twitter:creator" content="@triggerhappyeu">
+    <meta name="twitter:domain" content="https://foxmask.net">
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.net/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.net/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.net/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.net/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.net/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.net/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.net/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.net/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.net/post/2013/02/12/de-php-a-python-les-tests-unitaires/"
+                       rel="bookmark"
+                       title="Permalink to de PHP à Python : les tests unitaires">
+                        de PHP à Python : les tests unitaires
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-02-12T10:00:00+01:00"> Tue 12 February 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Nouvel épisode de la série <a href="/post/2013/01/14/de-php-a-python-tous-ensemble/" title="de PHP à Python : tous ensemble">de PHP à
+Python</a>.</p>
+<p>Cette fois ci nous allons nous pencher sur l'incontournable outil du dev
+voulant s'assurer la qualité de son code et de sa non régression : le
+test unitaire.</p>
+<p><img alt="Tests Unitaires" src="http://blog.pagesd.info/public/ContactManagement/unit-testing.png">](http://blog.pagesd.info/public/ContactManagement/unit-testing.png)</p>
+<p>J'aborderai succinctement comment on s'y prend en PHP pour ensuite vous
+montrer l'équivalent Python et finirai par d'autres moyens dont dispose
+Python dans son arsenal.</p>
+<p><strong>de PHP ...</strong><br>
+Alors d'avance désolé, mais je ne vais pas aborder
+<a href="https://github.com/atoum" title="Atoum l'autre pays du test unitaire;)">Atoum</a>,
+quand bien même cela ne me déplairait pas :) Le but étant de montrer
+comment en PHP on fait un test unitaire et retrouver une smilitude voire
+carrement des ressemblances avec Python. Atoum n'existant pas dans une
+version Pythonesque, ca sera donc PHPUnit puisque de ce coté là, un
+pendant Python existe ;)</p>
+<p>Donc <a href="https://fr.wikipedia.org/wiki/PHPUnit">PHPUnit</a> est bien connu des
+développeurs PHP et est donc un framework de tests unitaires dérivé de
+JUnit (issue du monde Java)</p>
+<p>Voici donc un <strong>script
+<a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/test.php" title="télécharger les sources">test.php</a></strong>
+contenant ce qui suit :</p>
+<div class="highlight"><pre><span></span><span class="x">cal = new Calc();</span>
+<span class="x">    }</span>
+<span class="x">    public function testMoyenne() {</span>
+<span class="x">        $this-&gt;assertEquals($this-&gt;cal-&gt;moyenne(array(1,2,3)),2);</span>
+<span class="x">        $this-&gt;assertEquals($this-&gt;cal-&gt;moyenne(array(2,4,6)),4);</span>
+<span class="x">    }</span>
+
+<span class="x">        public function testDivision() {    </span>
+<span class="x">        $cal = new Calc();</span>
+<span class="x">        $this-&gt;assertEquals($this-&gt;cal-&gt;division(10,5),2);</span>
+
+<span class="x">    }</span>
+<span class="x">}</span>
+<span class="x">?&gt;</span>
+</pre></div>
+
+
+<p><strong><a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/calculs.php" title="télécharger les sources">calculs.php</a></strong>
+quant à lui contient :</p>
+<div class="highlight"><pre><span></span><span class="x">J&#39;ai volontairement éluder la question de la division par zéro, on va le voir plus tard.</span>
+<span class="x">le resultat du test donne ceci :</span>
+
+<span class="x">phpunit test.php </span>
+<span class="x">PHPUnit 3.4.14 by Sebastian Bergmann.</span>
+<span class="x">..</span>
+
+<span class="x">Time: 0 seconds, Memory: 6.50Mb</span>
+
+<span class="x">OK (2 tests, 3 assertions)</span>
+</pre></div>
+
+
+<p>Et "voilà" :)</p>
+<p><strong>.... à Python</strong></p>
+<p><em>partie 1 : unittest</em></p>
+<p>Coté du fameux reptile, il s'agit de
+"<a href="http://docs.python.org/3/library/unittest.html">unittest</a>" et est
+également un framework de tests unitaires, dérivé du même JUnit - donc
+on peut déjà se frotter les mains, l'acquis sur PHPUnit pour passer à
+unittest devrait être le plus smoothy possible :)</p>
+<p>Petite définition en passant d'unittest, toute droit sortie de la doc :</p>
+<blockquote>
+<p>The Python unit testing framework, sometimes referred to as “PyUnit,”
+is a Python language version of JUnit, by Kent Beck and Erich Gamma.
+JUnit is, in turn, a Java version of Kent’s Smalltalk testing
+framework. Each is the de facto standard unit testing framework for
+its respective language.</p>
+</blockquote>
+<p>voici
+<strong><a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/test.py" title="télécharger les sources">test.py</a></strong></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="kn">from</span> <span class="nn">calculs</span> <span class="kn">import</span> <span class="n">moyenne</span>
+<span class="kn">from</span> <span class="nn">calculs</span> <span class="kn">import</span> <span class="n">division</span>
+
+<span class="k">class</span> <span class="nc">CalculsTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>   
+
+    <span class="k">def</span> <span class="nf">test_moyenne</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">moyenne</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">moyenne</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_division</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">division</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+
+<p>et
+<strong><a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/calculs.py" title="télécharger les sources">calculs.py</a></strong></p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
+
+
+<p>ce qui donne un fois lancé :</p>
+<div class="highlight"><pre><span></span>python test.py 
+..
+----------------------------------------------------------------------
+Ran <span class="m">2</span> tests in <span class="m">0</span>.000s
+
+OK
+</pre></div>
+
+
+<p>Quant à la division par Zéro volontairement omise voici en Python
+comment on la gère et la teste :</p>
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="k">class</span> <span class="nc">CalculsTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>   
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+    <span class="k">def</span> <span class="nf">test_division</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">division</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Pour PHPUnit, on n'a semble-t-il toujours rien en magasin qui permette
+de tester quelle méthode lève bien l'exception attendue, alors qu'<a href="http://docs.atoum.org/en/chapter2.html#exception">Atoum
+oui</a> ;)</p>
+<p>une note finale, sur cette partie, pour rendre à césar le code Python
+ici est entièrement extrait du livre de Tarek Ziadé "Python, Petit guide
+à l'usage du développeur agile"</p>
+<p><em>Partie 2 : doctest</em><br>
+A présent que nous avons vu les TU <em>unittest</em>, Python possède une
+seconde méthode de tests :
+<a href="http://docs.python.org/3/library/doctest.html">doctest</a>.</p>
+<p>Comment fonctionne-t-elle ?</p>
+<p>Le module doctest, au lancement de la commande python, va scruter votre
+code source à la recherche de texte ressemblant à un session python et
+une fois trouvé, exécutera justement la session python.</p>
+<p>Exemple :
+<a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/mynameis.py" title="télécharger les sources">mynameis.py</a></p>
+<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&gt;&gt;&gt; my_name_is(&quot;foxmask&quot;)</span>
+<span class="sd">&#39;foxmask&#39;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">my_name_is</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">string</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">doctest</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre></div>
+
+
+<p>pour tester on fera :</p>
+<div class="highlight"><pre><span></span>$ python mynameis.py
+$
+</pre></div>
+
+
+<p>rien s'affiche, donc pas d'erreur - bon voyons le mode verbose quand
+même puisqu'on est curieux :</p>
+<div class="highlight"><pre><span></span>python mynameis.py  -v
+Trying:
+    my_name_is<span class="o">(</span><span class="s2">&quot;foxmask&quot;</span><span class="o">)</span>
+Expecting:
+    <span class="s1">&#39;foxmask&#39;</span>
+ok
+<span class="m">1</span> items had no tests:
+    __main__.my_name_is
+<span class="m">1</span> items passed all tests:
+   <span class="m">1</span> tests in __main__
+<span class="m">1</span> tests in <span class="m">2</span> items.
+<span class="m">1</span> passed and <span class="m">0</span> failed.
+Test passed.
+</pre></div>
+
+
+<p>Vous pourriez vous demander pourquoi faire 2 outils pour la même chose
+finalement ?<br>
+Doctest permet également de produire de la doc et les docstring comme
+on les appelle permettent cela tout autant que de tester la non
+régression de votre code qui aurait pu varié.</p>
+<p>D'aucuns diront (l'un d'eux se reconnaitra ;) que l'on n'a pas écrit le
+code du test avant le code lui-même, mais l'inverse, et que donc doctest
+vérifie le résultat de son exécution. Ce n'est pas faux mais ça fait
+quand même son boulot ;)</p>
+<p>Il existe enfin une dernière méthode dite <em>DDD</em> : le Développement
+Dirigé par la Documentation. Je ne l'ai pas encore abordée et ne
+pourrait vous en dire plus en détails, juste qu'elle existe.</p>
+<p>nota : <a href="https://github.com/foxmask/de_php_a_python/tree/les_tests_unitaires">les sources de l'article sont sur
+github</a>;)</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.net/post/2013/03/04/de-php-a-python-minie-petite-souris/">de PHP à Python : Minie petite souris</a></li>
+        <li><a href="https://foxmask.net/post/2013/02/25/de-php-a-python-meetgeek/">de PHP à Python : MeetGeek !</a></li>
+        <li><a href="https://foxmask.net/post/2013/02/18/de-php-a-python-x-aime-l/">de PHP à Python : X aime L</a></li>
+        <li><a href="https://foxmask.net/post/2013/02/04/gangam-style/">de PHP à Python : Gangnam Style</a></li>
+        <li><a href="https://foxmask.net/post/2013/01/28/de-php-a-python-de-composer-a-setuptools/">de PHP à Python : de composer à setuptools</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'de-php-a-python-les-tests-unitaires';
+                var disqus_url = 'https://foxmask.net/post/2013/02/12/de-php-a-python-les-tests-unitaires/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Twitter Timeline -->
+<li class="list-group-item">
+  <h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
+  <div id="twitter_timeline">
+    <a class="twitter-timeline" data-width="250" data-height="300" data-dnt="true" data-theme="light" href="https://twitter.com/triggerhappyeu">Tweets by triggerhappyeu</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</li>
+<!-- End Sidebar/Twitter Timeline -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://sametmax.com" target="_blank">Sam et Max</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/stats.html" target="_blank">Stats</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.net/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.net/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.net/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.net/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

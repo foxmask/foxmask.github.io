@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - poeme</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/poeme.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-03-18T07:30:00+01:00</updated><entry><title>Le developpeur, cet artiste qui s'ignore !</title><link href="https://foxmask.net/post/2016/03/18/le-dev-cet-artiste-qui-signore/" rel="alternate"></link><published>2016-03-18T07:30:00+01:00</published><updated>2016-03-18T07:30:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-03-18:/post/2016/03/18/le-dev-cet-artiste-qui-signore/</id><summary type="html">&lt;p&gt;Intro : ce billet se résume bien en une réplique célèbre : &lt;/p&gt;
+&lt;p&gt;"N'y voyez pas le fantasme de l'homme, mais le délire de l'artiste !"&lt;/p&gt;
+&lt;p&gt;And so :&lt;/p&gt;
+&lt;p&gt;Avec &lt;a href="https://blog.trigger-happy.eu"&gt;TriggerHappy&lt;/a&gt;, je passe par plein de phases et de découvertes techniques/technologiques.&lt;/p&gt;
+&lt;p&gt;Dernièrement, je me suis dit "bon les tests unitaires c'est sympa, mais si …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Intro : ce billet se résume bien en une réplique célèbre : &lt;/p&gt;
+&lt;p&gt;"N'y voyez pas le fantasme de l'homme, mais le délire de l'artiste !"&lt;/p&gt;
+&lt;p&gt;And so :&lt;/p&gt;
+&lt;p&gt;Avec &lt;a href="https://blog.trigger-happy.eu"&gt;TriggerHappy&lt;/a&gt;, je passe par plein de phases et de découvertes techniques/technologiques.&lt;/p&gt;
+&lt;p&gt;Dernièrement, je me suis dit "bon les tests unitaires c'est sympa, mais si je blindais un poil plus tout ça ? Et fais-je cela ca correctement ?". Et me voilà parti à utiliser &lt;a href="http://coverage.readthedocs.org/en/coverage-4.0.3/"&gt;coverage.py&lt;/a&gt;, pas évident au départ mais rudement éfficace à la longue.&lt;/p&gt;
+&lt;p&gt;J'avoue que j'aurai pu me contenter de ce que je fais déjà, sans me décarcasser, mais je suis un peu comme ce 'dicton' :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vingt fois sur le métier, remettez votre ouvrage&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;D'ailleurs l'&lt;a href="https://fr.wikipedia.org/wiki/Nicolas_Boileau"&gt;auteur&lt;/a&gt;, poète de son état (au XVII°/XVIII° siècle), a dû inspirer le sieur Guido, si on reprend ce 'dicton' dans son poème originel :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Avant donc que d'écrire, apprenez à penser.&lt;/p&gt;
+&lt;p&gt;Selon que notre idée est plus ou moins obscure,&lt;/p&gt;
+&lt;p&gt;L'expression la suit, ou moins nette, ou plus pure. &lt;/p&gt;
+&lt;p&gt;Ce que l'on conçoit bien s'énonce clairement,&lt;/p&gt;
+&lt;p&gt;Et les mots pour le dire arrivent aisément.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;tu le vois le "The Zen Of Python" là ? :)&lt;/p&gt;
+&lt;p&gt;atta c'pas fini :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hâtez-vous lentement, et sans perdre courage,&lt;/p&gt;
+&lt;p&gt;Vingt fois sur le métier remettez votre ouvrage,&lt;/p&gt;
+&lt;p&gt;Polissez-le sans cesse, et le repolissez,&lt;/p&gt;
+&lt;p&gt;Ajoutez quelquefois, et souvent effacez.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Alors ça colle pas à ce qu'on fait tous les jours ? :)&lt;/p&gt;
+&lt;p&gt;Bon sur ces drôles de loufoqueries, retournons au couvrage de mon ouvrage justement !&lt;/p&gt;
+&lt;p&gt;Bon weekend ;)&lt;/p&gt;</content><category term="Python"></category><category term="poeme"></category></entry></feed>

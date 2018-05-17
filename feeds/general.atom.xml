@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - General</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/general.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2017-04-07T13:30:00+02:00</updated><entry><title>Premières fois</title><link href="https://foxmask.net/post/2017/04/07/premieres-fois/" rel="alternate"></link><published>2017-04-07T13:30:00+02:00</published><updated>2017-04-07T13:30:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-04-07:/post/2017/04/07/premieres-fois/</id><summary type="html">&lt;h1&gt;Premieres Fois&lt;/h1&gt;
+&lt;p&gt;Un petit tour de mes premières fois insolites&lt;/p&gt;
+&lt;h2&gt;Linux&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Installation Redhat 5 (la version libre du temps de debian 2 avant que Redhat ne devienne une boite), dans le manuel que je lisais page apres page je me suis farci la compilation du kernel de l'époque.
+&lt;img alt="FTW" src="http://i0.kym-cdn.com/photos/images/original/000/068/201/JPIFEBHMDOZL2VUDTMKXQVIX5WM5BCX7.jpeg"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Emacs
+au …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;h1&gt;Premieres Fois&lt;/h1&gt;
+&lt;p&gt;Un petit tour de mes premières fois insolites&lt;/p&gt;
+&lt;h2&gt;Linux&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Installation Redhat 5 (la version libre du temps de debian 2 avant que Redhat ne devienne une boite), dans le manuel que je lisais page apres page je me suis farci la compilation du kernel de l'époque.
+&lt;img alt="FTW" src="http://i0.kym-cdn.com/photos/images/original/000/068/201/JPIFEBHMDOZL2VUDTMKXQVIX5WM5BCX7.jpeg"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Emacs
+au lancement je ne savais pas comment en sortir... j'ai reboot :P et plus jamais lancé ce truc
+&lt;img alt="pan" src="http://media.meltycampus.fr/article-2398908-fb-f1409821182/tirer-une-balle-dans-le-pied-tout-seul-pistolet.jpg"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Programmation&lt;/h2&gt;
+&lt;h3&gt;Perl&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="Perl" src="https://cdn.codementor.io/assets/topic/category_header/perl-5671b4a853a33c2338f0a388593ce0d3.png"&gt;&lt;/p&gt;
+&lt;p&gt;Pondre ce genre de truc :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Adepte du "&lt;a href="http://perlgolf.sourceforge.net/"&gt;Perlgolf&lt;/a&gt;" &lt;a href="http://perlgolf.sourceforge.net/TPR/0/1/leader.html"&gt;avec une petite 21° place&lt;/a&gt; :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;HTML 3&lt;/h3&gt;
+&lt;p&gt;je découvris la premiere "interface graphique" avec laquelle j'ai produit en perl, des trucs QQ comme gérer les resultats du championnat de france de foot... fallait bien commencer par quelquechose :D&lt;/p&gt;
+&lt;h3&gt;PHP 3 !&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;arriver à gerer les sessions !&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="par le pouvoir du crane ancestral" src="http://www.otakia.com/wp-content/uploads/2014/02/Par-le-pouvoir-du-crane-ancestral.jpg"&gt;&lt;/p&gt;
+&lt;h3&gt;Oauth&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;quand tu reussis à l'utiliser du premier coup
+&lt;img alt="FTW" src="http://i62.tinypic.com/5309c8.jpg"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Python&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;découvrir Python, par le biais de Trac, et vite oublier (avant d'y venir 5ans +tard)
+&lt;img alt="peur bleue" src="http://a136.idata.over-blog.com/600x329/4/09/77/29/Mercredi-girly/peur.jpeg"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Internet&lt;/h2&gt;
+&lt;h3&gt;FAI - Hosting&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Passé du  3Ko/s avec son "bippppppppp griiiii hiii ouiiichhhh" au silencieux RNIS 7Ko messieurs dames à la raie manta pour du 128K
+&lt;img alt="raie manta" src="http://www.miseaprix.com/img/photos/15521a-modem_adsl_speed_touch_usb_alcatel_raie_manta.jpg"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Hébergé sa page perso "gratuitement" sur http://pagesperso.free.fr/ avec DotClear !&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;utiliser dyndns pour chopper son PC à la maison :)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;zero zocio&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;twitter : "mais à quoi ca sert ce truc" ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="baleine bleue" src="https://download.vikidia.org/vikidia/fr/images/5/51/Faroe_stamp_402_blue_whale_%28Balaenoptera_musculus%29_crop.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;Communauté "Libre" et premiers pas/contacts avec l'opensource&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Première Linux Expo, tenir le stand DaLinuxFrenchPage aux cotés de GCU, croiser R. Stallman en chausettes jouer au pipo la FSF Song dans les allées du salon :) puis Miguel de Icaza (le père de Gnome)
+&lt;img alt="peace and love" src="https://s-media-cache-ak0.pinimg.com/736x/14/f7/0c/14f70ca35b574ab1cdcad39753d78ee4.jpg"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;IRC&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;se faire kick ban en se pointant sur #linuxfr@ircnet en venant avec mIRC !
+&lt;img alt="kickban" src="https://sd.keepcalm-o-matic.co.uk/i-w600/keep-calm-and-kick-ban.jpg"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;devoir se trouver un pseudo : &lt;a href="https://www.google.fr/?q=foxmask"&gt;vous voyez le résultat&lt;/a&gt;) :)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Zorro" src="http://www.gstatic.com/tv/thumb/tvbanners/184279/p184279_b_v8_aa.jpg"&gt;&lt;/p&gt;
+&lt;h2&gt;Jeux en ligne&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Découverte de Doom, lors d'une journée nationale de l'internet à Boulogne Billancourt avec DaLinuxFrenchPage et Fabien Penso&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quand vint l'ADSL, alors HL1 puis CS1.3 devint mon violon dingue
+&lt;img alt="CS" src="https://i.ytimg.com/vi/DVKDZ4JSzCw/maxresdefault.jpg"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Vomir Steam à sa sortie&lt;/li&gt;
+&lt;/ul&gt;</content></entry><entry><title>Journée Internationale des Femmes - 8 mars 2017</title><link href="https://foxmask.net/post/2017/03/08/journee-des-femmes-8mars-2017/" rel="alternate"></link><published>2017-03-08T00:00:00+01:00</published><updated>2017-03-08T00:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-03-08:/post/2017/03/08/journee-des-femmes-8mars-2017/</id><summary type="html">&lt;p&gt;En ce 8 mars, &lt;a href="http://8mars.info/"&gt;journée internationale des Femmes&lt;/a&gt;, j'ai laissé l'entièreté du blog, à des femmes que j'ai eu l'occasion de croiser, et qui m'ont fait l'honneur de me permettre de reproduire quelques uns des articles qui leur tenaient à coeur.&lt;/p&gt;</summary><content type="html">&lt;p&gt;En ce 8 mars, &lt;a href="http://8mars.info/"&gt;journée internationale des Femmes&lt;/a&gt;, à la suite d'une idée de &lt;a href="https://twitter.com/Kozlika/status/835076591457865728"&gt;@kozlika&lt;/a&gt; qui me plu de suite, j'ai laissé la "tribune", l'entièreté du blog, à des femmes que j'ai eu l'occasion de croiser, et qui m'ont fait l'extrême plaisir et honneur de me permettre de reproduire quelques uns des articles qui leur tenaient à coeur.&lt;/p&gt;
+&lt;p&gt;Parfois, la vie met sur votre chemin des femmes avec lesquelles vous échangez des idées sur votre métier, vos projets (libres), la Société ... et vous marque d'une manière ou d'une autre, que ca soit à &lt;a href="http://www.paris-web.fr/"&gt;ParisWeb&lt;/a&gt;, sur Irc, dans un pub, un resto...&lt;/p&gt;
+&lt;p&gt;Voici donc ces "Fées marquantes" :&lt;/p&gt;
+&lt;p&gt;Parmi elles, &lt;a href="https://coraliemercier.wordpress.com/"&gt;Coralie Mercier&lt;/a&gt;, &lt;a href="http://romy.tetue.net/"&gt;Romy Duhem-Verdière&lt;/a&gt;, &lt;a href="https://twitter.com/cyberbaloo_"&gt;Sophie Drouvroy&lt;/a&gt; et &lt;a href="https://twitter.com/diab_"&gt;Emilie Diab&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Coralie Mercier&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;h1&gt;I work for a neutral intermediary&lt;/h1&gt;
+&lt;p&gt;I follow the International Committee of the Red Cross on Twitter and they twitted this earlier today:&lt;/p&gt;
+&lt;p&gt;@ICRC: Our role as a “neutral intermediary” is at the heart of #humanitarian action. Our director of operations explains: [link]&lt;/p&gt;
+&lt;p&gt;Original Message:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote class="twitter-tweet" data-lang="fr"&gt;&lt;p lang="en" dir="ltr"&gt;Our role as a &amp;quot;neutral intermediary&amp;quot; is at the heart of &lt;a href="https://twitter.com/hashtag/humanitarian?src=hash"&gt;#humanitarian&lt;/a&gt; action. Our director of operations explains: &lt;a href="http://t.co/A2d49Gi6ER"&gt;http://t.co/A2d49Gi6ER&lt;/a&gt;&lt;/p&gt;&amp;mdash; ICRC (@ICRC) &lt;a href="https://twitter.com/ICRC/status/318033895381692418"&gt;30 mars 2013&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The main part of their micro-post, &lt;strong&gt;“neutral intermediary” is at the heart of #humanitarian action&lt;/strong&gt;, particularly resonated with me for several reasons, that I want to attempt to articulate in this post of what I did at one point as a hobby and how, in a way, some choices, people and events led me back to it.&lt;/p&gt;
+&lt;h2&gt;My years with the French Red Cross&lt;/h2&gt;
+&lt;p&gt;In my late teenage years I enrolled at the French Red Cross and during several years –until I started university– I participated in social, medical, training, fund-raising and first aid actions. It occupied my weekends, almost all my holiday time and several week evenings. I was very committed. I came to the Red Cross spurred by my twin brother who had recently become involved. It sounded useful and fun.&lt;/p&gt;
+&lt;p&gt;It was indeed useful and fun. Even sorting clothes was fun. It was daunting; several piles of garments and shoes, tall as dunes, dumped in the vast depot next to the offices, that we had to plough through during hours. But at the end of the day (that is, late at night) we felt we had accomplished a useful action. Clothes and shoes, categorised and packed, were ready to be picked and handed off somewhere else. My friends and I would find a bar open till late for coffee and drinks, sometimes a game of cards, but mostly bonding.&lt;/p&gt;
+&lt;p&gt;I met all kinds of people, from all walks of life, most of them interesting, some of them inspiring –students like me, nurses, police officers, business people, house wives, etc. I learned to give first aid, to operate a radio, to drive an ambulance (in particular to park it), to lead a team of first-aid workers, to cook for a crowd, to identify priorities, and to put things into perspective. I saw, heard, and experienced things that made me fully aware how lucky I was, and what a fine life mine was.&lt;/p&gt;
+&lt;p&gt;I don’t know if I was particularly gifted or actually good at it (I felt I was good), but my satisfaction was such that I wanted to make this my job. There even was a school I thought I might attend, &lt;a href="http://www.bioforce.asso.fr/spip.php?rubrique30"&gt;Bioforce&lt;/a&gt;, which “specialises in ‘support functions’ (logistics, project coordination, administration and finance, human resources…) and in the field of water supply and sanitation.”&lt;/p&gt;
+&lt;p&gt;I didn’t attend that school. I went to a local university instead, embarking on a different path. A few years later I looked for a job. I was a temp for a while. I worked as a clerk in a British law firm, although I tried very hard to wiggle out of this, as soon as I saw the place and realised the work conditions were going to be terrible. I passed the one interview I so wanted to fail. Thankfully it was a short mission.&lt;/p&gt;
+&lt;h2&gt;Discovering the world of a Research Lab&lt;/h2&gt;
+&lt;p&gt;I got my next job by luck. A friend of mine, whom I had met while studying in Edinburgh, let me know she knew someone whose mother worked with someone who needed a temp for a semester. Two actually. And my friend was on the market too, so it was perfect for the two of us. We both interviewed on the same day. We had been pre-assigned a position but after interviewing they changed their mind and swapped. She joined the administrative and legal department at INRIA Sophia Antipolis, I joined a research project as administrative aid.&lt;/p&gt;
+&lt;p&gt;My years of volunteering and charity work were far behind me. The researchers I met were committed and inspiring people. Most wore shoes but many didn’t. Most people appeared to not see the people around them, absorbed as they were. All had pens in the breast pocket of their shirt, or the pocket of their shorts. Most carried laptops. There were whiteboards everywhere and I had no idea what the colourful scribblings and equations meant.&lt;/p&gt;
+&lt;p&gt;In that INRIA research project, I learned to type on a qwerty keyboard, to use e-mail on exmh, to print from a unix terminal, to get geek humour. I also learned LateX. Just for fun. When the end of my mission was near I wrote a fictitious humorous report, in LateX, featuring some of the people that crowded our floor. A thirty or so page report that I gave to the two project managers and a researcher I was particularly fond of. In exchange (not really), I was congratulated by the Director of the institute, and the project managers each gave me the bestest recommendation letters ever. I was on the dole for five months afterwards. My great letters, for all the power that I thought they wielded, didn’t get me my next job.&lt;/p&gt;
+&lt;h2&gt;Joining the W3C&lt;/h2&gt;
+&lt;p&gt;Lucky again, someone who knew me was asked to tell me that the World Wide Web Consortium needed an administrative aid and that I should apply. The W3C was hosted at INRIA Sophia Antipolis and oddly enough people there seemed to remember me and speak highly of me! I interviewed and was hired. That was 14 years ago.&lt;/p&gt;
+&lt;p&gt;What we do at &lt;a href="http://www.w3.org/"&gt;W3C&lt;/a&gt; is basically convening the people who make the Web and the people who consume the Web, around a neutral table. The staff (there are between 60 and 70 of us, mostly technical, located throughout the world) is involved to help the Web stakeholders converge. From that collaboration, web standards are born, refined, and perfected.&lt;/p&gt;
+&lt;p&gt;At W3C, I met the most incredible colleagues and co-workers, the most inspiring people, the most dedicated folks, bright, clever, helpful, friendly, reliable and supportive. Working with them, doing our job, doing &lt;em&gt;this&lt;/em&gt; job, is fulfilling and gratifying.&lt;/p&gt;
+&lt;p&gt;It’s been a while so I have learned so much that it is difficult to synthesise. The one easy thing that comes to mind is NOT that I learned HTML or CSS (however, some of that I did learn), it is that I learnt to pack lightly, pragmatically and efficiently for trips abroad. We used to travel a lot. We still travel but not as much. I visited a big city for the first time during a W3C trip to a WWW conference. It was in Toronto. Then Boston, Tokyo, Hong Kong, Hawaii, Western Europe, Montreal, etc. I now pack in twenty minutes and travel with my purse, one carry-on and a laptop bag. For short trips, the carry-on is a small backpack.&lt;/p&gt;
+&lt;p&gt;I can say that I have learned various jobs within our organisation. I started as administrative aid, and as such I organised meetings, ordered stationary, managed hirings and interns, I wrote internal policies, then managed the local office. I joined the Communications team and wore several hats. From secretary of the Advisory Board, translation community monitor, blog master, to Community Manager. I gather the press clippings, I send transition announcements to our Members when a technology progresses from one state to another, ultimately reaching that of Standard. I write to our Web site, which I occasionally break so I sweat a bit and eventually fix it. I do other internal comm things too.&lt;/p&gt;
+&lt;p&gt;A couple years ago I had a skills assessment. I was at a point in time I wanted to focus on what I was good at, and what it was that I was skilled for. The exercise was interesting and useful. I was told my area of interest revolves around humanitarian activities and care giving. And that I have more than one string to my bow. No surprise, really, but it was reinforcement that I was in my field.&lt;/p&gt;
+&lt;p&gt;My job is a passion. It may not be the humanitarian field action I dreamt of as a young woman, but many in our trade liken our job to humanitarian work. And indeed, we are a “neutral intermediary” at the heart of making free and open Web standards.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://coraliemercier.wordpress.com/2013/03/30/i-work-for-a-neutral-intermediary/"&gt;billet à retrouver à sa source&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Romy Duhem-Verdière&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;h1&gt;UX et logiciels libres : retour d’expérience (TAILS)&lt;/h1&gt;
+&lt;h2&gt;Pas Sage En Seine, NUMA, jeudi 18 juin 2015&lt;/h2&gt;
+&lt;p&gt;Retour d’expérience après un an de collaboration entre UX designers et développeurs libres, dans le but d’améliorer l’usage du logiciel Tails.&lt;/p&gt;
+&lt;p&gt;Le but du logiciel libre Tails est de préserver votre vie privée et votre anonymat, de vous garantir un haut niveau de sécurité, c’est-à-dire de retrouver le même niveau de confidentialité que dans la vie hors ligne : lorsqu’on discute dans la rue, nos échanges ne sont pas systématiquement écoutés et enregistrés, contrairement aux échanges internautiques.&lt;/p&gt;
+&lt;p&gt;Tails est né de la volonté de rendre cette protection accessible à tous et toutes, d’être facile à utiliser, là où il fallait auparavant installer plein de trucs compliqués. Ses utilisateurs ne sont pas des geeks, mais des lanceurs d’alerte, des opposants politiques, des ONG, mais aussi des victimes de violences conjugales, pour lesquelles utiliser Tails permet de contourner le contrôle abusif exercé par le conjoint.&lt;/p&gt;
+&lt;p&gt;Problème : Tails reste encore trop difficile à utiliser.&lt;/p&gt;
+&lt;p&gt;S’intéressant depuis toujours au design dans le logiciel libre, l’incubateur numérique NUMA a apporté son aide pour en améliorer l’expérience utilisateur. Plusieurs sessions de tests et de conception ont été organisées pour améliorer le projet Tails depuis son site web jusqu’au cœur de ses interfaces.&lt;/p&gt;
+&lt;p&gt;Après une collaboration d’un an, un très intéressant retour d’expérience conjoint de Fiodor Tonti et Claudio Vandi, UX designers à NUMA, et de Tchou, développeur contributeur libre à Tails, a été partagé lors de Pas Sage En Seine 2015. En voici (enfin) ma prise de notes.&lt;/p&gt;
+&lt;h2&gt;D’abord observer les utilisateurs&lt;/h2&gt;
+&lt;p&gt;La méthode de recherche a été le « test utilisateur ». Ressources nécessaires : des utilisateurs et de la patience. Pas besoin d’un laboratoire, ni d’outils particuliers. Il faut juste avoir envie de s’y intéresser, précise le dev. Concrètement, il s’agit d’observer des utilisateurs à l’œuvre et tout noter. Avec méthode.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Méthodes de recherche" src="http://romy.tetue.net/local/cache-vignettes/L600xH600/tails-methodes-4dce9.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Les utilisateurs observés sont pour la plupart des journalistes volontaires, qui ont déjà entendu parler de Tails et savent à quoi ça sert. Celleux-ci se voient confier des missions précises, représentatives des usages principaux de Tails : comment créer un document ? comment utiliser le mail une fois Tails lancé ? Il est important ici d’isoler des variables : identifier des buts clairs, élémentaires, afin d’identifier avec précision où l’utilisateur réussit et échoue. Ensuite, laisser les utilisateurs se démerder avec leur mission : l’équipe adopte une position d’observation, sans intervenir, même si l’envie démange de les dépatouiller.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Quantifier les retours d’usages et problèmes observés" src="http://romy.tetue.net/local/cache-vignettes/L600xH600/tails-rainbow-spreadsheet-1a86e.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Quantifier les retours d’usages et problèmes observés&lt;/p&gt;
+&lt;p&gt;Il faut tout prendre en note, mais attention à le faire de façon formelle, pour ne pas rester dans le subjectif et pouvoir analyser ensuite. Utiliser pour ça un rainbow spreadcheet permet de regrouper les notes par sources de problèmes, fréquence, et les hiérarchiser ensuite pour dégager leur impact sur le logiciel.&lt;/p&gt;
+&lt;h2&gt;Résultat : trop difficile à… installer !&lt;/h2&gt;
+&lt;p&gt;De nombreuses difficultés se révèlent, qui sont liées, moins aux tâches confiées, que l’on souhaitait observer, qu’à l’usage basique de Tails… à son installation même. Carton rouge !&lt;/p&gt;
+&lt;h3&gt;Ouvrir les yeux&lt;/h3&gt;
+&lt;p&gt;Du point de vue du développeur, il faut faire un travail sur soi, parce qu’il est vraiment naturel, quand on développe un logiciel, de vouloir répondre à l’appel à l’aide d’un utilisateur en difficulté comme il est tout « aussi naturel de ne pas vouloir voir les problèmes ». Par exemple, sur l’installation, on pensait que ça marchait parfaitement : puisque ça fonctionnait, il ne devait pas y avoir de difficulté d’usage, pas besoin de tester. Or les tests ont montré que c’était au contraire le cœur du problème.&lt;/p&gt;
+&lt;p&gt;À l’observation des difficultés d’usage, quand on se dit « Ohlala, ça va être compliqué » (à corriger, à coder), c’est plutôt bon signe : c’est qu’on a identifié une vraie difficulté. Observer ainsi les utilisateurs permet de se décaler, sortir un peu de sa passion de développeur, pour voir autrement.&lt;/p&gt;
+&lt;p&gt;En effet, en tant que développeur, l’idée de ce que vous être en train de construire n’est pas du tout alignée avec l’idée que les utilisateurs en ont. Ce n’est pas forcément que le logiciel est compliqué, ni mal fichu, mais que les utilisateurs ne le comprennent pas. Parce qu’on ne leur explique pas ! En fait, Tails n’est pas bon dans sa communication.&lt;/p&gt;
+&lt;h3&gt;Installation bloquante&lt;/h3&gt;
+&lt;p&gt;Tails est un système d’exploitation « live », c’est-à-dire installé sur un support amovible, à partir duquel on fait démarrer un ordinateur : c’est-à-dire que vous pouvez démarrer, sur quasiment n’importe quel ordinateur, depuis un DVD, une clé USB, ou une carte SD.&lt;/p&gt;
+&lt;p&gt;Mais il est difficile de comprendre cela en visitant le site web de Tails. Pour nous les dev, c’est évident, mais en réalité les utilisateurs ne comprenaient pas du tout. C’est pourtant expliqué, mais avec des mots : trop peu expliqué, avec trop de mots.&lt;/p&gt;
+&lt;p&gt;De fait, l’installation s’avère très difficile. Bloquante. Il faut d’abord télécharger des logiciels qui permettent d’installer Tails. Les users téléchargeaient plusieurs fois le truc sans comprendre. Un user est resté bloqué 30 min ! sur le reboot… Enfin, les users n’identifient pas quand Tails se lance, ni donc quand ils bénéficient de sa protection.&lt;/p&gt;
+&lt;p&gt;En fait, tout le monde bloquait à l’installation. Pour les geeks, c’est facile, mais les users n’y arrivent pas. En réalité, qu’un utilisateur y arrive était exceptionnel. Et c’était parce qu’il était geek. La doc qu’on fournissait était trop laconique et les gens étaient perdus.&lt;/p&gt;
+&lt;h2&gt;Recherche de solutions&lt;/h2&gt;
+&lt;h3&gt;Repenser en amont&lt;/h3&gt;
+&lt;p&gt;Suite à cela, il a fallu repenser jusqu’au user flow, le parcours utilisateur, dès l’installation. On a repris toutes les étapes pour les remettre à plat : lesquelles peut-on supprimer ? Quels scénarios d’usage veut-on privilégier ? On s’est rendu compte qu’il y avait 13 façons différentes d’installer Tails : quel gloubi-boulga !&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Il a fallu repenser le parcours utilisateur pour l’install" src="http://romy.tetue.net/local/cache-vignettes/L600xH600/tails-user-flow-83e91.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Il a fallu repenser le parcours utilisateur pour l’install…&lt;/p&gt;
+&lt;h3&gt;Dessiner avant de coder&lt;/h3&gt;
+&lt;p&gt;La conception UX peut se faire très simplement, avec du papier et un crayon. Il faut d’abord réfléchir avant de se lancer dans le code. Si c’est clair sur papier, si d’autres réussissent à comprendre, c’est bon signe. Mais si un user ne comprend pas le process schématisé, ça ne sert à rien de le coder.&lt;/p&gt;
+&lt;p&gt;Mieux vaut commencer sur papier, plutôt qu’en codant direct, parce que, si on se rend compte que ça ne marche pas, il est plus facile de jeter le papier que de jeter tout le code. C’est aussi moins douloureux.&lt;/p&gt;
+&lt;h3&gt;Pistes d’amélioration&lt;/h3&gt;
+&lt;p&gt;Plutôt qu’une documentation complète, opter pour un dévoilement progressif de l’info évite de noyer l’utilisateur dans une masse d’info qu’il ne comprend pas, qu’il ne sait pas par quel bout prendre.&lt;/p&gt;
+&lt;p&gt;Deuxio : rapprocher l’info de l’endroit où en a besoin. Donner la bonne information dans le bon contexte. Souvent l’user bloquait parce qu’il n’avait pas l’info au moment où il en aurait eu besoin et il ne sait pas forcément que l’info existe et encore moins où la chercher. En réalité, il aurait fallu lire toute la doc avant, et l’avoir bien comprise, pour avoir une chance de réussir avec Tails.&lt;/p&gt;
+&lt;p&gt;Enfin, faire une vidéo pour expliquer les étapes ? Trop long ! En testant, on s’est rendu compte qu’un gif animé suffisait. Faites des choses simples et efficaces, qui coûtent moins de temps et d’énergie.&lt;/p&gt;
+&lt;h2&gt;Pourquoi se préoccuper d’UX ?&lt;/h2&gt;
+&lt;h3&gt;Pour être utilisé&lt;/h3&gt;
+&lt;p&gt;Se préoccuper d’UX est important si vous souhaitez que davantage de monde utilise ce que vous faites. Si vous n’avez pas besoin d’utilisateurs, alors pas besoin d’UX design.&lt;/p&gt;
+&lt;p&gt;Découverte des UX designers dans cette collaboration : autant l’UX est naturelle est évidente pour les startups, autant ce n’est pas évident dans le monde libre. Dans le logiciel commercial, le besoin d’UX est implicite, car l’objectif étant de vendre, il est nécessaire de faciliter l’usage. Dans le monde libre et gratuit, c’est moins évident, certains logiciels libres n’ayant pas pour ambition d’être très utilisés.&lt;/p&gt;
+&lt;p&gt;Mais que Tails soit simple d’usage est incontournable, pour éviter, par exemple, qu’un blogueur au Pakistan qui a compris que Tails est indispensable pour sa sécurité, soit incapable de l’utiliser, malgré toute la bonne volonté qu’il peut y mettre, et se retrouve donc exposé. C’est quand même la raison d’être de Tails : que ce soit plus simple que d’installer des tas de logiciels.&lt;/p&gt;
+&lt;h3&gt;Pour éviter de contre-performer&lt;/h3&gt;
+&lt;p&gt;Seconde raison : éviter que le manque d’utilisabilité produise l’effet contraire de celui voulu. Que les utilisateurs croient bénéficier de la confidentialité promise par Tails, ignorant qu’ils n’ont tout simplement pas réussi à l’installer, est un très sérieux problème pour un logiciel dont le but est de garantir la sécurité de l’utilisateur. Si l’objectif même du service est que les gens puissent agir en sécurité, mais que celui-ci ne permet pas d’identifier si on est dans un usage sécurisé ou pas, il faut savoir se remettre en question.&lt;/p&gt;
+&lt;p&gt;Pour éviter cela, il ne faut pas perdre de vue l’utilisateur auquel votre logiciel prétend rendre service.&lt;/p&gt;
+&lt;h2&gt;Qu’avons-nous appris de cette collaboration ?&lt;/h2&gt;
+&lt;p&gt;Ce qu’il faut savoir, quand on fait de l’UX design, c’est qu’on remet en cause les fondamentaux. Il faut &lt;strong&gt;être prêt à se remettre en question&lt;/strong&gt;, et accepter de questionner la raison d’être du logiciel. Et ça, c’est le dev qui le dit ! Ça va bousculer les choses. Et prendre du temps.&lt;/p&gt;
+&lt;p&gt;Les développeurs ont tendance à mesurer le progrès en nombre de lignes de code, de features produites, de tickets fermés… Mais ça ne compte pas dans l’expérience utilisateur. Il faut adopter une &lt;strong&gt;autre modalité d’appréciation&lt;/strong&gt;, passer de feature-driven à value-driven development. Il ne s’agit plus d’apprécier si le logiciel ou une fonctionnalité marche, mais si elle sert. C’est-à-dire évaluer si le blogueur pakistanais a réussi à transmettre de l’information sans se faire choper par la police. Bref, on n’utilise pas les mêmes metrics pour évaluer un bon code et un bon design. Qu’un logiciel soit fonctionnel et qu’il soit utile sont deux choses très différentes.&lt;/p&gt;
+&lt;p&gt;Il y a un grand gap culturel entre UX et logiciel libre. Ce n’est pas un mariage évident. Autant on peut faire et distribuer des bouts de code assez facilement, autant &lt;strong&gt;l’UX est une démarche globale&lt;/strong&gt;, avec une vision holistique du service. C’est donc compliqué à intégrer dans une équipe où chaque développeur bosse isolement sur un bout du projet.&lt;/p&gt;
+&lt;p&gt;Attention, se soucier de l’utilisateur, ce n’est pas satisfaire le moindre de ses désirs. Les UX designers rappellent qu’il faut :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;avoir la patience de considérer les feedback utilisateurs. Si quelqu’un fait un retour critique, ce n’est pas parce qu’il est con. Ni méchant. Il faut prendre ça comme une occasion d’améliorer.&lt;/li&gt;
+&lt;li&gt;D’un autre côté, &lt;strong&gt;avoir l’intelligence de ne pas implémenter aussitôt&lt;/strong&gt; la moindre chose demandée ou critiquée par les utilisateurs, mais prendre le temps de réfléchir, de tester. Suivre les demandes des users peut faire complètement dérailler un projet.&lt;/li&gt;
+&lt;li&gt;Bref, quand un utilisateur demande un feature, la première chose à faire n’est pas de la coder, mais de demander pourquoi, c’est-à-dire d’identifier la source de la difficulté rencontrée.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enfin, c’est plus facile si le souci de l’utilisateur est partagé par toute l’équipe et reste une vigilance constante : &lt;strong&gt;vaut mieux désherber régulièrement&lt;/strong&gt; que de laisser une forêt de ronces s’installer. Les designers ne sont pas des magiciens.&lt;/p&gt;
+&lt;p&gt;Dernière chose : travailler ensemble, UX et dev LL, ça marche ! Pour finir : « J’invite tous les dev à payer un coup à un UX designer, à parler avec… Vous avez plein à y gagner ! » Hips :)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;J’ai mis du temps à assimiler et retranscrire ce retour d’expérience passionnant. Ce qui est assez symptomatique, c’est que je ne comprenais rien lorsque le développeur parlait — trop de jargon technique pour moi — alors que son témoignage est particulièrement intéressant : il m’a fallu réécouter plusieurs fois l’enregistrement pour bien comprendre et pouvoir ici en rendre compte.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Merci beaucoup à Tchou, Fiodor et Claudio de nous avoir partagé leur retour d’expérience après cette collaboration !&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Au programme : &lt;a href="https://www.passageenseine.org/fr/programme/2015/jeudi-18-juin/grande-salle/atelier-design-tails"&gt;UX et logiciels libres : retour d’expérience (TAILS)&lt;/a&gt;, Pas Sage En Seine, NUMA, 2015, avec &lt;a href="https://www.numaparis.ubicast.tv/videos/retour-experience-tails/"&gt;archive vidéo&lt;/a&gt;, &lt;a href="https://tails.boum.org/contribute/how/promote/material/slides/PSES15-20150618/UX_et_logiciels_libres.pdf"&gt;slides de la présentation&lt;/a&gt;, ainsi que le &lt;a href="https://storify.com/tetue/ux-et-logiciels-libres-retour-d-experience-tails"&gt;livetweet&lt;/a&gt;, avec questions-réponses de la salle.&lt;/li&gt;
+&lt;li&gt;Lire aussi : &lt;a href="http://www.lemonde.fr/pixels/article/2014/11/20/tails-l-outil-deteste-par-la-nsa-qui-veut-democratiser-l-anonymat-en-ligne_4514650_4408996.html#RV32zAi6bXoc8UQE.99"&gt;Tails, l’outil détesté par la NSA, qui veut démocratiser l’anonymat en ligne&lt;/a&gt;, Le Monde, 2014 et &lt;a href="https://www.techn0polis.net/2014/11/19/tails-raconte-par-ceux-qui-le-construisent/"&gt;Tails raconté par ceux qui le construisent&lt;/a&gt;, par Amaelle Guiton, Techn0polis, 2014.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="http://romy.tetue.net/ux-et-logiciels-libres-retour-d-experience-tails"&gt;billet à retrouver à sa source&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Sophie Drouvroy&lt;/h1&gt;
+&lt;p&gt;Je ne pense pas trop vous faire découvrir &lt;a href="http://www.sophie-drouvroy.com/"&gt;Sophie&lt;/a&gt;, que j'ai rencontrée il y a des années, au hasard d'un resto un midi avec le sieur &lt;a href="https://twitter.com/notabene"&gt;@notabene&lt;/a&gt;, puis revue lors d'un mémorable &lt;a href="http://www.dailymotion.com/video/xxhjcy_lightning-talks_tech"&gt;Ligthning Talk&lt;/a&gt; à ParisWeb2012&lt;/p&gt;
+&lt;h1&gt;&lt;a href="https://twitter.com/diab_"&gt;Emilie Diab&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;Je ne pouvais pas finir sans lui faire un petit coucou, elle qui ne publie plus (DoooOOmage), et, que j'aprécie également beaucoup ;-)&lt;/p&gt;</content></entry><entry><title>De wordpress à pelican</title><link href="https://foxmask.net/post/2016/01/02/de-wordpress-a-pelican/" rel="alternate"></link><published>2016-01-02T17:00:00+01:00</published><updated>2016-01-02T17:00:00+01:00</updated><author><name>FoxMaSk</name></author><id>tag:foxmask.net,2016-01-02:/post/2016/01/02/de-wordpress-a-pelican/</id><summary type="html">&lt;p&gt;Un enième billets d'une migration de Wordpress à Pelican&lt;/p&gt;</summary><content type="html">&lt;p&gt;Ce billet est surement le &lt;em&gt;beacoupdième&lt;/em&gt; abordant le sujet ;-)&lt;/p&gt;
+&lt;p&gt;J'irai donc faire court dans la mesure du possible pour expliciter le &lt;em&gt;pourquoi&lt;/em&gt;, le &lt;em&gt;comment&lt;/em&gt;, et une &lt;em&gt;idée&lt;/em&gt; qui a germé lors de l'utilisation de &lt;a href="http://getpelican.com" title="Generateur statique de site web"&gt;pelican&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Pourquoi ?&lt;/h1&gt;
+&lt;p&gt;La réponse est multiple, et un peu redondante avec le billet précédent.
+J'ai voulu mettre fin à mon blog en wordpress parce que je ne vais pas continuer à conserver le domaine et l'hebergement associé. Comme je n'ai tout de même pas voulu tout mettre aux oubliettes, j'ai tout de même conserver un peu de ces 11ans de blog.
+Le choix vers pelican s'est fait naturellement après l'avoir testé pour 2 autres blogs, celui pour "&lt;a href="http://smcomm.trigger-happy.eu"&gt;la communauté sam et max&lt;/a&gt;" et celui du projet &lt;a href="http://blog.trigger-happy.eu"&gt;trigger-happy&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Comment ?&lt;/h1&gt;
+&lt;p&gt;Comme le dit la doc, en premier lieu il faut exporter son blog wordpress dans un fichier XML.
+Après, pour l'importer, on choisit le format d'import : reStructuredText, Markdown.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican-import --wpfile foxmaskinfo.xml 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ainsi lancée, la commande part pour me traduire 900 billets en .rst&lt;/p&gt;
+&lt;p&gt;Mais là j'ai pris une sérieuse claque.
+A chaque lancement de la commande je me coltinais des erreurs de formatage, des retour à la ligne inopinée, des urls tronquées pour des carriage return line feed inopinées.
+Au bout de 2 jours, j'arrivais à finir ma migration d'import en ayant pris soin de remplacer toutes les urls http://foxmask.info et http://foxmask.bzh en '/' purement.
+Mais un malencontreux et tardif (vu l'heure)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;rm -f content/*
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;m'a coupé les pattes , 2j partis en fumée j'en pouvais plus, j'étais sur le point de laisser tomber la migration.&lt;/p&gt;
+&lt;p&gt;J'ai donc cherché une recette sur la toile, sur le best practice de cette migration et là je tombe sur &lt;a href="http://kevin.deldycke.com/2013/02/wordpress-to-pelican/"&gt;ce post&lt;/a&gt; complet.
+Et surtout j'étais passé à coté du format Markdown.
+Donc nouveau plan de bataille :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;utiliser le format markdown&lt;/li&gt;
+&lt;li&gt;gerer le remplacement de foxmask.(bzh|info) avec PyCharm afin qu'il gère le remplacement récursivement et tranquillement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican-import --wpfile -m markdown foxmaskinfo.xml 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et là, miracle : PAS UNE SEULE erreur de formatage à l'issue de cette migration, j'étais comme deux ronds de flan.&lt;/p&gt;
+&lt;p&gt;Ensuite, avec PyCharm, j'acheve la mise à jour des urls en 2min :P&lt;/p&gt;
+&lt;p&gt;Le reste de la migration c'est :&lt;/p&gt;
+&lt;p&gt;dans &lt;em&gt;pelicanconf.py&lt;/em&gt;, gérer le chemin static de toutes les images que j'ai pu coller dans le blog&lt;/p&gt;
+&lt;p&gt;Puis après quelques ajustements de &lt;a href="https://github.com/duilio/pelican-octopress-theme"&gt;themes&lt;/a&gt; et &lt;a href="https://github.com/getpelican/pelican-plugins"&gt;plugin pelican&lt;/a&gt;, voilà le blog prêt.&lt;/p&gt;
+&lt;h1&gt;Une idée&lt;/h1&gt;
+&lt;p&gt;Maintenant une idée toute QQ.&lt;/p&gt;
+&lt;p&gt;Pelican c'est cool parce que statique. Ya pas plus simple qu'une page HTML à servir pour un serveur HTTP.&lt;/p&gt;
+&lt;p&gt;Par contre niveau production de billet, pelican est très geek oriented.
+Je ne m'imagine pas un utilisateur lambda de wordpress, passer à Pelican.
+Déjà, les thèmes ne courrent pas les rues, et la saisie des billets n'est pas le plus fun.&lt;/p&gt;
+&lt;p&gt;Du coup j'm'ai dizamoimeme : pourquoi ne pas faire une interface web qui permette de pondre ses billets ? Pas un truc aussi ambitieux que l'interface de Wordpress, mais au moins :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;une page pour créer un article avec un editeur wysiwyg&lt;/li&gt;
+&lt;li&gt;à l'enregistrement de l'article, créer le fichier .md&lt;/li&gt;
+&lt;li&gt;générer la page html via la commande make html&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;avant de me lancer dans ce truc j'ai demandé sur &lt;a href="irc://irc.freenode.net/pelican"&gt;#pelican@freenode&lt;/a&gt; si un tel projet existait, et j'ai eu droit à une réponse de normand... Donc bon je vois kiki va kor faire un truc con kwa.&lt;/p&gt;</content><category term="pelican"></category><category term="python"></category></entry><entry><title>Une autre histoire</title><link href="https://foxmask.net/post/2015/12/29/une-autre-histoire/" rel="alternate"></link><published>2015-12-29T17:00:00+01:00</published><updated>2015-12-29T17:00:00+01:00</updated><author><name>FoxMaSk</name></author><id>tag:foxmask.net,2015-12-29:/post/2015/12/29/une-autre-histoire/</id><summary type="html">&lt;p&gt;Une autre histoire ici commence ;-)&lt;/p&gt;</summary><content type="html">&lt;p&gt;Voici donc le début de la continuité de l'histoire de ce blog de 11 ans d'âge ;)&lt;/p&gt;
+&lt;p&gt;Pour ne pas "trop" perdre en interactivité avec ceux qui me suivent tant bien que mal, j'ai collé disqus comme outil pour vous permettre de commenter mes billets.&lt;/p&gt;
+&lt;p&gt;Comme je ne suis pas du genre à imposer quoique ce soit, vous n'êtes pas obligé d'être connecté à g+, twitter, facebook, ou disqus.
+Pour commenter en tant que visiteur, cliquer dans le champ nom, puis sur la case à cocher "i'd rather post as guest", ensuite mettez simplement votre email et le tour est joué.&lt;/p&gt;
+&lt;p&gt;A noter que j'ai désactivé les trackers de disqus, permettant de vous coller de la pub "personnalisée".
+On va pas dévié du leitmotiv du site hein ;) &lt;/p&gt;
+&lt;p&gt;Voilou ;) &lt;/p&gt;
+&lt;p&gt;Ici, je ne vous parlerai plus que de dev et rien d'autre. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Bonnes fêtes de fin d&amp;#39;année 2015, attention à 2016 et à vos prochaines résolutions&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="python"></category></entry><entry><title>Sam et Max Le Papa Noël descendu du ciel</title><link href="https://foxmask.net/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/" rel="alternate"></link><published>2013-01-08T19:58:00+01:00</published><updated>2013-01-08T19:58:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-01-08:/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/</id><summary type="html">&lt;p&gt;&lt;a href="http://sametmax.com/lun-de-vous-a-un-cadeau-de-noel-qui-lattend-au-pied-du-sapin/"&gt;A la suite d'un concours improvisé par Sam et
+Max&lt;/a&gt;,
+me voici l'heureux gagnant d'un joli cadeau, je vous laisse découvrir en
+images le paquet ;)&lt;/p&gt;
+&lt;p&gt;ici le fond du colis : Les enfants ont déjà fait la razia ;)&lt;br&gt;
+&lt;a href="/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/2013-01-08-19-05-42/"&gt;&lt;img alt="Bonbons &amp;quot;bulles&amp;quot; pour &amp;quot;caler&amp;quot;" src="/static/2013/01/2013-01-08-19.05.42-300x225.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ici on notera la touche "perso" de Sam et Max (c'est scotché sur …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://sametmax.com/lun-de-vous-a-un-cadeau-de-noel-qui-lattend-au-pied-du-sapin/"&gt;A la suite d'un concours improvisé par Sam et
+Max&lt;/a&gt;,
+me voici l'heureux gagnant d'un joli cadeau, je vous laisse découvrir en
+images le paquet ;)&lt;/p&gt;
+&lt;p&gt;ici le fond du colis : Les enfants ont déjà fait la razia ;)&lt;br&gt;
+&lt;a href="/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/2013-01-08-19-05-42/"&gt;&lt;img alt="Bonbons &amp;quot;bulles&amp;quot; pour &amp;quot;caler&amp;quot;" src="/static/2013/01/2013-01-08-19.05.42-300x225.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ici on notera la touche "perso" de Sam et Max (c'est scotché sur la
+boiboite :)&lt;br&gt;
+&lt;a href="/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/2013-01-08-19-06-30/"&gt;&lt;img alt="2013-01-08
+19.06.30" src="/static/2013/01/2013-01-08-19.06.30-225x300.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Les petits points blancs (si vous zoomez) ; c'est le sucre des bonbons
+secoués, dans l'emballage !&lt;/p&gt;
+&lt;p&gt;&lt;a href="/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/2013-01-08-19-15-21/"&gt;&lt;img alt="Razer fraichement sorti de l'emballage, avec un tapis de tueur !" src="/static/2013/01/2013-01-08-19.15.21-300x225.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Etui, tapis et notice&lt;br&gt;
+&lt;a href="/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/2013-01-08-19-26-09/"&gt;&lt;img alt="Tapis Kabuto, Mode d'emploi, Certificat d'authenticité, Poche de transport" src="/static/2013/01/2013-01-08-19.26.09-225x300.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;et la molette elle même est retro éclairée, du plus bel effet :&lt;br&gt;
+&lt;a href="/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/2013-01-09-07-21-42/"&gt;&lt;img alt="Razer Orachi, avec la molette rétro éclairée" src="/static/2013/01/2013-01-09-07.21.42-225x300.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Alors, "petit bonhomme au chapeau pointu" : un très grand merci !&lt;/p&gt;
+&lt;p&gt;j'allais en changer, mais Razer, c'était pas au budget !&lt;/p&gt;
+&lt;p&gt;Je pourrai tester cette fusée sur une partie de CODMW3 :)&lt;/p&gt;</content><category term="razer"></category></entry><entry><title>Jelix c'est Fini !</title><link href="https://foxmask.net/post/2010/04/01/jelix-cest-fini/" rel="alternate"></link><published>2010-04-01T09:21:00+02:00</published><updated>2010-04-01T09:21:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2010-04-01:/post/2010/04/01/jelix-cest-fini/</id><summary type="html">&lt;p&gt;Bon, hé bien finalement, pour moi l'aventure
+&lt;a href="http://www.jelix.org"&gt;Jelix&lt;/a&gt; s'arrêtera là.  &lt;/p&gt;
+&lt;p&gt;Les sirènes de Symfony m'ont convaincues par le biais de Doctrine, que
+c'était le framework qu'il me fallait.  &lt;/p&gt;
+&lt;p&gt;Donc je vais arrêter également HaveFnuBB, le forum éponyme 100% Jelix.&lt;br&gt;
+Je garderai juste un oeil sur le projet mais de loin …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bon, hé bien finalement, pour moi l'aventure
+&lt;a href="http://www.jelix.org"&gt;Jelix&lt;/a&gt; s'arrêtera là.  &lt;/p&gt;
+&lt;p&gt;Les sirènes de Symfony m'ont convaincues par le biais de Doctrine, que
+c'était le framework qu'il me fallait.  &lt;/p&gt;
+&lt;p&gt;Donc je vais arrêter également HaveFnuBB, le forum éponyme 100% Jelix.&lt;br&gt;
+Je garderai juste un oeil sur le projet mais de loin quand même :-)&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category></entry></feed>

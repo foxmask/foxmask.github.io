@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Django, Le Magic System T'y Es Fou ! - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.net/post/2014/09/23/django-le-magic-system-ty-es-fou/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="Django,python" />
+        <meta name="description" content="Voici viendu la billet django de la rentrée, zenfin ! Comme on n&#39;en fini jamais de faire le tour de django, après avoir poussé jusqu&#39;au bout du bout la gestion des forms, me voici parti sur une nouvelle aventure, celle de la Management Commands. Dans la suite nous verrons comment, avant …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Django, Le Magic System T&#39;y Es Fou !"/>
+        <meta property="og:url" content="https://foxmask.net/post/2014/09/23/django-le-magic-system-ty-es-fou/"/>
+        <meta property="og:description" content="Voici viendu la billet django de la rentrée, zenfin ! Comme on n&#39;en fini jamais de faire le tour de django, après avoir poussé jusqu&#39;au bout du bout la gestion des forms, me voici parti sur une nouvelle aventure, celle de la Management Commands. Dans la suite nous verrons comment, avant …"/>
+        <meta property="article:published_time" content="2014-09-23" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="Django" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:author" content="foxmask" />
+
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@triggerhappyeu">
+        <meta name="twitter:creator" content="@triggerhappyeu">
+    <meta name="twitter:domain" content="https://foxmask.net">
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.net/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.net/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.net/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.net/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.net/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.net/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.net/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.net/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.net/post/2014/09/23/django-le-magic-system-ty-es-fou/"
+                       rel="bookmark"
+                       title="Permalink to Django, Le Magic System T'y Es Fou !">
+                        Django, Le Magic System T'y Es Fou !
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-09-23T11:00:00+02:00"> Tue 23 September 2014</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Voici viendu la billet django de la rentrée, zenfin !</p>
+<p>Comme on n'en fini jamais de faire le tour de django, après avoir poussé
+jusqu'au bout du bout <a href="/post/2013/10/16/django-formwizard-dynamique-encore-plus-loin/" title="Django FormWizard Dynamique, encore plus loin">la gestion des
+forms</a>,
+me voici parti sur une nouvelle aventure, celle de la <a href="https://docs.djangoproject.com/en/1.7/howto/custom-management-commands/">Management
+Commands</a>.</p>
+<p>Dans la suite nous verrons comment, avant de tomber sur ces "Management
+Commands", je m'y prenais (pas parfaitement) pour packager des batches
+avec mes applications, puis nous verrons ensuite comment on produit un
+batch à la sauce Django, sans effort.</p>
+<p><strong>Avant</strong> : Pas de Magie, juste un truc qui marche, mais archaïque &amp;
+rigide.</p>
+<p>Le batch se nomme "<strong>fire.py</strong>" et fait 100 lignes à tout casser.</p>
+<p><em>Comment est-il lancé ?</em></p>
+<ol>
+<li>Ce script est appelé depuis un virtualenv.</li>
+<li>
+<p>j'ai besoin que python trouve le settings.py de mon appli d'où</p>
+<p><code>python
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_th.settings")</code></p>
+</li>
+<li>
+<p>et pour les besoins de la v 1.7 de Django il m'a fallu rajouter</p>
+<p></p>
+<code>python
+import django
+django.setup()</code></p>
+</li>
+</ol>
+<p>Ce qui donne</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">arrow</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;DJANGO_SETTINGS_MODULE&quot;</span><span class="p">,</span> <span class="s2">&quot;django_th.settings&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">django</span>
+<span class="n">django</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django_th.services</span> <span class="kn">import</span> <span class="n">default_provider</span>
+<span class="kn">from</span> <span class="nn">django_th.models</span> <span class="kn">import</span> <span class="n">TriggerService</span>
+<span class="kn">from</span> <span class="nn">django.utils.log</span> <span class="kn">import</span> <span class="n">getLogger</span>
+
+<span class="c1"># create logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;django_th.trigger_happy&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">go</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        run the main process</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">trigger</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">trigger</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">trigger</span><span class="p">:</span>
+            <span class="c1"># flag to know if we have to update</span>
+            <span class="n">to_update</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="c1"># flag to get the status of a service</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="c1"># counting the new data to store to display them in the log</span>
+            <span class="n">count_new_data</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="c1"># provider - the service that offer datas</span>
+            <span class="n">service_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">service_provider</span> <span class="o">=</span> <span class="n">default_provider</span><span class="o">.</span><span class="n">get_service</span><span class="p">(</span><span class="n">service_name</span><span class="p">)</span>
+
+            <span class="c1"># consumer - the service which uses the data</span>
+            <span class="n">service_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="n">service_consumer</span> <span class="o">=</span> <span class="n">default_provider</span><span class="o">.</span><span class="n">get_service</span><span class="p">(</span><span class="n">service_name</span><span class="p">)</span>
+
+            <span class="c1"># check if the service has already been triggered</span>
+            <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;first run for </span><span class="si">%s</span><span class="s2"> =&gt; </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span>
+                    <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
+                <span class="n">to_update</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="c1"># run run run</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># 1) get the datas from the provider service</span>
+                <span class="c1"># get a timestamp of the last triggered of the service</span>
+                <span class="n">datas</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">service_provider</span><span class="p">,</span> <span class="s1">&#39;process_data&#39;</span><span class="p">)(</span>
+                    <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">token</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span><span class="p">)</span>
+                <span class="c1">#consumer = getattr(service_consumer, &#39;save_data&#39;)</span>
+
+                <span class="n">published</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+                <span class="n">which_date</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+                <span class="c1"># flag to know if we can push data to the consumer</span>
+                <span class="n">proceed</span> <span class="o">=</span> <span class="bp">False</span>
+
+                <span class="c1"># 2) for each one</span>
+                <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">datas</span><span class="p">:</span>
+                    <span class="c1"># if in a pool of data once of them does not have</span>
+                    <span class="c1"># a date, will take the previous date for this one</span>
+                    <span class="c1"># if it&#39;s the first one, set it to 00:00:00</span>
+
+                    <span class="c1"># let&#39;s try to determine the date contained in the data...</span>
+                    <span class="n">published</span> <span class="o">=</span> <span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="c1"># get the published date of the provider</span>
+                        <span class="n">published</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                            <span class="nb">str</span><span class="p">(</span><span class="n">published</span><span class="p">),</span> <span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TIME_ZONE</span><span class="p">)</span>
+                        <span class="c1"># store the date for the next loop</span>
+                        <span class="c1"># if published became &#39;None&#39;</span>
+                        <span class="n">which_date</span> <span class="o">=</span> <span class="n">published</span>
+                    <span class="c1">#... otherwise set it to 00:00:00 of the current date</span>
+                    <span class="k">if</span> <span class="n">which_date</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                        <span class="c1"># current date</span>
+                        <span class="n">which_date</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                            <span class="n">hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                        <span class="n">published</span> <span class="o">=</span> <span class="n">which_date</span>
+                    <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">which_date</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                        <span class="n">published</span> <span class="o">=</span> <span class="n">which_date</span>
+                    <span class="c1"># 3) check if the previous trigger is older than the</span>
+                    <span class="c1"># date of the data we retreived</span>
+                    <span class="c1"># if yes , process the consumer</span>
+
+                    <span class="c1"># add the TIME_ZONE settings</span>
+                    <span class="n">date_triggered</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span><span class="p">),</span> <span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TIME_ZONE</span><span class="p">)</span>
+
+                    <span class="c1"># if the published date if greater or equal to the last</span>
+                    <span class="c1"># triggered event ... :</span>
+                    <span class="k">if</span> <span class="n">date_triggered</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
+                        <span class="c1"># if date are the same ...</span>
+                        <span class="k">if</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">==</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
+                            <span class="c1"># ... compare time and proceed if needed</span>
+                            <span class="k">if</span> <span class="n">published</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">time</span><span class="p">():</span>
+                                <span class="n">proceed</span> <span class="o">=</span> <span class="bp">True</span>
+                        <span class="c1"># not same date so proceed !</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">proceed</span> <span class="o">=</span> <span class="bp">True</span>
+
+                        <span class="k">if</span> <span class="n">proceed</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="s1">&#39;title&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;date {} &gt;= date triggered {} title {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                    <span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                                    <span class="s2">&quot;date {} &gt;= date triggered {} &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">))</span>
+
+                            <span class="c1">#status = consumer(</span>
+                            <span class="c1">#    service.consumer.token, service.id, **data)</span>
+
+                            <span class="n">to_update</span> <span class="o">=</span> <span class="bp">True</span>
+                            <span class="n">count_new_data</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="c1"># otherwise do nothing</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="s1">&#39;title&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                                <span class="s2">&quot;data outdated skiped : [{}] {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                                <span class="s2">&quot;data outdated skiped : [{}] &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">))</span>
+
+            <span class="c1"># update the date of the trigger at the end of the loop</span>
+            <span class="n">sentance</span> <span class="o">=</span> <span class="s2">&quot;user: {} - provider: {} - consumer: {} - {}&quot;</span>
+            <span class="k">if</span> <span class="n">to_update</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">((</span><span class="n">sentance</span> <span class="o">+</span> <span class="s2">&quot; new data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+                        <span class="n">count_new_data</span><span class="p">))</span>
+                    <span class="n">update_trigger</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">((</span><span class="n">sentance</span> <span class="o">+</span> <span class="s2">&quot; AN ERROR OCCURS &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">((</span><span class="n">sentance</span> <span class="o">+</span> <span class="s2">&quot; nothing new&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">service</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>
+                    <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                    <span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                    <span class="n">service</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;No trigger set by any user&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">update_trigger</span><span class="p">(</span><span class="n">service</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        update the date when occurs the trigger</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TIME_ZONE</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span>
+    <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">date_triggered</span><span class="o">=</span><span class="n">now</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        convert Datetime 9-tuple to the date and time format</span>
+<span class="sd">        feedparser provides this 9-tuple</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">my_date_time</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">if</span> <span class="s1">&#39;published_parsed&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">published_parsed</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="s1">&#39;updated_parsed&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">updated_parsed</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="s1">&#39;my_date&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;my_date&#39;</span><span class="p">]),</span> <span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">my_date_time</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">default_provider</span><span class="o">.</span><span class="n">load_services</span><span class="p">()</span>
+    <span class="c1"># let&#39;s go</span>
+    <span class="n">go</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+
+<p><em>Avantage(s)</em><br>
+La commande à taper est un simple ./fire.py dès lors que le fichiers
+settings est trouvé par le script tout passe tout seul</p>
+<p><em>Inconvénient(s)</em><br>
+Le packaging est empirique, il faut rajouter au setup.py la prise en
+compte de ce batch par :</p>
+<div class="highlight"><pre><span></span> <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+ <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
+ <span class="s1">&#39;trigger-happy = django_th.fire:go&#39;</span><span class="p">,</span>
+ <span class="p">],</span>
+ <span class="p">}</span>
+</pre></div>
+
+
+<p>afin que la commande soit disponible sous la main dès l'installation via
+un</p>
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">django_th</span>
+</pre></div>
+
+
+<p>Point noir que tout le monde aura vu, le script appelle en dur le
+fichier de settings de django_th. Ce qui empêche une intégration
+parfaite avec une autre application Django voisine déjà installée. Ou
+alors il faut retoucher au batch une fois installer pour changer le nom
+du settings à utiliser.</p>
+<p><strong>Après</strong> Le "Magic System" :<br>
+Comme j'en ai eu marre de me coltiner le gros point noir au milieu de
+la tronche, j'ai voulu trouvé Ze moyen de ne plus me prendre la tête
+avec ce settings à définir dans mon batch. Et c'est à ce moment là que
+j'ai croisé les Management Commands.<br>
+Au début le terme et leur définition dans la doc m'a fait penser que
+c'était dédié à la partie backend de l'appli. Mais en rererererelisant
+attentivement, je me suis aperçu que ça collait parfaitement à mon
+besoin, qui est de faire du traitement de données, autrement que via
+l'interface web.</p>
+<p>J'ai donc appliqué, au pied de la lettre, l'archi de la doc, pour donc
+déplacer mon fire.py dans un sous-sous-dossier management/commands de
+mon appli django_th, sous le nom fire_th.py</p>
+<p><em>Avantage(s):</em></p>
+<ol>
+<li>Plus d'appel en dur d'un settings qui n'est pas celui de mon
+    application courante.</li>
+<li>La commande est dispo de facto, dès lors que l'application est
+    présente dans <strong>INSTALLED_APPS</strong> dans le settings.py.</li>
+<li>pas de modification du setup.py nécessaire</li>
+<li>
+<ol>
+<li>Pour s'en assurer on tapera python manage.py help pour trouver
+    la commande ;)</li>
+</ol>
+</li>
+</ol>
+<p>Ce script a donc été modifié en :</p>
+<ol>
+<li>supprimant l'appel du settings</li>
+<li>supprimant "def main" jusqu'à la fin du script</li>
+<li>remplaçant la fonction go() par handle() requise par BaseCommand</li>
+<li>déplaçant les 2 fonctions update_trigger() et to_datetime() au
+    debut de la class Command</li>
+<li>remplaçant print() par self.stdout.write()</li>
+</ol>
+<p>Ce qui donne :</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">arrow</span>
+
+<span class="kn">from</span> <span class="nn">django.core.management.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span><span class="p">,</span> <span class="n">CommandError</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django_th.services</span> <span class="kn">import</span> <span class="n">default_provider</span>
+<span class="kn">from</span> <span class="nn">django_th.models</span> <span class="kn">import</span> <span class="n">TriggerService</span>
+<span class="kn">from</span> <span class="nn">django.utils.log</span> <span class="kn">import</span> <span class="n">getLogger</span>
+<span class="c1"># create logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;django_th.trigger_happy&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Command</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+
+    <span class="n">help</span> <span class="o">=</span> <span class="s1">&#39;Trigger all the services&#39;</span>
+
+    <span class="k">def</span> <span class="nf">update_trigger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">service</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            update the date when occurs the trigger</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TIME_ZONE</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span>
+        <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">service</span><span class="o">.</span><span class="n">id</span><span class="p">)</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">date_triggered</span><span class="o">=</span><span class="n">now</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">to_datetime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            convert Datetime 9-tuple to the date and time format</span>
+<span class="sd">            feedparser provides this 9-tuple</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">my_date_time</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="s1">&#39;published_parsed&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">published_parsed</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="s1">&#39;updated_parsed&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">updated_parsed</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="s1">&#39;my_date&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;my_date&#39;</span><span class="p">]),</span> <span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">my_date_time</span>
+
+    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            run the main process</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">trigger</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">trigger</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">trigger</span><span class="p">:</span>
+                <span class="c1"># flag to know if we have to update</span>
+                <span class="n">to_update</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="c1"># flag to get the status of a service</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="c1"># counting the new data to store to display them in the log</span>
+                <span class="n">count_new_data</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="c1"># provider - the service that offer datas</span>
+                <span class="n">service_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                <span class="n">service_provider</span> <span class="o">=</span> <span class="n">default_provider</span><span class="o">.</span><span class="n">get_service</span><span class="p">(</span><span class="n">service_name</span><span class="p">)</span>
+
+                <span class="c1"># consumer - the service which uses the data</span>
+                <span class="n">service_name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                <span class="n">service_consumer</span> <span class="o">=</span> <span class="n">default_provider</span><span class="o">.</span><span class="n">get_service</span><span class="p">(</span><span class="n">service_name</span><span class="p">)</span>
+
+                <span class="c1"># check if the service has already been triggered</span>
+                <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;first run for </span><span class="si">%s</span><span class="s2"> =&gt; </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
+                    <span class="n">to_update</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="c1"># run run run</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># 1) get the datas from the provider service</span>
+                    <span class="c1"># get a timestamp of the last triggered of the service</span>
+                    <span class="n">datas</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">service_provider</span><span class="p">,</span> <span class="s1">&#39;process_data&#39;</span><span class="p">)(</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">token</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span><span class="p">)</span>
+                    <span class="n">consumer</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">service_consumer</span><span class="p">,</span> <span class="s1">&#39;save_data&#39;</span><span class="p">)</span>
+
+                    <span class="n">published</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+                    <span class="n">which_date</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+                    <span class="c1"># flag to know if we can push data to the consumer</span>
+                    <span class="n">proceed</span> <span class="o">=</span> <span class="bp">False</span>
+
+                    <span class="c1"># 2) for each one</span>
+                    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">datas</span><span class="p">:</span>
+                        <span class="c1"># if in a pool of data once of them does not have</span>
+                        <span class="c1"># a date, will take the previous date for this one</span>
+                        <span class="c1"># if it&#39;s the first one, set it to 00:00:00</span>
+
+                        <span class="c1"># let&#39;s try to determine the date contained in the data...</span>
+                        <span class="n">published</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                            <span class="c1"># get the published date of the provider</span>
+                            <span class="n">published</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                                <span class="nb">str</span><span class="p">(</span><span class="n">published</span><span class="p">),</span> <span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TIME_ZONE</span><span class="p">)</span>
+                            <span class="c1"># store the date for the next loop</span>
+                            <span class="c1"># if published became &#39;None&#39;</span>
+                            <span class="n">which_date</span> <span class="o">=</span> <span class="n">published</span>
+                        <span class="c1">#... otherwise set it to 00:00:00 of the current date</span>
+                        <span class="k">if</span> <span class="n">which_date</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="c1"># current date</span>
+                            <span class="n">which_date</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                                <span class="n">hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+                            <span class="n">published</span> <span class="o">=</span> <span class="n">which_date</span>
+                        <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">which_date</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                            <span class="n">published</span> <span class="o">=</span> <span class="n">which_date</span>
+                        <span class="c1"># 3) check if the previous trigger is older than the</span>
+                        <span class="c1"># date of the data we retreived</span>
+                        <span class="c1"># if yes , process the consumer</span>
+
+                        <span class="c1"># add the TIME_ZONE settings</span>
+                        <span class="n">date_triggered</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                            <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span><span class="p">),</span> <span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TIME_ZONE</span><span class="p">)</span>
+
+                        <span class="c1"># if the published date if greater or equal to the last</span>
+                        <span class="c1"># triggered event ... :</span>
+                        <span class="k">if</span> <span class="n">date_triggered</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
+                            <span class="c1"># if date are the same ...</span>
+                            <span class="k">if</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">==</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
+                                <span class="c1"># ... compare time and proceed if needed</span>
+                                <span class="k">if</span> <span class="n">published</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">time</span><span class="p">():</span>
+                                    <span class="n">proceed</span> <span class="o">=</span> <span class="bp">True</span>
+                            <span class="c1"># not same date so proceed !</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">proceed</span> <span class="o">=</span> <span class="bp">True</span>
+
+                            <span class="k">if</span> <span class="n">proceed</span><span class="p">:</span>
+                                <span class="k">if</span> <span class="s1">&#39;title&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;date {} &gt;= date triggered {} title {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                        <span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
+                                <span class="k">else</span><span class="p">:</span>
+                                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                                        <span class="s2">&quot;date {} &gt;= date triggered {} &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">))</span>
+
+                                <span class="n">status</span> <span class="o">=</span> <span class="n">consumer</span><span class="p">(</span>
+                                    <span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">token</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
+
+                                <span class="n">to_update</span> <span class="o">=</span> <span class="bp">True</span>
+                                <span class="n">count_new_data</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="c1"># otherwise do nothing</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="s1">&#39;title&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                                    <span class="s2">&quot;data outdated skiped : [{}] {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                                    <span class="s2">&quot;data outdated skiped : [{}] &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">))</span>
+
+                <span class="c1"># update the date of the trigger at the end of the loop</span>
+                <span class="n">sentance</span> <span class="o">=</span> <span class="s2">&quot;user: {} - provider: {} - consumer: {} - {}&quot;</span>
+                <span class="k">if</span> <span class="n">to_update</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">((</span><span class="n">sentance</span> <span class="o">+</span> <span class="s2">&quot; new data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">service</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>
+                            <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                            <span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                            <span class="n">service</span><span class="o">.</span><span class="n">description</span><span class="p">,</span>
+                            <span class="n">count_new_data</span><span class="p">))</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">update_trigger</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">((</span><span class="n">sentance</span> <span class="o">+</span> <span class="s2">&quot; AN ERROR OCCURS &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">service</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>
+                            <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                            <span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                            <span class="n">service</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">((</span><span class="n">sentance</span> <span class="o">+</span> <span class="s2">&quot; nothing new&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">user</span><span class="p">,</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="n">service</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;No trigger set by any user&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Le script est plus long de (vraiment) quelques lignes, mais le jeu en
+vaut la chandelle.</p>
+<p><strong>Enfin :</strong><br>
+Reste plus qu'à taper sa commande</p>
+<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">fire_th</span>
+</pre></div>
+
+
+<p><strong>And Just in case</strong><br>
+Une fois que vous aurez fini votre script, pour le tester, si vous
+tapez comme, votre serviteur, la commande</p>
+<div class="highlight"><pre><span></span><span class="o">./</span><span class="n">fire_th</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+
+
+<p>depuis le dossier management/commands, vous aurez une surprise au
+premier <em>import mon_appli.whatelse</em> présent dans votre script, vous
+indiquant que le module n'existe pas.<br>
+Et effectivement, en se remettant les neurones à leur place, on se
+rendra compte qu'on se devra de taper</p>
+<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">fire_th</span>
+</pre></div>
+
+
+<p>depuis le folder contenant manage.py :P</p>
+<p><strong>Conclusion:</strong><br>
+Une nouvelle fonctionnalité tout simple mais c'est de la simplicité que
+s'exprime toute la puissance de la chose ;)</p>
+<p><strong>Hey pssssssssssttttttttt :</strong><br>
+Tous les commentaires sont les bienvenus.</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
+        <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
+        <li><a href="https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/">History not to lose the thread : TrackingFields</a></li>
+        <li><a href="https://foxmask.net/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
+        <li><a href="https://foxmask.net/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'django-le-magic-system-ty-es-fou';
+                var disqus_url = 'https://foxmask.net/post/2014/09/23/django-le-magic-system-ty-es-fou/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Twitter Timeline -->
+<li class="list-group-item">
+  <h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
+  <div id="twitter_timeline">
+    <a class="twitter-timeline" data-width="250" data-height="300" data-dnt="true" data-theme="light" href="https://twitter.com/triggerhappyeu">Tweets by triggerhappyeu</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</li>
+<!-- End Sidebar/Twitter Timeline -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://sametmax.com" target="_blank">Sam et Max</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/stats.html" target="_blank">Stats</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.net/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.net/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.net/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.net/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

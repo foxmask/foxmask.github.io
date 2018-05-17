@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>de PHP à Python : Gangnam Style - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.net/post/2013/02/04/gangam-style/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="ApacheMySqlPHP,python" />
+        <meta name="description" content="&#34;Gangnam Style&#34; kézako : Bon en fait j&#39;étais parti vous parler sérieusement avec un titre de PSR-1 à PEP8 mais ca manquait de fun ;-) Donc le sujet du jour de la série &#34;de PHP à Python&#34;, comme le laisse supposer (ceux qui connaissent) ces 2 &#39;codes&#39; PSR-1 &amp; PEP8 : les règles de …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="de PHP à Python : Gangnam Style"/>
+        <meta property="og:url" content="https://foxmask.net/post/2013/02/04/gangam-style/"/>
+        <meta property="og:description" content="&#34;Gangnam Style&#34; kézako : Bon en fait j&#39;étais parti vous parler sérieusement avec un titre de PSR-1 à PEP8 mais ca manquait de fun ;-) Donc le sujet du jour de la série &#34;de PHP à Python&#34;, comme le laisse supposer (ceux qui connaissent) ces 2 &#39;codes&#39; PSR-1 &amp; PEP8 : les règles de …"/>
+        <meta property="article:published_time" content="2013-02-04" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="ApacheMySqlPHP" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:author" content="foxmask" />
+
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@triggerhappyeu">
+        <meta name="twitter:creator" content="@triggerhappyeu">
+    <meta name="twitter:domain" content="https://foxmask.net">
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.net/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.net/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.net/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.net/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.net/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.net/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.net/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.net/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.net/post/2013/02/04/gangam-style/"
+                       rel="bookmark"
+                       title="Permalink to de PHP à Python : Gangnam Style">
+                        de PHP à Python : Gangnam Style
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-02-04T10:00:00+01:00"> Mon 04 February 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>"Gangnam Style" kézako : Bon en fait j'étais parti vous parler
+sérieusement avec un titre <em>de PSR-1 à PEP8</em> mais ca manquait de fun ;-)</p>
+<p>Donc le sujet du jour de la série "<a href="/post/2013/01/14/de-php-a-python-tous-ensemble/" title="de PHP à Python : tous ensemble">de PHP à
+Python</a>",
+comme le laisse supposer (ceux qui connaissent) ces 2 'codes' PSR-1 &amp;
+PEP8 : les règles de coding dans chacun des 2 langages.<br>
+Je me suis dit qu'après tout, on ne pouvait pas aborder le passage à
+python sans en passer par les règles de "rédaction", donc voici.</p>
+<p><strong>de PHP ...</strong></p>
+<p>Pour PHP la définition de la
+<a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md">PSR-1</a>
+est toute récente, et comme le rappelle
+<a href="http://blog.mageekbox.net/?post/2012/06/19/%C3%80-propos-de-PSR-0%2C-PSR-1-et-PSR-2">mageekguy</a>,
+celle ci est somme toute très subjective car cela n'empêchera personne
+de coder comme il a toujours fait, et cette règle peut déranger les
+habitudes de tout à chacun (moi le premier :) exemple de code :</p>
+<div class="highlight"><pre><span></span><span class="x">Pourquoi diable pour les fonctions les accolades sont à la ligne suivante et pas sur celle du if ?</span>
+<span class="x">Perso, je les ai toujours TOUTES mises sur la même ligne, une habitude prise avec PERL :)</span>
+<span class="x">... à Python </span>
+<span class="x">La PEP8 quant à elle n&#39;a que 12 ans ...</span>
+<span class="x">Les accolades n&#39;existent pas on met des &quot;:&quot; sur la même ligne que l&#39;instruction et on indent de 4 espaces.</span>
+<span class="x">Voici à quoi cela ressemble et on en discute après :</span>
+
+
+<span class="x">#Use 4 spaces per indentation level.</span>
+<span class="x">foo = long_function_name(var_one, var_two, var_three, var_four)</span>
+
+<span class="x">def long_function_name(var_one, var_two, var_three, var_four):</span>
+<span class="x">    print(var_one)</span>
+</pre></div>
+
+
+<p>on remarquera qu'en php on défini une fonction par le mot clé
+"function", ici on utilisera "def"</p>
+<p>Le Python n'étant pas rigide en tout point, parfois "la queue" (ligne de
+code) est un peu longue donc on la "retrousse" comme suit :  </p>
+<p><a href="/static/2013/01/Green-python-around-tree-1.jpg"><img alt="Un python qui se fait tout petit" src="/static/2013/01/Green-python-around-tree-1-300x225.jpg"></a></p>
+<div class="highlight"><pre><span></span><span class="c1"># Aligned with opening delimiter</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span>
+                         <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span>
+
+<span class="c1"># More indentation included to distinguish this from the rest.</span>
+<span class="k">def</span> <span class="nf">long_function_name</span><span class="p">(</span>
+        <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span> <span class="n">var_three</span><span class="p">,</span>
+        <span class="n">var_four</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">var_one</span><span class="p">)</span>
+</pre></div>
+
+
+<p>C'est tout aussi lisible et l'indentation fait son office</p>
+<p>Alors certes cela peut perturber le développeur PHP au début, mais si
+comme moi vous aimez que ca soit au carré vous vous y ferez super vite.</p>
+<p>La PEP8 définie également le nombre de lignes blanches entre 2 "def" ou
+la taille maximum de caractères par ligne.</p>
+<p>Une autre règle importante concerne les imports.</p>
+<p>En PHP on n'ira pas écrire</p>
+<div class="highlight"><pre><span></span><span class="x">use Customer, Order</span>
+</pre></div>
+
+
+<p>mais bien</p>
+<div class="highlight"><pre><span></span><span class="x">use Customer</span>
+<span class="x">use Order</span>
+</pre></div>
+
+
+<p>En Python on n'écrira pas non plus</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">customer</span><span class="o">,</span> <span class="nn">order</span>
+</pre></div>
+
+
+<p>mais bien 2 imports distincts</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">customer</span>
+<span class="kn">import</span> <span class="nn">order</span>
+</pre></div>
+
+
+<p>on retiendra que si la PEP8 n'est pas respectée, en exécutant votre
+script python vous aurez droit à une belle erreur ;)</p>
+<p>PHP a coté est largement plus laxiste !</p>
+<p>Par exemple j'avais pris pour habitude d(e volontairement) écrire ce
+genre de tru,c pour bien le repérer visuellement plus tard, et le
+retirer quand j'avais fini de débogger :</p>
+<div class="highlight"><pre><span></span><span class="x">function bagnole_spec($voiture) {</span>
+<span class="x">var_dump($voiture);</span>
+<span class="x">   if ( in_array($voiture,&#39;nb_portes&#39;)) {</span>
+<span class="x">       echo $voiture[&#39;nb_portes&#39;];</span>
+<span class="x">   }</span>
+<span class="x">}</span>
+</pre></div>
+
+
+<p>En python, aucun atermoiement n'est possible, on ne peut pas faire du
+code crade même temporairement, ça doit pas dépasser. L'ordre de facto
+on s'y fait, après tout le deboggage a sa place, autant ne pas le
+négliger :)</p>
+<p><strong>Conclusion :</strong><br>
+Bon évidement la PSR-1 ne se contente pas que de cela de même que la
+PEP8 ne se borne pas à ces limitations/impositions de style.</p>
+<p>Se conformer aux règles a du bon dès le départ, bon sauf quand ça fait
+plus de 10 piges qu'on crache du code et qu'on vous dit qu'il faut
+changer ;)</p>
+<p>De toute façon avec des IDE modernes vous aurez tout loisir que ce
+dernier vérifie que votre code colle aux exigences du langage.<br>
+Par exemple avec Python et <a href="http://www.aptana.com/">Aptana</a> vous pouvez
+ajouter les lib qui permettent à l'IDE de valider que votre code n'est
+pas écrit de travers, l'une d'elle est
+<a href="http://www.logilab.org/857">pylint</a>, ça donne cela :</p>
+<p><a href="/static/2013/01/pep8.png"><img alt="PEP8 avec Pylint dans Aptana" src="/static/2013/01/pep8.png"></a></p>
+<p>Comme on voit là sur la ligne <em>return render</em>, j'ai bien le droit de me
+faire plaisir par quelques retours à la ligne alignés sur la parenthèse
+ouvrante, quant à la ligne <em>logger.debug</em> on la voit beaucoup trop
+longue. Là python ne poussera pas le bouchon à nous invalider le code
+pour "si peu".</p>
+<p>Pour en revenir à "Gangnam Style": avec les accolades à tirelarigot on a
+vraiment l'impression d'avoir une posture de 'code' sur un canasson
+(quand on code pas comme un bourrin ;) et coté Python, d'aucuns diront
+qu'ils sont des poneys zailés ;)</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.net/post/2013/03/04/de-php-a-python-minie-petite-souris/">de PHP à Python : Minie petite souris</a></li>
+        <li><a href="https://foxmask.net/post/2013/02/25/de-php-a-python-meetgeek/">de PHP à Python : MeetGeek !</a></li>
+        <li><a href="https://foxmask.net/post/2013/02/18/de-php-a-python-x-aime-l/">de PHP à Python : X aime L</a></li>
+        <li><a href="https://foxmask.net/post/2013/02/12/de-php-a-python-les-tests-unitaires/">de PHP à Python : les tests unitaires</a></li>
+        <li><a href="https://foxmask.net/post/2013/01/28/de-php-a-python-de-composer-a-setuptools/">de PHP à Python : de composer à setuptools</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'gangam-style';
+                var disqus_url = 'https://foxmask.net/post/2013/02/04/gangam-style/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Twitter Timeline -->
+<li class="list-group-item">
+  <h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
+  <div id="twitter_timeline">
+    <a class="twitter-timeline" data-width="250" data-height="300" data-dnt="true" data-theme="light" href="https://twitter.com/triggerhappyeu">Tweets by triggerhappyeu</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</li>
+<!-- End Sidebar/Twitter Timeline -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://sametmax.com" target="_blank">Sam et Max</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/stats.html" target="_blank">Stats</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.net/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.net/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.net/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.net/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

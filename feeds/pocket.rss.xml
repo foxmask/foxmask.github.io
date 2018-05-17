@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Le Free de la Passion - pocket</title><link>https://foxmask.net/</link><description>La passion de la liberté</description><lastBuildDate>Tue, 17 Dec 2013 10:00:00 +0100</lastBuildDate><item><title>Trigger Happy met un éléphant dans sa poche</title><link>https://foxmask.net/post/2013/12/17/trigger-happy-met-un-elephant-dans-sa-poche/</link><description>&lt;p&gt;Voilà voilà...&lt;/p&gt;
+&lt;p&gt;Si vous découvrez tout juste "Trigger Happy", &lt;a href="/post/2013/05/27/django-trigger-happy/" title="Django Trigger Happy – une première"&gt;en voici une introduction
+préalable&lt;/a&gt;
+;)&lt;/p&gt;
+&lt;p&gt;Après avoir bien intégrés &lt;a href="https://evernote.com/intl/fr/"&gt;Evernote&lt;/a&gt; et
+RSS ensemble avec &lt;a href="https://github.com/foxmask/django-th"&gt;Trigger Happy&lt;/a&gt;,
+j'ai étendu le noyau du service afin de pouvoir à présent intégrer
+n'importe quel service.&lt;/p&gt;
+&lt;p&gt;Le nouveau venu est &lt;a href="http://getpocket.com/"&gt;Pocket&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A présent donc tout ce …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Tue, 17 Dec 2013 10:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-12-17:/post/2013/12/17/trigger-happy-met-un-elephant-dans-sa-poche/</guid><category>Django</category><category>evernote</category><category>pocket</category><category>python</category><category>TriggerHappy</category></item><item><title>Trigger Happy in ze Pocket</title><link>https://foxmask.net/post/2013/12/03/trigger-happy-in-ze-pocket/</link><description>&lt;p&gt;Il y a peu, je lançais un
+&lt;a href="/post/2013/07/13/sondage-quels-services-utilisez-vous-le-plus/" title="Sondage : quels services utilisez vous le plus ?"&gt;sondage&lt;/a&gt;,
+pour savoir, vers quel outil orienté mes prochains développements de
+"Trigger Happy" (le "machin bidule truc chouette" pour agréger soit même
+des news qui vous sied, de toute la toile, dans l'outil de votre choix,
+un truc comme le service IFTTT "If …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Tue, 03 Dec 2013 11:01:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-12-03:/post/2013/12/03/trigger-happy-in-ze-pocket/</guid><category>Django</category><category>evernote</category><category>pocket</category><category>python</category><category>TriggerHappy</category></item></channel></rss>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Le Free de la Passion - ApacheMySqlPHP</title><link>https://foxmask.net/</link><description>La passion de la liberté</description><lastBuildDate>Wed, 01 May 2013 13:20:00 +0200</lastBuildDate><item><title>HaveFnuBB les archives sont de retour du futur</title><link>https://foxmask.net/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/</link><description>&lt;p&gt;Avec mon déménagement de site web du projet HaveFnuBB (le forum sous GPL
+produit avec &lt;a href="http://jelix.org"&gt;Jelix&lt;/a&gt;), j'ai malencontreusement oublié
+de récupérer mes archives du forum que je vous proposais au
+téléchargement. Rien que ça :-)&lt;/p&gt;
+&lt;p&gt;Fort heureusement on me l'a fait remarquer et j'ai donc remis en ligne
+les versions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Wed, 01 May 2013 13:20:00 +0200</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-05-01:/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/</guid><category>ApacheMySqlPHP</category><category>HaveFnuBB</category><category>Jelix</category></item><item><title>de PHP à Python : Minie petite souris</title><link>https://foxmask.net/post/2013/03/04/de-php-a-python-minie-petite-souris/</link><description>&lt;p&gt;Nouvel opus de la série de &lt;a href="/post/2013/01/14/de-php-a-python-tous-ensemble/" title="de PHP à Python : tous ensemble"&gt;de PHP à
+Python&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Aujourd'hui, Comment parcourir un fichier de configuration ini ?&lt;/p&gt;
+&lt;p&gt;Alors en intro, un truc bien cool pour tout à chacun : les fichiers ini
+se lisent aussi bien avec Python que PHP.&lt;/p&gt;
+&lt;p&gt;Zavez une appli avec un bon (gros) fichier de config …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Mon, 04 Mar 2013 10:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-03-04:/post/2013/03/04/de-php-a-python-minie-petite-souris/</guid><category>ApacheMySqlPHP</category><category>python</category></item><item><title>de PHP à Python : MeetGeek !</title><link>https://foxmask.net/post/2013/02/25/de-php-a-python-meetgeek/</link><description>&lt;p&gt;J'aurai pu monter un site "QQ la praline", style MeetGeek (merde il est
+déjà pris:P) pour coucher sur le papier ce qui suit ;)&lt;/p&gt;
+&lt;p&gt;Samedi j'ai lancé &lt;a href="https://twitter.com/foxmask/status/305244330103287810"&gt;une proposition en l'air sans aucun formalisme sur
+twitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cette proposition la voici :&lt;br&gt;
+Vous êtes développeur PHP et avez envie de vous mettre …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Mon, 25 Feb 2013 09:44:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-02-25:/post/2013/02/25/de-php-a-python-meetgeek/</guid><category>ApacheMySqlPHP</category><category>python</category></item><item><title>Jelix PHP5 Framework : version 1.5.0 out</title><link>https://foxmask.net/post/2013/02/20/jelix-1-5-0-out/</link><description>&lt;p&gt;Le fameux &lt;a href="http://www.jelix.org"&gt;Framework PHP5 Jelix&lt;/a&gt; sort sa version
+1.5.0&lt;/p&gt;
+&lt;p&gt;Les contributeurs se sont mis en 4 pour sortir cette dernière version
+dont voici le menu des nouveautés :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Support PHP 5.3 only&lt;/strong&gt; à présent. Utilisation dans Jelix des
+    fonctionnalités introduites par PHP 5.3, comme les fonctions
+    anonymes …&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Wed, 20 Feb 2013 15:11:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-02-20:/post/2013/02/20/jelix-1-5-0-out/</guid><category>ApacheMySqlPHP</category><category>Jelix</category></item><item><title>de PHP à Python : X aime L</title><link>https://foxmask.net/post/2013/02/18/de-php-a-python-x-aime-l/</link><description>&lt;p&gt;Nouvel opus de la série de &lt;a href="/post/2013/01/14/de-php-a-python-tous-ensemble/" title="de PHP à Python : tous ensemble"&gt;de PHP à
+Python&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Aujourd'hui, Comment parcourir un fichier XML ?&lt;/p&gt;
+&lt;p&gt;Bon en plus je vais pousser le bouchon à utiliser XPath ;) tant qu'à
+lire un fichier, autant que ça soit "intelligent" et pas juste lire pour
+lire (quoi je me répète répète;)&lt;/p&gt;
+&lt;p&gt;La &lt;em&gt;matière …&lt;/em&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Mon, 18 Feb 2013 10:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-02-18:/post/2013/02/18/de-php-a-python-x-aime-l/</guid><category>ApacheMySqlPHP</category><category>python</category></item><item><title>de PHP à Python : les tests unitaires</title><link>https://foxmask.net/post/2013/02/12/de-php-a-python-les-tests-unitaires/</link><description>&lt;p&gt;Nouvel épisode de la série &lt;a href="/post/2013/01/14/de-php-a-python-tous-ensemble/" title="de PHP à Python : tous ensemble"&gt;de PHP à
+Python&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cette fois ci nous allons nous pencher sur l'incontournable outil du dev
+voulant s'assurer la qualité de son code et de sa non régression : le
+test unitaire.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Tests Unitaires" src="http://blog.pagesd.info/public/ContactManagement/unit-testing.png"&gt;](http://blog.pagesd.info/public/ContactManagement/unit-testing.png)&lt;/p&gt;
+&lt;p&gt;J'aborderai succinctement comment on s'y prend …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Tue, 12 Feb 2013 10:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-02-12:/post/2013/02/12/de-php-a-python-les-tests-unitaires/</guid><category>ApacheMySqlPHP</category><category>python</category></item><item><title>HaveFnuBB sous le domaine exactement</title><link>https://foxmask.net/post/2013/02/07/havefnubb-sous-le-domaine-exactement/</link><description>&lt;p&gt;&lt;a href="/static/2011/04/havefnubb.png"&gt;&lt;img alt="havefnubb" src="/static/2011/04/havefnubb.png"&gt;&lt;/a&gt;
+Amis lecteurs, vous savez que j'ai produit HaveFnuBB, ce projet de forum
+opensource en PHP5 avec &lt;a href="http://jelix.org" title="PHP5 Framework"&gt;Jelix&lt;/a&gt;,
+démarré en 2008, je vous en avais même parlé dans &lt;a href="/post/2012/12/29/havefnubb-en-2008-cetait-ca/" title="HaveFnuBB en 2008 c’était ça"&gt;un billet de retour
+aux
+sources&lt;/a&gt;
+;)&lt;/p&gt;
+&lt;p&gt;Alors nan le projet n'est pas mort, loin s'en faut, il dort un peu parce
+que je …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Thu, 07 Feb 2013 11:26:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-02-07:/post/2013/02/07/havefnubb-sous-le-domaine-exactement/</guid><category>ApacheMySqlPHP</category><category>Jelix</category></item><item><title>de PHP à Python : Gangnam Style</title><link>https://foxmask.net/post/2013/02/04/gangam-style/</link><description>&lt;p&gt;"Gangnam Style" kézako : Bon en fait j'étais parti vous parler
+sérieusement avec un titre &lt;em&gt;de PSR-1 à PEP8&lt;/em&gt; mais ca manquait de fun ;-)&lt;/p&gt;
+&lt;p&gt;Donc le sujet du jour de la série "&lt;a href="/post/2013/01/14/de-php-a-python-tous-ensemble/" title="de PHP à Python : tous ensemble"&gt;de PHP à
+Python&lt;/a&gt;",
+comme le laisse supposer (ceux qui connaissent) ces 2 'codes' PSR-1 &amp;amp;
+PEP8 : les règles de …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Mon, 04 Feb 2013 10:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-02-04:/post/2013/02/04/gangam-style/</guid><category>ApacheMySqlPHP</category><category>python</category></item><item><title>de PHP à Python : de composer à setuptools</title><link>https://foxmask.net/post/2013/01/28/de-php-a-python-de-composer-a-setuptools/</link><description>&lt;p&gt;&lt;a href="/post/2013/01/14/de-php-a-python-tous-ensemble/" title="de PHP à Python : tous ensemble"&gt;Comme introduit dans ce billet&lt;/a&gt;,
+voici donc le premier billet de la série &lt;strong&gt;de PHP à Python&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Gérer des dépendances à son projet ? il y a aussi une application pour
+cela !&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;de PHP ...&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Cette application se nomme
+&lt;a href="http://getcomposer.org/" title="Composer"&gt;Composer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Voici un extrait de la doc de Composer qui illustrera l'analogie qui …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Mon, 28 Jan 2013 10:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-01-28:/post/2013/01/28/de-php-a-python-de-composer-a-setuptools/</guid><category>ApacheMySqlPHP</category><category>python</category></item><item><title>de PHP à Python : tous ensemble</title><link>https://foxmask.net/post/2013/01/14/de-php-a-python-tous-ensemble/</link><description>&lt;p&gt;Voici (venu le temps des rires et des chants dans l'ile aux enfants du
+web c'est tous les jours le printemps, aheu 'scusez j'm'égare :) une
+nouvelle série d'articles "de PHP à Python" qui voit le jour.&lt;/p&gt;
+&lt;p&gt;Elle n'aura rien à voir avec une certaine émission de construction de
+baraques en …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Mon, 14 Jan 2013 17:40:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2013-01-14:/post/2013/01/14/de-php-a-python-tous-ensemble/</guid><category>ApacheMySqlPHP</category><category>python</category></item></channel></rss>

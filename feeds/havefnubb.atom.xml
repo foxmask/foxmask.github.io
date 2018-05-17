@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - HaveFnuBB</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/havefnubb.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2013-05-01T13:20:00+02:00</updated><entry><title>HaveFnuBB les archives sont de retour du futur</title><link href="https://foxmask.net/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/" rel="alternate"></link><published>2013-05-01T13:20:00+02:00</published><updated>2013-05-01T13:20:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-05-01:/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/</id><summary type="html">&lt;p&gt;Avec mon déménagement de site web du projet HaveFnuBB (le forum sous GPL
+produit avec &lt;a href="http://jelix.org"&gt;Jelix&lt;/a&gt;), j'ai malencontreusement oublié
+de récupérer mes archives du forum que je vous proposais au
+téléchargement. Rien que ça :-)&lt;/p&gt;
+&lt;p&gt;Fort heureusement on me l'a fait remarquer et j'ai donc remis en ligne
+les versions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Avec mon déménagement de site web du projet HaveFnuBB (le forum sous GPL
+produit avec &lt;a href="http://jelix.org"&gt;Jelix&lt;/a&gt;), j'ai malencontreusement oublié
+de récupérer mes archives du forum que je vous proposais au
+téléchargement. Rien que ça :-)&lt;/p&gt;
+&lt;p&gt;Fort heureusement on me l'a fait remarquer et j'ai donc remis en ligne
+les versions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.3.6 pour jelix 1.1&lt;/li&gt;
+&lt;li&gt;1.4.0 pour jelix 1.2&lt;/li&gt;
+&lt;li&gt;1.5.0 pour jelix 1.2 (aussi)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href="http://havefnubb.foxmask.info/downloads/" title="téléchargement de Havefunbb"&gt;Tout est
+là&lt;/a&gt;&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB 1.5.0</title><link href="https://foxmask.net/post/2012/04/02/havefnubb-1-5-0/" rel="alternate"></link><published>2012-04-02T09:00:00+02:00</published><updated>2012-04-02T09:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-04-02:/post/2012/04/02/havefnubb-1-5-0/</id><summary type="html">&lt;p&gt;cette nouvelle version, 1 an après la précédente quasiment jour pour
+jour,&lt;br&gt;
+est marquée par de nombreuses corrections de bugs et d'importantes
+améliorations de performances.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Corrections&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;modules&lt;/em&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;havefnubb: moult petites corrections&lt;/li&gt;
+&lt;li&gt;moduleinfos : affiche à présent les infos des modules correctement&lt;/li&gt;
+&lt;li&gt;hfnurates : correction de la soumission des données ajax quand
+    l'utilisateur …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;cette nouvelle version, 1 an après la précédente quasiment jour pour
+jour,&lt;br&gt;
+est marquée par de nombreuses corrections de bugs et d'importantes
+améliorations de performances.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Corrections&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;modules&lt;/em&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;havefnubb: moult petites corrections&lt;/li&gt;
+&lt;li&gt;moduleinfos : affiche à présent les infos des modules correctement&lt;/li&gt;
+&lt;li&gt;hfnurates : correction de la soumission des données ajax quand
+    l'utilisateur n'est pas connecté&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;fonctionnalités&lt;/em&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;le désabonnement n'était pas possible.&lt;/li&gt;
+&lt;li&gt;après l'abonnement à une discussion, on ne retournait pas à la page
+    d'où on venait&lt;/li&gt;
+&lt;li&gt;suppression de la gestion des caches des zones des utilisateurs ne
+    permettant pas l'affichage exact de leur information&lt;/li&gt;
+&lt;li&gt;dans le mail avertissant qu'un nouveau message auquel on est abonné
+    contenait un le lien erroné menant à une page 404&lt;/li&gt;
+&lt;li&gt;disparition des Tags sur les discussions corrigée&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Améliorations&lt;/strong&gt; :&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;installation&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;l'installation du forum a été simplifiée pour fournir les
+    informations "à propos",&lt;/li&gt;
+&lt;li&gt;affichage des informations de la version existante et celle à
+    installer&lt;/li&gt;
+&lt;li&gt;l'installation de mise à jour / migration a été revue&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;forum&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;le recomptage des messages que l'on bouge d'un forum à l'autre a été
+    améliorée&lt;/li&gt;
+&lt;li&gt;gestion des flux Atom&lt;/li&gt;
+&lt;li&gt;Ajout de meta keyword dans la configuration du forum&lt;/li&gt;
+&lt;li&gt;Gestion de la messagerie privée&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Performances&lt;/em&gt; :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;le Thème principal ne repose à présent plus sur le système de grille
+    960gs dans un soucis de performance et d'amélioration de la rapidité
+    du rendu, les autres thèmes restent inchangés et toujours basés sur
+    960gs&lt;/li&gt;
+&lt;li&gt;le forum a été allégé dans la gestion de ses tables afin d'éliminer
+    le maximum d'intermédiaires pour obtenir des informations simples et
+    les restituer le plus vite possible. Ainsi la quantité de requêtes
+    SQL a chuté drastiquement de même que les appels inutiles à des
+    templates et zones. Par conséquent si vous aviez produit des thèmes,
+    il faudra revoir le templae index.tpl pour y retirer l'appel d'une
+    zone et la remplacer par une simple ligne HTML. (cf le index.tpl du
+    thème par défaut pour plus d'infos).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Installation de HaveFnuBB&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.havefnubb.org/downloads/downloads_files/havefnubb-1-5-0"&gt;Télécharger la version
+1.5.0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Une fois fait, au choix vous pouvez utilisez :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+le Wizard via l'interface web
+
+&lt;/li&gt;
+-   pour une première installation rendez vous sur
+    http://localhost/install.php
+-   pour une mise à jour depuis une version 1.4.x, rendez vous sur
+    http://localhost/update.php
+
+&lt;li&gt;
+La ligne de commandes
+
+&lt;/li&gt;
+-   Pour l'installation :  
+    `php lib/jelix-scripts/jelix.php --havefnubb installapp `
+-   Pour la mise à jour  
+    `php lib/jelix-scripts/jelix.php --havefnubb installapp `  
+    Ah ba oui c'est bien la même commande ! ne vous avais je pas dit
+    que Jelix était fun ? ;)
+
+&lt;/ul&gt;
+
+&lt;p&gt;Have Fnu !&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB! 1.4.0</title><link href="https://foxmask.net/post/2011/04/03/havefnubb-1-4-0/" rel="alternate"></link><published>2011-04-03T18:03:00+02:00</published><updated>2011-04-03T18:03:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-04-03:/post/2011/04/03/havefnubb-1-4-0/</id><summary type="html">&lt;p&gt;&lt;a href="/static/2011/04/havefnubb.png"&gt;&lt;img alt="havefnubb" src="/static/2011/04/havefnubb.png" title="havefnubb"&gt;&lt;/a&gt;
+Bonjour,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(ré)Intro : HaveFnuBB est un logiciel de gestion de Forums OpenSource
+(sous licence GPL 2.0) avec pour buts d'être : Rapide, Léger et Agréable
+!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Aujourd'hui&lt;/strong&gt; :&lt;/p&gt;
+&lt;p&gt;Après près d'un an de développement depuis la sortie de la version
+1.3.6, voici la 1.4.0.&lt;/p&gt;
+&lt;p&gt;Cette version se dote …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="/static/2011/04/havefnubb.png"&gt;&lt;img alt="havefnubb" src="/static/2011/04/havefnubb.png" title="havefnubb"&gt;&lt;/a&gt;
+Bonjour,&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(ré)Intro : HaveFnuBB est un logiciel de gestion de Forums OpenSource
+(sous licence GPL 2.0) avec pour buts d'être : Rapide, Léger et Agréable
+!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Aujourd'hui&lt;/strong&gt; :&lt;/p&gt;
+&lt;p&gt;Après près d'un an de développement depuis la sortie de la version
+1.3.6, voici la 1.4.0.&lt;/p&gt;
+&lt;p&gt;Cette version se dote d'une nouvelle mouture du &lt;a href="http://jelix.org/"&gt;Framework PHP5
+Jelix&lt;/a&gt; en 1.2 ( facilitant grandement les
+installations/mises à jour des modules et des applications ), et a subit
+énormément de corrections de bogues, d'améliorations des performances&lt;/p&gt;
+&lt;p&gt;Je tire mon chapeau et adresse un très grand merci à Mr Jelix himself :
+&lt;a href="http://ljouanneau.com/blog/"&gt;Laurent Jouanneau&lt;/a&gt;, pour sa participation
+au code du forum, qui a grandement apporté sa pierre à l'édifice et
+remis plein de choses à leur place ;)&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.havefnubb.org/forums/forum/4-dernieres-versions/posts/278-278-havefnubb-1-4-0"&gt;L'annonce
+complète&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://www.havefnubb.org/downloads/downloads_files/havefnubb-1-4-0"&gt;Télécharger HaveFnuBB!
+1.4.0&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB Hook System</title><link href="https://foxmask.net/post/2009/11/10/havefnubb-hook-system-2/" rel="alternate"></link><published>2009-11-10T17:26:00+01:00</published><updated>2009-11-10T17:26:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2009-11-10:/post/2009/11/10/havefnubb-hook-system-2/</id><summary type="html">&lt;p&gt;Parmi les forums bien pensés, existent des systèmes d'extension (ou
+hook) laissant libre cours à la créativité des développeurs de ces
+hooks.&lt;/p&gt;
+&lt;p&gt;Dans HaveFnuBB (le forum que je réalise), &lt;a href="http://forge.jelix.org/projects/havefnubb/browser/trunk/havefnubb/plugins/tpl/html/function.hook.php"&gt;il m'aura fallu un plugin de
+10
+lignes&lt;/a&gt;
+pour permettre à tout développeur, d'enrichir ses templates avec une
+souplesse déconcertante.&lt;/p&gt;
+&lt;p&gt;L'idée …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Parmi les forums bien pensés, existent des systèmes d'extension (ou
+hook) laissant libre cours à la créativité des développeurs de ces
+hooks.&lt;/p&gt;
+&lt;p&gt;Dans HaveFnuBB (le forum que je réalise), &lt;a href="http://forge.jelix.org/projects/havefnubb/browser/trunk/havefnubb/plugins/tpl/html/function.hook.php"&gt;il m'aura fallu un plugin de
+10
+lignes&lt;/a&gt;
+pour permettre à tout développeur, d'enrichir ses templates avec une
+souplesse déconcertante.&lt;/p&gt;
+&lt;p&gt;L'idée derrière ce plugin est la suivante :&lt;/p&gt;
+&lt;p&gt;Je me créé un portail, blog, forum, et me "contente" d'une petite
+batteries de fonctionnalités rendant la page à mon goût.&lt;/p&gt;
+&lt;p&gt;Mais avec ce plugin, je permets à quiconque de rajouter ses propres
+fonctionnalités à l'endroit où le hook est appelé.&lt;/p&gt;
+&lt;p&gt;Concrètement comment cela marche ?&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;Je vous invite à poursuivre la lecture par ici =&gt; &lt;a href="/post/2009/11/10/HaveFnuBB-Hook-System"&gt;HaveFnuBB Hook
+System&lt;/a&gt;
+:)&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB! et son installeur automatique aka wizard</title><link href="https://foxmask.net/post/2009/09/01/havefnubb-et-son-installeur-automatique-aka-wizard/" rel="alternate"></link><published>2009-09-01T01:00:00+02:00</published><updated>2009-09-01T01:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2009-09-01:/post/2009/09/01/havefnubb-et-son-installeur-automatique-aka-wizard/</id><summary type="html">&lt;p&gt;&lt;a href="/post/2009/08/24/Le-mardi-c-est-jelix"&gt;Dans un précédent billet&lt;/a&gt; vous
+m'aviez demandé de vous présenter l'installeur de mon forum HaveFnuBB!&lt;/p&gt;
+&lt;p&gt;Voici donc le &lt;em&gt;Système d'installation d'HaveFnuBB!&lt;/em&gt; :&lt;/p&gt;
+&lt;p&gt;Le système d'installation se compose des étapes suivantes :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;) Vérifications des pré-requis système&lt;/li&gt;
+&lt;li&gt;) Configuration du Forum&lt;/li&gt;
+&lt;li&gt;) Configuration de la Base de données&lt;/li&gt;
+&lt;li&gt;) Installation de la Base de données&lt;/li&gt;
+&lt;li&gt;) Création du …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;&lt;a href="/post/2009/08/24/Le-mardi-c-est-jelix"&gt;Dans un précédent billet&lt;/a&gt; vous
+m'aviez demandé de vous présenter l'installeur de mon forum HaveFnuBB!&lt;/p&gt;
+&lt;p&gt;Voici donc le &lt;em&gt;Système d'installation d'HaveFnuBB!&lt;/em&gt; :&lt;/p&gt;
+&lt;p&gt;Le système d'installation se compose des étapes suivantes :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;) Vérifications des pré-requis système&lt;/li&gt;
+&lt;li&gt;) Configuration du Forum&lt;/li&gt;
+&lt;li&gt;) Configuration de la Base de données&lt;/li&gt;
+&lt;li&gt;) Installation de la Base de données&lt;/li&gt;
+&lt;li&gt;) Création du compte Administrateur&lt;/li&gt;
+&lt;li&gt;) Fin&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;INSTALLATION&lt;/strong&gt; :  &lt;/p&gt;
+&lt;p&gt;Techniquement les étapes consistent en :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Un seul contrôleur, 4 forms (*.forms.xml), 3 fichiers de config
+    (*.ini.php)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;entre parenthèses, se trouve le nom de la méthode du contrôleur
+"default" du module "hfnuinstall"&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Etape 1&lt;/strong&gt; (&lt;em&gt;check&lt;/em&gt;) - Vérifications :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;version_compare(phpversion(),'5.0','&gt;=')&lt;/li&gt;
+&lt;li&gt;function_exists('mysql_connect')&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etape 2&lt;/strong&gt; (&lt;em&gt;config&lt;/em&gt;) - Nom, description, langue et thème principaux,
+etc...&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lecture/écriture du fichier de config defaultconfig.ini.php&lt;/li&gt;
+&lt;li&gt;lecture/écriture du fichier de config havefnu.ini.php&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etape 3&lt;/strong&gt; (&lt;em&gt;dbconfig&lt;/em&gt;) - Info sur les noms: du serveur, de la base,
+de l'utilisateur de la base et son mot de passe&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lecture/écriture du fichier de config dbprofils.ini.php&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etape 4&lt;/strong&gt; (&lt;em&gt;installdb&lt;/em&gt;) - exécution du script install.mysql.sql&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;la structure de chaque module possède un dossier install/ ,
+    renfermant à son tour&lt;ul&gt;
+&lt;li&gt;sql/install.&lt;strong&gt;driver&lt;/strong&gt;.sql&lt;/li&gt;
+&lt;li&gt;update/&lt;strong&gt;version&lt;/strong&gt;/install.&lt;strong&gt;driver&lt;/strong&gt;.sql&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etape 5&lt;/strong&gt; (&lt;em&gt;adminaccount&lt;/em&gt;) - Infos admin :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lecture/ecriture du fichier de config havefnu.ini.php&lt;/li&gt;
+&lt;li&gt;appels des méthodes "core" de Jelix pour créer un utilisateur&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Etape 6&lt;/strong&gt; (&lt;em&gt;end&lt;/em&gt;) - Message de fin ;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MISE A JOUR&lt;/strong&gt; :  &lt;/p&gt;
+&lt;p&gt;La système de mise à jour, se charge :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;au minimum de mettre la version à jour dans havefnu.ini.php (le
+    fichier de config principal du forum)&lt;/li&gt;
+&lt;li&gt;sinon s'occupe de mettre à jour d'autres fichiers de configuration,
+    et exécuter les scripts SQL.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A chaque étape, l'installeur vérifie si la version actuelle est
+différente et enchaine les étapes sinon s'arrête.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;puis fini par vider le cache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bien évidement, on ne peut pas exécuter 2 fois de suite l'installation,
+puisque la vérification de la version est toujours faite.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;EPILOGUE&lt;/strong&gt; :  &lt;/p&gt;
+&lt;p&gt;Si vous accédez à la racine de votre forum et qu'il n'est pas installé,
+Jelix routera l'utilisateur directement sur l'installeur.&lt;br&gt;
+Ceci se fait grâce à l'intervention du plugin Coordinateur (qui pourra
+faire l'objet d'un autre article) vérifiant si le forum est installé.  &lt;/p&gt;
+&lt;p&gt;Pour plus d'infos je vous invite à consulter &lt;a href="http://forge.jelix.org/projects/havefnubb/browser/trunk/havefnubb/modules/hfnuinstall/controllers/default.classic.php"&gt;le code
+ici&lt;/a&gt;
+ou bien venir en parler &lt;a href="http://www.havefnubb.org"&gt;sur le forum lui
+même&lt;/a&gt; ;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTA BENE&lt;/strong&gt; :&lt;br&gt;
+L'installeur n'a rien à voir avec la prochaine feature de Jelix,
+l'installeur touzazimut, de modules, plugins etc.. ;)&lt;/p&gt;
+&lt;p&gt;Mais pour en avoir pas mal discuté en Janvier et codé appmgr, réadapter
+l'installeur d'HaveFnuBB avec Jelix 1.2 ne me posera aucun problème :P&lt;/p&gt;</content><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB! fait son entrée sur FreshMeat</title><link href="https://foxmask.net/post/2009/06/07/havefnubb-fait-son-entree-sur-freshmeat/" rel="alternate"></link><published>2009-06-07T13:37:00+02:00</published><updated>2009-06-07T13:37:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2009-06-07:/post/2009/06/07/havefnubb-fait-son-entree-sur-freshmeat/</id><summary type="html">&lt;p&gt;HaveFnuBB! fait son entrée sur
+&lt;a href="http://freshmeat.net/projects/havefnubb"&gt;Freshmeat.net&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Le but est de faire connaître HaveFnuBB! aux bons endroits avec
+l'audience qui lui sied ;-)&lt;/p&gt;</summary><content type="html">&lt;p&gt;HaveFnuBB! fait son entrée sur
+&lt;a href="http://freshmeat.net/projects/havefnubb"&gt;Freshmeat.net&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Le but est de faire connaître HaveFnuBB! aux bons endroits avec
+l'audience qui lui sied ;-)&lt;/p&gt;</content><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB s'installe sur la toile</title><link href="https://foxmask.net/post/2009/04/13/havefnubb-s-installe-sur-la-toile/" rel="alternate"></link><published>2009-04-13T01:51:00+02:00</published><updated>2009-04-13T01:51:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2009-04-13:/post/2009/04/13/havefnubb-s-installe-sur-la-toile/</id><summary type="html">&lt;p&gt;Après avoir &lt;a href="/post/2009/03/06/HaveFnuBB%2C-le-forum-%22made-in%22-Jelix"&gt;fait part du projet HaveFnuBB! ici
+même&lt;/a&gt;, voici
+que le projet &lt;a href="http://www.havefnubb.org"&gt;s'installe sur la toile&lt;/a&gt; sur
+son propre domaine : &lt;a href="http://www.havefnubb.org"&gt;HaveFnuBB.Org&lt;/a&gt; !&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.havefnubb.org"&gt;HaveFnuBB&lt;/a&gt; est le premier logiciel de forum
+produit à partir du &lt;a href="http://fr.wikipedia.org/wiki/Framework"&gt;framework&lt;/a&gt;
+PHP5 qu'est &lt;a href="http://www.jelix.org"&gt;Jelix&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Je vous invite à le &lt;a href="http://community.havefnubb.org"&gt;tester&lt;/a&gt;, et si le
+projet vous intéresse …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Après avoir &lt;a href="/post/2009/03/06/HaveFnuBB%2C-le-forum-%22made-in%22-Jelix"&gt;fait part du projet HaveFnuBB! ici
+même&lt;/a&gt;, voici
+que le projet &lt;a href="http://www.havefnubb.org"&gt;s'installe sur la toile&lt;/a&gt; sur
+son propre domaine : &lt;a href="http://www.havefnubb.org"&gt;HaveFnuBB.Org&lt;/a&gt; !&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.havefnubb.org"&gt;HaveFnuBB&lt;/a&gt; est le premier logiciel de forum
+produit à partir du &lt;a href="http://fr.wikipedia.org/wiki/Framework"&gt;framework&lt;/a&gt;
+PHP5 qu'est &lt;a href="http://www.jelix.org"&gt;Jelix&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Je vous invite à le &lt;a href="http://community.havefnubb.org"&gt;tester&lt;/a&gt;, et si le
+projet vous intéresse, &lt;a href="http://forge.jelix.org/projects/havefnubb"&gt;vous pouvez toujours
+participer&lt;/a&gt; en attendant une
+première version pour bientôt.&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB, le forum "made in" Jelix</title><link href="https://foxmask.net/post/2009/03/06/havefnubb-le-forum-made-in-jelix/" rel="alternate"></link><published>2009-03-06T21:56:00+01:00</published><updated>2009-03-06T21:56:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2009-03-06:/post/2009/03/06/havefnubb-le-forum-made-in-jelix/</id><summary type="html">&lt;p&gt;&lt;a href="/post/2008/11/20/Pouce-%21"&gt;Après avoir annoncé faire une pause sur les
+CMS&lt;/a&gt;, et démarré la découverte d'un
+&lt;a href="http://fr.wikipedia.org/wiki/Framework"&gt;framework&lt;/a&gt; nommé
+&lt;a href="http://jelix.org"&gt;Jelix&lt;/a&gt;, ce dernier m'a amené à créer un petit blog
+perso &lt;a href="http://projets.foxmask.info"&gt;(dé)pot de miel&lt;/a&gt; sur lequel je
+"blog" à la manière que fut la mienne sur CakePHP ici même ;) Avec bout
+de code …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="/post/2008/11/20/Pouce-%21"&gt;Après avoir annoncé faire une pause sur les
+CMS&lt;/a&gt;, et démarré la découverte d'un
+&lt;a href="http://fr.wikipedia.org/wiki/Framework"&gt;framework&lt;/a&gt; nommé
+&lt;a href="http://jelix.org"&gt;Jelix&lt;/a&gt;, ce dernier m'a amené à créer un petit blog
+perso &lt;a href="http://projets.foxmask.info"&gt;(dé)pot de miel&lt;/a&gt; sur lequel je
+"blog" à la manière que fut la mienne sur CakePHP ici même ;) Avec bout
+de code, projets etc...&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;Je me perds un peu vous me direz ;) Mais en fait non, c'est la trame qui
+m'amène à vous parler d'un projet écrit avec Jelix donc (forcément)
+nommé &lt;a href="http://forge.jelix.org/projects/havefnubb"&gt;HaveFnuBB&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Ce projet sans prétention, se veut être un &lt;em&gt;simple&lt;/em&gt; forum (de plus, vu
+la palanquée qu'il existe sur la toile) mais qu'importe !&lt;br&gt;
+Le sien est toujours mieux que celui des autres ;)&lt;/p&gt;
+&lt;p&gt;J'y apporte plusieurs choses et met en pratique les préceptes de la
+modularité, force, simplicité, vitesse de Jelix !&lt;/p&gt;
+&lt;p&gt;Ce petit joujou est déjà pourvu des fonctionnalités suivantes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Coté Forum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Syntaxe Wiki (byebye le bbcode :P)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Sous-Forum à foisons&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Tagger les Sujets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Un bon moteur de recherche&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;SEO&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Un fil d'ariane&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Coté Utilisateurs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Moultes options pour gérer son profil&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;peuvent faire parti de plusieurs groupes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Coté Admin :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Une configuration principale&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Gestion de Catégories de forums, de Forums, des droits au forums,
+    notifications des sujets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Cache&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;Utilisateurs, Groupes, Ban (exclusions)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Voilà donc le dernier passe-temps qui m'occupe quotidiennement ;)&lt;/p&gt;
+&lt;p&gt;nb : Pour ceux qui seraient intéressés par un tel projet, il y a de la
+place, manifestez vous !&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HaveFnu - !&lt;/li&gt;
+&lt;/ul&gt;</content><category term="HaveFnuBB"></category><category term="Jelix"></category></entry></feed>

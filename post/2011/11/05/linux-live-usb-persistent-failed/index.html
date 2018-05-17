@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Linux Live USB Persistent : failed - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.net/post/2011/11/05/linux-live-usb-persistent-failed/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="linux" />
+        <meta name="description" content="Suite à cette mésaventure, j&#39;ai fait les frais d&#39;une clé USB 32Go, et de 2 soirées d&#39;affilées à la recherche d&#39;images ISO qui soit exploitable sur le (vieux) portable recyclé pour ma fille. Mon &#34;cahier des charges&#34; étant : Hardware RAM utilisable 512Mo Wifi sur une clef USB à prendre en …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Linux Live USB Persistent : failed"/>
+        <meta property="og:url" content="https://foxmask.net/post/2011/11/05/linux-live-usb-persistent-failed/"/>
+        <meta property="og:description" content="Suite à cette mésaventure, j&#39;ai fait les frais d&#39;une clé USB 32Go, et de 2 soirées d&#39;affilées à la recherche d&#39;images ISO qui soit exploitable sur le (vieux) portable recyclé pour ma fille. Mon &#34;cahier des charges&#34; étant : Hardware RAM utilisable 512Mo Wifi sur une clef USB à prendre en …"/>
+        <meta property="article:published_time" content="2011-11-05" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="linux" />
+            <meta property="article:author" content="foxmask" />
+
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@triggerhappyeu">
+        <meta name="twitter:creator" content="@triggerhappyeu">
+    <meta name="twitter:domain" content="https://foxmask.net">
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.net/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.net/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.net/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.net/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.net/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.net/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.net/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.net/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.net/post/2011/11/05/linux-live-usb-persistent-failed/"
+                       rel="bookmark"
+                       title="Permalink to Linux Live USB Persistent : failed">
+                        Linux Live USB Persistent : failed
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-11-05T17:01:00+01:00"> Sat 05 November 2011</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/linux.html">linux</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Suite à <a href="/post/2011/10/22/linux-sur-laptop-sans-disque-dur/" title="Laptop sous linux sans dique dur">cette
+mésaventure</a>,
+j'ai fait les frais d'une clé USB 32Go, et de 2 soirées d'affilées à la
+recherche d'images ISO qui soit exploitable sur le (vieux) portable
+recyclé pour ma fille.</p>
+<p>Mon "cahier des charges" étant :</p>
+<ol>
+<li>
+<p>Hardware</p>
+<ol>
+<li>RAM utilisable 512Mo</li>
+<li>Wifi sur une clef USB à prendre en charge</li>
+</ol>
+</li>
+<li>
+<p>Linux en Français (avec Gnome 2 pas 3 tant qu'à faire puisque vieux
+    PC)</p>
+</li>
+<li>le mode persistant pour stocker quelques photos de copines :P</li>
+</ol>
+<p>Fort de tout cela j'ai pu essayer plusieurs outils :</p>
+<ol>
+<li>
+<p><a href="http://www.linuxliveusb.com/">Linux Live USB</a> fourni un outil
+    permettant de choisir quel périphérique utiliser, de télécharger une
+    ISO, l'installer et spécifier la taille max dédié au mode
+    persistant.</p>
+<ol>
+<li>Mon premier choix s'était bien sûr porté sur
+    <a href="http://debian.org" title="GNU/Linux Debian">Debian</a> (utilisateur de
+    debian depuis la potatoe ceci explique cela:), mais les <strong>ISO
+    debian 6.0.1</strong> requis par l'outil ne sont pas les bonnes...</li>
+<li>Ensuite j'ai pu m'orienter sur
+    <strong><a href="http://ubuntu.com" title="Ubuntu">Ubuntu</a> 11.10</strong>, et tenter en
+    vain de booter sur le portable... En vain car j'avais pas fait
+    attention que j'avais déjà du mal à booter une <strong>10.10</strong> avant
+    le crash du disque dur ...</li>
+<li>J'ai donc repris un <strong>10.10</strong> mais hélas mille fois hélas, à
+    part le splash screen avec les petits points qui passent du
+    blanc au marron, je n'arrive jamais à passer cet écran. Pourtant
+    avec un <strong>live CD Ubuntu 10.10</strong>, ca passe ...</li>
+<li>Devant cet échec j'ai installé les doigts dans le nez, une
+    <strong>slackware</strong> :
+    <a href="http://slax.org" title="Slax, your pocket operating système">Slax</a> de
+    son nom! Slax fourni KDE mais est totalement en anglais (or je
+    vous rappelle que c'est pour ma fille de 10ans, l'anglais
+    technique c'est un poil trop tôt:) ... et ne prend pas en charge
+    ma clef usb pour le wifi (à ba oui on cumule les obstacles)</li>
+<li>J'ai bien évidement tenté d'installer le projet Linux Live USB
+    Debian mais à part une liste de packages à installer, rien
+    n'explique comment le faire...</li>
+</ol>
+</li>
+<li>
+<p>Ensuite pour quand même tenter d'installer une Debian (oui têtu un
+    jour têtu toujours) j'ai utilisé <a href="http://www.pendrivelinux.com/liveusb-install-live-usb-creator/">Cet
+    outil</a>
+    qui m'a permis de mettre une 6.0.3 tout aussi facilement que la
+    slackware, et booter, tout nickel jusqu'au deux derniers obstacles :
+    la clé usb pour le wifi, non reconnue et Gnome full English ! Shit !
+    J'ai eu beau récupéré le driver (non-free:p) pour l'installer, de
+    réseau wifi la Debian ne vit, ni ne voulu prendre en compte avec les
+    infos que je lui avais fourni.</p>
+</li>
+</ol>
+<p>Après tout cela je suis dépité, ok Ubuntu avant le crash disque
+reconnaissait ma clé usb et fonctionnait tant bien que mal, mais depuis
+toutes ces années je n'avais jamais vu de distribution ne pas me donner
+satisfaction. Sauf qu'à présent, l'idée de "redonner un second souffle à
+un PC" avec un linux salvateur/sauveur devient de plus en plus
+hypothétique. Si ubuntu avait envi de faire comme windows en devenant de
+plus en plus gourmand, c'est gagné !</p>
+<p>Maintenant où j'en suis ?</p>
+<p>là :</p>
+<p>"Papa quand est-ce que je peux utiliser mon ordinateur ?"</p>
+<p>PS : maintenant je suis calé pour monter une distrib' en mode persistant
+et ... redimensionner la partie non allouée au delà des 4Go :D</p>
+<p>Si quelqu'un connait une distribution linux avec un gnome 2 en français
+qui soit exploitable avec moins de 512Mo ... et avec prise en charge du
+driver usb <a href="http://sourceforge.net/projects/zd1211/">ZD1211</a> ca serait
+le grand pied !</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.net/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/">Tuto linux : trouver le process qui a ouvert un port</a></li>
+        <li><a href="https://foxmask.net/post/2015/05/03/gnome-systemd-debian-8-bsd/">Gnome SystemD, Debian 8, *BSD</a></li>
+        <li><a href="https://foxmask.net/post/2014/06/03/debian-network-manager-et-eth0-non-geree/">Debian Network Manager et Eth0 non gérée</a></li>
+        <li><a href="https://foxmask.net/post/2014/03/27/extraire-une-portion-dune-archive-distante-sans-la-telecharger/">extraire une portion d'une archive distante sans la télécharger</a></li>
+        <li><a href="https://foxmask.net/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/">Debian 7 Wheezy - re mise à jour du driver NVIDIA</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'linux-live-usb-persistent-failed';
+                var disqus_url = 'https://foxmask.net/post/2011/11/05/linux-live-usb-persistent-failed/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Twitter Timeline -->
+<li class="list-group-item">
+  <h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
+  <div id="twitter_timeline">
+    <a class="twitter-timeline" data-width="250" data-height="300" data-dnt="true" data-theme="light" href="https://twitter.com/triggerhappyeu">Tweets by triggerhappyeu</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</li>
+<!-- End Sidebar/Twitter Timeline -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://sametmax.com" target="_blank">Sam et Max</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/stats.html" target="_blank">Stats</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.net/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.net/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.net/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.net/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - readability</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/readability.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2014-01-06T10:30:00+01:00</updated><entry><title>Trigger Happy, lire plus tard avec agilité</title><link href="https://foxmask.net/post/2014/01/06/trigger-happy-lire-plus-tard-avec-agitilite/" rel="alternate"></link><published>2014-01-06T10:30:00+01:00</published><updated>2014-01-06T10:30:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-01-06:/post/2014/01/06/trigger-happy-lire-plus-tard-avec-agitilite/</id><summary type="html">&lt;p&gt;En cette nouvelle année, voici venu un nouveau service géré par &lt;a href="https://github.com/foxmask/django-th"&gt;Trigger
+Happy&lt;/a&gt;, qu'est
+&lt;a href="https://www.readability.com/" title="Readability"&gt;Readability&lt;/a&gt; après avoir
+intégrés &lt;a href="http://evernote.com/" title="Evernote: Remeber everything"&gt;Evernote&lt;/a&gt;
+et &lt;a href="http://getpocket.com/" title="Pocket"&gt;Pocket&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;voici un extrait &lt;strong&gt;depuis Readability&lt;/strong&gt; :&lt;br&gt;
+&lt;a href="/static/2013/12/readability_pocket_1.png"&gt;&lt;img alt="De Readability à Pocket" src="/static/2013/12/readability_pocket_1.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;et les données reçues de Readability &lt;strong&gt;dans Pocket&lt;/strong&gt; :&lt;br&gt;
+&lt;a href="/static/2013/12/readability_pocket_2.png"&gt;&lt;img alt="De Readability à Pocket : données reçues de Readability dans pocket" src="/static/2013/12/readability_pocket_2.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;L'inverse fonctionne également ;)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/foxmask/django-th-readability"&gt;Les Sources du projets sont par ici&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Les services existants&lt;/strong&gt; :&lt;br&gt;
+Ainsi donc cela …&lt;/p&gt;</summary><content type="html">&lt;p&gt;En cette nouvelle année, voici venu un nouveau service géré par &lt;a href="https://github.com/foxmask/django-th"&gt;Trigger
+Happy&lt;/a&gt;, qu'est
+&lt;a href="https://www.readability.com/" title="Readability"&gt;Readability&lt;/a&gt; après avoir
+intégrés &lt;a href="http://evernote.com/" title="Evernote: Remeber everything"&gt;Evernote&lt;/a&gt;
+et &lt;a href="http://getpocket.com/" title="Pocket"&gt;Pocket&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;voici un extrait &lt;strong&gt;depuis Readability&lt;/strong&gt; :&lt;br&gt;
+&lt;a href="/static/2013/12/readability_pocket_1.png"&gt;&lt;img alt="De Readability à Pocket" src="/static/2013/12/readability_pocket_1.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;et les données reçues de Readability &lt;strong&gt;dans Pocket&lt;/strong&gt; :&lt;br&gt;
+&lt;a href="/static/2013/12/readability_pocket_2.png"&gt;&lt;img alt="De Readability à Pocket : données reçues de Readability dans pocket" src="/static/2013/12/readability_pocket_2.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;L'inverse fonctionne également ;)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/foxmask/django-th-readability"&gt;Les Sources du projets sont par ici&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Les services existants&lt;/strong&gt; :&lt;br&gt;
+Ainsi donc cela fait 4 services gérés : &lt;strong&gt;RSS&lt;/strong&gt;, &lt;strong&gt;Evernote&lt;/strong&gt;,
+&lt;strong&gt;Pocket&lt;/strong&gt;, &lt;strong&gt;Readability&lt;/strong&gt;. Chacun d'eux pouvant échanger des
+informations entre eux, 2 à 2.&lt;/p&gt;
+&lt;p&gt;Dans la foulée j'en ai profité pour sortir une nouvelle version de tous
+les services existants.&lt;/p&gt;
+&lt;p&gt;Vous pouvez tous les &lt;a href="https://pypi.python.org/pypi?%3Aaction=search&amp;amp;term=django-th-&amp;amp;submit=search" title="Djangop Trigger Happy et ses Services"&gt;retrouver sur Pypi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;En cadeau&lt;/strong&gt; bonusque ; j'ai produit un module
+&lt;a href="https://github.com/foxmask/django-th-dummy" title="Dummy module"&gt;django-th-dummy&lt;/a&gt;
+que vous pouvez simplement cloner pour produire un nouveau module pour
+Trigger Happy les doigts dans le nez (atchoum!) :P&lt;br&gt;
+Ce petit module vient en complément du billet précédant "&lt;a href="/post/2013/12/09/trigger-happy-comment-pondre-son-propre-module/" title="Trigger Happy comment pondre son propre module"&gt;comment
+pondre son propre module&lt;/a&gt;".&lt;/p&gt;
+&lt;p&gt;Vous n'avez à présent plus aucune excuse pour ne pas produire votre
+propre module et enfin prendre en main votre trousseau d'autorisation
+d'accès entre vos services. (merci prism :P)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Aparté&lt;/strong&gt;&lt;br&gt;
+En passant je suis allé voir Feedly.com (par curiosité pour trouver
+l'inspiration :) donc si vous utilisez feedly.com, il vous en coutera
+5\$/mois pour obtenir vos nouvelles automatiquement envoyées dans vos
+compte Evernote et Pocket ... Ca laisse songeur hein ? cloudWord et
+autres services similaires se régalent.&lt;/p&gt;
+&lt;p&gt;2014 le changement (si vous voulez vous en donner la peine/plaisir de
+l'installer pour le tester... c'est mon cadeau de ce nouvel an) ;)&lt;/p&gt;</content><category term="Django"></category><category term="python"></category><category term="readability"></category><category term="TriggerHappy"></category></entry></feed>

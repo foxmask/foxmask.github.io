@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Aptana</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/aptana.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2013-09-26T22:33:00+02:00</updated><entry><title>Django Aptana gestion du PYTHONPATH avec un VirtualEnv</title><link href="https://foxmask.net/post/2013/09/26/django-aptana-pythonpath-virtualenv/" rel="alternate"></link><published>2013-09-26T22:33:00+02:00</published><updated>2013-09-26T22:33:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-09-26:/post/2013/09/26/django-aptana-pythonpath-virtualenv/</id><summary type="html">&lt;p&gt;Avec l'éditeur Aptana, &lt;a href="/post/2012/08/25/django-runserver-depuis-aptana/"&gt;comme dit dans un précédant
+billet&lt;/a&gt;,
+on peut faire joujou avec le manager.py de django.&lt;/p&gt;
+&lt;p&gt;Ici, je vais montrer comment gérer le PYTHONPATH d'un projet Django
+qu'on a mis dans un virtualenv de surcroit.&lt;/p&gt;
+&lt;p&gt;Le but de ce PYTHONPATH avec Aptana va être de nous affranchir …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Avec l'éditeur Aptana, &lt;a href="/post/2012/08/25/django-runserver-depuis-aptana/"&gt;comme dit dans un précédant
+billet&lt;/a&gt;,
+on peut faire joujou avec le manager.py de django.&lt;/p&gt;
+&lt;p&gt;Ici, je vais montrer comment gérer le PYTHONPATH d'un projet Django
+qu'on a mis dans un virtualenv de surcroit.&lt;/p&gt;
+&lt;p&gt;Le but de ce PYTHONPATH avec Aptana va être de nous affranchir d'avoir
+en rouge tous les imports django comme par exemple :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et dans le même temps cela permettra d'avoir une &lt;em&gt;completion&lt;/em&gt; du code
+des classes les doigts dans le nez.&lt;/p&gt;
+&lt;p&gt;Pour arriver au but on fera un click droit sur le nom du projet dans la
+&lt;em&gt;perspective&lt;/em&gt; PyDev puis "Propriétés" ce qui nous donnera cette image :&lt;br&gt;
+&lt;a href="/static/2013/09/aptana_django_pythonpath_virtualenv.png"&gt;&lt;img alt="Django Aptana gestion du PYTHONPATH avec
+VirtualEnv" src="/static/2013/09/aptana_django_pythonpath_virtualenv.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;on va procéder ici en 2 étapes :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;"Pydev - interpreter/grammar"&lt;/li&gt;
+&lt;li&gt;"PyDev - PYTHONPATH"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Etape 1 :&lt;/p&gt;
+&lt;p&gt;On sélectionne la ligne de gauche "Pydev - interpreter/grammar"&lt;br&gt;
+Puis on sélectionne le lien "click to configure an interpreter not
+listed"&lt;br&gt;
+Ici vous allez aller chercher "python" dans le dossier "bin" de votre
+virtualenv en cliquant sur "new"&lt;br&gt;
+Une fois fait on clique sur "apply" (en bas à droite de la popup) et
+Aptana nous charge tout le contenu de "lib". Avec cette étape les
+"import django.xxx" ne seront plus rouge ;)&lt;/p&gt;
+&lt;p&gt;Etape 2 :&lt;/p&gt;
+&lt;p&gt;On sélectionne la ligne de gauche "PyDev - PYTHONPATH"&lt;br&gt;
+Sur l'onglet "Sources folder" on doit déjà trouver le path vers django
+dans la liste, suite à la manipulation précédante&lt;br&gt;
+On va à présent ajouter ici le path vers le dossier de son application
+Django. Pour le localiser, ce dernier est au même niveau que le folder
+"bin" de votre virtualenv.&lt;/p&gt;
+&lt;p&gt;Voilà :)&lt;br&gt;
+Pour en voir les effets, un petit click droit sur projet puis "PyDev"
+&gt; "Code analasis"&lt;/p&gt;</content><category term="Aptana"></category><category term="Django"></category><category term="python"></category></entry></feed>

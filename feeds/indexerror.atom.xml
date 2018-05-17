@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - indexerror</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/indexerror.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-09-08T08:00:00+02:00</updated><entry><title>Revue Technique de la semaine du 05/09/2016</title><link href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/" rel="alternate"></link><published>2016-09-08T08:00:00+02:00</published><updated>2016-09-08T08:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-09-08:/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/</id><summary type="html">&lt;p&gt;Cela faisait un bon moment que je ne m'etais pas penché sur une revue technique, depuis ma migration Wordpress =&amp;gt; Pelican à vrai dire :)&lt;/p&gt;
+&lt;p&gt;Donc voici un petit tour de la technosphere des sujets, projets (et autre bidules machins trucs) croisés sur le chemin &lt;/p&gt;
+&lt;h1&gt;Wallabag 2.0.8&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://wallabag.org"&gt;Wallabag&lt;/a&gt; nous gratifie …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Cela faisait un bon moment que je ne m'etais pas penché sur une revue technique, depuis ma migration Wordpress =&amp;gt; Pelican à vrai dire :)&lt;/p&gt;
+&lt;p&gt;Donc voici un petit tour de la technosphere des sujets, projets (et autre bidules machins trucs) croisés sur le chemin &lt;/p&gt;
+&lt;h1&gt;Wallabag 2.0.8&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://wallabag.org"&gt;Wallabag&lt;/a&gt; nous gratifie d'une version 2.0.8 avant une potentielle 2.1&lt;/p&gt;
+&lt;h1&gt;Sam et Max&lt;/h1&gt;
+&lt;p&gt;'ils' sont de retour avec de nouveaux billets dont le dernier aborde UUID : &lt;a href="http://sametmax.com/verifier-quun-uuid-est-valide-en-python/"&gt;Vérifier qu'un UUID est valide en Python&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Django&lt;/h1&gt;
+&lt;h2&gt;... et une nouvelle release&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.djangoproject.com/weblog/2016/sep/01/bugfix-release/"&gt;une version 1.10.1 contentant quelques bugfix&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;... et Docker&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://semaphoreci.com/community/tutorials/dockerizing-a-python-django-web-application"&gt;Dockerizing a Python Django Web Application&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;... et le framework message&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://simpleisbetterthancomplex.com/tips/2016/09/06/django-tip-14-messages-framework.html"&gt;Django Tips #14 Using the Messages Framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://simpleisbetterthancomplex.com/tips/2016/08/23/django-tip-13-f-expressions.html"&gt;Django Tips #13 F() Expressions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;... et sa config gunicorn&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://samoylov.tech/2016/08/31/deploying-django-with-gunicorn-and-supervisor/"&gt;Deploying Django with Gunicorn and Supervisor&lt;/a&gt;
+Billet que j'ai trouvé trop trop trop court comparé à un de &lt;a href="https://foxmask.trigger-happy.eu/post/2015/06/19/supervisor-celery-django-orchestration/"&gt;mes vieux billets&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Python&lt;/h1&gt;
+&lt;p&gt;La couverture de ce livre &lt;a href="http://www.blog.pythonlibrary.org/2016/09/06/python-201-is-officially-published/"&gt;Python 201&lt;/a&gt;, m'a fait penser à un coaching culinaire par Ratatouille :) N'en demeure pas moins qu'il existe ... pour les dev intermediaires.&lt;/p&gt;
+&lt;p&gt;7 trucs pour ecrire du code plus meilleur ;)&lt;/p&gt;
+&lt;blockquote class="twitter-tweet" data-lang="fr"&gt;&lt;p lang="en" dir="ltr"&gt;7 Simple &lt;a href="https://twitter.com/hashtag/Tricks?src=hash"&gt;#Tricks&lt;/a&gt; to Write Better &lt;a href="https://twitter.com/hashtag/Python?src=hash"&gt;#Python&lt;/a&gt; Code &lt;a href="https://t.co/uqEN50U7nI"&gt;https://t.co/uqEN50U7nI&lt;/a&gt; &lt;a href="https://t.co/dk2NDVVhZd"&gt;pic.twitter.com/dk2NDVVhZd&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nicolas RAMY (@darkelda) &lt;a href="https://twitter.com/darkelda/status/770554167932968960"&gt;30 août 2016&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+&lt;h1&gt;IndexError&lt;/h1&gt;
+&lt;p&gt;Comment pourquoi que ca marche-t-il (pas) mon code, S.O.S d'un codeur en détresse :  &lt;/p&gt;
+&lt;p&gt;voici les 5 derniers sujets traités ou en cours sur
+&lt;a href="http://IndexError.net"&gt;IndexError.net&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/4267/facebook-api"&gt;Facebook API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/4257/ajouter-des-donn%C3%A9es-aux-fields-dun-form"&gt;Ajouter des données aux fields d'un form&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/4265/architecture-faut-limiter-methodes-accessibles-dun-objet"&gt;Architecture : faut-il limiter les methodes accessibles d'un objet ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/4259/comment-trier-les-logs-de-ses-diff%C3%A9rentes-applis"&gt;Comment trier les logs de ses différentes applis ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/4203/decorateur-async-await"&gt;decorateur async await&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/4198/vos-types-customis%C3%A9s-utiles"&gt;vos types customisés utiles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Meetup&lt;/h1&gt;
+&lt;p&gt;La rentrée scolaire annonce son lot de rencontres, dont une le 13/09 : &lt;a href="https://www.meetup.com/fr-FR/Paris-Devops-Meetup/events/233922902/"&gt;Paris Devops&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Firefox&lt;/h1&gt;
+&lt;p&gt;On nous promettrait un Firefox &lt;a href="https://techcrunch.com/2016/09/02/multi-process-firefox-brings-400-700-improvement-in-responsiveness/"&gt;7x plus rapide que l'actuel&lt;/a&gt; grâce au multiprocessing, qui arriverait entre la version 49 et la 51.
+On pourrait déjà testé la fonction en l'activant depuis "about:config" en changeant le paramètre "browser.tabs.remote.autostart" à True.
+Un temps sur mobile, le multiprocessing a été retiré car produisant un bottleneck, mais avec cette amélioration sur la version desktop, le mutliprocessing sur la version sur mobile pourrait faire son retour.&lt;/p&gt;
+&lt;h1&gt;Smartphone&lt;/h1&gt;
+&lt;p&gt;Coté smartphones, pendant que &lt;a href="http://www.frandroid.com/marques/samsung/375914_galaxy-note-7-de-samsung-bientot-bannis-vols-americains"&gt;Samsumg met le feu&lt;/a&gt;, &lt;a href="http://www.frandroid.com/marques/apple/376170_apple-watch-series-2-officielle"&gt;Apple se mouille 30minutes 'max'&lt;/a&gt; et nous fait des écouteurs &lt;a href="https://twitter.com/TheRealSheldonC/status/773787951260114944"&gt;sans fils&lt;/a&gt; et Google rebaptise sa gamme &lt;a href="http://www.frandroid.com/marques/google/375266_google-lancerait-cet-automne-pixel-pixel-xl-a-place-nexus"&gt;Nexus en Pixel&lt;/a&gt; pour faire moins geek et plus grand publique.&lt;/p&gt;
+&lt;h1&gt;Ce n'est qu'un au revoir&lt;/h1&gt;
+&lt;p&gt;Un dinosaure qui disparait d'internet, &lt;a href="http://www.readability.com"&gt;Readability&lt;/a&gt; ferme ses portes le 30 de ce mois, à vos API, à vos migrations de service, de préférence vers Wallabag ;)&lt;/p&gt;
+&lt;h1&gt;C U&lt;/h1&gt;
+&lt;p&gt;A bientôt !&lt;/p&gt;</content><category term="Django"></category><category term="indexerror"></category><category term="python"></category><category term="samsung"></category><category term="pixel"></category><category term="apple"></category><category term="docker"></category><category term="firefox"></category></entry><entry><title>Revue Technique de la semaine du 27/07/2015</title><link href="https://foxmask.net/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/" rel="alternate"></link><published>2015-07-29T09:48:00+02:00</published><updated>2015-07-29T09:48:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-07-29:/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/</id><summary type="html">&lt;p&gt;&lt;strong&gt;OnePlus 2&lt;/strong&gt;&lt;br&gt;
+Le nouvel appareil de OnePlus montre les crocs, mais ce dernier fait
+petite mine avec un proc moins bien lotis que ses concurrents, sinon une
+bonne grosse batterie comme le LG 4 qui va permettre de profiter de
+l'objet dans se dire "oh p#@%&amp;amp; vite un câble USB …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;OnePlus 2&lt;/strong&gt;&lt;br&gt;
+Le nouvel appareil de OnePlus montre les crocs, mais ce dernier fait
+petite mine avec un proc moins bien lotis que ses concurrents, sinon une
+bonne grosse batterie comme le LG 4 qui va permettre de profiter de
+l'objet dans se dire "oh p#@%&amp;amp; vite un câble USB !"&lt;br&gt;
+Pour rappel, cet appareil a produit sa propre ROM depuis janvier après
+s'être copieusement pris la tete avec CyanogenMod pour non respect de
+l'exclusivité de l'expoitation de CM ...&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.frandroid.com/marques/oneplus/298871_oneplus-2-principales-nouveautes-doxygen-os"&gt;Voici donc les nouveautés de
+OxygenOS&lt;/a&gt;
+très très très proche d'un Android Stock.&lt;/p&gt;
+&lt;p&gt;Retrouver aussi &lt;a href="http://www.frandroid.com/marques/oneplus/298897_comparatif-le-oneplus-2-est-il-vraiment-un-flagship-killer"&gt;le
+comparatif&lt;/a&gt;
+avec les autres "gros" du marché.&lt;/p&gt;
+&lt;p&gt;les prix : \~340€ pour la version 16Go contre \~400€ la version 64Go&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Google nous lâche la grappe avec Google+ !&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Après nous avoir bien fait chier à devoir absolument nous coltiner son
+réseau social de merde dès l'ouverture d'un compte sur Gmail ou à
+l'ouverture d'un smartphone sur Android... &lt;a href="http://www.numerama.com/magazine/33804-google-coupe-le-cordon-entre-google-et-ses-autres-services.html"&gt;Google fait son mea
+culpa&lt;/a&gt;
+et lâche l'affaire en commençant par YouTube où on pourra commenter sans
+avoir un compte g+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Postgresql à toutes les sauces&lt;/strong&gt; et sur debian :)&lt;/p&gt;
+&lt;p&gt;https://twitter.com/rodoq/status/609364038695407616?s=09&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;La couv' de la semaine (voire du mois ou de l'année) !&lt;/strong&gt;&lt;br&gt;
+Allez voir &lt;a href="http://www.humanoidemagazine.com/ledito-et-le-sommaire-du-numero-5-dhumanoide/"&gt;Humanoide
+n°5&lt;/a&gt;,
+vous devriez comprendre comment ENFIN on nous écoute depuis le temps que
+chaque parti prend des tartes électorales et que chacun de ses
+dirigeants nous sort à qui mieux mieux "on a compris le message des
+Français". Ben là on va se faire une joie de leur brouiller la ligne :P&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IndexError&lt;/strong&gt;&lt;br&gt;
+Comment pourquoi que ca marche-t-il (pas) mon code, S.O.S d'un codeur
+en détresse :&lt;br&gt;
+voici les 10 derniers sujets traités ou en cours sur
+&lt;a href="http://IndexError.net"&gt;IndexError.net&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2544/int%C3%A9grer-python-social-auth-%C3%A0-une-app-django"&gt;Intégrer Python Social Auth à une app
+    Django&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2538/dict-ajouter-de-mani%C3%A8re-r%C3%A9cursive-des-cl%C3%A9s?show=2539#a2539"&gt;Ajouter de manière récursive des
+    clés&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2496/service-sms-avec-django?show=2524#a2524"&gt;service sms avec
+    django&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2421/un-python-dans-le-jardin?show=2520#a2520"&gt;un python dans le
+    jardin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2519/sanitize-html-comment-retirer-des-attributs-via-une-wildcard?show=2521#a2521"&gt;Sanitize HTML, comment retirer des attributs via une wildcard
+    ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2498/acc%C3%A9der-%C3%A0-une-foreign-key-dans-la-classe-dun-mod%C3%A8le?show=2514#a2514"&gt;Accéder à une Foreign Key dans la classe d'un
+    modèle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2509/marshal-python"&gt;marshall python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2492/bottle-autobahnpython-pcduino?show=2502#a2502"&gt;Bottle + AutobahnPython +
+    pcduino&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2471/pourquoi-python-nint%C3%A8gre-module-natif-pour-faire-crypto-des?show=2488#a2488"&gt;Pourquoi Python n'intègre pas un module natif pour faire de la
+    crypto (AES, DES etc.)
+    ?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://indexerror.net/2480/requetes-django-en-parall%C3%A8le"&gt;Requetes Django en
+    parallèle&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="debian"></category><category term="Django"></category><category term="indexerror"></category><category term="oneplus"></category><category term="postgresql"></category><category term="python"></category></entry></feed>

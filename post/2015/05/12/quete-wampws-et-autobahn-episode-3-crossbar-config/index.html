@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Quête WampWS et Autobahn - Episode 3 - Crossbar config - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.net/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="autobahn,crossbar,python,wampws" />
+        <meta name="description" content="Dans les épisodes précédants je vous ai montré qu&#39;il était possible de débuter un projet from scratch rapidement, et comment 2 composants se parlaient. Donc dans la continuité, de ces 2 épisodes, ici nous allons aborder comment on configure crossbar, pour qu&#39;il ait connaissance de nos components, dès son démarrage …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Quête WampWS et Autobahn - Episode 3 - Crossbar config"/>
+        <meta property="og:url" content="https://foxmask.net/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/"/>
+        <meta property="og:description" content="Dans les épisodes précédants je vous ai montré qu&#39;il était possible de débuter un projet from scratch rapidement, et comment 2 composants se parlaient. Donc dans la continuité, de ces 2 épisodes, ici nous allons aborder comment on configure crossbar, pour qu&#39;il ait connaissance de nos components, dès son démarrage …"/>
+        <meta property="article:published_time" content="2015-05-12" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="autobahn" />
+            <meta property="article:tag" content="crossbar" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="wampws" />
+            <meta property="article:author" content="foxmask" />
+
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@triggerhappyeu">
+        <meta name="twitter:creator" content="@triggerhappyeu">
+    <meta name="twitter:domain" content="https://foxmask.net">
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.net/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.net/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.net/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.net/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.net/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.net/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.net/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.net/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.net/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.net/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.net/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.net/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.net/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/"
+                       rel="bookmark"
+                       title="Permalink to Quête WampWS et Autobahn - Episode 3 - Crossbar config">
+                        Quête WampWS et Autobahn - Episode 3 - Crossbar config
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-05-12T11:00:00+02:00"> Tue 12 May 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+        /
+	<a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+        /
+	<a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Dans les épisodes précédants je vous ai montré qu'il était possible de
+débuter un projet from scratch rapidement, et comment 2 composants se
+parlaient.</p>
+<p>Donc dans la continuité, de ces 2 épisodes, ici nous allons aborder
+comment on configure crossbar, pour qu'il ait connaissance de nos
+components, dès son démarrage.</p>
+<p>Jusqu'à maintenant (<a href="/post/2015/02/27/quete-wampws-et-autobahn-episode-1/">épisode
+1</a>)
+on a pu voir que les composants pouvaient être démarrés indépendemment
+et manuellement.</p>
+<p>A présent on va voir comment on les démarre au boot de crossbar.</p>
+<p>En intro à la "configuration" voici d'abord une version de l'épisode 1
+"amélioré" qui va vous introduire des notions que l'on reportera dans la
+config de crossbar ensuite.</p>
+<p>dans chacun des 2 composants on avait :</p>
+<div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">onJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">):</span>
+        <span class="n">pool</span> <span class="o">=</span> <span class="n">txpostgres</span><span class="o">.</span><span class="n">ConnectionPool</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span>
+                                         <span class="n">port</span><span class="o">=</span><span class="mi">5432</span><span class="p">,</span>
+                                         <span class="n">database</span><span class="o">=</span><span class="s1">&#39;th&#39;</span><span class="p">,</span>
+                                         <span class="n">user</span><span class="o">=</span><span class="s1">&#39;th&#39;</span><span class="p">,</span>
+                                         <span class="n">password</span><span class="o">=</span><span class="s1">&#39;th&#39;</span><span class="p">)</span>
+
+        <span class="k">yield</span> <span class="n">pool</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;DB Connection pool started&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">pool</span>
+</pre></div>
+
+
+<p>Or, mettre en dur des info de config dans le code, c'est sale.<br>
+La version proprette donne plutôt ceci :</p>
+<div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">onJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">):</span>
+        <span class="n">dbconfig</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">extra</span><span class="p">[</span><span class="s1">&#39;database&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">txpostgres</span><span class="o">.</span><span class="n">Connection</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">dbconfig</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+           <span class="k">print</span><span class="p">(</span><span class="s2">&quot;could not connect to database: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">leave</span><span class="p">()</span>
+           <span class="k">return</span>
+       <span class="k">else</span><span class="p">:</span>
+           <span class="k">print</span><span class="p">(</span><span class="s2">&quot;PostgreSQL adapter connected to database&quot;</span><span class="p">)</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+             <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="p">{</span>
+                 <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
+                 <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="s1">&#39;foobar&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;foobar&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;foobar&#39;</span><span class="p">},</span>
+             <span class="s1">&#39;TIME_ZONE&#39;</span><span class="p">:</span> <span class="s1">&#39;America/Chicago&#39;</span><span class="p">,</span>
+             <span class="p">}</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">startLogging</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">autobahn.twisted.wamp</span> <span class="kn">import</span> <span class="n">ApplicationRunner</span>
+    <span class="n">runner</span> <span class="o">=</span> <span class="n">ApplicationRunner</span><span class="p">(</span>
+                        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;ws://127.0.0.1:8080/ws&quot;</span><span class="p">,</span>
+                        <span class="n">realm</span><span class="o">=</span><span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
+                        <span class="n">extra</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>  <span class="c1"># app-level debugging</span>
+    <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">RssComponent</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Et voilou.</p>
+<p>Dans le détails cela donne :</p>
+<p>dans le <code>onJoin</code>, on récupère <code>self.config.extra</code> qui provient du parm
+"extra" qu'on voit à la fin du code, qui est disponible grâce à
+crossbar.</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">onJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">):</span> 
+   <span class="o">...</span>
+   <span class="n">dbconfig</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">extra</span><span class="p">[</span><span class="s1">&#39;database&#39;</span><span class="p">]</span>
+   <span class="o">...</span>
+</pre></div>
+
+
+<p>ensuite on passe <code>dbconfig</code> à la connexion</p>
+<div class="highlight"><pre><span></span><span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">dbconfig</span><span class="p">)</span>
+</pre></div>
+
+
+<p>ce qui donne pour le compoent Rss de l'épisode 1</p>
+<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">arrow</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># postgresql driver</span>
+<span class="kn">from</span> <span class="nn">txpostgres</span> <span class="kn">import</span> <span class="n">txpostgres</span>
+
+<span class="c1"># autobahn</span>
+<span class="kn">from</span> <span class="nn">twisted.python</span> <span class="kn">import</span> <span class="n">log</span>
+<span class="kn">from</span> <span class="nn">autobahn</span> <span class="kn">import</span> <span class="n">wamp</span>
+<span class="kn">from</span> <span class="nn">twisted.internet.defer</span> <span class="kn">import</span> <span class="n">inlineCallbacks</span><span class="p">,</span> <span class="n">returnValue</span>
+<span class="kn">from</span> <span class="nn">autobahn.twisted.util</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">autobahn.twisted.wamp</span> <span class="kn">import</span> <span class="n">ApplicationSession</span>
+
+<span class="c1"># th_rss lib</span>
+<span class="kn">from</span> <span class="nn">lib.feedsservice</span> <span class="kn">import</span> <span class="n">Feeds</span>
+
+
+<span class="k">class</span> <span class="nc">RssComponent</span><span class="p">(</span><span class="n">ApplicationSession</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        An application component that publishes an event</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@inlineCallbacks</span>
+    <span class="k">def</span> <span class="nf">onJoin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">details</span><span class="p">):</span>
+        <span class="c1"># registering</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;RSS session attached&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+        <span class="n">dbconfig</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">extra</span><span class="p">[</span><span class="s1">&#39;database&#39;</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">txpostgres</span><span class="o">.</span><span class="n">Connection</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">dbconfig</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;could not connect to database: {0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">leave</span><span class="p">()</span>
+            <span class="k">return</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;[th_rss] PostgreSQL adapter connected to database&quot;</span><span class="p">)</span>
+
+        <span class="c1"># publishing</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="n">feeds</span> <span class="o">=</span> <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;eu.trigger-happy.rss.feeds_url&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">feeds</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;eu.trigger-happy.pushit&#39;</span><span class="p">,</span>
+                                 <span class="p">{</span><span class="s1">&#39;trigger_id&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;trigger_id&#39;</span><span class="p">],</span>
+                                  <span class="s1">&#39;user_id&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">],</span>
+                                  <span class="s1">&#39;item&#39;</span><span class="p">:</span> <span class="n">item</span><span class="p">})</span>
+            <span class="k">yield</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+
+    <span class="nd">@wamp.register</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;eu.trigger-happy.rss.feeds_url&#39;</span><span class="p">)</span>
+    <span class="nd">@inlineCallbacks</span>
+    <span class="k">def</span> <span class="nf">get_feeds_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            get the URL stored in the database</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT date_triggered, name, url, trigger_id, user_id FROM &quot;</span>
+        <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;django_th_rss AS R, &quot;</span>
+        <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;django_th_triggerservice AS TS &quot;</span>
+        <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot; WHERE R.trigger_id=TS.id AND TS.id=1 &quot;</span>
+        <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot; AND TS.consumer_id = &quot;</span>
+
+        <span class="c1"># subquery to get only the RSS provider</span>
+        <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot; (SELECT id FROM django_th_servicesactivated WHERE &quot;</span>
+        <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;name = &#39;ServiceRss&#39; AND status = True) &quot;</span>
+
+        <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot; AND TS.status = True &quot;</span>  <span class="c1"># get only the activated triggers</span>
+        <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot; ORDER BY TS.date_triggered DESC &quot;</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">runQuery</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+        <span class="n">feeds</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;get the feeds url...&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">feed</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;get feeds from {0} =&gt; {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feed</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">feed</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+            <span class="n">data_parms</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">feed</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;date_triggered&#39;</span><span class="p">:</span> <span class="n">feed</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+            <span class="k">if</span> <span class="n">feed</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">right_now</span><span class="p">():</span>
+                <span class="n">feeds</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;trigger_id&#39;</span><span class="p">:</span> <span class="n">feed</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+                              <span class="s1">&#39;user_id&#39;</span><span class="p">:</span> <span class="n">feed</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span>
+                              <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">reworked_feeds</span><span class="p">(</span><span class="o">**</span><span class="n">data_parms</span><span class="p">)})</span>
+        <span class="n">returnValue</span><span class="p">(</span><span class="n">feeds</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">right_now</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">extra</span><span class="p">[</span><span class="s1">&#39;TIME_ZONE&#39;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">reworked_feeds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">parms</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            get the feeds and &quot;translate&quot; the time.struct_time()</span>
+<span class="sd">            from Feedparser to a classical timestamp</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">Feeds</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;url_to_parse&#39;</span><span class="p">:</span> <span class="n">parms</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">]})</span><span class="o">.</span><span class="n">datas</span><span class="p">()</span>
+        <span class="n">what</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span>
+            <span class="p">(</span><span class="mi">1980</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="n">published</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">feed</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">date_triggered</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">parms</span><span class="p">[</span><span class="s1">&#39;date_triggered&#39;</span><span class="p">]),</span>
+                                       <span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span>
+                                       <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">extra</span><span class="p">[</span><span class="s1">&#39;TIME_ZONE&#39;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="s1">&#39;published_parsed&#39;</span> <span class="ow">in</span> <span class="n">feed</span><span class="p">:</span>
+                <span class="n">what</span> <span class="o">=</span> <span class="s1">&#39;published_parsed&#39;</span>
+                <span class="n">published</span> <span class="o">=</span> <span class="n">feed</span><span class="p">[</span><span class="s1">&#39;published_parsed&#39;</span><span class="p">]</span>
+                <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">feed</span><span class="p">[</span><span class="s1">&#39;published_parsed&#39;</span><span class="p">]))</span>
+            <span class="k">elif</span> <span class="s1">&#39;updated_parsed&#39;</span> <span class="ow">in</span> <span class="n">feed</span><span class="p">:</span>
+                <span class="n">what</span> <span class="o">=</span> <span class="s1">&#39;updated_parsed&#39;</span>
+                <span class="n">published</span> <span class="o">=</span> <span class="n">feed</span><span class="p">[</span><span class="s1">&#39;updated_parsed&#39;</span><span class="p">]</span>
+                <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">feed</span><span class="p">[</span><span class="s1">&#39;updated_parsed&#39;</span><span class="p">]))</span>
+
+            <span class="k">if</span> <span class="n">my_date_time</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">naive</span><span class="p">:</span>
+                <span class="c1"># this is this property that cant be serialize</span>
+                <span class="c1"># so we have to translate it to a timestamp and</span>
+                <span class="c1"># replace the actual value with the new one</span>
+                <span class="k">if</span> <span class="n">what</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">feed</span><span class="p">[</span><span class="n">what</span><span class="p">]</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">published</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># drop that old data</span>
+                <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">data</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+             <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="p">{</span>
+                 <span class="s1">&#39;port&#39;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
+                 <span class="s1">&#39;database&#39;</span><span class="p">:</span> <span class="s1">&#39;foobar&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="s1">&#39;foobar&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;foobar&#39;</span><span class="p">},</span>
+             <span class="s1">&#39;TIME_ZONE&#39;</span><span class="p">:</span> <span class="s1">&#39;America/Chicago&#39;</span><span class="p">,</span>
+             <span class="p">}</span>
+
+    <span class="n">log</span><span class="o">.</span><span class="n">startLogging</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+    <span class="kn">from</span> <span class="nn">autobahn.twisted.wamp</span> <span class="kn">import</span> <span class="n">ApplicationRunner</span>
+    <span class="n">runner</span> <span class="o">=</span> <span class="n">ApplicationRunner</span><span class="p">(</span>
+                        <span class="n">url</span><span class="o">=</span><span class="s2">&quot;ws://127.0.0.1:8080/ws&quot;</span><span class="p">,</span>
+                        <span class="n">realm</span><span class="o">=</span><span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
+                        <span class="n">extra</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>  <span class="c1"># app-level debugging</span>
+    <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">RssComponent</span><span class="p">)</span>
+</pre></div>
+
+
+<p>A présent, je peux exécuter mon script en ligne de commande, il
+utilisera ce qui est défini après le <code>if __name__</code>.<br>
+Par rapport à la version de l'épisode 1 ca ne change pas grand chose au
+fait d'avoir mis en dur la conf dans le code, sauf, sauf que maintenant,
+je peux plugger mon component à crossbar, et c'est la conf définie dans
+crossbar qui prévaudra. Ce qui me permet du coup d'avoir toute liberté
+pour exécuter mon composant dans son coin avec sa conf de test et
+l'utiliser avec crossbar avec une conf de prod par exemple.</p>
+<p>Voyons maintenant comment ca se goupille dans crossbar<br>
+Dans l'épisode 2 on en était resté à une configuration définissant
+l'accès à un simple composant Hello.</p>
+<p>Voyons ce que ca donne avec mon composant en plus :</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;controller&quot;</span><span class="p">:</span> <span class="p">{},</span>
+   <span class="nt">&quot;workers&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;router&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;realms&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;anonymous&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;permissions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span>
+                           <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+                           <span class="nt">&quot;publish&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                           <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                           <span class="nt">&quot;call&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                           <span class="nt">&quot;register&quot;</span><span class="p">:</span> <span class="kc">true</span>
+                        <span class="p">}</span>
+                     <span class="p">]</span>
+                  <span class="p">}</span>
+               <span class="p">]</span>
+            <span class="p">}</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;transports&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;web&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;endpoint&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8080</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;/&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;directory&quot;</span><span class="p">:</span> <span class="s2">&quot;../web&quot;</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;ws&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;websocket&quot;</span>
+                  <span class="p">}</span>
+               <span class="p">}</span>
+            <span class="p">}</span>
+         <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;container&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;components&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;class&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;classname&quot;</span><span class="p">:</span> <span class="s2">&quot;components.th_rss.back.RssComponent&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;realm&quot;</span><span class="p">:</span> <span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;transport&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;websocket&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;endpoint&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8080</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://127.0.0.1:8080/ws&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
+                     <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span>
+                  <span class="p">}</span>
+               <span class="p">}</span>               
+            <span class="p">},</span>
+            <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;class&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;classname&quot;</span><span class="p">:</span> <span class="s2">&quot;components.th_evernote.front.EvernoteComponent&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;realm&quot;</span><span class="p">:</span> <span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;transport&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;websocket&quot;</span><span class="p">,</span>
+                  <span class="nt">&quot;endpoint&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8080</span>
+                  <span class="p">},</span>
+                  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://127.0.0.1:8080/ws&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
+                     <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span>
+                  <span class="p">}</span>
+               <span class="p">}</span>
+            <span class="p">}</span>
+         <span class="p">]</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>avec cette configuration, dès le lancement de crossbar, il chargera les
+2 composants qui demarreront respectivement le code se trouvant dans le
+<code>onJoin</code></p>
+<p>la valeur de classname est à rallonge et est un classique chemin python.</p>
+<p>Cette config crossbar tient compte d'un fait important :</p>
+<p>mes composants sont dans le path de crossbar et donc sont en python 2.7<br>
+ceci m'est révélé par le paramètre</p>
+<div class="highlight"><pre><span></span>         <span class="s2">&quot;options&quot;</span><span class="err">:</span> <span class="p">{</span>
+            <span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]</span>
+         <span class="p">}</span><span class="err">,</span>
+</pre></div>
+
+
+<p>Par contre, ce n'est pas parceque Crossbar n'est pas en python 3, que
+Autobahn|Python ne l'est pas, donc je peux tout à fait avoir des
+composants python 3 ailleurs, et si je veux que crossbar me charge mes
+composants, je lui fourni le path vers ceux ci comme suit (par exemple)
+:</p>
+<div class="highlight"><pre><span></span>         <span class="s2">&quot;options&quot;</span><span class="err">:</span> <span class="p">{</span>
+            <span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">,</span><span class="s2">&quot;/home/foxmask/Django-Virtualenv/wamp-th/wamp-th/&quot;</span><span class="p">]</span>
+         <span class="p">}</span><span class="err">,</span>
+</pre></div>
+
+
+<p>et ça ne dérangera pas Crossbar pour un sou (au contraire:)</p>
+<p>un goodies en plus, on peut nommer le process qui se charge de gerer mes
+components, pour cela j'ajoute à mon parm "options", "title" comme suit
+:</p>
+<div class="highlight"><pre><span></span>         <span class="s2">&quot;options&quot;</span><span class="err">:</span> <span class="p">{</span>
+            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;triggerhappy&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">,</span><span class="s2">&quot;/home/foxmask/Django-Virtualenv/wamp-th/wamp-th/&quot;</span><span class="p">]</span>
+         <span class="p">}</span><span class="err">,</span>
+</pre></div>
+
+
+<p>enfin on trouve bien évidement les mêmes noeuds "config/extras"
+qu'indiqués dans le <code>if __name__</code> de chacun des composants pour définir
+une base de données différente (si besoin).</p>
+<p>Voici donc qui clos cet épisode 3. Je n'ai pas abordé toutes les options
+cette fois ci, je vous avouerai que je vous livre ici ce que j'ai
+découvert, qui est tout frais, mais je n'hésiterai pas à faire un billet
+de plus sur les nouveautés que j'aurai pu exploiter.</p>
+<p>L'épisode 4 sera sur le mode debug de crossbar</p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.net/post/2015/05/07/quete-wampws-et-autobahn-episode-2-demarrage-en-trombe/">Quête WampWS et Autobahn : Épisode 2 - démarrage en trombe</a></li>
+        <li><a href="https://foxmask.net/post/2015/02/27/quete-wampws-et-autobahn-episode-1/">Quête  WampWS et Autobahn - épisode 1</a></li>
+        <li><a href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
+        <li><a href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'quete-wampws-et-autobahn-episode-3-crossbar-config';
+                var disqus_url = 'https://foxmask.net/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.net/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.net/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Twitter Timeline -->
+<li class="list-group-item">
+  <h4><i class="fa fa-twitter fa-lg"></i><span class="icon-label">Latest Tweets</span></h4>
+  <div id="twitter_timeline">
+    <a class="twitter-timeline" data-width="250" data-height="300" data-dnt="true" data-theme="light" href="https://twitter.com/triggerhappyeu">Tweets by triggerhappyeu</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</li>
+<!-- End Sidebar/Twitter Timeline -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://sametmax.com" target="_blank">Sam et Max</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://foxmask.net/stats.html" target="_blank">Stats</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2018 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.net/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.net/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.net/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.net/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.net/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.net/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>

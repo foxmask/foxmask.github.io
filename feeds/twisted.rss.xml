@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Le Free de la Passion - twisted</title><link>https://foxmask.net/</link><description>La passion de la liberté</description><lastBuildDate>Thu, 21 May 2015 10:30:00 +0200</lastBuildDate><item><title>Revue Technique de la semaine du 18/05/2015</title><link>https://foxmask.net/post/2015/05/21/revue-technique-de-la-semaine-du-1805/</link><description>&lt;p&gt;Au menu ici, un tuto sur Python, Twisted, MAT, Django&lt;/p&gt;
+&lt;h2&gt;Python&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Le tuto de Sam et Max&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;https://twitter.com/sam_et_max/status/599840755734175744&lt;/p&gt;
+&lt;p&gt;Si le portage de Twisted sur Python 3 avance, il faut garder à l'esprit
+que "derrière" ces avancées, se cache des dev de Autobahn/WAMP/Crossbar
+qui …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Thu, 21 May 2015 10:30:00 +0200</pubDate><guid isPermaLink="false">tag:foxmask.net,2015-05-21:/post/2015/05/21/revue-technique-de-la-semaine-du-1805/</guid><category>Django</category><category>python</category><category>twisted</category></item></channel></rss>

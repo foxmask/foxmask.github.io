@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - triggerhappy</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/triggerhappy.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2017-02-09T09:00:00+01:00</updated><entry><title>Orotangi, your thoughts everywhere</title><link href="https://foxmask.net/post/2017/02/09/orotangi/" rel="alternate"></link><published>2017-02-09T09:00:00+01:00</published><updated>2017-02-09T09:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-02-09:/post/2017/02/09/orotangi/</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;If you heard about Evernote and its little slap it got, at the end of november 2016, from the users community (because of the changes of the policy related to our own notebooks), you will then now understand what the purpose of that project.&lt;/p&gt;
+&lt;p&gt;Orotangi is your own private …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;If you heard about Evernote and its little slap it got, at the end of november 2016, from the users community (because of the changes of the policy related to our own notebooks), you will then now understand what the purpose of that project.&lt;/p&gt;
+&lt;p&gt;Orotangi is your own private notebook where you will store your thoughts and access them from anywhere.&lt;/p&gt;
+&lt;h1&gt;Goals&lt;/h1&gt;
+&lt;p&gt;Once again, as I already said, when something bother me, I build something else by myself.&lt;/p&gt;
+&lt;p&gt;I already made or use the following open source a clone of :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IFTTT with &lt;a href="https://trigger-happy.eu"&gt;Trigger-Happy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Pocket with &lt;a href="https://wallabag.org"&gt;Wallabag&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;and now I start to make an open source clone of Evernote with Orotangi.&lt;/p&gt;
+&lt;p&gt;Yes, that's the toolbox I use to organize my everyday life :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;settings reminder for rendez-vous &lt;/li&gt;
+&lt;li&gt;grabbing news to be read later&lt;/li&gt;
+&lt;li&gt;write a meeting report&lt;/li&gt;
+&lt;li&gt;put thoughts of projects &lt;/li&gt;
+&lt;li&gt;and so on&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Where is the project ?&lt;/h1&gt;
+&lt;p&gt;As I started at the end of january, it's absolutly not usable at all but I launched the project on github, in two pieces : &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/foxmask/orotangi"&gt;the back&lt;/a&gt; with &lt;a href="http://www.django-rest-framework.org/"&gt;Django Rest Framework&lt;/a&gt; and &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/foxmask/orotangi-front"&gt;the front&lt;/a&gt; with &lt;a href="https://vuejs.org"&gt;Vue.js&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Why that one ?&lt;/h1&gt;
+&lt;p&gt;In my Freedom quest, as usual, I don't do anything to make project better than the original ones, I make them, because I need it first of all, and to feel well in my shoes :P &lt;/p&gt;
+&lt;p&gt;By "well in my shoes", I mean disposing of my life with tools that are not the property of a company that could spy what I do with their services.&lt;/p&gt;
+&lt;p&gt;By "could spy", I mean a company that could decide by itself to read our personal data or track the things we do with our data, or the Government of those companies which could bend each of them, to grab our own personnal data and control our life.&lt;/p&gt;
+&lt;p&gt;Yes, I know, you could say, "go on and make an opensource clone of gmail, facebook". But in fact, I do things by myself when I don't have the choice, and for those "services", I can switch from gmail to my hosting provider tomorrow, it's not a big deal for myself as I'd already done that for the account I use for my "developer life", and that will be finished to be spied. &lt;/p&gt;
+&lt;p&gt;And I don't care of facebook at all.&lt;/p&gt;
+&lt;p&gt;When things go wrong with google and gmail I will warn the family to start thinking about changing their habits, but that... it's another story....&lt;/p&gt;</content><category term="orotangi"></category><category term="triggerhappy"></category><category term="evernote"></category><category term="ifttt"></category><category term="wallabag"></category><category term="python"></category></entry><entry><title>Trigger Happy two weeks after a strong Storm...</title><link href="https://foxmask.net/post/2016/11/26/trigger-happy-two-weeks-after-strong-storm/" rel="alternate"></link><published>2016-11-26T18:00:00+01:00</published><updated>2016-11-26T18:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-11-26:/post/2016/11/26/trigger-happy-two-weeks-after-strong-storm/</id><summary type="html">&lt;p&gt;After an article on linuxfr, things accelerated itselves for Trigger Happy.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Two weeks ago, I told to myself, to try a last thing to get out the project of anonymity, before stopping publishing news about it.&lt;/p&gt;
+&lt;p&gt;After all, I made the project for myself, If nobody needs it. It's Okkkkkkkkkay.&lt;/p&gt;
+&lt;p&gt;But after some nice comments and exchanges on &lt;a href="http://linuxfr.org/news/trigger-happy-une-passerelle-entre-vos-services-internet"&gt;Linuxfr.org&lt;/a&gt;, a friend, that I had lost sight of, decided to post the project on &lt;a href="https://news.ycombinator.com/item?id=12945221"&gt;HackNews&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Then came the storm for the project.&lt;/h2&gt;
+&lt;p&gt;A lot of things suddenly awoke in the same times.&lt;/p&gt;
+&lt;h3&gt;First&lt;/h3&gt;
+&lt;p&gt;The stars on the github page reached the double in 2 days. But, as the link on hackernews pointed to the home of TriggerHappy website, they had to search on this one where to find the source of github.
+Yes the link is in the bottom, but how many people does not scroll down and leave before ? 
+That signal told me &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hmm guys would seem to appreciate, as to reach that page, they come from the main page of the project, and the curiosity is awaken&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;Second :&lt;/h3&gt;
+&lt;p&gt;The day after, a well known french website &lt;a href="http://korben.info/trigger-happy-clone-libre-difttt.html"&gt;korben&lt;/a&gt; posted an article too. I thought "God, heaven can wait" :D&lt;/p&gt;
+&lt;p&gt;the stats of the website exploded November the 14th: &lt;em&gt;30.000 hits&lt;/em&gt; in 2 days. Reminder, the project is unknown until then, so the visits are mine :)&lt;/p&gt;
+&lt;h3&gt;Third&lt;/h3&gt;
+&lt;p&gt;the day after, the project reachs the Python Github Trending : position 8. Behind were : Ansible, Django, Requests, not less ;) This, during a week. &lt;/p&gt;
+&lt;p&gt;&lt;img alt="Github Trending Python" src="/static/trigger_happy_trending_python.png"&gt;&lt;/p&gt;
+&lt;h2&gt;Consequences :&lt;/h2&gt;
+&lt;p&gt;Some nice mails (like one from an ex developper from ... IFTTT.com :) and github issues for nices requests like supporting new service, and encouragements on IRC and Twitter, essentially from people that do not come from the Python univers, or from non-French developpers fom the Python world.&lt;/p&gt;
+&lt;p&gt;Here is a little part of the web, which spoke about Trigger Happy :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.oreilly.com/ideas/four-short-links-17-november-2016"&gt;4 short links&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.cronweekly.com/issue-55/"&gt;CronWeekly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://n0where.net/open-source-ifttt-clone-trigger-happy/"&gt;n0where&lt;/a&gt; with a rate of 50℅&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.peerlyst.com/posts/open-source-ifttt-clone-trigger-happy-cyberpunk?trk=post_page_more_posts_by_author"&gt;Forum peerlyst&lt;/a&gt;(en)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://community.domadoo.com/t/heberger-son-propre-ifttt-open-source/817"&gt;Forum Domadoo&lt;/a&gt;(fr)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.producthunt.com/posts/triggerhappy"&gt;Forum Producthunt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Today&lt;/h2&gt;
+&lt;p&gt;The madness is fallen, I can continue to sleep well without being overloaded by many requests ;)
+But of course, do not hesitate to ask for them, or drop a message to exchange ideas.
+&lt;a href="https://github.com/foxmask/django-th/issues/155"&gt;for example like here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;May be one day I will post you an article about Taiga.io, not necessary about the product/project itself but about the &lt;a href="https://github.com/bameda"&gt;guy&lt;/a&gt;, bameda, who helped me a lot about how to interact with Taiga with great kindness...&lt;/p&gt;
+&lt;p&gt;This is for this kindness and this exchanges that I always love to make things here and there, for the Open Source, my way.&lt;/p&gt;</content><category term="linxufr"></category><category term="hackernews"></category><category term="korben"></category><category term="TriggerHappy"></category></entry><entry><title>Apparition subliminiale de TriggerHappy au PHPTour 2016 avec Wallabag</title><link href="https://foxmask.net/post/2016/06/01/trigger-happy-apparition-subliminale-phptour-2016-wallabag/" rel="alternate"></link><published>2016-06-01T15:00:00+02:00</published><updated>2016-06-01T15:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-06-01:/post/2016/06/01/trigger-happy-apparition-subliminale-phptour-2016-wallabag/</id><summary type="html">&lt;p&gt;Le mois dernier s'est déroulé le PHPTour 2016 à Clermont Ferrand.&lt;/p&gt;
+&lt;p&gt;Lors de cet évènement, TriggerHappy fit une apparation subliminale ;) lors de la présentation, par le project &lt;a href="https://wallabag.org"&gt;wallabag&lt;/a&gt;, de la migration version Symfony 3.&lt;/p&gt;
+&lt;p&gt;La présentation de &lt;a href="https://github.com/nicosomb"&gt;@nicosomb&lt;/a&gt; et de son binôme &lt;a href="https://twitter.com/j0k"&gt;@j0k&lt;/a&gt; est disponible &lt;a href="https://nicosomb.github.io/talk-phptour-2016/"&gt;ici&lt;/a&gt;. Et "l'apparition" &lt;a href="https://nicosomb.github.io/talk-phptour-2016/#/9/2"&gt;ici&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Mais …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Le mois dernier s'est déroulé le PHPTour 2016 à Clermont Ferrand.&lt;/p&gt;
+&lt;p&gt;Lors de cet évènement, TriggerHappy fit une apparation subliminale ;) lors de la présentation, par le project &lt;a href="https://wallabag.org"&gt;wallabag&lt;/a&gt;, de la migration version Symfony 3.&lt;/p&gt;
+&lt;p&gt;La présentation de &lt;a href="https://github.com/nicosomb"&gt;@nicosomb&lt;/a&gt; et de son binôme &lt;a href="https://twitter.com/j0k"&gt;@j0k&lt;/a&gt; est disponible &lt;a href="https://nicosomb.github.io/talk-phptour-2016/"&gt;ici&lt;/a&gt;. Et "l'apparition" &lt;a href="https://nicosomb.github.io/talk-phptour-2016/#/9/2"&gt;ici&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Mais ... je vous vois venir faire votre "Géronte" et me sortir "Mais que diable allait il faire dans cette galère" (genre : "mélanger des projets PHP et Python mais quelle hérésie") mais en fait, ce n'est pas du tout le cas.&lt;/p&gt;
+&lt;p&gt;Wallabag dans sa mouture 2.0, pourvue de son API, laisse toute latitude et on a franchement plaisir à y mettre ses découvertes au gré du buttinage sur la toie ou à faire sa veille techno en recupérant régulièrement les infos de ses sites favoris, spécialisés.
+En plus, ce qui ne gâte rien, c'est l'existence de plugin pour Firefox et d'une application Android. &lt;/p&gt;
+&lt;p&gt;Ca en fait un bon projet bien complet à mon sens, qui surpasse le classique troll de PHP vs Python.&lt;/p&gt;
+&lt;p&gt;Alors "ayez confiaaaance" et laissez vous tenter par les 2 :)&lt;/p&gt;</content><category term="TriggerHappy"></category><category term="python"></category><category term="php"></category><category term="wallabag"></category></entry><entry><title>Panda, Le gros nounours noir et blanc est passé</title><link href="https://foxmask.net/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/" rel="alternate"></link><published>2016-05-14T13:00:00+02:00</published><updated>2016-05-14T13:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-05-14:/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/</id><summary type="html">&lt;p&gt;En lisant ma pile d'articles de veille techno dans mon instance &lt;a href="https://walabag.org"&gt;wallabag&lt;/a&gt;, je suis tombé sur un article mesurant le temps passé sur ses projets.
+Rien de nouveau au soleil puisque tout à chacun connait bien &lt;a href="https://pypi.python.org/pypi/pandas"&gt;pandas&lt;/a&gt; :)&lt;/p&gt;
+&lt;p&gt;Cependant, après un petit coup de &lt;code&gt;pip install git-pandas&lt;/code&gt; et en exécutant &lt;a href="https://github.com/wdm0006/git-pandas/blob/master/examples/hours_estimate.py"&gt;ce …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;En lisant ma pile d'articles de veille techno dans mon instance &lt;a href="https://walabag.org"&gt;wallabag&lt;/a&gt;, je suis tombé sur un article mesurant le temps passé sur ses projets.
+Rien de nouveau au soleil puisque tout à chacun connait bien &lt;a href="https://pypi.python.org/pypi/pandas"&gt;pandas&lt;/a&gt; :)&lt;/p&gt;
+&lt;p&gt;Cependant, après un petit coup de &lt;code&gt;pip install git-pandas&lt;/code&gt; et en exécutant &lt;a href="https://github.com/wdm0006/git-pandas/blob/master/examples/hours_estimate.py"&gt;ce script panda&lt;/a&gt; on peut donc mesurer le temps passé directos sur ses dépots, et donc pour bibi, il en ressort ceci &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python hours_estimate.py &lt;span class="p"&gt;|&lt;/span&gt;grep -v &lt;span class="m"&gt;0&lt;/span&gt;.00000
+
+            committer       hours         repository
+&lt;span class="m"&gt;0&lt;/span&gt;             foxmask    &lt;span class="m"&gt;2&lt;/span&gt;.603889          django-th
+&lt;span class="m"&gt;3&lt;/span&gt;       Olivier Demah  &lt;span class="m"&gt;134&lt;/span&gt;.288056          django-th
+&lt;span class="m"&gt;4&lt;/span&gt;             FoxMaSk    &lt;span class="m"&gt;3&lt;/span&gt;.017500          django-th
+&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;3&lt;/span&gt;.000000  django-th-ansible
+&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;3&lt;/span&gt;.877222       wallabag_api
+&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;8&lt;/span&gt;.882778        dj-diabetes
+&lt;span class="m"&gt;1&lt;/span&gt;             foxmask    &lt;span class="m"&gt;1&lt;/span&gt;.000000        dj-diabetes
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;En tout 140heures pour Trigger Happy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si je pars sur des journées de 6heures ca fait 23jours ou 46jours en codant "à temps perdu", en gros un bon mois et demi non stop quoi.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4hres pour l'API &lt;a href="https://github.com/foxmask/wallabag_api"&gt;wallabag&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;9hres pour le projet de "&lt;a href="https://github.com/foxmask/dj-diabetes"&gt;gestion de son diabete au quotidien&lt;/a&gt;"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pas de quoi fouetter un chat, mais ca donne une idée du temps que j'ai dépensé ;)
+Evidement la dedans on ne peut pas quantifier les durées pour le temps passé à tester moult techno pour arriver au resultat escompté. Mais ça donne un ordre de grandeur !&lt;/p&gt;</content><category term="TriggerHappy"></category><category term="python"></category><category term="Pandas"></category></entry><entry><title>Wallabag API 1.0.1</title><link href="https://foxmask.net/post/2016/04/22/wallabag-api-1.0.1/" rel="alternate"></link><published>2016-04-22T20:00:00+02:00</published><updated>2016-04-22T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-04-22:/post/2016/04/22/wallabag-api-1.0.1/</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;This API is like a story of old friends for me, destinies that cross and intersect.&lt;/p&gt;
+&lt;p&gt;Something like 10 years ago, I met &lt;a href="https://twitter.com/nicosomb"&gt;@nicosomb&lt;/a&gt; on http://punbb.fr, a french community arround PunBB, 
+where I was administrator.&lt;/p&gt;
+&lt;p&gt;After all that years, Nicolas made the PHP opensource project named "poche …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;This API is like a story of old friends for me, destinies that cross and intersect.&lt;/p&gt;
+&lt;p&gt;Something like 10 years ago, I met &lt;a href="https://twitter.com/nicosomb"&gt;@nicosomb&lt;/a&gt; on http://punbb.fr, a french community arround PunBB, 
+where I was administrator.&lt;/p&gt;
+&lt;p&gt;After all that years, Nicolas made the PHP opensource project named "poche" at first, which became &lt;a href="https://www.wallabag.org/"&gt;Wallabag&lt;/a&gt;, 
+when on my side, after years, I stopped participating on &lt;a href="http://jelix.org"&gt;Jelix, a PHP5 framework&lt;/a&gt;, for Python.&lt;/p&gt;
+&lt;p&gt;Then, when I started &lt;a href="https:/github.com/push-things/django-th/"&gt;TriggerHappy&lt;/a&gt; and could integrate Pocket successfully,
+I asked to Nicolas If he planed to make an API that I then could integrate too... That was 2 years ago ;)&lt;/p&gt;
+&lt;p&gt;Today, Wallabag is now in version 2 and the API is ready. Thanks to him and to his wonderful team. 
+So I finally could finish the &lt;a href="https://github.com/foxmask/wallabag_api"&gt;Python API&lt;/a&gt; on my side too.&lt;/p&gt;
+&lt;p&gt;And now there is no more barrier to each of us to host our own Wallabag and TriggerHappy instance for our own pleasure ;)&lt;/p&gt;
+&lt;h1&gt;How to create a post in wallabag ?&lt;/h1&gt;
+&lt;p&gt;Here is a snipset to create a entry in your wallabag account :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;wallabag_api.wallabag&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Wallabag&lt;/span&gt;
+&lt;span class="c1"&gt;# settings&lt;/span&gt;
+&lt;span class="n"&gt;params&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;username&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;foxmask&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="s1"&gt;&amp;#39;password&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mypass&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="s1"&gt;&amp;#39;client_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;myid&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="s1"&gt;&amp;#39;client_secret&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;mysecret&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;my_host&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;http://localhost:8080&amp;#39;&lt;/span&gt;
+&lt;span class="c1"&gt;# get token&lt;/span&gt;
+&lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Wallabag&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_token&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;my_host&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;params&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# create a post&lt;/span&gt;
+&lt;span class="n"&gt;wall&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Wallabag&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;my_host&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;client_secret&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;mysecret&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;client_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;myid&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;my_url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;https://blog.trigger-happy.eu&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;my_title&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Trigger Happy blog&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;my_tags&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;python&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;wallabag&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;wall&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;post_entries&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;my_url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;my_title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;my_tags&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;this will give you something like this &lt;/p&gt;
+&lt;p&gt;&lt;img alt="wallabag post" src="https://raw.githubusercontent.com/foxmask/wallabag_api/master/wallabag.png"&gt;&lt;/p&gt;</content><category term="TriggerHappy"></category><category term="Wallabag"></category><category term="python"></category></entry><entry><title>Quand Les "job queue" et les amis "brokers de messages" sont mis au rancart par la stdlib</title><link href="https://foxmask.net/post/2016/04/14/job-queue-and-messages-broker-out/" rel="alternate"></link><published>2016-04-14T10:00:00+02:00</published><updated>2016-04-14T10:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-04-14:/post/2016/04/14/job-queue-and-messages-broker-out/</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;Ce post n'est autre qu'un simple retour d'XP sur l'utilisation et tests de diverses solutions (almost)ready-to-use de job queue et brokers de messages.&lt;/p&gt;
+&lt;h1&gt;Présentation de l'archi du projet&lt;/h1&gt;
+&lt;p&gt;Comme vous pouvez l'imaginer avec IFTTT si vous connaissez ce service, j'ai des triggers qui permettent de récupérer des données …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;Ce post n'est autre qu'un simple retour d'XP sur l'utilisation et tests de diverses solutions (almost)ready-to-use de job queue et brokers de messages.&lt;/p&gt;
+&lt;h1&gt;Présentation de l'archi du projet&lt;/h1&gt;
+&lt;p&gt;Comme vous pouvez l'imaginer avec IFTTT si vous connaissez ce service, j'ai des triggers qui permettent de récupérer des données pour être publiées n'importe où. &lt;/p&gt;
+&lt;h1&gt;Des mécaniques, il ne faut pas rouler&lt;/h1&gt;
+&lt;p&gt;Pour que cela ne soit pas fait par des traitements en série &lt;strong&gt;et&lt;/strong&gt; bloquant, j'exploite le cache de Django à coup de &lt;code&gt;cache.set()&lt;/code&gt; et &lt;code&gt;cache.get()&lt;/code&gt; avec 2 tâches récurrentes, une qui récupère les données et fait donc le &lt;code&gt;cache.set()&lt;/code&gt; et une qui publie les données à partir des éléments récupérés par &lt;code&gt;cache.get()&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;Les "solutions" utilisées pour le traitement des tâches&lt;/h1&gt;
+&lt;p&gt;Depuis quelques semaines pour Trigger Happy, j'ai migré de "Job Queue", passant de &lt;a href="http://docs.celeryproject.org/"&gt;&lt;code&gt;Celery&lt;/code&gt;&lt;/a&gt; à &lt;a href="http://python-rq.org"&gt;&lt;code&gt;Python-rq&lt;/code&gt;&lt;/a&gt;.
+Celery cessant de fonctionner sans raison apparente (aucune info dans les logs ni dans la console), de guerrelasse, je suis passé à &lt;code&gt;RQ&lt;/code&gt;, plus léger et facile à manipuler.&lt;/p&gt;
+&lt;p&gt;Mais il y a 10jours j'en ai eu marre de voir RQ prendre des fins de non recevoir du serveur redis à coup de "connections timeout" pour des choses "futiles" (par exemple une pauvre tâche changeant version=2 à version=1 de 3 ou 4 données seulement).&lt;/p&gt;
+&lt;p&gt;Donc je suis parti creuser côté RQ ce qui pouvait poser problème, et, au hasard d'un ticket, je découvre qu'en fait... RQ ne gère qu'&lt;strong&gt;un worker à la fois&lt;/strong&gt; et pas toute une batterie comme avec celery. Ce ticket datant de 2012 (ouais 4ans hein) d'autres se sont lancés dans des projets parallèles (&lt;a href="https://github.com/Koed00/django-q"&gt;https://github.com/Koed00/django-q&lt;/a&gt; ,  &lt;a href="https://github.com/pricingassistant/mrq"&gt;https://github.com/pricingassistant/mrq&lt;/a&gt;) pour remédier au problème. &lt;/p&gt;
+&lt;p&gt;Je ne me suis pas amusé à tous les tester sinon j'y serai encore. Et surtout pour me faire installer mongodb en plus (le cas du projet mrq), j'ai trouvé ça trop lourd pour moi et ceux qui s'installeraient mon projet pour eux.&lt;/p&gt;
+&lt;p&gt;Je suis donc parti dans un (bad)road trip "broker / job queue" pour tenter de trouver mon bonheur.&lt;/p&gt;
+&lt;h1&gt;Road Trip Broker / Job Queue&lt;/h1&gt;
+&lt;p&gt;Ce n'est pas la route 66 mais vous allez voir que ya matière...&lt;/p&gt;
+&lt;h2&gt;1iere escale : &lt;a href="http://activemq.apache.org/"&gt;activeMQ&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Pourquoi celui là ?&lt;/p&gt;
+&lt;p&gt;Parce-que la lib python gérant ce dernier, nommée &lt;code&gt;stomp.py&lt;/code&gt;, était limpide à mes yeux, (et si je parvenais à faire fonctionner la machinerie, ca permettrait que le code soit utilisable également pour &lt;a href="https://www.rabbitmq.com/"&gt;&lt;code&gt;RabbitMQ&lt;/code&gt;&lt;/a&gt; et &lt;a href="http://activemq.apache.org/apollo/"&gt;&lt;code&gt;Appolo&lt;/code&gt;&lt;/a&gt;), mais après avoir fini mon code et testé avec succès, comme pour &lt;code&gt;mongodb&lt;/code&gt;, faire installer &lt;code&gt;activeMQ&lt;/code&gt; et son giga de RAM à consommer, je ne me voyais pas mettre ce prérequis à installer pour le projet pour vous autres.&lt;/p&gt;
+&lt;h2&gt;2ieme escale : beanstalk&lt;/h2&gt;
+&lt;p&gt;Pourquoi celui là ? &lt;/p&gt;
+&lt;p&gt;Parce-que rapide, m'a-t-on rapporté, et faisant exactement ce pour quoi il a été écrit.&lt;/p&gt;
+&lt;p&gt;Comme mon projet est en python 3, la batterie de libs existantes ne convenait pas. Je me suis orienté sur &lt;a href="https://github.com/jonasvp/django-beanstalkd"&gt;https://github.com/jonasvp/django-beanstalkd&lt;/a&gt;, que j'ai forké pour switcher de beanstalkc à pystalkd, histoire de faire ma sorcellerie dans mon coin sans gêner personne ;)&lt;/p&gt;
+&lt;p&gt;Manque de bol chez moi après avoir arrangé le code, même si la rapidité était au rendez-vous, au premier lancement : &lt;code&gt;JOB_TOO_BIG&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Alors peut-être que ça venait de la lib cliente &lt;code&gt;pystalkd&lt;/code&gt; (en python 3 je rappelle), mais je n'ai plus eu l'envie de creuser celle-ci.&lt;/p&gt;
+&lt;p&gt;Du coup, après tout ça, il ne me restait plus rien comme solution existante, que je maîtrisais/connaissais ... Donc&lt;/p&gt;
+&lt;h2&gt;3ieme escale : la stdlib !&lt;/h2&gt;
+&lt;p&gt;Il y a quelques mois &lt;a href="http://sametmax.com/python-ubiuite-multiprocessing/"&gt;j'évoquais sur s&amp;amp;m le multiprocessing&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Donc c'est tout ce qu'il me restait, "quand faut y aller faut y aller" me dis-je.&lt;/p&gt;
+&lt;p&gt;Et au final ça n'a pas mal réussi puisque les temps de traitement sont passés de un peu moins d'une minute les 40 triggers à... 7sec (en moyenne haute ;)&lt;/p&gt;
+&lt;p&gt;Tout cela grâce à 9 lignes de code :)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;trigger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TriggerService&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user__is_active&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;select_related&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;consumer__name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;provider__name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;multiprocessing&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Pool&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TimeoutError&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;Pool&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;processes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DJANGO_TH&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;processes&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pool&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;map_async&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;publishing&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="n"&gt;result&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;timeout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;360&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;TimeoutError&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;warn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;chez moi &lt;code&gt;settings.DJANGO_TH['processes']&lt;/code&gt; vaut 5. Je vous fais grâce de la fonction &lt;code&gt;publishing&lt;/code&gt; ;)&lt;/p&gt;
+&lt;h3&gt;Publication des données :&lt;/h3&gt;
+&lt;p&gt;j'ai voulu charger la mule (toute proportion gardée:) en rajoutant 21 triggers de plus (entre autre traquer #django sur twitter), hé bien je suis passé à 12 secondes pour publier les données de 61 consumers (quand ceux ci ont des données à fournir évidemment) (donc ca fait un coup de 305triggers/min)&lt;/p&gt;
+&lt;p&gt;quand rien n'est à faire, la liste est passée au crible en 1/10° de seconde... c'est plutôt ... correct :D&lt;/p&gt;
+&lt;h3&gt;Récupération des données :&lt;/h3&gt;
+&lt;p&gt;10secondes pour les 61 triggers (ca fait un coup de 360triggers/min)&lt;/p&gt;
+&lt;h3&gt;Tentative d'amélioration des perfs&lt;/h3&gt;
+&lt;p&gt;Pour éviter des accès à la base de données à tout prix, j'ai tenté de n'exploiter que le cache. 
+Du coup j'ai dû m'orienter vers &lt;code&gt;apply_async&lt;/code&gt; vs &lt;code&gt;map_async&lt;/code&gt;, mais les temps de traitements étaient pire que si je n'avais pas utilisé &lt;code&gt;multiprocessing.Pool.apply_async()&lt;/code&gt;. Ensuite j'ai rajouté plus d'info dans le cache pour arriver à ne passer que par &lt;code&gt;map_async()&lt;/code&gt; mais encore une fois le résultat n'était pas terrible.&lt;/p&gt;
+&lt;p&gt;Du coup j'en suis resté à mes 9 lignes de code ci dessus.&lt;/p&gt;
+&lt;h2&gt;Nota&lt;/h2&gt;
+&lt;p&gt;Ici je n'ai pas cherché à dézinguer un projet plus qu'un autre, chacun fonctionnant dans un univers, au final, très différent du mien, j'ai juste voulu souligner, qu'à aller chercher des solutions toutes faites, ce n'était pas forcément le plus bénéfique, si on prenait le temps de se pencher sur ce qu'offrait déjà le langage.&lt;/p&gt;
+&lt;p&gt;Par ailleurs, un truc qui ne transparait pas ici, c'est le temps que tout cela m'a pris pour tester et appréhender chaque solution de job queue / messages broker, de même que se pencher sur &lt;code&gt;apply_async&lt;/code&gt; et &lt;code&gt;map_async&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Ceci explique pourquoi, à un moment donné, je n'approfondis plus mes investigations dans la recherche de bug dans pystakld par exemple sur le &lt;code&gt;JOB_TOO_BIG&lt;/code&gt; pour continuer sur la voie &lt;code&gt;beanstalkd&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Last but not... toussa&lt;/h2&gt;
+&lt;p&gt;En l'état, si on veut un rafraichissement des données assez correct (toutes les 15minutes) alors le serveur est capable de gérer un petit contingent de ~3600triggers repartis sur 60 utilisateurs chacun ayant 60 triggers, lesquels seront engloutis en 10min. &lt;/p&gt;
+&lt;h3&gt;Ni trop&lt;/h3&gt;
+&lt;p&gt;De plus il ne faut pas non plus "publier" trop souvent, les accès aux API des services tiers comme Twitter, finiraient par vous envoyer aux pelotes avec un truc genre &lt;code&gt;User Limit Reached&lt;/code&gt;. &lt;/p&gt;
+&lt;h3&gt;Ni trop peu&lt;/h3&gt;
+&lt;p&gt;A l'inverse il ne faut pas non plus publier trop "rarement" car là vous amassez une quantité de données importante dans le cache, que vous ne pourrez pas publier correctement, avec le même genre d'erreur que précédemment.&lt;/p&gt;
+&lt;h3&gt;Dernière analyse&lt;/h3&gt;
+&lt;p&gt;Sur les 60triggers que j'ai défini, il y en a entre 3 et 11 qui sont utilisés de façon recurrente, par exemple ceux qui suivent des hashtags sur twitter ou suivent simplement un @compte_twitter, ou les gros sites de news. &lt;/p&gt;
+&lt;p&gt;Du coup ca fait pas bézef sur les 60, mais 1) ca me suffit 2) ca marche parfaitement pour mon besoin.&lt;/p&gt;
+&lt;p&gt;Voici tout de même quelques logs à se mettre sous la dent pour voir ce que donne les temps de réponses.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;toutes les 15min, la publication a lieu&lt;/li&gt;
+&lt;li&gt;toutes les 13min, la récupération des données a lieu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ne sont pas affichées, les logs qui n'ont pas de données à traiter, mais qui évidement, consomme du temps. Ce qui explique que de 14:00:00 à 14:00:06 il ne s'affiche rien.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:02,928 INFO tasks &lt;span class="m"&gt;3902&lt;/span&gt; foxmask - ServiceRss - ServicePocket - Frandroid - pocket - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:06,156 INFO tasks &lt;span class="m"&gt;3903&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - LinuxFr - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:06,802 INFO tasks &lt;span class="m"&gt;3902&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:07,137 INFO tasks &lt;span class="m"&gt;3906&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:26:08,504 INFO tasks &lt;span class="m"&gt;3903&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:03,616 INFO tasks &lt;span class="m"&gt;3946&lt;/span&gt; foxmask - ServiceRss - ServicePocket - Frandroid - pocket - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:04,152 INFO tasks &lt;span class="m"&gt;3949&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:04,931 INFO tasks &lt;span class="m"&gt;3947&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:07,977 INFO tasks &lt;span class="m"&gt;3948&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - LinuxFr - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:30:09,572 INFO tasks &lt;span class="m"&gt;3950&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:39:05,783 INFO tasks &lt;span class="m"&gt;4348&lt;/span&gt; foxmask - ServiceRss - ServicePocket - TheVerge - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:42:02,482 INFO tasks &lt;span class="m"&gt;4383&lt;/span&gt; recycle of cache &lt;span class="k"&gt;done&lt;/span&gt;!
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:03,933 INFO tasks &lt;span class="m"&gt;4462&lt;/span&gt; foxmask - ServiceRss - ServicePocket - TheVerge - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:06,910 INFO tasks &lt;span class="m"&gt;4462&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:07,632 INFO tasks &lt;span class="m"&gt;4461&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - Numerama - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:07,993 INFO tasks &lt;span class="m"&gt;4463&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;13&lt;/span&gt;:52:09,537 INFO tasks &lt;span class="m"&gt;4463&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:06,192 INFO tasks &lt;span class="m"&gt;4524&lt;/span&gt; recycle of cache &lt;span class="k"&gt;done&lt;/span&gt;!
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:06,309 INFO tasks &lt;span class="m"&gt;4539&lt;/span&gt; foxmask - ServiceRss - ServicePocket - TheVerge - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:06,788 INFO tasks &lt;span class="m"&gt;4540&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:07,321 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceRss - ServicePocket - TheVerge - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:07,497 INFO tasks &lt;span class="m"&gt;4538&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - Numerama - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:07,751 INFO tasks &lt;span class="m"&gt;4535&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:10,278 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;5&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:10,875 INFO tasks &lt;span class="m"&gt;4542&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - Korben - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:11,279 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - BeGeek - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:11,461 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - Google high-tech - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:11,717 INFO tasks &lt;span class="m"&gt;4543&lt;/span&gt; foxmask - ServiceTwitter - ServiceTrello - Django - &lt;span class="m"&gt;2&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:11,793 INFO tasks &lt;span class="m"&gt;4542&lt;/span&gt; foxmask - ServiceTwitter - ServicePocket - Django - &lt;span class="m"&gt;5&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:12,634 INFO tasks &lt;span class="m"&gt;4536&lt;/span&gt; foxmask - ServiceTwitter - ServiceReadability - Django - &lt;span class="m"&gt;5&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:14,414 INFO tasks &lt;span class="m"&gt;4537&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - Korden - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:15,533 INFO tasks &lt;span class="m"&gt;4534&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - Numerama - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:16,498 INFO tasks &lt;span class="m"&gt;4543&lt;/span&gt; foxmask - ServiceRss - ServiceEvernote - BeGeek - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;span class="m"&gt;2016&lt;/span&gt;-04-13 &lt;span class="m"&gt;14&lt;/span&gt;:00:17,206 INFO tasks &lt;span class="m"&gt;4542&lt;/span&gt; foxmask - ServiceRss - ServiceReadability - BeGeek - &lt;span class="m"&gt;1&lt;/span&gt; new data
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Cette fois ci l'éternel insatisfait que je suis, se sent un peu mieux avec cette solution (... quoi que ya encore un truc à gratter pour que ca soit 'encore mieux';)&lt;/p&gt;</content><category term="TriggerHappy"></category><category term="multiprocessing"></category><category term="activemq"></category><category term="celery"></category><category term="rq"></category><category term="beanstalkd"></category></entry><entry><title>Trigger Happy running softly with RQ</title><link href="https://foxmask.net/post/2016/02/15/trigger-happy-running-softly-with-rq/" rel="alternate"></link><published>2016-02-15T19:30:00+01:00</published><updated>2016-02-15T19:30:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-02-15:/post/2016/02/15/trigger-happy-running-softly-with-rq/</id><summary type="html">&lt;h2&gt;TriggerHappy and Celery&lt;/h2&gt;
+&lt;p&gt;Actually, Trigger Happy works perlfectly with &lt;a href="http://celery.readthedocs.org/"&gt;Celery&lt;/a&gt;, but.... there is a but.&lt;/p&gt;
+&lt;p&gt;Sometimes, (once a week) celery stays stuck without any visible reason. &lt;/p&gt;
+&lt;p&gt;No error logs occur, and even in DEBUG level, no log appear at all. The logfile remain as is (and yes the disk is …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;TriggerHappy and Celery&lt;/h2&gt;
+&lt;p&gt;Actually, Trigger Happy works perlfectly with &lt;a href="http://celery.readthedocs.org/"&gt;Celery&lt;/a&gt;, but.... there is a but.&lt;/p&gt;
+&lt;p&gt;Sometimes, (once a week) celery stays stuck without any visible reason. &lt;/p&gt;
+&lt;p&gt;No error logs occur, and even in DEBUG level, no log appear at all. The logfile remain as is (and yes the disk is not full:)&lt;/p&gt;
+&lt;p&gt;As this is very annoying for me, I went on &lt;a href="irc://irc.freenode.net/celery"&gt;#celery@freenode&lt;/a&gt; to try to get some details about this behavior, before breaking everything ...&lt;/p&gt;
+&lt;p&gt;Here, we told me that this behavior was also met with AMQ as broker (when I currently use REDIS).&lt;/p&gt;
+&lt;h2&gt;TriggerHappy and RQ&lt;/h2&gt;
+&lt;p&gt;So I decide to give a try to &lt;a href="http://python-rq.org"&gt;Python-RQ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;His (well known) author presents it as follow :&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Python RQ (Redis Queue) is a simple Python library for queueing jobs and processing them in the background with workers
+This project has been inspired by the good parts of Celery, &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So to integrate RQ with TriggerHappy here is what I should do :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;I installed django-rq that I added to &lt;em&gt;INSTALLED_APPS&lt;/em&gt; in the &lt;strong&gt;settings.py&lt;/strong&gt; file.&lt;/li&gt;
+&lt;li&gt;to not break the existing way (with Celery) that (almost) works perfectly, I changed few details in the tasks.py module :&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;before &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;celery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;shared_task&lt;/span&gt;
+
+&lt;span class="nd"&gt;@shared_task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="nd"&gt;@shared_task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;publishing&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;after &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django_rq&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;job&lt;/span&gt;
+&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;celery&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;shared_task&lt;/span&gt;
+
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="nd"&gt;@job&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;default&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@shared_task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="nd"&gt;@job&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;high&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nd"&gt;@shared_task&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;publishing&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;service&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Those tasks are executed by celery with the decorator &lt;strong&gt;@shared_task&lt;/strong&gt; (with its own scheduler) or by the RQ with the &lt;strong&gt;@job&lt;/strong&gt; decorator, through some crontab tasks, with management commands. As RQ asole use my_tasks.delay(), I dont have to change anything else, other than just adding a @job decorator.&lt;/p&gt;
+&lt;p&gt;I perfectly know that it's not satifying because if Celery or RQ is not installed, the decorator call with fail and the tasks wont happen.
+It's just for testing purpose :) That way, I'm able to compare performance between the two solutions, one weight and one very light.&lt;/p&gt;
+&lt;p&gt;Surprisingly, the weight win by handling my reading tasks in less than a seconde for ~50triggers against 30sec for the light one. For the publishing tasks, they are neck and neck. But one thing hangs in the balance actually against celery, it is out of order once a week. The process are not dead, the log does not move, the query I made with celery inspect and so on, respond perfectly.&lt;/p&gt;
+&lt;p&gt;As my project is not so overloaded I can say that the cursor between something a "little bit slow" and something "out of order" is quickly choosen :)&lt;/p&gt;
+&lt;p&gt;So at least if you want to give a try to &lt;a href="http://python-rq.org"&gt;RQ&lt;/a&gt; with TriggerHappy, the stuff that will need to be handle, will continue to work.&lt;/p&gt;
+&lt;p&gt;Here I provide the line I enter in my crontab :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;*/12 * * * * . /my/env/bin/activate &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; /my/env/th/ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./manage.py fire_read_data &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ../bin/rqworker-default-burst.sh
+*/15 * * * * . /my/env/bin/activate &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; /my/env/th/ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./manage.py fire_publish_data &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ../bin/rqworker-high-burst.sh
+*/20 * * * * . /my/env/bin/activate &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;cd&lt;/span&gt; /my/env/th/ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./manage.py fire_get_outside_data &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ../bin/rqworker-low-burst.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and the content of, for example, rqworker-default-burst.sh&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt; 
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt; 
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+python manage.py rqworker default --burst &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Yes I like to spawn a lot :)&lt;/p&gt;
+&lt;h2&gt;A Question to finish&lt;/h2&gt;
+&lt;p&gt;I take the opportunity of this post to ask you a question :&lt;/p&gt;
+&lt;p&gt;If I want to support Celery and RQ for my tasks, one should I write a decorator that could handle each of them.
+Is there a way to write a generic decorator that will permit to be inherited to handle each of them ?&lt;/p&gt;
+&lt;p&gt;Thus in my tasks.py I'll be able to just do &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django_th.my_powerful_decorator&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;jobth&lt;/span&gt;
+
+
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="nd"&gt;@jobth&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;reading&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and &lt;strong&gt;jobth&lt;/strong&gt; will check which of the two Queueing system is here and handled the right decorator&lt;/p&gt;</content><category term="Django"></category><category term="TriggerHappy"></category></entry><entry><title>IFTTT se prend les pieds dans le SuperBowl</title><link href="https://foxmask.net/post/2016/02/03/ifttt-se-prend-les-pieds-dans-le-superbowl/" rel="alternate"></link><published>2016-02-03T10:10:00+01:00</published><updated>2016-02-03T10:10:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-02-03:/post/2016/02/03/ifttt-se-prend-les-pieds-dans-le-superbowl/</id><summary type="html">&lt;p&gt;&lt;em&gt;Espionné&lt;/em&gt; la concurrence est un devoir quand on veut voir ce qu'on pourrait rater ;)&lt;/p&gt;
+&lt;p&gt;Du coup je track le flux RSS du blog &lt;a href="http://engineering.ifttt.com/"&gt;Engineering de IFTTT&lt;/a&gt;, et reçois ce matin dans mon carnet Evernote, &lt;a href="http://engineering.ifttt.com/"&gt;une info "IF Superbowl THEN"&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Je ne suis pas fan du foot americain, je serai plus …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Espionné&lt;/em&gt; la concurrence est un devoir quand on veut voir ce qu'on pourrait rater ;)&lt;/p&gt;
+&lt;p&gt;Du coup je track le flux RSS du blog &lt;a href="http://engineering.ifttt.com/"&gt;Engineering de IFTTT&lt;/a&gt;, et reçois ce matin dans mon carnet Evernote, &lt;a href="http://engineering.ifttt.com/"&gt;une info "IF Superbowl THEN"&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Je ne suis pas fan du foot americain, je serai plus NBA ou NHL, mais depuis que le sieur Michael Jordan n'est plus sur les parquets, je ne suis plus du tout ;)&lt;/p&gt;
+&lt;p&gt;Mais revenons à nos moutons.&lt;/p&gt;
+&lt;p&gt;Dans l'article du blog de IFTTT j'apprends qu'on peut s'amuser à faire faire un feu d'artifice à ses lampes Philips HUE quand le score du superbowl évolue.
+IFTTT est tout content de nous dire le nombre de personnes utilisant ces "triggers", de part et d'autres des supporters des 2 equipes qui vont se rencontrer et surtout de nous dire que depuis les 2 dernières editions du superbowl, leur nombre était croissant.&lt;/p&gt;
+&lt;p&gt;Du coup je me mets en quete de l'api de &lt;a href="https://github.com/studioimaginaire/phue"&gt;Philips HUE pour Python&lt;/a&gt; que je trouve en 2 secondes, puis je me dis, me reste plus qu'à chopper celle de ESPN qui est le "trigger" fournissant les infos sur les scores.&lt;/p&gt;
+&lt;p&gt;Et là en 2secondes je découvre : &lt;a href="http://espn.go.com/static/apis/devcenter/blog/read/publicretirement.html"&gt;ESPN Public retirement&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Alors je me dis, &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"tiens tiens, comment IFTTT s'y prend ? allons voir leur page de leur article pour le leur demander" &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;et là ... &lt;a href="http://engineering.ifttt.com/data/2016/02/02/superbowl/"&gt;sous nos yeux ébahis&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pour vous montrer que je n'ai pas la berlue &lt;a href="https://www.evernote.com/shard/s55/sh/eadfd0d4-f7c4-4952-b014-806291ff63a9/a1a7f4945a15b1957f17309f20900f3b"&gt;voici l'article depuis mon carnet de notes&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"According to our data" &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;comme ils disaient, je predis des lampes Philips Hue qui vont rester eteintes :D &lt;/p&gt;
+&lt;p&gt;ESPN lutte pour l'economie d'energie je ne vois pas d'autres explications ;)&lt;/p&gt;
+&lt;p&gt;Voilà vouuuuuuuuu aaaaaaaaaaaa laaaaaaaaa ;)&lt;/p&gt;</content><category term="ifttt"></category><category term="triggerhappy"></category></entry><entry><title>Trigger-Happy, stats, requête et proposition</title><link href="https://foxmask.net/post/2015/10/02/trigger-happy-stats-requete-et-proposition/" rel="alternate"></link><published>2015-10-02T11:04:00+02:00</published><updated>2015-10-02T11:04:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-10-02:/post/2015/10/02/trigger-happy-stats-requete-et-proposition/</id><summary type="html">&lt;p&gt;Avec wordpress on dispose de stats par billet, et le fait de m'être mis
+un coup de pompe au cul pour publier des billets in ze Shakespeare
+language a fait que dans le top 100 des billets les plus lus sur le
+blog, on trouve celui concernant la sortie de …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Avec wordpress on dispose de stats par billet, et le fait de m'être mis
+un coup de pompe au cul pour publier des billets in ze Shakespeare
+language a fait que dans le top 100 des billets les plus lus sur le
+blog, on trouve celui concernant la sortie de la &lt;a href="/post/2015/08/18/django-trigger-happy-0-11-0-english-version/"&gt;v0.11.0 in
+English&lt;/a&gt;
+(en 87° position avec 1013 vues en 1mois et demi). Là où &lt;a href="/post/2015/08/17/django-trigger-happy-0-11-0/"&gt;la version
+francophone&lt;/a&gt;,
+n'a pas atteint la moitié de l'autre sur la même période.&lt;br&gt;
+L'heureuse conséquence tout de même, c'est que le nombre de personnes
+s'intéressant au projet (qu'on dénombre avec les petites "stars" sur
+github) fini par atteindre 99 :) A coté de ça le nombre de
+téléchargements de l'appli est de 333/mois sur pypi.&lt;br&gt;
+Pour un projet ne cherchant ni gloire ni fortune, et au départ juste
+pour mes propres besoins, c'est toujours plaisant même si les chiffres
+sont ridicules comparativement à des projets similaires.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Une requête&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Tout récemment, hier en fait, un utilisateur a envoyé un mail à la
+mailbox que j'avais ouverte pour contacter le projet.&lt;br&gt;
+Ouais c'est à ça que ça sert les mails :) Le monsieur me demandait
+comment pouvoir utiliser TriggerHappy depuis le site.&lt;/p&gt;
+&lt;p&gt;Bon voici ma réponse :&lt;br&gt;
+"bonjour,&lt;br&gt;
+le service n'est pas encore rendu accessible à tout le monde, mais si
+vous n'avez pas les compétences (en langage de programmation python) ou
+les moyens d'installer l'application, je peux vous créer un compte pour
+que vous le testiez à votre guise"&lt;/p&gt;
+&lt;p&gt;Donc depuis hier, un utilisateur fait joujou avec le service. Il a
+activé 2 services et créé un trigger (le minimum vital pour faire
+quelque chose) et hop roule ma poule.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Une proposition&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Si vous voulez également tester, faites péter un mail avec login
+souhaité, email à utiliser, le tout à "service chez trigger-happy point
+eu" et je vous fournirai le mot de passe et l'url de connexion en
+retour.&lt;/p&gt;
+&lt;p&gt;Avant cela, &lt;a href="http://trigger-happy.eu/infos/"&gt;vérifier que les services
+couverts&lt;/a&gt; par le projet sont à votre
+goût, histoire d'éviter que vous ne pestiez parce que ca ne fait pas le
+café. En plus c'est un projet libre, où j'ai documenté à mort "&lt;a href="https://github.com/foxmask/django-th/blob/master/CONTRIBUTING.md"&gt;comment
+contribuer&lt;/a&gt;"
+et &lt;a href="https://github.com/foxmask/django-th-ansible"&gt;fourni des outils&lt;/a&gt;
+pour en faire le moins possible ;)&lt;/p&gt;
+&lt;p&gt;Si la demande est plus conséquente, je me botterai le train pour
+rajouter un module d'inscription plus vite que prévu (j'attendais le
+retour du module django dédié mais il semble que ca prenne bien plus de
+temps) et chacun ira s'inscrire.&lt;/p&gt;
+&lt;p&gt;Comme cette proposition est tout à fait informelle, je reviendrai en
+détails sur ce que je fais avec "vos données perso", mais pour résumer,
+c'est "RIEN". Vous êtes maître à bord et décider des recettes que vous
+voulez faire en faisant se parler les services de votre choix.&lt;/p&gt;
+&lt;p&gt;Tout ce que je ferai, c'est avoir un oeil sur l'état du projet pour
+savoir où améliorer les choses mais aucunement me servir de vos infos
+pour mon usage perso (tel que collecte de mail pour spam ou autre
+joyeusete qu'on "affectionne" tous)&lt;/p&gt;
+&lt;p&gt;Je reviendrai là dessus au moment de l'ouverture "publique" du service.&lt;/p&gt;
+&lt;p&gt;Pour l'heure, ca sera du test avec votre concours, bien que je m'en
+serve au quotidien pour mes propres besoins depuis le début.&lt;/p&gt;</content><category term="Django"></category><category term="TriggerHappy"></category></entry><entry><title>Trigger Happy, de tout, de rien, la vie</title><link href="https://foxmask.net/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/" rel="alternate"></link><published>2015-09-08T10:30:00+02:00</published><updated>2015-09-08T10:30:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-09-08:/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/</id><summary type="html">&lt;p&gt;Depuis la sortie de la version 0.11.0, j'ai lancé quelques bidules
+périphériques :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.trigger-happy.eu/"&gt;un blog dédié&lt;/a&gt; en pelican, que j'ai
+    commencé à remplir. J'essaierai de lui trouver un thème plus
+    responsive que du rendu à taille fixe.&lt;/li&gt;
+&lt;li&gt;un compte &lt;a href="https://twitter.com/TriggerHappyEu"&gt;@TriggerHappyEu&lt;/a&gt;
+    dédié qui relaiera les news du projet&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://alternativeto.net/software/trigger-happy/"&gt;une inscription …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Depuis la sortie de la version 0.11.0, j'ai lancé quelques bidules
+périphériques :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.trigger-happy.eu/"&gt;un blog dédié&lt;/a&gt; en pelican, que j'ai
+    commencé à remplir. J'essaierai de lui trouver un thème plus
+    responsive que du rendu à taille fixe.&lt;/li&gt;
+&lt;li&gt;un compte &lt;a href="https://twitter.com/TriggerHappyEu"&gt;@TriggerHappyEu&lt;/a&gt;
+    dédié qui relaiera les news du projet&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://alternativeto.net/software/trigger-happy/"&gt;une inscription sur
+    Alternativeto.net&lt;/a&gt;,
+    pour voir sur quel créneau se positionne le projet au milieu des
+    plus "lourds"&lt;/li&gt;
+&lt;li&gt;quelques posts sur
+    &lt;a href="https://www.reddit.com/r/selfhosted/"&gt;r/selfhosted&lt;/a&gt; &amp;amp;
+    &lt;a href="https://www.reddit.com/r/django/"&gt;r/django&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Quant à l'évolution du projet, j'ai pu ajouter à son arc, 2 services,
+&lt;a href="https://trello.com/"&gt;Trello&lt;/a&gt;, Un gestionnaire de projets et
+&lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;. Ce qui permet par exemple de pouvoir
+créer des tickets sur github dès qu'on a créé une "carte" Trello dans un
+board de son choix.&lt;/p&gt;
+&lt;p&gt;Dans le même temps j'ai pris contact avec le projet
+&lt;a href="https://github.com/wekan/wekan"&gt;WeKan&lt;/a&gt;, un Trello like opensource, en
+tout point identique à l'UI originale, afin de leur proposer d'exploiter
+leur API, mais elle n'existe pas encore mais sera complétement calquée
+sur celle de Trello. Je vois bien d'ici là un yes.wekan.io poindre le
+bout de son nez tiens ;)&lt;/p&gt;</content><category term="Django"></category><category term="TriggerHappy"></category></entry></feed>

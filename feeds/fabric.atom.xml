@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Fabric</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/fabric.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2018-01-23T16:45:00+01:00</updated><entry><title>Quand Fabric refuse de bosser</title><link href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/" rel="alternate"></link><published>2018-01-23T16:45:00+01:00</published><updated>2018-01-23T16:45:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-01-23:/post/2018/01/23/quand-fabric-refuse-bosser/</id><summary type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
+&lt;p&gt;Je pose ça là vite fait pour qui rencontrerait le problème à son tour&lt;/p&gt;
+&lt;p&gt;J'ai un script, le plus …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
+&lt;p&gt;Je pose ça là vite fait pour qui rencontrerait le problème à son tour&lt;/p&gt;
+&lt;p&gt;J'ai un script, le plus con du monde qui execute la commande id sur le serveur de mon choix, comme suit :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# coding: utf-8&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;fabric.api&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;fabric.colors&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yellow&lt;/span&gt;
+
+&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;the_log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;new_f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;msg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;[{0}] {1}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="vm"&gt;__doc__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;new_f&lt;/span&gt;
+
+
+&lt;span class="nd"&gt;@the_log&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;This is my main function that will triggers anything&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;warn_only&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+        &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;yellow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+        &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                     &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                     &lt;span class="n"&gt;combine_stderr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Quand ce script tourne il fait :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;foxmask:~/DjangoVirtualEnv/monitoring/monitoring&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;monitoring&lt;span class="o"&gt;]&lt;/span&gt; $ fab main:server&lt;span class="o"&gt;=&lt;/span&gt;server1 -H server1
+&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; Executing task &lt;span class="s1"&gt;&amp;#39;main&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; This is my main &lt;span class="k"&gt;function&lt;/span&gt; that will triggers anything
+&lt;span class="o"&gt;[&lt;/span&gt;localhost&lt;span class="o"&gt;]&lt;/span&gt; local: id
+&lt;span class="nv"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;groupes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt;,24&lt;span class="o"&gt;(&lt;/span&gt;cdrom&lt;span class="o"&gt;)&lt;/span&gt;,25&lt;span class="o"&gt;(&lt;/span&gt;floppy&lt;span class="o"&gt;)&lt;/span&gt;,29&lt;span class="o"&gt;(&lt;/span&gt;audio&lt;span class="o"&gt;)&lt;/span&gt;,30&lt;span class="o"&gt;(&lt;/span&gt;dip&lt;span class="o"&gt;)&lt;/span&gt;,44&lt;span class="o"&gt;(&lt;/span&gt;video&lt;span class="o"&gt;)&lt;/span&gt;,46&lt;span class="o"&gt;(&lt;/span&gt;plugdev&lt;span class="o"&gt;)&lt;/span&gt;,100&lt;span class="o"&gt;(&lt;/span&gt;users&lt;span class="o"&gt;)&lt;/span&gt;,103&lt;span class="o"&gt;(&lt;/span&gt;scanner&lt;span class="o"&gt;)&lt;/span&gt;,112&lt;span class="o"&gt;(&lt;/span&gt;netdev&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; run: id
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;on voit le resultat des 2 commandes... la seconde ne fonctionne pas et pourtant un ssh passe lui&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh root@server1 id
+&lt;span class="nv"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;root&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;root&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;groupes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;root&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;après avoir écrèmé la toile à la recherche de config SSH que j'aurai raté, je testé le meme script sur un serveur. 
+Et la entre serveurs tout passe.
+La difference avec ma station, OpenSSH 7.1 vs OpenSSH 5.3
+Donc me dis que c'est quand même gonflé qu'une diff d'openssh me mette dedans
+Je mets à jour OpenSSH sur la Redhat mais j'arrive tout juste à la 5.3.13.&lt;/p&gt;
+&lt;p&gt;Je mets du PDB partout pour voir qu'est-ce qui n'irait pas.
+Et je tombe sur cette page &lt;a href="http://www.fabfile.org/troubleshooting.html?highlight=ssh"&gt;http://www.fabfile.org/troubleshooting.html?highlight=ssh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Où je fais un bon copier coller du code sous le paragraphe "Enable Paramiko-level debug logging"
+Et là à l'execution ca donne :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;foxmask:~/DjangoVirtualEnv/monitoring/monitoring&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;monitoring&lt;span class="o"&gt;]&lt;/span&gt; $ fab -f main main:server&lt;span class="o"&gt;=&lt;/span&gt;server1 -H server1 -p pass1
+&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; Executing task &lt;span class="s1"&gt;&amp;#39;main&amp;#39;&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; This is my main &lt;span class="k"&gt;function&lt;/span&gt; that will triggers anything
+&lt;span class="o"&gt;[&lt;/span&gt;localhost&lt;span class="o"&gt;]&lt;/span&gt; local: id
+&lt;span class="nv"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;groupes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt;,24&lt;span class="o"&gt;(&lt;/span&gt;cdrom&lt;span class="o"&gt;)&lt;/span&gt;,25&lt;span class="o"&gt;(&lt;/span&gt;floppy&lt;span class="o"&gt;)&lt;/span&gt;,29&lt;span class="o"&gt;(&lt;/span&gt;audio&lt;span class="o"&gt;)&lt;/span&gt;,30&lt;span class="o"&gt;(&lt;/span&gt;dip&lt;span class="o"&gt;)&lt;/span&gt;,44&lt;span class="o"&gt;(&lt;/span&gt;video&lt;span class="o"&gt;)&lt;/span&gt;,46&lt;span class="o"&gt;(&lt;/span&gt;plugdev&lt;span class="o"&gt;)&lt;/span&gt;,100&lt;span class="o"&gt;(&lt;/span&gt;users&lt;span class="o"&gt;)&lt;/span&gt;,103&lt;span class="o"&gt;(&lt;/span&gt;scanner&lt;span class="o"&gt;)&lt;/span&gt;,112&lt;span class="o"&gt;(&lt;/span&gt;netdev&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; run: id
+DEBUG:paramiko.transport:starting thread &lt;span class="o"&gt;(&lt;/span&gt;client mode&lt;span class="o"&gt;)&lt;/span&gt;: 0x66aed748
+DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.0
+DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_5.3
+INFO:paramiko.transport:Connected &lt;span class="o"&gt;(&lt;/span&gt;version &lt;span class="m"&gt;2&lt;/span&gt;.0, client OpenSSH_5.3&lt;span class="o"&gt;)&lt;/span&gt;
+DEBUG:paramiko.transport:kex algos:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;diffie-hellman-group-exchange-sha256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;diffie-hellman-group-exchange-sha1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;diffie-hellman-group14-sha1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;diffie-hellman-group1-sha1&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server key:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ssh-rsa&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;ssh-dss&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; client encrypt:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;aes128-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes192-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes256-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour128&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes128-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;3des-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;blowfish-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;cast128-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes192-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes256-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;rijndael-cbc@lysator.liu.se&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server encrypt:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;aes128-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes192-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes256-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour128&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes128-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;3des-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;blowfish-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;cast128-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes192-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes256-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;rijndael-cbc@lysator.liu.se&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; client mac:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hmac-md5&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;umac-64@openssh.com&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha2-256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha2-512&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-ripemd160&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-ripemd160@openssh.com&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha1-96&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-md5-96&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server mac:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hmac-md5&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;umac-64@openssh.com&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha2-256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha2-512&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-ripemd160&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-ripemd160@openssh.com&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha1-96&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-md5-96&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; client compress:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;none&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;zlib@openssh.com&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server compress:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;none&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;zlib@openssh.com&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; client lang:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server lang:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; kex follows?False
+DEBUG:paramiko.transport:Kex agreed: diffie-hellman-group-exchange-sha256
+DEBUG:paramiko.transport:HostKey agreed: ssh-rsa
+DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
+DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
+DEBUG:paramiko.transport:Compression agreed: none
+DEBUG:paramiko.transport:Got server p &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2048&lt;/span&gt; bits&lt;span class="o"&gt;)&lt;/span&gt;
+DEBUG:paramiko.transport:kex engine KexGexSHA256 specified hash_algo &amp;lt;built-in &lt;span class="k"&gt;function&lt;/span&gt; openssl_sha256&amp;gt;
+DEBUG:paramiko.transport:Switch to new keys ...
+DEBUG:paramiko.transport:Trying discovered key b&lt;span class="s1"&gt;&amp;#39;8fbb1c6beb76bcc6767eccfcbef3730e&amp;#39;&lt;/span&gt; in /home/foxmask/.ssh/id_rsa
+DEBUG:paramiko.transport:userauth is OK
+INFO:paramiko.transport:Authentication &lt;span class="o"&gt;(&lt;/span&gt;publickey&lt;span class="o"&gt;)&lt;/span&gt; failed.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;du coup me v'la frais avec un paramiko qui met son caca en trouvant bien que l'userauth est ok mais pas la publickey. Ca te ferait mal de me laisser passer puisque tu as vu que le user/pass etait ok ?&lt;/p&gt;
+&lt;p&gt;Etape suivante, trouver comment forcer &lt;a href="https://serverfault.com/questions/283722/authentication-order-with-ssh"&gt;SSH à utiliser le mot de passe et basta&lt;/a&gt; ... &lt;/p&gt;
+&lt;p&gt;Je n'ai pas encore mis la main sur une solution , je mettrai à jour si j'en trouve une d'ici là :)&lt;/p&gt;
+&lt;p&gt;@Tchao :)&lt;/p&gt;</content><category term="python"></category><category term="Fabric"></category></entry><entry><title>Fabric, et la contrib django pour acceder à tous vos joujoux</title><link href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/" rel="alternate"></link><published>2017-07-10T14:00:00+02:00</published><updated>2017-07-10T14:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-07-10:/post/2017/07/10/fabric-contrib-django/</id><summary type="html">&lt;p&gt;Dans mon &lt;a href="https://foxmask.trigger-happy.eu/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques"&gt;billet précédent&lt;/a&gt;, j'évoquais l'existence d'une "contrib" Fabric pour intégrer Django au sein de ses tasks Fabric, mais qu'elle déconnait...&lt;/p&gt;
+&lt;p&gt;Après maints tests supplementaires et digging ze toile, j'ai entrevu la lumière après la lecture de 3 issues chez Fabric &lt;a href="https://github.com/fabric/fabric/issues/1509"&gt;#1509&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1033"&gt;#1033&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1207"&gt;#1207&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tout compulsé ca donne ceci :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# coding …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Dans mon &lt;a href="https://foxmask.trigger-happy.eu/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques"&gt;billet précédent&lt;/a&gt;, j'évoquais l'existence d'une "contrib" Fabric pour intégrer Django au sein de ses tasks Fabric, mais qu'elle déconnait...&lt;/p&gt;
+&lt;p&gt;Après maints tests supplementaires et digging ze toile, j'ai entrevu la lumière après la lecture de 3 issues chez Fabric &lt;a href="https://github.com/fabric/fabric/issues/1509"&gt;#1509&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1033"&gt;#1033&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1207"&gt;#1207&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tout compulsé ca donne ceci :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# coding: utf-8&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
+&lt;span class="c1"&gt;# ajout du chemin où se trouve projetA&lt;/span&gt;
+&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dirname&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__file__&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;../../projeta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# appel de la librairie django de Fabric pour appeler les objets Django&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;fabric.contrib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt;
+&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;project&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;projeta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# import de django&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;django&lt;/span&gt;
+&lt;span class="c1"&gt;# setup django&lt;/span&gt;
+&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;# appel du model&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;projeta.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;MonModel&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MonModel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;foobar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;execution&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ fab main
+
+foobar
+
+Done.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ceci fonctionne (pour un vhost) si vous avez collé votre appli "fabric" dans le même dossier que celui du projet Django, sinon adapter la ligne &lt;strong&gt;path =&lt;/strong&gt; pour que ca match votre env&lt;/p&gt;</content><category term="python"></category><category term="Fabric"></category><category term="django"></category></entry><entry><title>Fabric, sa var 'env' et nos variables dynamiques !</title><link href="https://foxmask.net/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/" rel="alternate"></link><published>2017-07-06T20:00:00+02:00</published><updated>2017-07-06T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-07-06:/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/</id><summary type="html">&lt;p&gt;Fabric est un sérieux concurrent face à ansible, quoiqu'on en pense.&lt;/p&gt;
+&lt;h1&gt;Intro :&lt;/h1&gt;
+&lt;p&gt;J'ai eu à faire à &lt;a href="https://www.ansible.com/"&gt;ansible&lt;/a&gt; pendant plus d'un an pour automatiser des installations d'applications java sur tous les types de serveur d'applications du marché.
+Mais comme à mon habitude, je n'utilise pas des outils de DevOps pour …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fabric est un sérieux concurrent face à ansible, quoiqu'on en pense.&lt;/p&gt;
+&lt;h1&gt;Intro :&lt;/h1&gt;
+&lt;p&gt;J'ai eu à faire à &lt;a href="https://www.ansible.com/"&gt;ansible&lt;/a&gt; pendant plus d'un an pour automatiser des installations d'applications java sur tous les types de serveur d'applications du marché.
+Mais comme à mon habitude, je n'utilise pas des outils de DevOps pour ce qu'ils ont été conçus dès le départ, à savoir, répéter la même operation sur plusieurs hosts à la fois.
+Non, j'ai vu dans ansible, la possibilité d'automatiser toujours la même opération sur UN serveur et UN seul à la fois. 
+En effet, les environnements jEE en entreprise sont du genre "production", "test", "developpement", et évidement, on ne va pas s'amuser à deployer la version de dev automatiquement en test et en prod.
+Donc on a 3 environnements par client, chacun vivant sa vie, comme chacun peut l'imaginer. Les corrections de bug de prod dans un coin, les évol en cours sur l'env de test etc...
+Du coup on voit bien que l'industrialisation "classique" des DevOps, consistant à installer 'n' fois un service sur 'n' serveurs, ne colle pas du tout au "métier".&lt;/p&gt;
+&lt;h1&gt;Ansible at first&lt;/h1&gt;
+&lt;p&gt;Avec ansible tout se passait pour le mieux, mais arriva un moment où, les serveurs unix devenaient retord et ansible n'accrochait plus ces derniers correctement. 
+Plus de retour des tâches habituellement exécutées, tantôt stuck, tantôt plantées, mais trop souvent, restées dans le flou avec une question récurrente : "mais où ca en est ?"
+Alors sont en cause les serveurs eux mêmes puisque surchargés et RAM faible, mais à ce moment là je m'attendais à un minumum de reaction de ansible pour quand même "revenir" au serveur déclencheur du playbook et s'arrêter proprement.&lt;/p&gt;
+&lt;p&gt;Donc las de cette situation, j'ai réécrit tous mon playbook et roles ansible en 5 modules python avec fabric en lieu et place.&lt;/p&gt;
+&lt;h1&gt;Fabric :&lt;/h1&gt;
+&lt;p&gt;avec ansible, il est possible de fournir un fichier JSON contenant des extra-vars. Très pratique pour moi, pour fournir à ansible, dynamiquement, le nom du serveur et les URL des applications java à recuperer pour les deplooyer ensuite.&lt;/p&gt;
+&lt;p&gt;avec &lt;a href="http://docs.fabfile.org/en/1.13/index.html"&gt;fabric&lt;/a&gt;, je fis un petit wrapper qui me permet de passer du JSON en un fichier settings à la django dynamiquement. Par contre, j'oubliais que comme 'n' users pouvaient utiliser mon appli Django pour déclencher les installations, tout allaient écrire dans le même fichier settings ... 
+Donc en creusant comme avoir aussi avec Fabric un fichier d'extra-vars, je n'ai rien trouvé de meiux que de peupler la variable env de Fabric avec ma propre sauce.
+Vous pourriez objecter que c'est une grosse connerie parce que je vais me mélanger les crayons avec les variables de Fabric, mais que néni, mes variables sont toutes en MAJUSCULE, ce qui n'est pas la cas de Fabric.&lt;/p&gt;
+&lt;p&gt;Donc &lt;strong&gt;env.user&lt;/strong&gt; et &lt;strong&gt;env.password&lt;/strong&gt; ne seront pas écrasées par mes &lt;strong&gt;env.ENV_USER&lt;/strong&gt; et &lt;strong&gt;env.PASSWORD&lt;/strong&gt; par exemple.&lt;/p&gt;
+&lt;p&gt;Donc pour obtenir une fonctiionnalité équivalente de extra-var de Ansible avec Fabric, on spécifiera sur la ligne de commande l'option "-c" pour que Fabric aille chercher le fichier RC, qui lui, contiendra le même contenu que le fichier settings sus-mentionné.&lt;/p&gt;
+&lt;p&gt;Ainsi 'n' users ne se marcheront plus sur les pieds.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dernière subtilité donnée dans la doc&lt;/strong&gt; :&lt;/p&gt;
+&lt;p&gt;les fichiers RC sont lus comme suit :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;CLE_A&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;valeur&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;où valeur sera retournée sous la valeur : 'valeur'&lt;/p&gt;
+&lt;p&gt;si valeur est un path ca donnera '/mon/path/'
+ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  puisqu'on obtiendra comme valeur : '/mon/path/'/sous_dossier&lt;/p&gt;
+&lt;p&gt;de même pour mon &lt;strong&gt;env.ENV_USER&lt;/strong&gt; qui a pour valeur 'foxmask' ; quand je fais un &lt;strong&gt;sudo(cmd, user=env.ENV_USER)&lt;/strong&gt; j'ai droit à un manignifique &lt;strong&gt;"sudo user 'foxmask' n'existe pas"&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;de même pour un dict &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;CLE_B&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;truc_machin&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;bidule&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;sera retourné sous une la forme d'une string&lt;/p&gt;
+&lt;p&gt;du coup on le voit on se fait bien enfumer&lt;/p&gt;
+&lt;p&gt;Pour régler son compte à ce comportement, reste à se faire une petite méthode pour épurer les valeurs de ses propres variables, avec un coup de &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MAVARIABLE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MAVARIABLE&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;là où c'est nécéssaire et appeler ladite méthode dans les modules où on utilise "env" :P&lt;/p&gt;
+&lt;p&gt;Et pour la cas du dict, il faudra passer par le module "&lt;a href="https://docs.python.org/3/library/ast.html?highlight=ast#module-ast"&gt;ast&lt;/a&gt;" pour revenir à un "dict" nomal, like this &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cle_b&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ast&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;literal_eval&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CLE_B&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et on pourra retourner faire joujou avec son dict comme d'hab&lt;/p&gt;
+&lt;h2&gt;&lt;a href="http://docs.fabfile.org/en/1.13/api/contrib/django.html"&gt;Fabric and Django integration&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Un moment j'ai cru voir une lueur d'espoir avec cette contribution qui permettrait d'accéder à "ses affaires" made in Django, depuis Fabric, genre au pif les données du modèle que j'injecte en JSON à la volée et récupère dans &lt;strong&gt;env.MES_VARIABLES_A_LA_NOIX&lt;/strong&gt; mais, j'ai vite déchanté avec un erreur on ne peut plus bateau :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ModuleNotFoundError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;monmodule&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Conclusion :&lt;/h1&gt;
+&lt;p&gt;Voila voilo pour une billet fait rapidos sur des utilisations completements détournées du but premier :)&lt;/p&gt;</content><category term="python"></category><category term="Fabric"></category></entry><entry><title>fabric ImportError: No module named main</title><link href="https://foxmask.net/post/2013/10/24/fabric-importerror-no-module-named-main/" rel="alternate"></link><published>2013-10-24T16:38:00+02:00</published><updated>2013-10-24T16:38:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-10-24:/post/2013/10/24/fabric-importerror-no-module-named-main/</id><summary type="html">&lt;p&gt;Voici peut-être une nouvelle série de billets sur Fabric cette fois ci
+avec des retours d'xp des plus couillons au moins balot ;)&lt;br&gt;
+Donc comme chaque nouveau sujet que je découvre je "partage" les
+aneries de débutant, histoire de bien faire marrer la grand majorité des
+pro du Python mais rassurer …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Voici peut-être une nouvelle série de billets sur Fabric cette fois ci
+avec des retours d'xp des plus couillons au moins balot ;)&lt;br&gt;
+Donc comme chaque nouveau sujet que je découvre je "partage" les
+aneries de débutant, histoire de bien faire marrer la grand majorité des
+pro du Python mais rassurer les autres débutants comme mézigues ;)&lt;/p&gt;
+&lt;p&gt;Ainsi donc, avec
+&lt;a href="http://fabric.org" title="Fabric is a Python (2.5 or higher) library and command-line tool for streamlining the use of SSH for application deployment or systems administration tasks."&gt;Fabric&lt;/a&gt;,
+me voilà à la découverte d'un nouveau monde.&lt;/p&gt;
+&lt;p&gt;Ce billet sera &lt;em&gt;rikiki pouce-pouce&lt;/em&gt; puisque ne concernera qu'un problème
+con comme là lune :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ce dernier se produit au lancement de fabric .. pratique ... à débuger
+comme ça ... même avec la stacktrace plus bas ;)&lt;/p&gt;
+&lt;p&gt;J'ai installé un virtualenv qui a cette allure :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;install_release&lt;span class="o"&gt;)&lt;/span&gt;foxmask@localhost:~/apps/install_release$ ls -l
+total &lt;span class="m"&gt;52&lt;/span&gt;
+drwxr-xr-x &lt;span class="m"&gt;3&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:15 autodeploy
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:02 bin
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:04 fabric
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:43 include
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; foxmask foxmask    &lt;span class="m"&gt;93&lt;/span&gt; oct.  &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:17 __init__.py
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; foxmask foxmask   &lt;span class="m"&gt;118&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:56 install_release.sublime-project
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; foxmask foxmask &lt;span class="m"&gt;19863&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt;:03 install_release.sublime-workspace
+drwxr-xr-x &lt;span class="m"&gt;3&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:43 lib
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:43 &lt;span class="nb"&gt;local&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;en me rendant dans mon dossier fabric et en tapant une commande &lt;em&gt;fab
+foobar&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;je me mange systématiquement&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Traceback&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;most&lt;/span&gt; &lt;span class="n"&gt;recent&lt;/span&gt; &lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;last&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/home/foxmask/apps/install_release/bin/fab&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; 
+    &lt;span class="n"&gt;load_entry_point&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Fabric==1.8.0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;console_scripts&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;fab&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)()&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/home/foxmask/apps/install_release/local/lib/python2.7/site-packages/distribute-0.6.24-py2.7.egg/pkg_resources.py&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;337&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;load_entry_point&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;get_distribution&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;dist&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load_entry_point&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/home/foxmask/apps/install_release/local/lib/python2.7/site-packages/distribute-0.6.24-py2.7.egg/pkg_resources.py&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;2279&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;load_entry_point&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;ep&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;load&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="n"&gt;File&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/home/foxmask/apps/install_release/local/lib/python2.7/site-packages/distribute-0.6.24-py2.7.egg/pkg_resources.py&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="mi"&gt;1989&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;load&lt;/span&gt;
+    &lt;span class="n"&gt;entry&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;__import__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;module_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;globals&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;&lt;span class="nb"&gt;globals&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;__name__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+
+&lt;span class="ne"&gt;ImportError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Mais en y regardant de plus près... ma structure de folders, qu'on voit
+2 paragraphes plus haut, ne colle pas du tout ...&lt;/p&gt;
+&lt;p&gt;alors qu'ici&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;install_release&lt;span class="o"&gt;)&lt;/span&gt;foxmask@localhost:~/apps/install_release$ ls -l
+total &lt;span class="m"&gt;44&lt;/span&gt;
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:02 bin
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:43 include
+drwxr-xr-x &lt;span class="m"&gt;4&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:18 install_release
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; foxmask foxmask   &lt;span class="m"&gt;118&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:56 install_release.sublime-project
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; foxmask foxmask &lt;span class="m"&gt;19863&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt;:03 install_release.sublime-workspace
+drwxr-xr-x &lt;span class="m"&gt;3&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:43 lib
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; foxmask foxmask  &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;23&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:43 &lt;span class="nb"&gt;local&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;install_release&lt;span class="o"&gt;)&lt;/span&gt;foxmask@localhost:~/apps/install_release$ ls -l install_release
+total &lt;span class="m"&gt;12&lt;/span&gt;
+drwxr-xr-x &lt;span class="m"&gt;3&lt;/span&gt; foxmask foxmask &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:15 autodeploy
+drwxr-xr-x &lt;span class="m"&gt;2&lt;/span&gt; foxmask foxmask &lt;span class="m"&gt;4096&lt;/span&gt; oct.  &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:18 fabric
+-rw-r--r-- &lt;span class="m"&gt;1&lt;/span&gt; foxmask foxmask   &lt;span class="m"&gt;93&lt;/span&gt; oct.  &lt;span class="m"&gt;24&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:17 __init__.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;elle convient bien mieux et fab est content avec son pitit message
+"done" final qui me sied tout autant. :)&lt;/p&gt;</content><category term="fabric"></category><category term="python"></category></entry></feed>

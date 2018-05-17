@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - oracle</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/oracle.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2014-10-17T08:36:00+02:00</updated><entry><title>CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</title><link href="https://foxmask.net/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/" rel="alternate"></link><published>2014-10-17T08:36:00+02:00</published><updated>2014-10-17T08:36:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-10-17:/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/</id><summary type="html">&lt;p&gt;Quand on a besoin de faire un &lt;code&gt;yum update&lt;/code&gt; suivi d'un
+&lt;code&gt;yum install foobar&lt;/code&gt; il peut arriver que sur votre CentOS vous ayez un
+problème avec vos packages Oracle :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+
+
+GPG key …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Quand on a besoin de faire un &lt;code&gt;yum update&lt;/code&gt; suivi d'un
+&lt;code&gt;yum install foobar&lt;/code&gt; il peut arriver que sur votre CentOS vous ayez un
+problème avec vos packages Oracle :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+
+
+GPG key retrieval failed: &lt;span class="o"&gt;[&lt;/span&gt;Errno &lt;span class="m"&gt;14&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pour y remédier 2 commandes et puis s'en va&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# rpm --import http://oss.oracle.com/ol6/RPM-GPG-KEY-oracle&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;root@localhost ~&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# rpm -q gpg-pubkey-ec551f03-4c2d256a&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et au yum install suivant tout glisse.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://community.oracle.com/thread/3539099?start=0&amp;amp;tstart=0"&gt;source&lt;/a&gt;&lt;/p&gt;</content><category term="centos"></category><category term="oracle"></category></entry><entry><title>Installation Oracle 10G en mode spéléo</title><link href="https://foxmask.net/post/2014/10/09/installation-oracle-10g-gui/" rel="alternate"></link><published>2014-10-09T10:24:00+02:00</published><updated>2014-10-09T10:24:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-10-09:/post/2014/10/09/installation-oracle-10g-gui/</id><summary type="html">&lt;p&gt;Bon, j'avais un wiki, au temps jadis, que j'avais basardé parce que je
+m'étais dit "Oracle 10 n'est plus supporté, je n'aurai plus à me faire
+suer pour l'installer" ... Et c'est toujours dans ces cas de figure
+qu'on se maudit quand le moment poindre le bout du nez.&lt;/p&gt;
+&lt;p&gt;Voilà donc …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bon, j'avais un wiki, au temps jadis, que j'avais basardé parce que je
+m'étais dit "Oracle 10 n'est plus supporté, je n'aurai plus à me faire
+suer pour l'installer" ... Et c'est toujours dans ces cas de figure
+qu'on se maudit quand le moment poindre le bout du nez.&lt;/p&gt;
+&lt;p&gt;Voilà donc un billet qui part en spéléo vous narrez quelques trucs qui
+depuis le temps sont surement déjà acquises (j'ose espérer ;)&lt;/p&gt;
+&lt;p&gt;Donc pour installer Oracle 10g, je vous souhaite d'avoir les archives
+dans un coin car ça n'est plus dispo chez Oracle via la manager qui va
+bien.&lt;/p&gt;
+&lt;p&gt;Après les avoir décompressées, temps il est de lancer l'installeur :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; database
+./runInstaller
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;La plupart du temps on n'installe pas Oracle sur une workstation ou sur
+un serveur disposant d'un écran et d'un clavier. Or l'installeur Oracle
+utilise "OUI" (Oracle Universal Installer), qui lance une GUI !&lt;/p&gt;
+&lt;p&gt;Donc avant même de lancer cet installeur, on est bon pour :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;installer la machinerie pour compiler&lt;/li&gt;
+&lt;li&gt;installer des lib X11&lt;/li&gt;
+&lt;li&gt;configurer le forwarding X11&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;1- la machinerie pour compiler&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install binutils gcc glibc glibc-headers glibc-kernheaders glibc-devel
+compat-libstdc++ cpp compat-gcc make compat-db compat-gcc-c++ 
+compat-libstdc++-devel openmotif openmotif21
+setarch pdksh libaio libaio-devel 
+libXt.i686 libXt-devel.x86_64 libXt-devel.i686
+libXtst.i686 libXtst-devel.i686 libXtst-devel.x86_64 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;2- installer des lib X11&lt;/h3&gt;
+&lt;p&gt;ceci vous evitera de rencontrer ce genre d'erreur :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;java.lang.UnsatisfiedLinkError: /tmp/OraInstall../jre/1.4.2/lib/i386/libawt.so: 
+libXtst.so.6: cannot open shared object file: No such file or directory
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;3- configurer le forwarding X11&lt;/h3&gt;
+&lt;p&gt;pour faire du X11 forwarding, tout le monde sait qu'on fait&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh -X login@server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;mais si on regarde de plus près, ça ne suffit souvent pas :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh -v -X login@server
+...
+debug1: Remote: No xauth program&lt;span class="p"&gt;;&lt;/span&gt; cannot forward with spoofing.
+X11 forwarding request failed on channel &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;comme l'avant dernière ligne l'indique, il n'y a pas xauth de dispo,
+donc let's go&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install xauth
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: centos.quelquesmots.fr
+ * extras: centos.mirror.fr.planethoster.net
+ * updates: centos.crazyfrogs.org
+base                                                                                                                                                     &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.1 kB     &lt;span class="m"&gt;00&lt;/span&gt;:00     
+extras                                                                                                                                                   &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;.1 kB     &lt;span class="m"&gt;00&lt;/span&gt;:00     
+updates                                                                                                                                                  &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;.9 kB     &lt;span class="m"&gt;00&lt;/span&gt;:00     
+Setting up Install Process
+Resolving Dependencies
+--&amp;gt; Running transaction check
+---&amp;gt; Package xorg-x11-xauth.i386 &lt;span class="m"&gt;1&lt;/span&gt;:1.0.1-2.1 &lt;span class="nb"&gt;set&lt;/span&gt; to be updated
+--&amp;gt; Finished Dependency Resolution
+
+Dependencies &lt;span class="nv"&gt;Resolved&lt;/span&gt;
+
+&lt;span class="o"&gt;================================================================================================================================================================================&lt;/span&gt;
+ Package                                         Arch                                  Version                                      Repository                             &lt;span class="nv"&gt;Size&lt;/span&gt;
+&lt;span class="o"&gt;================================================================================================================================================================================&lt;/span&gt;
+Installing:
+ xorg-x11-xauth                                  i386                                  &lt;span class="m"&gt;1&lt;/span&gt;:1.0.1-2.1                                  base                                   &lt;span class="m"&gt;31&lt;/span&gt; k
+
+Transaction &lt;span class="nv"&gt;Summary&lt;/span&gt;
+&lt;span class="o"&gt;================================================================================================================================================================================&lt;/span&gt;
+Install       &lt;span class="m"&gt;1&lt;/span&gt; Package&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;
+Upgrade       &lt;span class="m"&gt;0&lt;/span&gt; Package&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;
+
+Total download size: &lt;span class="m"&gt;31&lt;/span&gt; k
+Is this ok &lt;span class="o"&gt;[&lt;/span&gt;y/N&lt;span class="o"&gt;]&lt;/span&gt;: Y
+Downloading Packages:
+xorg-x11-xauth-1.0.1-2.1.i386.rpm                                                                                                                        &lt;span class="p"&gt;|&lt;/span&gt;  &lt;span class="m"&gt;31&lt;/span&gt; kB     &lt;span class="m"&gt;00&lt;/span&gt;:00     
+Running rpm_check_debug
+Running Transaction Test
+Finished Transaction Test
+Transaction Test Succeeded
+Running Transaction
+  Installing     : xorg-x11-xauth                                                                                                                                           &lt;span class="m"&gt;1&lt;/span&gt;/1 
+
+Installed:
+  xorg-x11-xauth.i386 &lt;span class="m"&gt;1&lt;/span&gt;:1.0.1-2.1                                                                                                                                               
+
+Complete!
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ensuite il se peut que ca ne suffise toujours pas, il faut donc editer
+le fichier &lt;code&lt; etc ssh sshd_config&lt; code&gt;&lt;br&gt;
+pour mettre ces parametres :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="na"&gt;X11Forwarding yes&lt;/span&gt;
+&lt;span class="na"&gt;X11UseLocalhost no&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;puis relancer sshd.&lt;/p&gt;
+&lt;p&gt;Testons à présent&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ssh -v -X oracle@server
+debug1: Requesting X11 forwarding with authentication spoofing.
+debug1: Sending environment.
+debug1: Sending env &lt;span class="nv"&gt;LANG&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; fr_FR.utf8
+Last login: Thu Oct  &lt;span class="m"&gt;9&lt;/span&gt; &lt;span class="m"&gt;09&lt;/span&gt;:40:29 &lt;span class="m"&gt;2014&lt;/span&gt; from 
+/usr/bin/xauth:  creating new authority file /u01/app/oracle/.Xauthority
+&lt;span class="o"&gt;[&lt;/span&gt;oracle@server ~&lt;span class="o"&gt;]&lt;/span&gt;$ xclock
+debug1: client_input_channel_open: ctype x11 rchan &lt;span class="m"&gt;2&lt;/span&gt; win &lt;span class="m"&gt;65536&lt;/span&gt; max &lt;span class="m"&gt;16384&lt;/span&gt;
+debug1: client_request_x11: request from &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1 &lt;span class="m"&gt;41557&lt;/span&gt;
+debug1: channel &lt;span class="m"&gt;1&lt;/span&gt;: new &lt;span class="o"&gt;[&lt;/span&gt;x11&lt;span class="o"&gt;]&lt;/span&gt;
+debug1: confirm x11
+debug1: channel &lt;span class="m"&gt;1&lt;/span&gt;: FORCE input drain
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ouais vous la voyez pas sur cette page l'horloge, faut pas pousser non
+plus ;)&lt;/p&gt;
+&lt;p&gt;Si ça ne marchait toujours pas chez vous, vérifiez bien que
+X11Forwarding est activé sur le serveur :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;grep X11Forwarding /etc/ssh/sshd_config
+&lt;span class="c1"&gt;#X11Forwarding no&lt;/span&gt;
+X11Forwarding yes
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Maintenant zont n'est prêt pour lancer l'installeur.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /u01/app/oracle/binaires/database/
+./runInstaller -ignoreSysPrereqs
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et le GUI démarre, zavez plus qu'à vous faire plaisir.&lt;/p&gt;
+&lt;p&gt;le &lt;code&gt;-ignoreSysPrereqs&lt;/code&gt; indique à Oracle de me lâcher la grappe sur les
+prérequis système, notamment sur l'OS qui n'est pas RedHat.&lt;/p&gt;
+&lt;h3&gt;Et c'est pas fini ©&lt;/h3&gt;
+&lt;p&gt;Je n'ai volontairement pas abordé les prérequis techniques sur les
+sémaphores et tout le bataclan, le net en regorge, ce billet est un
+nième noeud à mon mouchoir pour pouvoir lancer le GUI :P&lt;/p&gt;
+&lt;p&gt;Une solution existe pour lancer l'installer sans le GUI avec l'option
+&lt;code&gt;-silent&lt;/code&gt; et avec un fichier de &lt;em&gt;réponses&lt;/em&gt;
+(&lt;code&gt;-reponseFile /full/path/to/responsefile.rsp&lt;/code&gt;) contenant déjà tout le
+paramétrage qui va bien. Mais souvent les fichiers de réponse ne sont
+pas à jour. Ne serait-ce que la structure du fichier d'une version
+mineure à l'autre de Oracle. Je l'ai juste citée en cas de besoin ;)&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Importer un dump Oracle sans l'exporter physiquement avant</title><link href="https://foxmask.net/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/" rel="alternate"></link><published>2014-07-02T15:13:00+02:00</published><updated>2014-07-02T15:13:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-07-02:/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/</id><summary type="html">&lt;p&gt;Donc s'il vous arrive (comme bibi) d'être short en place disque pour
+faire vos backups oracle pour ensuite importer le(s) schéma(s), une
+solution ultime subsiste, quand même, pour nous autre "pauvres" petits
+"exportateurs" de données :P&lt;/p&gt;
+&lt;p&gt;Comment ça ?&lt;br&gt;
+La subtilité réside dans la possibilité d'Oracle à importer les …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Donc s'il vous arrive (comme bibi) d'être short en place disque pour
+faire vos backups oracle pour ensuite importer le(s) schéma(s), une
+solution ultime subsiste, quand même, pour nous autre "pauvres" petits
+"exportateurs" de données :P&lt;/p&gt;
+&lt;p&gt;Comment ça ?&lt;br&gt;
+La subtilité réside dans la possibilité d'Oracle à importer les données
+dans le schéma cible, via un
+&lt;a href="http://fr.wikipedia.org/wiki/DBLink" title=" un DBLink, ou database link est un objet d'une base de données permettant d'exécuter des requêtes sur une autre base de données, qu'elle se trouve physiquement sur la même machine ou qu'elle soit distante."&gt;DBLink&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pas croyable hein ?&lt;/p&gt;
+&lt;p&gt;let's voyons this right maintenant:&lt;/p&gt;
+&lt;p&gt;Creation du DBLink sur le serveur "cible" :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;DATABASE&lt;/span&gt; &lt;span class="n"&gt;LINK&lt;/span&gt; &lt;span class="n"&gt;chicago&lt;/span&gt; 
+   &lt;span class="k"&gt;CONNECT&lt;/span&gt; &lt;span class="k"&gt;TO&lt;/span&gt; &lt;span class="n"&gt;admin1&lt;/span&gt; &lt;span class="n"&gt;IDENTIFIED&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;windy&lt;/span&gt;
+   &lt;span class="k"&gt;USING&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;CHI&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ici, le nom du schema "source" est &lt;strong&gt;admin1&lt;/strong&gt;, le nom du DBLink chicago.&lt;/p&gt;
+&lt;p&gt;Ensuite vient l'import lui même sur le serveur "cible"&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;impdp&lt;/span&gt; &lt;span class="n"&gt;admin2&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;market&lt;/span&gt; &lt;span class="n"&gt;TABLES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;customers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;sales&lt;/span&gt; &lt;span class="n"&gt;DIRECTORY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;dpump1&lt;/span&gt;
+  &lt;span class="n"&gt;NETWORK_LINK&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;chicago&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ici l'import (la commande impdp) demande à oracle de se connecter avec
+le user admin2, d'importer 2 tables, provenant du schéma se cachant
+derrière le DBLink "chicago"&lt;/p&gt;
+&lt;p&gt;Oracle exportera donc admin1, &lt;strong&gt;sans stocker le dump dans un fichier
+physique&lt;/strong&gt;, depuis le serveur nommé "CHI" (ou l'alias qui est défini
+dans le tnsnames.ora de votre serveur oracle), puis l'importera
+localement dans le schema admin2 et le tour est joué ;)&lt;/p&gt;
+&lt;p&gt;L'intéret est que je n'aurai pas à exporter mes centaines de giga sur un
+serveur sans place disque (ou pas assez) pour stocker le dump puis le
+transferer sur le serveur cible et l'importer. Là, tout se fait d'une
+traite.&lt;/p&gt;
+&lt;p&gt;Si on a plusieurs schémas, il faut que le user du dblink ait les droits
+d'y accéder sur la source.&lt;br&gt;
+Si c'est le cas, ensuite on peut faire :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;impdp&lt;/span&gt; &lt;span class="n"&gt;admin2&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;market&lt;/span&gt; &lt;span class="n"&gt;SCHEMAS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;schema1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;schema2&lt;/span&gt; 
+  &lt;span class="n"&gt;REMAP_SCHEMA&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;schema1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;mon_nouveau_schema1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;schema2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;mon_nouveau_schema2&lt;/span&gt; 
+  &lt;span class="n"&gt;DIRECTORY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;dpump1&lt;/span&gt;
+  &lt;span class="n"&gt;NETWORK_LINK&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;chicago&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et roule ma poule&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>SQL Full Table Scan vs Index - The Usual Suspects</title><link href="https://foxmask.net/post/2013/11/15/sql-full-table-scan-vs-index/" rel="alternate"></link><published>2013-11-15T17:49:00+01:00</published><updated>2013-11-15T17:49:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-11-15:/post/2013/11/15/sql-full-table-scan-vs-index/</id><summary type="html">&lt;p&gt;Hello,&lt;br&gt;
+Voici un condensé sur ma semaine de formation au Tuning Oracle ;)&lt;br&gt;
+Un condensé de conneries à proscrire pour avoir un RDBMS qui marche
+mieux du point de vue du dev, tout du moins, parce que je n'irai pas
+saouler le dev avec des noms barbares sur la ram et …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello,&lt;br&gt;
+Voici un condensé sur ma semaine de formation au Tuning Oracle ;)&lt;br&gt;
+Un condensé de conneries à proscrire pour avoir un RDBMS qui marche
+mieux du point de vue du dev, tout du moins, parce que je n'irai pas
+saouler le dev avec des noms barbares sur la ram et tout le bataclan :)&lt;/p&gt;
+&lt;p&gt;Ainsi voici une liste de requêtes SQL à éviter à tout prix au risque de
+vous retrouver à faire faire des full scan sur vos "petites" tables.&lt;br&gt;
+&lt;strong&gt;Requête moisie n°1&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;salarie&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;salaire&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;6000&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ici on voudrait les salariés ayant un salaire mensuel supérieur à 60000
+par an.&lt;br&gt;
+Or, quand bien même salaire serait un index, Oracle partirait bel et
+bien en Full Scan. La preuve avec l'exécution du "plan d'exécution" aka
+"explain plan" qui vous le sortira la preuve par neuf ;)&lt;/p&gt;
+&lt;p&gt;Pour que cette requête fasse son effet avec l'index il faut l'écrire
+ainsi :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;salarie&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;salaire&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;60000&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Requête moisie n°2&lt;/strong&gt;&lt;br&gt;
+Un autre exemple avec celle-ci&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="k"&gt;table&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="k"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;FOXMASK&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;les fonctions sur les index partent en full scan systématiquement.&lt;br&gt;
+Si vous tenez à faire cela, il faut explicitement pondre un "function
+index" avec, lui aussi upper(name) dessus.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt; &lt;span class="k"&gt;INDEX&lt;/span&gt; &lt;span class="n"&gt;func_upper&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt; &lt;span class="k"&gt;TABLE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;UPPER&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;Requête moisie n°3 sur index non discriminant&lt;/strong&gt;&lt;br&gt;
+Autre cas de figure avec des index inutiles :&lt;/p&gt;
+&lt;p&gt;Les tables avec des données dans une colonne insuffisamment
+discriminante provoquera un full scan car le moteur du RDBMS considérera
+moins coûteux le full scan que l'index qui n'est pas assez
+discriminant.&lt;br&gt;
+Par exemple une colonne "sexe" pour une table "profil".&lt;/p&gt;
+&lt;p&gt;Encore une fois si vous tenez à cet index, il faudra alors le définir
+différemment : en &lt;a href="https://en.wikipedia.org/wiki/Bitmap_index"&gt;BITMAP&lt;/a&gt;
+et là ça "déchirera" :)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cadeau Bonusque&lt;/strong&gt;&lt;br&gt;
+en cadeau bonusque pour ceux ce que ca nain téreeserrait, 2 trucs :&lt;/p&gt;
+&lt;p&gt;1) Cas d'une requête entre grosses tables :&lt;br&gt;
+postulat : j'ai 2 tables une A, de quelques millions de lignes, une B
+de quelque milliers de lignes&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Là, la requête c'est de la bonne daube puisqu'on se farcie l'inner join
+pour chaque ID de B et A .&lt;br&gt;
+Or l'ordre dans la clause where compte. Donc pour limiter le coût de la
+requête il faudrait la faire comme suit :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="k"&gt;where&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Évidemment, le moteur du RDBMS devrait trouver le plan d'exécution le
+plus adapté mais des fois ce n'est pas le cas, et il faut en passer par
+des HINT.&lt;/p&gt;
+&lt;p&gt;2) Cas des requêtes retournant les mêmes résultats mais identifiées
+différentes : comment est-ce possible ?&lt;br&gt;
+Ceci :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt; &lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et Cela (nota j'ai dû shooter la coloration syntaxique qui corrigeait
+tout seul ma prose ;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;select * from A, B where A.id=B.id and B.status = 1
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;donneront le même résultat c'est sûr mais consommera de la mémoire 2
+fois au lieu d'une car elles ne sont pas écrites de la même façon... le
+même cas de figure arrivera avec des espaces en trop entre les
+verbes/instructions/tables/colonnes. Ok, ça sera le même résultat mais
+l'optimisation pour le moteur du RDBMS au lieu de chopper la requête
+dans le cache, ira en coller une de plus dans le cache. Donc le coût
+peut s'avérer monstrueux si chacun code comme il le veut dans son coin
+sa requête SQL.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt; : alors oui j'ai parlé de Oracle mais coté PostGreSQL et
+vraie RDBMS opensource, il y a fort à parier que de tels comportements
+se produisent au détriment de l'application bien sûr.&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle Migrer un schéma ISO en UTF8</title><link href="https://foxmask.net/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/" rel="alternate"></link><published>2013-03-14T10:00:00+01:00</published><updated>2013-03-14T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-03-14:/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/</id><summary type="html">&lt;p&gt;Vous avez sous la main un dump en ISO et vous souhaitez l'importer en
+UTF8, tout un programme !&lt;/p&gt;
+&lt;p&gt;La marche à suivre est la suivante :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;On importe le dump dans un schéma d'une base en ISO&lt;/li&gt;
+&lt;li&gt;On exécutera un script byte_to_char.sql pour que le schéma prenne
+    en compte l'UTF8 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Vous avez sous la main un dump en ISO et vous souhaitez l'importer en
+UTF8, tout un programme !&lt;/p&gt;
+&lt;p&gt;La marche à suivre est la suivante :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;On importe le dump dans un schéma d'une base en ISO&lt;/li&gt;
+&lt;li&gt;On exécutera un script byte_to_char.sql pour que le schéma prenne
+    en compte l'UTF8&lt;/li&gt;
+&lt;li&gt;On exportera le schéma en UTF8&lt;/li&gt;
+&lt;li&gt;On importera le dump en UTF8 dans une base UTF8&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Import du dump&lt;/strong&gt;&lt;br&gt;
+je vous laisse avec l'étape une, basique à souhait ;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exécution du script byte_to_char.sql&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;BEGIN&lt;/span&gt;
+&lt;span class="k"&gt;FOR&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt;
+&lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;TABLE_NAME&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data_length&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data_type&lt;/span&gt;
+&lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;user_tab_cols&lt;/span&gt; &lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;user_tables&lt;/span&gt; &lt;span class="n"&gt;ut&lt;/span&gt;
+&lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;ut&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;TABLE_NAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;TABLE_NAME&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;utc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data_type&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;VARCHAR2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;CHAR&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;char_used&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;B&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="k"&gt;column_name&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;LIKE&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;SYS_%&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;loop&lt;/span&gt;
+&lt;span class="k"&gt;EXECUTE&lt;/span&gt; &lt;span class="k"&gt;immediate&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;alter table &amp;#39;&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;TABLE_NAME&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; modify (&lt;/span&gt;
+&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;column_name&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DATA_TYPE&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;(&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;data_length&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; CHAR) )&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;END&lt;/span&gt; &lt;span class="n"&gt;loop&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;END&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ainsi, à l'issu de son exécution vos colonnes bytes seront en char ce
+qui permettra lors de l'import, de prendre en compte les caractères
+accentués sur plus d'un byte.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Export du schéma en UTF8&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mknode pipeExp p
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;NLS_LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;AMERICAN_AMERICA.UTF8
+gzip MY_UTF8.dmp.gz
+nohup exp &lt;span class="nv"&gt;userid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;LOGIN/PASS &lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pipeExp &lt;span class="nv"&gt;grants&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;n &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;l'important ici est la variable d'environnement NLS_LANG à positionner
+à AMERICAN_AMERICA.UTF8&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Import du dump en UTF-8&lt;/strong&gt;&lt;br&gt;
+idem ci dessus, c'est simple à souhait ;)&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle et Opatch</title><link href="https://foxmask.net/post/2013/03/07/oracle-et-opatch/" rel="alternate"></link><published>2013-03-07T10:00:00+01:00</published><updated>2013-03-07T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-03-07:/post/2013/03/07/oracle-et-opatch/</id><summary type="html">&lt;p&gt;A une époque, patcher Oracle était un sinécure :P&lt;/p&gt;
+&lt;p&gt;Depuis avec OPatch c'est on ne peut plus simple !&lt;/p&gt;
+&lt;p&gt;On récupère un patch chez Oracle, on le décompresse, on tape opatch
+apply et hop !&lt;/p&gt;
+&lt;p&gt;Donc après la décompression, ça donne :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; path_ou_on_a_decompresse_le_path
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;application du patch oracle&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;opatch apply
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Si vous rencontrez …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A une époque, patcher Oracle était un sinécure :P&lt;/p&gt;
+&lt;p&gt;Depuis avec OPatch c'est on ne peut plus simple !&lt;/p&gt;
+&lt;p&gt;On récupère un patch chez Oracle, on le décompresse, on tape opatch
+apply et hop !&lt;/p&gt;
+&lt;p&gt;Donc après la décompression, ça donne :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; path_ou_on_a_decompresse_le_path
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;application du patch oracle&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;opatch apply
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Si vous rencontrez un erreur du genre :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;OPatch cannot find a valid oraInst.loc file to locate Central Inventory.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Alors taper la commande suivante :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;opatch apply -invPtrLoc /u01/app/oracle/product/11.2.0.1.0/db/oraInst.loc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;le paramètre invPtrLoc indique à opatch, où se trouve le fameux "Central
+Inventory"&lt;/p&gt;
+&lt;p&gt;ce qui donnera par exemple pour le patch 8795792&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Invoking OPatch &lt;span class="m"&gt;11&lt;/span&gt;.2.0.1.6
+
+Oracle Interim Patch Installer version &lt;span class="m"&gt;11&lt;/span&gt;.2.0.1.6
+Copyright &lt;span class="o"&gt;(&lt;/span&gt;c&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="m"&gt;2011&lt;/span&gt;, Oracle Corporation.  All rights reserved.
+
+Oracle Home       : /u01/app/oracle/product/11.2.0.1.0/db
+Central Inventory : /u01/app/oracle/product/11.2.0.1.0/inventory
+   from           : /u01/app/oracle/product/11.2.0.1.0/db/oraInst.loc
+OPatch version    : &lt;span class="m"&gt;11&lt;/span&gt;.2.0.1.6
+OUI version       : &lt;span class="m"&gt;11&lt;/span&gt;.2.0.1.0
+Log file location : /u01/app/oracle/product/11.2.0.1.0/db/cfgtoollogs/opatch/opatch2011-07-29_15-37-22PM.log
+
+Applying interim patch &lt;span class="s1"&gt;&amp;#39;8795792&amp;#39;&lt;/span&gt; to OH &lt;span class="s1"&gt;&amp;#39;/u01/app/oracle/product/11.2.0.1.0/db&amp;#39;&lt;/span&gt;
+Verifying environment and performing prerequisite checks...
+
+Voulez-vous continuer ? &lt;span class="o"&gt;[&lt;/span&gt;y&lt;span class="p"&gt;|&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;
+User Responded with: Y
+All checks passed.
+Entrez votre adresse électronique pour être informé des problèmes de sécurité,
+installer et lancer Oracle Configuration Manager. Le processus est plus simple
+pour vous si vous utilisez votre adresse électronique/nom utilisateur My
+Oracle Support. Pour plus de détails, consultez la page
+http://www.oracle.com/support/policies.html.
+Adresse électronique/nom utilisateur : you@yourcompany.com
+Indiquez votre mot de passe My Oracle Support pour recevoir les mises à jour de sécurité via votre compte My Oracle Support.
+Mot de passe &lt;span class="o"&gt;(&lt;/span&gt;facultatif&lt;span class="o"&gt;)&lt;/span&gt; :           
+Backing up files...
+
+Application d&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;un patch au composant oracle.rdbms, &lt;span class="m"&gt;11&lt;/span&gt;.2.0.1.0...
+Patch &lt;span class="m"&gt;8795792&lt;/span&gt; successfully applied
+Log file location: /u01/app/oracle/product/11.2.0.1.0/db/cfgtoollogs/opatch/opatch2011-07-29_15-37-22PM.log
+
+OPatch succeeded.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Une fois fait, relancer la base Oracle que vous aurez bien évidemment
+stoppée avant de commencer, je ne vous l'avais pas dit ? ba il faut tout
+lire avant de commencer ;)&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle Sauvegarder avec Impdp / Expdp et le Parfile</title><link href="https://foxmask.net/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/" rel="alternate"></link><published>2013-02-28T10:00:00+01:00</published><updated>2013-02-28T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-28:/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/</id><summary type="html">&lt;p&gt;&lt;a href="/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/" title="Oracle des expdp et impdp en réseau, si c’est possible"&gt;Dans un billet précédent j'avais abordé ces 2 outils pour se faire des
+backups "en
+réseau"&lt;/a&gt;,
+voici à présent plus en détail, le fonctionnement des ces 2 outils.&lt;/p&gt;
+&lt;p&gt;Oracle fournit donc bien évidement des outils pour produire des
+sauvegardes de ses données.&lt;/p&gt;
+&lt;p&gt;Les plus basiques sont impdp et expdp.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Le …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;&lt;a href="/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/" title="Oracle des expdp et impdp en réseau, si c’est possible"&gt;Dans un billet précédent j'avais abordé ces 2 outils pour se faire des
+backups "en
+réseau"&lt;/a&gt;,
+voici à présent plus en détail, le fonctionnement des ces 2 outils.&lt;/p&gt;
+&lt;p&gt;Oracle fournit donc bien évidement des outils pour produire des
+sauvegardes de ses données.&lt;/p&gt;
+&lt;p&gt;Les plus basiques sont impdp et expdp.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Le premier produit un import d'un dump.&lt;/li&gt;
+&lt;li&gt;Le second export un/des schémas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;impdp&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Exemple d'import d'un schéma &lt;strong&gt;customer&lt;/strong&gt;, dont le nom de fichier se
+nomme foo.dmp dans mon schema nommé MYWORK et ma tablespace MYWORKD_TB&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;impdp USER/pass &lt;span class="nv"&gt;schemas&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;customer &lt;span class="nv"&gt;dumpfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;foo.dmp &lt;span class="nv"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;wkdir &lt;span class="nv"&gt;remap_schema&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;CUSTOMER:MYWORK &lt;span class="nv"&gt;remap_tablespace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;CUSTOMER_TB:MYWOKRD_TB &lt;span class="nv"&gt;LOGFILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;foo.log
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;le paramètre &lt;strong&gt;directory&lt;/strong&gt; indique à oracle quel est l'&lt;em&gt;objet&lt;/em&gt; directory
+dans lequel il doit utiliser le dumpfile et ecrire dans le fichier de
+log foo.log&lt;/p&gt;
+&lt;p&gt;pour connaitre le nom du directory, on se connecte comme dba à la base
+oracle puis on tapera:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;select&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;dba_directories&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;on obtiendra donc le path vers le dossier où mettre foo.dmp pour qu'il
+soit localisé par Oracle.&lt;/p&gt;
+&lt;p&gt;Quand on veut lancer ses commandes, on a bien souvent une bonne dizaine
+de paramètres à fournir et il devient assez laborieux de les retenir
+pour les besoins particuliers d'une base, ou de quelques schémas contenu
+dans notre base. C'est là qu'entre en jeu le "parfile".&lt;/p&gt;
+&lt;p&gt;Celui ci contient ni plus ni moins que les paramètres que l'on saisirait
+sur la ligne de commandes: voici la tête qu'il aurait avec l'exemple
+précédent :&lt;/p&gt;
+&lt;p&gt;customer.par&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;schemas&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;customer&lt;/span&gt; 
+&lt;span class="n"&gt;dumpfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;mywork&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;u&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dmp&lt;/span&gt;
+&lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;wkdir&lt;/span&gt;
+&lt;span class="n"&gt;remap_schema&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;CUSTOMER&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;MYWORK&lt;/span&gt; 
+&lt;span class="n"&gt;remap_tablespace&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;CUSTOMER_TB&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;MYWOKRD_TB&lt;/span&gt; 
+&lt;span class="n"&gt;LOGFILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et on lancerait l'import comme ceci&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;impdp&lt;/span&gt; &lt;span class="k"&gt;USER&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pass&lt;/span&gt; &lt;span class="n"&gt;parfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;customer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;par&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;cette fois ci customer.par est cherché dans le dossier courant, et non
+dans le &lt;strong&gt;directory&lt;/strong&gt; oracle&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;expdp&lt;/strong&gt;&lt;br&gt;
+L'export cette fois ci fonctionne de la même façon :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;expdp user/pass &lt;span class="nv"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;wkdir &lt;span class="nv"&gt;logfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;exp_mywork.log &lt;span class="nv"&gt;dumpfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;mywork.dmp
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et c'est tout.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;parallel&lt;/strong&gt;&lt;br&gt;
+Un paramètre intéressant lorsqu'on vous fournit des dumps est l'option
+parallel, utilisable lors des exports et des imports.&lt;/p&gt;
+&lt;p&gt;L'intérêt est d'accélérer le traitement des sauvegardes&lt;/p&gt;
+&lt;p&gt;Le dumps est en "morceaux" (de tailles non egales) ; le nombre de
+morceaux etant la valeur donnée à l'option parallel, exemple :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;expdp user/pass &lt;span class="nv"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;wkdir &lt;span class="nv"&gt;logfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;exp_mywork.log &lt;span class="nv"&gt;dumpfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;mywork.dmp &lt;span class="nv"&gt;parallel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;produira les fichiers&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mywork1.dmp&lt;/li&gt;
+&lt;li&gt;mywork2.dmp&lt;/li&gt;
+&lt;li&gt;mywork3.dmp&lt;/li&gt;
+&lt;li&gt;mywork4.dmp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ensuite pour remonter ce dump on ecrira :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;impdp&lt;/span&gt; &lt;span class="k"&gt;user&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;pass&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;wkdir&lt;/span&gt; &lt;span class="n"&gt;logfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;exp_mywork&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt; &lt;span class="n"&gt;dumpfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;mywork&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;U&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dmp&lt;/span&gt; &lt;span class="n"&gt;parallel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That's all folk ;)&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle Trouver les tablespaces utilisés par un schéma</title><link href="https://foxmask.net/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/" rel="alternate"></link><published>2013-02-14T10:00:00+01:00</published><updated>2013-02-14T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-14:/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/</id><summary type="html">&lt;p&gt;Tout comme Roméo a sa Juliette, une base Oracle possède son tablespace
+;)&lt;/p&gt;
+&lt;p&gt;Donc pour trouver ce(s) dernier(s) tout se résume à interroger la table
+dba_segment dont le tablespace_name ne contient aucun de ceux des TB
+"system".&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;linesize&lt;/span&gt; &lt;span class="mi"&gt;300&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;pagesize&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;feedback&lt;/span&gt; &lt;span class="k"&gt;off&lt;/span&gt;
+
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;sysdate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Tout comme Roméo a sa Juliette, une base Oracle possède son tablespace
+;)&lt;/p&gt;
+&lt;p&gt;Donc pour trouver ce(s) dernier(s) tout se résume à interroger la table
+dba_segment dont le tablespace_name ne contient aucun de ceux des TB
+"system".&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;linesize&lt;/span&gt; &lt;span class="mi"&gt;300&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;pagesize&lt;/span&gt; &lt;span class="mi"&gt;20&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;feedback&lt;/span&gt; &lt;span class="k"&gt;off&lt;/span&gt;
+
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;sysdate&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;owner&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tablespace_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;total_space&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Total (MB)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SUM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bytes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Used (MB)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;round&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SUM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;bytes&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;total_space&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;% Used&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;dba_segments&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;tablespace_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="k"&gt;SUM&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;bytes&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;total_space&lt;/span&gt;
+                      &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;dba_data_files&lt;/span&gt;
+                      &lt;span class="k"&gt;GROUP&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;tablespace_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
+&lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tablespace_name&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;IN&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;SYSAUX&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;SYSTEM&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;UNDOTBS1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;UNDOTBS2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tablespace_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tablespace_name&lt;/span&gt;
+&lt;span class="k"&gt;GROUP&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tablespace_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;owner&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;total_space&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;1024&lt;/span&gt;
+&lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tablespace_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;owner&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ceci permet ensuite d'interroger dba_data_files pour trouver les noms
+de fichiers qui constituent le Tablespace cherché pour l'agrandir par
+exemple.&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle Identifications des Locks, Process, Sessions en cours</title><link href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/" rel="alternate"></link><published>2013-01-17T10:00:00+01:00</published><updated>2013-01-17T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-01-17:/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/</id><summary type="html">&lt;p&gt;Voici une requete SQL dans l'arsenal du DBA, nommons la &lt;strong&gt;locks.sql&lt;/strong&gt;,
+permettant d'identifier les locks en cours sur un schema oracle :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt;   &lt;span class="cm"&gt;/*+ choose */&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Blocking User&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;DB User&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;ws&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Waiting User&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;SID&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;ws&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;WSID&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql_address&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql_hash_value&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Sql hash&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Voici une requete SQL dans l'arsenal du DBA, nommons la &lt;strong&gt;locks.sql&lt;/strong&gt;,
+permettant d'identifier les locks en cours sur un schema oracle :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt;   &lt;span class="cm"&gt;/*+ choose */&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Blocking User&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;DB User&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;ws&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Waiting User&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;SID&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;ws&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;WSID&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql_address&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql_hash_value&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Sql hash&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;program&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Blocking App&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;ws&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;program&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Waiting App&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;machine&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Blocking Machine&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;ws&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;machine&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Waiting Machine&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;osuser&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Blocking OS User&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;ws&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;osuser&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Waiting OS User&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;serial&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Serial#&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;DECODE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+             &lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;TYPE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;MR&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Media Recovery&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;RT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Redo Thread&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;UN&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;USER Name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;TX&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Transaction&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;TM&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;DML&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;UL&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;PL/SQL USER LOCK&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;DX&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Distributed Xaction&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;CF&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Control FILE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;IS&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Instance State&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;FS&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;FILE SET&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;IR&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Instance Recovery&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;ST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Disk SPACE Transaction&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;TS&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Temp Segment&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;IV&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Library Cache Invalidation&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;LS&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;LOG START OR Switch&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;RW&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ROW Wait&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;SQ&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sequence Number&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;TE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Extend TABLE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="s1"&gt;&amp;#39;TT&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Temp TABLE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;TYPE&lt;/span&gt;
+          &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;lock_type&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;DECODE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+             &lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lmode&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;None&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;NULL&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ROW-S (SS)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ROW-X (SX)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;SHARE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;S/ROW-X (SSX)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;EXCLUSIVE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="n"&gt;TO_CHAR&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lmode&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;mode_held&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;DECODE&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+             &lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;None&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;NULL&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ROW-S (SS)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ROW-X (SX)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;SHARE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;S/ROW-X (SSX)&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;EXCLUSIVE&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+             &lt;span class="n"&gt;TO_CHAR&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+          &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;mode_requested&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;object_name&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;TO_CHAR&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;lock_id1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;TO_CHAR&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;lock_id2&lt;/span&gt;
+&lt;span class="k"&gt;FROM&lt;/span&gt;     &lt;span class="n"&gt;v$lock&lt;/span&gt; &lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v$session&lt;/span&gt; &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v$lock&lt;/span&gt; &lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v$session&lt;/span&gt; &lt;span class="n"&gt;ws&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="n"&gt;V$LOCKED_OBJECT&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="n"&gt;dba_objects&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;
+&lt;span class="k"&gt;WHERE&lt;/span&gt;    &lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BLOCK&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lmode&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lmode&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;TYPE&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="k"&gt;TYPE&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id1&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id2&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;id2&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;hk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;wk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ws&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object_id&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;      &lt;span class="n"&gt;HK&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SESSION_ID&lt;/span&gt;
+&lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Oui hein ! ça s'invente pas ;)&lt;/p&gt;
+&lt;p&gt;Une seconde &lt;strong&gt;current_request.sql&lt;/strong&gt; vous donnant les requêtes en cours
+:&lt;/p&gt;
+&lt;p&gt;Avec Oracle 9i :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;sesion&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;sesion&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;optimizer_mode&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;hash_value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;cpu_time&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;elapsed_time&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;sql_text&lt;/span&gt;
+  &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;v$sqlarea&lt;/span&gt; &lt;span class="n"&gt;sqlarea&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v$session&lt;/span&gt; &lt;span class="n"&gt;sesion&lt;/span&gt;
+ &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;sesion&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql_hash_value&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sqlarea&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;hash_value&lt;/span&gt;
+   &lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;sesion&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql_address&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;sqlarea&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;address&lt;/span&gt;
+   &lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="n"&gt;sesion&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="k"&gt;IS&lt;/span&gt; &lt;span class="k"&gt;NOT&lt;/span&gt; &lt;span class="k"&gt;NULL&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;em&gt;Mais ca c'était avant&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Ci dessous la même en "encore plus longue" pour les versions oracle &gt;
+9i&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;sql_text&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;STATUS&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;v$session&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v$sqlarea&lt;/span&gt; &lt;span class="k"&gt;WHERE&lt;/span&gt; &lt;span class="n"&gt;v$session&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;v$sqlarea&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sql_id&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ah oui ça tranche hein !&lt;/p&gt;
+&lt;p&gt;Pour avoir la liste des sessions en cours un petit script
+&lt;strong&gt;session.sql&lt;/strong&gt; :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;termout&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;linesize&lt;/span&gt; &lt;span class="mi"&gt;180&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;pagesize&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;newpage&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;SELECT&lt;/span&gt;
+   &lt;span class="n"&gt;rpad&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;c&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;:&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;rpad&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; current logons=&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;
+   &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;to_number&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sessions_current&lt;/span&gt;&lt;span class="p"&gt;)),&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cumulative logons=&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;
+   &lt;span class="n"&gt;rpad&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;substr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;VALUE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;highwater mark=&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;
+   &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sessions_highwater&lt;/span&gt; &lt;span class="n"&gt;Information&lt;/span&gt;
+&lt;span class="k"&gt;FROM&lt;/span&gt;
+   &lt;span class="n"&gt;v$sysstat&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;v$license&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+   &lt;span class="n"&gt;v$database&lt;/span&gt; &lt;span class="k"&gt;c&lt;/span&gt;
+&lt;span class="k"&gt;WHERE&lt;/span&gt;
+   &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;logons cumulative&amp;#39;&lt;/span&gt;
+&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;ttitle&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;dbname Database|UNIX/Oracle Sessions&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;heading&lt;/span&gt; &lt;span class="k"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Sessions on database &amp;#39;&lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="n"&gt;substr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;v$database&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SET&lt;/span&gt; &lt;span class="n"&gt;heading&lt;/span&gt; &lt;span class="k"&gt;ON&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt;
+       &lt;span class="n"&gt;substr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;spid&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;pid&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;substr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;substr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;serial&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;ser&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;substr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;machine&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;box&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;substr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="c1"&gt;--       b.server,&lt;/span&gt;
+       &lt;span class="n"&gt;substr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;osuser&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;os_user&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;substr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;program&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="n"&gt;program&lt;/span&gt;
+&lt;span class="k"&gt;FROM&lt;/span&gt; &lt;span class="n"&gt;v$session&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v$process&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;
+ &lt;span class="k"&gt;WHERE&lt;/span&gt;
+&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;paddr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;addr&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt; &lt;span class="k"&gt;TYPE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;USER&amp;#39;&lt;/span&gt;
+&lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;spid&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;ttitle&lt;/span&gt; &lt;span class="k"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;spool&lt;/span&gt; &lt;span class="k"&gt;off&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Pour obtenir les requêtes en cours d'annulation (rollback),
+&lt;strong&gt;session_undo.sql&lt;/strong&gt; :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;COLUMN&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="n"&gt;FORMAT&lt;/span&gt; &lt;span class="n"&gt;A15&lt;/span&gt;
+
+&lt;span class="k"&gt;SELECT&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sid&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;serial&lt;/span&gt;&lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;used_ublk&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;used_urec&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;rs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;segment_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rssize&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;STATUS&lt;/span&gt;
+&lt;span class="k"&gt;FROM&lt;/span&gt;   &lt;span class="n"&gt;v$transaction&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;v$session&lt;/span&gt; &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;v$rollstat&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+       &lt;span class="n"&gt;dba_rollback_segs&lt;/span&gt; &lt;span class="n"&gt;rs&lt;/span&gt;
+&lt;span class="k"&gt;WHERE&lt;/span&gt;  &lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;saddr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ses_addr&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;    &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xidusn&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;usn&lt;/span&gt;
+&lt;span class="k"&gt;AND&lt;/span&gt;    &lt;span class="n"&gt;rs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;segment_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xidusn&lt;/span&gt;
+&lt;span class="k"&gt;ORDER&lt;/span&gt; &lt;span class="k"&gt;BY&lt;/span&gt; &lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;used_ublk&lt;/span&gt; &lt;span class="k"&gt;DESC&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Voilà, ça sera tout pour aujourd'hui&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle des expdp et impdp en réseau, si c'est possible</title><link href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/" rel="alternate"></link><published>2013-01-16T16:49:00+01:00</published><updated>2013-01-16T16:49:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-01-16:/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/</id><summary type="html">&lt;p&gt;A l'heure actuelle, la version d'Oracle est la 11G R2 (à tes souhaits
+pourrait rétorqué 6P0 à R2D2 :P), et avec cette version il est de
+coutume de ne plus employer pour ses sauvegardes/gestions de dumps, que
+le fameux duo expdp et impdp pour produire ce qu'on appelle des …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A l'heure actuelle, la version d'Oracle est la 11G R2 (à tes souhaits
+pourrait rétorqué 6P0 à R2D2 :P), et avec cette version il est de
+coutume de ne plus employer pour ses sauvegardes/gestions de dumps, que
+le fameux duo expdp et impdp pour produire ce qu'on appelle des
+datapumps (à tes souhaits encore ;)&lt;/p&gt;
+&lt;p&gt;Tout ceci rend la gestion des dumps beaucoup plus funs qu'avec les
+commandes exp/imp qu'on se trainaient depuis Oracle 8i&amp;amp;9i.&lt;/p&gt;
+&lt;p&gt;Par contre un inconvénient majeur pour tout radin qui se respecte, ca
+bouffe l'espace disque !&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Avant expdp / impdp&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;avec "exp", on pouvait compresser ses dumps like that :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mknod pipe p
+gzip &amp;lt; pipe &amp;gt; FOX_DUMP.gz  &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+nohup exp LOGIN/PASS &lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pipe &lt;span class="nv"&gt;grants&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;n &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;j'exporte mon dump dans le pipe qui le compresse à la volée, magie magie
+;) Qui dit mieux ? ben pas oracle 11G :P&lt;/p&gt;
+&lt;p&gt;je vous note la même chose à l'envers pour un import avec imp&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mknod pipe p
+gunzip &amp;lt; FOX_DUMP.gz &amp;gt; pipe  &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+nohup imp LOGIN/PASS &lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pipe &lt;span class="nv"&gt;grants&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;n &lt;span class="nv"&gt;ignore&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;y &lt;span class="nv"&gt;fromuser&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;OLDLOGIN &lt;span class="nv"&gt;touser&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;LOGIN &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Bon ok on a pige la compression / décompression à la volée.&lt;/p&gt;
+&lt;p&gt;A présent supposons que j'ai vraiment des soucis de place disque, même
+pour produire le dump compressé localement à mon serveur oracle.&lt;/p&gt;
+&lt;p&gt;On procédait ainsi : depuis une autre machine disposant des outils
+oracle (il faut un minimum hein;)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mknod pipe p
+gunzip &amp;lt; FOX_DUMP.gz &amp;gt; pipe  &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+nohup imp LOGIN/PASS@FOX-SERV &lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pipe &lt;span class="nv"&gt;grants&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;n &lt;span class="nv"&gt;ignore&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;y &lt;span class="nv"&gt;fromuser&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;OLDLOGIN &lt;span class="nv"&gt;touser&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;LOGIN &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ici la subtilité réside dans ce qui suit le @ ; ceci demande à oracle
+"vas voir dans le fichier tnsnames.ora et trouves moi la référence
+FOX-SERV, puis quand tu l'as trouvé connectes-toi au serveur concerné".&lt;/p&gt;
+&lt;p&gt;Ceci marche aussi bien localement (pour invoquer une instance Oracle
+local, l'ORACLE_SID quoi) qu'en réseau car le tnsnames.ora contient
+tout ce qu'il faut pour trouver le serveur, le port d'écoute et
+l'instance&lt;/p&gt;
+&lt;p&gt;exemple :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FOX&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;SERVER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;DESCRIPTION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+            &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ADDRESS_LIST&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+                &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ADDRESS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PROTOCOL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TCP&lt;/span&gt;&lt;span class="p"&gt;)(&lt;/span&gt;&lt;span class="k"&gt;HOST&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fox&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;somewhere&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;other&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rainbow&lt;/span&gt;&lt;span class="p"&gt;)(&lt;/span&gt;&lt;span class="n"&gt;PORT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1523&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+            &lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;CONNECT_DATA&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+                &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;SID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;V11UTF8&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;)&lt;/span&gt;   
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ainsi, il m'etait facile de balancer un dump à trifouilli-les-oies avec
+exp :P&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Depuis expdp et impdp&lt;/strong&gt;&lt;br&gt;
+Ok, super on a vu comment on gérait &lt;em&gt;avant&lt;/em&gt;, à présent comment fait-on
+?&lt;/p&gt;
+&lt;p&gt;Depuis l'arrivée du duo (ex|im)pdp, on ne peut plus :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;compresser les dumps à la volée&lt;/li&gt;
+&lt;li&gt;exploiter le dernier cas précédemment évoqué, car la commande prend
+    des arguments qui demandent à Oracle de vérifier "localement" ses
+    ressources.&lt;/li&gt;
+&lt;li&gt;bon ya aussi plein d'autres trucs qu'on peut plus faire mais
+    &lt;abbr title="on s'en fou"&gt;OSEF&lt;/abbr&gt; :P c'est pas le sujet du jour
+    ;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Le premier des paramètres oracle "vérifié" localement : &lt;strong&gt;DIRECTORY&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DIRECTORY&lt;/strong&gt; est un &lt;em&gt;objet oracle&lt;/em&gt; et pas un path qu'on peut indiquer à
+oracle à la volée pour lui dire "mon dump est là / est à mettre là", nan
+nan ça ça marche plus !&lt;/p&gt;
+&lt;p&gt;Le directory oracle est donc localisable comme suit :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;conn&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;AS&lt;/span&gt; &lt;span class="n"&gt;sysdba&lt;/span&gt;
+&lt;span class="n"&gt;Connected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;select&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="k"&gt;from&lt;/span&gt; &lt;span class="n"&gt;dba_directories&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;OWNER&lt;/span&gt;                  &lt;span class="n"&gt;DIRECTORY_NAME&lt;/span&gt;
+&lt;span class="c1"&gt;------------------------------ ------------------------------&lt;/span&gt;
+&lt;span class="n"&gt;DIRECTORY_PATH&lt;/span&gt;
+&lt;span class="c1"&gt;--------------------------------------------------------------------------------&lt;/span&gt;
+&lt;span class="n"&gt;SYS&lt;/span&gt;                &lt;span class="n"&gt;ORACLE_OCM_CONFIG_DIR&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;oracle&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;product&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;ccr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;state&lt;/span&gt;
+
+&lt;span class="n"&gt;SYS&lt;/span&gt;                &lt;span class="n"&gt;DATA_PUMP_DIR&lt;/span&gt;
+&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;oracle&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;product&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;11&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;rdbms&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Donc comme on le voit ici, ce sont des dossiers propre à Oracle créés
+lors de l'installation.&lt;/p&gt;
+&lt;p&gt;Mais moi je veux importer / exporter des dumps sur un NAS (allez :P)&lt;/p&gt;
+&lt;p&gt;Donc pour arriver à mes fins, j'ajoute une ligne dans mon /etc/fstab
+pointant sur un des dossiers (qu'on dit "exportés") de mon NAS en NFS,
+disons que le dossier sera dans &lt;em&gt;/mnt/dump_oracle&lt;/em&gt; et je le "mount" (of
+course)&lt;/p&gt;
+&lt;p&gt;Reste alors à ajouter ce dossier à oracle :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;conn&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;AS&lt;/span&gt; &lt;span class="n"&gt;sysdba&lt;/span&gt;
+&lt;span class="n"&gt;Connected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;create&lt;/span&gt; &lt;span class="n"&gt;directory&lt;/span&gt; &lt;span class="n"&gt;fox_dump_oracle&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/mnt/dump_oracle&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="n"&gt;Directory&lt;/span&gt; &lt;span class="n"&gt;created&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+
+&lt;span class="k"&gt;SQL&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A présent reste à finir ses affaires :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;expdp LOGIN/PASS &lt;span class="nv"&gt;dumpfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;exp_FOX_SCHEMA.dmp &lt;span class="nv"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fox_dump_oracle &lt;span class="nv"&gt;logfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fox_dump_oracle.log &lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et là au joie, le dump partira clopin-clopant sur le NAS bouffer
+l'espace disque ailleurs ;)&lt;/p&gt;</content><category term="oracle"></category></entry></feed>

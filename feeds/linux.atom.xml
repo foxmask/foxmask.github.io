@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - linux</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/linux.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-08-05T10:45:00+02:00</updated><entry><title>Tuto linux : trouver le process qui a ouvert un port</title><link href="https://foxmask.net/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/" rel="alternate"></link><published>2015-08-05T10:45:00+02:00</published><updated>2015-08-05T10:45:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-08-05:/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/</id><summary type="html">&lt;p&gt;A qui ca n'est pas arrivé de voir un process se planter parce que "port
+already bound" ...&lt;/p&gt;
+&lt;p&gt;Comment repérer le process qui a ouvert le port dont on a besoin ?&lt;/p&gt;
+&lt;p&gt;imaginons les ports 8009 et 8080&lt;/p&gt;
+&lt;p&gt;on commence par un&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ netstat -an&lt;span class="p"&gt;|&lt;/span&gt;grep &lt;span class="m"&gt;8009&lt;/span&gt;
+tcp        &lt;span class="m"&gt;0&lt;/span&gt;      &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;.0.0 …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;A qui ca n'est pas arrivé de voir un process se planter parce que "port
+already bound" ...&lt;/p&gt;
+&lt;p&gt;Comment repérer le process qui a ouvert le port dont on a besoin ?&lt;/p&gt;
+&lt;p&gt;imaginons les ports 8009 et 8080&lt;/p&gt;
+&lt;p&gt;on commence par un&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ netstat -an&lt;span class="p"&gt;|&lt;/span&gt;grep &lt;span class="m"&gt;8009&lt;/span&gt;
+tcp        &lt;span class="m"&gt;0&lt;/span&gt;      &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;.0.0.0:8009                &lt;span class="m"&gt;0&lt;/span&gt;.0.0.0:*                   LISTEN      
+tcp        &lt;span class="m"&gt;0&lt;/span&gt;      &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:8009              &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:15561             ESTABLISHED 
+tcp        &lt;span class="m"&gt;0&lt;/span&gt;      &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:15477             &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:8009              ESTABLISHED 
+
+$ netstat -an&lt;span class="p"&gt;|&lt;/span&gt;grep &lt;span class="m"&gt;8080&lt;/span&gt;
+tcp        &lt;span class="m"&gt;0&lt;/span&gt;      &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;.0.0.0:8080                &lt;span class="m"&gt;0&lt;/span&gt;.0.0.0:*                   LISTEN      
+tcp        &lt;span class="m"&gt;0&lt;/span&gt;      &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:8080              &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:60159             ESTABLISHED 
+tcp        &lt;span class="m"&gt;0&lt;/span&gt;      &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:58230             &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:8080              TIME_WAIT   
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;pour s'assurer que ces ports soient bien ouverts, histoire de voir qu'on
+a bien les yeux en face des trous&lt;/p&gt;
+&lt;p&gt;Ensuite je vais pour utiliser &lt;strong&gt;lsof&lt;/strong&gt; :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ lsof -i &lt;span class="p"&gt;|&lt;/span&gt;grep &lt;span class="m"&gt;8009&lt;/span&gt; 
+
+httpd     &lt;span class="m"&gt;20944&lt;/span&gt;     apache   14u  IPv4 &lt;span class="m"&gt;48859942&lt;/span&gt;      0t0  TCP localhost:15588-&amp;gt;localhost:8009 &lt;span class="o"&gt;(&lt;/span&gt;ESTABLISHED&lt;span class="o"&gt;)&lt;/span&gt;
+httpd     &lt;span class="m"&gt;20945&lt;/span&gt;     apache   14u  IPv4 &lt;span class="m"&gt;48858055&lt;/span&gt;      0t0  TCP localhost:15478-&amp;gt;localhost:8009 &lt;span class="o"&gt;(&lt;/span&gt;ESTABLISHED&lt;span class="o"&gt;)&lt;/span&gt;
+java      &lt;span class="m"&gt;23193&lt;/span&gt;      jboss  283u  IPv4 &lt;span class="m"&gt;48833112&lt;/span&gt;      0t0  TCP *:8009 &lt;span class="o"&gt;(&lt;/span&gt;LISTEN&lt;span class="o"&gt;)&lt;/span&gt;
+java      &lt;span class="m"&gt;23193&lt;/span&gt;      jboss  830u  IPv4 &lt;span class="m"&gt;48858029&lt;/span&gt;      0t0  TCP localhost:8009-&amp;gt;localhost:15473 &lt;span class="o"&gt;(&lt;/span&gt;ESTABLISHED&lt;span class="o"&gt;)&lt;/span&gt;
+java      &lt;span class="m"&gt;23193&lt;/span&gt;      jboss  833u  IPv4 &lt;span class="m"&gt;48858251&lt;/span&gt;      0t0  TCP localhost:8009-&amp;gt;localhost:15487 &lt;span class="o"&gt;(&lt;/span&gt;ESTABLISHED&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Parfait je vois qui m'enquiquine sur ce port j'ai le pid 23193 :P&lt;/p&gt;
+&lt;p&gt;puis la meme pour le port 8080&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ lsof -i&lt;span class="p"&gt;|&lt;/span&gt;grep &lt;span class="m"&gt;8080&lt;/span&gt;
+$ 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;mais là, rien ne s'affiche, wtf ?&lt;/p&gt;
+&lt;p&gt;c'est parce que lsof -i affiche les process ayant ouvert des ports dont
+les services sont "connus" de &lt;code&gt;/etc/services&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;donc d'abord il faut faire un&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ grep &lt;span class="m"&gt;8080&lt;/span&gt; /etc/services 
+
+webcache        &lt;span class="m"&gt;8080&lt;/span&gt;/tcp        http-alt        &lt;span class="c1"&gt;# WWW caching service&lt;/span&gt;
+webcache        &lt;span class="m"&gt;8080&lt;/span&gt;/udp        http-alt        &lt;span class="c1"&gt;# WWW caching service&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;pour localiser le NOM dudit service lié au port 8008, puis on conclut
+par&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ lsof -i &lt;span class="p"&gt;|&lt;/span&gt;grep webcache
+java      &lt;span class="m"&gt;23193&lt;/span&gt;      jboss  284u  IPv4 &lt;span class="m"&gt;48833113&lt;/span&gt;      0t0  TCP *:webcache &lt;span class="o"&gt;(&lt;/span&gt;LISTEN&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et voilà j'ai trouvé mes coupables ;)&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>Gnome SystemD, Debian 8, *BSD</title><link href="https://foxmask.net/post/2015/05/03/gnome-systemd-debian-8-bsd/" rel="alternate"></link><published>2015-05-03T14:45:00+02:00</published><updated>2015-05-03T14:45:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-03:/post/2015/05/03/gnome-systemd-debian-8-bsd/</id><summary type="html">&lt;p&gt;Il était une fois une distrib que j'utilise depuis plus de 10ans ... et
+qui, comme elle prend un chemin de traverse qui ne me sied guère, va
+dégager de mes ordinateurs...&lt;/p&gt;
+&lt;p&gt;Comme je ne suis qu'une poussière l'ocean, les dev de debian s'en
+foutent bien largement de mon avis puisque …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Il était une fois une distrib que j'utilise depuis plus de 10ans ... et
+qui, comme elle prend un chemin de traverse qui ne me sied guère, va
+dégager de mes ordinateurs...&lt;/p&gt;
+&lt;p&gt;Comme je ne suis qu'une poussière l'ocean, les dev de debian s'en
+foutent bien largement de mon avis puisque leur choix est fait. C'est
+bien justement parce qu'ils s'en foutent que je m'en vais vous dire tout
+le bien que j'en pense.&lt;/p&gt;
+&lt;p&gt;Le chemin de traverse est systemd, le super génialissime
+&lt;a href="http://www.freedesktop.org/wiki/Software/systemd/"&gt;"administrateur de système et de
+services"&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Qu'est-ce qui me déplait tant dans ce truc ?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;) il provient de RedHat ...&lt;/li&gt;
+&lt;li&gt;) il a été poussé par Gnome ...&lt;/li&gt;
+&lt;li&gt;) Debian n'a pas daigné conserver la compatibilité avec SysV&lt;/li&gt;
+&lt;li&gt;) les logs en binaires : ca pu&lt;/li&gt;
+&lt;li&gt;) Linus Torvalds &lt;a href="http://www.zdnet.com/article/linus-torvalds-and-others-on-linuxs-systemd/"&gt;n'aime pas ca non
+    plus&lt;/a&gt;,
+    même s'il dit que ce n'est pas un si gros problème...&lt;/li&gt;
+&lt;li&gt;) &lt;a href="http://www.zdnet.fr/actualites/systemd-et-les-t-du-c-de-la-communaute-open-source-39807395.htm"&gt;le pauvre petite
+    canard&lt;/a&gt;
+    veut nous faire pleurer...&lt;/li&gt;
+&lt;li&gt;) &lt;a href="http://linuxfr.org/news/debian-8-jessie-l-ecuyere-est-en-selle#comment-1601253"&gt;Google
+    inside&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;) le fait que systemd apparaisse sur Freedesktop.org, dénote d'un
+    fait indéniable, tous les window manager qui passeraient par le
+    projet Freedesktop adhéreraient à l'utilisation de Systemd...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Et j'en passe et des meilleures.&lt;/p&gt;
+&lt;p&gt;Donc j'ai passé un moment ce weekend à faire des tests d'installations :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mettre à jour Debian 7.8 à 8 puis &lt;a href="http://without-systemd.org/"&gt;virer
+    systemd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Installer Debian 8 "KDE"&lt;/li&gt;
+&lt;li&gt;Installer FreeBSD 10&lt;/li&gt;
+&lt;li&gt;Installer OpenBSD 5.7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Dans le premier cas : virer systemd désinstalle gnome intégralement.
+Youpi ! ... Ca rend le desktop dans un état ...&lt;/p&gt;
+&lt;p&gt;Dans le second cas : virer systemd ok mais remettre KDE .... pffff&lt;/p&gt;
+&lt;p&gt;FreeBSD ne detecte pas mon firmware wifi du portable... J'ai quand meme
+pu finir par faire mon installation avec un cable ethernet, et démarrer
+GDM, DBUS et je ne sais plus quel service, mais une fois sur le GDM,
+impossible de récupérer une console par CTRL-ALT-1 ou 2 ou 3, la carte
+graphique par en sucette.&lt;br&gt;
+Quand je me connecte "normalement" depuis GDM, le desktop freeze par
+intermitence... Ca rend le portable inutilisable...&lt;/p&gt;
+&lt;p&gt;OpenBSD, après des heures de téléchargement pour installer gnome, puis
+xorg, pas moyen de lancer GDM ou gnome-session.&lt;br&gt;
+J'ai juste eu droit au window manager par defaut : fvwm2.&lt;/p&gt;
+&lt;p&gt;Comme je galère pour passer de Linux à BSD, et comme la communauté
+Linux, n'est pas tendre en vous sortant des RTFM à tirelarigot, je ne me
+suis même pas essayé à demander de l'aide sur BSD.&lt;/p&gt;
+&lt;p&gt;Du coup j'ai remis une debian 7.8 en attendant un jour meilleur pour
+peut-etre tenter une nouvelle installation BSD. J'ai un an avant la fin
+du support de Wheezy :P&lt;/p&gt;
+&lt;p&gt;Cela dit comme systemd est fortement lié au window manager, j'ai
+l'impression que les BSD et Linux sont mal partis.&lt;/p&gt;
+&lt;p&gt;Si un window manager veut perdurer dans une distrib, il va lui falloir
+passer à systemd pour exister. Et si des OS ne s'y mettent pas qu'est ce
+qu'il leur arrivera ?&lt;/p&gt;
+&lt;p&gt;Je ne suis pas un famillier de BSD mais si Gnome&amp;amp;KDE utilise systemd,
+comment les BSD vont ils gérer ?&lt;br&gt;
+Le desktop sous fvwm2 et xfce ...&lt;br&gt;
+Probable que les BSD ne sont pas pour le desktop après tout, que c'est
+pas pour les non adminsys.&lt;br&gt;
+Mais la console ca va 5min hein, lire ses mails avec mutt, en passant
+par procmail/fetchmail, sendmail/postfix un moment ca lasse, thunderbird
+c'est pratique :P&lt;/p&gt;
+&lt;p&gt;Mon utilisation est simple: je produis des appli web ou pas avec python
+et un IDE.&lt;br&gt;
+Je veux pouvoir utiliser sur mes pc @ home ce que j'aurai en prod. Être
+"iso-conf", de sorte que si ca merde quelque part, que je n'ai pas à
+remettre en question l'OS et la version des services en place.&lt;br&gt;
+C'est peut-être une déformation professionnelle mais au moins ça permet
+de ne pas se poser de question lors de la mise en prod.&lt;/p&gt;
+&lt;p&gt;Et vous que pensez vous de tout ça ?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Debian toujours ?&lt;/li&gt;
+&lt;li&gt;BSD &gt; Debian/Linux ?&lt;/li&gt;
+&lt;li&gt;BSD est fait pour le desktop ? si oui lequel et avec quel window
+    manager périn ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En gros je me pose un tas de questions... et c'est pas fini&lt;/p&gt;</content><category term="bsd"></category><category term="debian"></category><category term="linux"></category><category term="systemd"></category></entry><entry><title>Debian Network Manager et Eth0 non gérée</title><link href="https://foxmask.net/post/2014/06/03/debian-network-manager-et-eth0-non-geree/" rel="alternate"></link><published>2014-06-03T09:54:00+02:00</published><updated>2014-06-03T09:54:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-06-03:/post/2014/06/03/debian-network-manager-et-eth0-non-geree/</id><summary type="html">&lt;p&gt;Quand on est une faignasse qui n'a pas envie de se plonger dans les
+arcanes des fichiers de config pour gérer l'accès réseau et qu'on n'a
+pas envie de faire ça sur sa workstation, on a un truc qui répond au
+besoin avec le
+&lt;a href="https://wiki.debian.org/fr/NetworkManager"&gt;NetworkManager&lt;/a&gt; disponible
+sous gnome.&lt;/p&gt;
+&lt;p&gt;En général …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Quand on est une faignasse qui n'a pas envie de se plonger dans les
+arcanes des fichiers de config pour gérer l'accès réseau et qu'on n'a
+pas envie de faire ça sur sa workstation, on a un truc qui répond au
+besoin avec le
+&lt;a href="https://wiki.debian.org/fr/NetworkManager"&gt;NetworkManager&lt;/a&gt; disponible
+sous gnome.&lt;/p&gt;
+&lt;p&gt;En général ce dernier est installé mais ne permet pas de configurer sa
+carte réseau depuis gnome.&lt;/p&gt;
+&lt;p&gt;On a généralement ceci :&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Réseau non géré" src="/static/2014/06/lan_ko.png"&gt;](/static/2014/06/lan_ko.png)&lt;/p&gt;
+&lt;p&gt;Du coup on est dans l'incapacité de gérer l'interface réseau de son
+choix ...&lt;/p&gt;
+&lt;p&gt;En cherchant très très loin &lt;a href="https://wiki.debian.org/fr/NetworkManager#Les_r.2BAOk-seaux_filaires_ne_sont_pas_g.2BAOk-r.2BAOk-s"&gt;dans la
+doc&lt;/a&gt;
+on trouve une ligne de configuration à switcher de valeur.&lt;br&gt;
+On editera donc le fichier &lt;strong&gt;/etc/NetworkManager/NetworkManager.conf&lt;/strong&gt;
+dans lequel on changera le &lt;em&gt;false&lt;/em&gt; en &lt;em&gt;true&lt;/em&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;[ifupdown]&lt;/span&gt;
+&lt;span class="na"&gt;managed&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ensuite on relance :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# /etc/init.d/network-manager restart&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt; ok &lt;span class="o"&gt;]&lt;/span&gt; Stopping network connection manager: NetworkManager.
+&lt;span class="o"&gt;[&lt;/span&gt; ok &lt;span class="o"&gt;]&lt;/span&gt; Starting network connection manager: NetworkManager.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et on obtient enfin ceci :&lt;br&gt;
+&lt;a href="/static/2014/06/lan_ok.png"&gt;&lt;img alt="Réseau géré" src="/static/2014/06/lan_ok.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Ce qui nous permet à présent d'ouvrir la config de l'interface elle-même !&lt;/p&gt;
+&lt;p&gt;Un dernier tips en passant, si vous tripotez votre config réseau via
+l'interface graphique, mettez de coté le fichier &lt;strong&gt;/etc/resolv.conf&lt;/strong&gt;,
+afin de ne pas perdre votre résolution DNS au cas où vous vous
+tromperiez dans votre conf réseau. Dès que vous appliquez vos
+paramètres, le fichier &lt;strong&gt;/etc/resolv.conf&lt;/strong&gt; est &lt;strong&gt;dynamiquement
+regénéré&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Dans un prochain billet, la config d'un accès avec OpenVPN (où
+j'aborderai de nouveau ces subtilités) par exemple si ça vous botte.&lt;/p&gt;</content><category term="debian"></category><category term="linux"></category></entry><entry><title>extraire une portion d'une archive distante sans la télécharger</title><link href="https://foxmask.net/post/2014/03/27/extraire-une-portion-dune-archive-distante-sans-la-telecharger/" rel="alternate"></link><published>2014-03-27T14:46:00+01:00</published><updated>2014-03-27T14:46:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-03-27:/post/2014/03/27/extraire-une-portion-dune-archive-distante-sans-la-telecharger/</id><summary type="html">&lt;p&gt;Bon c'est certes pas nouveau mais à force de la chercher, alors que je
+m'en servais à un temps que les moins de 20 ans ne peuvent pas
+connaitre, je la mets là, c'est pas pour emporter c'est pour manger tout
+de suite.&lt;/p&gt;
+&lt;p&gt;Le truc ici va consister à être …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Bon c'est certes pas nouveau mais à force de la chercher, alors que je
+m'en servais à un temps que les moins de 20 ans ne peuvent pas
+connaitre, je la mets là, c'est pas pour emporter c'est pour manger tout
+de suite.&lt;/p&gt;
+&lt;p&gt;Le truc ici va consister à être une partie d'une archive sans avoir à la
+télécharger.&lt;/p&gt;
+&lt;p&gt;On fait comme ca :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;wget -O - url &lt;span class="p"&gt;|&lt;/span&gt;tar -xvzf - &lt;span class="o"&gt;[&lt;/span&gt;dossier&lt;span class="p"&gt;|&lt;/span&gt;path/vers/fichier&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;je vous laisse jouer sur les options de tar mais l'idée est là ;)&lt;/p&gt;
+&lt;p&gt;genre ça fait quelques années lumières que je n'ai pas vu la tête d'une
+archive du kernel linux de près, let's go dancing :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; wget -O - ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz&lt;span class="p"&gt;|&lt;/span&gt;tar tvzf -
+--2014-03-25 &lt;span class="m"&gt;01&lt;/span&gt;:42:05--  ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz
+           &lt;span class="o"&gt;=&lt;/span&gt;&amp;gt; «-»
+Résolution de ftp.kernel.org &lt;span class="o"&gt;(&lt;/span&gt;ftp.kernel.org&lt;span class="o"&gt;)&lt;/span&gt;... &lt;span class="m"&gt;198&lt;/span&gt;.145.20.140, &lt;span class="m"&gt;149&lt;/span&gt;.20.4.69, &lt;span class="m"&gt;199&lt;/span&gt;.204.44.194
+Connexion vers ftp.kernel.org &lt;span class="o"&gt;(&lt;/span&gt;ftp.kernel.org&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="m"&gt;198&lt;/span&gt;.145.20.140&lt;span class="p"&gt;|&lt;/span&gt;:21...connecté.
+Ouverture de session en anonymous...Session établie!
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; SYST ... complété.    &lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; PWD ... complété.
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; TYPE I ... complété.  &lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; CWD &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; /pub/linux/kernel/v3.x/testing ... complété.
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; SIZE linux-3.11-rc6.tar.gz ... &lt;span class="nv"&gt;113162100&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; PASV ... complété.    &lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; RETR linux-3.11-rc6.tar.gz ... complété.
+Taille: &lt;span class="m"&gt;113162100&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;108M&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;non certifiée&lt;span class="o"&gt;)&lt;/span&gt;
+
+ &lt;span class="m"&gt;0&lt;/span&gt;% &lt;span class="o"&gt;[&lt;/span&gt;                                                                                                                                     &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="m"&gt;37&lt;/span&gt; &lt;span class="m"&gt;648&lt;/span&gt;       183K/s              drwxrwxr-x root/root         &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/
+-rw-rw-r-- root/root      &lt;span class="m"&gt;1097&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/.gitignore
+-rw-rw-r-- root/root      &lt;span class="m"&gt;4465&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/.mailmap
+-rw-rw-r-- root/root     &lt;span class="m"&gt;18693&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/COPYING
+-rw-rw-r-- root/root     &lt;span class="m"&gt;95317&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/CREDITS
+drwxrwxr-x root/root         &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/
+-rw-rw-r-- root/root       &lt;span class="m"&gt;107&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/.gitignore
+-rw-rw-r-- root/root     &lt;span class="m"&gt;16957&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/00-INDEX
+drwxrwxr-x root/root         &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/
+-rw-rw-r-- root/root      &lt;span class="m"&gt;3284&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/README
+drwxrwxr-x root/root         &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/obsolete/
+-rw-rw-r-- root/root       &lt;span class="m"&gt;248&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/obsolete/proc-sys-vm-nr_pdflush_threads
+-rw-rw-r-- root/root      &lt;span class="m"&gt;1296&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/obsolete/sysfs-bus-usb
+-rw-rw-r-- root/root      &lt;span class="m"&gt;1063&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/obsolete/sysfs-class-rfkill
+-rw-rw-r-- root/root      &lt;span class="m"&gt;2820&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/obsolete/sysfs-driver-hid-roccat-koneplus
+-rw-rw-r-- root/root      &lt;span class="m"&gt;3657&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/obsolete/sysfs-driver-hid-roccat-kovaplus
+-rw-rw-r-- root/root      &lt;span class="m"&gt;3767&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/obsolete/sysfs-driver-hid-roccat-pyra
+ &lt;span class="m"&gt;0&lt;/span&gt;% &lt;span class="o"&gt;[&lt;/span&gt;                                                                                                                                     &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="m"&gt;79&lt;/span&gt; &lt;span class="m"&gt;640&lt;/span&gt;       183K/s              drwxrwxr-x root/root         &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/removed/
+-rw-rw-r-- root/root       &lt;span class="m"&gt;471&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/removed/devfs
+-rw-rw-r-- root/root       &lt;span class="m"&gt;664&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/removed/dv1394
+-rw-rw-r-- root/root       &lt;span class="m"&gt;310&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/removed/ip_queue
+-rw-rw-r-- root/root       &lt;span class="m"&gt;449&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/removed/o2cb
+-rw-rw-r-- root/root       &lt;span class="m"&gt;663&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/removed/raw1394
+-rw-rw-r-- root/root       &lt;span class="m"&gt;751&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/removed/video1394
+drwxrwxr-x root/root         &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/stable/
+-rw-rw-r-- root/root      &lt;span class="m"&gt;4140&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/stable/firewire-cdev
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Vous pouvez faire varier les plaisirs avec un grep au bout evidement,
+genre je ne veux que ce qui cause crypto :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt; wget -O - ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz&lt;span class="p"&gt;|&lt;/span&gt;tar tvzf - &lt;span class="p"&gt;|&lt;/span&gt;grep crypto
+
+
+--2014-03-25 &lt;span class="m"&gt;01&lt;/span&gt;:50:56--  ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz
+           &lt;span class="o"&gt;=&lt;/span&gt;&amp;gt; «-»
+Résolution de ftp.kernel.org &lt;span class="o"&gt;(&lt;/span&gt;ftp.kernel.org&lt;span class="o"&gt;)&lt;/span&gt;... &lt;span class="m"&gt;199&lt;/span&gt;.204.44.194, &lt;span class="m"&gt;198&lt;/span&gt;.145.20.140, &lt;span class="m"&gt;149&lt;/span&gt;.20.4.69
+Connexion vers ftp.kernel.org &lt;span class="o"&gt;(&lt;/span&gt;ftp.kernel.org&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="m"&gt;199&lt;/span&gt;.204.44.194&lt;span class="p"&gt;|&lt;/span&gt;:21...connecté.
+Ouverture de session en anonymous...Session établie!
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; SYST ... complété.    &lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; PWD ... complété.
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; TYPE I ... complété.  &lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; CWD &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; /pub/linux/kernel/v3.x/testing ... complété.
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; SIZE linux-3.11-rc6.tar.gz ... &lt;span class="nv"&gt;113162100&lt;/span&gt;
+&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; PASV ... complété.    &lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; RETR linux-3.11-rc6.tar.gz ... complété.
+Taille: &lt;span class="m"&gt;113162100&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;108M&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;non certifiée&lt;span class="o"&gt;)&lt;/span&gt;
+
+ &lt;span class="m"&gt;0&lt;/span&gt;% &lt;span class="o"&gt;[&lt;/span&gt;                                                                                                                                     &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="m"&gt;41&lt;/span&gt; &lt;span class="m"&gt;992&lt;/span&gt;       166K/s              -rw-rw-r-- root/root      &lt;span class="m"&gt;1188&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/ABI/testing/debugfs-pfo-nx-crypto
+ &lt;span class="m"&gt;1&lt;/span&gt;% &lt;span class="o"&gt;[&lt;/span&gt;&amp;gt;                                                                                                                                    &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;369&lt;/span&gt; &lt;span class="m"&gt;808&lt;/span&gt;    828K/s              drwxrwxr-x root/root         &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/crypto/
+-rw-rw-r-- root/root      &lt;span class="m"&gt;6569&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/crypto/api-intro.txt
+-rw-rw-r-- root/root     &lt;span class="m"&gt;11244&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/crypto/asymmetric-keys.txt
+-rw-rw-r-- root/root      &lt;span class="m"&gt;9347&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/crypto/async-tx-api.txt
+-rw-rw-r-- root/root     &lt;span class="m"&gt;17200&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/crypto/descore-readme.txt
+drwxrwxr-x root/root         &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/devicetree/bindings/crypto/
+-rw-rw-r-- root/root       &lt;span class="m"&gt;399&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/devicetree/bindings/crypto/fsl-imx-sahara.txt
+-rw-rw-r-- root/root      &lt;span class="m"&gt;2784&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/devicetree/bindings/crypto/fsl-sec2.txt
+-rw-rw-r-- root/root     &lt;span class="m"&gt;14202&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
+-rw-rw-r-- root/root       &lt;span class="m"&gt;544&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/devicetree/bindings/crypto/mv_cesa.txt
+-rw-rw-r-- root/root       &lt;span class="m"&gt;789&lt;/span&gt; &lt;span class="m"&gt;2013&lt;/span&gt;-08-18 &lt;span class="m"&gt;23&lt;/span&gt;:36 linux-3.11-rc6/Documentation/devicetree/bindings/crypto/picochip-spacc.txt
+ &lt;span class="m"&gt;2&lt;/span&gt;% &lt;span class="o"&gt;[==&lt;/span&gt;&amp;gt;                                                                                                                                  &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt; &lt;span class="m"&gt;075&lt;/span&gt; &lt;span class="m"&gt;552&lt;/span&gt;   &lt;span class="m"&gt;1&lt;/span&gt;,31M/s 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;L'intérêt est de ne pas encombrer son HDD de saloperies "temporaires"
+qui finissent toujours par durer.&lt;/p&gt;
+&lt;p&gt;Voilou, je n'ai plus à me demander "boudiou c'est comment que je faisais
+dans l'ancien temps avec mes doigts"&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>Debian 7 Wheezy - re mise à jour du driver NVIDIA</title><link href="https://foxmask.net/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/" rel="alternate"></link><published>2013-05-06T18:16:00+02:00</published><updated>2013-05-06T18:16:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-05-06:/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/</id><summary type="html">&lt;p&gt;Je viens de finir d'installer cette mise à jour de Debian Wheezy sur 2
+PC ; un portable Dell Latitude sans aucun soucis mais comme d'hab mon PC
+de bureau n'en fait qu'à sa tête...&lt;/p&gt;
+&lt;p&gt;Le soucis se situe à plusieurs endroits :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GRUB&lt;/li&gt;
+&lt;li&gt;Carte Graphique&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;GRUB :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;La mise à jour m'a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Je viens de finir d'installer cette mise à jour de Debian Wheezy sur 2
+PC ; un portable Dell Latitude sans aucun soucis mais comme d'hab mon PC
+de bureau n'en fait qu'à sa tête...&lt;/p&gt;
+&lt;p&gt;Le soucis se situe à plusieurs endroits :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GRUB&lt;/li&gt;
+&lt;li&gt;Carte Graphique&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;GRUB :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;La mise à jour m'a flingué grub sans que j'ai eu le temps de voir ce
+qu'il s'était passé... au reboot j'étais stuck "dans le noir"...
+condamné à refaire une installation from scratch ...&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NVIDIA GT 220&lt;/strong&gt;&lt;br&gt;
+Comme on change de release Debian, on change de kernel, donc on est
+"bon" pour se retaper l'installation du driver NVIDIA en version 304.64
+pour 64Bits ; toutes autres versions antiérieures ne compilera tout
+bonnement pas ne trouvant pas le fichier version.h dans les sources du
+kernel ; rien que ça.&lt;/p&gt;
+&lt;p&gt;Donc pour ce faire :&lt;/p&gt;
+&lt;p&gt;arreter X&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/gdm3 stop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;lancer&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./NVIDIA-Linux-x86_64-304.64.run
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A l'invite il peut vous dire que vous utilisez un GCC 4.7 et que le
+module était prévu pour compiler avec GCC 4.6 vous lui dites donc "non"
+et ça passera.&lt;/p&gt;
+&lt;p&gt;La compilation se passe les doigts dans le nez !&lt;br&gt;
+L'installeur vous demandera s'il peut vous exectuer&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nvidia-xconfig
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;pour pondre le fichier /etc/X11/xorg.conf&lt;br&gt;
+Dites lui oui !&lt;/p&gt;
+&lt;p&gt;finissez par un petit&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;modprobe nvidia
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;lancer gdm3&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/gdm3 start
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et là comme par enchantement on retrouve un environnement graphique
+paisible.&lt;br&gt;
+Par paisible j'entends que l'installation précédente allait très bien
+mais que le ventilo du proc de la CG tournait comme un débile à qui l'on
+aurait demander de faire du traitement vidéo... Alors qu'une fois le
+module NVIDIA chargé tout redevenait clamos.&lt;/p&gt;
+&lt;p&gt;Voilou !&lt;/p&gt;
+&lt;p&gt;Edit 16/5 : un truc qui m'a quand même fortement déplu avec ces mises à
+jour. (j'en ai fait 3), il n'y a aucun avertissement sur le non support
+du driver NVIDIA lors de l'upgrade. On est dans le noir si le driver ne
+passe pas ... et pour retrouver ses billes, "interroger" la "toile" ; si
+on n'est pas familier de links ou w3m c'est la mort&lt;/p&gt;</content><category term="debian"></category><category term="linux"></category></entry><entry><title>Debian, amour et désamour</title><link href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/" rel="alternate"></link><published>2012-12-17T14:31:00+01:00</published><updated>2012-12-17T14:31:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-12-17:/post/2012/12/17/debian-amour-et-desamour/</id><summary type="html">&lt;p&gt;Utilisateur de &lt;a href="http://www.debian.org"&gt;Debian&lt;/a&gt; depuis &lt;em&gt;Le toutou
+elastic&lt;/em&gt; aka "Slink" (version 2.1), je n'ai jamais eu à me plaindre. Je
+me suis toujours éclater avec cette distribution Linux, même si j'ai
+croisé sur le chemin SlackWare, Mandrake, RedHat, Suse etc...&lt;/p&gt;
+&lt;p&gt;J'utilise actuellement Debian Squeeze (version 6 donc) que j'ai pu …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Utilisateur de &lt;a href="http://www.debian.org"&gt;Debian&lt;/a&gt; depuis &lt;em&gt;Le toutou
+elastic&lt;/em&gt; aka "Slink" (version 2.1), je n'ai jamais eu à me plaindre. Je
+me suis toujours éclater avec cette distribution Linux, même si j'ai
+croisé sur le chemin SlackWare, Mandrake, RedHat, Suse etc...&lt;/p&gt;
+&lt;p&gt;J'utilise actuellement Debian Squeeze (version 6 donc) que j'ai pu
+installer sur mon HP en passant par ... windows... parce que le BIOS des
+HP est inaccessible, oui ma bonne dame. Donc je n'ai aucun moyen de
+booter le PC depuis un média quelconque "CD/DVD/Clé USB". C'est donc
+depuis windows seven, je dis bien, que j'ai installé l'installeur debian
+pour ajouter ensuite au bootloader de windows un point d'entrée pour
+booter sur l'installeur debian (vous avez bien suivi ? c'est tordu hein
+;)&lt;/p&gt;
+&lt;p&gt;Donc à présent, quand je reboot j'ai 3 choix dans mon bootloader windows
+:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;windows 7&lt;/li&gt;
+&lt;li&gt;Debian GNU/Linux&lt;/li&gt;
+&lt;li&gt;l'installeur Debian&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Tout ça marchait très bien, mais comme Wheezy va sortir dans peu de
+temps j'ai voulu mettre à jour ma version, et là, la catastrophe.&lt;/p&gt;
+&lt;p&gt;Après un&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;aptitude update
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;un&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;aptitude upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;m'affichait&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Résolution des dépendances... 
+ouverts: 378146 fermés: 658730 reportés: 344 en conflit: 1436
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ca durait 2 heures, ça m'a gonflé, j'ai tout arrete et fait un simple&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get dist-upgrade
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;J'ai eu droit à un probleme de depedance sur default-java (un truc du
+genre)&lt;br&gt;
+j'ai fait un&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dpkg -P default-java
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et relancer le dist-upgrade, et tout se finissa comme dans un rêve&lt;/p&gt;
+&lt;p&gt;Hé bien Nan !&lt;/p&gt;
+&lt;p&gt;X était planté, j'attéri dans une bonne vieille console 80 colonnes,
+comme j'avais lancé l'upgrade depuis une session X, X a été mis à jour
+et je ne voyais plus où l'upgrade s'était arrété alors qu'un ps -auxf
+m'affichait toujours le process en cours...&lt;/p&gt;
+&lt;p&gt;UN gros kill du PID + un apt-get
+--JENESAISPLUSQUOIPOURTOUTREMETTREDEQUERRE&lt;/p&gt;
+&lt;p&gt;Et l'upgrade se finissa oui&lt;/p&gt;
+&lt;p&gt;Comme par magie X se lança je pu accéder à gnome 3. Youpi !&lt;/p&gt;
+&lt;p&gt;Mais en fait non !&lt;/p&gt;
+&lt;p&gt;Avec Gnome2, ma Nvidia (une GT 220) était prise en charge, et mon
+processeur (le ventilateur) ne faisait AUCUN bruit. Par bruit j'entends
+(trop fort:P) comme quand un process lourd se lance vous voyez le genre,
+style j'extrais des pistes d'un CD avec abcde, ou encode une connerie en
+avi avec ffmpeg. C'est le même "son" que fait le PC au boot tant que
+l'OS (windows / linux) n'a pas fini de se charger et afficher
+l'interface graphique (de l'un des deux OS).&lt;/p&gt;
+&lt;p&gt;A présent, avec Gnome3, ce bruit est constant, ce qui me fait dire que
+Debian Wheezy n'a pas chargé le module NVIDIA approprié sinon je
+n'entendrais plus un bruit.&lt;/p&gt;
+&lt;p&gt;J'ai regardé la doc sur le wiki debian concernant NVIDIA, un beau bug de
+la commande nvidia-xconfig flingue la conf de X (créé un fichier
+xorg.conf vide). Si je tente d'en créer un avec juste la section Monitor
+pour ajouter le nom du driver, je ne peux plus accéder à X en rebootant.
+Obliger de faire un "mode sans échec" et virer le fichier pour que GDM
+redémarre.&lt;/p&gt;
+&lt;p&gt;Comme le BRUIT m'insupporte, je suis reparti pour me réinstaller une
+debian squeeze, et là, pratiquement à la fin, grub veut pas s'installer,
+lilo non plus. Dès lors qu'on ne fait pas ce que l'installeur s'attend
+comme opération, grub se vrille ; obliger de tout recommencer, ce qui
+m'exaspère apres 3 installations _pour rien_&lt;/p&gt;
+&lt;p&gt;Donc une question à vous lecteur(s) :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Avez vous une telle carte graphique et si oui pouvez vous me montrer
+    votre /etc/X11/xorg.conf ?&lt;/li&gt;
+&lt;li&gt;Si non, quelle distribution utilisez vous autre que Ubuntu, qui
+    utilise Gnome3 ? Et par dessus le marché, cerise sur le cake, qui
+    possède un installeur sous windows ? (saloperie de HP ... :P)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dans tout cela je ne vous ai pas dit pourquoi je voulais mettre une
+Debian Wheezy :&lt;/p&gt;
+&lt;p&gt;Parce que j'ai besoin des nouvelles versions de Python &gt; 2.6 (et
+accessoirement PHP :D) pour pouvoir fournir des applications
+fonctionnelles à souhait et parce que la squeeze, une fois la wheezy
+sortie, ne sera plus "autant" maintenu, comprendre que les nouveautés on
+devra tirer un trait dessus.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Edit : 22h51&lt;/strong&gt;&lt;br&gt;
+Bon je m'en suis enfin sorti apres 3 nouvelles installations et en me
+reprenant la tête avec le driver fourni par Debian qui est une vraie
+plaie sur mon 64bits...&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Analyse post-mortem :&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Quelque soit la config utilisée avec les pack deb l'écran blinkait
+indéfiniment.&lt;/p&gt;
+&lt;p&gt;J'avais pris tous les pack deb nvidia ; taper nvidia-xconfig ; editer le
+fichier /etc/X11/xorg.conf mais rien y a fait.&lt;/p&gt;
+&lt;p&gt;Hier pour anticiper le coup, j'avais download le driver chez nvidia.com
+directement.&lt;/p&gt;
+&lt;p&gt;Ensuite j'ai lancé l'installeur après avoir installé gcc et
+kernel-header et choisi l'installation via DKMS&lt;/p&gt;
+&lt;p&gt;Grosse erreur !&lt;/p&gt;
+&lt;p&gt;Il en avait rien à faire de mes kernel-headers.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Solution :&lt;/strong&gt;&lt;br&gt;
+arreter X&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/gdm3 stop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;lancer&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./NVIDIA-.....run
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et à l'invite NE PAS UTILISER DKMS&lt;/p&gt;
+&lt;p&gt;La compilation se passe les doigts dans le nez !&lt;br&gt;
+Ensuite un bon coup de&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nvidia-xconfig
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;pour pondre le fichier /etc/X11/xorg.conf&lt;/p&gt;
+&lt;p&gt;Puis un petit&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;modprobe nvidia
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;lancer gdm3&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/gdm3 start
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Et là comme par enchantement le processeur se tait et "la lumière" soit
+!&lt;/p&gt;
+&lt;p&gt;Me voilà de retour sur une Debian Squeeze ... et j'attendrai de pied
+ferme une Wheezy STABLE !&lt;/p&gt;</content><category term="debian"></category><category term="linux"></category></entry><entry><title>Linux Live USB Persistent : failed</title><link href="https://foxmask.net/post/2011/11/05/linux-live-usb-persistent-failed/" rel="alternate"></link><published>2011-11-05T17:01:00+01:00</published><updated>2011-11-05T17:01:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-11-05:/post/2011/11/05/linux-live-usb-persistent-failed/</id><summary type="html">&lt;p&gt;Suite à &lt;a href="/post/2011/10/22/linux-sur-laptop-sans-disque-dur/" title="Laptop sous linux sans dique dur"&gt;cette
+mésaventure&lt;/a&gt;,
+j'ai fait les frais d'une clé USB 32Go, et de 2 soirées d'affilées à la
+recherche d'images ISO qui soit exploitable sur le (vieux) portable
+recyclé pour ma fille.&lt;/p&gt;
+&lt;p&gt;Mon "cahier des charges" étant :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Hardware&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RAM utilisable 512Mo&lt;/li&gt;
+&lt;li&gt;Wifi sur une clef USB à prendre en …&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;p&gt;Suite à &lt;a href="/post/2011/10/22/linux-sur-laptop-sans-disque-dur/" title="Laptop sous linux sans dique dur"&gt;cette
+mésaventure&lt;/a&gt;,
+j'ai fait les frais d'une clé USB 32Go, et de 2 soirées d'affilées à la
+recherche d'images ISO qui soit exploitable sur le (vieux) portable
+recyclé pour ma fille.&lt;/p&gt;
+&lt;p&gt;Mon "cahier des charges" étant :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Hardware&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;RAM utilisable 512Mo&lt;/li&gt;
+&lt;li&gt;Wifi sur une clef USB à prendre en charge&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Linux en Français (avec Gnome 2 pas 3 tant qu'à faire puisque vieux
+    PC)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;le mode persistant pour stocker quelques photos de copines :P&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Fort de tout cela j'ai pu essayer plusieurs outils :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="http://www.linuxliveusb.com/"&gt;Linux Live USB&lt;/a&gt; fourni un outil
+    permettant de choisir quel périphérique utiliser, de télécharger une
+    ISO, l'installer et spécifier la taille max dédié au mode
+    persistant.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Mon premier choix s'était bien sûr porté sur
+    &lt;a href="http://debian.org" title="GNU/Linux Debian"&gt;Debian&lt;/a&gt; (utilisateur de
+    debian depuis la potatoe ceci explique cela:), mais les &lt;strong&gt;ISO
+    debian 6.0.1&lt;/strong&gt; requis par l'outil ne sont pas les bonnes...&lt;/li&gt;
+&lt;li&gt;Ensuite j'ai pu m'orienter sur
+    &lt;strong&gt;&lt;a href="http://ubuntu.com" title="Ubuntu"&gt;Ubuntu&lt;/a&gt; 11.10&lt;/strong&gt;, et tenter en
+    vain de booter sur le portable... En vain car j'avais pas fait
+    attention que j'avais déjà du mal à booter une &lt;strong&gt;10.10&lt;/strong&gt; avant
+    le crash du disque dur ...&lt;/li&gt;
+&lt;li&gt;J'ai donc repris un &lt;strong&gt;10.10&lt;/strong&gt; mais hélas mille fois hélas, à
+    part le splash screen avec les petits points qui passent du
+    blanc au marron, je n'arrive jamais à passer cet écran. Pourtant
+    avec un &lt;strong&gt;live CD Ubuntu 10.10&lt;/strong&gt;, ca passe ...&lt;/li&gt;
+&lt;li&gt;Devant cet échec j'ai installé les doigts dans le nez, une
+    &lt;strong&gt;slackware&lt;/strong&gt; :
+    &lt;a href="http://slax.org" title="Slax, your pocket operating système"&gt;Slax&lt;/a&gt; de
+    son nom! Slax fourni KDE mais est totalement en anglais (or je
+    vous rappelle que c'est pour ma fille de 10ans, l'anglais
+    technique c'est un poil trop tôt:) ... et ne prend pas en charge
+    ma clef usb pour le wifi (à ba oui on cumule les obstacles)&lt;/li&gt;
+&lt;li&gt;J'ai bien évidement tenté d'installer le projet Linux Live USB
+    Debian mais à part une liste de packages à installer, rien
+    n'explique comment le faire...&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ensuite pour quand même tenter d'installer une Debian (oui têtu un
+    jour têtu toujours) j'ai utilisé &lt;a href="http://www.pendrivelinux.com/liveusb-install-live-usb-creator/"&gt;Cet
+    outil&lt;/a&gt;
+    qui m'a permis de mettre une 6.0.3 tout aussi facilement que la
+    slackware, et booter, tout nickel jusqu'au deux derniers obstacles :
+    la clé usb pour le wifi, non reconnue et Gnome full English ! Shit !
+    J'ai eu beau récupéré le driver (non-free:p) pour l'installer, de
+    réseau wifi la Debian ne vit, ni ne voulu prendre en compte avec les
+    infos que je lui avais fourni.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Après tout cela je suis dépité, ok Ubuntu avant le crash disque
+reconnaissait ma clé usb et fonctionnait tant bien que mal, mais depuis
+toutes ces années je n'avais jamais vu de distribution ne pas me donner
+satisfaction. Sauf qu'à présent, l'idée de "redonner un second souffle à
+un PC" avec un linux salvateur/sauveur devient de plus en plus
+hypothétique. Si ubuntu avait envi de faire comme windows en devenant de
+plus en plus gourmand, c'est gagné !&lt;/p&gt;
+&lt;p&gt;Maintenant où j'en suis ?&lt;/p&gt;
+&lt;p&gt;là :&lt;/p&gt;
+&lt;p&gt;"Papa quand est-ce que je peux utiliser mon ordinateur ?"&lt;/p&gt;
+&lt;p&gt;PS : maintenant je suis calé pour monter une distrib' en mode persistant
+et ... redimensionner la partie non allouée au delà des 4Go :D&lt;/p&gt;
+&lt;p&gt;Si quelqu'un connait une distribution linux avec un gnome 2 en français
+qui soit exploitable avec moins de 512Mo ... et avec prise en charge du
+driver usb &lt;a href="http://sourceforge.net/projects/zd1211/"&gt;ZD1211&lt;/a&gt; ca serait
+le grand pied !&lt;/p&gt;</content><category term="linux"></category></entry><entry><title>Linux sur laptop sans disque dur</title><link href="https://foxmask.net/post/2011/10/22/linux-sur-laptop-sans-disque-dur/" rel="alternate"></link><published>2011-10-22T19:35:00+02:00</published><updated>2011-10-22T19:35:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-10-22:/post/2011/10/22/linux-sur-laptop-sans-disque-dur/</id><summary type="html">&lt;p&gt;Hmm naaaaaaaaaaaaaaaaannnnnnnnnnnnn, le disque dur du portable qui me
+lâche :(&lt;/p&gt;
+&lt;p&gt;Quelqu'un aurait une idée pour utiliser linux sur un (vieux) portable
+sans disque dur ?&lt;/p&gt;
+&lt;p&gt;j'imaginerai juste pouvoir stocker le /home sur clé usb au moins, genre
+pour conserver les préférences de firefox et puis c'est tout.&lt;/p&gt;
+&lt;p&gt;est-ce possible ?&lt;/p&gt;
+&lt;p&gt;nota : le …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hmm naaaaaaaaaaaaaaaaannnnnnnnnnnnn, le disque dur du portable qui me
+lâche :(&lt;/p&gt;
+&lt;p&gt;Quelqu'un aurait une idée pour utiliser linux sur un (vieux) portable
+sans disque dur ?&lt;/p&gt;
+&lt;p&gt;j'imaginerai juste pouvoir stocker le /home sur clé usb au moins, genre
+pour conserver les préférences de firefox et puis c'est tout.&lt;/p&gt;
+&lt;p&gt;est-ce possible ?&lt;/p&gt;
+&lt;p&gt;nota : le disque dur était un Seagate ST94019A (de 40Go) sur un hp
+pavillon zv5000.&lt;/p&gt;</content><category term="linux"></category></entry></feed>

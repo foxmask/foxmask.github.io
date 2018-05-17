@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Le Free de la Passion - AIX</title><link>https://foxmask.net/</link><description>La passion de la liberté</description><lastBuildDate>Wed, 13 Jan 2016 23:00:00 +0100</lastBuildDate><item><title>AIX fsck et demarrer des services</title><link>https://foxmask.net/post/2016/01/13/aix-fsck-demarrer-des-services/</link><description>&lt;p&gt;Sur AIX, lors d'un reboot (malencontreux?) il peut arriver que des folders soient vides (aïe bobo partout)&lt;/p&gt;
+&lt;p&gt;Bon du coup ca peut provenir du "simple" fait de "dirty" partitions qui ont besoin qu'on leur fasse faire un check &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fsck /opt/websphere
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;on repondra oui s'il vous demander de "FIX?"&lt;/p&gt;
+&lt;p&gt;et …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">FoxMaSk</dc:creator><pubDate>Wed, 13 Jan 2016 23:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2016-01-13:/post/2016/01/13/aix-fsck-demarrer-des-services/</guid><category>AIX</category></item></channel></rss>
