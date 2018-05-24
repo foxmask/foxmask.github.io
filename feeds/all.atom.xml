@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/all.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2018-03-20T20:00:00+01:00</updated><entry><title>SFR 8 mois de calvaire ...</title><link href="https://foxmask.net/post/2018/03/20/sfr-8-mois-calvaire/" rel="alternate"></link><published>2018-03-20T20:00:00+01:00</published><updated>2018-03-20T20:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-03-20:/post/2018/03/20/sfr-8-mois-calvaire/</id><summary type="html">&lt;p&gt;je m'en va vous conter une chronologie quasi au jour le jour (surtout vers la fin) de tout ce cauchemar...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Je m'en va vous conter une chronologie quasi au jour le jour (surtout vers la fin) de tout ce cauchemar...&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/all.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2018-05-24T15:00:00+02:00</updated><entry><title>Joplin Community, Jong</title><link href="https://foxmask.net/post/2018/05/24/joplin-community-jong/" rel="alternate"></link><published>2018-05-24T15:00:00+02:00</published><updated>2018-05-24T15:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-05-24:/post/2018/05/24/joplin-community-jong/</id><summary type="html">&lt;p&gt;Hey !&lt;/p&gt;
+&lt;p&gt;Le voici de retour pour aborder d'autres sujets pendant un "break" TriggerHappy :P&lt;/p&gt;
+&lt;h2&gt;pré en bulle:&lt;/h2&gt;
+&lt;p&gt;Cela ne sera pas une grosse surprise si je vous dis que j'ai adopté un nouvel outil de prise de notes en remplacement de ... Evernote.&lt;/p&gt;
+&lt;p&gt;Je faisais tout avec Evernote, et automatisais tout …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey !&lt;/p&gt;
+&lt;p&gt;Le voici de retour pour aborder d'autres sujets pendant un "break" TriggerHappy :P&lt;/p&gt;
+&lt;h2&gt;pré en bulle:&lt;/h2&gt;
+&lt;p&gt;Cela ne sera pas une grosse surprise si je vous dis que j'ai adopté un nouvel outil de prise de notes en remplacement de ... Evernote.&lt;/p&gt;
+&lt;p&gt;Je faisais tout avec Evernote, et automatisais tout ce qu'on peut imaginer pour faire ma veille techno, gérer mes projets, mes idées, mon quotidien de père de famille etc
+C'est même sur la base de la lecture de flux RSS et de stockage de ces articles dans Evernote, que vit le jour &lt;a href="https://github.com/push-things/django-th"&gt;Trigger Happy&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;pirouette cacahuette&lt;/h2&gt;
+&lt;p&gt;Depuis un petit mois grosso modo, j'ai adopté &lt;a href="https://joplin.cozic.net/"&gt;Joplin&lt;/a&gt;, que je ne vous representerais pas plus que cela, pour cela quelques &lt;a href="https://foxmask.net/post/2018/03/17/migrer-evernote-joplin/"&gt;articles&lt;/a&gt;, &lt;a href="https://foxmask.net/post/2018/03/15/comparatif-editeurs-partie2-boostnote-vs-joplin/"&gt;deja publiés&lt;/a&gt;, et ai donc fait la pirouette d'Evernote à Joplin.&lt;/p&gt;
+&lt;h2&gt;Joplin community&lt;/h2&gt;
+&lt;p&gt;Par contre depuis ce petit mois, les fonctionnalités sont tombées en cascades, comme la possibilité d'avoir des sous dossiers de dossiers, la syncho sur dropbox, avoir plusieurs profils (pour stocker ses notes sur 'n' cloud ou 'n' comptes d'un meme cloud), avoir une version joplin sur clé USB (pour par exemple trimballer ses notes sur un stick USB) et j'en passe et des meilleures, le projet s'ameliorant tellement rapidement, je ne peux que vous inviter à parcourir les &lt;a href="https://discourse.joplin.cozic.net/c/news"&gt;releases notes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;L'enrichissement du projet ne s'arrête pas là, un petit &lt;a href="https://discourse.joplin.cozic.net/"&gt;forum&lt;/a&gt; a ouvert histoire, entre autre chose, d'exposer ses problèmes ou ses désidératas.&lt;/p&gt;
+&lt;h2&gt;Belote et rebelote et 10 de der&lt;/h2&gt;
+&lt;p&gt;Comme je ne peux pas rester les bras croisés quand j'aprécie un projet qui me titille, je me suis laissé aller à proposer mes services à son auteur. Donc j'aide de ci de là.&lt;/p&gt;
+&lt;h2&gt;Joplin et ma veille techno&lt;/h2&gt;
+&lt;p&gt;Comme avec Evernote, je stockais ma veille techno pour la lire plus tard, je restais sur ma faim avec Joplin, même si avec quelques tickets et questions sur le forum j'obtenais une piste... que je fini par exploiter.&lt;/p&gt;
+&lt;h2&gt;Jong est son nom&lt;/h2&gt;
+&lt;p&gt;Et donc in fine, j'ai fait un petit projet tout simple, lisant les flux des sites d'info qui m'interessent, et crée des notes dans Joplin, puis les synchronise pour être dispo partout.&lt;/p&gt;
+&lt;p&gt;J'ai nommé le projet &lt;a href="https://github.com/foxmask/jong"&gt;Jong&lt;/a&gt; pour "JOplin Note Generator".&lt;/p&gt;</content><category term="joplin"></category></entry><entry><title>SFR 8 mois de calvaire ...</title><link href="https://foxmask.net/post/2018/03/20/sfr-8-mois-calvaire/" rel="alternate"></link><published>2018-03-20T20:00:00+01:00</published><updated>2018-03-20T20:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-03-20:/post/2018/03/20/sfr-8-mois-calvaire/</id><summary type="html">&lt;p&gt;je m'en va vous conter une chronologie quasi au jour le jour (surtout vers la fin) de tout ce cauchemar...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Je m'en va vous conter une chronologie quasi au jour le jour (surtout vers la fin) de tout ce cauchemar...&lt;/p&gt;
 &lt;h1&gt;Il était une fois un an et un mois chez SFR&lt;/h1&gt;
 &lt;p&gt;ca nous changera des déboires des transports en commun d'ile de france, meme si c'est aussi chiant à vivre ... allez jettons nous dans la story moisie.
 Et dire que je suis un cas isolé, ... j'ai des doutes :)&lt;/p&gt;
@@ -630,43 +651,4 @@ We feel to be part of something bigger than us, and at the same time, a little g
 &lt;p&gt;Je finirai pas un client mastodon web : &lt;a href="https://n1k0.github.io/tooty/"&gt;tooty&lt;/a&gt; qui est super bien foutu mais dont le seul point "contre" que je souleverai sera que par defaut on ne peut pas définir la visibilité de ses toots. Il faut faire gaffe à chaque fois à qui on parle.&lt;/p&gt;
 &lt;h1&gt;6 Conclusion&lt;/h1&gt;
 &lt;p&gt;Je recherchais dans ces clients, quelque chose de propre (et pas gourmand) et avec toutes les infos (les "compteurs") sur un toot donné, sans être contraint de l'ouvrir.&lt;/p&gt;
-&lt;p&gt;j'en ai aussi testé d'autres qui étaient même en beta sur le playstore mais au final je conserve &lt;a href="https://bitbucket.org/tom79/mastodon_etalab/"&gt;Mastalab&lt;/a&gt;, qui avec la mise à jour de ce mois, me va très bien à un truc ou deux près qui seront résolu dans les prochaines versions :) Merci donc à son auteur &lt;a href="https://mastodon.etalab.gouv.fr/@tschneider"&gt;Thomas Schneider&lt;/a&gt; !&lt;/p&gt;</content></entry><entry><title>Fabric, et la contrib django pour acceder à tous vos joujoux</title><link href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/" rel="alternate"></link><published>2017-07-10T14:00:00+02:00</published><updated>2017-07-10T14:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-07-10:/post/2017/07/10/fabric-contrib-django/</id><summary type="html">&lt;p&gt;Dans mon &lt;a href="https://foxmask.trigger-happy.eu/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques"&gt;billet précédent&lt;/a&gt;, j'évoquais l'existence d'une "contrib" Fabric pour intégrer Django au sein de ses tasks Fabric, mais qu'elle déconnait...&lt;/p&gt;
-&lt;p&gt;Après maints tests supplementaires et digging ze toile, j'ai entrevu la lumière après la lecture de 3 issues chez Fabric &lt;a href="https://github.com/fabric/fabric/issues/1509"&gt;#1509&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1033"&gt;#1033&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1207"&gt;#1207&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Tout compulsé ca donne ceci :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# coding …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Dans mon &lt;a href="https://foxmask.trigger-happy.eu/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques"&gt;billet précédent&lt;/a&gt;, j'évoquais l'existence d'une "contrib" Fabric pour intégrer Django au sein de ses tasks Fabric, mais qu'elle déconnait...&lt;/p&gt;
-&lt;p&gt;Après maints tests supplementaires et digging ze toile, j'ai entrevu la lumière après la lecture de 3 issues chez Fabric &lt;a href="https://github.com/fabric/fabric/issues/1509"&gt;#1509&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1033"&gt;#1033&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1207"&gt;#1207&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Tout compulsé ca donne ceci :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# coding: utf-8&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt;
-&lt;span class="c1"&gt;# ajout du chemin où se trouve projetA&lt;/span&gt;
-&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;os&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dirname&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__file__&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;../../projeta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;insert&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# appel de la librairie django de Fabric pour appeler les objets Django&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;fabric.contrib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;django&lt;/span&gt;
-&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;project&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;projeta&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-&lt;span class="c1"&gt;# import de django&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;django&lt;/span&gt;
-&lt;span class="c1"&gt;# setup django&lt;/span&gt;
-&lt;span class="n"&gt;django&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-&lt;span class="c1"&gt;# appel du model&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;projeta.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;MonModel&lt;/span&gt;
-
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MonModel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;foobar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;execution&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ fab main
-
-foobar
-
-Done.
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Ceci fonctionne (pour un vhost) si vous avez collé votre appli "fabric" dans le même dossier que celui du projet Django, sinon adapter la ligne &lt;strong&gt;path =&lt;/strong&gt; pour que ca match votre env&lt;/p&gt;</content><category term="python"></category><category term="Fabric"></category><category term="django"></category></entry></feed>
+&lt;p&gt;j'en ai aussi testé d'autres qui étaient même en beta sur le playstore mais au final je conserve &lt;a href="https://bitbucket.org/tom79/mastodon_etalab/"&gt;Mastalab&lt;/a&gt;, qui avec la mise à jour de ce mois, me va très bien à un truc ou deux près qui seront résolu dans les prochaines versions :) Merci donc à son auteur &lt;a href="https://mastodon.etalab.gouv.fr/@tschneider"&gt;Thomas Schneider&lt;/a&gt; !&lt;/p&gt;</content></entry></feed>
