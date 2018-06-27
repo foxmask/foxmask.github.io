@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://foxmask.net/</loc>
-<lastmod>2018-05-24T15:50:29-00:00</lastmod>
+<lastmod>2018-06-27T20:51:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.net/archives.html</loc>
-<lastmod>2018-05-24T15:50:29-00:00</lastmod>
+<lastmod>2018-06-27T20:51:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.net/tags.html</loc>
-<lastmod>2018-05-24T15:50:29-00:00</lastmod>
+<lastmod>2018-06-27T20:51:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.net/categories.html</loc>
-<lastmod>2018-05-24T15:50:29-00:00</lastmod>
+<lastmod>2018-06-27T20:51:22-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -39,8 +39,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://foxmask.net/post/2018/05/24/joplin-community-jong/</loc>
-<lastmod>2018-05-24T15:00:00+02:00</lastmod>
+<loc>https://foxmask.net/post/2018/06/27/jong/</loc>
+<lastmod>2018-06-27T20:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1328,14 +1328,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://foxmask.net/category/techno.html</loc>
-<lastmod>2018-05-24T15:00:00+00:09</lastmod>
+<lastmod>2018-06-27T20:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.net/tag/joplin.html</loc>
-<lastmod>2018-05-24T15:00:00+00:09</lastmod>
+<lastmod>2018-06-27T20:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.net/tag/jong.html</loc>
+<lastmod>2018-06-27T20:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1923,7 +1930,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://foxmask.net/author/foxmask.html</loc>
-<lastmod>2018-05-24T15:00:00+00:09</lastmod>
+<lastmod>2018-06-27T20:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

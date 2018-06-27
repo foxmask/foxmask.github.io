@@ -1,26 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Techno</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/techno.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2018-05-24T15:00:00+02:00</updated><entry><title>Joplin Community, Jong</title><link href="https://foxmask.net/post/2018/05/24/joplin-community-jong/" rel="alternate"></link><published>2018-05-24T15:00:00+02:00</published><updated>2018-05-24T15:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-05-24:/post/2018/05/24/joplin-community-jong/</id><summary type="html">&lt;p&gt;Hey !&lt;/p&gt;
-&lt;p&gt;Le voici de retour pour aborder d'autres sujets pendant un "break" TriggerHappy :P&lt;/p&gt;
-&lt;h2&gt;pré en bulle:&lt;/h2&gt;
-&lt;p&gt;Cela ne sera pas une grosse surprise si je vous dis que j'ai adopté un nouvel outil de prise de notes en remplacement de ... Evernote.&lt;/p&gt;
-&lt;p&gt;Je faisais tout avec Evernote, et automatisais tout …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey !&lt;/p&gt;
-&lt;p&gt;Le voici de retour pour aborder d'autres sujets pendant un "break" TriggerHappy :P&lt;/p&gt;
-&lt;h2&gt;pré en bulle:&lt;/h2&gt;
-&lt;p&gt;Cela ne sera pas une grosse surprise si je vous dis que j'ai adopté un nouvel outil de prise de notes en remplacement de ... Evernote.&lt;/p&gt;
-&lt;p&gt;Je faisais tout avec Evernote, et automatisais tout ce qu'on peut imaginer pour faire ma veille techno, gérer mes projets, mes idées, mon quotidien de père de famille etc
-C'est même sur la base de la lecture de flux RSS et de stockage de ces articles dans Evernote, que vit le jour &lt;a href="https://github.com/push-things/django-th"&gt;Trigger Happy&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;pirouette cacahuette&lt;/h2&gt;
-&lt;p&gt;Depuis un petit mois grosso modo, j'ai adopté &lt;a href="https://joplin.cozic.net/"&gt;Joplin&lt;/a&gt;, que je ne vous representerais pas plus que cela, pour cela quelques &lt;a href="https://foxmask.net/post/2018/03/17/migrer-evernote-joplin/"&gt;articles&lt;/a&gt;, &lt;a href="https://foxmask.net/post/2018/03/15/comparatif-editeurs-partie2-boostnote-vs-joplin/"&gt;deja publiés&lt;/a&gt;, et ai donc fait la pirouette d'Evernote à Joplin.&lt;/p&gt;
-&lt;h2&gt;Joplin community&lt;/h2&gt;
-&lt;p&gt;Par contre depuis ce petit mois, les fonctionnalités sont tombées en cascades, comme la possibilité d'avoir des sous dossiers de dossiers, la syncho sur dropbox, avoir plusieurs profils (pour stocker ses notes sur 'n' cloud ou 'n' comptes d'un meme cloud), avoir une version joplin sur clé USB (pour par exemple trimballer ses notes sur un stick USB) et j'en passe et des meilleures, le projet s'ameliorant tellement rapidement, je ne peux que vous inviter à parcourir les &lt;a href="https://discourse.joplin.cozic.net/c/news"&gt;releases notes&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;L'enrichissement du projet ne s'arrête pas là, un petit &lt;a href="https://discourse.joplin.cozic.net/"&gt;forum&lt;/a&gt; a ouvert histoire, entre autre chose, d'exposer ses problèmes ou ses désidératas.&lt;/p&gt;
-&lt;h2&gt;Belote et rebelote et 10 de der&lt;/h2&gt;
-&lt;p&gt;Comme je ne peux pas rester les bras croisés quand j'aprécie un projet qui me titille, je me suis laissé aller à proposer mes services à son auteur. Donc j'aide de ci de là.&lt;/p&gt;
-&lt;h2&gt;Joplin et ma veille techno&lt;/h2&gt;
-&lt;p&gt;Comme avec Evernote, je stockais ma veille techno pour la lire plus tard, je restais sur ma faim avec Joplin, même si avec quelques tickets et questions sur le forum j'obtenais une piste... que je fini par exploiter.&lt;/p&gt;
-&lt;h2&gt;Jong est son nom&lt;/h2&gt;
-&lt;p&gt;Et donc in fine, j'ai fait un petit projet tout simple, lisant les flux des sites d'info qui m'interessent, et crée des notes dans Joplin, puis les synchronise pour être dispo partout.&lt;/p&gt;
-&lt;p&gt;J'ai nommé le projet &lt;a href="https://github.com/foxmask/jong"&gt;Jong&lt;/a&gt; pour "JOplin Note Generator".&lt;/p&gt;</content><category term="joplin"></category></entry><entry><title>SFR 8 mois de calvaire ...</title><link href="https://foxmask.net/post/2018/03/20/sfr-8-mois-calvaire/" rel="alternate"></link><published>2018-03-20T20:00:00+01:00</published><updated>2018-03-20T20:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-03-20:/post/2018/03/20/sfr-8-mois-calvaire/</id><summary type="html">&lt;p&gt;je m'en va vous conter une chronologie quasi au jour le jour (surtout vers la fin) de tout ce cauchemar...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Je m'en va vous conter une chronologie quasi au jour le jour (surtout vers la fin) de tout ce cauchemar...&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Techno</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/techno.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2018-06-27T20:00:00+02:00</updated><entry><title>Jong, JOplin Notes Generator</title><link href="https://foxmask.net/post/2018/06/27/jong/" rel="alternate"></link><published>2018-06-27T20:00:00+02:00</published><updated>2018-06-27T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-06-27:/post/2018/06/27/jong/</id><summary type="html">&lt;p&gt;Hey !&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://foxmask.net/post/2018/05/24/joplin-community-jong/"&gt;dans un court billet précédent&lt;/a&gt;, j'avais abordé mon dernier joujou &lt;a href="https://github.com/foxmask/jong"&gt;Jong&lt;/a&gt;, un projet premettant de créer des notes &lt;a href="https://joplin.cozic.net/"&gt;Joplin&lt;/a&gt; à partir de flux RSS/Atom de mon choix. &lt;/p&gt;
+&lt;p&gt;L'intéret ? Hé bien comme avec Evernote que j'utilisais jadis, cela me permet d'avoir ma veille techno, et mes notes de toutes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey !&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://foxmask.net/post/2018/05/24/joplin-community-jong/"&gt;dans un court billet précédent&lt;/a&gt;, j'avais abordé mon dernier joujou &lt;a href="https://github.com/foxmask/jong"&gt;Jong&lt;/a&gt;, un projet premettant de créer des notes &lt;a href="https://joplin.cozic.net/"&gt;Joplin&lt;/a&gt; à partir de flux RSS/Atom de mon choix. &lt;/p&gt;
+&lt;p&gt;L'intéret ? Hé bien comme avec Evernote que j'utilisais jadis, cela me permet d'avoir ma veille techno, et mes notes de toutes sortes, sous la main en permanence que ca soit sur PC ou sur smartphone.&lt;/p&gt;
+&lt;p&gt;Pour installer le projet c'est tout QQ:&lt;/p&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Jong est en python et donc s'installe comme ceci:&lt;/p&gt;
+&lt;h3&gt;création d'un environnement virtuel python (aka virtualenv)&lt;/h3&gt;
+&lt;p&gt;on tapera ceci &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3 -m venv jong
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;puis on se rend dans notre virtualenv&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd jong
+source bin/activate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;je recupere les sources du projet comme suit&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/foxmask/jong
+cd jong
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et on installera comme suit &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install -r requirements.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;création de la base de données&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python manage.py migrate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Démarrer JONG&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python manage.py runserver &amp;amp;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Accès à l'application&lt;/h2&gt;
+&lt;p&gt;A l'aide de son butineur favori, on se rendra sur l'url &lt;a href="http://127.0.0.1:8000/"&gt;http://127.0.0.1:8000/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;voici la page d'accueil&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/editeurs/jong_home.png" title="Page d'accueil de Jong"/&gt;&lt;/p&gt;
+&lt;p&gt;et la page pour ajouter un nouveau flux &lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/editeurs/jong_add.png" title="Ajouter une note avec Jong"/&gt;&lt;/p&gt;
+&lt;p&gt;Pour que Jong fonctionne, il faut que Joplin 'desktop' soit démarré, et surtout que le service Webclipper soit activé.
+Ainsi cela permettra à Jong de vous fournir la liste de tous les carnets de votre Joplin, et de créer les notes (cf la suite)&lt;/p&gt;
+&lt;h2&gt;Lancer la récupération des articles&lt;/h2&gt;
+&lt;p&gt;on tapera &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python manage.py run
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;ce qui donnera&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;INFO reading foxmask
+INFO reading korben
+INFO reading Python Planet
+INFO reading Sam et Max
+INFO reading Un Odieux Connard
+INFO reading Django
+INFO korben: article added DevTube - Des vidéos pour les dev qui en veulent
+INFO korben: article added Open Logos - Des logos gratuits (et beaux) pour vos projets open source
+INFO korben: article added SuperCopter interprété par un orchestre un peu spécial
+INFO korben: article added Comment empècher votre opérateur de bloquer le partage de connexion de votre smartphone Android ?
+INFO korben: article added Comment avoir des coins magiques sous Windows
+INFO korben: article added Comment trouver les sous-domaines de n&amp;#39;importe quel site ?
+INFO korben: article added Jusqu&amp;#39;où un arbre peut-il pousser ?
+INFO korben: article added Edito du 27/06/2018
+INFO korben: article added Submergé par les distractions, les notifications et les emails ? Voici un moyen simple de vous reconcentrer pour atteindre votre but.
+INFO korben: article added Partez à la chasse aux dinos façon Pokemon Go
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;et on peut contempler le résultat ici dans joplin&lt;/p&gt;
+&lt;p&gt;&lt;img src="/static/editeurs/jong_dans_joplin.png" title="Les notes créées dans Joplin"/&gt;&lt;/p&gt;</content><category term="Joplin"></category><category term="Jong"></category></entry><entry><title>SFR 8 mois de calvaire ...</title><link href="https://foxmask.net/post/2018/03/20/sfr-8-mois-calvaire/" rel="alternate"></link><published>2018-03-20T20:00:00+01:00</published><updated>2018-03-20T20:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-03-20:/post/2018/03/20/sfr-8-mois-calvaire/</id><summary type="html">&lt;p&gt;je m'en va vous conter une chronologie quasi au jour le jour (surtout vers la fin) de tout ce cauchemar...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Je m'en va vous conter une chronologie quasi au jour le jour (surtout vers la fin) de tout ce cauchemar...&lt;/p&gt;
 &lt;h1&gt;Il était une fois un an et un mois chez SFR&lt;/h1&gt;
 &lt;p&gt;ca nous changera des déboires des transports en commun d'ile de france, meme si c'est aussi chiant à vivre ... allez jettons nous dans la story moisie.
 Et dire que je suis un cas isolé, ... j'ai des doutes :)&lt;/p&gt;
