@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://foxmask.net/</loc>
-<lastmod>2018-06-27T20:51:22-00:00</lastmod>
+<lastmod>2018-08-20T18:50:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.net/archives.html</loc>
-<lastmod>2018-06-27T20:51:22-00:00</lastmod>
+<lastmod>2018-08-20T18:50:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.net/tags.html</loc>
-<lastmod>2018-06-27T20:51:22-00:00</lastmod>
+<lastmod>2018-08-20T18:50:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.net/categories.html</loc>
-<lastmod>2018-06-27T20:51:22-00:00</lastmod>
+<lastmod>2018-08-20T18:50:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://foxmask.net/pages/a-propos</loc>
 <lastmod>2010-03-20T20:42:00+01:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.net/post/2018/08/20/jong-imp/</loc>
+<lastmod>2018-08-20T18:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1328,21 +1335,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://foxmask.net/category/techno.html</loc>
-<lastmod>2018-06-27T20:00:00+00:09</lastmod>
+<lastmod>2018-08-20T18:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.net/tag/joplin.html</loc>
-<lastmod>2018-06-27T20:00:00+00:09</lastmod>
+<lastmod>2018-08-20T18:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.net/tag/jong.html</loc>
-<lastmod>2018-06-27T20:00:00+00:09</lastmod>
+<lastmod>2018-08-20T18:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1930,7 +1937,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://foxmask.net/author/foxmask.html</loc>
-<lastmod>2018-06-27T20:00:00+00:09</lastmod>
+<lastmod>2018-08-20T18:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

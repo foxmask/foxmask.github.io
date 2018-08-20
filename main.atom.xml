@@ -1,5 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/main.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2018-06-27T20:00:00+02:00</updated><entry><title>Jong, JOplin Notes Generator</title><link href="https://foxmask.net/post/2018/06/27/jong/" rel="alternate"></link><published>2018-06-27T20:00:00+02:00</published><updated>2018-06-27T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-06-27:/post/2018/06/27/jong/</id><summary type="html">&lt;p&gt;Hey !&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/main.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2018-08-20T18:00:00+02:00</updated><entry><title>Jong Imp : import your notes from your cloud storage service</title><link href="https://foxmask.net/post/2018/08/20/jong-imp/" rel="alternate"></link><published>2018-08-20T18:00:00+02:00</published><updated>2018-08-20T18:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-08-20:/post/2018/08/20/jong-imp/</id><summary type="html">&lt;h1&gt;Story&lt;/h1&gt;
+&lt;p&gt;always searching a way to improve the joplin project "on my side", as i'm not a ReactJS dev yet, I just make some toys &lt;a href="https://github.com/foxmask/jong_imp"&gt;here&lt;/a&gt; and &lt;a href="https://github.com/foxmask/jong"&gt;there&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Jong Imp&lt;/h1&gt;
+&lt;p&gt;this new toy is just a little script that will read the folder of your choice on your cloud storage …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Story&lt;/h1&gt;
+&lt;p&gt;always searching a way to improve the joplin project "on my side", as i'm not a ReactJS dev yet, I just make some toys &lt;a href="https://github.com/foxmask/jong_imp"&gt;here&lt;/a&gt; and &lt;a href="https://github.com/foxmask/jong"&gt;there&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Jong Imp&lt;/h1&gt;
+&lt;p&gt;this new toy is just a little script that will read the folder of your choice on your cloud storage service, and one it's done, import your notes.&lt;/p&gt;
+&lt;h2&gt;prerequisite&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 3.4 or +&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://joplin.cozic.net/terminal/"&gt;joplin terminal&lt;/a&gt; installed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;installing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;create a virtualenv and activate it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;python3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;venv&lt;/span&gt; &lt;span class="n"&gt;jong_imp&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;jong_imp&lt;/span&gt;
+&lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;activate&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;get the source &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;foxmask&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;jong_imp&lt;/span&gt;
+&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;jong_imp&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;settings&lt;/h2&gt;
+&lt;p&gt;in &lt;code&gt;the jong_imp/settings.ini&lt;/code&gt; file set the following properties&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;JOPLIN_CONFIG&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="c1"&gt;# path to the joplin terminal version&lt;/span&gt;
+&lt;span class="n"&gt;JOPLIN_BIN_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;foxmask&lt;/span&gt;&lt;span class="o"&gt;/.&lt;/span&gt;&lt;span class="n"&gt;joplin&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;joplin&lt;/span&gt;
+&lt;span class="c1"&gt;# path to the profile of the joplin client (terminal/desktop)&lt;/span&gt;
+&lt;span class="n"&gt;JOPLIN_PROFILE_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;foxmask&lt;/span&gt;&lt;span class="o"&gt;/.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;joplin&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;desktop&lt;/span&gt;
+&lt;span class="c1"&gt;# path to the folder of the cloud storage service&lt;/span&gt;
+&lt;span class="n"&gt;joplin_import_folder&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;foxmask&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Dropbox&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Applications&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Joplin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;letterbox&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+&lt;span class="c1"&gt;# default folder where to import notes&lt;/span&gt;
+&lt;span class="n"&gt;JOPLIN_DEFAULT_FOLDER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Home&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Notes from Dropbox&lt;/h2&gt;
+&lt;p&gt;&lt;img src="/static/2018/08/jong_imp_dropbox.png" title="Dropbox storage"/&gt;&lt;/p&gt;
+&lt;h2&gt;running&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;jong_imp&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;go&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; 
+&lt;span class="n"&gt;Importation&lt;/span&gt; &lt;span class="n"&gt;des&lt;/span&gt; &lt;span class="n"&gt;notes&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="n"&gt;Importation&lt;/span&gt; &lt;span class="n"&gt;des&lt;/span&gt; &lt;span class="n"&gt;notes&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;span class="n"&gt;Importation&lt;/span&gt; &lt;span class="n"&gt;des&lt;/span&gt; &lt;span class="n"&gt;notes&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Notes in Joplin&lt;/h2&gt;
+&lt;p&gt;&lt;img src="/static/2018/08/jong_import_final.png" title="Notes in Joplin"/&gt;&lt;/p&gt;
+&lt;p&gt;id: d4942f0379404dd3a9b1a550d9fcec90
+parent_id: 89c789c5199d4f4b8334bbfc1d1ee757
+created_time: 2018-08-20T16:32:07.628Z
+updated_time: 2018-08-20T16:48:46.418Z
+is_conflict: 0
+latitude: 0.00000000
+longitude: 0.00000000
+altitude: 0.0000
+author: 
+source_url: 
+is_todo: 0
+todo_due: 0
+todo_completed: 0
+source: joplin-desktop
+source_application: net.cozic.joplin-desktop
+application_data: 
+order: 0
+user_created_time: 2018-08-20T16:32:07.628Z
+user_updated_time: 2018-08-20T16:48:46.418Z
+encryption_cipher_text: 
+encryption_applied: 0
+type_: 1&lt;/p&gt;</content><category term="Joplin"></category><category term="Jong"></category></entry><entry><title>Jong, JOplin Notes Generator</title><link href="https://foxmask.net/post/2018/06/27/jong/" rel="alternate"></link><published>2018-06-27T20:00:00+02:00</published><updated>2018-06-27T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-06-27:/post/2018/06/27/jong/</id><summary type="html">&lt;p&gt;Hey !&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://foxmask.net/post/2018/05/24/joplin-community-jong/"&gt;dans un court billet précédent&lt;/a&gt;, j'avais abordé mon dernier joujou &lt;a href="https://github.com/foxmask/jong"&gt;Jong&lt;/a&gt;, un projet premettant de créer des notes &lt;a href="https://joplin.cozic.net/"&gt;Joplin&lt;/a&gt; à partir de flux RSS/Atom de mon choix. &lt;/p&gt;
 &lt;p&gt;L'intéret ? Hé bien comme avec Evernote que j'utilisais jadis, cela me permet d'avoir ma veille techno, et mes notes de toutes …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey !&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://foxmask.net/post/2018/05/24/joplin-community-jong/"&gt;dans un court billet précédent&lt;/a&gt;, j'avais abordé mon dernier joujou &lt;a href="https://github.com/foxmask/jong"&gt;Jong&lt;/a&gt;, un projet premettant de créer des notes &lt;a href="https://joplin.cozic.net/"&gt;Joplin&lt;/a&gt; à partir de flux RSS/Atom de mon choix. &lt;/p&gt;
@@ -641,69 +718,4 @@ We feel to be part of something bigger than us, and at the same time, a little g
 
 
 &lt;h1&gt;End&lt;/h1&gt;
-&lt;p&gt;Ready to go !&lt;/p&gt;</content><category term="test"></category><category term="coverage"></category><category term="python"></category></entry><entry><title>Retour sur des clients Mastodon</title><link href="https://foxmask.net/post/2017/08/31/clients-mastodon/" rel="alternate"></link><published>2017-08-31T12:00:00+02:00</published><updated>2017-08-31T12:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-08-31:/post/2017/08/31/clients-mastodon/</id><summary type="html">&lt;p&gt;Dans le genre "j'ai testé pour vous", voici un retour sur des clients mastodon pour android, que j'ai croisé depuis l'ouverture de ce reseau social&lt;/p&gt;
-&lt;h1&gt;1 &lt;a href="https://play.google.com/store/apps/details?id=com.keylesspalace.tusky"&gt;Tusky&lt;/a&gt;:&lt;/h1&gt;
-&lt;p&gt;pour:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;UI agréable, le haut de l'appli est épurée (comparer à Subway Tooter par exemple , cf plus bas)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;contre:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;mono compte&lt;/li&gt;
-&lt;li&gt;on n'a …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;Dans le genre "j'ai testé pour vous", voici un retour sur des clients mastodon pour android, que j'ai croisé depuis l'ouverture de ce reseau social&lt;/p&gt;
-&lt;h1&gt;1 &lt;a href="https://play.google.com/store/apps/details?id=com.keylesspalace.tusky"&gt;Tusky&lt;/a&gt;:&lt;/h1&gt;
-&lt;p&gt;pour:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;UI agréable, le haut de l'appli est épurée (comparer à Subway Tooter par exemple , cf plus bas)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;contre:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;mono compte&lt;/li&gt;
-&lt;li&gt;on n'a pas le compteur du nombre d'étoiles, retoot, réponses pour une toot donné&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;2 &lt;a href="https://play.google.com/store/apps/details?id=fr.gouv.etalab.mastodon"&gt;Mastalab&lt;/a&gt;:&lt;/h1&gt;
-&lt;p&gt;pour:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;multi compte&lt;/li&gt;
-&lt;li&gt;appli propre&lt;/li&gt;
-&lt;li&gt;traduction des toots à la demande&lt;/li&gt;
-&lt;li&gt;programmation de toots&lt;/li&gt;
-&lt;li&gt;l'auteur de l'application est à l'écoute des demandes, &lt;a href="https://mastodon.etalab.gouv.fr/@tschneider/755057"&gt;par exemple&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;C'est français (en plus d'être opensource) :P &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;contre:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;la partie paramètres qui parait un peu trop chargée&lt;/li&gt;
-&lt;li&gt;parfois le bouton de traduction apparait pour des mots "non compris" et qui ne veulent "rien dire", comme quand je toot "bonjello", du coup ca pollue un peu visuellement&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;3 &lt;a href="https://play.google.com/store/apps/details?id=jp.juggler.subwaytooter"&gt;Subway Tooter&lt;/a&gt;:&lt;/h1&gt;
-&lt;p&gt;pour:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;multi compte&lt;/li&gt;
-&lt;li&gt;la personalisation des couleurs de l'interface&lt;/li&gt;
-&lt;li&gt;la personalisation de l'affichage des onglets&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;contre:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;on n'a pas le compteur du nombre d'étoiles, retoot, reponses pour une toot donné&lt;/li&gt;
-&lt;li&gt;la grande quantitie de paramètres, comparé à mastalab, on ne sait meme pas à quoi serve la moitié :)&lt;/li&gt;
-&lt;li&gt;on ne peut pas avoir une UI plus epuré, l'affichage constant du brandeau de l'onglet courant + celui du bas de l'écran est de trop. Un bouton flottant en bas suffirait et le haut pourrait disparaitre pour ressembler plus à ce que font mastalab ou tusky de ce coté là&lt;/li&gt;
-&lt;li&gt;consomme trop de batterie&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;4 &lt;a href="https://play.google.com/store/apps/details?id=org.mariotaku.twidere"&gt;Twidere&lt;/a&gt;:&lt;/h1&gt;
-&lt;p&gt;pour:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;multi comptes&lt;/li&gt;
-&lt;li&gt;on peut ecrire un texte qui est publié sur twitter et mastodon en même temps&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;contre:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;la timeline mélange les toots et les tweets, comme j'aime bien le rangement, je prefere les separer, ce que ne permet pas l'application&lt;/li&gt;
-&lt;li&gt;consomme trop de batterie&lt;/li&gt;
-&lt;li&gt;beaucoup trop de paramètres plus que subway tooter&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1&gt;5 Client Web&lt;/h1&gt;
-&lt;p&gt;Je finirai pas un client mastodon web : &lt;a href="https://n1k0.github.io/tooty/"&gt;tooty&lt;/a&gt; qui est super bien foutu mais dont le seul point "contre" que je souleverai sera que par defaut on ne peut pas définir la visibilité de ses toots. Il faut faire gaffe à chaque fois à qui on parle.&lt;/p&gt;
-&lt;h1&gt;6 Conclusion&lt;/h1&gt;
-&lt;p&gt;Je recherchais dans ces clients, quelque chose de propre (et pas gourmand) et avec toutes les infos (les "compteurs") sur un toot donné, sans être contraint de l'ouvrir.&lt;/p&gt;
-&lt;p&gt;j'en ai aussi testé d'autres qui étaient même en beta sur le playstore mais au final je conserve &lt;a href="https://bitbucket.org/tom79/mastodon_etalab/"&gt;Mastalab&lt;/a&gt;, qui avec la mise à jour de ce mois, me va très bien à un truc ou deux près qui seront résolu dans les prochaines versions :) Merci donc à son auteur &lt;a href="https://mastodon.etalab.gouv.fr/@tschneider"&gt;Thomas Schneider&lt;/a&gt; !&lt;/p&gt;</content></entry></feed>
+&lt;p&gt;Ready to go !&lt;/p&gt;</content><category term="test"></category><category term="coverage"></category><category term="python"></category></entry></feed>
