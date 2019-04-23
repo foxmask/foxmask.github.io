@@ -91,6 +91,38 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">Oracle Identifications des Locks, Process, Sessions en cours</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-01-17T10:00:00+01:00"> jeu. 17 janvier 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Voici une requete SQL dans l'arsenal du DBA, nommons la <strong>locks.sql</strong>,
+permettant d'identifier les locks en cours sur un schema oracle :</p>
+<div class="highlight"><pre><span></span><span class="k">SELECT</span>   <span class="cm">/*+ choose */</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Blocking User&quot;</span><span class="p">,</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;DB User&quot;</span><span class="p">,</span>
+          <span class="n">ws</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Waiting User&quot;</span><span class="p">,</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">sid</span> <span class="ss">&quot;SID&quot;</span><span class="p">,</span>
+          <span class="n">ws</span><span class="p">.</span><span class="n">sid</span> <span class="ss">&quot;WSID&quot;</span><span class="p">,</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">sql_address</span> <span class="ss">&quot;address&quot;</span><span class="p">,</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">sql_hash_value</span> <span class="ss">&quot;Sql hash&quot;</span><span class="p">,</span>
+          <span class="n">bs …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/">Oracle des expdp et impdp en réseau, si c'est possible</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -353,34 +385,6 @@ include, "QQ la praline", comme suit :</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/">Debian, amour et désamour</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2012-12-17T14:31:00+01:00"> lun. 17 décembre 2012</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/debian.html">debian</a>
-        /
-	<a href="https://foxmask.net/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Utilisateur de <a href="http://www.debian.org">Debian</a> depuis <em>Le toutou
-elastic</em> aka "Slink" (version 2.1), je n'ai jamais eu à me plaindre. Je
-me suis toujours éclater avec cette distribution Linux, même si j'ai
-croisé sur le chemin SlackWare, Mandrake, RedHat, Suse etc...</p>
-<p>J'utilise actuellement Debian Squeeze (version 6 donc) que j'ai pu …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://foxmask.net/author/foxmask14.html">&laquo;</a>
@@ -546,7 +550,7 @@ croisé sur le chemin SlackWare, Mandrake, RedHat, Suse etc...</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2018 FoxMaSk
+         <div class="col-xs-10">&copy; 2019 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

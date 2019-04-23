@@ -1,5 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - python</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/python.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2018-01-23T16:45:00+01:00</updated><entry><title>Quand Fabric refuse de bosser</title><link href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/" rel="alternate"></link><published>2018-01-23T16:45:00+01:00</published><updated>2018-01-23T16:45:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-01-23:/post/2018/01/23/quand-fabric-refuse-bosser/</id><summary type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - python</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/python.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2019-04-23T20:00:00+02:00</updated><entry><title>Mais vous etes fou ? Hoo Oui !</title><link href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/" rel="alternate"></link><published>2019-04-23T20:00:00+02:00</published><updated>2019-04-23T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2019-04-23:/post/2019/04/23/mais-tu-es-fou-hoo-oui/</id><summary type="html">&lt;h1&gt;너 미쳤어 ?&lt;/h1&gt;
+&lt;h2&gt;intro&lt;/h2&gt;
+&lt;p&gt;Mon activité "libre" déclinant délibérément, j'avais beau chercher un nouveau projet fun à faire en python, aucune idée me vint.&lt;/p&gt;
+&lt;h2&gt;le coréen !&lt;/h2&gt;
+&lt;p&gt;Alors je me suis dit, "laisse tomber, fais autre chose", histoire d'éviter la saturation et permettre la "réoxygénation".
+Ci fait, en achetant 3 livres...  je …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;너 미쳤어 ?&lt;/h1&gt;
+&lt;h2&gt;intro&lt;/h2&gt;
+&lt;p&gt;Mon activité "libre" déclinant délibérément, j'avais beau chercher un nouveau projet fun à faire en python, aucune idée me vint.&lt;/p&gt;
+&lt;h2&gt;le coréen !&lt;/h2&gt;
+&lt;p&gt;Alors je me suis dit, "laisse tomber, fais autre chose", histoire d'éviter la saturation et permettre la "réoxygénation".
+Ci fait, en achetant 3 livres...  je me suis mis au Coréen 😁 (vous m'direz 너 미쳤어? T'es fou?) ...Carrément, ça m'a pris comme une envie de pisser !
+En les parcourant je me suis demandé comment ingurgiter tout ça sans trop de prise de tête.&lt;/p&gt;
+&lt;h3&gt;des ressources ?&lt;/h3&gt;
+&lt;p&gt;Sur le net, des blogs de francophones, parlant coréen, suggèrent d'installer des applications sur Android, pour l'apprentissage de la langue... Niveau enfant 🤣, mais enfant école primaire hein, parceque l'alphabet c'est pas avec nos lettres "à nous", et ça c'est déjà toute une histoire.&lt;/p&gt;
+&lt;p&gt;Ensuite sur IRC @freenode, j'ai échangé avec des Français bossant en Asie et cette fois ci, on m'a suggéré une application de répétition (dans le temps) de flashcard contenant sur une face le français et l'autre le coréen. Au fur et à mesure qu'on juge si on a compris/ retenu le contenu de la carte , l'application propose de revoir la carte à "j+x "où x varie selon votre besoin , ça peut être dans 10min si c'était trop dur, 1 jour si moyen , 5 jours si facile, 1 mois etc...
+Son petit nom : "Anki" qui se décline en version desktop, smartphone et web avec "&lt;a href="https://play.google.com/store/apps/details?id=com.ichi2.anki&amp;amp;hl=fr"&gt;ankidroid&lt;/a&gt;" et "&lt;a href="https://ankiweb.net/"&gt;Ankiweb&lt;/a&gt;".
+De plus étant Open Source, plein de gens partagent leur propre "deck" (piles de cartes). 
+Du coup il est pratique de se mettre à une langue de la sorte. Le revers du truc c'est que 99% des cartes sont anglo-coréennes, donc le vocabulaire spécifique coréen , notamment sur la bouffe (vous allez comprendre pourquoi plus bas).... tout en anglais, ben bonjour pour capter en français 🤣&lt;/p&gt;
+&lt;p&gt;Avec tout ça, je me suis senti frustré, et comme d'habitude quand ça me gène ... &lt;/p&gt;
+&lt;h3&gt;Action/réaction&lt;/h3&gt;
+&lt;p&gt;J'ai donc démarré la transcription de 2 des 3 livres dont je parlais au début.
+Avec un peu d'huile de coude, Je rentre dans joplin des fiches entières par thème. 
+Mais ça me tarabustait trop de ne pas pouvoir les mettre dans Anki sans y repasser des heures en plus de mes notes dans joplin.
+Et récemment, j'ai découvert le moyen de les y intégrer, avec un addon qui permet de rendre votre Anki desktop, accessible en REST !
+Donc j'ai fait un petit grigri pour créer des cartes dans Anki à partir de notes écrites dans joplin.
+Comme j'avais déjà pondu l'API de joplin en python pour d'autres projets, hop, recyclage ;) 
+A présent je fais de parler deux appli exploitant de l'API Rest . 
+Et quand Anki synchronise, j'ai toutes les cartes sur mon smartphone 👍&lt;/p&gt;
+&lt;h3&gt;Mais alors ?&lt;/h3&gt;
+&lt;p&gt;Deux questions qu'on me pose :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pourquoi le coréen ?&lt;/li&gt;
+&lt;li&gt;Tu vas en Corée bientôt ?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Réponses; pourquoi pas :p, et : non!&lt;/p&gt;
+&lt;p&gt;Alors pourquoi faire ?&lt;/p&gt;
+&lt;p&gt;J'ai besoin de m'aérer la tête avec autre chose que le boulot et des projets sans intérêts.&lt;/p&gt;
+&lt;p&gt;En plus sur Netflix je regarde des séries coréennes. Ca me plaît bien, ça change de l'hégémonie américaine à la TV française, qui est devenue insipide. 
+Même l'écriture coréenne c'est marrant. 
+Par exemple pour un mot de plusieurs syllabes, on ne peut en écrire que 4 lettres  maximum par syllabe dans "un carré imaginaire" après on change de carré et on fini son mot, exemple la Corée : &lt;strong&gt;한국&lt;/strong&gt; (hangug, grosso modo se prononce ane-gou). Ensuite, les lettres sont toujours alternées "consonne / voyelle"  jamais l'inverse, ni jamais 2 consonnes ou 2 voyelles d'affilée. Si on démarre par une voyelle on mettra un &lt;strong&gt;ㅇ&lt;/strong&gt; devant, ceci est une consonne muette. 
+De même une lettre ne se prononce pas pareil qu'elle soit au début ou la fin de la syllabe. Genre "trois" se dit "set" (comme en anglais) le s et le t sont le même signe &lt;strong&gt;ㅅ&lt;/strong&gt; dans &lt;strong&gt;셋&lt;/strong&gt; (set ; trois)&lt;/p&gt;
+&lt;p&gt;Par contre, faut que je retourne chez l'ophtalmolo parce, parfois, le carré fait "très surchargé" pour mes yeux et je confonds le u &lt;strong&gt;ㅜ&lt;/strong&gt; et le o &lt;strong&gt;ㅗ&lt;/strong&gt; ou le é &lt;strong&gt;ㅔ&lt;/strong&gt; et le è &lt;strong&gt;ㅐ&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Après 3 mois j'en suis toujours à faire comme en primaire, quand on apprenait à lire "ba,bo pou,...." Je déchiffre les signes, mais ne comprends pas, soit toute une phrase, soit des mots. Comme je cuisine coréen, je déchiffre les étiquettes mais même là c'est marrant, on n'a pas des fruits ou légumes comme les leur du coup je capte pas tout. Bon les chiens chats voitures ça pousse aussi bien chez nous que chez eux, donc ça, je pige vite, encore que je n'ai pas trouvé de recette pour manger ces trucs.&lt;/p&gt;
+&lt;h3&gt;En résumé&lt;/h3&gt;
+&lt;p&gt;Tout ça pourrait se résumer à&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Je joue avec python pour apprendre le coréen en m'amusant&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;Mais encore ?&lt;/h2&gt;
+&lt;p&gt;Outils pour jouer à apprendre le coréen :
+- &lt;a href="https://korean.dict.naver.com/kofrdict/french/#/main"&gt;dico fr/le&lt;/a&gt; 'Naver'
+- Netflix (si quand-même ;)
+- Je cite https://fr.wikihow.com/parler-cor%C3%A9en&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Recherchez des applis pour enfants. Écrivez 알파벳을 배우다 sur Google ou sur l'App Store (cela veut dire « apprendre l'alphabet ») ou bien 어린이 게임 qui veut dire « jeux pour enfants ». Ce genre d'application étant destinée aux enfants, elles sont simples d'utilisation et vous n'avez généralement pas besoin de parler le coréen pour les utiliser. C'est également plus économique que de se procurer des DVD. Ces applis vont vous enseigner comment écrire les caractères coréens et vous faire progresser de manière visuelle, souvent avec des jeux, ce qui vous permettra d'enrichir votre vocabulaire. Faites cependant attention à ne pas acheter une application servant à enseigner l'anglais aux enfants coréens ! &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Livres en cours de lecture :
+- le coréen pour les nuls
+- &lt;a href="https://www.editions-ellipses.fr/kimchi-apprendre-rviser-vocabulaire-coren-niveau-avec-fichiers-audio-p-9336.html"&gt;kimchi ! Apprendre et réviser son vocabulaire coréen. (Niveau 1)&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;et l'application ?&lt;/h2&gt;
+&lt;p&gt;L'application pour créer des cartes Anki depuis des notes rédigées dans joplin :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/foxmask/baeuda"&gt;baeuda&lt;/a&gt; ( 배우다 - Learn - Apprendre ), nécessite python 3.6 ou plus, joplin, Anki et l'addon &lt;a href="https://ankiweb.net/shared/info/2055492159"&gt;AnkiConnnect&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Dans joplin, chaque note = 
+- Un titre (qui sera un deck)
+- Un tableau Corée/Romanisation/Français&lt;/p&gt;
+&lt;p&gt;Le projet extrait alors les notes ( en markdown) en coréen , les met en HTML, parcours les tableaux HTML et pour chaque ligne , crée une carte dans un deck du nom du titre de la note &lt;/p&gt;
+&lt;p&gt;1)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Joplin notes" src="https://raw.githubusercontent.com/foxmask/baeuda/master/joplin_notes.png"&gt;&lt;/p&gt;
+&lt;p&gt;2)
+&lt;img alt="Anki integration" src="https://raw.githubusercontent.com/foxmask/baeuda/master/anki_integration.png"&gt;&lt;/p&gt;
+&lt;p&gt;3)
+&lt;img alt="Anki Liste des Decks" src="https://raw.githubusercontent.com/foxmask/baeuda/master/anki_list_decks.png"&gt;&lt;/p&gt;
+&lt;p&gt;4)
+&lt;img alt="Anki Le Deck" src="https://raw.githubusercontent.com/foxmask/baeuda/master/anki_deck.png"&gt;&lt;/p&gt;
+&lt;p&gt;5)
+&lt;img alt="Anki Le Carte" src="https://raw.githubusercontent.com/foxmask/baeuda/master/anki_card.png"&gt;&lt;/p&gt;</content><category term="Anki"></category><category term="python"></category></entry><entry><title>Quand Fabric refuse de bosser</title><link href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/" rel="alternate"></link><published>2018-01-23T16:45:00+01:00</published><updated>2018-01-23T16:45:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-01-23:/post/2018/01/23/quand-fabric-refuse-bosser/</id><summary type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
 &lt;p&gt;Je pose ça là vite fait pour qui rencontrerait le problème à son tour&lt;/p&gt;
 &lt;p&gt;J'ai un script, le plus …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
 &lt;p&gt;Je pose ça là vite fait pour qui rencontrerait le problème à son tour&lt;/p&gt;
@@ -506,31 +583,4 @@ Un temps sur mobile, le multiprocessing a été retiré car produisant un bottle
 &lt;p&gt;Wallabag dans sa mouture 2.0, pourvue de son API, laisse toute latitude et on a franchement plaisir à y mettre ses découvertes au gré du buttinage sur la toie ou à faire sa veille techno en recupérant régulièrement les infos de ses sites favoris, spécialisés.
 En plus, ce qui ne gâte rien, c'est l'existence de plugin pour Firefox et d'une application Android. &lt;/p&gt;
 &lt;p&gt;Ca en fait un bon projet bien complet à mon sens, qui surpasse le classique troll de PHP vs Python.&lt;/p&gt;
-&lt;p&gt;Alors "ayez confiaaaance" et laissez vous tenter par les 2 :)&lt;/p&gt;</content><category term="TriggerHappy"></category><category term="python"></category><category term="php"></category><category term="wallabag"></category></entry><entry><title>Panda, Le gros nounours noir et blanc est passé</title><link href="https://foxmask.net/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/" rel="alternate"></link><published>2016-05-14T13:00:00+02:00</published><updated>2016-05-14T13:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-05-14:/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/</id><summary type="html">&lt;p&gt;En lisant ma pile d'articles de veille techno dans mon instance &lt;a href="https://walabag.org"&gt;wallabag&lt;/a&gt;, je suis tombé sur un article mesurant le temps passé sur ses projets.
-Rien de nouveau au soleil puisque tout à chacun connait bien &lt;a href="https://pypi.python.org/pypi/pandas"&gt;pandas&lt;/a&gt; :)&lt;/p&gt;
-&lt;p&gt;Cependant, après un petit coup de &lt;code&gt;pip install git-pandas&lt;/code&gt; et en exécutant &lt;a href="https://github.com/wdm0006/git-pandas/blob/master/examples/hours_estimate.py"&gt;ce …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;En lisant ma pile d'articles de veille techno dans mon instance &lt;a href="https://walabag.org"&gt;wallabag&lt;/a&gt;, je suis tombé sur un article mesurant le temps passé sur ses projets.
-Rien de nouveau au soleil puisque tout à chacun connait bien &lt;a href="https://pypi.python.org/pypi/pandas"&gt;pandas&lt;/a&gt; :)&lt;/p&gt;
-&lt;p&gt;Cependant, après un petit coup de &lt;code&gt;pip install git-pandas&lt;/code&gt; et en exécutant &lt;a href="https://github.com/wdm0006/git-pandas/blob/master/examples/hours_estimate.py"&gt;ce script panda&lt;/a&gt; on peut donc mesurer le temps passé directos sur ses dépots, et donc pour bibi, il en ressort ceci &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python hours_estimate.py &lt;span class="p"&gt;|&lt;/span&gt;grep -v &lt;span class="m"&gt;0&lt;/span&gt;.00000
-
-            committer       hours         repository
-&lt;span class="m"&gt;0&lt;/span&gt;             foxmask    &lt;span class="m"&gt;2&lt;/span&gt;.603889          django-th
-&lt;span class="m"&gt;3&lt;/span&gt;       Olivier Demah  &lt;span class="m"&gt;134&lt;/span&gt;.288056          django-th
-&lt;span class="m"&gt;4&lt;/span&gt;             FoxMaSk    &lt;span class="m"&gt;3&lt;/span&gt;.017500          django-th
-&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;3&lt;/span&gt;.000000  django-th-ansible
-&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;3&lt;/span&gt;.877222       wallabag_api
-&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;8&lt;/span&gt;.882778        dj-diabetes
-&lt;span class="m"&gt;1&lt;/span&gt;             foxmask    &lt;span class="m"&gt;1&lt;/span&gt;.000000        dj-diabetes
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;En tout 140heures pour Trigger Happy.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Si je pars sur des journées de 6heures ca fait 23jours ou 46jours en codant "à temps perdu", en gros un bon mois et demi non stop quoi.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;4hres pour l'API &lt;a href="https://github.com/foxmask/wallabag_api"&gt;wallabag&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;9hres pour le projet de "&lt;a href="https://github.com/foxmask/dj-diabetes"&gt;gestion de son diabete au quotidien&lt;/a&gt;"&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Pas de quoi fouetter un chat, mais ca donne une idée du temps que j'ai dépensé ;)
-Evidement la dedans on ne peut pas quantifier les durées pour le temps passé à tester moult techno pour arriver au resultat escompté. Mais ça donne un ordre de grandeur !&lt;/p&gt;</content><category term="TriggerHappy"></category><category term="python"></category><category term="Pandas"></category></entry></feed>
+&lt;p&gt;Alors "ayez confiaaaance" et laissez vous tenter par les 2 :)&lt;/p&gt;</content><category term="TriggerHappy"></category><category term="python"></category><category term="php"></category><category term="wallabag"></category></entry></feed>
