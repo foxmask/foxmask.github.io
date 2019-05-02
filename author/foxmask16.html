@@ -91,6 +91,38 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://foxmask.net/post/2012/12/19/quand-django-reste-muet-a-vous-rendre-dingue/">Quand Django reste muet à vous rendre dingue</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-19T22:59:00+01:00"> mer. 19 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Voici un truc qui m'a usé les nerfs (de noob mais pas que :P) avec
+<a href="https://docs.djangoproject.com/" title="Django Project - the web framework for perfectionnists with deadline">Django</a>.</p>
+<p>je me fais un template principale, con à souhait, dans lequel je fais un
+include, "QQ la praline", comme suit :</p>
+<p><strong>base.html</strong></p>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">static</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">staticfiles</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">i18n</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">url</span> <span class="kn">from</span> <span class="nn">future</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="s2">&quot;mark_forum …</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/12/19/quand-django-reste-muet-a-vous-rendre-dingue/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/">Debian, amour et désamour</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -353,37 +385,6 @@ terrain de riches discussions sur le devenir du
 depuis que les statistiques de téléchargements ont décolé
 significativement …</p>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/01/12/jelix-php-5-bouillon-de-cultures/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">Oracle et taille de schema, tablespace</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2012-01-10T12:00:00+01:00"> mar. 10 janvier 2012</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Pour obtenir la taille d'un schéma, avec son script
-<strong>size_of_schema.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
-</pre></div>
-
-
-<p>à l'invite, donnez lui le nom du schema et roule ;)</p>
-<p>Pour obtenir le paramètre de la base "Undo Retention", avec son script
-<strong>undo_retention.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">more ...</a>
                 </div>
             </article>
             <hr/>
