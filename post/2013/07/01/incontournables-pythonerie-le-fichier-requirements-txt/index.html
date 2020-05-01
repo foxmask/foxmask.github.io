@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -142,13 +142,13 @@ install <appli>, que ces prérequis soient installés automatiquement tant
 qu'à faire.</p>
 <p>Pour cela on va retourcher le setup.py comme ceci (snipset recupéré d'un
 des setup.py du sieur David Larlet:) :</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
 
 <span class="k">def</span> <span class="nf">strip_comments</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">reqs</span><span class="p">(</span><span class="o">*</span><span class="n">f</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="p">[</span><span class="n">strip_comments</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">[</span><span class="n">strip_comments</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span>
         <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]))</span>
 
 <span class="n">install_requires</span> <span class="o">=</span> <span class="n">reqs</span><span class="p">(</span><span class="s1">&#39;requirements.txt&#39;</span><span class="p">)</span>
@@ -157,7 +157,7 @@ des setup.py du sieur David Larlet:) :</p>
     <span class="o">...</span>
     <span class="n">install_requires</span><span class="o">=</span><span class="n">install_requires</span><span class="p">,</span>
 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>ce qui aura pour effet que lors de l'installation, le fichier
@@ -165,7 +165,7 @@ requirements.txt soit lu puis que chaque ligne de ce fichier soit
 appelée pour être installée.</p>
 <p>Ensuite quand vous testez (j'espere) que votre packaging fonctionne via
 un pip install <appli>, si vous rencontrez ce problème :</p>
-<div class="highlight"><pre><span></span><span class="n">Downloading</span><span class="o">/</span><span class="n">unpacking</span> <span class="n">django</span><span class="o">-</span><span class="n">th</span>
+<div class="highlight"><pre><span></span><code><span class="n">Downloading</span><span class="o">/</span><span class="n">unpacking</span> <span class="n">django</span><span class="o">-</span><span class="n">th</span>
   <span class="n">Running</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">egg_info</span> <span class="k">for</span> <span class="n">package</span> <span class="n">django</span><span class="o">-</span><span class="n">th</span>
     <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
       <span class="n">File</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">14</span><span class="p">,</span> <span class="ow">in</span> 
@@ -173,8 +173,8 @@ un pip install <appli>, si vous rencontrez ce problème :</p>
         <span class="n">install_requires</span> <span class="o">=</span> <span class="n">reqs</span><span class="p">(</span><span class="s1">&#39;requirements.txt&#39;</span><span class="p">)</span>
       <span class="n">File</span> <span class="s2">&quot;/home/foxmask/Django-VirtualEnv/foobar/build/django-th/setup.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">10</span><span class="p">,</span> <span class="ow">in</span> <span class="n">reqs</span>
         <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]))</span>
-    <span class="ne">IOError</span><span class="p">:</span> <span class="p">[</span><span class="n">Errno</span> <span class="mi">2</span><span class="p">]</span> <span class="n">No</span> <span class="n">such</span> <span class="nb">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">:</span> <span class="s1">&#39;/home/foxmask/Django-VirtualEnv/foobar/build/django-th/requirements.txt&#39;</span>
-    <span class="n">Complete</span> <span class="n">output</span> <span class="kn">from</span> <span class="nn">command</span> <span class="nn">python</span> <span class="nn">setup.py</span> <span class="nn">egg_info</span><span class="p">:</span>
+    <span class="ne">IOError</span><span class="p">:</span> <span class="p">[</span><span class="n">Errno</span> <span class="mi">2</span><span class="p">]</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">:</span> <span class="s1">&#39;/home/foxmask/Django-VirtualEnv/foobar/build/django-th/requirements.txt&#39;</span>
+    <span class="n">Complete</span> <span class="n">output</span> <span class="kn">from</span> <span class="nn">command</span> <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">egg_info</span><span class="p">:</span>
     <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
 
   <span class="n">File</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">14</span><span class="p">,</span> <span class="ow">in</span> 
@@ -187,23 +187,23 @@ un pip install <appli>, si vous rencontrez ce problème :</p>
 
     <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="o">*</span><span class="n">f</span><span class="p">))</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]))</span>
 
-<span class="ne">IOError</span><span class="p">:</span> <span class="p">[</span><span class="n">Errno</span> <span class="mi">2</span><span class="p">]</span> <span class="n">No</span> <span class="n">such</span> <span class="nb">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">:</span> <span class="s1">&#39;/home/foxmask/Django-VirtualEnv/foobar/build/django-th/requirements.txt&#39;</span>
-</pre></div>
+<span class="ne">IOError</span><span class="p">:</span> <span class="p">[</span><span class="n">Errno</span> <span class="mi">2</span><span class="p">]</span> <span class="n">No</span> <span class="n">such</span> <span class="n">file</span> <span class="ow">or</span> <span class="n">directory</span><span class="p">:</span> <span class="s1">&#39;/home/foxmask/Django-VirtualEnv/foobar/build/django-th/requirements.txt&#39;</span>
+</code></pre></div>
 
 
 <p>c'est que votre package ne contient pas ledit requirements.txt</p>
 <p>Si vous utilisez un MANIFEST.in il faut ajouter une ligne :</p>
-<div class="highlight"><pre><span></span><span class="n">include</span> <span class="o">*.</span><span class="n">txt</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">include</span> <span class="o">*.</span><span class="n">txt</span>
+</code></pre></div>
 
 
 <p>qui permettra à la commande</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
+</code></pre></div>
 
 
 <p>d'ajouter tout fichier txt, et là ca ira tout de suite mieux</p>
-<div class="highlight"><pre><span></span>Downloading/unpacking django-th
+<div class="highlight"><pre><span></span><code>Downloading/unpacking django-th
   Downloading django_th-0.3.0.tar.gz
   Running setup.py egg_info <span class="k">for</span> package django-th
 
@@ -282,7 +282,7 @@ Installing collected packages: django-th, Django, batbelt, django-profiles, djan
 
 Successfully installed django-th Django batbelt django-profiles django-registration evernote feedparser httplib2 oauth2 ordereddict South pytidylib
 Cleaning up...
-</pre></div>
+</code></pre></div>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
@@ -339,23 +339,23 @@ Cleaning up...
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -369,7 +369,7 @@ Cleaning up...
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -378,7 +378,7 @@ Cleaning up...
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -396,7 +396,7 @@ Cleaning up...
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -448,7 +448,7 @@ Cleaning up...
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

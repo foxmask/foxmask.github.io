@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -145,7 +145,7 @@ est disponible en principe sur chacun des dépôts des projets qu'on peut
 trouver sur github et packagist.</p>
 <p>C'est le fichier sur lequel tout repose.</p>
 <p><a href="https://raw.github.com/foxmask/de_php_a_python/de_composer_a_setuptools/composer.json" title="télécharger les sources">composer.json</a>:</p>
-<div class="highlight"><pre><span></span><span class="x">{</span>
+<div class="highlight"><pre><span></span><code><span class="x">{</span>
 <span class="x">    &quot;repositories&quot;: [</span>
 <span class="x">        {</span>
 <span class="x">            &quot;type&quot;: &quot;package&quot;,</span>
@@ -171,7 +171,7 @@ trouver sur github et packagist.</p>
 <span class="x">        &quot;smarty/smarty&quot;: &quot;3.1.*&quot;</span>
 <span class="x">    }</span>
 <span class="x">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>ici on comprendra qu'on s'est rajouté une dépendance sur smarty qui
@@ -182,7 +182,7 @@ Cette application se nomme
 <p>L'homologue python sur lequel tout repose est le script
 <strong><a href="https://raw.github.com/foxmask/de_php_a_python/de_composer_a_setuptools/setup.py" title="télécharger les sources">setup.py</a></strong>
 dont voici un exemple :</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
 
 <span class="n">setup</span><span class="p">(</span>
     <span class="n">name</span><span class="o">=</span><span class="s1">&#39;fox_php_lib&#39;</span><span class="p">,</span>
@@ -205,7 +205,7 @@ dont voici un exemple :</p>
         <span class="s1">&#39;Topic :: Utilities&#39;</span>
     <span class="p">]</span>
 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ce setup permet (quasiment comme son homologue) :</p>
@@ -228,41 +228,41 @@ python, plus tard on a la méthode find_packages(), donc oui on a toute
 latitude d'utiliser du python pour "peupler" ses variables.</p>
 <p>A présent comment s'en servir ?</p>
 <p>on tape simplement :</p>
-<div class="highlight"><pre><span></span>python setup.py install
-</pre></div>
+<div class="highlight"><pre><span></span><code>python setup.py install
+</code></pre></div>
 
 
 <p>qui installera votre lib/module/app comme attendue</p>
 <p>pour composer, on taperait :</p>
-<div class="highlight"><pre><span></span>php composer.phar install
-</pre></div>
+<div class="highlight"><pre><span></span><code>php composer.phar install
+</code></pre></div>
 
 
 <p>w00t :)</p>
 <p>Une fois installée, on peut vérifier que la lib est dispo en tapant :</p>
-<div class="highlight"><pre><span></span><span class="n">foxmask</span><span class="nd">@foxmask</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">python</span>
+<div class="highlight"><pre><span></span><code><span class="n">foxmask</span><span class="nd">@foxmask</span><span class="p">:</span><span class="o">~</span><span class="err">$</span> <span class="n">python</span>
 <span class="n">Python</span> <span class="mf">2.6</span><span class="o">.</span><span class="mi">6</span> <span class="p">(</span><span class="n">r266</span><span class="p">:</span><span class="mi">84292</span><span class="p">,</span> <span class="n">Dec</span> <span class="mi">26</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">22</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">48</span><span class="p">)</span>
 <span class="p">[</span><span class="n">GCC</span> <span class="mf">4.4</span><span class="o">.</span><span class="mi">5</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux2</span>
 <span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">fox_php_lib</span> <span class="kn">import</span> <span class="n">python</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">python</span><span class="p">()</span>
-<span class="p">[</span><span class="mi">2013</span><span class="o">-</span><span class="mo">01</span><span class="o">-</span><span class="mi">14</span> <span class="mi">22</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">49.669036</span><span class="p">]</span> <span class="n">Python</span> <span class="n">ca</span> <span class="n">rox</span>
-</pre></div>
+<span class="p">[</span><span class="mi">2013</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">14</span> <span class="mi">22</span><span class="p">:</span><span class="mi">26</span><span class="p">:</span><span class="mf">49.669036</span><span class="p">]</span> <span class="n">Python</span> <span class="n">ca</span> <span class="n">rox</span>
+</code></pre></div>
 
 
 <p>ce que fait cette lib est juste ce qui suit
 (<a href="https://raw.github.com/foxmask/de_php_a_python/de_composer_a_setuptools/test.py" title="télécharger les sources">test.py</a>):</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 
 <span class="k">def</span> <span class="nf">python</span><span class="p">():</span>
-    <span class="k">print</span> <span class="s2">&quot;[</span><span class="si">%s</span><span class="s2">] Python ca rox&quot;</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="s2">&quot;[</span><span class="si">%s</span><span class="s2">] Python ca rox&quot;</span> <span class="o">%</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">python</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Dans la foulée de la création de notre setup.py, on peut très
@@ -337,23 +337,23 @@ github</a></p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -367,7 +367,7 @@ github</a></p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -376,7 +376,7 @@ github</a></p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -394,7 +394,7 @@ github</a></p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -446,7 +446,7 @@ github</a></p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

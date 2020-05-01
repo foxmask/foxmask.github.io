@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -133,7 +133,7 @@ Le Free de la Passion            </a>
                 <p>Un besoin se fit ressentir today :</p>
 <p>Pouvoir, depuis la page d'administration de django, réaffecter des données se trouvant dans un service et les mettre dans un autre.</p>
 <p>Comme le montre la <a href="https://docs.djangoproject.com/fr/1.8/ref/contrib/admin/actions/#adding-actions-to-the-modeladmin">doc</a>, on peut effectuer des actions à sa sauce comme ceci :</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 <span class="kn">from</span> <span class="nn">myapp.models</span> <span class="kn">import</span> <span class="n">Article</span>
 
 <span class="k">def</span> <span class="nf">make_published</span><span class="p">(</span><span class="n">modeladmin</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">queryset</span><span class="p">):</span>
@@ -146,7 +146,7 @@ Le Free de la Passion            </a>
     <span class="n">actions</span> <span class="o">=</span> <span class="p">[</span><span class="n">make_published</span><span class="p">]</span>
 
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Article</span><span class="p">,</span> <span class="n">ArticleAdmin</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Arrive le moment où c'est sympa, mais ceci ne suffit plus.</p>
@@ -155,34 +155,34 @@ Le Free de la Passion            </a>
 <p>Et le DRY là dedans, hmmm? :P</p>
 <p>Pour arriver à ses fins, un helper existe tout de même, il s'agit d'<a href="https://github.com/django/django/blob/master/django/contrib/admin/helpers.py#L26">ActionForm</a>.</p>
 <p>Dans mon module <code>admin.py</code> j'y mettrai donc un truc du genre</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ServicesActivatedActionForm</span><span class="p">(</span><span class="n">ActionForm</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ServicesActivatedActionForm</span><span class="p">(</span><span class="n">ActionForm</span><span class="p">):</span>
     <span class="n">provider</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ChoiceField</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">ServicesActivated</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">))</span>
     <span class="n">consumer</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ChoiceField</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">ServicesActivated</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>on notera en passant l'astuce pour fournir à <code>choices</code> un <code>tuple</code> qui provient du modèle, grâce à l'utilisation de <code>values_list()</code></p>
 <p>Puis dans le ModelAdmin je glisse :</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TriggerServiceAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerServiceAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
     <span class="n">action_form</span> <span class="o">=</span> <span class="n">ServicesActivatedActionForm</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ce qui aura pour effet, d'afficher à coté de la liste déroulante des actions, une liste déroulante des mes provider/consumer.</p>
 <p>En l'état ça ne suffit pas pour fonctionner complètement. Il faut évidement gérer la validation du choix du provider/consumer comme suit :</p>
-<div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">change_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">queryset</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">change_service</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">queryset</span><span class="p">):</span>
         <span class="n">provider</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;provider&#39;</span><span class="p">]</span>
         <span class="n">consumer</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;consumer&#39;</span><span class="p">]</span>
         <span class="n">queryset</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="n">provider</span><span class="p">,</span> <span class="n">consumer</span><span class="o">=</span><span class="n">consumer</span><span class="p">)</span>
 
     <span class="n">change_service</span><span class="o">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="s1">&#39;Change of Service&#39;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>A présent, ma liste d'actions contient 2 actions, la suppression (action par defaut proposer par l'admin) et la mienne. Tout ça à gauche de ma liste déroulante des provider/consumer !</p>
 <p><img alt="page de l'admin avec les actions" src="/static/2016/03/admin_actionform.png"></p>
 <p>Le code complet à présent donne :</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 <span class="kn">from</span> <span class="nn">django.contrib.admin.helpers</span> <span class="kn">import</span> <span class="n">ActionForm</span>
 <span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
 
@@ -211,30 +211,30 @@ Le Free de la Passion            </a>
 
 
 <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">TriggerService</span><span class="p">,</span> <span class="n">TriggerServiceAdmin</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Voilou pour le tips du jour ;)</p>
 <p><strong>Edit du 22/09/2016</strong> :</p>
 <p>Avec ce form, on peut avoir un soucis qui ne saute pas aux yeux, de prime abord, quand les données ne varient pas souvent</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ServicesActivatedActionForm</span><span class="p">(</span><span class="n">ActionForm</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ServicesActivatedActionForm</span><span class="p">(</span><span class="n">ActionForm</span><span class="p">):</span>
     <span class="n">provider</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ChoiceField</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">ServicesActivated</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">))</span>
     <span class="n">consumer</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ChoiceField</span><span class="p">(</span><span class="n">choices</span><span class="o">=</span><span class="n">ServicesActivated</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Mais si votre liste déroulante contient des catégories que vous mettez à jour, ajoutez, retirez regulierement, on "remarque" que les données ne sont "rafraîchies" correctement dans la liste déroulante. Par exemple, si j'ajoute une catégorie, elle ne s'affiche pas immédiatement dans la vue, et inversement si je retire une catégorie de la base, elle reste encore présente dans la liste déroulante de ma vue.</p>
 <p>Pour corriger cela on passe par un form simple :</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ServicesActivatedActionForm</span><span class="p">(</span><span class="n">ActionForm</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">ServicesActivatedActionForm</span><span class="p">(</span><span class="n">ActionForm</span><span class="p">):</span>
     <span class="n">provider</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ModelChoiceField</span><span class="p">(</span><span class="n">queryset</span><span class="o">=</span><span class="n">ServicesActivated</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
     <span class="n">consumer</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ModelChoiceField</span><span class="p">(</span><span class="n">queryset</span><span class="o">=</span><span class="n">ServicesActivated</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
-</pre></div>
+</code></pre></div>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
+        <li><a href="https://foxmask.net/post/2020/05/01/trigger-happy-archive-yeoboseyo/">Trigger Happy archivé</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
         <li><a href="https://foxmask.net/post/2016/07/03/django-et-https/">Django et HTTPS</a></li>
@@ -285,23 +285,23 @@ Le Free de la Passion            </a>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -315,7 +315,7 @@ Le Free de la Passion            </a>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -324,7 +324,7 @@ Le Free de la Passion            </a>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -342,7 +342,7 @@ Le Free de la Passion            </a>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -394,7 +394,7 @@ Le Free de la Passion            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

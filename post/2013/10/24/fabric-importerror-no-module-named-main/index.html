@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -140,14 +140,14 @@ pro du Python mais rassurer les autres débutants comme mézigues ;)</p>
 me voilà à la découverte d'un nouveau monde.</p>
 <p>Ce billet sera <em>rikiki pouce-pouce</em> puisque ne concernera qu'un problème
 con comme là lune :</p>
-<div class="highlight"><pre><span></span><span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">main</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">main</span>
+</code></pre></div>
 
 
 <p>Ce dernier se produit au lancement de fabric .. pratique ... à débuger
 comme ça ... même avec la stacktrace plus bas ;)</p>
 <p>J'ai installé un virtualenv qui a cette allure :</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>install_release<span class="o">)</span>foxmask@localhost:~/apps/install_release$ ls -l
+<div class="highlight"><pre><span></span><code><span class="o">(</span>install_release<span class="o">)</span>foxmask@localhost:~/apps/install_release$ ls -l
 total <span class="m">52</span>
 drwxr-xr-x <span class="m">3</span> foxmask foxmask  <span class="m">4096</span> oct.  <span class="m">24</span> <span class="m">16</span>:15 autodeploy
 drwxr-xr-x <span class="m">2</span> foxmask foxmask  <span class="m">4096</span> oct.  <span class="m">24</span> <span class="m">16</span>:02 bin
@@ -158,13 +158,13 @@ drwxr-xr-x <span class="m">2</span> foxmask foxmask  <span class="m">4096</span>
 -rw-r--r-- <span class="m">1</span> foxmask foxmask <span class="m">19863</span> oct.  <span class="m">23</span> <span class="m">17</span>:03 install_release.sublime-workspace
 drwxr-xr-x <span class="m">3</span> foxmask foxmask  <span class="m">4096</span> oct.  <span class="m">23</span> <span class="m">14</span>:43 lib
 drwxr-xr-x <span class="m">2</span> foxmask foxmask  <span class="m">4096</span> oct.  <span class="m">23</span> <span class="m">14</span>:43 <span class="nb">local</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>en me rendant dans mon dossier fabric et en tapant une commande <em>fab
 foobar</em></p>
 <p>je me mange systématiquement</p>
-<div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
   <span class="n">File</span> <span class="s2">&quot;/home/foxmask/apps/install_release/bin/fab&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">9</span><span class="p">,</span> <span class="ow">in</span> 
     <span class="n">load_entry_point</span><span class="p">(</span><span class="s1">&#39;Fabric==1.8.0&#39;</span><span class="p">,</span> <span class="s1">&#39;console_scripts&#39;</span><span class="p">,</span> <span class="s1">&#39;fab&#39;</span><span class="p">)()</span>
   <span class="n">File</span> <span class="s2">&quot;/home/foxmask/apps/install_release/local/lib/python2.7/site-packages/distribute-0.6.24-py2.7.egg/pkg_resources.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">337</span><span class="p">,</span> <span class="ow">in</span> <span class="n">load_entry_point</span>
@@ -175,13 +175,13 @@ foobar</em></p>
     <span class="n">entry</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">module_name</span><span class="p">,</span> <span class="nb">globals</span><span class="p">(),</span><span class="nb">globals</span><span class="p">(),</span> <span class="p">[</span><span class="s1">&#39;__name__&#39;</span><span class="p">])</span>
 
 <span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">main</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Mais en y regardant de plus près... ma structure de folders, qu'on voit
 2 paragraphes plus haut, ne colle pas du tout ...</p>
 <p>alors qu'ici</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>install_release<span class="o">)</span>foxmask@localhost:~/apps/install_release$ ls -l
+<div class="highlight"><pre><span></span><code><span class="o">(</span>install_release<span class="o">)</span>foxmask@localhost:~/apps/install_release$ ls -l
 total <span class="m">44</span>
 drwxr-xr-x <span class="m">2</span> foxmask foxmask  <span class="m">4096</span> oct.  <span class="m">24</span> <span class="m">16</span>:02 bin
 drwxr-xr-x <span class="m">2</span> foxmask foxmask  <span class="m">4096</span> oct.  <span class="m">23</span> <span class="m">14</span>:43 include
@@ -195,7 +195,7 @@ total <span class="m">12</span>
 drwxr-xr-x <span class="m">3</span> foxmask foxmask <span class="m">4096</span> oct.  <span class="m">24</span> <span class="m">16</span>:15 autodeploy
 drwxr-xr-x <span class="m">2</span> foxmask foxmask <span class="m">4096</span> oct.  <span class="m">24</span> <span class="m">16</span>:18 fabric
 -rw-r--r-- <span class="m">1</span> foxmask foxmask   <span class="m">93</span> oct.  <span class="m">24</span> <span class="m">16</span>:17 __init__.py
-</pre></div>
+</code></pre></div>
 
 
 <p>elle convient bien mieux et fab est content avec son pitit message
@@ -208,8 +208,8 @@ drwxr-xr-x <span class="m">2</span> foxmask foxmask <span class="m">4096</span> 
         <li><a href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/">Fabric, sa var 'env' et nos variables dynamiques !</a></li>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
-        <li><a href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/">Mais vous etes fou ? Hoo Oui !</a></li>
+        <li><a href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
     </ul>
 </section>
     <hr/>
@@ -256,23 +256,23 @@ drwxr-xr-x <span class="m">2</span> foxmask foxmask <span class="m">4096</span> 
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -286,7 +286,7 @@ drwxr-xr-x <span class="m">2</span> foxmask foxmask <span class="m">4096</span> 
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -295,7 +295,7 @@ drwxr-xr-x <span class="m">2</span> foxmask foxmask <span class="m">4096</span> 
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -313,7 +313,7 @@ drwxr-xr-x <span class="m">2</span> foxmask foxmask <span class="m">4096</span> 
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -365,7 +365,7 @@ drwxr-xr-x <span class="m">2</span> foxmask foxmask <span class="m">4096</span> 
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

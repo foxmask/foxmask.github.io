@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -160,7 +160,7 @@ django.setup()</code></p>
 </li>
 </ol>
 <p>Ce qui donne</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -184,13 +184,13 @@ django.setup()</code></p>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        run the main process</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">trigger</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">trigger</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">trigger</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">trigger</span><span class="p">:</span>
             <span class="c1"># flag to know if we have to update</span>
-            <span class="n">to_update</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">to_update</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="c1"># flag to get the status of a service</span>
-            <span class="n">status</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="c1"># counting the new data to store to display them in the log</span>
             <span class="n">count_new_data</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="c1"># provider - the service that offer datas</span>
@@ -202,10 +202,10 @@ django.setup()</code></p>
             <span class="n">service_consumer</span> <span class="o">=</span> <span class="n">default_provider</span><span class="o">.</span><span class="n">get_service</span><span class="p">(</span><span class="n">service_name</span><span class="p">)</span>
 
             <span class="c1"># check if the service has already been triggered</span>
-            <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;first run for </span><span class="si">%s</span><span class="s2"> =&gt; </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span>
                     <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
-                <span class="n">to_update</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="n">to_update</span> <span class="o">=</span> <span class="kc">True</span>
             <span class="c1"># run run run</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="c1"># 1) get the datas from the provider service</span>
@@ -218,7 +218,7 @@ django.setup()</code></p>
                 <span class="n">which_date</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
                 <span class="c1"># flag to know if we can push data to the consumer</span>
-                <span class="n">proceed</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="n">proceed</span> <span class="o">=</span> <span class="kc">False</span>
 
                 <span class="c1"># 2) for each one</span>
                 <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">datas</span><span class="p">:</span>
@@ -228,7 +228,7 @@ django.setup()</code></p>
 
                     <span class="c1"># let&#39;s try to determine the date contained in the data...</span>
                     <span class="n">published</span> <span class="o">=</span> <span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                         <span class="c1"># get the published date of the provider</span>
                         <span class="n">published</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                             <span class="nb">str</span><span class="p">(</span><span class="n">published</span><span class="p">),</span> <span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TIME_ZONE</span><span class="p">)</span>
@@ -241,7 +241,7 @@ django.setup()</code></p>
                         <span class="n">which_date</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
                             <span class="n">hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
                         <span class="n">published</span> <span class="o">=</span> <span class="n">which_date</span>
-                    <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">which_date</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">which_date</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
                         <span class="n">published</span> <span class="o">=</span> <span class="n">which_date</span>
                     <span class="c1"># 3) check if the previous trigger is older than the</span>
                     <span class="c1"># date of the data we retreived</span>
@@ -253,40 +253,40 @@ django.setup()</code></p>
 
                     <span class="c1"># if the published date if greater or equal to the last</span>
                     <span class="c1"># triggered event ... :</span>
-                    <span class="k">if</span> <span class="n">date_triggered</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">date_triggered</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
                         <span class="c1"># if date are the same ...</span>
                         <span class="k">if</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">==</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
                             <span class="c1"># ... compare time and proceed if needed</span>
                             <span class="k">if</span> <span class="n">published</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">time</span><span class="p">():</span>
-                                <span class="n">proceed</span> <span class="o">=</span> <span class="bp">True</span>
+                                <span class="n">proceed</span> <span class="o">=</span> <span class="kc">True</span>
                         <span class="c1"># not same date so proceed !</span>
                         <span class="k">else</span><span class="p">:</span>
-                            <span class="n">proceed</span> <span class="o">=</span> <span class="bp">True</span>
+                            <span class="n">proceed</span> <span class="o">=</span> <span class="kc">True</span>
 
                         <span class="k">if</span> <span class="n">proceed</span><span class="p">:</span>
                             <span class="k">if</span> <span class="s1">&#39;title&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-                                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;date {} &gt;= date triggered {} title {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;date </span><span class="si">{}</span><span class="s2"> &gt;= date triggered </span><span class="si">{}</span><span class="s2"> title </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                                     <span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
                             <span class="k">else</span><span class="p">:</span>
                                 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-                                    <span class="s2">&quot;date {} &gt;= date triggered {} &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">))</span>
+                                    <span class="s2">&quot;date </span><span class="si">{}</span><span class="s2"> &gt;= date triggered </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">))</span>
 
                             <span class="c1">#status = consumer(</span>
                             <span class="c1">#    service.consumer.token, service.id, **data)</span>
 
-                            <span class="n">to_update</span> <span class="o">=</span> <span class="bp">True</span>
+                            <span class="n">to_update</span> <span class="o">=</span> <span class="kc">True</span>
                             <span class="n">count_new_data</span> <span class="o">+=</span> <span class="mi">1</span>
                     <span class="c1"># otherwise do nothing</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="k">if</span> <span class="s1">&#39;title&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
                             <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
-                                <span class="s2">&quot;data outdated skiped : [{}] {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
+                                <span class="s2">&quot;data outdated skiped : [</span><span class="si">{}</span><span class="s2">] </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
                         <span class="k">else</span><span class="p">:</span>
                             <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
-                                <span class="s2">&quot;data outdated skiped : [{}] &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">))</span>
+                                <span class="s2">&quot;data outdated skiped : [</span><span class="si">{}</span><span class="s2">] &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">))</span>
 
             <span class="c1"># update the date of the trigger at the end of the loop</span>
-            <span class="n">sentance</span> <span class="o">=</span> <span class="s2">&quot;user: {} - provider: {} - consumer: {} - {}&quot;</span>
+            <span class="n">sentance</span> <span class="o">=</span> <span class="s2">&quot;user: </span><span class="si">{}</span><span class="s2"> - provider: </span><span class="si">{}</span><span class="s2"> - consumer: </span><span class="si">{}</span><span class="s2"> - </span><span class="si">{}</span><span class="s2">&quot;</span>
             <span class="k">if</span> <span class="n">to_update</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
                     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">((</span><span class="n">sentance</span> <span class="o">+</span> <span class="s2">&quot; new data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
@@ -309,7 +309,7 @@ django.setup()</code></p>
                     <span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
                     <span class="n">service</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;No trigger set by any user&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No trigger set by any user&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">update_trigger</span><span class="p">(</span><span class="n">service</span><span class="p">):</span>
@@ -325,7 +325,7 @@ django.setup()</code></p>
 <span class="sd">        convert Datetime 9-tuple to the date and time format</span>
 <span class="sd">        feedparser provides this 9-tuple</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">my_date_time</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">my_date_time</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">if</span> <span class="s1">&#39;published_parsed&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
         <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span>
@@ -347,7 +347,7 @@ django.setup()</code></p>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
 
     <span class="n">main</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><em>Avantage(s)</em><br>
@@ -356,18 +356,18 @@ settings est trouvé par le script tout passe tout seul</p>
 <p><em>Inconvénient(s)</em><br>
 Le packaging est empirique, il faut rajouter au setup.py la prise en
 compte de ce batch par :</p>
-<div class="highlight"><pre><span></span> <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+<div class="highlight"><pre><span></span><code> <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
  <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
  <span class="s1">&#39;trigger-happy = django_th.fire:go&#39;</span><span class="p">,</span>
  <span class="p">],</span>
  <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>afin que la commande soit disponible sous la main dès l'installation via
 un</p>
-<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">django_th</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">django_th</span>
+</code></pre></div>
 
 
 <p>Point noir que tout le monde aura vu, le script appelle en dur le
@@ -412,7 +412,7 @@ mon appli django_th, sous le nom fire_th.py</p>
 <li>remplaçant print() par self.stdout.write()</li>
 </ol>
 <p>Ce qui donne :</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
 
@@ -445,7 +445,7 @@ mon appli django_th, sous le nom fire_th.py</p>
 <span class="sd">            convert Datetime 9-tuple to the date and time format</span>
 <span class="sd">            feedparser provides this 9-tuple</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">my_date_time</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">my_date_time</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="s1">&#39;published_parsed&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
             <span class="n">my_date_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span>
@@ -462,13 +462,13 @@ mon appli django_th, sous le nom fire_th.py</p>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            run the main process</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">trigger</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">trigger</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">trigger</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">trigger</span><span class="p">:</span>
                 <span class="c1"># flag to know if we have to update</span>
-                <span class="n">to_update</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="n">to_update</span> <span class="o">=</span> <span class="kc">False</span>
                 <span class="c1"># flag to get the status of a service</span>
-                <span class="n">status</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
                 <span class="c1"># counting the new data to store to display them in the log</span>
                 <span class="n">count_new_data</span> <span class="o">=</span> <span class="mi">0</span>
                 <span class="c1"># provider - the service that offer datas</span>
@@ -480,10 +480,10 @@ mon appli django_th, sous le nom fire_th.py</p>
                 <span class="n">service_consumer</span> <span class="o">=</span> <span class="n">default_provider</span><span class="o">.</span><span class="n">get_service</span><span class="p">(</span><span class="n">service_name</span><span class="p">)</span>
 
                 <span class="c1"># check if the service has already been triggered</span>
-                <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">service</span><span class="o">.</span><span class="n">date_triggered</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;first run for </span><span class="si">%s</span><span class="s2"> =&gt; </span><span class="si">%s</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span>
                         <span class="n">service</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">)))</span>
-                    <span class="n">to_update</span> <span class="o">=</span> <span class="bp">True</span>
+                    <span class="n">to_update</span> <span class="o">=</span> <span class="kc">True</span>
                 <span class="c1"># run run run</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="c1"># 1) get the datas from the provider service</span>
@@ -496,7 +496,7 @@ mon appli django_th, sous le nom fire_th.py</p>
                     <span class="n">which_date</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 
                     <span class="c1"># flag to know if we can push data to the consumer</span>
-                    <span class="n">proceed</span> <span class="o">=</span> <span class="bp">False</span>
+                    <span class="n">proceed</span> <span class="o">=</span> <span class="kc">False</span>
 
                     <span class="c1"># 2) for each one</span>
                     <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">datas</span><span class="p">:</span>
@@ -506,7 +506,7 @@ mon appli django_th, sous le nom fire_th.py</p>
 
                         <span class="c1"># let&#39;s try to determine the date contained in the data...</span>
                         <span class="n">published</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-                        <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                             <span class="c1"># get the published date of the provider</span>
                             <span class="n">published</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
                                 <span class="nb">str</span><span class="p">(</span><span class="n">published</span><span class="p">),</span> <span class="s1">&#39;YYYY-MM-DD HH:mm:ss&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">TIME_ZONE</span><span class="p">)</span>
@@ -519,7 +519,7 @@ mon appli django_th, sous le nom fire_th.py</p>
                             <span class="n">which_date</span> <span class="o">=</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
                                 <span class="n">hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
                             <span class="n">published</span> <span class="o">=</span> <span class="n">which_date</span>
-                        <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">which_date</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">published</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">which_date</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
                             <span class="n">published</span> <span class="o">=</span> <span class="n">which_date</span>
                         <span class="c1"># 3) check if the previous trigger is older than the</span>
                         <span class="c1"># date of the data we retreived</span>
@@ -531,40 +531,40 @@ mon appli django_th, sous le nom fire_th.py</p>
 
                         <span class="c1"># if the published date if greater or equal to the last</span>
                         <span class="c1"># triggered event ... :</span>
-                        <span class="k">if</span> <span class="n">date_triggered</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
+                        <span class="k">if</span> <span class="n">date_triggered</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">published</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
                             <span class="c1"># if date are the same ...</span>
                             <span class="k">if</span> <span class="n">published</span><span class="o">.</span><span class="n">date</span><span class="p">()</span> <span class="o">==</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">date</span><span class="p">():</span>
                                 <span class="c1"># ... compare time and proceed if needed</span>
                                 <span class="k">if</span> <span class="n">published</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="n">date_triggered</span><span class="o">.</span><span class="n">time</span><span class="p">():</span>
-                                    <span class="n">proceed</span> <span class="o">=</span> <span class="bp">True</span>
+                                    <span class="n">proceed</span> <span class="o">=</span> <span class="kc">True</span>
                             <span class="c1"># not same date so proceed !</span>
                             <span class="k">else</span><span class="p">:</span>
-                                <span class="n">proceed</span> <span class="o">=</span> <span class="bp">True</span>
+                                <span class="n">proceed</span> <span class="o">=</span> <span class="kc">True</span>
 
                             <span class="k">if</span> <span class="n">proceed</span><span class="p">:</span>
                                 <span class="k">if</span> <span class="s1">&#39;title&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-                                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;date {} &gt;= date triggered {} title {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;date </span><span class="si">{}</span><span class="s2"> &gt;= date triggered </span><span class="si">{}</span><span class="s2"> title </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                                         <span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
                                 <span class="k">else</span><span class="p">:</span>
                                     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-                                        <span class="s2">&quot;date {} &gt;= date triggered {} &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">))</span>
+                                        <span class="s2">&quot;date </span><span class="si">{}</span><span class="s2"> &gt;= date triggered </span><span class="si">{}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">date_triggered</span><span class="p">))</span>
 
                                 <span class="n">status</span> <span class="o">=</span> <span class="n">consumer</span><span class="p">(</span>
                                     <span class="n">service</span><span class="o">.</span><span class="n">consumer</span><span class="o">.</span><span class="n">token</span><span class="p">,</span> <span class="n">service</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
 
-                                <span class="n">to_update</span> <span class="o">=</span> <span class="bp">True</span>
+                                <span class="n">to_update</span> <span class="o">=</span> <span class="kc">True</span>
                                 <span class="n">count_new_data</span> <span class="o">+=</span> <span class="mi">1</span>
                         <span class="c1"># otherwise do nothing</span>
                         <span class="k">else</span><span class="p">:</span>
                             <span class="k">if</span> <span class="s1">&#39;title&#39;</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
                                 <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
-                                    <span class="s2">&quot;data outdated skiped : [{}] {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
+                                    <span class="s2">&quot;data outdated skiped : [</span><span class="si">{}</span><span class="s2">] </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]))</span>
                             <span class="k">else</span><span class="p">:</span>
                                 <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
-                                    <span class="s2">&quot;data outdated skiped : [{}] &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">))</span>
+                                    <span class="s2">&quot;data outdated skiped : [</span><span class="si">{}</span><span class="s2">] &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">published</span><span class="p">))</span>
 
                 <span class="c1"># update the date of the trigger at the end of the loop</span>
-                <span class="n">sentance</span> <span class="o">=</span> <span class="s2">&quot;user: {} - provider: {} - consumer: {} - {}&quot;</span>
+                <span class="n">sentance</span> <span class="o">=</span> <span class="s2">&quot;user: </span><span class="si">{}</span><span class="s2"> - provider: </span><span class="si">{}</span><span class="s2"> - consumer: </span><span class="si">{}</span><span class="s2"> - </span><span class="si">{}</span><span class="s2">&quot;</span>
                 <span class="k">if</span> <span class="n">to_update</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
                         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">((</span><span class="n">sentance</span> <span class="o">+</span> <span class="s2">&quot; new data&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
@@ -588,22 +588,22 @@ mon appli django_th, sous le nom fire_th.py</p>
                         <span class="n">service</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;No trigger set by any user&quot;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Le script est plus long de (vraiment) quelques lignes, mais le jeu en
 vaut la chandelle.</p>
 <p><strong>Enfin :</strong><br>
 Reste plus qu'à taper sa commande</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">fire_th</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">fire_th</span>
+</code></pre></div>
 
 
 <p><strong>And Just in case</strong><br>
 Une fois que vous aurez fini votre script, pour le tester, si vous
 tapez comme, votre serviteur, la commande</p>
-<div class="highlight"><pre><span></span><span class="o">./</span><span class="n">fire_th</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">./</span><span class="n">fire_th</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div>
 
 
 <p>depuis le dossier management/commands, vous aurez une surprise au
@@ -611,8 +611,8 @@ premier <em>import mon_appli.whatelse</em> présent dans votre script, vous
 indiquant que le module n'existe pas.<br>
 Et effectivement, en se remettant les neurones à leur place, on se
 rendra compte qu'on se devra de taper</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">fire_th</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">fire_th</span>
+</code></pre></div>
 
 
 <p>depuis le folder contenant manage.py :P</p>
@@ -626,11 +626,11 @@ Tous les commentaires sont les bienvenus.</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
         <li><a href="https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/">History not to lose the thread : TrackingFields</a></li>
         <li><a href="https://foxmask.net/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
+        <li><a href="https://foxmask.net/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
     </ul>
 </section>
     <hr/>
@@ -677,23 +677,23 @@ Tous les commentaires sont les bienvenus.</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -707,7 +707,7 @@ Tous les commentaires sont les bienvenus.</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -716,7 +716,7 @@ Tous les commentaires sont les bienvenus.</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -734,7 +734,7 @@ Tous les commentaires sont les bienvenus.</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -786,7 +786,7 @@ Tous les commentaires sont les bienvenus.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

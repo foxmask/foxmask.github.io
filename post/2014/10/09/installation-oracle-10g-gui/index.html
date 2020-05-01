@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -137,9 +137,9 @@ depuis le temps sont surement déjà acquises (j'ose espérer ;)</p>
 dans un coin car ça n'est plus dispo chez Oracle via la manager qui va
 bien.</p>
 <p>Après les avoir décompressées, temps il est de lancer l'installeur :</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> database
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> database
 ./runInstaller
-</pre></div>
+</code></pre></div>
 
 
 <p>La plupart du temps on n'installe pas Oracle sur une workstation ou sur
@@ -152,39 +152,39 @@ utilise "OUI" (Oracle Universal Installer), qui lance une GUI !</p>
 <li>configurer le forwarding X11</li>
 </ol>
 <h3>1- la machinerie pour compiler</h3>
-<div class="highlight"><pre><span></span>yum install binutils gcc glibc glibc-headers glibc-kernheaders glibc-devel
+<div class="highlight"><pre><span></span><code>yum install binutils gcc glibc glibc-headers glibc-kernheaders glibc-devel
 compat-libstdc++ cpp compat-gcc make compat-db compat-gcc-c++ 
 compat-libstdc++-devel openmotif openmotif21
 setarch pdksh libaio libaio-devel 
 libXt.i686 libXt-devel.x86_64 libXt-devel.i686
 libXtst.i686 libXtst-devel.i686 libXtst-devel.x86_64 
-</pre></div>
+</code></pre></div>
 
 
 <h3>2- installer des lib X11</h3>
 <p>ceci vous evitera de rencontrer ce genre d'erreur :</p>
-<div class="highlight"><pre><span></span>java.lang.UnsatisfiedLinkError: /tmp/OraInstall../jre/1.4.2/lib/i386/libawt.so: 
+<div class="highlight"><pre><span></span><code>java.lang.UnsatisfiedLinkError: /tmp/OraInstall../jre/1.4.2/lib/i386/libawt.so: 
 libXtst.so.6: cannot open shared object file: No such file or directory
-</pre></div>
+</code></pre></div>
 
 
 <h3>3- configurer le forwarding X11</h3>
 <p>pour faire du X11 forwarding, tout le monde sait qu'on fait</p>
-<div class="highlight"><pre><span></span>ssh -X login@server
-</pre></div>
+<div class="highlight"><pre><span></span><code>ssh -X login@server
+</code></pre></div>
 
 
 <p>mais si on regarde de plus près, ça ne suffit souvent pas :</p>
-<div class="highlight"><pre><span></span>ssh -v -X login@server
+<div class="highlight"><pre><span></span><code>ssh -v -X login@server
 ...
 debug1: Remote: No xauth program<span class="p">;</span> cannot forward with spoofing.
 X11 forwarding request failed on channel <span class="m">0</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>comme l'avant dernière ligne l'indique, il n'y a pas xauth de dispo,
 donc let's go</p>
-<div class="highlight"><pre><span></span>yum install xauth
+<div class="highlight"><pre><span></span><code>yum install xauth
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
  * base: centos.quelquesmots.fr
@@ -227,20 +227,20 @@ Installed:
   xorg-x11-xauth.i386 <span class="m">1</span>:1.0.1-2.1                                                                                                                                               
 
 Complete!
-</pre></div>
+</code></pre></div>
 
 
 <p>Ensuite il se peut que ca ne suffise toujours pas, il faut donc editer
-le fichier <code< etc ssh sshd_config< code><br>
+le fichier &lt;code&lt; etc ssh sshd_config&lt; code&gt;<br>
 pour mettre ces parametres :</p>
-<div class="highlight"><pre><span></span><span class="na">X11Forwarding yes</span>
+<div class="highlight"><pre><span></span><code><span class="na">X11Forwarding yes</span>
 <span class="na">X11UseLocalhost no</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>puis relancer sshd.</p>
 <p>Testons à présent</p>
-<div class="highlight"><pre><span></span>ssh -v -X oracle@server
+<div class="highlight"><pre><span></span><code>ssh -v -X oracle@server
 debug1: Requesting X11 forwarding with authentication spoofing.
 debug1: Sending environment.
 debug1: Sending env <span class="nv">LANG</span> <span class="o">=</span> fr_FR.utf8
@@ -252,23 +252,23 @@ debug1: client_request_x11: request from <span class="m">127</span>.0.0.1 <span 
 debug1: channel <span class="m">1</span>: new <span class="o">[</span>x11<span class="o">]</span>
 debug1: confirm x11
 debug1: channel <span class="m">1</span>: FORCE input drain
-</pre></div>
+</code></pre></div>
 
 
 <p>ouais vous la voyez pas sur cette page l'horloge, faut pas pousser non
 plus ;)</p>
 <p>Si ça ne marchait toujours pas chez vous, vérifiez bien que
 X11Forwarding est activé sur le serveur :</p>
-<div class="highlight"><pre><span></span>grep X11Forwarding /etc/ssh/sshd_config
+<div class="highlight"><pre><span></span><code>grep X11Forwarding /etc/ssh/sshd_config
 <span class="c1">#X11Forwarding no</span>
 X11Forwarding yes
-</pre></div>
+</code></pre></div>
 
 
 <p>Maintenant zont n'est prêt pour lancer l'installeur.</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> /u01/app/oracle/binaires/database/
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> /u01/app/oracle/binaires/database/
 ./runInstaller -ignoreSysPrereqs
-</pre></div>
+</code></pre></div>
 
 
 <p>et le GUI démarre, zavez plus qu'à vous faire plaisir.</p>
@@ -340,23 +340,23 @@ mineure à l'autre de Oracle. Je l'ai juste citée en cas de besoin ;)</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -370,7 +370,7 @@ mineure à l'autre de Oracle. Je l'ai juste citée en cas de besoin ;)</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -379,7 +379,7 @@ mineure à l'autre de Oracle. Je l'ai juste citée en cas de besoin ;)</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -397,7 +397,7 @@ mineure à l'autre de Oracle. Je l'ai juste citée en cas de besoin ;)</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -449,7 +449,7 @@ mineure à l'autre de Oracle. Je l'ai juste citée en cas de besoin ;)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

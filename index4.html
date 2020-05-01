@@ -104,93 +104,6 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <h2><a href="https://foxmask.net/post/2016/04/14/job-queue-and-messages-broker-out/">Quand Les "job queue" et les amis "brokers de messages" sont mis au rancart par la stdlib</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-04-14T10:00:00+02:00"> jeu. 14 avril 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/triggerhappy.html">TriggerHappy</a>
-        /
-	<a href="https://foxmask.net/tag/multiprocessing.html">multiprocessing</a>
-        /
-	<a href="https://foxmask.net/tag/activemq.html">activemq</a>
-        /
-	<a href="https://foxmask.net/tag/celery.html">celery</a>
-        /
-	<a href="https://foxmask.net/tag/rq.html">rq</a>
-        /
-	<a href="https://foxmask.net/tag/beanstalkd.html">beanstalkd</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h1>Intro</h1>
-<p>Ce post n'est autre qu'un simple retour d'XP sur l'utilisation et tests de diverses solutions (almost)ready-to-use de job queue et brokers de messages.</p>
-<h1>Présentation de l'archi du projet</h1>
-<p>Comme vous pouvez l'imaginer avec IFTTT si vous connaissez ce service, j'ai des triggers qui permettent de récupérer des données …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2016/04/14/job-queue-and-messages-broker-out/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2016/03/23/actionform-django-a-la-rescousse/">ActionForm Django à la rescousse !</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-03-23T22:30:00+01:00"> mer. 23 mars 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/django.html">django</a>
-        /
-	<a href="https://foxmask.net/tag/actionform.html">actionform</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>ActionForm ou Comment produire une liste d'actions, dans l'admin django, à partir du contenu d'un autre modèle, tel est le but de ce billet ;)</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2016/03/23/actionform-django-a-la-rescousse/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2016/03/18/le-dev-cet-artiste-qui-signore/">Le developpeur, cet artiste qui s'ignore !</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-03-18T07:30:00+01:00"> ven. 18 mars 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/python.html">Python</a>
-        /
-	<a href="https://foxmask.net/tag/poeme.html">poeme</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Intro : ce billet se résume bien en une réplique célèbre : </p>
-<p>"N'y voyez pas le fantasme de l'homme, mais le délire de l'artiste !"</p>
-<p>And so :</p>
-<p>Avec <a href="https://blog.trigger-happy.eu">TriggerHappy</a>, je passe par plein de phases et de découvertes techniques/technologiques.</p>
-<p>Dernièrement, je me suis dit "bon les tests unitaires c'est sympa, mais si …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2016/03/18/le-dev-cet-artiste-qui-signore/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
                 <h2><a href="https://foxmask.net/post/2016/03/04/integration-continue-de-github-a-pypi-via-travis-ci/">Intégration continue de Github à Pypi via Travis-CI</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -389,6 +302,89 @@ L'an passé on apprenait qu'Evernote …</p>
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2016/01/13/aix-fsck-demarrer-des-services/">AIX fsck et demarrer des services</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-01-13T23:00:00+01:00"> mer. 13 janvier 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/aix.html">AIX</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Sur AIX, lors d'un reboot (malencontreux?) il peut arriver que des folders soient vides (aïe bobo partout)</p>
+<p>Bon du coup ca peut provenir du "simple" fait de "dirty" partitions qui ont besoin qu'on leur fasse faire un check </p>
+<div class="highlight"><pre><span></span><code>fsck /opt/websphere
+</code></pre></div>
+
+
+<p>on repondra oui s'il vous demander de "FIX?"</p>
+<p>et …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2016/01/13/aix-fsck-demarrer-des-services/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/">Centos et la galère galère des installations recentes PostgresSQL 9.4 et du driver psycopg2</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-01-12T12:00:00+01:00"> mar. 12 janvier 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/centos.html">centos</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+        /
+	<a href="https://foxmask.net/tag/postgresql.html">postgresql</a>
+        /
+	<a href="https://foxmask.net/tag/psycopg2.html">psycopg2</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Parfois il arrive qu'on croise des distributions qui nous rebutent... mais avec lesquelles il faut composer.</p>
+<p>Aussi voici un rapide retour d'XP sur l'installation de PostgreSQL 9.4 pour Centos et de son driver psycopg2 pour son virtualenv...</p>
+<p>Pour l'installation de PostgreSQL 9.4 je vous renvois <a href="https://wiki.postgresql.org/wiki/YUM_Installation">à la doc …</a></p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2016/01/05/dans-la-serie-jai-migre-vers-pelican/">Dans la série, j'ai migré vers Pélican</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-01-05T12:00:00+01:00"> mar. 05 janvier 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/python.html">python</a>
+        /
+	<a href="https://foxmask.net/tag/pelican.html">pelican</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Dans cet article, je vais aborder comment je créé des billets et les publie automatiquement sans plus lever le petit doigt.</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2016/01/05/dans-la-serie-jai-migre-vers-pelican/">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://foxmask.net/index3.html">&laquo;</a>
@@ -445,23 +441,23 @@ L'an passé on apprenait qu'Evernote …</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -475,7 +471,7 @@ L'an passé on apprenait qu'Evernote …</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -484,7 +480,7 @@ L'an passé on apprenait qu'Evernote …</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -502,7 +498,7 @@ L'an passé on apprenait qu'Evernote …</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -554,7 +550,7 @@ L'an passé on apprenait qu'Evernote …</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

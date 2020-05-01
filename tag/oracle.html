@@ -36,8 +36,6 @@
         <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
 
-        <link href="https://foxmask.net/feeds/oracle.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Le Free de la Passion oracle ATOM Feed"/>
 
 
 </head>
@@ -115,11 +113,11 @@ Le Free de la Passion            </a>
                 <div class="summary"><p>Quand on a besoin de faire un <code>yum update</code> suivi d'un
 <code>yum install foobar</code> il peut arriver que sur votre CentOS vous ayez un
 problème avec vos packages Oracle :</p>
-<div class="highlight"><pre><span></span>warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
+<div class="highlight"><pre><span></span><code>warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
 Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 
 
-GPG key …</pre></div>
+GPG key …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">more ...</a>
                 </div>
             </article>
@@ -253,13 +251,13 @@ UTF8, tout un programme !</p>
 <p>On récupère un patch chez Oracle, on le décompresse, on tape opatch
 apply et hop !</p>
 <p>Donc après la décompression, ça donne :</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> path_ou_on_a_decompresse_le_path
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> path_ou_on_a_decompresse_le_path
+</code></pre></div>
 
 
 <p>application du patch oracle</p>
-<div class="highlight"><pre><span></span>opatch apply
-</pre></div>
+<div class="highlight"><pre><span></span><code>opatch apply
+</code></pre></div>
 
 
 <p>Si vous rencontrez …</p>
@@ -319,11 +317,11 @@ sauvegardes de ses données.</p>
 <p>Donc pour trouver ce(s) dernier(s) tout se résume à interroger la table
 dba_segment dont le tablespace_name ne contient aucun de ceux des TB
 "system".</p>
-<div class="highlight"><pre><span></span><span class="k">SET</span> <span class="n">linesize</span> <span class="mi">300</span>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="n">linesize</span> <span class="mi">300</span>
 <span class="k">SET</span> <span class="n">pagesize</span> <span class="mi">20</span>
 <span class="k">SET</span> <span class="n">feedback</span> <span class="k">off</span>
 
-<span class="k">SELECT</span> <span class="n">sysdate</span><span class="p">,</span> <span class="n">a …</span></pre></div>
+<span class="k">SELECT</span> <span class="n">sysdate</span><span class="p">,</span> <span class="n">a …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/">more ...</a>
                 </div>
             </article>
@@ -347,7 +345,7 @@ dba_segment dont le tablespace_name ne contient aucun de ceux des TB
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Voici une requete SQL dans l'arsenal du DBA, nommons la <strong>locks.sql</strong>,
 permettant d'identifier les locks en cours sur un schema oracle :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span>   <span class="cm">/*+ choose */</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>   <span class="cm">/*+ choose */</span>
           <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Blocking User&quot;</span><span class="p">,</span>
           <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;DB User&quot;</span><span class="p">,</span>
           <span class="n">ws</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Waiting User&quot;</span><span class="p">,</span>
@@ -355,7 +353,7 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
           <span class="n">ws</span><span class="p">.</span><span class="n">sid</span> <span class="ss">&quot;WSID&quot;</span><span class="p">,</span>
           <span class="n">bs</span><span class="p">.</span><span class="n">sql_address</span> <span class="ss">&quot;address&quot;</span><span class="p">,</span>
           <span class="n">bs</span><span class="p">.</span><span class="n">sql_hash_value</span> <span class="ss">&quot;Sql hash&quot;</span><span class="p">,</span>
-          <span class="n">bs …</span></pre></div>
+          <span class="n">bs …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">more ...</a>
                 </div>
             </article>
@@ -406,23 +404,23 @@ le fameux duo expdp et impdp pour produire ce qu'on appelle des …</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -436,7 +434,7 @@ le fameux duo expdp et impdp pour produire ce qu'on appelle des …</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -445,7 +443,7 @@ le fameux duo expdp et impdp pour produire ce qu'on appelle des …</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -463,7 +461,7 @@ le fameux duo expdp et impdp pour produire ce qu'on appelle des …</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>

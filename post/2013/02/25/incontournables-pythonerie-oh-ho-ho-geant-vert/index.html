@@ -44,7 +44,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -147,15 +147,15 @@ OpenOffice depuis un script Python en 5 lignes :P</p>
 <a href="https://code.google.com/p/python-relatorio/">Relatorio</a>, un projet
 python pour créer des doc ooo/pdf/html, à partir d'objets python.</p>
 <p>Donc un petit</p>
-<div class="highlight"><pre><span></span>pip install relatorio
-</pre></div>
+<div class="highlight"><pre><span></span><code>pip install relatorio
+</code></pre></div>
 
 
 <p>fera l'affaire pour disposer de l'armada ;)</p>
 <p>1) <strong>Récupération des données à publier</strong></p>
 <p>Ici je partirai d'un script Python renvoyant un dict, ni plus ni moins.</p>
 <p>Le voici , il se nomme "maraicher.py":</p>
-<div class="highlight"><pre><span></span><span class="n">potager</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">potager</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
             <span class="n">customer</span> <span class="o">=</span> <span class="s1">&#39;Bonduelle&#39;</span><span class="p">,</span>
             <span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;1.12.09&#39;</span><span class="p">,</span>
             <span class="n">previous_version</span> <span class="o">=</span> <span class="s1">&#39;1.12.08&#39;</span><span class="p">,</span>
@@ -170,7 +170,7 @@ python pour créer des doc ooo/pdf/html, à partir d'objets python.</p>
                 <span class="p">],</span>
 
     <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>2) le <strong>document OpenOffice</strong> :</p>
@@ -182,12 +182,12 @@ versions associées.<br>
 <p>3) <strong>Fusion</strong><br>
 La fusion va consister à lire les données du dict et les injecter dans
 le doc, tout cela se fait, like this (en 5lignes hein ;) :</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">relatorio.templates.opendocument</span> <span class="kn">import</span> <span class="n">Template</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">relatorio.templates.opendocument</span> <span class="kn">import</span> <span class="n">Template</span>
 <span class="kn">from</span> <span class="nn">maraicher</span> <span class="kn">import</span> <span class="n">potager</span>
-<span class="n">basic</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;Geant-Vert.odt&#39;</span><span class="p">)</span>
+<span class="n">basic</span> <span class="o">=</span> <span class="n">Template</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;Geant-Vert.odt&#39;</span><span class="p">)</span>
 <span class="n">basic_generated</span> <span class="o">=</span> <span class="n">basic</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">o</span><span class="o">=</span><span class="n">potager</span><span class="p">)</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
-<span class="nb">file</span><span class="p">(</span><span class="s1">&#39;Geant-Vert1.odt&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">basic_generated</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
-</pre></div>
+<span class="n">file</span><span class="p">(</span><span class="s1">&#39;Geant-Vert1.odt&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">basic_generated</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+</code></pre></div>
 
 
 <p>le résultat est
@@ -252,23 +252,23 @@ https://code.google.com/p/python-relatorio/</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -282,7 +282,7 @@ https://code.google.com/p/python-relatorio/</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -291,7 +291,7 @@ https://code.google.com/p/python-relatorio/</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -309,7 +309,7 @@ https://code.google.com/p/python-relatorio/</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -361,7 +361,7 @@ https://code.google.com/p/python-relatorio/</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

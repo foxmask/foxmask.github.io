@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -133,22 +133,22 @@ Le Free de la Passion            </a>
                 <p>Un rapide billet pour poser ici un retour de prise de tête :)</p>
 <p>Avec la venue de <a href="https://letsencrypt.org/">LetsEncrypt</a>, il va fleurer bon les sites en HTTPS de ci de là.</p>
 <p>Par contre une fois mis en place en prod, coté dev il arrive qu'on fasse un hack vite fait pour pas passer 3 plombes sur sa conf nginx comme ça :</p>
-<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">HTTPS</span><span class="o">=</span>on
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">HTTPS</span><span class="o">=</span>on
 ./manage.py runserver
-</pre></div>
+</code></pre></div>
 
 
 <p>et roule ma poule !</p>
 <p>Bon en prod par contre on ne va pas s'amuser à ca quand on a un NGINX en frontal du Gunicorn par exemple.</p>
 <p>Et si on laisse en etat, au final tout accès à request.scheme vous retournera dans les dents un casse-burette 'http'.</p>
 <p>Donc en suivant <a href="https://docs.djangoproject.com/en/1.9/ref/settings/#std:setting-SECURE_PROXY_SSL_HEADER">la doc</a> on modifie son settings en rajoutant </p>
-<div class="highlight"><pre><span></span><span class="n">SECURE_PROXY_SSL_HEADER</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;HTTP_X_FORWARDED_PROTO&#39;</span><span class="p">,</span> <span class="s1">&#39;https&#39;</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">SECURE_PROXY_SSL_HEADER</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;HTTP_X_FORWARDED_PROTO&#39;</span><span class="p">,</span> <span class="s1">&#39;https&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>mais ça ne suffit toujours pas. Nginx renverra encore et toujours du HTTP...</p>
 <p>donc à sa conf toute QQ </p>
-<div class="highlight"><pre><span></span><span class="na">location / {</span>
+<div class="highlight"><pre><span></span><code><span class="na">location / {</span>
         <span class="na">add_header           Front-End-Https    on;</span>
         <span class="na">add_header Cache-Control &quot;public, must-revalidate&quot;;</span>
         <span class="na">add_header Strict-Transport-Security &quot;max-age</span><span class="o">=</span><span class="s">2592000; includeSubdomains&quot;;</span>
@@ -159,16 +159,16 @@ Le Free de la Passion            </a>
 <span class="s">        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;</span>
 <span class="s">        proxy_set_header        X-Forwarded-Host $host;</span>
 <span class="s">    }</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>on rajoutera </p>
-<div class="highlight"><pre><span></span><span class="na">proxy_set_header        X-Forwarded-Proto $scheme;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="na">proxy_set_header        X-Forwarded-Proto $scheme;</span>
+</code></pre></div>
 
 
 <p>pour obtenir : </p>
-<div class="highlight"><pre><span></span><span class="na">location / {</span>
+<div class="highlight"><pre><span></span><code><span class="na">location / {</span>
         <span class="na">add_header           Front-End-Https    on;</span>
         <span class="na">add_header Cache-Control &quot;public, must-revalidate&quot;;</span>
         <span class="na">add_header Strict-Transport-Security &quot;max-age</span><span class="o">=</span><span class="s">2592000; includeSubdomains&quot;;</span>
@@ -180,7 +180,7 @@ Le Free de la Passion            </a>
 <span class="s">        proxy_set_header        X-Forwarded-Host $host;</span>
 <span class="s">        proxy_set_header        X-Forwarded-Proto $scheme;</span>
 <span class="s">    }</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Et là au joie, on obtiendra bien un request.scheme vallant 'https'.</p>
@@ -189,7 +189,7 @@ Le Free de la Passion            </a>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
+        <li><a href="https://foxmask.net/post/2020/05/01/trigger-happy-archive-yeoboseyo/">Trigger Happy archivé</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
         <li><a href="https://foxmask.net/post/2016/03/23/actionform-django-a-la-rescousse/">ActionForm Django à la rescousse !</a></li>
@@ -240,23 +240,23 @@ Le Free de la Passion            </a>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -270,7 +270,7 @@ Le Free de la Passion            </a>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -279,7 +279,7 @@ Le Free de la Passion            </a>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -297,7 +297,7 @@ Le Free de la Passion            </a>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -349,7 +349,7 @@ Le Free de la Passion            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

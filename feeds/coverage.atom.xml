@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - coverage</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/coverage.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2017-10-14T17:00:00+02:00</updated><entry><title>Coverage, install, upload results</title><link href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/" rel="alternate"></link><published>2017-10-14T17:00:00+02:00</published><updated>2017-10-14T17:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-10-14:/post/2017/10/14/coverage-install-upload-results/</id><summary type="html">&lt;p&gt;Creating coverage report, I put that here, as a reminder for a later use.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Installation of Coverage&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - coverage</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/coverage.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2017-10-14T17:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Coverage, install, upload results</title><link href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/" rel="alternate"></link><published>2017-10-14T17:00:00+02:00</published><updated>2017-10-14T17:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-10-14:/post/2017/10/14/coverage-install-upload-results/</id><summary type="html">&lt;p&gt;Creating coverage report, I put that here, as a reminder for a later use.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Installation of Coverage&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;coverage&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -29,12 +29,12 @@
 &lt;p&gt;If you go back to coveralls.io, you will find the job and the result of the coverage&lt;/p&gt;
 &lt;p&gt;Then add the following to your README.rst (for example) &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt; &lt;span class="ow"&gt;image&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt; https://coveralls.io/repos/github/foxmask/django-th/badge.svg
-    &lt;span class="nc"&gt;:target:&lt;/span&gt; &lt;span class="nf"&gt;https://coveralls.io/github/foxmask/django-th&lt;/span&gt;
+    &lt;span class="nc"&gt;:target:&lt;/span&gt; https://coveralls.io/github/foxmask/django-th
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;End&lt;/h1&gt;
-&lt;p&gt;Ready to go !&lt;/p&gt;</content><category term="test"></category><category term="coverage"></category><category term="python"></category></entry><entry><title>UnitTest, Coverage and Mock</title><link href="https://foxmask.net/post/2016/10/21/test-coverage-mock/" rel="alternate"></link><published>2016-10-21T20:00:00+02:00</published><updated>2016-10-21T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-10-21:/post/2016/10/21/test-coverage-mock/</id><summary type="html">&lt;p&gt;Today, I will show you the way to mock "service" in your UnitTest processing. As usual, I make things simples, like a rookie would discovered it.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Ready to go !&lt;/p&gt;</content><category term="Techno"></category><category term="test"></category><category term="coverage"></category><category term="python"></category></entry><entry><title>UnitTest, Coverage and Mock</title><link href="https://foxmask.net/post/2016/10/21/test-coverage-mock/" rel="alternate"></link><published>2016-10-21T20:00:00+02:00</published><updated>2016-10-21T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-10-21:/post/2016/10/21/test-coverage-mock/</id><summary type="html">&lt;p&gt;Today, I will show you the way to mock "service" in your UnitTest processing. As usual, I make things simples, like a rookie would discovered it.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;When we write unittest, it comes the moment when we cross the road of some services that we can't test.
 So the moment comes when we have to use &lt;a href="https://docs.python.org/dev/library/unittest.mock.html"&gt;Mock&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In the following text, you should spot some evidence related to django ;)&lt;/p&gt;
@@ -51,25 +51,25 @@ So the moment comes when we have to use &lt;a href="https://docs.python.org/dev/
 &lt;span class="sd"&gt;            :return: the status of the save statement&lt;/span&gt;
 &lt;span class="sd"&gt;            :rtype: boolean&lt;/span&gt;
 &lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+        &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
         &lt;span class="c1"&gt;# set the title and content of the data&lt;/span&gt;
         &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ServiceTwitter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
             &lt;span class="n"&gt;trigger_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;link&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;link&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 
-            &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{title} {link}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{title}&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="si"&gt;{link}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
                 &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;link&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;link&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 
             &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_tags&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigger_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
             &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
                 &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;twitter_api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_status&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-                &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+                &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
             &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;inst&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-                &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;critical&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Twitter ERR {}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inst&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+                &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;critical&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Twitter ERR &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inst&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
                 &lt;span class="n"&gt;update_result&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigger_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;inst&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-                &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+                &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -98,10 +98,10 @@ So the moment comes when we have to use &lt;a href="https://docs.python.org/dev/
 
 
 &lt;p&gt;then the testing show us &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;coverage run --source=&amp;#39;.&amp;#39; manage.py test -v2
-...
-test_save_data (th_twitter.tests.ServiceTwitterTest) ... ok
-...
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;coverage run --source=&amp;#39;.&amp;#39; manage.py test -v2&lt;/span&gt;
+&lt;span class="err"&gt;...&lt;/span&gt;
+&lt;span class="err"&gt;test_save_data (th_twitter.tests.ServiceTwitterTest) ... ok&lt;/span&gt;
+&lt;span class="err"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -109,12 +109,12 @@ test_save_data (th_twitter.tests.ServiceTwitterTest) ... ok
 &lt;p&gt;But the coverage report (in html) shows us &lt;/p&gt;
 &lt;p&gt;&lt;img alt="Twitter mocking save_data" src="/static/twitter_mock_save_data.png"&gt;&lt;/p&gt;
 &lt;p&gt;and the % &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter
-th_twitter/__init__.py                                2      0   100%   
-th_twitter/forms.py                                  12      0   100%   
-th_twitter/models.py                                 21      0   100%   
-th_twitter/my_twitter.py                            117     56    52%   119-121, 138-173, 190-209, 219-231, 241-250, 256, 273-278
-th_twitter/tests.py                                  80      0   100%   
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter&lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/__init__.py                                2      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/forms.py                                  12      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/models.py                                 21      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/my_twitter.py                            117     56    52%   119-121, 138-173, 190-209, 219-231, 241-250, 256, 273-278&lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/tests.py                                  80      0   100%   &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -125,7 +125,7 @@ th_twitter/tests.py                                  80      0   100%
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;unittest.mock&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;patch&lt;/span&gt;            
 
 
-    &lt;span class="nd"&gt;@patch.object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Twython&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;update_status&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Twython&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;update_status&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_save_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mock1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_twitter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
         &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;
@@ -148,12 +148,12 @@ th_twitter/tests.py                                  80      0   100%
 &lt;p&gt;And this time the coverage report show us &lt;/p&gt;
 &lt;p&gt;&lt;img alt="Twitter mocking save_data" src="/static/twitter_mock_save_data2.png"&gt;&lt;/p&gt;
 &lt;p&gt;and the % &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter
-th_twitter/__init__.py                                2      0   100%   
-th_twitter/forms.py                                  12      0   100%   
-th_twitter/models.py                                 21      0   100%   
-th_twitter/my_twitter.py                            117     40    66%   119-121, 138-173, 205-208, 241-250, 256, 273-278
-th_twitter/tests.py                                  80      0   100%   
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter&lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/__init__.py                                2      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/forms.py                                  12      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/models.py                                 21      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/my_twitter.py                            117     40    66%   119-121, 138-173, 205-208, 241-250, 256, 273-278&lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/tests.py                                  80      0   100%   &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -162,8 +162,8 @@ th_twitter/tests.py                                  80      0   100%
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;unittest.mock&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;patch&lt;/span&gt;            
 
     &lt;span class="c1"&gt;# be careful with the order of the decorator &lt;/span&gt;
-    &lt;span class="nd"&gt;@patch.object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Twython&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;update_status&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# will go to mock2&lt;/span&gt;
-    &lt;span class="nd"&gt;@patch.object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AnotherService&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;other_method&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# will go to mock1&lt;/span&gt;
+    &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Twython&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;update_status&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# will go to mock2&lt;/span&gt;
+    &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AnotherService&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;other_method&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# will go to mock1&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_save_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mock1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mock2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_twitter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
         &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;
@@ -189,4 +189,4 @@ th_twitter/tests.py                                  80      0   100%
 but if they don't, be sure to set the right parm to the right 'mock'&lt;/p&gt;
 &lt;h1&gt;End&lt;/h1&gt;
 &lt;p&gt;Hope this will be helpful like it was for me as I spent a lot of time to find and test that ;)&lt;/p&gt;
-&lt;p&gt;If you want to dig that topic &lt;a href="https://docs.python.org/dev/library/unittest.mock.html#patch-object"&gt;have a look at the doc&lt;/a&gt;&lt;/p&gt;</content><category term="test"></category><category term="coverage"></category><category term="mock"></category><category term="python"></category></entry></feed>
+&lt;p&gt;If you want to dig that topic &lt;a href="https://docs.python.org/dev/library/unittest.mock.html#patch-object"&gt;have a look at the doc&lt;/a&gt;&lt;/p&gt;</content><category term="Techno"></category><category term="test"></category><category term="coverage"></category><category term="mock"></category><category term="python"></category></entry></feed>

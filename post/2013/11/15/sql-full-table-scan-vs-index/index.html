@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -135,8 +135,8 @@ saouler le dev avec des noms barbares sur la ram et tout le bataclan :)</p>
 <p>Ainsi voici une liste de requêtes SQL à éviter à tout prix au risque de
 vous retrouver à faire faire des full scan sur vos "petites" tables.<br>
 <strong>Requête moisie n°1</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">salarie</span> <span class="k">WHERE</span> <span class="n">salaire</span><span class="o">*</span><span class="mi">12</span> <span class="o">&gt;</span> <span class="mi">6000</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">salarie</span> <span class="k">WHERE</span> <span class="n">salaire</span><span class="o">*</span><span class="mi">12</span> <span class="o">&gt;</span> <span class="mi">6000</span>
+</code></pre></div>
 
 
 <p>ici on voudrait les salariés ayant un salaire mensuel supérieur à 60000
@@ -146,21 +146,21 @@ bien en Full Scan. La preuve avec l'exécution du "plan d'exécution" aka
 "explain plan" qui vous le sortira la preuve par neuf ;)</p>
 <p>Pour que cette requête fasse son effet avec l'index il faut l'écrire
 ainsi :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">salarie</span> <span class="k">WHERE</span> <span class="n">salaire</span> <span class="o">&gt;</span> <span class="mi">60000</span><span class="o">/</span><span class="mi">12</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">salarie</span> <span class="k">WHERE</span> <span class="n">salaire</span> <span class="o">&gt;</span> <span class="mi">60000</span><span class="o">/</span><span class="mi">12</span>
+</code></pre></div>
 
 
 <p><strong>Requête moisie n°2</strong><br>
 Un autre exemple avec celle-ci</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="k">upper</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;FOXMASK&#39;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="k">upper</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;FOXMASK&#39;</span>
+</code></pre></div>
 
 
 <p>les fonctions sur les index partent en full scan systématiquement.<br>
 Si vous tenez à faire cela, il faut explicitement pondre un "function
 index" avec, lui aussi upper(name) dessus.</p>
-<div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">func_upper</span> <span class="k">ON</span> <span class="k">TABLE</span><span class="p">(</span><span class="k">UPPER</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">func_upper</span> <span class="k">ON</span> <span class="k">TABLE</span><span class="p">(</span><span class="k">UPPER</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
+</code></pre></div>
 
 
 <p><strong>Requête moisie n°3 sur index non discriminant</strong><br>
@@ -178,16 +178,16 @@ en cadeau bonusque pour ceux ce que ca nain téreeserrait, 2 trucs :</p>
 <p>1) Cas d'une requête entre grosses tables :<br>
 postulat : j'ai 2 tables une A, de quelques millions de lignes, une B
 de quelque milliers de lignes</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">where</span> <span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">B</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">where</span> <span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">B</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div>
 
 
 <p>Là, la requête c'est de la bonne daube puisqu'on se farcie l'inner join
 pour chaque ID de B et A .<br>
 Or l'ordre dans la clause where compte. Donc pour limiter le coût de la
 requête il faudrait la faire comme suit :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">where</span> <span class="n">B</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">where</span> <span class="n">B</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span>
+</code></pre></div>
 
 
 <p>Évidemment, le moteur du RDBMS devrait trouver le plan d'exécution le
@@ -196,14 +196,14 @@ des HINT.</p>
 <p>2) Cas des requêtes retournant les mêmes résultats mais identifiées
 différentes : comment est-ce possible ?<br>
 Ceci :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">WHERE</span> <span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">B</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">WHERE</span> <span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">B</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div>
 
 
 <p>et Cela (nota j'ai dû shooter la coloration syntaxique qui corrigeait
 tout seul ma prose ;)</p>
-<div class="highlight"><pre><span></span>select * from A, B where A.id=B.id and B.status = 1
-</pre></div>
+<div class="highlight"><pre><span></span><code>select * from A, B where A.id=B.id and B.status = 1
+</code></pre></div>
 
 
 <p>donneront le même résultat c'est sûr mais consommera de la mémoire 2
@@ -273,23 +273,23 @@ se produisent au détriment de l'application bien sûr.</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -303,7 +303,7 @@ se produisent au détriment de l'application bien sûr.</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -312,7 +312,7 @@ se produisent au détriment de l'application bien sûr.</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -330,7 +330,7 @@ se produisent au détriment de l'application bien sûr.</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -382,7 +382,7 @@ se produisent au détriment de l'application bien sûr.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

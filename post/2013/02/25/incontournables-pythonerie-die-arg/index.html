@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -149,7 +149,7 @@ quoi ressemble un script python sans l'usage de celui ci.</p>
 attendus ne seront pas au rendez vous ou vous affichera une phrase avec
 ce qui a été saisi :</p>
 <p><a href="https://github.com/foxmask/pythonerie/blob/die_arg/test_arg.py">test_arg.py</a></p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">argv</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="c1">#mettons ici un peu d&#39;aide quand l&#39;utilisateur ne s&#39;en sortira pas</span>
@@ -157,21 +157,21 @@ ce qui a été saisi :</p>
            \<span class="n">nfor</span> <span class="n">example</span> <span class="p">:</span> \<span class="n">npython</span> <span class="n">test_arg</span> <span class="o">-</span><span class="n">e</span> <span class="n">foxenv</span> <span class="o">-</span><span class="n">r</span> <span class="n">v1</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">FINAL</span>   
            \<span class="n">n</span>\<span class="n">nYou</span> <span class="n">can</span> <span class="n">optionally</span> <span class="n">use</span> <span class="n">the</span> <span class="n">switches</span> <span class="p">:</span>   
            \<span class="n">n</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">configfile</span> <span class="n">to</span> <span class="n">use</span> <span class="n">an</span> <span class="n">alternative</span> <span class="n">configfile</span>   
-           \<span class="n">n</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">logging</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="nb">file</span> <span class="n">to</span> <span class="n">use</span> <span class="n">an</span> <span class="n">alternative</span> <span class="n">configfile</span>  
+           \<span class="n">n</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">logging</span><span class="o">/</span><span class="n">config</span><span class="o">/</span><span class="n">file</span> <span class="n">to</span> <span class="n">use</span> <span class="n">an</span> <span class="n">alternative</span> <span class="n">configfile</span>  
 <span class="k">for</span> <span class="n">logging</span><span class="s2">&quot;</span>
     <span class="n">env</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="n">release</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="c1">#pas mis assez d&#39;arguments</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
         <span class="c1">#affichons donc l&#39;aide</span>
-        <span class="k">print</span> <span class="n">usage</span>
-        <span class="nb">exit</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="n">usage</span>
+        <span class="n">exit</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="c1">#oops un pb ? on n&#39;a pas encore le bon compte d&#39;arguments</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s2">&quot;the environment name ( specified with -e ) and release name  </span>
+        <span class="nb">print</span> <span class="s2">&quot;the environment name ( specified with -e ) and release name  </span>
 <span class="p">(</span> <span class="n">specified</span> <span class="k">with</span> <span class="o">-</span><span class="n">r</span> <span class="p">)</span> <span class="n">are</span> <span class="n">mandatory</span> <span class="s2">&quot;</span>
-        <span class="nb">exit</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">exit</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="n">switch</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">switch2</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
@@ -185,42 +185,42 @@ ce qui a été saisi :</p>
         <span class="n">release</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
     <span class="c1">#j&#39;ai tape portenawak - affichons ce qui ne va pas</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s2">&quot;the environment name ( specified with -e ) and release name  </span>
+        <span class="nb">print</span> <span class="s2">&quot;the environment name ( specified with -e ) and release name  </span>
 <span class="p">(</span> <span class="n">specified</span> <span class="k">with</span> <span class="o">-</span><span class="n">r</span> <span class="p">)</span> <span class="n">are</span> <span class="n">mandatory</span> <span class="s2">&quot;</span>
     <span class="c1">#tout est ok : </span>
     <span class="c1">#affichage des valeurs entrées sur la ligne de commandes</span>
-    <span class="k">print</span> <span class="s2">&quot;environment {0} release {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">release</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s2">&quot;environment </span><span class="si">{0}</span><span class="s2"> release </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">release</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ainsi en tapant :</p>
-<div class="highlight"><pre><span></span>python test_arg.py
-</pre></div>
+<div class="highlight"><pre><span></span><code>python test_arg.py
+</code></pre></div>
 
 
 <p>on obtient l'aide :</p>
-<div class="highlight"><pre><span></span>To run the script enter -e environment name -r release name.             
+<div class="highlight"><pre><span></span><code>To run the script enter -e environment name -r release name.             
 <span class="k">for</span> example : 
 python test_arg -e foxenv -r v1.0-FINAL             
 
 You can optionally use the switches :             
  -c /path/to/configfile to use an alternative configfile             
  -l /path/to/logging/config/file to use an alternative configfile <span class="k">for</span> logging
-</pre></div>
+</code></pre></div>
 
 
 <p>Ensuite</p>
-<div class="highlight"><pre><span></span>python test_arg.py -r <span class="m">123</span>.2 -e fox
-</pre></div>
+<div class="highlight"><pre><span></span><code>python test_arg.py -r <span class="m">123</span>.2 -e fox
+</code></pre></div>
 
 
 <p>donne :</p>
-<div class="highlight"><pre><span></span>environment fox release <span class="m">123</span>.2
-</pre></div>
+<div class="highlight"><pre><span></span><code>environment fox release <span class="m">123</span>.2
+</code></pre></div>
 
 
 <p>Ok parfait ca marche mais c'est tiré par les cheveux, fastidieux et
@@ -229,7 +229,7 @@ quand on a plus complexe à traiter on n'est pas sorti de l'auberge.</p>
 fonctionnant avec ma debian et python 2.7, argparse étant pour la v3 de
 python)</p>
 <p><a href="https://raw.github.com/foxmask/pythonerie/die_arg/test_arg.py">test_optparse.py</a></p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">optparse</span> <span class="kn">import</span> <span class="n">OptionParser</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">optparse</span> <span class="kn">import</span> <span class="n">OptionParser</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
@@ -247,33 +247,33 @@ python)</p>
 <span class="n">help</span><span class="o">=</span><span class="s2">&quot;the path where the config file for the loggging is located.&quot;</span><span class="p">,</span> <span class="n">metavar</span><span class="o">=</span><span class="s2">&quot;LOGGING_CONFIG&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
     <span class="c1">#je n&#39;ai pas donné d&#39;environement ni de release ... hophop error :)</span>
-    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">environment</span> <span class="o">==</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">options</span><span class="o">.</span><span class="n">release</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">environment</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">options</span><span class="o">.</span><span class="n">release</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;options -e and -r are mandatory&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s2">&quot;environment {0} release {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">environment</span><span class="p">,</span><span class="n">options</span><span class="o">.</span><span class="n">release</span><span class="p">)</span>
+        <span class="nb">print</span> <span class="s2">&quot;environment </span><span class="si">{0}</span><span class="s2"> release </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">environment</span><span class="p">,</span><span class="n">options</span><span class="o">.</span><span class="n">release</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Cours précis clair :)<br>
 A présent en tapant la ligne précédente sans aucun argument on obtient
 :</p>
-<div class="highlight"><pre><span></span>python test_optparse.py 
+<div class="highlight"><pre><span></span><code>python test_optparse.py 
 Usage: test_optparse.py -e environment name -r release name. 
 <span class="k">for</span> example : 
 python make_delivery -e envname -r <span class="m">20130101</span>
 
 test_optparse.py: error: options -e and -r are mandatory
-</pre></div>
+</code></pre></div>
 
 
 <p>la différence est que cette fois ci une erreur est retournée. (c'est le
 message dans parse.error)</p>
 <p>A présent le petit plus, pas dégueux, en tapant <strong>python
 test_optparse.py -h</strong> on obtient :</p>
-<div class="highlight"><pre><span></span>Usage: test_optparse.py -e environment name -r release name. 
+<div class="highlight"><pre><span></span><code>Usage: test_optparse.py -e environment name -r release name. 
 <span class="k">for</span> example : 
 python test_optparse -e envname -r <span class="m">20130101</span>
 
@@ -292,7 +292,7 @@ Options:
                         the path where the config file <span class="k">for</span> the loggging is
                         located. By Default the script will search in
                         ~/MakeDelivery/logging.conf
-</pre></div>
+</code></pre></div>
 
 
 <p>Voilà, tout propre, nickel !</p>
@@ -358,23 +358,23 @@ configuration</em></p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -388,7 +388,7 @@ configuration</em></p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -397,7 +397,7 @@ configuration</em></p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -415,7 +415,7 @@ configuration</em></p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -467,7 +467,7 @@ configuration</em></p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

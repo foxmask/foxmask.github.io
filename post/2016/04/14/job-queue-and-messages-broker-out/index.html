@@ -47,7 +47,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -172,16 +172,16 @@ Celery cessant de fonctionner sans raison apparente (aucune info dans les logs n
 <p>Donc c'est tout ce qu'il me restait, "quand faut y aller faut y aller" me dis-je.</p>
 <p>Et au final ça n'a pas mal réussi puisque les temps de traitement sont passés de un peu moins d'une minute les 40 triggers à... 7sec (en moyenne haute ;)</p>
 <p>Tout cela grâce à 9 lignes de code :)</p>
-<div class="highlight"><pre><span></span>    <span class="n">trigger</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">user__is_active</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;consumer__name&#39;</span><span class="p">,</span> <span class="s1">&#39;provider__name&#39;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">trigger</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">user__is_active</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s1">&#39;consumer__name&#39;</span><span class="p">,</span> <span class="s1">&#39;provider__name&#39;</span><span class="p">)</span>
 
-    <span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span><span class="p">,</span> <span class="n">TimeoutError</span>
+    <span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span><span class="p">,</span> <span class="ne">TimeoutError</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">DJANGO_TH</span><span class="p">[</span><span class="s1">&#39;processes&#39;</span><span class="p">])</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
             <span class="n">result</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map_async</span><span class="p">(</span><span class="n">publishing</span><span class="p">,</span> <span class="n">trigger</span><span class="p">)</span>
             <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">360</span><span class="p">)</span>
-    <span class="k">except</span> <span class="n">TimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">except</span> <span class="ne">TimeoutError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>chez moi <code>settings.DJANGO_TH['processes']</code> vaut 5. Je vous fais grâce de la fonction <code>publishing</code> ;)</p>
@@ -213,7 +213,7 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
 <li>toutes les 13min, la récupération des données a lieu</li>
 </ul>
 <p>ne sont pas affichées, les logs qui n'ont pas de données à traiter, mais qui évidement, consomme du temps. Ce qui explique que de 14:00:00 à 14:00:06 il ne s'affiche rien.</p>
-<div class="highlight"><pre><span></span><span class="m">2016</span>-04-13 <span class="m">13</span>:26:02,928 INFO tasks <span class="m">3902</span> foxmask - ServiceRss - ServicePocket - Frandroid - pocket - <span class="m">1</span> new data
+<div class="highlight"><pre><span></span><code><span class="m">2016</span>-04-13 <span class="m">13</span>:26:02,928 INFO tasks <span class="m">3902</span> foxmask - ServiceRss - ServicePocket - Frandroid - pocket - <span class="m">1</span> new data
 <span class="m">2016</span>-04-13 <span class="m">13</span>:26:06,156 INFO tasks <span class="m">3903</span> foxmask - ServiceRss - ServiceEvernote - LinuxFr - <span class="m">1</span> new data
 <span class="m">2016</span>-04-13 <span class="m">13</span>:26:06,802 INFO tasks <span class="m">3902</span> foxmask - ServiceTwitter - ServicePocket - Django - <span class="m">2</span> new data
 <span class="m">2016</span>-04-13 <span class="m">13</span>:26:07,137 INFO tasks <span class="m">3906</span> foxmask - ServiceTwitter - ServiceTrello - Django - <span class="m">2</span> new data
@@ -247,7 +247,7 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
 <span class="m">2016</span>-04-13 <span class="m">14</span>:00:15,533 INFO tasks <span class="m">4534</span> foxmask - ServiceRss - ServiceReadability - Numerama - <span class="m">1</span> new data
 <span class="m">2016</span>-04-13 <span class="m">14</span>:00:16,498 INFO tasks <span class="m">4543</span> foxmask - ServiceRss - ServiceEvernote - BeGeek - <span class="m">1</span> new data
 <span class="m">2016</span>-04-13 <span class="m">14</span>:00:17,206 INFO tasks <span class="m">4542</span> foxmask - ServiceRss - ServiceReadability - BeGeek - <span class="m">1</span> new data
-</pre></div>
+</code></pre></div>
 
 
 <h2>Conclusion</h2>
@@ -308,23 +308,23 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -338,7 +338,7 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -347,7 +347,7 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -365,7 +365,7 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -417,7 +417,7 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

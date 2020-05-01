@@ -45,7 +45,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -141,13 +141,13 @@ I cant imagine to make a new one without this new little module named
 "Trigger Happy Ansible"</p>
 <p>What does it do ?</p>
 <p>Well, as anyone can imagine, when you start a django project you enter,</p>
-<div class="highlight"><pre><span></span>python manage.py startproject 
-</pre></div>
+<div class="highlight"><pre><span></span><code>python manage.py startproject 
+</code></pre></div>
 
 
 <p>when you start a new app you enter :</p>
-<div class="highlight"><pre><span></span>python manage.py startapp
-</pre></div>
+<div class="highlight"><pre><span></span><code>python manage.py startapp
+</code></pre></div>
 
 
 <p>thus you will have a new empty module with a lot a "empty" files.</p>
@@ -157,8 +157,8 @@ simple module
 provides a module ready to use , but that need to be customized to be
 used.</p>
 <p>So I went a little far away and now you can just enter</p>
-<div class="highlight"><pre><span></span>ansible-playbook -i hosts site.yml
-</pre></div>
+<div class="highlight"><pre><span></span><code>ansible-playbook -i hosts site.yml
+</code></pre></div>
 
 
 <p>and that's all !</p>
@@ -172,30 +172,30 @@ folder will be created with everything needed by TriggerHappy</p>
 <a href="https://github.com/foxmask/django-th-ansible/blob/master/site.yml">site.yml</a>
 file.</p>
 <p>The lines to be changed are those ones :</p>
-<div class="highlight"><pre><span></span>  <span class="l l-Scalar l-Scalar-Plain">vars</span><span class="p p-Indicator">:</span>
+<div class="highlight"><pre><span></span><code>  <span class="nt">vars</span><span class="p">:</span>
     <span class="c1"># to directory tree and class/module/name purpose</span>
-    <span class="l l-Scalar l-Scalar-Plain">module_name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">johndoe</span>
-    <span class="l l-Scalar l-Scalar-Plain">service_name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">johndoe</span>
-    <span class="l l-Scalar l-Scalar-Plain">class_name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Johndoe</span>
+    <span class="nt">module_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">johndoe</span>
+    <span class="nt">service_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">johndoe</span>
+    <span class="nt">class_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Johndoe</span>
 
     <span class="c1"># for setup.py purpose</span>
-    <span class="l l-Scalar l-Scalar-Plain">author</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">John Doe</span>
-    <span class="l l-Scalar l-Scalar-Plain">author_email</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">john@doe.com</span>
-    <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">this is a module that is fun</span>
-    <span class="l l-Scalar l-Scalar-Plain">details</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">when fun is higher than anything</span>
-    <span class="l l-Scalar l-Scalar-Plain">url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/foxmask/django-th-johndoe</span>
-    <span class="l l-Scalar l-Scalar-Plain">download_url</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/foxmask/django-th-johndoe/archive/trigger-happy-johndoe-</span>
+    <span class="nt">author</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">John Doe</span>
+    <span class="nt">author_email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">john@doe.com</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">this is a module that is fun</span>
+    <span class="nt">details</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">when fun is higher than anything</span>
+    <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/foxmask/django-th-johndoe</span>
+    <span class="nt">download_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/foxmask/django-th-johndoe/archive/trigger-happy-johndoe-</span>
 
     <span class="c1"># for dependencies purpose</span>
-    <span class="l l-Scalar l-Scalar-Plain">external_api</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">foobar</span>
-    <span class="l l-Scalar l-Scalar-Plain">external_api_class</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Foobar</span>
-    <span class="l l-Scalar l-Scalar-Plain">external_api_version</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1.2.3</span>
-</pre></div>
+    <span class="nt">external_api</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">foobar</span>
+    <span class="nt">external_api_class</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Foobar</span>
+    <span class="nt">external_api_version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.2.3</span>
+</code></pre></div>
 
 
 <p>as you can see, I separated variables by usage domain</p>
 <p>And here is the output of the running ansible playbook</p>
-<div class="highlight"><pre><span></span>ansible-playbook -i hosts site.yml
+<div class="highlight"><pre><span></span><code>ansible-playbook -i hosts site.yml
 
     PLAY <span class="o">[</span>home-sweet-home<span class="o">]</span> ******************************************************** 
 
@@ -288,7 +288,7 @@ file.</p>
     -rw-r--r-- <span class="m">1</span> foxmask foxmask <span class="m">1513</span> août  <span class="m">23</span> <span class="m">16</span>:28 wz-3-form.html
     -rw-r--r-- <span class="m">1</span> foxmask foxmask <span class="m">1513</span> août  <span class="m">23</span> <span class="m">16</span>:28 wz-1-form.html
     -rw-r--r-- <span class="m">1</span> foxmask foxmask  <span class="m">382</span> août  <span class="m">23</span> <span class="m">16</span>:28 callback.html
-</pre></div>
+</code></pre></div>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
@@ -345,23 +345,23 @@ file.</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -375,7 +375,7 @@ file.</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -384,7 +384,7 @@ file.</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -402,7 +402,7 @@ file.</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -454,7 +454,7 @@ file.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

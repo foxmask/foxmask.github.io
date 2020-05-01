@@ -37,7 +37,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -93,87 +93,6 @@ Le Free de la Passion            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://foxmask.net/post/2016/02/17/pycharm-running-flake8/">PyCharm running Flake8</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-02-17T19:00:00+01:00"> mer. 17 février 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/pycharm.html">pycharm</a>
-        /
-	<a href="https://foxmask.net/tag/flake8.html">flake8</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h2>The Ugly</h2>
-<p>As I like clean things, I like when python tells me that I made ugly things to be able to fix them.</p>
-<p>With this in mind, first of all, I used the service <a href="https://codeclimate.com">CodeClimate</a>.
-This one permits to tell you where your code can be improved and how …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2016/02/17/pycharm-running-flake8/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2016/02/15/trigger-happy-running-softly-with-rq/">Trigger Happy running softly with RQ</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-02-15T19:30:00+01:00"> lun. 15 février 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/django.html">Django</a>
-        /
-	<a href="https://foxmask.net/tag/triggerhappy.html">TriggerHappy</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h2>TriggerHappy and Celery</h2>
-<p>Actually, Trigger Happy works perlfectly with <a href="http://celery.readthedocs.org/">Celery</a>, but.... there is a but.</p>
-<p>Sometimes, (once a week) celery stays stuck without any visible reason. </p>
-<p>No error logs occur, and even in DEBUG level, no log appear at all. The logfile remain as is (and yes the disk is …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2016/02/15/trigger-happy-running-softly-with-rq/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/">History not to lose the thread : TrackingFields</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-02-13T17:00:00+01:00"> sam. 13 février 2016</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/django.html">django</a>
-        /
-	<a href="https://foxmask.net/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><h2>Introduction</h2>
-<p>this post is an english version [of this post made on <a href="http://sametmax.com/histoire-de-ne-pas-perdre-le-fil-trackingfields/">sam et max</a> made last week.</p>
-<p>The goal of that post will be to show how, without changing anything in a form, we can track the modifications of the data made in the application</p>
-<p>the first part will …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/">more ...</a>
-                </div>
-            </article>
-            <hr/>
             <article>
                 <h2><a href="https://foxmask.net/post/2016/02/10/pycharm-raccourcis-pour-obtenir-les-comportements-sublimetext-firefox/">PyCharm : raccourcis pour obtenir les comportements "habituels" comme SublimeText et FireFox</a></h2>
                     <div class="well well-sm">
@@ -285,8 +204,8 @@ L'an passé on apprenait qu'Evernote …</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Sur AIX, lors d'un reboot (malencontreux?) il peut arriver que des folders soient vides (aïe bobo partout)</p>
 <p>Bon du coup ca peut provenir du "simple" fait de "dirty" partitions qui ont besoin qu'on leur fasse faire un check </p>
-<div class="highlight"><pre><span></span>fsck /opt/websphere
-</pre></div>
+<div class="highlight"><pre><span></span><code>fsck /opt/websphere
+</code></pre></div>
 
 
 <p>on repondra oui s'il vous demander de "FIX?"</p>
@@ -376,6 +295,91 @@ applications django quand j'en fourni 10.</p>
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2015/11/27/sam-max-board-suivez-lactu-de-la-communaute/">Sam et Max Board Suivez l'actu de la communauté</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-11-27T14:28:00+01:00"> ven. 27 novembre 2015</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Hey !</p>
+<p>Dans <a href="/post/2015/11/10/waaazaaaaa/">un billet d'il y a 2
+semaines</a>,
+j'exposais un nouveau projet que j'avais en tête et lancé (pas trop
+fort) et pas trop loin à priori parce que personne n'a rebondi sur
+l'occasion pour nous faire un retour, du coup ça végète ;)</p>
+<p>Donc je relance la question ici …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/11/27/sam-max-board-suivez-lactu-de-la-communaute/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2015/10/02/trigger-happy-stats-requete-et-proposition/">Trigger-Happy, stats, requête et proposition</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-10-02T11:04:00+02:00"> ven. 02 octobre 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+        /
+	<a href="https://foxmask.net/tag/triggerhappy.html">TriggerHappy</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Avec wordpress on dispose de stats par billet, et le fait de m'être mis
+un coup de pompe au cul pour publier des billets in ze Shakespeare
+language a fait que dans le top 100 des billets les plus lus sur le
+blog, on trouve celui concernant la sortie de …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/10/02/trigger-happy-stats-requete-et-proposition/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/">Trigger Happy, de tout, de rien, la vie</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-09-08T10:30:00+02:00"> mar. 08 septembre 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+        /
+	<a href="https://foxmask.net/tag/triggerhappy.html">TriggerHappy</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Depuis la sortie de la version 0.11.0, j'ai lancé quelques bidules
+périphériques :</p>
+<ul>
+<li><a href="http://blog.trigger-happy.eu/">un blog dédié</a> en pelican, que j'ai
+    commencé à remplir. J'essaierai de lui trouver un thème plus
+    responsive que du rendu à taille fixe.</li>
+<li>un compte <a href="https://twitter.com/TriggerHappyEu">@TriggerHappyEu</a>
+    dédié qui relaiera les news du projet</li>
+<li><a href="https://alternativeto.net/software/trigger-happy/">une inscription …</a></li></ul>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://foxmask.net/category/techno3.html">&laquo;</a>
@@ -430,23 +434,23 @@ applications django quand j'en fourni 10.</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -460,7 +464,7 @@ applications django quand j'en fourni 10.</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -469,7 +473,7 @@ applications django quand j'en fourni 10.</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -487,7 +491,7 @@ applications django quand j'en fourni 10.</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -539,7 +543,7 @@ applications django quand j'en fourni 10.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

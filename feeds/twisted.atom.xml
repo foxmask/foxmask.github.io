@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - twisted</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/twisted.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-05-21T10:30:00+02:00</updated><entry><title>Revue Technique de la semaine du 18/05/2015</title><link href="https://foxmask.net/post/2015/05/21/revue-technique-de-la-semaine-du-1805/" rel="alternate"></link><published>2015-05-21T10:30:00+02:00</published><updated>2015-05-21T10:30:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-21:/post/2015/05/21/revue-technique-de-la-semaine-du-1805/</id><summary type="html">&lt;p&gt;Au menu ici, un tuto sur Python, Twisted, MAT, Django&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - twisted</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/twisted.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-05-21T10:30:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Revue Technique de la semaine du 18/05/2015</title><link href="https://foxmask.net/post/2015/05/21/revue-technique-de-la-semaine-du-1805/" rel="alternate"></link><published>2015-05-21T10:30:00+02:00</published><updated>2015-05-21T10:30:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-21:/post/2015/05/21/revue-technique-de-la-semaine-du-1805/</id><summary type="html">&lt;p&gt;Au menu ici, un tuto sur Python, Twisted, MAT, Django&lt;/p&gt;
 &lt;h2&gt;Python&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Le tuto de Sam et Max&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;https://twitter.com/sam_et_max/status/599840755734175744&lt;/p&gt;
@@ -21,4 +21,4 @@ qui n'affecte que les versions 1.8 et supérieure&lt;/p&gt;
 libre &amp;amp; écrit en python, qui se charge de rendre vos données anonymes,
 histoire de faire la nique aux dispositifs sensés filtrer et repérer vos
 données avec " les fameuses sondes " poser chez nos FAI et autres
-hébergeurs de contenus&lt;/p&gt;</content><category term="Django"></category><category term="python"></category><category term="twisted"></category></entry></feed>
+hébergeurs de contenus&lt;/p&gt;</content><category term="Techno"></category><category term="Django"></category><category term="python"></category><category term="twisted"></category></entry></feed>

@@ -37,7 +37,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -93,89 +93,6 @@ Le Free de la Passion            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://foxmask.net/post/2013/03/18/incontournables-pythonerie-pack-de-12/">Incontournables Pythonerie : un pack de 12 s'il te plait !</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-03-18T10:00:00+01:00"> lun. 18 mars 2013</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/python.html">python</a>
-        /
-	<a href="https://foxmask.net/tag/pythonerie.html">pythonerie</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Avec ce billet nous allons voir comment produire un package comme on en
-voit partout dans le monde opensource (ou pas d'ailleurs) pour livrer
-une "suite logicielle" à ses clients/utilisateurs.</p>
-<p><strong>Brève présentation du script :</strong></p>
-<p>Ce script extrait d'un fichier XML (produit par
-<a href="http://buildprocess.sourceforge.net/autodeploy.html" title="autodeploy">Autodeploy</a>)
-les targz installés sur les environnements …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/03/18/incontournables-pythonerie-pack-de-12/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2013/03/14/rss-rss-quoi-jai-une-gueule-drss/">RSS, RSS, quoi j'ai une gueule d'RSS ?</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-03-14T15:20:00+01:00"> jeu. 14 mars 2013</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Avec l' "arrivée" du "départ annoncé" de GoogleReader pour cet été, des
-mouvements de foule se produisent pour trouver une alternative, une
-vraie.</p>
-<p>Chacun tweetant la solution qu'il trouve la mieux avec de la valeur
-ajoutée qu'apporte cette dernière.</p>
-<p>Alors non je ne vous en donnerai pas une seule de …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/03/14/rss-rss-quoi-jai-une-gueule-drss/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/">Oracle Migrer un schéma ISO en UTF8</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-03-14T10:00:00+01:00"> jeu. 14 mars 2013</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Vous avez sous la main un dump en ISO et vous souhaitez l'importer en
-UTF8, tout un programme !</p>
-<p>La marche à suivre est la suivante :</p>
-<ol>
-<li>On importe le dump dans un schéma d'une base en ISO</li>
-<li>On exécutera un script byte_to_char.sql pour que le schéma prenne
-    en compte l'UTF8 …</li></ol>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/">more ...</a>
-                </div>
-            </article>
-            <hr/>
             <article>
                 <h2><a href="https://foxmask.net/post/2013/03/13/incontournables-pythonerie-parse-parse-parsera-la-derniere-la-derniere/">Incontournables Pythonerie : parse parse parsera la dernière la dernière</a></h2>
                     <div class="well well-sm">
@@ -260,13 +177,13 @@ langages respectifs, le plus répandu en JAVA par exemple, étant
 <p>On récupère un patch chez Oracle, on le décompresse, on tape opatch
 apply et hop !</p>
 <p>Donc après la décompression, ça donne :</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> path_ou_on_a_decompresse_le_path
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> path_ou_on_a_decompresse_le_path
+</code></pre></div>
 
 
 <p>application du patch oracle</p>
-<div class="highlight"><pre><span></span>opatch apply
-</pre></div>
+<div class="highlight"><pre><span></span><code>opatch apply
+</code></pre></div>
 
 
 <p>Si vous rencontrez …</p>
@@ -395,6 +312,96 @@ J'ai donc découpé ce script en petits bouts pour vous illustrer …</em></p>
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2013/02/25/de-php-a-python-meetgeek/">de PHP à Python : MeetGeek !</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-02-25T09:44:00+01:00"> lun. 25 février 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>J'aurai pu monter un site "QQ la praline", style MeetGeek (merde il est
+déjà pris:P) pour coucher sur le papier ce qui suit ;)</p>
+<p>Samedi j'ai lancé <a href="https://twitter.com/foxmask/status/305244330103287810">une proposition en l'air sans aucun formalisme sur
+twitter</a>.</p>
+<p>Cette proposition la voici :<br>
+Vous êtes développeur PHP et avez envie de vous mettre …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/02/25/de-php-a-python-meetgeek/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2013/02/20/jelix-1-5-0-out/">Jelix PHP5 Framework : version 1.5.0 out</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-02-20T15:11:00+01:00"> mer. 20 février 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+        /
+	<a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Le fameux <a href="http://www.jelix.org">Framework PHP5 Jelix</a> sort sa version
+1.5.0</p>
+<p>Les contributeurs se sont mis en 4 pour sortir cette dernière version
+dont voici le menu des nouveautés :</p>
+<ul>
+<li><strong>Support PHP 5.3 only</strong> à présent. Utilisation dans Jelix des
+    fonctionnalités introduites par PHP 5.3, comme les fonctions
+    anonymes …</li></ul>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/02/20/jelix-1-5-0-out/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2013/02/18/de-php-a-python-x-aime-l/">de PHP à Python : X aime L</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-02-18T10:00:00+01:00"> lun. 18 février 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Nouvel opus de la série de <a href="/post/2013/01/14/de-php-a-python-tous-ensemble/" title="de PHP à Python : tous ensemble">de PHP à
+Python</a>.</p>
+<p>Aujourd'hui, Comment parcourir un fichier XML ?</p>
+<p>Bon en plus je vais pousser le bouchon à utiliser XPath ;) tant qu'à
+lire un fichier, autant que ça soit "intelligent" et pas juste lire pour
+lire (quoi je me répète répète;)</p>
+<p>La <em>matière …</em></p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/02/18/de-php-a-python-x-aime-l/">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://foxmask.net/category/techno11.html">&laquo;</a>
@@ -449,23 +456,23 @@ J'ai donc découpé ce script en petits bouts pour vous illustrer …</em></p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -479,7 +486,7 @@ J'ai donc découpé ce script en petits bouts pour vous illustrer …</em></p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -488,7 +495,7 @@ J'ai donc découpé ce script en petits bouts pour vous illustrer …</em></p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -506,7 +513,7 @@ J'ai donc découpé ce script en petits bouts pour vous illustrer …</em></p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -558,7 +565,7 @@ J'ai donc découpé ce script en petits bouts pour vous illustrer …</em></p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

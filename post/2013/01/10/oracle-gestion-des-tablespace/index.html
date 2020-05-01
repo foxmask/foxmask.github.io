@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -132,42 +132,42 @@ auto extend sur ses tablespaces, il arrive (souvant) qu'on se mange des
 erreurs parce que le tablespace est full.</p>
 <p>Donc ;</p>
 <p>Pour lister ses tablespace on tapera :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">file_name</span> <span class="k">FROM</span> <span class="n">dba_data_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">file_name</span> <span class="k">FROM</span> <span class="n">dba_data_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>affichera</p>
-<div class="highlight"><pre><span></span><span class="n">FILE_NAME</span>
+<div class="highlight"><pre><span></span><code><span class="n">FILE_NAME</span>
 <span class="c1">--------------------------------------------------------------------------------</span>
 <span class="o">/</span><span class="n">u02</span><span class="o">/</span><span class="n">oradata</span><span class="o">/</span><span class="n">INSTANCE</span><span class="o">/</span><span class="n">data01</span><span class="p">.</span><span class="n">dbf</span>
 <span class="o">/</span><span class="n">u02</span><span class="o">/</span><span class="n">oradata</span><span class="o">/</span><span class="n">INSTANCE</span><span class="o">/</span><span class="n">data02</span><span class="p">.</span><span class="n">dbf</span>
 <span class="p">...</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Pour le tablespace temporaire on fait :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">tablespace_name</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">bytes</span> <span class="k">FROM</span> <span class="n">dba_temp_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span> <span class="o">=</span> <span class="s1">&#39;TEMP&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">tablespace_name</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">bytes</span> <span class="k">FROM</span> <span class="n">dba_temp_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span> <span class="o">=</span> <span class="s1">&#39;TEMP&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>Trouver la taille restant dans le tablespace</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">AS</span> <span class="n">Mo</span> <span class="k">FROM</span> <span class="n">dba_free_space</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">AS</span> <span class="n">Mo</span> <span class="k">FROM</span> <span class="n">dba_free_space</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
         <span class="n">MO</span>
 <span class="c1">----------</span>
   <span class="mi">5205</span><span class="p">.</span><span class="mi">625</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Si on constate que la taille n'est pas suffisante, pour les agrandir on
 fera,</p>
 <p>pour le tablespace MONBEAUTBSPC :</p>
-<div class="highlight"><pre><span></span><span class="k">alter</span> <span class="n">tablespace</span> <span class="n">MONBEAUTBSPC</span> <span class="k">add</span> <span class="n">datafile</span> <span class="s1">&#39;/u02/oradata/INSTANCE/data03.dbf&#39;</span> <span class="k">size</span> <span class="mi">30720</span><span class="n">M</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">alter</span> <span class="n">tablespace</span> <span class="n">MONBEAUTBSPC</span> <span class="k">add</span> <span class="n">datafile</span> <span class="s1">&#39;/u02/oradata/INSTANCE/data03.dbf&#39;</span> <span class="k">size</span> <span class="mi">30720</span><span class="n">M</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>pour le tablespace TEMP :</p>
-<div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="n">TABLESPACE</span> <span class="n">temp</span> <span class="k">ADD</span> <span class="n">TEMPFILE</span> <span class="s1">&#39;/u02/oradata/INSTANCE/temp02.dbf&#39;</span> <span class="k">SIZE</span> <span class="mi">512</span><span class="n">m</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span> <span class="n">TABLESPACE</span> <span class="n">temp</span> <span class="k">ADD</span> <span class="n">TEMPFILE</span> <span class="s1">&#39;/u02/oradata/INSTANCE/temp02.dbf&#39;</span> <span class="k">SIZE</span> <span class="mi">512</span><span class="n">m</span><span class="p">;</span>
+</code></pre></div>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
@@ -224,23 +224,23 @@ fera,</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -254,7 +254,7 @@ fera,</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -263,7 +263,7 @@ fera,</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -281,7 +281,7 @@ fera,</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -333,7 +333,7 @@ fera,</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

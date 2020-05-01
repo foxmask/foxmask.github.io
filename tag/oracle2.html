@@ -36,8 +36,6 @@
         <link href="https://foxmask.net/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
 
-        <link href="https://foxmask.net/feeds/oracle.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Le Free de la Passion oracle ATOM Feed"/>
 
 
 </head>
@@ -115,14 +113,14 @@ auto extend sur ses tablespaces, il arrive (souvant) qu'on se mange des
 erreurs parce que le tablespace est full.</p>
 <p>Donc ;</p>
 <p>Pour lister ses tablespace on tapera :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">file_name</span> <span class="k">FROM</span> <span class="n">dba_data_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">file_name</span> <span class="k">FROM</span> <span class="n">dba_data_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>affichera</p>
-<div class="highlight"><pre><span></span><span class="n">FILE_NAME</span>
+<div class="highlight"><pre><span></span><code><span class="n">FILE_NAME</span>
 <span class="c1">--------------------------------------------------------------------------------</span>
-<span class="o">/</span><span class="n">u02</span><span class="o">/</span><span class="n">oradata …</span></pre></div>
+<span class="o">/</span><span class="n">u02</span><span class="o">/</span><span class="n">oradata …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/10/oracle-gestion-des-tablespace/">more ...</a>
                 </div>
             </article>
@@ -146,17 +144,17 @@ erreurs parce que le tablespace est full.</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Le script suivant, nommons le export_pkg, vous permet d'exporter une
 proc de votre choix :</p>
-<div class="highlight"><pre><span></span>SET heading off
-SET pagesize 0
-SET linesize 255
-SET trimspool ON
-SET feedback off
-SET verify off
+<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="n">heading</span> <span class="k">off</span>
+<span class="k">SET</span> <span class="n">pagesize</span> <span class="mi">0</span>
+<span class="k">SET</span> <span class="n">linesize</span> <span class="mi">255</span>
+<span class="k">SET</span> <span class="n">trimspool</span> <span class="k">ON</span>
+<span class="k">SET</span> <span class="n">feedback</span> <span class="k">off</span>
+<span class="k">SET</span> <span class="n">verify</span> <span class="k">off</span>
 
 
-spool &amp;&amp;1\.pkg
-SELECT &#39;CREATE OR REPLACE &#39; FROM dual;
-SELECT TEXT FROM user_source WHERE TYPE=&#39;PACKAGE&#39; AND NAME …</pre></div>
+<span class="n">spool</span> <span class="o">&amp;&amp;</span><span class="mi">1</span><span class="err">\</span><span class="p">.</span><span class="n">pkg</span>
+<span class="k">SELECT</span> <span class="s1">&#39;CREATE OR REPLACE &#39;</span> <span class="k">FROM</span> <span class="n">dual</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="nb">TEXT</span> <span class="k">FROM</span> <span class="n">user_source</span> <span class="k">WHERE</span> <span class="k">TYPE</span><span class="o">=</span><span class="s1">&#39;PACKAGE&#39;</span> <span class="k">AND</span> <span class="n">NAME …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/03/oracle-exporter-une-proc/">more ...</a>
                 </div>
             </article>
@@ -183,7 +181,7 @@ n'a pas la main sur l'histoirique comme on l'a avec votre shell BASH en
 pressant la touche flèché du haut.</p>
 <p>Donc pour tout de même se retrouver dans un "univers" familier on peut
 faire ceci</p>
-<div class="highlight"><pre><span></span>define …</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">define …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/12/27/oracle-changer-lediteur-sql/">more ...</a>
                 </div>
             </article>
@@ -259,14 +257,14 @@ dump ... à leur demande de surcroit.</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Pour obtenir la taille d'un schéma, avec son script
 <strong>size_of_schema.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>à l'invite, donnez lui le nom du schema et roule ;)</p>
 <p>Pour obtenir le paramètre de la base "Undo Retention", avec son script
 <strong>undo_retention.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">more ...</a>
                 </div>
             </article>
@@ -292,23 +290,23 @@ dump ... à leur demande de surcroit.</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -322,7 +320,7 @@ dump ... à leur demande de surcroit.</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -331,7 +329,7 @@ dump ... à leur demande de surcroit.</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -349,7 +347,7 @@ dump ... à leur demande de surcroit.</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>

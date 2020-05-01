@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -147,12 +147,12 @@ de commiter ce fichier sur github ou autre, on est fort bien
 emmerdouiller à retirer de ce fichier, notre config perso.</p>
 <p>Du coup, on en vient à une bidouille toute bête permettant de conserver
 le settings.py d'origine et d'y importer sa config perso comme ceci :</p>
-<div class="highlight"><pre><span></span><span class="c1"># local settings management</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># local settings management</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">.local_settings</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="k">pass</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>c'est 5 lignes vont en fin de votre settings.py et vous pouvez mettre
@@ -163,24 +163,24 @@ projet</p>
 <p>Maintenant je suis tout joie, mon appli marche parfaitement et je vais
 de ce pas la publier sur pypi pour faire partager ma liesse :</p>
 <p>je tape</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">register</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">register</span>
+</code></pre></div>
 
 
 <p>réponds aux questions demandées et enchaine avec</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
+</code></pre></div>
 
 
 <p>pour créer une archive<br>
 suivi de</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">upload</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">upload</span>
+</code></pre></div>
 
 
 <p>pour envoyer ladite archive sur pypi.</p>
 <p>le résultat de sdist donne ceci :</p>
-<div class="highlight"><pre><span></span>$ python setup.py sdist 
+<div class="highlight"><pre><span></span><code>$ python setup.py sdist 
 
 running sdist
 running egg_info
@@ -214,13 +214,13 @@ hard linking django_th/settings.py -&gt; django_th-0.3.0/django_th
 hard linking django_th/urls.py -&gt; django_th-0.3.0/django_th
 hard linking django_th/views.py -&gt; django_th-0.3.0/django_th
 hard linking django_th/wsgi.py -&gt; django_th-0.3.0/django_th
-</pre></div>
+</code></pre></div>
 
 
 <p>si vous avez prêté attention aux logs vous voyez un truc que je ne
 voulais pas mettre dans mon archive</p>
-<div class="highlight"><pre><span></span>hard linking django_th/local_settings.py -&gt; django_th-0.3.0/django_th
-</pre></div>
+<div class="highlight"><pre><span></span><code>hard linking django_th/local_settings.py -&gt; django_th-0.3.0/django_th
+</code></pre></div>
 
 
 <p>là c'est la cata ... ma config part sur pypi avec potentiellement des
@@ -230,23 +230,23 @@ distutils</a>, on voit
 qu'on dispose d'une option permettant d'exclure du packaging une partie
 de son projet.</p>
 <p>On créé un fichier MANIFEST.in contenant :</p>
-<div class="highlight"><pre><span></span><span class="n">include</span> <span class="o">*.</span><span class="n">txt</span>
+<div class="highlight"><pre><span></span><code><span class="n">include</span> <span class="o">*.</span><span class="n">txt</span>
 <span class="n">recursive</span><span class="o">-</span><span class="n">include</span> <span class="n">examples</span> <span class="o">*.</span><span class="n">txt</span> <span class="o">*.</span><span class="n">py</span>
 <span class="n">prune</span> <span class="n">examples</span><span class="o">/</span><span class="n">sample</span><span class="err">?</span><span class="o">/</span><span class="n">build</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>ici on n'a aucun cas d'exclusion explicite, elles sont plutôt
 implicites, puisqu'on dit ce qu'on veut mais pas ce qu'on ne veut pas.</p>
 <p>Dans mon cas je ne souhaite pas mettre local_settings.py c'est tout.
 Donc dans le MANIFEST.in on mettra</p>
-<div class="highlight"><pre><span></span><span class="n">exclude</span> <span class="n">django_th</span><span class="o">/</span><span class="n">local_settings</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">exclude</span> <span class="n">django_th</span><span class="o">/</span><span class="n">local_settings</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div>
 
 
 <p>Je supprime le dossier "dist" créé via la commande python setup.py sdist
 précédente et relance pour obtenir :</p>
-<div class="highlight"><pre><span></span>$ python setup.py sdist 
+<div class="highlight"><pre><span></span><code>$ python setup.py sdist 
 
 running sdist
 running egg_info
@@ -285,22 +285,22 @@ hard linking django_th/settings.py -&gt; django_th-0.3.0/django_th
 hard linking django_th/urls.py -&gt; django_th-0.3.0/django_th
 hard linking django_th/views.py -&gt; django_th-0.3.0/django_th
 hard linking django_th/wsgi.py -&gt; django_th-0.3.0/django_th
-</pre></div>
+</code></pre></div>
 
 
 <p>cette fois ci le fichier MANIFEST.in est pris en compte et on ne trouve
 plus le fichier de config perso.</p>
 <p>on pourra s'envoyer de nouveau un coup de</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">upload</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">upload</span>
+</code></pre></div>
 
 
 <p>pour envoyer les sources sur pypi.</p>
 <p>Si vous êtes arrivé au bout de ce billet bravo ;) pour la peine un
 cadeau "bonusque" (comme disait Coluche) :</p>
 <p>Je me suis pris la tête une bonne heure avec</p>
-<div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span>
+</code></pre></div>
 
 
 <p>qui n'excluait pas le local_settings.py avec le fichier MANIFEST.in</p>
@@ -361,23 +361,23 @@ cadeau "bonusque" (comme disait Coluche) :</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -391,7 +391,7 @@ cadeau "bonusque" (comme disait Coluche) :</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -400,7 +400,7 @@ cadeau "bonusque" (comme disait Coluche) :</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -418,7 +418,7 @@ cadeau "bonusque" (comme disait Coluche) :</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -470,7 +470,7 @@ cadeau "bonusque" (comme disait Coluche) :</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

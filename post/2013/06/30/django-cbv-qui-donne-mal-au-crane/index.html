@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -135,20 +135,20 @@ en piège, voici une erreur à laquelle j'ai eu droit et qui pour autant,
 sans attirer mon attention, en prod fini en erreur 500 ... et là arrive
 le mal de crane... parce que debugger sans le DEBUG à True en prod ...
 walou ...</p>
-<div class="highlight"><pre><span></span><span class="ne">TypeError</span> <span class="n">at</span> <span class="o">/</span>
+<div class="highlight"><pre><span></span><code><span class="ne">TypeError</span> <span class="n">at</span> <span class="o">/</span>
 <span class="nb">int</span><span class="p">()</span> <span class="n">argument</span> <span class="n">must</span> <span class="n">be</span> <span class="n">a</span> <span class="n">string</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">number</span><span class="p">,</span> <span class="ow">not</span> <span class="s1">&#39;SimpleLazyObject&#39;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>le code incriminé est celui ci :</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TriggerListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
         <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">TriggerListView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
         <span class="n">enabled</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">disabled</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">context</span><span class="p">[</span><span class="s1">&#39;nb_triggers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">enabled</span><span class="p">),</span> <span class="s1">&#39;disabled&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">disabled</span><span class="p">)}</span>
         <span class="k">return</span> <span class="n">context</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>la ligne enable = ... ne convient pas quand on n'est pas connecté.<br>
@@ -156,7 +156,7 @@ j'imaginais que user= prendrait rien puisque la session n'existait pas.
 erreuuuuuuuuuuuuuuuuuur !</p>
 <p>pour résoudre le problème de cette ListView il faut donc la faire
 proprement :</p>
-<div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
         <span class="n">enabled</span> <span class="o">=</span> <span class="n">disabled</span> <span class="o">=</span> <span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">():</span>
             <span class="n">enabled</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -164,7 +164,7 @@ proprement :</p>
         <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">TriggerListView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
         <span class="n">context</span><span class="p">[</span><span class="s1">&#39;nb_triggers&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;enabled&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">enabled</span><span class="p">),</span> <span class="s1">&#39;disabled&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">disabled</span><span class="p">)}</span>
         <span class="k">return</span> <span class="n">context</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et là enfin quand on accède à la ListView sans être connecté tout sera
@@ -174,11 +174,11 @@ en ordre</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
         <li><a href="https://foxmask.net/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/">History not to lose the thread : TrackingFields</a></li>
         <li><a href="https://foxmask.net/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
+        <li><a href="https://foxmask.net/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
     </ul>
 </section>
     <hr/>
@@ -225,23 +225,23 @@ en ordre</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -255,7 +255,7 @@ en ordre</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -264,7 +264,7 @@ en ordre</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -282,7 +282,7 @@ en ordre</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -334,7 +334,7 @@ en ordre</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -144,7 +144,7 @@ voici</a></p>
 <p>Le bout de code PHP lisant mon fichier de config permet de connaitre les
 Réponses HTML possible, le code est le suivant :<br>
 <strong>de PHP ...</strong></p>
-<div class="highlight"><pre><span></span><span class="x">Ceci affichera les valeurs de mes variables définies dans ma section sus mentionnée</span>
+<div class="highlight"><pre><span></span><code><span class="x">Ceci affichera les valeurs de mes variables définies dans ma section sus mentionnée</span>
 
 <span class="x">array(3) {</span>
 <span class="x">  [&quot;minifyCSS&quot;]=&gt;</span>
@@ -154,12 +154,12 @@ Réponses HTML possible, le code est le suivant :<br>
 <span class="x">  [&quot;minifyCheckCacheFiletime&quot;]=&gt;</span>
 <span class="x">  string(0) &quot;&quot;</span>
 <span class="x">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>... à Python</strong><br>
 Pour le script python cela donnera</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="kn">import</span> <span class="nn">ConfigParser</span>
@@ -167,13 +167,13 @@ Pour le script python cela donnera</p>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
 <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;/havefnubb/var/config/defaultconfig.ini.php.dist&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="s1">&#39;jResponseHtml&#39;</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span> <span class="n">config</span><span class="o">.</span><span class="n">items</span><span class="p">(</span><span class="s1">&#39;jResponseHtml&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>pour obtenir en résultat :</p>
-<div class="highlight"><pre><span></span><span class="p">[(</span><span class="s1">&#39;minifyjs&#39;</span><span class="p">,</span> <span class="s1">&#39;off&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;minifycss&#39;</span><span class="p">,</span> <span class="s1">&#39;on&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;minifycheckcachefiletime&#39;</span><span class="p">,</span> <span class="s1">&#39;off&#39;</span><span class="p">)]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">[(</span><span class="s1">&#39;minifyjs&#39;</span><span class="p">,</span> <span class="s1">&#39;off&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;minifycss&#39;</span><span class="p">,</span> <span class="s1">&#39;on&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;minifycheckcachefiletime&#39;</span><span class="p">,</span> <span class="s1">&#39;off&#39;</span><span class="p">)]</span>
+</code></pre></div>
 
 
 <p>Pour l'oeil aguerri, vous aurez remarqué que 1 est devenu on et "" est
@@ -184,7 +184,7 @@ contente pas que de vous afficher le contenu d'une section (fort
 heureusement).<br>
 Avec celui-ci vous avez un accès direct à tous les paramètres avec une
 instruction <em>get</em> comme ceci :</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
 <span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="kn">import</span> <span class="nn">ConfigParser</span>
@@ -192,15 +192,15 @@ instruction <em>get</em> comme ceci :</p>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="o">.</span><span class="n">ConfigParser</span><span class="p">()</span>
 <span class="n">config</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;/havefnubb/var/config/defaultconfig.ini.php.dist&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jResponseHtml&#39;</span><span class="p">,</span><span class="s1">&#39;minifyjs&#39;</span><span class="p">)</span>
-</pre></div>
+<span class="nb">print</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;jResponseHtml&#39;</span><span class="p">,</span><span class="s1">&#39;minifyjs&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>vous affichera le "off" vu plus haut.</p>
 <p>Outre l'accès direct, vous pouvez également pondre un fichier de config
 à la volée en commençant par ajouter la section puis les variables
 distinctes comme ceci :</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ConfigParser</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">ConfigParser</span>
 
 <span class="n">config</span> <span class="o">=</span> <span class="n">ConfigParser</span><span class="o">.</span><span class="n">RawConfigParser</span><span class="p">()</span>
 
@@ -215,18 +215,18 @@ distinctes comme ceci :</p>
 <span class="c1"># Writing our configuration file to &#39;example.cfg&#39;</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.cfg&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">configfile</span><span class="p">:</span>
     <span class="n">config</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">configfile</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Produira un fichier <strong>example.cfg</strong>:</p>
-<div class="highlight"><pre><span></span><span class="k">[Section1]</span>
+<div class="highlight"><pre><span></span><code><span class="k">[Section1]</span>
 <span class="na">an_int</span><span class="o">=</span><span class="s">15</span>
 <span class="na">a_bool</span><span class="o">=</span><span class="s">true</span>
 <span class="na">a_float</span><span class="o">=</span><span class="s">3.1415</span>
 <span class="na">baz</span><span class="o">=</span><span class="s">fun</span>
 <span class="na">bar</span><span class="o">=</span><span class="s">Python</span>
 <span class="na">foo</span><span class="o">=</span><span class="s">%(bar)s is %(baz)s!</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>ici %(bar) et %(baz) seront remplacées par les valeurs de leur variable
@@ -292,23 +292,23 @@ logs)</em></p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -322,7 +322,7 @@ logs)</em></p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -331,7 +331,7 @@ logs)</em></p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -349,7 +349,7 @@ logs)</em></p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -401,7 +401,7 @@ logs)</em></p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

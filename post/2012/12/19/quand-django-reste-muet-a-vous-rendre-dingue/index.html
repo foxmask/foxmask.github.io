@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -132,17 +132,17 @@ Le Free de la Passion            </a>
 <p>je me fais un template principale, con à souhait, dans lequel je fais un
 include, "QQ la praline", comme suit :</p>
 <p><strong>base.html</strong></p>
-<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">static</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">static</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">staticfiles</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">i18n</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">url</span> <span class="kn">from</span> <span class="nn">future</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="s2">&quot;mark_forum.inc.html&quot;</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>dans <strong>mark_forum.inc.html</strong></p>
-<div class="highlight"><pre><span></span>    <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s2">&quot;Mark all forum as read&quot;</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code>    <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s2">&quot;Mark all forum as read&quot;</span> <span class="o">%</span><span class="p">}</span>
     <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">current_id_forum</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">%</span><span class="p">}</span>
     <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s1">&#39;Mark this forum as read&#39;</span> <span class="o">%</span><span class="p">}</span>
     <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
@@ -154,18 +154,18 @@ include, "QQ la praline", comme suit :</p>
     <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s1">&#39;Subscribe to this forum&#39;</span> <span class="o">%</span><span class="p">}</span>
         <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
     <span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>je lance mon appli et dans la console, me saute aux yeux</p>
-<div class="highlight"><pre><span></span>lib/python2.6/site-packages/django/template/defaulttags.py:1235: DeprecationWarning: The syntax <span class="k">for</span> the url template tag is changing. Load the <span class="sb">`</span>url<span class="sb">`</span> tag from the <span class="sb">`</span>future<span class="sb">`</span> tag library to start using the new behavior.
-</pre></div>
+<div class="highlight"><pre><span></span><code>lib/python2.6/site-packages/django/template/defaulttags.py:1235: DeprecationWarning: The syntax <span class="k">for</span> the url template tag is changing. Load the <span class="sb">`</span>url<span class="sb">`</span> tag from the <span class="sb">`</span>future<span class="sb">`</span> tag library to start using the new behavior.
+</code></pre></div>
 
 
 <p>donc j'ajoute à <strong>mark_forum.inc.html</strong> (malgré l'ajout existant dans
 l'index.html)</p>
-<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">url</span> <span class="kn">from</span> <span class="nn">future</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">url</span> <span class="kn">from</span> <span class="nn">future</span> <span class="o">%</span><span class="p">}</span>
+</code></pre></div>
 
 
 <p>et je relance ... et là plus d'erreur dans la console ! Yeah !</p>
@@ -182,8 +182,8 @@ s'affiche...<br>
 Comme le problème de syntaxe sur <em>url</em> n'est plus en cause je me dis
 voyons <em>trans</em> et mettons une string pipo ~~alakon~~.</p>
 <p>Et là Bingo ! Il me manque donc</p>
-<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="s2">&quot;i18n&quot;</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="s2">&quot;i18n&quot;</span> <span class="o">%</span><span class="p">}</span>
+</code></pre></div>
 
 
 <p>J'avais imaginé que le template inclus récupérait le contexte parent et
@@ -201,7 +201,7 @@ lui en serai gré ;)</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
+        <li><a href="https://foxmask.net/post/2020/05/01/trigger-happy-archive-yeoboseyo/">Trigger Happy archivé</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
         <li><a href="https://foxmask.net/post/2016/07/03/django-et-https/">Django et HTTPS</a></li>
@@ -252,23 +252,23 @@ lui en serai gré ;)</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -282,7 +282,7 @@ lui en serai gré ;)</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -291,7 +291,7 @@ lui en serai gré ;)</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -309,7 +309,7 @@ lui en serai gré ;)</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -361,7 +361,7 @@ lui en serai gré ;)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

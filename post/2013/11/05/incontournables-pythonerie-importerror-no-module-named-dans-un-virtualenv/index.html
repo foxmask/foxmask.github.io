@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -139,7 +139,7 @@ lunettes dans la Loire*"</p>
 coller sur un serveur en prod on se dit que quand même si on l'intégrait
 dans un virtualenv ça serait 'ach'ment mieux à gérer.</p>
 <p>je m'en vais donc me faire ce virtualenv tout QQ</p>
-<div class="highlight"><pre><span></span><span class="n">foxmask</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~/</span><span class="n">virtualenv</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="err">$</span> <span class="n">virtualenv</span> <span class="n">toto</span>
+<div class="highlight"><pre><span></span><code><span class="n">foxmask</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~/</span><span class="n">virtualenv</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="err">$</span> <span class="n">virtualenv</span> <span class="n">toto</span>
 <span class="n">New</span> <span class="n">python</span> <span class="n">executable</span> <span class="ow">in</span> <span class="n">toto</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span>
 <span class="n">Installing</span> <span class="n">distribute</span><span class="o">.............................................................................................................................................................................................</span><span class="n">done</span><span class="o">.</span>
 <span class="n">Installing</span> <span class="n">pip</span><span class="o">...............</span><span class="n">done</span><span class="o">.</span>
@@ -157,42 +157,42 @@ dans un virtualenv ça serait 'ach'ment mieux à gérer.</p>
 <span class="n">lxml</span><span class="o">==</span><span class="mf">3.2</span><span class="o">.</span><span class="mi">3</span>
 <span class="n">relatorio</span><span class="o">==</span><span class="mf">0.6</span><span class="o">.</span><span class="mi">0</span>
 <span class="p">(</span><span class="n">toto</span><span class="p">)</span><span class="n">foxmask</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~/</span><span class="n">virtualenv</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">toto</span><span class="o">/</span><span class="n">tata</span><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>je vous passe la compilation de lxml ...</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="n">toto</span><span class="p">)</span><span class="n">foxmask</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~/</span><span class="n">virtualenv</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">toto</span><span class="o">/</span><span class="n">tata</span><span class="err">$</span> <span class="n">pip</span> <span class="n">freeze</span> <span class="o">--</span><span class="n">local</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">toto</span><span class="p">)</span><span class="n">foxmask</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~/</span><span class="n">virtualenv</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">toto</span><span class="o">/</span><span class="n">tata</span><span class="err">$</span> <span class="n">pip</span> <span class="n">freeze</span> <span class="o">--</span><span class="n">local</span>
 <span class="n">Genshi</span><span class="o">==</span><span class="mf">0.7</span>
 <span class="n">distribute</span><span class="o">==</span><span class="mf">0.6</span><span class="o">.</span><span class="mi">24</span>
 <span class="n">lxml</span><span class="o">==</span><span class="mf">3.2</span><span class="o">.</span><span class="mi">3</span>
 <span class="n">relatorio</span><span class="o">==</span><span class="mf">0.6</span><span class="o">.</span><span class="mi">0</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et là où ça devient intéressant c'est quand je lance
 monscriptdelamort.py<br>
 et qu'il me sort la superbe erreur :</p>
-<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">relatorio.templates.opendocument</span> <span class="kn">import</span> <span class="n">Template</span>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">relatorio.templates.opendocument</span> <span class="kn">import</span> <span class="n">Template</span>
 <span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">relatorio</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">opendocument</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>or comme on le voit au dessus il est bien là ce module<br>
 de même que</p>
-<div class="highlight"><pre><span></span><span class="p">(</span><span class="n">toto</span><span class="p">)</span><span class="n">foxmask</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~/</span><span class="n">virtualenv</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">toto</span><span class="o">/</span><span class="n">tata</span><span class="err">$</span> <span class="n">python</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">toto</span><span class="p">)</span><span class="n">foxmask</span><span class="nd">@localhost</span><span class="p">:</span><span class="o">~/</span><span class="n">virtualenv</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">toto</span><span class="o">/</span><span class="n">tata</span><span class="err">$</span> <span class="n">python</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">relatorio.templates.opendocument</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="p">(</span><span class="n">relatorio</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">opendocument</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span> <span class="p">(</span><span class="n">relatorio</span><span class="o">.</span><span class="n">templates</span><span class="o">.</span><span class="n">opendocument</span><span class="p">)</span>
 
 <span class="o">&gt;&gt;&gt;</span> 
-</pre></div>
+</code></pre></div>
 
 
 <p>ça t'en bouche un coin public hein ?</p>
 <p>Au bout d'un long moment à tourner en rond autour de la poubelle de la
 machine à café en panne (elle aussi)<br>
 je rouvre mon script et vois la lumière sur la ligne 1 :</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
+</code></pre></div>
 
 
 <p>hé oué public t'as tout compris .<br>
@@ -256,23 +256,23 @@ outside of ze Virtualenv ...</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -286,7 +286,7 @@ outside of ze Virtualenv ...</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -295,7 +295,7 @@ outside of ze Virtualenv ...</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -313,7 +313,7 @@ outside of ze Virtualenv ...</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -365,7 +365,7 @@ outside of ze Virtualenv ...</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

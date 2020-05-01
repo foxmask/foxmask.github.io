@@ -37,7 +37,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -94,91 +94,6 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <h2><a href="https://foxmask.net/post/2015/11/27/sam-max-board-suivez-lactu-de-la-communaute/">Sam et Max Board Suivez l'actu de la communauté</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-11-27T14:28:00+01:00"> ven. 27 novembre 2015</time>
-    </span>
-
-
-
-
-
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Hey !</p>
-<p>Dans <a href="/post/2015/11/10/waaazaaaaa/">un billet d'il y a 2
-semaines</a>,
-j'exposais un nouveau projet que j'avais en tête et lancé (pas trop
-fort) et pas trop loin à priori parce que personne n'a rebondi sur
-l'occasion pour nous faire un retour, du coup ça végète ;)</p>
-<p>Donc je relance la question ici …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/11/27/sam-max-board-suivez-lactu-de-la-communaute/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2015/10/02/trigger-happy-stats-requete-et-proposition/">Trigger-Happy, stats, requête et proposition</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-10-02T11:04:00+02:00"> ven. 02 octobre 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/django.html">Django</a>
-        /
-	<a href="https://foxmask.net/tag/triggerhappy.html">TriggerHappy</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Avec wordpress on dispose de stats par billet, et le fait de m'être mis
-un coup de pompe au cul pour publier des billets in ze Shakespeare
-language a fait que dans le top 100 des billets les plus lus sur le
-blog, on trouve celui concernant la sortie de …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/10/02/trigger-happy-stats-requete-et-proposition/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/">Trigger Happy, de tout, de rien, la vie</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2015-09-08T10:30:00+02:00"> mar. 08 septembre 2015</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/django.html">Django</a>
-        /
-	<a href="https://foxmask.net/tag/triggerhappy.html">TriggerHappy</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Depuis la sortie de la version 0.11.0, j'ai lancé quelques bidules
-périphériques :</p>
-<ul>
-<li><a href="http://blog.trigger-happy.eu/">un blog dédié</a> en pelican, que j'ai
-    commencé à remplir. J'essaierai de lui trouver un thème plus
-    responsive que du rendu à taille fixe.</li>
-<li>un compte <a href="https://twitter.com/TriggerHappyEu">@TriggerHappyEu</a>
-    dédié qui relaiera les news du projet</li>
-<li><a href="https://alternativeto.net/software/trigger-happy/">une inscription …</a></li></ul>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
                 <h2><a href="https://foxmask.net/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -206,7 +121,7 @@ I cant imagine to make a new one without this new little module named
 "Trigger Happy Ansible"</p>
 <p>What does it do ?</p>
 <p>Well, as anyone can imagine, when you start a django project you enter,</p>
-<div class="highlight"><pre><span></span>python manage.py startproject …</pre></div>
+<div class="highlight"><pre><span></span><code>python manage.py startproject …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">more ...</a>
                 </div>
             </article>
@@ -384,9 +299,104 @@ already bound" ...</p>
 <p>Comment repérer le process qui a ouvert le port dont on a besoin ?</p>
 <p>imaginons les ports 8009 et 8080</p>
 <p>on commence par un</p>
-<div class="highlight"><pre><span></span>$ netstat -an<span class="p">|</span>grep <span class="m">8009</span>
-tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">0</span>.0.0 …</pre></div>
+<div class="highlight"><pre><span></span><code>$ netstat -an<span class="p">|</span>grep <span class="m">8009</span>
+tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">0</span>.0.0 …</code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/">Revue Technique de la semaine du 27/07/2015</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-07-29T09:48:00+02:00"> mer. 29 juillet 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/debian.html">debian</a>
+        /
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+        /
+	<a href="https://foxmask.net/tag/indexerror.html">indexerror</a>
+        /
+	<a href="https://foxmask.net/tag/oneplus.html">oneplus</a>
+        /
+	<a href="https://foxmask.net/tag/postgresql.html">postgresql</a>
+        /
+	<a href="https://foxmask.net/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p><strong>OnePlus 2</strong><br>
+Le nouvel appareil de OnePlus montre les crocs, mais ce dernier fait
+petite mine avec un proc moins bien lotis que ses concurrents, sinon une
+bonne grosse batterie comme le LG 4 qui va permettre de profiter de
+l'objet dans se dire "oh p#@%&amp; vite un câble USB …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2015/07/17/revue-technique-django-inside-semaine-du-13-juillet-2015/">Revue Technique, Django Inside, semaine du 13/07/2015</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-07-17T15:11:00+02:00"> ven. 17 juillet 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+        /
+	<a href="https://foxmask.net/tag/triggerhappy.html">TriggerHappy</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Pour ceux ce qui ne sont pas 'core zalaplage voici un petit bouquet
+fleuri estival ramassé mon fidèle destrier Tornado :</p>
+<p>Il y eu d'abord <a href="http://www.revsys.com/blog/2015/jul/14/django-birthday/">une teuf pour fêter les 10 piges de
+Django</a>, si tu
+l'as pas vu, tu l'as ratée (hop la lapalissade:)</p>
+<p>Zensuite mon chemin a croisé ces …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/07/17/revue-technique-django-inside-semaine-du-13-juillet-2015/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2015/06/19/supervisor-celery-django-orchestration/">Supervisor Celery Django : Orchestration</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-06-19T10:30:00+02:00"> ven. 19 juin 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/celery.html">Celery</a>
+        /
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+        /
+	<a href="https://foxmask.net/tag/supervisor.html">Supervisor</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Dans ce billet je vais aborder un triplet que chacun connait surement et
+a déjà dû le mettre en place, mais j'irai posé là, comme à mon habitude,
+un retour d'xp qui m'est propre et pourrait servir à de nouveaux venus
+sur <a href="https://www.djangoproject.com/">django</a> et l'administration de nos
+instances avec ce …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2015/06/19/supervisor-celery-django-orchestration/">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -444,23 +454,23 @@ tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -474,7 +484,7 @@ tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -483,7 +493,7 @@ tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -501,7 +511,7 @@ tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -553,7 +563,7 @@ tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

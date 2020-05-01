@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/general.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion General ATOM Feed"/>
 
 </head>
@@ -139,8 +139,8 @@ Le choix vers pelican s'est fait naturellement après l'avoir testé pour 2 autr
 <h1>Comment ?</h1>
 <p>Comme le dit la doc, en premier lieu il faut exporter son blog wordpress dans un fichier XML.
 Après, pour l'importer, on choisit le format d'import : reStructuredText, Markdown.</p>
-<div class="highlight"><pre><span></span>pelican-import --wpfile foxmaskinfo.xml 
-</pre></div>
+<div class="highlight"><pre><span></span><code>pelican-import --wpfile foxmaskinfo.xml 
+</code></pre></div>
 
 
 <p>ainsi lancée, la commande part pour me traduire 900 billets en .rst</p>
@@ -148,8 +148,8 @@ Après, pour l'importer, on choisit le format d'import : reStructuredText, Markd
 A chaque lancement de la commande je me coltinais des erreurs de formatage, des retour à la ligne inopinée, des urls tronquées pour des carriage return line feed inopinées.
 Au bout de 2 jours, j'arrivais à finir ma migration d'import en ayant pris soin de remplacer toutes les urls http://foxmask.info et http://foxmask.bzh en '/' purement.
 Mais un malencontreux et tardif (vu l'heure)</p>
-<div class="highlight"><pre><span></span>rm -f content/*
-</pre></div>
+<div class="highlight"><pre><span></span><code>rm -f content/*
+</code></pre></div>
 
 
 <p>m'a coupé les pattes , 2j partis en fumée j'en pouvais plus, j'étais sur le point de laisser tomber la migration.</p>
@@ -160,8 +160,8 @@ Donc nouveau plan de bataille :</p>
 <li>utiliser le format markdown</li>
 <li>gerer le remplacement de foxmask.(bzh|info) avec PyCharm afin qu'il gère le remplacement récursivement et tranquillement.</li>
 </ul>
-<div class="highlight"><pre><span></span>pelican-import --wpfile -m markdown foxmaskinfo.xml 
-</pre></div>
+<div class="highlight"><pre><span></span><code>pelican-import --wpfile -m markdown foxmaskinfo.xml 
+</code></pre></div>
 
 
 <p>Et là, miracle : PAS UNE SEULE erreur de formatage à l'issue de cette migration, j'étais comme deux ronds de flan.</p>
@@ -189,9 +189,9 @@ Déjà, les thèmes ne courrent pas les rues, et la saisie des billets n'est pas
     <ul>
         <li><a href="https://foxmask.net/post/2016/01/05/dans-la-serie-jai-migre-vers-pelican/">Dans la série, j'ai migré vers Pélican</a></li>
         <li><a href="https://foxmask.net/post/2015/12/29/une-autre-histoire/">Une autre histoire</a></li>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
-        <li><a href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/">Mais vous etes fou ? Hoo Oui !</a></li>
         <li><a href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
+        <li><a href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
     </ul>
 </section>
     <hr/>
@@ -238,23 +238,23 @@ Déjà, les thèmes ne courrent pas les rues, et la saisie des billets n'est pas
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -268,7 +268,7 @@ Déjà, les thèmes ne courrent pas les rues, et la saisie des billets n'est pas
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -277,7 +277,7 @@ Déjà, les thèmes ne courrent pas les rues, et la saisie des billets n'est pas
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -295,7 +295,7 @@ Déjà, les thèmes ne courrent pas les rues, et la saisie des billets n'est pas
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -347,7 +347,7 @@ Déjà, les thèmes ne courrent pas les rues, et la saisie des billets n'est pas
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -141,8 +141,8 @@ sauvegardes de ses données.</p>
 <p><strong>impdp</strong></p>
 <p>Exemple d'import d'un schéma <strong>customer</strong>, dont le nom de fichier se
 nomme foo.dmp dans mon schema nommé MYWORK et ma tablespace MYWORKD_TB</p>
-<div class="highlight"><pre><span></span>impdp USER/pass <span class="nv">schemas</span><span class="o">=</span>customer <span class="nv">dumpfile</span><span class="o">=</span>foo.dmp <span class="nv">directory</span><span class="o">=</span>wkdir <span class="nv">remap_schema</span><span class="o">=</span>CUSTOMER:MYWORK <span class="nv">remap_tablespace</span><span class="o">=</span>CUSTOMER_TB:MYWOKRD_TB <span class="nv">LOGFILE</span><span class="o">=</span>foo.log
-</pre></div>
+<div class="highlight"><pre><span></span><code>impdp USER/pass <span class="nv">schemas</span><span class="o">=</span>customer <span class="nv">dumpfile</span><span class="o">=</span>foo.dmp <span class="nv">directory</span><span class="o">=</span>wkdir <span class="nv">remap_schema</span><span class="o">=</span>CUSTOMER:MYWORK <span class="nv">remap_tablespace</span><span class="o">=</span>CUSTOMER_TB:MYWOKRD_TB <span class="nv">LOGFILE</span><span class="o">=</span>foo.log
+</code></pre></div>
 
 
 <p>le paramètre <strong>directory</strong> indique à oracle quel est l'<em>objet</em> directory
@@ -150,8 +150,8 @@ dans lequel il doit utiliser le dumpfile et ecrire dans le fichier de
 log foo.log</p>
 <p>pour connaitre le nom du directory, on se connecte comme dba à la base
 oracle puis on tapera:</p>
-<div class="highlight"><pre><span></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">dba_directories</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">dba_directories</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>on obtiendra donc le path vers le dossier où mettre foo.dmp pour qu'il
@@ -164,26 +164,26 @@ dans notre base. C'est là qu'entre en jeu le "parfile".</p>
 sur la ligne de commandes: voici la tête qu'il aurait avec l'exemple
 précédent :</p>
 <p>customer.par</p>
-<div class="highlight"><pre><span></span><span class="n">schemas</span><span class="o">=</span><span class="n">customer</span> 
+<div class="highlight"><pre><span></span><code><span class="n">schemas</span><span class="o">=</span><span class="n">customer</span> 
 <span class="n">dumpfile</span><span class="o">=</span><span class="n">mywork</span><span class="o">%</span><span class="n">u</span><span class="p">.</span><span class="n">dmp</span>
 <span class="n">directory</span><span class="o">=</span><span class="n">wkdir</span>
 <span class="n">remap_schema</span><span class="o">=</span><span class="n">CUSTOMER</span><span class="p">:</span><span class="n">MYWORK</span> 
 <span class="n">remap_tablespace</span><span class="o">=</span><span class="n">CUSTOMER_TB</span><span class="p">:</span><span class="n">MYWOKRD_TB</span> 
 <span class="n">LOGFILE</span><span class="o">=</span><span class="n">foo</span><span class="p">.</span><span class="n">log</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et on lancerait l'import comme ceci</p>
-<div class="highlight"><pre><span></span><span class="n">impdp</span> <span class="k">USER</span><span class="o">/</span><span class="n">pass</span> <span class="n">parfile</span><span class="o">=</span><span class="n">customer</span><span class="p">.</span><span class="n">par</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">impdp</span> <span class="k">USER</span><span class="o">/</span><span class="n">pass</span> <span class="n">parfile</span><span class="o">=</span><span class="n">customer</span><span class="p">.</span><span class="n">par</span>
+</code></pre></div>
 
 
 <p>cette fois ci customer.par est cherché dans le dossier courant, et non
 dans le <strong>directory</strong> oracle</p>
 <p><strong>expdp</strong><br>
 L'export cette fois ci fonctionne de la même façon :</p>
-<div class="highlight"><pre><span></span>expdp user/pass <span class="nv">directory</span><span class="o">=</span>wkdir <span class="nv">logfile</span><span class="o">=</span>exp_mywork.log <span class="nv">dumpfile</span><span class="o">=</span>mywork.dmp
-</pre></div>
+<div class="highlight"><pre><span></span><code>expdp user/pass <span class="nv">directory</span><span class="o">=</span>wkdir <span class="nv">logfile</span><span class="o">=</span>exp_mywork.log <span class="nv">dumpfile</span><span class="o">=</span>mywork.dmp
+</code></pre></div>
 
 
 <p>et c'est tout.</p>
@@ -193,8 +193,8 @@ parallel, utilisable lors des exports et des imports.</p>
 <p>L'intérêt est d'accélérer le traitement des sauvegardes</p>
 <p>Le dumps est en "morceaux" (de tailles non egales) ; le nombre de
 morceaux etant la valeur donnée à l'option parallel, exemple :</p>
-<div class="highlight"><pre><span></span>expdp user/pass <span class="nv">directory</span><span class="o">=</span>wkdir <span class="nv">logfile</span><span class="o">=</span>exp_mywork.log <span class="nv">dumpfile</span><span class="o">=</span>mywork.dmp <span class="nv">parallel</span><span class="o">=</span><span class="m">4</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>expdp user/pass <span class="nv">directory</span><span class="o">=</span>wkdir <span class="nv">logfile</span><span class="o">=</span>exp_mywork.log <span class="nv">dumpfile</span><span class="o">=</span>mywork.dmp <span class="nv">parallel</span><span class="o">=</span><span class="m">4</span>
+</code></pre></div>
 
 
 <p>produira les fichiers</p>
@@ -205,8 +205,8 @@ morceaux etant la valeur donnée à l'option parallel, exemple :</p>
 <li>mywork4.dmp</li>
 </ul>
 <p>ensuite pour remonter ce dump on ecrira :</p>
-<div class="highlight"><pre><span></span><span class="n">impdp</span> <span class="k">user</span><span class="o">/</span><span class="n">pass</span> <span class="n">directory</span><span class="o">=</span><span class="n">wkdir</span> <span class="n">logfile</span><span class="o">=</span><span class="n">exp_mywork</span><span class="p">.</span><span class="n">log</span> <span class="n">dumpfile</span><span class="o">=</span><span class="n">mywork</span><span class="o">%</span><span class="n">U</span><span class="p">.</span><span class="n">dmp</span> <span class="n">parallel</span><span class="o">=</span><span class="mi">4</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">impdp</span> <span class="k">user</span><span class="o">/</span><span class="n">pass</span> <span class="n">directory</span><span class="o">=</span><span class="n">wkdir</span> <span class="n">logfile</span><span class="o">=</span><span class="n">exp_mywork</span><span class="p">.</span><span class="n">log</span> <span class="n">dumpfile</span><span class="o">=</span><span class="n">mywork</span><span class="o">%</span><span class="n">U</span><span class="p">.</span><span class="n">dmp</span> <span class="n">parallel</span><span class="o">=</span><span class="mi">4</span>
+</code></pre></div>
 
 
 <p>That's all folk ;)</p>
@@ -266,23 +266,23 @@ morceaux etant la valeur donnée à l'option parallel, exemple :</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -296,7 +296,7 @@ morceaux etant la valeur donnée à l'option parallel, exemple :</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -305,7 +305,7 @@ morceaux etant la valeur donnée à l'option parallel, exemple :</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -323,7 +323,7 @@ morceaux etant la valeur donnée à l'option parallel, exemple :</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -375,7 +375,7 @@ morceaux etant la valeur donnée à l'option parallel, exemple :</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

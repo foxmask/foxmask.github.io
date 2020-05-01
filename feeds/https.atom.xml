@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - HTTPS</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/https.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-07-03T22:00:00+02:00</updated><entry><title>Django et HTTPS</title><link href="https://foxmask.net/post/2016/07/03/django-et-https/" rel="alternate"></link><published>2016-07-03T22:00:00+02:00</published><updated>2016-07-03T22:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-07-03:/post/2016/07/03/django-et-https/</id><summary type="html">&lt;p&gt;Un rapide billet pour poser ici un retour de prise de tête :)&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - HTTPS</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/https.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-07-03T22:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Django et HTTPS</title><link href="https://foxmask.net/post/2016/07/03/django-et-https/" rel="alternate"></link><published>2016-07-03T22:00:00+02:00</published><updated>2016-07-03T22:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-07-03:/post/2016/07/03/django-et-https/</id><summary type="html">&lt;p&gt;Un rapide billet pour poser ici un retour de prise de tête :)&lt;/p&gt;
 &lt;p&gt;Avec la venue de &lt;a href="https://letsencrypt.org/"&gt;LetsEncrypt&lt;/a&gt;, il va fleurer bon les sites en HTTPS de ci de là.&lt;/p&gt;
 &lt;p&gt;Par contre une fois mis en place en prod, coté dev il arrive qu'on fasse un hack vite fait pour pas …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Un rapide billet pour poser ici un retour de prise de tête :)&lt;/p&gt;
 &lt;p&gt;Avec la venue de &lt;a href="https://letsencrypt.org/"&gt;LetsEncrypt&lt;/a&gt;, il va fleurer bon les sites en HTTPS de ci de là.&lt;/p&gt;
@@ -54,4 +54,4 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Et là au joie, on obtiendra bien un request.scheme vallant 'https'.&lt;/p&gt;</content><category term="Django"></category><category term="HTTPS"></category></entry></feed>
+&lt;p&gt;Et là au joie, on obtiendra bien un request.scheme vallant 'https'.&lt;/p&gt;</content><category term="Techno"></category><category term="Django"></category><category term="HTTPS"></category></entry></feed>

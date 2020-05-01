@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -129,22 +129,22 @@ Le Free de la Passion            </a>
                 </div>
                 <p>Pour obtenir la taille d'un schéma, avec son script
 <strong>size_of_schema.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>à l'invite, donnez lui le nom du schema et roule ;)</p>
 <p>Pour obtenir le paramètre de la base "Undo Retention", avec son script
 <strong>undo_retention.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v$parameter</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;undo_retention&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v$parameter</span> <span class="k">WHERE</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;undo_retention&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>On tape sur la vue v\$parameter qui contient une bonne partie des
 paramètres de votre base oracle que vous avez dans l'init.ora</p>
 <p>Taille du tablespace Undo avec son petit script <strong>undo_tablespace.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="p">(</span><span class="n">bytes</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">),</span><span class="n">FILE_NAME</span> <span class="k">FROM</span> <span class="n">dba_data_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;UNDO&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="p">(</span><span class="n">bytes</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">),</span><span class="n">FILE_NAME</span> <span class="k">FROM</span> <span class="n">dba_data_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;UNDO&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>le tablespace UNDO et le paramètre Undo retention permettent la gestion
@@ -209,23 +209,23 @@ et l'undo tablespace lui gère les données qu'on annule.</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -239,7 +239,7 @@ et l'undo tablespace lui gère les données qu'on annule.</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -248,7 +248,7 @@ et l'undo tablespace lui gère les données qu'on annule.</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -266,7 +266,7 @@ et l'undo tablespace lui gère les données qu'on annule.</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -318,7 +318,7 @@ et l'undo tablespace lui gère les données qu'on annule.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

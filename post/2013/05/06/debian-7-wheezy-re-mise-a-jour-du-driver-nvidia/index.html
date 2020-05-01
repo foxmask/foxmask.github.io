@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -150,13 +150,13 @@ bonnement pas ne trouvant pas le fichier version.h dans les sources du
 kernel ; rien que ça.</p>
 <p>Donc pour ce faire :</p>
 <p>arreter X</p>
-<div class="highlight"><pre><span></span>/etc/init.d/gdm3 stop
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">/etc/init.d/gdm3 stop</span>
+</code></pre></div>
 
 
 <p>lancer</p>
-<div class="highlight"><pre><span></span>./NVIDIA-Linux-x86_64-304.64.run
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">./NVIDIA-Linux-x86_64-304.64.run</span>
+</code></pre></div>
 
 
 <p>A l'invite il peut vous dire que vous utilisez un GCC 4.7 et que le
@@ -164,20 +164,20 @@ module était prévu pour compiler avec GCC 4.6 vous lui dites donc "non"
 et ça passera.</p>
 <p>La compilation se passe les doigts dans le nez !<br>
 L'installeur vous demandera s'il peut vous exectuer</p>
-<div class="highlight"><pre><span></span>nvidia-xconfig
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">nvidia-xconfig</span>
+</code></pre></div>
 
 
 <p>pour pondre le fichier /etc/X11/xorg.conf<br>
 Dites lui oui !</p>
 <p>finissez par un petit</p>
-<div class="highlight"><pre><span></span>modprobe nvidia
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">modprobe nvidia</span>
+</code></pre></div>
 
 
 <p>lancer gdm3</p>
-<div class="highlight"><pre><span></span>/etc/init.d/gdm3 start
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">/etc/init.d/gdm3 start</span>
+</code></pre></div>
 
 
 <p>Et là comme par enchantement on retrouve un environnement graphique
@@ -248,23 +248,23 @@ on n'est pas familier de links ou w3m c'est la mort</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -278,7 +278,7 @@ on n'est pas familier de links ou w3m c'est la mort</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -287,7 +287,7 @@ on n'est pas familier de links ou w3m c'est la mort</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -305,7 +305,7 @@ on n'est pas familier de links ou w3m c'est la mort</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -357,7 +357,7 @@ on n'est pas familier de links ou w3m c'est la mort</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

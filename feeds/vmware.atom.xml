@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - vmware</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/vmware.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2014-04-17T11:06:00+02:00</updated><entry><title>export DISPLAY from a VMWare virtual machine</title><link href="https://foxmask.net/post/2014/04/17/export-display-from-vmware/" rel="alternate"></link><published>2014-04-17T11:06:00+02:00</published><updated>2014-04-17T11:06:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-04-17:/post/2014/04/17/export-display-from-vmware/</id><summary type="html">&lt;p&gt;I have to install an Oracle server on a remote machine.&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - vmware</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/vmware.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2014-04-17T11:06:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>export DISPLAY from a VMWare virtual machine</title><link href="https://foxmask.net/post/2014/04/17/export-display-from-vmware/" rel="alternate"></link><published>2014-04-17T11:06:00+02:00</published><updated>2014-04-17T11:06:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-04-17:/post/2014/04/17/export-display-from-vmware/</id><summary type="html">&lt;p&gt;I have to install an Oracle server on a remote machine.&lt;br&gt;
 And ... It's not my first time :P&lt;/p&gt;
 &lt;p&gt;As we need to use a GUI Wizard, usually we do an export of the DISPLAY
 to a computer which can handle the X session and then everything works
@@ -28,4 +28,4 @@ starting anything that require a X, even xclock for example.&lt;/p&gt;
 &lt;p&gt;So I compared the ssh config of the both server, to check if the
 forwarding is set to on, but are the same.&lt;/p&gt;
 &lt;p&gt;So I am asking myself if there is no config to set up on the VMWare
-virtual machine to permit the X session ?&lt;/p&gt;</content><category term="vmware"></category></entry></feed>
+virtual machine to permit the X session ?&lt;/p&gt;</content><category term="Techno"></category><category term="vmware"></category></entry></feed>

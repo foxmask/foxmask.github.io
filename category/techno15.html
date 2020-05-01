@@ -37,7 +37,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -93,88 +93,6 @@ Le Free de la Passion            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/">Debian, amour et désamour</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2012-12-17T14:31:00+01:00"> lun. 17 décembre 2012</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/debian.html">debian</a>
-        /
-	<a href="https://foxmask.net/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Utilisateur de <a href="http://www.debian.org">Debian</a> depuis <em>Le toutou
-elastic</em> aka "Slink" (version 2.1), je n'ai jamais eu à me plaindre. Je
-me suis toujours éclater avec cette distribution Linux, même si j'ai
-croisé sur le chemin SlackWare, Mandrake, RedHat, Suse etc...</p>
-<p>J'utilise actuellement Debian Squeeze (version 6 donc) que j'ai pu …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">Oracle bottant le train des réfractaires</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2012-12-13T11:08:00+01:00"> jeu. 13 décembre 2012</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Voici le début d'une suite de billets dédiée à Oracle, One of my Job in
-Professional life :)</p>
-<p>Il était une fois un DBA qui en avait plein les bottes de demander aux
-utilisateurs de bien vouloir se déconnecter du schéma pour remonter un
-dump ... à leur demande de surcroit.</p>
-<p>Ainsi …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2012/10/15/django-blocktrans-indigestion-variable/">Django blocktrans et l'indigestion de variables</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2012-10-15T11:00:00+02:00"> lun. 15 octobre 2012</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/django.html">Django</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Dans mes tribulations (d'un Djangonaute en Poneyland) d'exploitation de
-modules tiers comme <a href="http://docs.b-list.org/django-registration/0.8/">django
-registration</a>, le
-template permettant l'envoi de mail est très "free style", comprendre
-qu'il est tellement explicite qu'on en perd son latin, du coup dans mes
-"débuts" je me suis carrément pris la tête à dépiauter tout la …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/10/15/django-blocktrans-indigestion-variable/">more ...</a>
-                </div>
-            </article>
-            <hr/>
             <article>
                 <h2><a href="https://foxmask.net/post/2012/10/13/django-template-tag-boussole-template/">Django, un template tag, une boussole dans le template</a></h2>
                     <div class="well well-sm">
@@ -276,15 +194,15 @@ recensant les modules utilisés pour son
                 <div class="summary"><p>Nombreux sont ceux qui tombent dans le piège de cette erreur qui semble
 être une erreur de noobs ...<br>
 Cette erreur la voici :</p>
-<div class="highlight"><pre><span></span><span class="n">Erreur</span> <span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="n">Erreur</span> <span class="p">:</span>
 <span class="n">NoReverseMatch</span> <span class="n">at</span> <span class="o">/</span><span class="n">histo</span><span class="o">/</span>
 <span class="n">Reverse</span> <span class="k">for</span> <span class="s1">&#39;&#39;</span><span class="n">histo_save</span><span class="s1">&#39;&#39;</span> <span class="k">with</span> <span class="n">arguments</span> <span class="s1">&#39;()&#39;</span> <span class="ow">and</span> <span class="n">keyword</span> 
-<span class="n">arguments</span> <span class="s1">&#39;{}&#39;</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
-</pre></div>
+<span class="n">arguments</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
+</code></pre></div>
 
 
 <p>Pour autant tout semble être correct, le fichier <strong>urls.py</strong> contient</p>
-<div class="highlight"><pre><span></span><span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^histo …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^histo …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/08/31/django-reverse-for-xxx-with-arguments-not-found/">more ...</a>
                 </div>
             </article>
@@ -378,15 +296,110 @@ significativement …</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Pour obtenir la taille d'un schéma, avec son script
 <strong>size_of_schema.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>à l'invite, donnez lui le nom du schema et roule ;)</p>
 <p>Pour obtenir le paramètre de la base "Undo Retention", avec son script
 <strong>undo_retention.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v …</span></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2011/11/05/linux-live-usb-persistent-failed/">Linux Live USB Persistent : failed</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-11-05T17:01:00+01:00"> sam. 05 novembre 2011</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/linux.html">linux</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Suite à <a href="/post/2011/10/22/linux-sur-laptop-sans-disque-dur/" title="Laptop sous linux sans dique dur">cette
+mésaventure</a>,
+j'ai fait les frais d'une clé USB 32Go, et de 2 soirées d'affilées à la
+recherche d'images ISO qui soit exploitable sur le (vieux) portable
+recyclé pour ma fille.</p>
+<p>Mon "cahier des charges" étant :</p>
+<ol>
+<li>
+<p>Hardware</p>
+<ol>
+<li>RAM utilisable 512Mo</li>
+<li>Wifi sur une clef USB à prendre en …</li></ol></li></ol>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2011/11/05/linux-live-usb-persistent-failed/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2011/10/22/linux-sur-laptop-sans-disque-dur/">Linux sur laptop sans disque dur</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-10-22T19:35:00+02:00"> sam. 22 octobre 2011</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/linux.html">linux</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Hmm naaaaaaaaaaaaaaaaannnnnnnnnnnnn, le disque dur du portable qui me
+lâche :(</p>
+<p>Quelqu'un aurait une idée pour utiliser linux sur un (vieux) portable
+sans disque dur ?</p>
+<p>j'imaginerai juste pouvoir stocker le /home sur clé usb au moins, genre
+pour conserver les préférences de firefox et puis c'est tout.</p>
+<p>est-ce possible ?</p>
+<p>nota : le …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2011/10/22/linux-sur-laptop-sans-disque-dur/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2011/10/19/jelix-php5-framework-version-1-3-dans-les-bacs/">Jelix PHP5 Framework, version 1.3.0 dans les bacs</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2011-10-19T13:06:00+02:00"> mer. 19 octobre 2011</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+        /
+	<a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Le framework PHP5, <a href="http://jelix.org" title="Jelix PHP5 Framework">Jelix</a>,
+sort une nouvelle version majeure (*) : <strong>1.3</strong>.</p>
+<p>Cette dernière a mis l'accent sur de <a href="http://jelix.org/articles/fr/changelog/1.3">nombreuses améliorations et
+nouveautés</a>, dont</p>
+<ul>
+<li>une meilleure gestion des erreurs et des améliorations du système de
+    log</li>
+<li>une nouvelle barre de debuggage, extensible (<a href="/post/2011/07/28/debugbar-jelix/" title="Barre de debuggage de jelix">que je vous avais
+    présenté</a>)</li>
+<li>un objet réponse html …</li></ul>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2011/10/19/jelix-php5-framework-version-1-3-dans-les-bacs/">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -444,23 +457,23 @@ significativement …</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -474,7 +487,7 @@ significativement …</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -483,7 +496,7 @@ significativement …</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -501,7 +514,7 @@ significativement …</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -553,7 +566,7 @@ significativement …</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

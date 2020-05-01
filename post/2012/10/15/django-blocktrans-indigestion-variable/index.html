@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -136,7 +136,7 @@ qu'il est tellement explicite qu'on en perd son latin, du coup dans mes
 d'appels du "schmilblick".</p>
 <p><strong>Ce qui ne marche pas</strong></p>
 <p>Ainsi j'avais codé :</p>
-<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">url</span> <span class="s1">&#39;registration_activate&#39;</span> <span class="n">activation_key</span> <span class="k">as</span> <span class="n">registration_activate</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">url</span> <span class="s1">&#39;registration_activate&#39;</span> <span class="n">activation_key</span> <span class="k">as</span> <span class="n">registration_activate</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">blocktrans</span><span class="o">%</span><span class="p">}</span>
 <span class="n">Hello</span><span class="p">,</span>
 <span class="n">You</span> <span class="n">wish</span> <span class="n">to</span> <span class="n">subscribe</span> <span class="n">to</span> <span class="n">the</span> <span class="n">service</span> <span class="n">provided</span> <span class="n">by</span> <span class="p">{{</span> <span class="n">site</span><span class="o">.</span><span class="n">name</span> <span class="p">}}</span><span class="o">.</span>
@@ -148,11 +148,11 @@ d'appels du "schmilblick".</p>
 <span class="o">--</span>
 <span class="mi">2012</span> <span class="o">-</span> <span class="p">{{</span> <span class="n">site</span><span class="o">.</span><span class="n">domain</span> <span class="p">}}</span>  
 <span class="p">{</span><span class="o">%</span> <span class="n">endblocktrans</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et le mail partant, arrivait comme ceci</p>
-<div class="highlight"><pre><span></span>Hello,
+<div class="highlight"><pre><span></span><code>Hello,
 You wish to subscribe to the service provided by .
 
 To confirm your subscription, go on the following page /accounts/activate/1ccfbb6800bde1b8549f8384cd88fa3d1c931fa3/ to activate your account
@@ -161,7 +161,7 @@ Your subscription request will expire in  7 days if you dont confirm it.
 
 --
 2012 -
-</pre></div>
+</code></pre></div>
 
 
 <p>Un beau mail ... pourri à souhait, mais que se passe-t-il ?</p>
@@ -176,7 +176,7 @@ Puis d'un coup (il était temps depuis 1h que je tournais en rond à tout
 vérifier) je me suis rappellé mais <strong>blocktrans</strong> faisait des
 indigestion de variables ... faut les lui faire bouffer tout cru en lui
 pinçant le pif avec le keyword <strong>with</strong>!</p>
-<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">url</span> <span class="s1">&#39;registration_activate&#39;</span> <span class="n">activation_key</span> <span class="k">as</span> <span class="n">registration_activate</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">url</span> <span class="s1">&#39;registration_activate&#39;</span> <span class="n">activation_key</span> <span class="k">as</span> <span class="n">registration_activate</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="n">blocktrans</span> <span class="k">with</span> <span class="n">site_name</span><span class="o">=</span><span class="n">site</span><span class="o">.</span><span class="n">name</span> <span class="n">site_domain</span><span class="o">=</span><span class="n">site</span><span class="o">.</span><span class="n">domain</span><span class="o">%</span><span class="p">}</span>
 <span class="n">Hello</span><span class="p">,</span>
 <span class="n">You</span> <span class="n">wish</span> <span class="n">to</span> <span class="n">subscribe</span> <span class="n">to</span> <span class="n">the</span> <span class="n">service</span> <span class="n">provided</span> <span class="n">by</span> <span class="p">{{</span> <span class="n">site_name</span> <span class="p">}}</span><span class="o">.</span>
@@ -187,7 +187,7 @@ pinçant le pif avec le keyword <strong>with</strong>!</p>
 
 <span class="o">--</span>
 <span class="mi">2012</span> <span class="o">-</span> <span class="p">{{</span> <span class="n">site_domain</span> <span class="p">}}</span> 
-</pre></div>
+</code></pre></div>
 
 
 <p>Et voilà !</p>
@@ -200,7 +200,7 @@ mais là Django s'est tu sans dire que site.xxx ne gênait.</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
+        <li><a href="https://foxmask.net/post/2020/05/01/trigger-happy-archive-yeoboseyo/">Trigger Happy archivé</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
         <li><a href="https://foxmask.net/post/2016/07/03/django-et-https/">Django et HTTPS</a></li>
@@ -251,23 +251,23 @@ mais là Django s'est tu sans dire que site.xxx ne gênait.</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -281,7 +281,7 @@ mais là Django s'est tu sans dire que site.xxx ne gênait.</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -290,7 +290,7 @@ mais là Django s'est tu sans dire que site.xxx ne gênait.</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -308,7 +308,7 @@ mais là Django s'est tu sans dire que site.xxx ne gênait.</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -360,7 +360,7 @@ mais là Django s'est tu sans dire que site.xxx ne gênait.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

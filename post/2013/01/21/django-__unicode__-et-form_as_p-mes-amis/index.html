@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -135,7 +135,7 @@ du temps à trouver seul, donc si ça peut servir à d'autres ;)</p>
 listes déroulantes issues d'un autre modèle + un champ de texte</p>
 <p>j'ai composé le modèle suivant :<br>
 <strong>models.py</strong></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TriggerType</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerType</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TriggerType</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -147,17 +147,17 @@ listes déroulantes issues d'un autre modèle + un champ de texte</p>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TriggerService</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">provider</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">TriggerType</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">consummer</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">TriggerType</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">provider</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">TriggerType</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">consummer</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">TriggerType</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
     <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">)</span>
     <span class="n">date_created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et voici mon formulaire<br>
 <strong>forms.py</strong></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TriggerServiceForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerServiceForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Trigger Form</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -174,7 +174,7 @@ listes déroulantes issues d'un autre modèle + un champ de texte</p>
 
     <span class="n">provider</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ModelChoiceField</span><span class="p">(</span><span class="n">queryset</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
     <span class="n">consummer</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ModelChoiceField</span><span class="p">(</span><span class="n">queryset</span><span class="o">=</span><span class="n">TriggerType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Voilà !</p>
@@ -183,14 +183,14 @@ listes déroulantes issues d'un autre modèle + un champ de texte</p>
 de valeur dans ces 2 listes.<br>
 Comme j'ai eu du mal à trouver la solution finale, dans un premier
 temps je me suis résigné à faire un tuple dans mon form :</p>
-<div class="highlight"><pre><span></span><span class="n">TRIGGER_TYPE</span> <span class="o">=</span> <span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">TriggerType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()]</span>
+<div class="highlight"><pre><span></span><code><span class="n">TRIGGER_TYPE</span> <span class="o">=</span> <span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">TriggerType</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()]</span>
 <span class="n">provider</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ChoiceField</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Provider&#39;</span><span class="p">),</span>
                          <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">Select</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">TRIGGER_TYPE</span><span class="p">,</span>
                          <span class="n">help_text</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Select the service from which you want to grad your datas&#39;</span><span class="p">))</span>
 <span class="n">consummer</span> <span class="o">=</span> <span class="n">forms</span><span class="o">.</span><span class="n">ChoiceField</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Consummer&#39;</span><span class="p">),</span>
                           <span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">Select</span><span class="p">,</span> <span class="n">choices</span><span class="o">=</span><span class="n">TRIGGER_TYPE</span><span class="p">,</span>
                           <span class="n">help_text</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Select the service to which you want to put your datas&#39;</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>ca marchait très bien mais comme je suis borné et avait repéré
@@ -206,20 +206,20 @@ to provide customized representations,</p>
 <p>Non de ieuD ! c'est aussi con que ça ?<br>
 je retourne à mon modèle :<br>
 <strong>models.py</strong></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TriggerType</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerType</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TriggerType</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">code</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">140</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="fm">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            required to build the drop down list</span>
 <span class="sd">            otherwise will dislpay </span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et là de retour dans ma page web, Alélouya tout est tout propre.</p>
@@ -230,7 +230,7 @@ Confiant je ponds un formulaire à la main avec la vue qui va bien et
 avec le modèle ci dessus <em>TriggerService</em> et mon form
 <em>TriggerServiceForm</em></p>
 <p><strong>add_service.html</strong></p>
-<div class="highlight"><pre><span></span>        <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s1">&#39;Creation of a new service&#39;</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code>        <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s1">&#39;Creation of a new service&#39;</span> <span class="o">%</span><span class="p">}</span>
 
         <span class="p">{</span><span class="o">%</span> <span class="n">csrf_token</span> <span class="o">%</span><span class="p">}</span>
 
@@ -254,11 +254,11 @@ avec le modèle ci dessus <em>TriggerService</em> et mon form
 
 
             <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s2">&quot;Create it&quot;</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et voici ma vue <strong>views.py</strong></p>
-<div class="highlight"><pre><span></span><span class="nd">@login_required</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@login_required</span>
 <span class="k">def</span> <span class="nf">save_service</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        save a service</span>
@@ -276,7 +276,7 @@ avec le modèle ci dessus <em>TriggerService</em> et mon form
         <span class="n">form</span> <span class="o">=</span> <span class="n">TriggerServiceForm</span><span class="p">()</span>
     <span class="c1"># redirect to home of the existing enabled services</span>
     <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Et là quand je soumets mon formulaire je repars d'où je viens, la page
@@ -286,7 +286,7 @@ Oui et le lecteur attentif dira "ben oui tu gères pas le cas où le
 formulaire n'est pas valide du coup on n'a pas les raisons du pourquoi
 ca passe pas"</p>
 <p>Exact ! So Let's go :</p>
-<div class="highlight"><pre><span></span><span class="nd">@login_required</span>
+<div class="highlight"><pre><span></span><code><span class="nd">@login_required</span>
 <span class="k">def</span> <span class="nf">save_service</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        save a service</span>
@@ -315,7 +315,7 @@ ca passe pas"</p>
         <span class="n">form</span> <span class="o">=</span> <span class="n">TriggerServiceForm</span><span class="p">()</span>
     <span class="c1"># redirect to home of the existing enabled services</span>
     <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Là, ma vue m'a l'air cool mais encore une fois je me retrouve sur le
@@ -325,7 +325,7 @@ cette heure là :P) je farfouille dans les sources de django-registration
 :D et retombe sur la propriété errors de chacun des champs.<br>
 Je modifie tout ca et fini par produire le template suivant :<br>
 <strong>add_service.html</strong></p>
-<div class="highlight"><pre><span></span>        <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s1">&#39;Creation of a new service&#39;</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code>        <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s1">&#39;Creation of a new service&#39;</span> <span class="o">%</span><span class="p">}</span>
 
         <span class="p">{</span><span class="o">%</span> <span class="n">csrf_token</span> <span class="o">%</span><span class="p">}</span>
         <span class="p">{{</span> <span class="n">form</span><span class="o">.</span><span class="n">non_field_errors</span> <span class="p">}}</span>
@@ -353,7 +353,7 @@ Je modifie tout ca et fini par produire le template suivant :<br>
 
 
             <span class="p">{</span><span class="o">%</span> <span class="n">trans</span> <span class="s2">&quot;Create it&quot;</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Là tranquillement j'enregistre mon formulaire confiant (oui toujours ;)
@@ -373,21 +373,21 @@ une seule fois.</p>
 <dt>Donc j'ajoute à ma classe <strong>Meta</strong> de ma classe <strong>TriggerServiceForm</strong></dt>
 <dd><strong>forms.py</strong></dd>
 </dl>
-<div class="highlight"><pre><span></span>        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code>        <span class="n">exclude</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
                    <span class="s1">&#39;date_created&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et une option à mon modèle pour ajouter une date automatiquement à
 chaque enregistrement des données du modèle</p>
 <p><strong>models.py</strong></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TriggerService</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerService</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        TriggerService</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 <span class="o">...</span>
-   <span class="n">date_created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-</pre></div>
+   <span class="n">date_created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>et hop hop hop tout roule comme sur des roulettes.</p>
@@ -397,7 +397,7 @@ chaque enregistrement des données du modèle</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
+        <li><a href="https://foxmask.net/post/2020/05/01/trigger-happy-archive-yeoboseyo/">Trigger Happy archivé</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
         <li><a href="https://foxmask.net/post/2016/07/03/django-et-https/">Django et HTTPS</a></li>
@@ -448,23 +448,23 @@ chaque enregistrement des données du modèle</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -478,7 +478,7 @@ chaque enregistrement des données du modèle</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -487,7 +487,7 @@ chaque enregistrement des données du modèle</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -505,7 +505,7 @@ chaque enregistrement des données du modèle</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -557,7 +557,7 @@ chaque enregistrement des données du modèle</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

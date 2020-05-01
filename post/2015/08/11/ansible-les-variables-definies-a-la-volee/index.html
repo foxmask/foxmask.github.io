@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -136,19 +136,19 @@ que le processus avance</p>
 <p>Cas concret déployer des WAR issues d'une "nightly build" depuis des
 repo maven :</p>
 <p>je demarre par une tâche allant à la pêche aux SNAPSHOT</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Find last snapshot</span>
-  <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ssh {{</span><span class="err"> </span><span class="l l-Scalar l-Scalar-Plain">server_repo }} ls -d {{ maven_repository</span><span class="err"> </span><span class="l l-Scalar l-Scalar-Plain">}}/standard/{{ branch }}.*-SNAPSHOT | sort</span>
-  <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">snapshot</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Find last snapshot</span>
+  <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ssh {{</span><span class="err"> </span><span class="l l-Scalar l-Scalar-Plain">server_repo }} ls -d {{ maven_repository</span><span class="err"> </span><span class="l l-Scalar l-Scalar-Plain">}}/standard/{{ branch }}.*-SNAPSHOT | sort</span>
+  <span class="nt">register</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">snapshot</span>
+</code></pre></div>
 
 
 <p>ici <em>register</em> va me permettre d'utiliser "snapshot" par la suite.
 Disons <em>command</em> m'a permit de trouver FOOBAR-1.2.3-SNAPSHOT</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">let&#39;s define &quot;war_path&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo {{ path }}{{ snapshot.stdout | basename }}.war</span>
-  <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">snapshot</span>
-  <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">let&#39;s define &quot;war_path&quot;</span>
+  <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">echo {{ path }}{{ snapshot.stdout | basename }}.war</span>
+  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">snapshot</span>
+  <span class="nt">register</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path</span>
+</code></pre></div>
 
 
 <p>ici 2 choses et une astuce :</p>
@@ -162,38 +162,38 @@ export FOO=BAR, et sur la ligne de <em>command</em> on utilise
 n'est qu'une chaine et pas une liste.
 Ce qui, avec les filtres "basename" et la concaténation avec ".war ",
 me donne grosso modo comme résultat un tout QQ :</p>
-<div class="highlight"><pre><span></span>  <span class="nb">echo</span> /un/jolie/path/FOOBAR-1.2.3-SNAPSHOT.war
-</pre></div>
+<div class="highlight"><pre><span></span><code>  <span class="nb">echo</span> /un/jolie/path/FOOBAR-1.2.3-SNAPSHOT.war
+</code></pre></div>
 
 
 <p>tâche suivante :</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path download from server_repo</span>
-  <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">scp -pr {{ server_repo }}:{{ war_path.stdout }} /temp</span>
-  <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path download from server_repo</span>
+  <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scp -pr {{ server_repo }}:{{ war_path.stdout }} /temp</span>
+  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path</span>
+</code></pre></div>
 
 
 <p>ici un simple scp, on remarquera <em>war_path</em> qui est la tasks <em>register</em>
 juste au dessus et le <em>when</em> qui utilise <em>war_path</em></p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path check is here</span>
-  <span class="l l-Scalar l-Scalar-Plain">stat</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">path=/temp/{{ war_path.stdout | basename}}</span>
-  <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path_exists</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path check is here</span>
+  <span class="nt">stat</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">path=/temp/{{ war_path.stdout | basename}}</span>
+  <span class="nt">register</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path_exists</span>
+</code></pre></div>
 
 
 <p>ici vérification que le transfert a eu lieu</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path fail to download</span>
-  <span class="l l-Scalar l-Scalar-Plain">fail</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">file /temp/{{ war_path.stdout | basename}} does not exists</span>
-  <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path_exists.stat.exists == False</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path fail to download</span>
+  <span class="nt">fail</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">file /temp/{{ war_path.stdout | basename}} does not exists</span>
+  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path_exists.stat.exists == False</span>
+</code></pre></div>
 
 
 <p>ici on peut vérifier que ça a foiré, on se contente d'un message
 d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
-<div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path Extract</span>
-  <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">chdir={{ home }}/{{ target }}-tomcat/webapps/{{ foobar }} {{ java_home }}/bin/jar xf /temp/{{ war_path.stdout | basename }}</span>
-  <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path Extract</span>
+  <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">chdir={{ home }}/{{ target }}-tomcat/webapps/{{ foobar }} {{ java_home }}/bin/jar xf /temp/{{ war_path.stdout | basename }}</span>
+  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path</span>
+</code></pre></div>
 
 
 <p>et on acheve par la décompression du war</p>
@@ -207,9 +207,9 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
     <ul>
         <li><a href="https://foxmask.net/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
         <li><a href="https://foxmask.net/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
-        <li><a href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/">Mais vous etes fou ? Hoo Oui !</a></li>
         <li><a href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
+        <li><a href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
     </ul>
 </section>
     <hr/>
@@ -256,23 +256,23 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -286,7 +286,7 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -295,7 +295,7 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -313,7 +313,7 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -365,7 +365,7 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

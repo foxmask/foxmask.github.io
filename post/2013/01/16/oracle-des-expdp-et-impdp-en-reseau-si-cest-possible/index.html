@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -138,19 +138,19 @@ commandes exp/imp qu'on se trainaient depuis Oracle 8i&amp;9i.</p>
 bouffe l'espace disque !</p>
 <p><strong>Avant expdp / impdp</strong></p>
 <p>avec "exp", on pouvait compresser ses dumps like that :</p>
-<div class="highlight"><pre><span></span>mknod pipe p
+<div class="highlight"><pre><span></span><code>mknod pipe p
 gzip &lt; pipe &gt; FOX_DUMP.gz  <span class="p">&amp;</span>
 nohup exp LOGIN/PASS <span class="nv">file</span><span class="o">=</span>pipe <span class="nv">grants</span><span class="o">=</span>n <span class="p">&amp;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>j'exporte mon dump dans le pipe qui le compresse à la volée, magie magie
 ;) Qui dit mieux ? ben pas oracle 11G :P</p>
 <p>je vous note la même chose à l'envers pour un import avec imp</p>
-<div class="highlight"><pre><span></span>mknod pipe p
+<div class="highlight"><pre><span></span><code>mknod pipe p
 gunzip &lt; FOX_DUMP.gz &gt; pipe  <span class="p">&amp;</span>
 nohup imp LOGIN/PASS <span class="nv">file</span><span class="o">=</span>pipe <span class="nv">grants</span><span class="o">=</span>n <span class="nv">ignore</span><span class="o">=</span>y <span class="nv">fromuser</span><span class="o">=</span>OLDLOGIN <span class="nv">touser</span><span class="o">=</span>LOGIN <span class="p">&amp;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Bon ok on a pige la compression / décompression à la volée.</p>
@@ -158,10 +158,10 @@ nohup imp LOGIN/PASS <span class="nv">file</span><span class="o">=</span>pipe <s
 pour produire le dump compressé localement à mon serveur oracle.</p>
 <p>On procédait ainsi : depuis une autre machine disposant des outils
 oracle (il faut un minimum hein;)</p>
-<div class="highlight"><pre><span></span>mknod pipe p
+<div class="highlight"><pre><span></span><code>mknod pipe p
 gunzip &lt; FOX_DUMP.gz &gt; pipe  <span class="p">&amp;</span>
 nohup imp LOGIN/PASS@FOX-SERV <span class="nv">file</span><span class="o">=</span>pipe <span class="nv">grants</span><span class="o">=</span>n <span class="nv">ignore</span><span class="o">=</span>y <span class="nv">fromuser</span><span class="o">=</span>OLDLOGIN <span class="nv">touser</span><span class="o">=</span>LOGIN <span class="p">&amp;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ici la subtilité réside dans ce qui suit le @ ; ceci demande à oracle
@@ -172,7 +172,7 @@ local, l'ORACLE_SID quoi) qu'en réseau car le tnsnames.ora contient
 tout ce qu'il faut pour trouver le serveur, le port d'écoute et
 l'instance</p>
 <p>exemple :</p>
-<div class="highlight"><pre><span></span><span class="n">FOX</span><span class="o">-</span><span class="n">SERVER</span> <span class="o">=</span> <span class="p">(</span><span class="n">DESCRIPTION</span> <span class="o">=</span>
+<div class="highlight"><pre><span></span><code><span class="n">FOX</span><span class="o">-</span><span class="n">SERVER</span> <span class="o">=</span> <span class="p">(</span><span class="n">DESCRIPTION</span> <span class="o">=</span>
             <span class="p">(</span><span class="n">ADDRESS_LIST</span> <span class="o">=</span>
                 <span class="p">(</span><span class="n">ADDRESS</span> <span class="o">=</span> <span class="p">(</span><span class="n">PROTOCOL</span> <span class="o">=</span> <span class="n">TCP</span><span class="p">)(</span><span class="k">HOST</span> <span class="o">=</span> <span class="n">fox</span><span class="p">.</span><span class="n">somewhere</span><span class="p">.</span><span class="n">other</span><span class="p">.</span><span class="n">the</span><span class="p">.</span><span class="n">rainbow</span><span class="p">)(</span><span class="n">PORT</span> <span class="o">=</span> <span class="mi">1523</span><span class="p">))</span>
             <span class="p">)</span>
@@ -180,7 +180,7 @@ l'instance</p>
                 <span class="p">(</span><span class="n">SID</span> <span class="o">=</span> <span class="n">V11UTF8</span><span class="p">)</span>
             <span class="p">)</span>
     <span class="p">)</span>   
-</pre></div>
+</code></pre></div>
 
 
 <p>Ainsi, il m'etait facile de balancer un dump à trifouilli-les-oies avec
@@ -203,7 +203,7 @@ Ok, super on a vu comment on gérait <em>avant</em>, à présent comment fait-on
 oracle à la volée pour lui dire "mon dump est là / est à mettre là", nan
 nan ça ça marche plus !</p>
 <p>Le directory oracle est donc localisable comme suit :</p>
-<div class="highlight"><pre><span></span><span class="k">SQL</span><span class="o">&gt;</span> <span class="n">conn</span> <span class="o">/</span><span class="k">AS</span> <span class="n">sysdba</span>
+<div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span> <span class="n">conn</span> <span class="o">/</span><span class="k">AS</span> <span class="n">sysdba</span>
 <span class="n">Connected</span><span class="p">.</span>
 <span class="k">SQL</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">dba_directories</span><span class="p">;</span>
 
@@ -216,7 +216,7 @@ nan ça ça marche plus !</p>
 
 <span class="n">SYS</span>                <span class="n">DATA_PUMP_DIR</span>
 <span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">oracle</span><span class="o">/</span><span class="n">product</span><span class="o">/</span><span class="mi">11</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="n">db</span><span class="o">/</span><span class="n">rdbms</span><span class="o">/</span><span class="n">log</span><span class="o">/</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Donc comme on le voit ici, ce sont des dossiers propre à Oracle créés
@@ -227,19 +227,19 @@ pointant sur un des dossiers (qu'on dit "exportés") de mon NAS en NFS,
 disons que le dossier sera dans <em>/mnt/dump_oracle</em> et je le "mount" (of
 course)</p>
 <p>Reste alors à ajouter ce dossier à oracle :</p>
-<div class="highlight"><pre><span></span><span class="k">SQL</span><span class="o">&gt;</span> <span class="n">conn</span> <span class="o">/</span><span class="k">AS</span> <span class="n">sysdba</span>
+<div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span> <span class="n">conn</span> <span class="o">/</span><span class="k">AS</span> <span class="n">sysdba</span>
 <span class="n">Connected</span><span class="p">.</span>
 <span class="k">SQL</span><span class="o">&gt;</span> <span class="k">create</span> <span class="n">directory</span> <span class="n">fox_dump_oracle</span> <span class="k">as</span> <span class="s1">&#39;/mnt/dump_oracle&#39;</span><span class="p">;</span>
 
 <span class="n">Directory</span> <span class="n">created</span><span class="p">.</span>
 
 <span class="k">SQL</span><span class="o">&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>A présent reste à finir ses affaires :</p>
-<div class="highlight"><pre><span></span>expdp LOGIN/PASS <span class="nv">dumpfile</span><span class="o">=</span>exp_FOX_SCHEMA.dmp <span class="nv">directory</span><span class="o">=</span>fox_dump_oracle <span class="nv">logfile</span><span class="o">=</span>fox_dump_oracle.log <span class="p">&amp;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>expdp LOGIN/PASS <span class="nv">dumpfile</span><span class="o">=</span>exp_FOX_SCHEMA.dmp <span class="nv">directory</span><span class="o">=</span>fox_dump_oracle <span class="nv">logfile</span><span class="o">=</span>fox_dump_oracle.log <span class="p">&amp;</span>
+</code></pre></div>
 
 
 <p>et là au joie, le dump partira clopin-clopant sur le NAS bouffer
@@ -300,23 +300,23 @@ l'espace disque ailleurs ;)</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -330,7 +330,7 @@ l'espace disque ailleurs ;)</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -339,7 +339,7 @@ l'espace disque ailleurs ;)</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -357,7 +357,7 @@ l'espace disque ailleurs ;)</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -409,7 +409,7 @@ l'espace disque ailleurs ;)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

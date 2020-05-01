@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -139,7 +139,7 @@ toutes modifications sur le compte de l'utilisateur, cet evenement est
 <code>jcommunity_save_account</code>.</p>
 <p>Dans la class de mon listener <code>authhavefnubb.listener.php</code> j'aurai donc
 ce qui suit à chaque modification de mon compte :</p>
-<div class="highlight"><pre><span></span><span class="x">function onjcommunity_save_account ($event) {</span>
+<div class="highlight"><pre><span></span><code><span class="x">function onjcommunity_save_account ($event) {</span>
 <span class="x">global $gJConfig;</span>
 <span class="x">// recuperation des données saisies dans mon formulaire</span>
 <span class="x">$form = $event-&gt;getParam(&#39;form&#39;);</span>
@@ -150,7 +150,7 @@ ce qui suit à chaque modification de mon compte :</p>
 <span class="x">// un petit message d&#39;info signalant que le profil est mis à jour</span>
 <span class="x">jMessage::add(jLocale::get(&#39;havefnubb~member.profile.updated&#39;),&#39;ok&#39;);</span>
 <span class="x">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>l'astuce ici est de mettre
@@ -160,7 +160,7 @@ immédiatement dans la langue choisie, sinon ce dernier apparaitrait
 "encore" dans la langue précédante ou celle du portail.</p>
 <p>ensuite on opérera de la même façon avec les évènement de jAuth que sont
 AuthLogin (lors de la connexion) et AuthLogout (lors de la déconnexion)</p>
-<div class="highlight"><pre><span></span><span class="x">function onAuthLogin ($event) {</span>
+<div class="highlight"><pre><span></span><code><span class="x">function onAuthLogin ($event) {</span>
 <span class="x">...</span>
 <span class="x">$_SESSION[&#39;JX_LANG&#39;] = $user-&gt;member_language;</span>
 <span class="x">$gJConfig-&gt;locale = $user-&gt;member_language;</span>
@@ -171,16 +171,16 @@ AuthLogin (lors de la connexion) et AuthLogout (lors de la déconnexion)</p>
 <span class="x">$_SESSION[&#39;JX_LANG&#39;] = &#39;&#39;;</span>
 <span class="x">unset($_SESSION[&#39;JX_LANG&#39;]);</span>
 <span class="x">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et l'on définira notre fichier events.xml comme suit :</p>
-<div class="highlight"><pre><span></span><span class="nt">&lt;listener</span> <span class="na">name=</span><span class="s">&quot;authhavefnubb&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;listener</span> <span class="na">name=</span><span class="s">&quot;authhavefnubb&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;AuthLogin&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;AuthLogout&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;jcommunity_save_account&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/listener&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ainsi donc avec une petite dizaine de lignes dans un listener et 3
@@ -242,23 +242,23 @@ pages dans sa langue favorite.</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -272,7 +272,7 @@ pages dans sa langue favorite.</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -281,7 +281,7 @@ pages dans sa langue favorite.</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -299,7 +299,7 @@ pages dans sa langue favorite.</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -351,7 +351,7 @@ pages dans sa langue favorite.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

@@ -37,7 +37,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -93,96 +93,6 @@ Le Free de la Passion            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-            <article>
-                <h2><a href="https://foxmask.net/post/2013/02/25/de-php-a-python-meetgeek/">de PHP à Python : MeetGeek !</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-02-25T09:44:00+01:00"> lun. 25 février 2013</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-        /
-	<a href="https://foxmask.net/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>J'aurai pu monter un site "QQ la praline", style MeetGeek (merde il est
-déjà pris:P) pour coucher sur le papier ce qui suit ;)</p>
-<p>Samedi j'ai lancé <a href="https://twitter.com/foxmask/status/305244330103287810">une proposition en l'air sans aucun formalisme sur
-twitter</a>.</p>
-<p>Cette proposition la voici :<br>
-Vous êtes développeur PHP et avez envie de vous mettre …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/02/25/de-php-a-python-meetgeek/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2013/02/20/jelix-1-5-0-out/">Jelix PHP5 Framework : version 1.5.0 out</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-02-20T15:11:00+01:00"> mer. 20 février 2013</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-        /
-	<a href="https://foxmask.net/tag/jelix.html">Jelix</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Le fameux <a href="http://www.jelix.org">Framework PHP5 Jelix</a> sort sa version
-1.5.0</p>
-<p>Les contributeurs se sont mis en 4 pour sortir cette dernière version
-dont voici le menu des nouveautés :</p>
-<ul>
-<li><strong>Support PHP 5.3 only</strong> à présent. Utilisation dans Jelix des
-    fonctionnalités introduites par PHP 5.3, comme les fonctions
-    anonymes …</li></ul>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/02/20/jelix-1-5-0-out/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2013/02/18/de-php-a-python-x-aime-l/">de PHP à Python : X aime L</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-02-18T10:00:00+01:00"> lun. 18 février 2013</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-        /
-	<a href="https://foxmask.net/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Nouvel opus de la série de <a href="/post/2013/01/14/de-php-a-python-tous-ensemble/" title="de PHP à Python : tous ensemble">de PHP à
-Python</a>.</p>
-<p>Aujourd'hui, Comment parcourir un fichier XML ?</p>
-<p>Bon en plus je vais pousser le bouchon à utiliser XPath ;) tant qu'à
-lire un fichier, autant que ça soit "intelligent" et pas juste lire pour
-lire (quoi je me répète répète;)</p>
-<p>La <em>matière …</em></p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/02/18/de-php-a-python-x-aime-l/">more ...</a>
-                </div>
-            </article>
-            <hr/>
             <article>
                 <h2><a href="https://foxmask.net/post/2013/02/16/pythonthon/">Pythonthon</a></h2>
                     <div class="well well-sm">
@@ -265,11 +175,11 @@ service.</p>
 <p>Donc pour trouver ce(s) dernier(s) tout se résume à interroger la table
 dba_segment dont le tablespace_name ne contient aucun de ceux des TB
 "system".</p>
-<div class="highlight"><pre><span></span><span class="k">SET</span> <span class="n">linesize</span> <span class="mi">300</span>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="n">linesize</span> <span class="mi">300</span>
 <span class="k">SET</span> <span class="n">pagesize</span> <span class="mi">20</span>
 <span class="k">SET</span> <span class="n">feedback</span> <span class="k">off</span>
 
-<span class="k">SELECT</span> <span class="n">sysdate</span><span class="p">,</span> <span class="n">a …</span></pre></div>
+<span class="k">SELECT</span> <span class="n">sysdate</span><span class="p">,</span> <span class="n">a …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/">more ...</a>
                 </div>
             </article>
@@ -396,6 +306,90 @@ cela !</strong></p>
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2013/01/21/django-__unicode__-et-form_as_p-mes-amis/">Django __unicode__ et form.as_p mes amis</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-01-21T10:00:00+01:00"> lun. 21 janvier 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Toujours dans mes périgrinations de débutant, voici un coup qui m'a pris
+du temps à trouver seul, donc si ça peut servir à d'autres ;)</p>
+<p>Donc voici,</p>
+<p><strong>Chapitre Un __unicode__</strong></p>
+<p>je veux produire une page pour afficher un formulaire composé de 2
+listes déroulantes issues d'un autre modèle + un champ de …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/21/django-__unicode__-et-form_as_p-mes-amis/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">Oracle Identifications des Locks, Process, Sessions en cours</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-01-17T10:00:00+01:00"> jeu. 17 janvier 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Voici une requete SQL dans l'arsenal du DBA, nommons la <strong>locks.sql</strong>,
+permettant d'identifier les locks en cours sur un schema oracle :</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>   <span class="cm">/*+ choose */</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Blocking User&quot;</span><span class="p">,</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;DB User&quot;</span><span class="p">,</span>
+          <span class="n">ws</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Waiting User&quot;</span><span class="p">,</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">sid</span> <span class="ss">&quot;SID&quot;</span><span class="p">,</span>
+          <span class="n">ws</span><span class="p">.</span><span class="n">sid</span> <span class="ss">&quot;WSID&quot;</span><span class="p">,</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">sql_address</span> <span class="ss">&quot;address&quot;</span><span class="p">,</span>
+          <span class="n">bs</span><span class="p">.</span><span class="n">sql_hash_value</span> <span class="ss">&quot;Sql hash&quot;</span><span class="p">,</span>
+          <span class="n">bs …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/">Oracle des expdp et impdp en réseau, si c'est possible</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-01-16T16:49:00+01:00"> mer. 16 janvier 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>A l'heure actuelle, la version d'Oracle est la 11G R2 (à tes souhaits
+pourrait rétorqué 6P0 à R2D2 :P), et avec cette version il est de
+coutume de ne plus employer pour ses sauvegardes/gestions de dumps, que
+le fameux duo expdp et impdp pour produire ce qu'on appelle des …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://foxmask.net/category/techno12.html">&laquo;</a>
@@ -450,23 +444,23 @@ cela !</strong></p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -480,7 +474,7 @@ cela !</strong></p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -489,7 +483,7 @@ cela !</strong></p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -507,7 +501,7 @@ cela !</strong></p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -559,7 +553,7 @@ cela !</strong></p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - meetup</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/meetup.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-02-02T01:00:00+01:00</updated><entry><title>Revue Technique de la semaine du 02/02/2016</title><link href="https://foxmask.net/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/" rel="alternate"></link><published>2016-02-02T01:00:00+01:00</published><updated>2016-02-02T01:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-02-02:/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/</id><summary type="html">&lt;p&gt;Ca vous manquait aussi un billet du renard masqué hein ?
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - meetup</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/meetup.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-02-02T01:00:00+01:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Revue Technique de la semaine du 02/02/2016</title><link href="https://foxmask.net/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/" rel="alternate"></link><published>2016-02-02T01:00:00+01:00</published><updated>2016-02-02T01:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-02-02:/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/</id><summary type="html">&lt;p&gt;Ca vous manquait aussi un billet du renard masqué hein ?
 Bon qu'est-ce que je vais bien pouvoir vous racontrer ? &lt;/p&gt;
 &lt;h3&gt;Evernote de mieux en pire ?&lt;/h3&gt;
 &lt;p&gt;Je résumerai bien ce qui arrive a Evernote par "Qui trop étreint, mal embrasse" tant ce qui se passe le reflète.
@@ -40,8 +40,8 @@ Pour la 1.8.9 rien à craindre, il s'agit que d'une release concernant peu de co
 &lt;li&gt;&lt;a href="http://www.ansible.com/blog/ansible-2.0-launch"&gt;Ansible 2&lt;/a&gt;, à tester avant de switcher de 1.9, car ca pète pas mal de choses qui focntionnaient avant ou passent en dépréciées comme les inclusions de playbook avec un tag ... ca ca me reste en travers ...&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;ceci n'est plus possible :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;   include: /path/to/foo/bar tag=foobar
-   include: /path/to/bar/foo tag=barfoo
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;   include: /path/to/foo/bar tag=foobar&lt;/span&gt;
+&lt;span class="err"&gt;   include: /path/to/bar/foo tag=barfoo&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -53,4 +53,4 @@ Pour la 1.8.9 rien à craindre, il s'agit que d'une release concernant peu de co
 &lt;li&gt;&lt;a href="http://www.v3.co.uk/v3-uk/news/2443810/oracle-signals-the-end-of-java-applet-support-for-browsers"&gt;Oracle met à mort le support de la java applet dans les browsers&lt;/a&gt;. Les boites qui sont encore avec du IE &amp;lt; 10 et avec des applet java (au pif Oracle Forms) ont du mouron à se faire ...&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;J'en fout pas une&lt;/h3&gt;
-&lt;p&gt;Depuis quelques semaines je commit que dalle sur TriggerHappy, je "papillone", je teste des trucs, je regarde des nouveaux langages, je glande, je joue, je procrastine, je fais de la bouffe (&lt;a href="http://www.recettes-bretonnes.fr/gateaux-bretons/quatre-quarts-pommes.html"&gt;genre&lt;/a&gt;), la vie quoi ...&lt;/p&gt;</content><category term="Django"></category><category term="python"></category><category term="devops"></category><category term="ansible"></category><category term="meetup"></category><category term="pycharm"></category></entry></feed>
+&lt;p&gt;Depuis quelques semaines je commit que dalle sur TriggerHappy, je "papillone", je teste des trucs, je regarde des nouveaux langages, je glande, je joue, je procrastine, je fais de la bouffe (&lt;a href="http://www.recettes-bretonnes.fr/gateaux-bretons/quatre-quarts-pommes.html"&gt;genre&lt;/a&gt;), la vie quoi ...&lt;/p&gt;</content><category term="Techno"></category><category term="Django"></category><category term="python"></category><category term="devops"></category><category term="ansible"></category><category term="meetup"></category><category term="pycharm"></category></entry></feed>

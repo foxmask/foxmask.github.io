@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - xcfe4</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/xcfe4.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-05-16T14:18:00+02:00</updated><entry><title>Debian 8 sans systemD mais avec le système D !</title><link href="https://foxmask.net/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/" rel="alternate"></link><published>2015-05-16T14:18:00+02:00</published><updated>2015-05-16T14:18:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-16:/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/</id><summary type="html">&lt;p&gt;Debian 8 &lt;a href="/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/"&gt;installé après un upgrade
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - xcfe4</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/xcfe4.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-05-16T14:18:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Debian 8 sans systemD mais avec le système D !</title><link href="https://foxmask.net/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/" rel="alternate"></link><published>2015-05-16T14:18:00+02:00</published><updated>2015-05-16T14:18:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-16:/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/</id><summary type="html">&lt;p&gt;Debian 8 &lt;a href="/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/"&gt;installé après un upgrade
 foiré&lt;/a&gt;,
 me voici sur XFCE4 ;)&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://without-systemd.org/"&gt;après avoir shooté systemd&lt;/a&gt;, on redecouvre
@@ -51,4 +51,4 @@ du programme et il vous trouvera tout ce qui est dans \$HOME, genre
 SublimeText pour ma part.&lt;/p&gt;
 &lt;p&gt;XCFE4 c'est ZE système D(ébrouille|émerde)&lt;/p&gt;
 &lt;p&gt;je reviendrai sur ce billet vous livrer le reste de quelques trucs
-sympas&lt;/p&gt;</content><category term="debian"></category><category term="xcfe4"></category></entry></feed>
+sympas&lt;/p&gt;</content><category term="Techno"></category><category term="debian"></category><category term="xcfe4"></category></entry></feed>

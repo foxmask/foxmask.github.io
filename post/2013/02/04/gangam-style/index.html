@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -146,7 +146,7 @@ est toute récente, et comme le rappelle
 celle ci est somme toute très subjective car cela n'empêchera personne
 de coder comme il a toujours fait, et cette règle peut déranger les
 habitudes de tout à chacun (moi le premier :) exemple de code :</p>
-<div class="highlight"><pre><span></span><span class="x">Pourquoi diable pour les fonctions les accolades sont à la ligne suivante et pas sur celle du if ?</span>
+<div class="highlight"><pre><span></span><code><span class="x">Pourquoi diable pour les fonctions les accolades sont à la ligne suivante et pas sur celle du if ?</span>
 <span class="x">Perso, je les ai toujours TOUTES mises sur la même ligne, une habitude prise avec PERL :)</span>
 <span class="x">... à Python </span>
 <span class="x">La PEP8 quant à elle n&#39;a que 12 ans ...</span>
@@ -159,7 +159,7 @@ habitudes de tout à chacun (moi le premier :) exemple de code :</p>
 
 <span class="x">def long_function_name(var_one, var_two, var_three, var_four):</span>
 <span class="x">    print(var_one)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>on remarquera qu'en php on défini une fonction par le mot clé
@@ -167,7 +167,7 @@ habitudes de tout à chacun (moi le premier :) exemple de code :</p>
 <p>Le Python n'étant pas rigide en tout point, parfois "la queue" (ligne de
 code) est un peu longue donc on la "retrousse" comme suit :  </p>
 <p><a href="/static/2013/01/Green-python-around-tree-1.jpg"><img alt="Un python qui se fait tout petit" src="/static/2013/01/Green-python-around-tree-1-300x225.jpg"></a></p>
-<div class="highlight"><pre><span></span><span class="c1"># Aligned with opening delimiter</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Aligned with opening delimiter</span>
 <span class="n">foo</span> <span class="o">=</span> <span class="n">long_function_name</span><span class="p">(</span><span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span>
                          <span class="n">var_three</span><span class="p">,</span> <span class="n">var_four</span><span class="p">)</span>
 
@@ -175,8 +175,8 @@ code) est un peu longue donc on la "retrousse" comme suit :  </p>
 <span class="k">def</span> <span class="nf">long_function_name</span><span class="p">(</span>
         <span class="n">var_one</span><span class="p">,</span> <span class="n">var_two</span><span class="p">,</span> <span class="n">var_three</span><span class="p">,</span>
         <span class="n">var_four</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">var_one</span><span class="p">)</span>
-</pre></div>
+    <span class="nb">print</span><span class="p">(</span><span class="n">var_one</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>C'est tout aussi lisible et l'indentation fait son office</p>
@@ -186,25 +186,25 @@ comme moi vous aimez que ca soit au carré vous vous y ferez super vite.</p>
 la taille maximum de caractères par ligne.</p>
 <p>Une autre règle importante concerne les imports.</p>
 <p>En PHP on n'ira pas écrire</p>
-<div class="highlight"><pre><span></span><span class="x">use Customer, Order</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="x">use Customer, Order</span>
+</code></pre></div>
 
 
 <p>mais bien</p>
-<div class="highlight"><pre><span></span><span class="x">use Customer</span>
+<div class="highlight"><pre><span></span><code><span class="x">use Customer</span>
 <span class="x">use Order</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>En Python on n'écrira pas non plus</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">customer</span><span class="o">,</span> <span class="nn">order</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">customer</span><span class="o">,</span> <span class="nn">order</span>
+</code></pre></div>
 
 
 <p>mais bien 2 imports distincts</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">customer</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">customer</span>
 <span class="kn">import</span> <span class="nn">order</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>on retiendra que si la PEP8 n'est pas respectée, en exécutant votre
@@ -213,13 +213,13 @@ script python vous aurez droit à une belle erreur ;)</p>
 <p>Par exemple j'avais pris pour habitude d(e volontairement) écrire ce
 genre de tru,c pour bien le repérer visuellement plus tard, et le
 retirer quand j'avais fini de débogger :</p>
-<div class="highlight"><pre><span></span><span class="x">function bagnole_spec($voiture) {</span>
+<div class="highlight"><pre><span></span><code><span class="x">function bagnole_spec($voiture) {</span>
 <span class="x">var_dump($voiture);</span>
 <span class="x">   if ( in_array($voiture,&#39;nb_portes&#39;)) {</span>
 <span class="x">       echo $voiture[&#39;nb_portes&#39;];</span>
 <span class="x">   }</span>
 <span class="x">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>En python, aucun atermoiement n'est possible, on ne peut pas faire du
@@ -304,23 +304,23 @@ qu'ils sont des poneys zailés ;)</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -334,7 +334,7 @@ qu'ils sont des poneys zailés ;)</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -343,7 +343,7 @@ qu'ils sont des poneys zailés ;)</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -361,7 +361,7 @@ qu'ils sont des poneys zailés ;)</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -413,7 +413,7 @@ qu'ils sont des poneys zailés ;)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

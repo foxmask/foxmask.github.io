@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -152,31 +152,31 @@ booter sur l'installeur debian (vous avez bien suivi ? c'est tordu hein
 <p>Tout ça marchait très bien, mais comme Wheezy va sortir dans peu de
 temps j'ai voulu mettre à jour ma version, et là, la catastrophe.</p>
 <p>Après un</p>
-<div class="highlight"><pre><span></span>aptitude update
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">aptitude update</span>
+</code></pre></div>
 
 
 <p>un</p>
-<div class="highlight"><pre><span></span>aptitude upgrade
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">aptitude upgrade</span>
+</code></pre></div>
 
 
 <p>m'affichait</p>
-<div class="highlight"><pre><span></span>Résolution des dépendances... 
-ouverts: 378146 fermés: 658730 reportés: 344 en conflit: 1436
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">Résolution des dépendances... </span>
+<span class="c">ouverts: 378146 fermés: 658730 reportés: 344 en conflit: 1436</span>
+</code></pre></div>
 
 
 <p>ca durait 2 heures, ça m'a gonflé, j'ai tout arrete et fait un simple</p>
-<div class="highlight"><pre><span></span>apt-get dist-upgrade
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">apt-get dist-upgrade</span>
+</code></pre></div>
 
 
 <p>J'ai eu droit à un probleme de depedance sur default-java (un truc du
 genre)<br>
 j'ai fait un</p>
-<div class="highlight"><pre><span></span>dpkg -P default-java
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">dpkg -P default-java</span>
+</code></pre></div>
 
 
 <p>et relancer le dist-upgrade, et tout se finissa comme dans un rêve</p>
@@ -243,31 +243,31 @@ kernel-header et choisi l'installation via DKMS</p>
 <p>Il en avait rien à faire de mes kernel-headers.</p>
 <p><strong>Solution :</strong><br>
 arreter X</p>
-<div class="highlight"><pre><span></span>/etc/init.d/gdm3 stop
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">/etc/init.d/gdm3 stop</span>
+</code></pre></div>
 
 
 <p>lancer</p>
-<div class="highlight"><pre><span></span>./NVIDIA-.....run
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">./NVIDIA-.....run</span>
+</code></pre></div>
 
 
 <p>et à l'invite NE PAS UTILISER DKMS</p>
 <p>La compilation se passe les doigts dans le nez !<br>
 Ensuite un bon coup de</p>
-<div class="highlight"><pre><span></span>nvidia-xconfig
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">nvidia-xconfig</span>
+</code></pre></div>
 
 
 <p>pour pondre le fichier /etc/X11/xorg.conf</p>
 <p>Puis un petit</p>
-<div class="highlight"><pre><span></span>modprobe nvidia
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">modprobe nvidia</span>
+</code></pre></div>
 
 
 <p>lancer gdm3</p>
-<div class="highlight"><pre><span></span>/etc/init.d/gdm3 start
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">/etc/init.d/gdm3 start</span>
+</code></pre></div>
 
 
 <p>Et là comme par enchantement le processeur se tait et "la lumière" soit
@@ -330,23 +330,23 @@ ferme une Wheezy STABLE !</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -360,7 +360,7 @@ ferme une Wheezy STABLE !</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -369,7 +369,7 @@ ferme une Wheezy STABLE !</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -387,7 +387,7 @@ ferme une Wheezy STABLE !</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -439,7 +439,7 @@ ferme une Wheezy STABLE !</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

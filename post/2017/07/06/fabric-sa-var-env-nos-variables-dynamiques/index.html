@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -153,8 +153,8 @@ Vous pourriez objecter que c'est une grosse connerie parce que je vais me mélan
 <p>Ainsi 'n' users ne se marcheront plus sur les pieds.</p>
 <p><strong>Dernière subtilité donnée dans la doc</strong> :</p>
 <p>les fichiers RC sont lus comme suit :</p>
-<div class="highlight"><pre><span></span><span class="n">CLE_A</span><span class="o">=</span><span class="n">valeur</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">CLE_A</span><span class="o">=</span><span class="n">valeur</span>
+</code></pre></div>
 
 
 <p>où valeur sera retournée sous la valeur : 'valeur'</p>
@@ -162,28 +162,28 @@ Vous pourriez objecter que c'est une grosse connerie parce que je vais me mélan
 ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  puisqu'on obtiendra comme valeur : '/mon/path/'/sous_dossier</p>
 <p>de même pour mon <strong>env.ENV_USER</strong> qui a pour valeur 'foxmask' ; quand je fais un <strong>sudo(cmd, user=env.ENV_USER)</strong> j'ai droit à un manignifique <strong>"sudo user 'foxmask' n'existe pas"</strong></p>
 <p>de même pour un dict </p>
-<div class="highlight"><pre><span></span><span class="n">CLE_B</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;truc_machin&#39;</span><span class="p">:</span> <span class="s1">&#39;bidule&#39;</span><span class="p">]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">CLE_B</span><span class="o">=</span><span class="p">[{</span><span class="s1">&#39;truc_machin&#39;</span><span class="p">:</span> <span class="s1">&#39;bidule&#39;</span><span class="p">]</span>
+</code></pre></div>
 
 
 <p>sera retourné sous une la forme d'une string</p>
 <p>du coup on le voit on se fait bien enfumer</p>
 <p>Pour régler son compte à ce comportement, reste à se faire une petite méthode pour épurer les valeurs de ses propres variables, avec un coup de </p>
-<div class="highlight"><pre><span></span><span class="n">env</span><span class="o">.</span><span class="n">MAVARIABLE</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">MAVARIABLE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">env</span><span class="o">.</span><span class="n">MAVARIABLE</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">MAVARIABLE</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>là où c'est nécéssaire et appeler ladite méthode dans les modules où on utilise "env" :P</p>
 <p>Et pour la cas du dict, il faudra passer par le module "<a href="https://docs.python.org/3/library/ast.html?highlight=ast#module-ast">ast</a>" pour revenir à un "dict" nomal, like this </p>
-<div class="highlight"><pre><span></span><span class="n">cle_b</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">CLE_B</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">cle_b</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">CLE_B</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>et on pourra retourner faire joujou avec son dict comme d'hab</p>
 <h2><a href="http://docs.fabfile.org/en/1.13/api/contrib/django.html">Fabric and Django integration</a></h2>
 <p>Un moment j'ai cru voir une lueur d'espoir avec cette contribution qui permettrait d'accéder à "ses affaires" made in Django, depuis Fabric, genre au pif les données du modèle que j'injecte en JSON à la volée et récupère dans <strong>env.MES_VARIABLES_A_LA_NOIX</strong> mais, j'ai vite déchanté avec un erreur on ne peut plus bateau :</p>
-<div class="highlight"><pre><span></span><span class="n">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;monmodule&#39;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;monmodule&#39;</span>
+</code></pre></div>
 
 
 <h1>Conclusion :</h1>
@@ -196,8 +196,8 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
         <li><a href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2013/10/24/fabric-importerror-no-module-named-main/">fabric ImportError: No module named main</a></li>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
-        <li><a href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/">Mais vous etes fou ? Hoo Oui !</a></li>
+        <li><a href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
     </ul>
 </section>
     <hr/>
@@ -244,23 +244,23 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -274,7 +274,7 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -283,7 +283,7 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -301,7 +301,7 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -353,7 +353,7 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

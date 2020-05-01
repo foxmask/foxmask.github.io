@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - flask</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/flask.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-07-27T09:45:00+02:00</updated><entry><title>Entrevue en toute simplicité - Ashgan</title><link href="https://foxmask.net/post/2015/07/27/entrevue-en-toute-simplicite-ashgan/" rel="alternate"></link><published>2015-07-27T09:45:00+02:00</published><updated>2015-07-27T09:45:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-07-27:/post/2015/07/27/entrevue-en-toute-simplicite-ashgan/</id><summary type="html">&lt;p&gt;Bonjour Ashgan,&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - flask</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/flask.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-07-27T09:45:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Entrevue en toute simplicité - Ashgan</title><link href="https://foxmask.net/post/2015/07/27/entrevue-en-toute-simplicite-ashgan/" rel="alternate"></link><published>2015-07-27T09:45:00+02:00</published><updated>2015-07-27T09:45:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-07-27:/post/2015/07/27/entrevue-en-toute-simplicite-ashgan/</id><summary type="html">&lt;p&gt;Bonjour Ashgan,&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Peux tu te présenter en quelques mots ?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Ashgan&lt;/strong&gt; Je suis expat' à Dakar, au Sénégal, depuis bientôt 10 ans.&lt;br&gt;
 Actuellement sysadmin / dev indépendant pendant le peu de temps libre
@@ -100,4 +100,4 @@ et je lui ferai suivre ;)&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;(re)Lire une Entrevue précédente&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="/post/2015/07/20/entrevue-en-toute-simplicite-spout/"&gt;Spout&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="flask"></category><category term="python"></category></entry></feed>
+&lt;/ul&gt;</content><category term="Entrevues"></category><category term="flask"></category><category term="python"></category></entry></feed>

@@ -45,7 +45,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -140,7 +140,7 @@ Le Free de la Passion            </a>
 <p>Aussi voici un rapide retour d'XP sur l'installation de PostgreSQL 9.4 pour Centos et de son driver psycopg2 pour son virtualenv...</p>
 <p>Pour l'installation de PostgreSQL 9.4 je vous renvois <a href="https://wiki.postgresql.org/wiki/YUM_Installation">à la doc</a> super bien faite que je ne vais pas vous remettre en intégralité ici</p>
 <p>Ensuite pour l'installation du driver dans son virtualenv, c'est pas de la tarte, voici :</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ pip install psycopg2
+<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ pip install psycopg2
 Collecting psycopg2
   Using cached psycopg2-2.6.1.tar.gz
     Complete output from <span class="nb">command</span> python setup.py egg_info:
@@ -160,7 +160,7 @@ Collecting psycopg2
         python setup.py build_ext --pg-config /path/to/pg_config build ...
 
     or with the pg_config option in <span class="s1">&#39;setup.cfg&#39;</span>.
-</pre></div>
+</code></pre></div>
 
 
 <p>c'est pas de la tarte, parce qu'evidement le setup.py du dossier courant concerne l'installtion de mon app et pas celle du driver</p>
@@ -168,18 +168,18 @@ Collecting psycopg2
 <p>Seulement quand le package est déjà là-bas, alors ne reste plus qu'une solution ... altéré le PATH ... </p>
 <p>Encore faut-il trouver où est planquée postgresql avec l'installation pas "ordinaire" resultante de la doc ci dessus</p>
 <p>Comme chuis une trume pour mémoriser les noms de packages à rallonge de centos, je fais un :</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ ps aux<span class="p">|</span>grep post
+<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ ps aux<span class="p">|</span>grep post
 postgres  <span class="m">2274</span>  <span class="m">0</span>.0  <span class="m">0</span>.1 <span class="m">324636</span> <span class="m">14452</span> ?        S    <span class="m">08</span>:39   <span class="m">0</span>:00 /usr/pgsql-9.4/bin/postmaster -D /var/lib/pgsql/9.4/data
-</pre></div>
+</code></pre></div>
 
 
 <p>donc plus qu'à faire un petit export PATH</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/pgsql-9.4/bin/:<span class="nv">$PATH</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/pgsql-9.4/bin/:<span class="nv">$PATH</span>
+</code></pre></div>
 
 
 <p>puis ENFIN, de relancer l'installation du driver,</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ pip install psycopg2
+<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ pip install psycopg2
 Collecting psycopg2
   Using cached psycopg2-2.6.1.tar.gz
 Building wheels <span class="k">for</span> collected packages: psycopg2
@@ -188,7 +188,7 @@ Building wheels <span class="k">for</span> collected packages: psycopg2
 Successfully built psycopg2
 Installing collected packages: psycopg2
 Successfully installed psycopg2-2.6.1
-</pre></div>
+</code></pre></div>
 
 
 <p>and Voilà ! :)</p>
@@ -199,9 +199,9 @@ Successfully installed psycopg2-2.6.1
     <ul>
         <li><a href="https://foxmask.net/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/">Revue Technique de la semaine du 27/07/2015</a></li>
         <li><a href="https://foxmask.net/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
-        <li><a href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/">Mais vous etes fou ? Hoo Oui !</a></li>
         <li><a href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
+        <li><a href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
     </ul>
 </section>
     <hr/>
@@ -248,23 +248,23 @@ Successfully installed psycopg2-2.6.1
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -278,7 +278,7 @@ Successfully installed psycopg2-2.6.1
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -287,7 +287,7 @@ Successfully installed psycopg2-2.6.1
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -305,7 +305,7 @@ Successfully installed psycopg2-2.6.1
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -357,7 +357,7 @@ Successfully installed psycopg2-2.6.1
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

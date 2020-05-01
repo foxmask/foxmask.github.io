@@ -44,7 +44,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -145,12 +145,12 @@ un sur le formulaire 1, inutile de le réafficher dans ma liste sur le
 formulaire 3.</p>
 <p>Ainsi donc le code suivant qui fonctionne, ne convient plus à ce
 "nouveau" prérequis :</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        change the form instance dynamically from the data we entered</span>
 <span class="sd">        at the previous step</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">current</span>
 
     <span class="k">if</span> <span class="n">step</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
@@ -173,17 +173,17 @@ formulaire 3.</p>
         <span class="c1"># get the default form</span>
         <span class="n">form</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">UserServiceWizard</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_form</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">form</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Il faut intervenir lors de l'affichage du formulaire 3, correspondant au
 "step2", ce qui donne :</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        change the form instance dynamically from the data we entered</span>
 <span class="sd">        at the previous step</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">current</span>
 
     <span class="k">if</span> <span class="n">step</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
@@ -211,18 +211,18 @@ formulaire 3.</p>
         <span class="c1"># get the default form</span>
         <span class="n">form</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">UserServiceWizard</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_form</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">form</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et dans mon <strong>forms.py</strong> ca donne :</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
 <span class="kn">from</span> <span class="nn">django_th.models</span> <span class="kn">import</span> <span class="n">ServicesActivated</span>
 <span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="kn">import</span> <span class="n">ugettext</span> <span class="k">as</span> <span class="n">_</span>
 
 
 <span class="k">class</span> <span class="nc">ServiceChoiceForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">activated_services</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">activated_services</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">provider</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        get the activated services added from the administrator</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -231,7 +231,7 @@ formulaire 3.</p>
         <span class="n">choices</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">datas</span> <span class="o">=</span> <span class="p">()</span>
 
-        <span class="k">if</span> <span class="n">provider</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">provider</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">services</span> <span class="o">=</span> <span class="n">services</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">name__exact</span><span class="o">=</span><span class="n">provider</span><span class="p">)</span>
 
         <span class="k">for</span> <span class="n">class_name</span> <span class="ow">in</span> <span class="n">services</span><span class="p">:</span>
@@ -272,7 +272,7 @@ formulaire 3.</p>
 
 <span class="k">class</span> <span class="nc">DummyForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
     <span class="k">pass</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>... et le Fail !</h2>
@@ -281,12 +281,12 @@ tous les services activés.<br>
 Au formulaire 3 (step 2) j'utilise <strong>ConsummerForm</strong> qui récupère tous
 les services en excluant celui saisi dans le formulaire 1</p>
 <p>C'est le but du bout de code suivante de ma <strong>views.py</strong> :</p>
-<div class="highlight"><pre><span></span>   <span class="k">elif</span> <span class="n">step</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span> 
+<div class="highlight"><pre><span></span><code>   <span class="k">elif</span> <span class="n">step</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span> 
         <span class="c1"># je veux recuperer les données du premier formulaire </span>
         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cleaned_data_for_step</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
         <span class="c1"># initialisation du form avec la liste deroulante &quot;moins&quot; la valeur saisi au step 0</span>
         <span class="n">form</span> <span class="o">=</span> <span class="n">ConsummerForm</span><span class="p">(</span><span class="n">initial</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;provider&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;provider&#39;</span><span class="p">]})</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Tout ça est super et ... ne marche pas !</p>
@@ -299,11 +299,11 @@ puisque pas eu de réponse :) et #django-fr @ freenode (merci magopian
 pour PDB :) j'ai entrevu la lumière que je vous montre à présent :</p>
 <h2>And ze Winner iz</h2>
 <p>La solution est dans la views.py... pour changer ;)</p>
-<div class="highlight"><pre><span></span>   <span class="k">elif</span> <span class="n">step</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span> 
+<div class="highlight"><pre><span></span><code>   <span class="k">elif</span> <span class="n">step</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span> 
         <span class="n">step0_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_cleaned_data_for_step</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
         <span class="n">form</span> <span class="o">=</span> <span class="n">ConsummerForm</span><span class="p">(</span>
             <span class="n">data</span><span class="p">,</span> <span class="n">initial</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;provider&#39;</span><span class="p">:</span> <span class="n">step0_data</span><span class="p">[</span><span class="s1">&#39;provider&#39;</span><span class="p">]})</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>tadaaaa !!!</p>
@@ -321,12 +321,12 @@ débuger)</p>
 form "ConsummerForm()" qui exclue les données non souhaitées et le tour
 est joué.</p>
 <p>voici la méthode complète de <strong>get_form</strong> dans <strong>views.py</strong> :</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        change the form instance dynamically from the data we entered</span>
 <span class="sd">        at the previous step</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">current</span>
 
     <span class="k">if</span> <span class="n">step</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
@@ -353,15 +353,15 @@ est joué.</p>
         <span class="c1"># get the default form</span>
         <span class="n">form</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">UserServiceWizard</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_form</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">form</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et cette fois ci tout glisse jusqu'au bout !</p>
 <h2>Cheminements menant à la solution</h2>
 <p>Ce qui m'a mis la puce à l'oreille c'est en comparant le code des autres
 "step" (1 et 3) avec le step2 :</p>
-<div class="highlight"><pre><span></span>        <span class="n">form</span> <span class="o">=</span> <span class="n">form_class</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>        <span class="n">form</span> <span class="o">=</span> <span class="n">form_class</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>en effet ici j'appelle la class "form_class" d'un formulaire lambda
@@ -427,23 +427,23 @@ travers du passage de data au form <strong>ConsummerForm()</strong></p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -457,7 +457,7 @@ travers du passage de data au form <strong>ConsummerForm()</strong></p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -466,7 +466,7 @@ travers du passage de data au form <strong>ConsummerForm()</strong></p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -484,7 +484,7 @@ travers du passage de data au form <strong>ConsummerForm()</strong></p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -536,7 +536,7 @@ travers du passage de data au form <strong>ConsummerForm()</strong></p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

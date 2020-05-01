@@ -44,7 +44,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -140,8 +140,8 @@ ultra pratique : <a href="https://docs.djangoproject.com/en/1.6/topics/db/querie
 Objects</a>.</p>
 <p>Le but de cette fonction est de gérer des requêtes SQL pour produire
 quelque chose du genre :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span> <span class="k">FROM</span> <span class="n">table1</span> <span class="k">WHERE</span> <span class="k">user</span> <span class="o">=</span> <span class="s1">&#39;foobar&#39;</span> <span class="k">AND</span> <span class="p">(</span><span class="n">col1</span><span class="o">=</span><span class="s1">&#39;2&#39;</span> <span class="k">OR</span> <span class="n">col2</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">);</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span> <span class="k">FROM</span> <span class="n">table1</span> <span class="k">WHERE</span> <span class="k">user</span> <span class="o">=</span> <span class="s1">&#39;foobar&#39;</span> <span class="k">AND</span> <span class="p">(</span><span class="n">col1</span><span class="o">=</span><span class="s1">&#39;2&#39;</span> <span class="k">OR</span> <span class="n">col2</span><span class="o">=</span><span class="s1">&#39;2&#39;</span><span class="p">);</span>
+</code></pre></div>
 
 
 <p>C'est la partie après le AND qui est gérée par <strong>Q()</strong></p>
@@ -152,7 +152,7 @@ dans une CBV ListView que ça va servir, donc un poil plus subtile que
 <p>Dans la version précédente ma
 <a href="https://docs.djangoproject.com/en/1.6/ref/class-based-views/generic-display/#listview" title="ListView">ListView</a>
 avait cette tête :</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TriggerListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
     <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;triggers_list&quot;</span>
     <span class="n">queryset</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
     <span class="n">template_name</span> <span class="o">=</span> <span class="s2">&quot;home.html&quot;</span>
@@ -165,7 +165,7 @@ avait cette tête :</p>
                <span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-date_created&#39;</span><span class="p">)</span>
         <span class="c1"># otherwise return nothing</span>
         <span class="k">return</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Là, aucun filtrage des données depuis le template, affichage pour et
@@ -181,7 +181,7 @@ simple de toutes les données de l'utilisateur connecté.</p>
     methode <strong>get_queryset</strong> de la ListView</li>
 </ol>
 <p><strong>1 - Ajout des données peuplant la liste du point 1</strong></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TriggerListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    list of Triggers</span>
@@ -201,25 +201,25 @@ simple de toutes les données de l'utilisateur connecté.</p>
                 <span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">context</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>2 - Template, affichage de la liste pour filtrage</strong></p>
-<div class="highlight"><pre><span></span>                <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">trigger_filter</span> <span class="ow">in</span> <span class="n">trigger_filter_by</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code>                <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">trigger_filter</span> <span class="ow">in</span> <span class="n">trigger_filter_by</span> <span class="o">%</span><span class="p">}</span>
                     <span class="p">{{</span> <span class="n">trigger_filter</span><span class="o">.</span><span class="n">name</span><span class="o">|</span><span class="n">service_readable</span> <span class="p">}}</span>
                 <span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>3 - urls.py</strong></p>
-<div class="highlight"><pre><span></span>    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^th/$&#39;</span><span class="p">,</span> <span class="n">TriggerListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">),</span> 
+<div class="highlight"><pre><span></span><code>    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^th/$&#39;</span><span class="p">,</span> <span class="n">TriggerListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;base&#39;</span><span class="p">),</span> 
     <span class="c1">#ajouté pour gerer le filtrage</span>
     <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^th/trigger/by/(?P[a-zA-Z]+)$&#39;</span><span class="p">,</span> <span class="n">TriggerListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;trigger_filter_by&#39;</span><span class="p">),</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>4 - Logique de traitement du filtrage</strong></p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TriggerListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">TriggerListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    list of Triggers</span>
@@ -231,7 +231,7 @@ simple de toutes les données de l'utilisateur connecté.</p>
     <span class="n">paginate_by</span> <span class="o">=</span> <span class="mi">7</span>
 
     <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">trigger_filter_by</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">trigger_filter_by</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="c1"># get the Trigger of the connected user</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">():</span>
             <span class="c1"># if the user selected a filter, get its ID</span>
@@ -241,7 +241,7 @@ simple de toutes les données de l'utilisateur connecté.</p>
                 <span class="n">trigger_filter_by</span> <span class="o">=</span> <span class="n">user_service</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span>
 
             <span class="c1"># no filter selected : display all</span>
-            <span class="k">if</span> <span class="n">trigger_filter_by</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">trigger_filter_by</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">queryset</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-date_created&#39;</span><span class="p">)</span>
             <span class="c1"># filter selected : display all related trigger</span>
             <span class="k">else</span><span class="p">:</span>
@@ -252,12 +252,12 @@ simple de toutes les données de l'utilisateur connecté.</p>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">queryset</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="n">trigger_filter_by</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">consumer</span><span class="o">=</span><span class="n">trigger_filter_by</span><span class="p">))</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-date_created&#39;</span><span class="p">)</span>
         <span class="c1"># otherwise return nothing when user is not connected</span>
         <span class="k">return</span> <span class="n">TriggerService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ainsi donc ici on voit où entre en compte le Q objects :</p>
-<div class="highlight"><pre><span></span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="n">trigger_filter_by</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">consumer</span><span class="o">=</span><span class="n">trigger_filter_by</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">Q</span><span class="p">(</span><span class="n">provider</span><span class="o">=</span><span class="n">trigger_filter_by</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">consumer</span><span class="o">=</span><span class="n">trigger_filter_by</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>ceci produit le "OR" attendu puisque je souhaite bel et bien TOUS les
@@ -327,23 +327,23 @@ Github</a></p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -357,7 +357,7 @@ Github</a></p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -366,7 +366,7 @@ Github</a></p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -384,7 +384,7 @@ Github</a></p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -436,7 +436,7 @@ Github</a></p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

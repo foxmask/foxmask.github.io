@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - debian</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/debian.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-07-29T09:48:00+02:00</updated><entry><title>Revue Technique de la semaine du 27/07/2015</title><link href="https://foxmask.net/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/" rel="alternate"></link><published>2015-07-29T09:48:00+02:00</published><updated>2015-07-29T09:48:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-07-29:/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/</id><summary type="html">&lt;p&gt;&lt;strong&gt;OnePlus 2&lt;/strong&gt;&lt;br&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - debian</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/debian.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-07-29T09:48:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Revue Technique de la semaine du 27/07/2015</title><link href="https://foxmask.net/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/" rel="alternate"></link><published>2015-07-29T09:48:00+02:00</published><updated>2015-07-29T09:48:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-07-29:/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/</id><summary type="html">&lt;p&gt;&lt;strong&gt;OnePlus 2&lt;/strong&gt;&lt;br&gt;
 Le nouvel appareil de OnePlus montre les crocs, mais ce dernier fait
 petite mine avec un proc moins bien lotis que ses concurrents, sinon une
 bonne grosse batterie comme le LG 4 qui va permettre de profiter de
@@ -60,7 +60,7 @@ voici les 10 derniers sujets traités ou en cours sur
     ?&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="http://indexerror.net/2480/requetes-django-en-parall%C3%A8le"&gt;Requetes Django en
     parallèle&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="debian"></category><category term="Django"></category><category term="indexerror"></category><category term="oneplus"></category><category term="postgresql"></category><category term="python"></category></entry><entry><title>Debian 8 sans systemD mais avec le système D !</title><link href="https://foxmask.net/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/" rel="alternate"></link><published>2015-05-16T14:18:00+02:00</published><updated>2015-05-16T14:18:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-16:/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/</id><summary type="html">&lt;p&gt;Debian 8 &lt;a href="/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/"&gt;installé après un upgrade
+&lt;/ul&gt;</content><category term="Techno"></category><category term="debian"></category><category term="Django"></category><category term="indexerror"></category><category term="oneplus"></category><category term="postgresql"></category><category term="python"></category></entry><entry><title>Debian 8 sans systemD mais avec le système D !</title><link href="https://foxmask.net/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/" rel="alternate"></link><published>2015-05-16T14:18:00+02:00</published><updated>2015-05-16T14:18:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-16:/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/</id><summary type="html">&lt;p&gt;Debian 8 &lt;a href="/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/"&gt;installé après un upgrade
 foiré&lt;/a&gt;,
 me voici sur XFCE4 ;)&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://without-systemd.org/"&gt;après avoir shooté systemd&lt;/a&gt;, on redecouvre
@@ -112,7 +112,7 @@ du programme et il vous trouvera tout ce qui est dans \$HOME, genre
 SublimeText pour ma part.&lt;/p&gt;
 &lt;p&gt;XCFE4 c'est ZE système D(ébrouille|émerde)&lt;/p&gt;
 &lt;p&gt;je reviendrai sur ce billet vous livrer le reste de quelques trucs
-sympas&lt;/p&gt;</content><category term="debian"></category><category term="xcfe4"></category></entry><entry><title>Debian Update Wheezy à Jessie : quand votre grub fait boom</title><link href="https://foxmask.net/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/" rel="alternate"></link><published>2015-05-15T22:28:00+02:00</published><updated>2015-05-15T22:28:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-15:/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/</id><summary type="html">&lt;p&gt;La mise à jour de Debian Wheezy à Jessie s'est passé comme le titre vous
+sympas&lt;/p&gt;</content><category term="Techno"></category><category term="debian"></category><category term="xcfe4"></category></entry><entry><title>Debian Update Wheezy à Jessie : quand votre grub fait boom</title><link href="https://foxmask.net/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/" rel="alternate"></link><published>2015-05-15T22:28:00+02:00</published><updated>2015-05-15T22:28:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-15:/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/</id><summary type="html">&lt;p&gt;La mise à jour de Debian Wheezy à Jessie s'est passé comme le titre vous
 le laisse à penser, explosif.&lt;br&gt;
 Au reboot, grub était vide... Le pied !&lt;/p&gt;
 &lt;p&gt;Etat des lieux avant avec Wheezy :&lt;/p&gt;
@@ -192,7 +192,7 @@ ainsi que
 &lt;dd&gt;firefox et sublimtext qui petent .... l'installation avec un kernel
 32bits sur un proc 64bits Ahaaaaaaaaaaaaaaaaaaaaaa le mode rescue
 ahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&lt;/dd&gt;
-&lt;/dl&gt;</content><category term="debian"></category></entry><entry><title>Gnome SystemD, Debian 8, *BSD</title><link href="https://foxmask.net/post/2015/05/03/gnome-systemd-debian-8-bsd/" rel="alternate"></link><published>2015-05-03T14:45:00+02:00</published><updated>2015-05-03T14:45:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-03:/post/2015/05/03/gnome-systemd-debian-8-bsd/</id><summary type="html">&lt;p&gt;Il était une fois une distrib que j'utilise depuis plus de 10ans ... et
+&lt;/dl&gt;</content><category term="Techno"></category><category term="debian"></category></entry><entry><title>Gnome SystemD, Debian 8, *BSD</title><link href="https://foxmask.net/post/2015/05/03/gnome-systemd-debian-8-bsd/" rel="alternate"></link><published>2015-05-03T14:45:00+02:00</published><updated>2015-05-03T14:45:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-03:/post/2015/05/03/gnome-systemd-debian-8-bsd/</id><summary type="html">&lt;p&gt;Il était une fois une distrib que j'utilise depuis plus de 10ans ... et
 qui, comme elle prend un chemin de traverse qui ne me sied guère, va
 dégager de mes ordinateurs...&lt;/p&gt;
 &lt;p&gt;Comme je ne suis qu'une poussière l'ocean, les dev de debian s'en
@@ -279,7 +279,7 @@ de ne pas se poser de question lors de la mise en prod.&lt;/p&gt;
 &lt;li&gt;BSD est fait pour le desktop ? si oui lequel et avec quel window
     manager périn ?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;En gros je me pose un tas de questions... et c'est pas fini&lt;/p&gt;</content><category term="bsd"></category><category term="debian"></category><category term="linux"></category><category term="systemd"></category></entry><entry><title>Debian et le "Menu Principal" perdu</title><link href="https://foxmask.net/post/2014/09/07/debian-et-le-menu-principal-perdu/" rel="alternate"></link><published>2014-09-07T13:40:00+02:00</published><updated>2014-09-07T13:40:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-09-07:/post/2014/09/07/debian-et-le-menu-principal-perdu/</id><summary type="html">&lt;p&gt;Je mets ça là au cas où ...&lt;/p&gt;
+&lt;p&gt;En gros je me pose un tas de questions... et c'est pas fini&lt;/p&gt;</content><category term="Techno"></category><category term="bsd"></category><category term="debian"></category><category term="linux"></category><category term="systemd"></category></entry><entry><title>Debian et le "Menu Principal" perdu</title><link href="https://foxmask.net/post/2014/09/07/debian-et-le-menu-principal-perdu/" rel="alternate"></link><published>2014-09-07T13:40:00+02:00</published><updated>2014-09-07T13:40:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-09-07:/post/2014/09/07/debian-et-le-menu-principal-perdu/</id><summary type="html">&lt;p&gt;Je mets ça là au cas où ...&lt;/p&gt;
 &lt;p&gt;Pour une raison qui m'échappe, je n'ai plus eu de menu "Menu Principal",
 accessible en principe depuis le menu "Activités" &gt; "Applications"&lt;/p&gt;
 &lt;p&gt;Or sans ce dernier, pour rajouter des applications qui ne sont pas
@@ -301,7 +301,7 @@ loin de nom à la ikéa :P&lt;/p&gt;
 &lt;p&gt;On est fin prêt pour remettre les applications de son choix dans le menu
 et via les
 &lt;a href="https://extensions.gnome.org/extension/6/applications-menu/"&gt;Extensions&lt;/a&gt;,
-on retrouve son application dans le menu en haut de votre desktop&lt;/p&gt;</content><category term="debian"></category></entry><entry><title>Debian Network Manager et Eth0 non gérée</title><link href="https://foxmask.net/post/2014/06/03/debian-network-manager-et-eth0-non-geree/" rel="alternate"></link><published>2014-06-03T09:54:00+02:00</published><updated>2014-06-03T09:54:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-06-03:/post/2014/06/03/debian-network-manager-et-eth0-non-geree/</id><summary type="html">&lt;p&gt;Quand on est une faignasse qui n'a pas envie de se plonger dans les
+on retrouve son application dans le menu en haut de votre desktop&lt;/p&gt;</content><category term="Techno"></category><category term="debian"></category></entry><entry><title>Debian Network Manager et Eth0 non gérée</title><link href="https://foxmask.net/post/2014/06/03/debian-network-manager-et-eth0-non-geree/" rel="alternate"></link><published>2014-06-03T09:54:00+02:00</published><updated>2014-06-03T09:54:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-06-03:/post/2014/06/03/debian-network-manager-et-eth0-non-geree/</id><summary type="html">&lt;p&gt;Quand on est une faignasse qui n'a pas envie de se plonger dans les
 arcanes des fichiers de config pour gérer l'accès réseau et qu'on n'a
 pas envie de faire ça sur sa workstation, on a un truc qui répond au
 besoin avec le
@@ -346,7 +346,7 @@ tromperiez dans votre conf réseau. Dès que vous appliquez vos
 paramètres, le fichier &lt;strong&gt;/etc/resolv.conf&lt;/strong&gt; est &lt;strong&gt;dynamiquement
 regénéré&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Dans un prochain billet, la config d'un accès avec OpenVPN (où
-j'aborderai de nouveau ces subtilités) par exemple si ça vous botte.&lt;/p&gt;</content><category term="debian"></category><category term="linux"></category></entry><entry><title>Debian 7 Wheezy - re mise à jour du driver NVIDIA</title><link href="https://foxmask.net/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/" rel="alternate"></link><published>2013-05-06T18:16:00+02:00</published><updated>2013-05-06T18:16:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-05-06:/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/</id><summary type="html">&lt;p&gt;Je viens de finir d'installer cette mise à jour de Debian Wheezy sur 2
+j'aborderai de nouveau ces subtilités) par exemple si ça vous botte.&lt;/p&gt;</content><category term="Techno"></category><category term="debian"></category><category term="linux"></category></entry><entry><title>Debian 7 Wheezy - re mise à jour du driver NVIDIA</title><link href="https://foxmask.net/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/" rel="alternate"></link><published>2013-05-06T18:16:00+02:00</published><updated>2013-05-06T18:16:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-05-06:/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/</id><summary type="html">&lt;p&gt;Je viens de finir d'installer cette mise à jour de Debian Wheezy sur 2
 PC ; un portable Dell Latitude sans aucun soucis mais comme d'hab mon PC
 de bureau n'en fait qu'à sa tête...&lt;/p&gt;
 &lt;p&gt;Le soucis se situe à plusieurs endroits :&lt;/p&gt;
@@ -375,12 +375,12 @@ bonnement pas ne trouvant pas le fichier version.h dans les sources du
 kernel ; rien que ça.&lt;/p&gt;
 &lt;p&gt;Donc pour ce faire :&lt;/p&gt;
 &lt;p&gt;arreter X&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/gdm3 stop
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;/etc/init.d/gdm3 stop&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;lancer&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./NVIDIA-Linux-x86_64-304.64.run
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;./NVIDIA-Linux-x86_64-304.64.run&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -389,19 +389,19 @@ module était prévu pour compiler avec GCC 4.6 vous lui dites donc "non"
 et ça passera.&lt;/p&gt;
 &lt;p&gt;La compilation se passe les doigts dans le nez !&lt;br&gt;
 L'installeur vous demandera s'il peut vous exectuer&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nvidia-xconfig
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;nvidia-xconfig&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;pour pondre le fichier /etc/X11/xorg.conf&lt;br&gt;
 Dites lui oui !&lt;/p&gt;
 &lt;p&gt;finissez par un petit&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;modprobe nvidia
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;modprobe nvidia&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;lancer gdm3&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/gdm3 start
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;/etc/init.d/gdm3 start&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -416,7 +416,7 @@ module NVIDIA chargé tout redevenait clamos.&lt;/p&gt;
 jour. (j'en ai fait 3), il n'y a aucun avertissement sur le non support
 du driver NVIDIA lors de l'upgrade. On est dans le noir si le driver ne
 passe pas ... et pour retrouver ses billes, "interroger" la "toile" ; si
-on n'est pas familier de links ou w3m c'est la mort&lt;/p&gt;</content><category term="debian"></category><category term="linux"></category></entry><entry><title>Debian, amour et désamour</title><link href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/" rel="alternate"></link><published>2012-12-17T14:31:00+01:00</published><updated>2012-12-17T14:31:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-12-17:/post/2012/12/17/debian-amour-et-desamour/</id><summary type="html">&lt;p&gt;Utilisateur de &lt;a href="http://www.debian.org"&gt;Debian&lt;/a&gt; depuis &lt;em&gt;Le toutou
+on n'est pas familier de links ou w3m c'est la mort&lt;/p&gt;</content><category term="Techno"></category><category term="debian"></category><category term="linux"></category></entry><entry><title>Debian, amour et désamour</title><link href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/" rel="alternate"></link><published>2012-12-17T14:31:00+01:00</published><updated>2012-12-17T14:31:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-12-17:/post/2012/12/17/debian-amour-et-desamour/</id><summary type="html">&lt;p&gt;Utilisateur de &lt;a href="http://www.debian.org"&gt;Debian&lt;/a&gt; depuis &lt;em&gt;Le toutou
 elastic&lt;/em&gt; aka "Slink" (version 2.1), je n'ai jamais eu à me plaindre. Je
 me suis toujours éclater avec cette distribution Linux, même si j'ai
 croisé sur le chemin SlackWare, Mandrake, RedHat, Suse etc...&lt;/p&gt;
@@ -442,30 +442,30 @@ booter sur l'installeur debian (vous avez bien suivi ? c'est tordu hein
 &lt;p&gt;Tout ça marchait très bien, mais comme Wheezy va sortir dans peu de
 temps j'ai voulu mettre à jour ma version, et là, la catastrophe.&lt;/p&gt;
 &lt;p&gt;Après un&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;aptitude update
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;aptitude update&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;un&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;aptitude upgrade
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;aptitude upgrade&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;m'affichait&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Résolution des dépendances... 
-ouverts: 378146 fermés: 658730 reportés: 344 en conflit: 1436
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;Résolution des dépendances... &lt;/span&gt;
+&lt;span class="c"&gt;ouverts: 378146 fermés: 658730 reportés: 344 en conflit: 1436&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;ca durait 2 heures, ça m'a gonflé, j'ai tout arrete et fait un simple&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;apt-get dist-upgrade
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;apt-get dist-upgrade&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;J'ai eu droit à un probleme de depedance sur default-java (un truc du
 genre)&lt;br&gt;
 j'ai fait un&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dpkg -P default-java
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;dpkg -P default-java&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -533,34 +533,34 @@ kernel-header et choisi l'installation via DKMS&lt;/p&gt;
 &lt;p&gt;Il en avait rien à faire de mes kernel-headers.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Solution :&lt;/strong&gt;&lt;br&gt;
 arreter X&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/gdm3 stop
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;/etc/init.d/gdm3 stop&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;lancer&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./NVIDIA-.....run
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;./NVIDIA-.....run&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;et à l'invite NE PAS UTILISER DKMS&lt;/p&gt;
 &lt;p&gt;La compilation se passe les doigts dans le nez !&lt;br&gt;
 Ensuite un bon coup de&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nvidia-xconfig
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;nvidia-xconfig&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;pour pondre le fichier /etc/X11/xorg.conf&lt;/p&gt;
 &lt;p&gt;Puis un petit&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;modprobe nvidia
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;modprobe nvidia&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;lancer gdm3&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;/etc/init.d/gdm3 start
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;/etc/init.d/gdm3 start&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Et là comme par enchantement le processeur se tait et "la lumière" soit
 !&lt;/p&gt;
 &lt;p&gt;Me voilà de retour sur une Debian Squeeze ... et j'attendrai de pied
-ferme une Wheezy STABLE !&lt;/p&gt;</content><category term="debian"></category><category term="linux"></category></entry></feed>
+ferme une Wheezy STABLE !&lt;/p&gt;</content><category term="Techno"></category><category term="debian"></category><category term="linux"></category></entry></feed>

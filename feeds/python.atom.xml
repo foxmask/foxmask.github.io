@@ -1,497 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - python</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/python.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2019-05-02T20:00:00+02:00</updated><entry><title>De Django à Starlette</title><link href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/" rel="alternate"></link><published>2019-05-02T20:00:00+02:00</published><updated>2019-05-02T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2019-05-02:/post/2019/05/02/de-django-a-startlette/</id><summary type="html">&lt;h1&gt;Flashback&lt;/h1&gt;
-&lt;p&gt;fin 2012, je créais un petit projet et en mai 2013, je sortais une version de ce dernier, nommé "&lt;a href="https://foxmask.net/post/2013/05/27/django-trigger-happy/"&gt;Trigger Happy&lt;/a&gt;",  entierement conçu avec l'excellentissime framework web &lt;a href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;7 ans plus tard, &lt;em&gt;en l'écrivant je m'étouffe en réalisant&lt;/em&gt;, le projet n'est pas mort mais mais mais depuis l'arrivée d'asyncio …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Flashback&lt;/h1&gt;
-&lt;p&gt;fin 2012, je créais un petit projet et en mai 2013, je sortais une version de ce dernier, nommé "&lt;a href="https://foxmask.net/post/2013/05/27/django-trigger-happy/"&gt;Trigger Happy&lt;/a&gt;",  entierement conçu avec l'excellentissime framework web &lt;a href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;7 ans plus tard, &lt;em&gt;en l'écrivant je m'étouffe en réalisant&lt;/em&gt;, le projet n'est pas mort mais mais mais depuis l'arrivée d'asyncio, je me suis demandé comment lui apporter un seconde souflle funky, en terme de techno.
-Django-Channel vit le jour et promettait de l'async partout mais l'archi me paraissait beaucoup beaucoup trop lourde, en témoigne la palanquée de pré-requis.&lt;/p&gt;
-&lt;h1&gt;Avant hier&lt;/h1&gt;
-&lt;p&gt;Lors de l'hacktoberfest 2018 dernier, j'aperçu le projet &lt;a href="https://github.com/kennethreitz/responder"&gt;Responder&lt;/a&gt;, tout asynchrone, et sortie vitesse lumière à la fin du mois d'octobre, avec moult talentueux contributeurs, dont Tom Christie, "Mr Dango Rest Framework".
-Le projet m'attira très fortement, mais encore un petit quelque chose m'empecha de me l'approprier et je laissais alors tomber, avec la flemme et envie d'autre chose.&lt;/p&gt;
-&lt;h1&gt;Aujourd'hui&lt;/h1&gt;
-&lt;p&gt;Mais depuis quelques mois, en décortiquant d'avantage les prerequis un à un de responder, je me suis arrêté sur &lt;a href="https://www.starlette.io"&gt;starlette&lt;/a&gt; (&lt;strong&gt;The little ASGI framework that shines&lt;/strong&gt;)
-L'auteur de Starlette n'est autre que Tom Christie ;) 
-Comme d'hab pour s'approprier le projet, rien de mieux qu'un tuto. &lt;/p&gt;
-&lt;p&gt;Je tombe alors donc sur &lt;a href="https://github.com/encode/starlette-example/"&gt;https://github.com/encode/starlette-example/&lt;/a&gt; et hop c'était parti.&lt;/p&gt;
-&lt;p&gt;Le principe de starlette, pour qui ne connait pas encore le projet, est d'éviter la moindre friction entre les couches que sont la vue, la base de données, les formulaires, etc.&lt;/p&gt;
-&lt;p&gt;Du coup Starlette propose un socle de base très efficace, et l'auteur de starlette s'est, dans la foulée attelé, à produire des projets péripheriques tels que &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/encode/orm"&gt;orm&lt;/a&gt; ; pour comme avec Django ; permettre d'utiliser vos tables avec juste Models.object.all()&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/encode/typesystem"&gt;typeschema&lt;/a&gt; ; pour la validation de vos formulaires &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/encode/databases"&gt;database&lt;/a&gt; ; pour l'abstraction aux SGBD&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Évidemment tous sont async.&lt;/p&gt;
-&lt;p&gt;Si vous souhaitez voir une video qui detaille Starlette, Tom Christie donne un talk, commencez donc la vidéo à partir de 7h30 vous aurez une heure à vous régaler ;)&lt;/p&gt;
-&lt;iframe width="600" height="320" src="https://www.youtube.com/embed/oAV73PRRWNY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;h2&gt;Comme un poisson dans l'eau&lt;/h2&gt;
-&lt;p&gt;Passer de Django "synchrone" à starlette "asynchrone" devrait être un jeu d'enfant pour vous autres, utilisateurs de Django, comme la plupart des éléments dans starlette, devraient furieusement, vous rappeler des strates de Django.&lt;/p&gt;
-&lt;h3&gt;Comparatif des couches entre les 2 projets&lt;/h3&gt;
-&lt;table class="table table-hover table-bordered table-striped"&gt;
-&lt;tr&gt;&lt;th&gt;Périmètre&lt;/th&gt;&lt;th&gt;Django&lt;/th&gt;&lt;th&gt;Starlette&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Templating&lt;/td&gt;&lt;td&gt;Template Django&lt;/td&gt;&lt;td&gt;Jinja2&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Vue&lt;/td&gt;&lt;td&gt;*View&lt;/td&gt;&lt;td&gt;fonctions dans le(s) module(s) de votre application&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Formulaire&lt;/td&gt;&lt;td&gt; *Form&lt;/td&gt;&lt;td&gt; typesystem (*)&lt;/td&gt;
-&lt;tr&gt;&lt;td&gt;ORM&lt;/td&gt;&lt;td&gt;Django ORM&lt;/td&gt;&lt;td&gt;ORM (*)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;"Migration"&lt;/td&gt;&lt;td&gt;manage.py migrate&lt;/td&gt;&lt;td&gt;utilisation d'SQL Alchemy&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Routage&lt;/td&gt;&lt;td&gt;urls.py&lt;/td&gt;&lt;td&gt;Route()&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;code&gt;(*)&lt;/code&gt; = Fonctionnalités non incluses dans starlette, application tierce.&lt;/em&gt;&lt;/p&gt;
-&lt;h3&gt;Les projets jumeaux&lt;/h3&gt;
-&lt;p&gt;Pour vous illustrer le propos, revenons à Trigger Happy.&lt;/p&gt;
-&lt;p&gt;Alors non je ne l'ai pas refait intégralement avec starlette, mais j'en ai pris 2 morceaux pour produire un petit projet: &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;le premier : l'extraction des flux RSS &lt;/li&gt;
-&lt;li&gt;le second : l'éditeur markdown nommé &lt;a href="https://joplinapp.org"&gt;Joplin&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;avec ces 2 là, je créé des notes automatiquement dans Joplin à partir du flux RSS de mon choix&lt;/p&gt;
-&lt;p&gt;Mon but étant, au départ, de faire la veille techno en créant des notes dans joplin pour les lire ultérieurement à partir de flux RSS de mes sites favoris.&lt;/p&gt;
-&lt;p&gt;Le premier projet en Django est nommé &lt;a href="https://github.com/foxmask/jong"&gt;JONG&lt;/a&gt; : &lt;strong&gt;JO&lt;/strong&gt;plin &lt;strong&gt;N&lt;/strong&gt;ote &lt;strong&gt;G&lt;/strong&gt;enerator&lt;/p&gt;
-&lt;p&gt;Le second projet avec Starlette est nommé &lt;a href="https://github.com/foxmask/yeoboseyo"&gt;Yeoboseyo&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;C'est au pif que je me suis mis à recorder Jong à la sauce Starlette, c'est au 3/4 de la fin que je me suis dit&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ho marrant j'ai refait Jong avec Starlette finallement&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;et finallement ce n'etait pas la mer à boire, loin s'en faut, et puis c'est modulaire souple et c'est tout ce qu'on attend ;)&lt;/p&gt;
-&lt;h3&gt;Comment fait on ...&lt;/h3&gt;
-&lt;p&gt;suis ci dessous, chaque élément du tableau, une fois pour django une fois pour starlette&lt;/p&gt;
-&lt;h4&gt;... une Vue&lt;/h4&gt;
-&lt;p&gt;enfin ici il m'aura fallu 3 CBV 
-* Django&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;RssListView&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ListView&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;        list of Rss&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;context_object_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;rss_list&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;queryset&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Rss&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_queryset&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;queryset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;order_by&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-date_triggered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_context_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;queryset&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;order_by&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-date_triggered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="c1"&gt;# paginator vars&lt;/span&gt;
-        &lt;span class="n"&gt;record_per_page&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
-        &lt;span class="n"&gt;page&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;GET&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;page&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="c1"&gt;# paginator call&lt;/span&gt;
-        &lt;span class="n"&gt;paginator&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Paginator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;record_per_page&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;paginator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;PageNotAnInteger&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="c1"&gt;# If page is not an integer, deliver first page.&lt;/span&gt;
-            &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;paginator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="n"&gt;EmptyPage&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="c1"&gt;# If page is out of range (e.g. 9999),&lt;/span&gt;
-            &lt;span class="c1"&gt;# deliver last page of results.&lt;/span&gt;
-            &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;paginator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;paginator&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;num_pages&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-        &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RssListView&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_context_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;RssCreateView&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RssMixin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CreateView&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;        list of Rss&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;template_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;jong/rss.html&amp;#39;&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_context_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RssCreateView&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_context_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;mode&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;add&amp;#39;&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;RssUpdateView&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RssMixin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;UpdateView&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;        Form to update description&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;template_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;jong/rss.html&amp;#39;&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_context_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RssUpdateView&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_context_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;mode&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Edit&amp;#39;&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;Starlette &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;avec Starlette, pas de ClassBasedView :P 
-on a une class HTTPEndPoint si on veut mais là pour la petitesse du projet je m'en suis affranchi&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;async&lt;/span&gt; &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;homepage&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;    get the list of triggers&lt;/span&gt;
-&lt;span class="sd"&gt;    :param request:&lt;/span&gt;
-&lt;span class="sd"&gt;    :return:&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;triggers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;await&lt;/span&gt; &lt;span class="n"&gt;Trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-    &lt;span class="n"&gt;template&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;index.html&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;method&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# trigger_id provided, form to edit this one&lt;/span&gt;
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;trigger_id&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path_params&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;trigger_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path_params&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;trigger_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-            &lt;span class="n"&gt;trigger&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;await&lt;/span&gt; &lt;span class="n"&gt;Trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;trigger_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-            &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Form&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TriggerSchema&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="c1"&gt;# empty form&lt;/span&gt;
-        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;trigger_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
-            &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Form&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TriggerSchema&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;trigger&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;triggers&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;request&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;form&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;triggers_list&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;triggers&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;trigger_id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;trigger_id&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;templates&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TemplateResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="c1"&gt;# POST&lt;/span&gt;
-    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;await&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-        &lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;errors&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TriggerSchema&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;validate_or_error&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;errors&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Form&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;TriggerSchema&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;errors&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;errors&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-            &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;request&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;form&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;form&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;triggers_list&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;triggers&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;templates&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TemplateResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;trigger_id&amp;#39;&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path_params&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;trigger_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path_params&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;trigger_id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-            &lt;span class="n"&gt;trigger_to_update&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;await&lt;/span&gt; &lt;span class="n"&gt;Trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;trigger_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-            &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rss_url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;joplin_folder&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-            &lt;span class="n"&gt;await&lt;/span&gt; &lt;span class="n"&gt;trigger_to_update&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rss_url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rss_url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                           &lt;span class="n"&gt;joplin_folder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;joplin_folder&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                           &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;bool&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-                                           &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;await&lt;/span&gt; &lt;span class="n"&gt;Trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rss_url&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rss_url&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                         &lt;span class="n"&gt;joplin_folder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;joplin_folder&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                         &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;trigger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;RedirectResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url_for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;homepage&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;voilà qui remplace les 3 CBV :P&lt;/p&gt;
-&lt;h4&gt;... un Template&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Django&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;table&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;table table-striped table-hover&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;tr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% trans &amp;quot;Name&amp;quot; %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% trans &amp;quot;URL&amp;quot; %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% trans &amp;quot;Triggered&amp;quot; %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% trans &amp;quot;Notebook&amp;quot; %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% trans &amp;quot;Bypass Errors&amp;quot; %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% trans &amp;quot;Actions&amp;quot; %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;tr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-{% for data in rss_list %}
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;tr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{% url &amp;#39;edit&amp;#39; data.id %}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Edit this feed&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ data.name }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ data.url }}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Go to this feed&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ data.url }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ data.date_triggered }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ data.notebook }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% if data.bypass_bozo %}&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;label label-danger&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% trans &amp;quot;Yes&amp;quot; %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% else %}&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;label label-success&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% trans &amp;quot;No&amp;quot; %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{% endif %}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;btn btn-sm btn-md btn-lg btn-success&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{% url &amp;#39;edit&amp;#39; data.id %}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Edit this feed&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;glyphicon glyphicon-pencil icon-white&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        {% if data.status %}
-        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;btn btn-sm btn-md btn-lg btn-primary&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{% url &amp;#39;switch&amp;#39; data.id %}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{% trans &amp;#39;Set this Feed off&amp;#39; %}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;glyphicon glyphicon-off icon-white&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        {% else %}
-        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;btn btn-sm btn-md btn-lg btn-warning&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{% url &amp;#39;switch&amp;#39; data.id %}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{% trans &amp;#39;Set this Feed on&amp;#39; %}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;glyphicon glyphicon-off icon-white&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        {% endif %}
-        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;btn btn-sm btn-md btn-lg btn-danger&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;button&amp;quot;&lt;/span&gt;  &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{% url &amp;#39;delete&amp;#39; data.id %}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Delete this feed&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;glyphicon glyphicon-trash icon-white&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;tr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-{% endfor %}
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;table&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;Starlette &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;{% extends &amp;quot;base.html&amp;quot; %}
-
-{% block content %}
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;col-xs-5 col-md-5 col-lg-5&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    {% if trigger_id &amp;gt; 0 %}
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="na"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;POST&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;{{ url_for(&amp;#39;&lt;/span&gt;&lt;span class="na"&gt;homepage&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;,&lt;/span&gt; &lt;span class="na"&gt;trigger_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;trigger_id)&lt;/span&gt; &lt;span class="err"&gt;}}&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    {% else %}
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="na"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;POST&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;{{ url_for(&amp;#39;&lt;/span&gt;&lt;span class="na"&gt;homepage&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;)&lt;/span&gt; &lt;span class="err"&gt;}}&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    {% endif %}
-        {{ form }}
-        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;btn btn-primary&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Submit&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;col-xs-7 col-md-7 col-lg-7&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;table&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;table table-striped table-hover&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;thead&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;tr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt; &lt;span class="na"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;col&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Description&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt; &lt;span class="na"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;col&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;RSS URL&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt; &lt;span class="na"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;col&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Joplin Folder&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt; &lt;span class="na"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;col&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Triggered&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt; &lt;span class="na"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;col&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Created&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt; &lt;span class="na"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;col&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Status&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt; &lt;span class="na"&gt;scope&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;col&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Action&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;th&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;tr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;thead&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        {% if triggers_list %}
-        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;tbody&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        {% for trigger in triggers_list %}
-            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;tr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ url_for(&amp;#39;homepage&amp;#39;, trigger_id=trigger.id)}}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Edit this trigger&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ trigger.description }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ trigger.rss_url }}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;go to this URL&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ trigger.rss_url }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ trigger.joplin_folder }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ trigger.date_triggered  }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ trigger.date_created}}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{{ trigger.status }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;btn btn-danger&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-toggle&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-target&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#trigger{{ trigger.id }}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Delete&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal fade&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;trigger{{ trigger.id }}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;tabindex&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;-1&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;dialog&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;aria-labelledby&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;trigger{{ trigger.id}}Label&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;aria-hidden&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;true&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                      &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal-dialog&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;document&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal-content&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                          &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal-header&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h5&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal-title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Deletion : {{ trigger.description }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h5&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;close&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-dismiss&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;aria-label&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Close&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                              &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;aria-hidden&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;true&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="ni"&gt;&amp;amp;times;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                            &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                          &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                          &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal-body&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;are your sure you want to delete this trigger ? {{ trigger.description }}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                          &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                          &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal-footer&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;btn btn-secondary&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;data-dismiss&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;modal&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Close&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;{{ url_for(&amp;#39;delete&amp;#39;, trigger_id=trigger.id)}}&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;btn btn-danger&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;button&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Delete it&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                          &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                      &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;td&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;tr&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        {% endfor %}
-        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;tbody&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        {% endif %}
-    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;table&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-
-
-{% endblock %}
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4&gt;... un Model&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Django&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.db&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Rss&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;        Rss&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BooleanField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;notebook&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;URLField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-    &lt;span class="n"&gt;tag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;40&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;null&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;blank&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;date_triggered&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DateTimeField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;auto_now&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;auto_created&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="c1"&gt;# to ignore the not well formed RSS feeds&lt;/span&gt;
-    &lt;span class="c1"&gt;# bozo detection https://pythonhosted.org/feedparser/bozo.html?highlight=bozo&lt;/span&gt;
-    &lt;span class="c1"&gt;# default is False : we do not ignore not well formed Feeds.&lt;/span&gt;
-    &lt;span class="n"&gt;bypass_bozo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;BooleanField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;show&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
-&lt;span class="sd"&gt;        :return: string representing object&lt;/span&gt;
-&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;RSS &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__str__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;Starlette &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;orm&lt;/span&gt;
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Trigger&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="n"&gt;__tablename__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;trigger&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;__database__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;database&lt;/span&gt;
-    &lt;span class="n"&gt;__metadata__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;metadata&lt;/span&gt;
-
-    &lt;span class="nb"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;primary_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;rss_url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;joplin_folder&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;description&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;date_created&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DateTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;datetime&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;date_triggered&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DateTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;allow_null&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;allow_null&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;date_result&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DateTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;allow_null&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;provider_failed&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;allow_null&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;consumer_failed&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;orm&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;allow_null&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4&gt;... Un Forms&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Django&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;je vous fais grâce du template du formulaire, le but étant de se focaliser sur les éléments identiques ;)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;RssForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ModelForm&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;        RSS Form&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="c1"&gt;# Get initial data passed from the view&lt;/span&gt;
-        &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RssForm&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fields&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;notebook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choices&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;folders&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-    &lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Meta&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-
-        &lt;span class="n"&gt;model&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Rss&lt;/span&gt;
-        &lt;span class="n"&gt;exclude&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;date_triggered&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,)&lt;/span&gt;
-        &lt;span class="n"&gt;widgets&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-            &lt;span class="s1"&gt;&amp;#39;name&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;form-control&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}),&lt;/span&gt;
-            &lt;span class="s1"&gt;&amp;#39;url&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;form-control&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}),&lt;/span&gt;
-            &lt;span class="s1"&gt;&amp;#39;notebook&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;form-control&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}),&lt;/span&gt;
-            &lt;span class="s1"&gt;&amp;#39;tag&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;form-control&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}),&lt;/span&gt;
-            &lt;span class="s1"&gt;&amp;#39;status&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;form-control&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}),&lt;/span&gt;
-            &lt;span class="s1"&gt;&amp;#39;bypass_bozo&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;CheckboxInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;class&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;checkbox&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}),&lt;/span&gt;
-        &lt;span class="p"&gt;}&lt;/span&gt;
-
-    &lt;span class="n"&gt;notebook&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ChoiceField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;Starlette &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;typesystem&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TriggerSchema&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;typesystem&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Schema&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;       Schema to define the structure of a Trigger&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="n"&gt;rss_url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;typesystem&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;RSS URL&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;255&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;joplin_folder&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;typesystem&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Joplin Folder&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;description&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;typesystem&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Description&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;max_length&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;typesystem&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Boolean&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Status&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;default&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4&gt;... Un Routage&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Django&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;urlpatterns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
-    &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;admin/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;admin&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urls&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;RssListView&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;as_view&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;base&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;RssListView&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;as_view&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;rss&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="n"&gt;path&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;add/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;RssCreateView&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;as_view&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;add&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;^edit/(?P&amp;lt;pk&amp;gt;\d+)$&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;RssUpdateView&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;as_view&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;edit&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-    &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;Starlette &lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Starlette&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-    &lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-    &lt;span class="n"&gt;routes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
-        &lt;span class="n"&gt;Route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homepage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;homepage&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-        &lt;span class="n"&gt;Route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/id/{trigger_id:int}&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;homepage&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;homepage&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-        &lt;span class="n"&gt;Route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/delete/{trigger_id:int}&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;delete&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-        &lt;span class="n"&gt;Mount&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/static&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;StaticFiles&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;static&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="p"&gt;],&lt;/span&gt;
-&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Voilou pour l'essentiel, si vous souhaitez comparer intégralement les 2 projets, au dossier/fichier pret, vous avez les liens sur github au dessus.&lt;/p&gt;
-&lt;p&gt;Pour ma part je trouve starlette et ses amis, modulaires comme il faut. On dirait qu'on plug des pièces de tétris au fur et à mesure pour obtenir à la fin un projet costaud.&lt;/p&gt;</content><category term="python"></category><category term="starlette"></category><category term="django"></category></entry><entry><title>Mais vous etes fou ? Hoo Oui !</title><link href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/" rel="alternate"></link><published>2019-04-23T20:00:00+02:00</published><updated>2019-04-23T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2019-04-23:/post/2019/04/23/mais-tu-es-fou-hoo-oui/</id><summary type="html">&lt;h1&gt;너 미쳤어 ?&lt;/h1&gt;
-&lt;h2&gt;intro&lt;/h2&gt;
-&lt;p&gt;Mon activité "libre" déclinant délibérément, j'avais beau chercher un nouveau projet fun à faire en python, aucune idée me vint.&lt;/p&gt;
-&lt;h2&gt;le coréen !&lt;/h2&gt;
-&lt;p&gt;Alors je me suis dit, "laisse tomber, fais autre chose", histoire d'éviter la saturation et permettre la "réoxygénation".
-Ci fait, en achetant 3 livres...  je …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;너 미쳤어 ?&lt;/h1&gt;
-&lt;h2&gt;intro&lt;/h2&gt;
-&lt;p&gt;Mon activité "libre" déclinant délibérément, j'avais beau chercher un nouveau projet fun à faire en python, aucune idée me vint.&lt;/p&gt;
-&lt;h2&gt;le coréen !&lt;/h2&gt;
-&lt;p&gt;Alors je me suis dit, "laisse tomber, fais autre chose", histoire d'éviter la saturation et permettre la "réoxygénation".
-Ci fait, en achetant 3 livres...  je me suis mis au Coréen 😁 (vous m'direz 너 미쳤어? T'es fou?) ...Carrément, ça m'a pris comme une envie de pisser !
-En les parcourant je me suis demandé comment ingurgiter tout ça sans trop de prise de tête.&lt;/p&gt;
-&lt;h3&gt;des ressources ?&lt;/h3&gt;
-&lt;p&gt;Sur le net, des blogs de francophones, parlant coréen, suggèrent d'installer des applications sur Android, pour l'apprentissage de la langue... Niveau enfant 🤣, mais enfant école primaire hein, parceque l'alphabet c'est pas avec nos lettres "à nous", et ça c'est déjà toute une histoire.&lt;/p&gt;
-&lt;p&gt;Ensuite sur IRC @freenode, j'ai échangé avec des Français bossant en Asie et cette fois ci, on m'a suggéré une application de répétition (dans le temps) de flashcard contenant sur une face le français et l'autre le coréen. Au fur et à mesure qu'on juge si on a compris/ retenu le contenu de la carte , l'application propose de revoir la carte à "j+x "où x varie selon votre besoin , ça peut être dans 10min si c'était trop dur, 1 jour si moyen , 5 jours si facile, 1 mois etc...
-Son petit nom : "Anki" qui se décline en version desktop, smartphone et web avec "&lt;a href="https://play.google.com/store/apps/details?id=com.ichi2.anki&amp;amp;hl=fr"&gt;ankidroid&lt;/a&gt;" et "&lt;a href="https://ankiweb.net/"&gt;Ankiweb&lt;/a&gt;".
-De plus étant Open Source, plein de gens partagent leur propre "deck" (piles de cartes). 
-Du coup il est pratique de se mettre à une langue de la sorte. Le revers du truc c'est que 99% des cartes sont anglo-coréennes, donc le vocabulaire spécifique coréen , notamment sur la bouffe (vous allez comprendre pourquoi plus bas).... tout en anglais, ben bonjour pour capter en français 🤣&lt;/p&gt;
-&lt;p&gt;Avec tout ça, je me suis senti frustré, et comme d'habitude quand ça me gène ... &lt;/p&gt;
-&lt;h3&gt;Action/réaction&lt;/h3&gt;
-&lt;p&gt;J'ai donc démarré la transcription de 2 des 3 livres dont je parlais au début.
-Avec un peu d'huile de coude, Je rentre dans joplin des fiches entières par thème. 
-Mais ça me tarabustait trop de ne pas pouvoir les mettre dans Anki sans y repasser des heures en plus de mes notes dans joplin.
-Et récemment, j'ai découvert le moyen de les y intégrer, avec un addon qui permet de rendre votre Anki desktop, accessible en REST !
-Donc j'ai fait un petit grigri pour créer des cartes dans Anki à partir de notes écrites dans joplin.
-Comme j'avais déjà pondu l'API de joplin en python pour d'autres projets, hop, recyclage ;) 
-A présent je fais de parler deux appli exploitant de l'API Rest . 
-Et quand Anki synchronise, j'ai toutes les cartes sur mon smartphone 👍&lt;/p&gt;
-&lt;h3&gt;Mais alors ?&lt;/h3&gt;
-&lt;p&gt;Deux questions qu'on me pose :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Pourquoi le coréen ?&lt;/li&gt;
-&lt;li&gt;Tu vas en Corée bientôt ?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Réponses; pourquoi pas :p, et : non!&lt;/p&gt;
-&lt;p&gt;Alors pourquoi faire ?&lt;/p&gt;
-&lt;p&gt;J'ai besoin de m'aérer la tête avec autre chose que le boulot et des projets sans intérêts.&lt;/p&gt;
-&lt;p&gt;En plus sur Netflix je regarde des séries coréennes. Ca me plaît bien, ça change de l'hégémonie américaine à la TV française, qui est devenue insipide. 
-Même l'écriture coréenne c'est marrant. 
-Par exemple pour un mot de plusieurs syllabes, on ne peut en écrire que 4 lettres  maximum par syllabe dans "un carré imaginaire" après on change de carré et on fini son mot, exemple la Corée : &lt;strong&gt;한국&lt;/strong&gt; (hangug, grosso modo se prononce ane-gou). Ensuite, les lettres sont toujours alternées "consonne / voyelle"  jamais l'inverse, ni jamais 2 consonnes ou 2 voyelles d'affilée. Si on démarre par une voyelle on mettra un &lt;strong&gt;ㅇ&lt;/strong&gt; devant, ceci est une consonne muette. 
-De même une lettre ne se prononce pas pareil qu'elle soit au début ou la fin de la syllabe. Genre "trois" se dit "set" (comme en anglais) le s et le t sont le même signe &lt;strong&gt;ㅅ&lt;/strong&gt; dans &lt;strong&gt;셋&lt;/strong&gt; (set ; trois)&lt;/p&gt;
-&lt;p&gt;Par contre, faut que je retourne chez l'ophtalmolo parce, parfois, le carré fait "très surchargé" pour mes yeux et je confonds le u &lt;strong&gt;ㅜ&lt;/strong&gt; et le o &lt;strong&gt;ㅗ&lt;/strong&gt; ou le é &lt;strong&gt;ㅔ&lt;/strong&gt; et le è &lt;strong&gt;ㅐ&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Après 3 mois j'en suis toujours à faire comme en primaire, quand on apprenait à lire "ba,bo pou,...." Je déchiffre les signes, mais ne comprends pas, soit toute une phrase, soit des mots. Comme je cuisine coréen, je déchiffre les étiquettes mais même là c'est marrant, on n'a pas des fruits ou légumes comme les leur du coup je capte pas tout. Bon les chiens chats voitures ça pousse aussi bien chez nous que chez eux, donc ça, je pige vite, encore que je n'ai pas trouvé de recette pour manger ces trucs.&lt;/p&gt;
-&lt;h3&gt;En résumé&lt;/h3&gt;
-&lt;p&gt;Tout ça pourrait se résumer à&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Je joue avec python pour apprendre le coréen en m'amusant&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;Mais encore ?&lt;/h2&gt;
-&lt;p&gt;Outils pour jouer à apprendre le coréen :
-- &lt;a href="https://korean.dict.naver.com/kofrdict/french/#/main"&gt;dico fr/le&lt;/a&gt; 'Naver'
-- Netflix (si quand-même ;)
-- Je cite https://fr.wikihow.com/parler-cor%C3%A9en&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Recherchez des applis pour enfants. Écrivez 알파벳을 배우다 sur Google ou sur l'App Store (cela veut dire « apprendre l'alphabet ») ou bien 어린이 게임 qui veut dire « jeux pour enfants ». Ce genre d'application étant destinée aux enfants, elles sont simples d'utilisation et vous n'avez généralement pas besoin de parler le coréen pour les utiliser. C'est également plus économique que de se procurer des DVD. Ces applis vont vous enseigner comment écrire les caractères coréens et vous faire progresser de manière visuelle, souvent avec des jeux, ce qui vous permettra d'enrichir votre vocabulaire. Faites cependant attention à ne pas acheter une application servant à enseigner l'anglais aux enfants coréens ! &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Livres en cours de lecture :
-- le coréen pour les nuls
-- &lt;a href="https://www.editions-ellipses.fr/kimchi-apprendre-rviser-vocabulaire-coren-niveau-avec-fichiers-audio-p-9336.html"&gt;kimchi ! Apprendre et réviser son vocabulaire coréen. (Niveau 1)&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;et l'application ?&lt;/h2&gt;
-&lt;p&gt;L'application pour créer des cartes Anki depuis des notes rédigées dans joplin :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/foxmask/baeuda"&gt;baeuda&lt;/a&gt; ( 배우다 - Learn - Apprendre ), nécessite python 3.6 ou plus, joplin, Anki et l'addon &lt;a href="https://ankiweb.net/shared/info/2055492159"&gt;AnkiConnnect&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Dans joplin, chaque note = 
-- Un titre (qui sera un deck)
-- Un tableau Corée/Romanisation/Français&lt;/p&gt;
-&lt;p&gt;Le projet extrait alors les notes ( en markdown) en coréen , les met en HTML, parcours les tableaux HTML et pour chaque ligne , crée une carte dans un deck du nom du titre de la note &lt;/p&gt;
-&lt;p&gt;1)&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Joplin notes" src="https://raw.githubusercontent.com/foxmask/baeuda/master/joplin_notes.png"&gt;&lt;/p&gt;
-&lt;p&gt;2)
-&lt;img alt="Anki integration" src="https://raw.githubusercontent.com/foxmask/baeuda/master/anki_integration.png"&gt;&lt;/p&gt;
-&lt;p&gt;3)
-&lt;img alt="Anki Liste des Decks" src="https://raw.githubusercontent.com/foxmask/baeuda/master/anki_list_decks.png"&gt;&lt;/p&gt;
-&lt;p&gt;4)
-&lt;img alt="Anki Le Deck" src="https://raw.githubusercontent.com/foxmask/baeuda/master/anki_deck.png"&gt;&lt;/p&gt;
-&lt;p&gt;5)
-&lt;img alt="Anki Le Carte" src="https://raw.githubusercontent.com/foxmask/baeuda/master/anki_card.png"&gt;&lt;/p&gt;</content><category term="Anki"></category><category term="python"></category></entry><entry><title>Quand Fabric refuse de bosser</title><link href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/" rel="alternate"></link><published>2018-01-23T16:45:00+01:00</published><updated>2018-01-23T16:45:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-01-23:/post/2018/01/23/quand-fabric-refuse-bosser/</id><summary type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - python</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/python.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2018-01-23T16:45:00+01:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Quand Fabric refuse de bosser</title><link href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/" rel="alternate"></link><published>2018-01-23T16:45:00+01:00</published><updated>2018-01-23T16:45:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2018-01-23:/post/2018/01/23/quand-fabric-refuse-bosser/</id><summary type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
 &lt;p&gt;Je pose ça là vite fait pour qui rencontrerait le problème à son tour&lt;/p&gt;
 &lt;p&gt;J'ai un script, le plus …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
 &lt;p&gt;Je pose ça là vite fait pour qui rencontrerait le problème à son tour&lt;/p&gt;
@@ -505,8 +13,8 @@ De même une lettre ne se prononce pas pareil qu'elle soit au début ou la fin d
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;the_log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;new_f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;msg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;[{0}] {1}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="vm"&gt;__doc__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="n"&gt;msg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;[&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt;] &lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="vm"&gt;__doc__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
         &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;new_f&lt;/span&gt;
@@ -516,15 +24,15 @@ De même une lettre ne se prononce pas pareil qu'elle soit au début ou la fin d
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;This is my main function that will triggers anything&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
 
-    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;warn_only&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;warn_only&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 
         &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;yellow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;yellow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 
         &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                     &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                     &lt;span class="n"&gt;combine_stderr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+                     &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                     &lt;span class="n"&gt;combine_stderr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -583,7 +91,7 @@ INFO:paramiko.transport:Authentication &lt;span class="o"&gt;(&lt;/span&gt;publi
 &lt;p&gt;du coup me v'la frais avec un paramiko qui met son caca en trouvant bien que l'userauth est ok mais pas la publickey. Ca te ferait mal de me laisser passer puisque tu as vu que le user/pass etait ok ?&lt;/p&gt;
 &lt;p&gt;Etape suivante, trouver comment forcer &lt;a href="https://serverfault.com/questions/283722/authentication-order-with-ssh"&gt;SSH à utiliser le mot de passe et basta&lt;/a&gt; ... &lt;/p&gt;
 &lt;p&gt;Je n'ai pas encore mis la main sur une solution , je mettrai à jour si j'en trouve une d'ici là :)&lt;/p&gt;
-&lt;p&gt;@Tchao :)&lt;/p&gt;</content><category term="python"></category><category term="Fabric"></category></entry><entry><title>2017 at a glance</title><link href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/" rel="alternate"></link><published>2017-12-21T20:00:00+01:00</published><updated>2017-12-21T20:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-12-21:/post/2017/12/21/2017-at-a-glance/</id><summary type="html">&lt;h1&gt;2017 a special year&lt;/h1&gt;
+&lt;p&gt;@Tchao :)&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category><category term="Fabric"></category></entry><entry><title>2017 at a glance</title><link href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/" rel="alternate"></link><published>2017-12-21T20:00:00+01:00</published><updated>2017-12-21T20:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-12-21:/post/2017/12/21/2017-at-a-glance/</id><summary type="html">&lt;h1&gt;2017 a special year&lt;/h1&gt;
 &lt;p&gt;this year was plenty of differents and rich activities from differents aspects&lt;/p&gt;
 &lt;h2&gt;OpenSource activities&lt;/h2&gt;
 &lt;p&gt;In 2015 my github activity concerned 90 contributions where in 2016 I increased by 400%, and finally by 50% more in 2017.&lt;/p&gt;
@@ -614,7 +122,7 @@ We feel to be part of something bigger than us, and at the same time, a little g
 &lt;p&gt;Each year, when you are a lonly developer, there are a lot of moments where you don't have the mood to dive into anything, and moments where you are very motivated and ready to redo the world. Thus, I have many ideas about my main project for the next year, and i'd be glad to exchange with future contributors.&lt;/p&gt;
 &lt;p&gt;Finally, 2018 will be the year of my 20 years of contributions in the OpenSource world. &lt;/p&gt;
 &lt;p&gt;I will post about the path I followed since then, that cuold be fun to have a look at of thoses years :)&lt;/p&gt;
-&lt;p&gt;I wish you the best for the celebretion of Christmas&lt;/p&gt;</content><category term="python"></category></entry><entry><title>Coverage, install, upload results</title><link href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/" rel="alternate"></link><published>2017-10-14T17:00:00+02:00</published><updated>2017-10-14T17:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-10-14:/post/2017/10/14/coverage-install-upload-results/</id><summary type="html">&lt;p&gt;Creating coverage report, I put that here, as a reminder for a later use.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Installation of Coverage&lt;/h1&gt;
+&lt;p&gt;I wish you the best for the celebretion of Christmas&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category></entry><entry><title>Coverage, install, upload results</title><link href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/" rel="alternate"></link><published>2017-10-14T17:00:00+02:00</published><updated>2017-10-14T17:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-10-14:/post/2017/10/14/coverage-install-upload-results/</id><summary type="html">&lt;p&gt;Creating coverage report, I put that here, as a reminder for a later use.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Installation of Coverage&lt;/h1&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;coverage&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -644,12 +152,12 @@ We feel to be part of something bigger than us, and at the same time, a little g
 &lt;p&gt;If you go back to coveralls.io, you will find the job and the result of the coverage&lt;/p&gt;
 &lt;p&gt;Then add the following to your README.rst (for example) &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;..&lt;/span&gt; &lt;span class="ow"&gt;image&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt; https://coveralls.io/repos/github/foxmask/django-th/badge.svg
-    &lt;span class="nc"&gt;:target:&lt;/span&gt; &lt;span class="nf"&gt;https://coveralls.io/github/foxmask/django-th&lt;/span&gt;
+    &lt;span class="nc"&gt;:target:&lt;/span&gt; https://coveralls.io/github/foxmask/django-th
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;End&lt;/h1&gt;
-&lt;p&gt;Ready to go !&lt;/p&gt;</content><category term="test"></category><category term="coverage"></category><category term="python"></category></entry><entry><title>Fabric, et la contrib django pour acceder à tous vos joujoux</title><link href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/" rel="alternate"></link><published>2017-07-10T14:00:00+02:00</published><updated>2017-07-10T14:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-07-10:/post/2017/07/10/fabric-contrib-django/</id><summary type="html">&lt;p&gt;Dans mon &lt;a href="https://foxmask.trigger-happy.eu/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques"&gt;billet précédent&lt;/a&gt;, j'évoquais l'existence d'une "contrib" Fabric pour intégrer Django au sein de ses tasks Fabric, mais qu'elle déconnait...&lt;/p&gt;
+&lt;p&gt;Ready to go !&lt;/p&gt;</content><category term="Techno"></category><category term="test"></category><category term="coverage"></category><category term="python"></category></entry><entry><title>Fabric, et la contrib django pour acceder à tous vos joujoux</title><link href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/" rel="alternate"></link><published>2017-07-10T14:00:00+02:00</published><updated>2017-07-10T14:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-07-10:/post/2017/07/10/fabric-contrib-django/</id><summary type="html">&lt;p&gt;Dans mon &lt;a href="https://foxmask.trigger-happy.eu/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques"&gt;billet précédent&lt;/a&gt;, j'évoquais l'existence d'une "contrib" Fabric pour intégrer Django au sein de ses tasks Fabric, mais qu'elle déconnait...&lt;/p&gt;
 &lt;p&gt;Après maints tests supplementaires et digging ze toile, j'ai entrevu la lumière après la lecture de 3 issues chez Fabric &lt;a href="https://github.com/fabric/fabric/issues/1509"&gt;#1509&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1033"&gt;#1033&lt;/a&gt;, &lt;a href="https://github.com/fabric/fabric/issues/1207"&gt;#1207&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Tout compulsé ca donne ceci :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# coding …&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Dans mon &lt;a href="https://foxmask.trigger-happy.eu/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques"&gt;billet précédent&lt;/a&gt;, j'évoquais l'existence d'une "contrib" Fabric pour intégrer Django au sein de ses tasks Fabric, mais qu'elle déconnait...&lt;/p&gt;
@@ -675,7 +183,7 @@ We feel to be part of something bigger than us, and at the same time, a little g
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;projeta.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;MonModel&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MonModel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;foobar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MonModel&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;foobar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -688,7 +196,7 @@ Done.
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Ceci fonctionne (pour un vhost) si vous avez collé votre appli "fabric" dans le même dossier que celui du projet Django, sinon adapter la ligne &lt;strong&gt;path =&lt;/strong&gt; pour que ca match votre env&lt;/p&gt;</content><category term="python"></category><category term="Fabric"></category><category term="django"></category></entry><entry><title>Fabric, sa var 'env' et nos variables dynamiques !</title><link href="https://foxmask.net/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/" rel="alternate"></link><published>2017-07-06T20:00:00+02:00</published><updated>2017-07-06T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-07-06:/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/</id><summary type="html">&lt;p&gt;Fabric est un sérieux concurrent face à ansible, quoiqu'on en pense.&lt;/p&gt;
+&lt;p&gt;Ceci fonctionne (pour un vhost) si vous avez collé votre appli "fabric" dans le même dossier que celui du projet Django, sinon adapter la ligne &lt;strong&gt;path =&lt;/strong&gt; pour que ca match votre env&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category><category term="Fabric"></category><category term="django"></category></entry><entry><title>Fabric, sa var 'env' et nos variables dynamiques !</title><link href="https://foxmask.net/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/" rel="alternate"></link><published>2017-07-06T20:00:00+02:00</published><updated>2017-07-06T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-07-06:/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/</id><summary type="html">&lt;p&gt;Fabric est un sérieux concurrent face à ansible, quoiqu'on en pense.&lt;/p&gt;
 &lt;h1&gt;Intro :&lt;/h1&gt;
 &lt;p&gt;J'ai eu à faire à &lt;a href="https://www.ansible.com/"&gt;ansible&lt;/a&gt; pendant plus d'un an pour automatiser des installations d'applications java sur tous les types de serveur d'applications du marché.
 Mais comme à mon habitude, je n'utilise pas des outils de DevOps pour …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Fabric est un sérieux concurrent face à ansible, quoiqu'on en pense.&lt;/p&gt;
@@ -743,12 +251,12 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
 &lt;p&gt;et on pourra retourner faire joujou avec son dict comme d'hab&lt;/p&gt;
 &lt;h2&gt;&lt;a href="http://docs.fabfile.org/en/1.13/api/contrib/django.html"&gt;Fabric and Django integration&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Un moment j'ai cru voir une lueur d'espoir avec cette contribution qui permettrait d'accéder à "ses affaires" made in Django, depuis Fabric, genre au pif les données du modèle que j'injecte en JSON à la volée et récupère dans &lt;strong&gt;env.MES_VARIABLES_A_LA_NOIX&lt;/strong&gt; mais, j'ai vite déchanté avec un erreur on ne peut plus bateau :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;ModuleNotFoundError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;monmodule&amp;#39;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ne"&gt;ModuleNotFoundError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;No&lt;/span&gt; &lt;span class="n"&gt;module&lt;/span&gt; &lt;span class="n"&gt;named&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;monmodule&amp;#39;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;Conclusion :&lt;/h1&gt;
-&lt;p&gt;Voila voilo pour une billet fait rapidos sur des utilisations completements détournées du but premier :)&lt;/p&gt;</content><category term="python"></category><category term="Fabric"></category></entry><entry><title>Orotangi, your thoughts everywhere</title><link href="https://foxmask.net/post/2017/02/09/orotangi/" rel="alternate"></link><published>2017-02-09T09:00:00+01:00</published><updated>2017-02-09T09:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-02-09:/post/2017/02/09/orotangi/</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
+&lt;p&gt;Voila voilo pour une billet fait rapidos sur des utilisations completements détournées du but premier :)&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category><category term="Fabric"></category></entry><entry><title>Orotangi, your thoughts everywhere</title><link href="https://foxmask.net/post/2017/02/09/orotangi/" rel="alternate"></link><published>2017-02-09T09:00:00+01:00</published><updated>2017-02-09T09:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2017-02-09:/post/2017/02/09/orotangi/</id><summary type="html">&lt;h1&gt;Intro&lt;/h1&gt;
 &lt;p&gt;If you heard about Evernote and its little slap it got, at the end of november 2016, from the users community (because of the changes of the policy related to our own notebooks), you will then now understand what the purpose of that project.&lt;/p&gt;
 &lt;p&gt;Orotangi is your own private …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Intro&lt;/h1&gt;
 &lt;p&gt;If you heard about Evernote and its little slap it got, at the end of november 2016, from the users community (because of the changes of the policy related to our own notebooks), you will then now understand what the purpose of that project.&lt;/p&gt;
@@ -781,7 +289,7 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
 &lt;p&gt;By "could spy", I mean a company that could decide by itself to read our personal data or track the things we do with our data, or the Government of those companies which could bend each of them, to grab our own personnal data and control our life.&lt;/p&gt;
 &lt;p&gt;Yes, I know, you could say, "go on and make an opensource clone of gmail, facebook". But in fact, I do things by myself when I don't have the choice, and for those "services", I can switch from gmail to my hosting provider tomorrow, it's not a big deal for myself as I'd already done that for the account I use for my "developer life", and that will be finished to be spied. &lt;/p&gt;
 &lt;p&gt;And I don't care of facebook at all.&lt;/p&gt;
-&lt;p&gt;When things go wrong with google and gmail I will warn the family to start thinking about changing their habits, but that... it's another story....&lt;/p&gt;</content><category term="orotangi"></category><category term="triggerhappy"></category><category term="evernote"></category><category term="ifttt"></category><category term="wallabag"></category><category term="python"></category></entry><entry><title>UnitTest, Coverage and Mock</title><link href="https://foxmask.net/post/2016/10/21/test-coverage-mock/" rel="alternate"></link><published>2016-10-21T20:00:00+02:00</published><updated>2016-10-21T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-10-21:/post/2016/10/21/test-coverage-mock/</id><summary type="html">&lt;p&gt;Today, I will show you the way to mock "service" in your UnitTest processing. As usual, I make things simples, like a rookie would discovered it.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;When things go wrong with google and gmail I will warn the family to start thinking about changing their habits, but that... it's another story....&lt;/p&gt;</content><category term="Techno"></category><category term="orotangi"></category><category term="triggerhappy"></category><category term="evernote"></category><category term="ifttt"></category><category term="wallabag"></category><category term="python"></category></entry><entry><title>UnitTest, Coverage and Mock</title><link href="https://foxmask.net/post/2016/10/21/test-coverage-mock/" rel="alternate"></link><published>2016-10-21T20:00:00+02:00</published><updated>2016-10-21T20:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-10-21:/post/2016/10/21/test-coverage-mock/</id><summary type="html">&lt;p&gt;Today, I will show you the way to mock "service" in your UnitTest processing. As usual, I make things simples, like a rookie would discovered it.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Introduction&lt;/h1&gt;
 &lt;p&gt;When we write unittest, it comes the moment when we cross the road of some services that we can't test.
 So the moment comes when we have to use &lt;a href="https://docs.python.org/dev/library/unittest.mock.html"&gt;Mock&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;In the following text, you should spot some evidence related to django ;)&lt;/p&gt;
@@ -798,25 +306,25 @@ So the moment comes when we have to use &lt;a href="https://docs.python.org/dev/
 &lt;span class="sd"&gt;            :return: the status of the save statement&lt;/span&gt;
 &lt;span class="sd"&gt;            :rtype: boolean&lt;/span&gt;
 &lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+        &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
         &lt;span class="c1"&gt;# set the title and content of the data&lt;/span&gt;
         &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ServiceTwitter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;save_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
             &lt;span class="n"&gt;trigger_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
         &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;link&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;link&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
 
-            &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;{title} {link}&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+            &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;{title}&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="si"&gt;{link}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
                 &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;link&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;link&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 
             &lt;span class="n"&gt;content&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_tags&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigger_id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
             &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
                 &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;twitter_api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update_status&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;content&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-                &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+                &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
             &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;inst&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-                &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;critical&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Twitter ERR {}&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inst&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+                &lt;span class="n"&gt;logger&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;critical&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Twitter ERR &lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;inst&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
                 &lt;span class="n"&gt;update_result&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;trigger_id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;inst&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-                &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+                &lt;span class="n"&gt;status&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -845,10 +353,10 @@ So the moment comes when we have to use &lt;a href="https://docs.python.org/dev/
 
 
 &lt;p&gt;then the testing show us &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;coverage run --source=&amp;#39;.&amp;#39; manage.py test -v2
-...
-test_save_data (th_twitter.tests.ServiceTwitterTest) ... ok
-...
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;coverage run --source=&amp;#39;.&amp;#39; manage.py test -v2&lt;/span&gt;
+&lt;span class="err"&gt;...&lt;/span&gt;
+&lt;span class="err"&gt;test_save_data (th_twitter.tests.ServiceTwitterTest) ... ok&lt;/span&gt;
+&lt;span class="err"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -856,12 +364,12 @@ test_save_data (th_twitter.tests.ServiceTwitterTest) ... ok
 &lt;p&gt;But the coverage report (in html) shows us &lt;/p&gt;
 &lt;p&gt;&lt;img alt="Twitter mocking save_data" src="/static/twitter_mock_save_data.png"&gt;&lt;/p&gt;
 &lt;p&gt;and the % &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter
-th_twitter/__init__.py                                2      0   100%   
-th_twitter/forms.py                                  12      0   100%   
-th_twitter/models.py                                 21      0   100%   
-th_twitter/my_twitter.py                            117     56    52%   119-121, 138-173, 190-209, 219-231, 241-250, 256, 273-278
-th_twitter/tests.py                                  80      0   100%   
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter&lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/__init__.py                                2      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/forms.py                                  12      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/models.py                                 21      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/my_twitter.py                            117     56    52%   119-121, 138-173, 190-209, 219-231, 241-250, 256, 273-278&lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/tests.py                                  80      0   100%   &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -872,7 +380,7 @@ th_twitter/tests.py                                  80      0   100%
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;unittest.mock&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;patch&lt;/span&gt;            
 
 
-    &lt;span class="nd"&gt;@patch.object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Twython&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;update_status&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Twython&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;update_status&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_save_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mock1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_twitter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
         &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;
@@ -895,12 +403,12 @@ th_twitter/tests.py                                  80      0   100%
 &lt;p&gt;And this time the coverage report show us &lt;/p&gt;
 &lt;p&gt;&lt;img alt="Twitter mocking save_data" src="/static/twitter_mock_save_data2.png"&gt;&lt;/p&gt;
 &lt;p&gt;and the % &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter
-th_twitter/__init__.py                                2      0   100%   
-th_twitter/forms.py                                  12      0   100%   
-th_twitter/models.py                                 21      0   100%   
-th_twitter/my_twitter.py                            117     40    66%   119-121, 138-173, 205-208, 241-250, 256, 273-278
-th_twitter/tests.py                                  80      0   100%   
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter&lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/__init__.py                                2      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/forms.py                                  12      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/models.py                                 21      0   100%   &lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/my_twitter.py                            117     40    66%   119-121, 138-173, 205-208, 241-250, 256, 273-278&lt;/span&gt;
+&lt;span class="err"&gt;th_twitter/tests.py                                  80      0   100%   &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -909,8 +417,8 @@ th_twitter/tests.py                                  80      0   100%
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;unittest.mock&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;patch&lt;/span&gt;            
 
     &lt;span class="c1"&gt;# be careful with the order of the decorator &lt;/span&gt;
-    &lt;span class="nd"&gt;@patch.object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Twython&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;update_status&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# will go to mock2&lt;/span&gt;
-    &lt;span class="nd"&gt;@patch.object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AnotherService&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;other_method&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# will go to mock1&lt;/span&gt;
+    &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Twython&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;update_status&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# will go to mock2&lt;/span&gt;
+    &lt;span class="nd"&gt;@patch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;object&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AnotherService&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;other_method&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# will go to mock1&lt;/span&gt;
     &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;test_save_data&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mock1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;mock2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
         &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_twitter&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
         &lt;span class="n"&gt;token&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;
@@ -936,7 +444,7 @@ th_twitter/tests.py                                  80      0   100%
 but if they don't, be sure to set the right parm to the right 'mock'&lt;/p&gt;
 &lt;h1&gt;End&lt;/h1&gt;
 &lt;p&gt;Hope this will be helpful like it was for me as I spent a lot of time to find and test that ;)&lt;/p&gt;
-&lt;p&gt;If you want to dig that topic &lt;a href="https://docs.python.org/dev/library/unittest.mock.html#patch-object"&gt;have a look at the doc&lt;/a&gt;&lt;/p&gt;</content><category term="test"></category><category term="coverage"></category><category term="mock"></category><category term="python"></category></entry><entry><title>Revue Technique de la semaine du 05/09/2016</title><link href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/" rel="alternate"></link><published>2016-09-08T08:00:00+02:00</published><updated>2016-09-08T08:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-09-08:/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/</id><summary type="html">&lt;p&gt;Cela faisait un bon moment que je ne m'etais pas penché sur une revue technique, depuis ma migration Wordpress =&amp;gt; Pelican à vrai dire :)&lt;/p&gt;
+&lt;p&gt;If you want to dig that topic &lt;a href="https://docs.python.org/dev/library/unittest.mock.html#patch-object"&gt;have a look at the doc&lt;/a&gt;&lt;/p&gt;</content><category term="Techno"></category><category term="test"></category><category term="coverage"></category><category term="mock"></category><category term="python"></category></entry><entry><title>Revue Technique de la semaine du 05/09/2016</title><link href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/" rel="alternate"></link><published>2016-09-08T08:00:00+02:00</published><updated>2016-09-08T08:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-09-08:/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/</id><summary type="html">&lt;p&gt;Cela faisait un bon moment que je ne m'etais pas penché sur une revue technique, depuis ma migration Wordpress =&amp;gt; Pelican à vrai dire :)&lt;/p&gt;
 &lt;p&gt;Donc voici un petit tour de la technosphere des sujets, projets (et autre bidules machins trucs) croisés sur le chemin &lt;/p&gt;
 &lt;h1&gt;Wallabag 2.0.8&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://wallabag.org"&gt;Wallabag&lt;/a&gt; nous gratifie …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Cela faisait un bon moment que je ne m'etais pas penché sur une revue technique, depuis ma migration Wordpress =&amp;gt; Pelican à vrai dire :)&lt;/p&gt;
@@ -988,4 +496,41 @@ Un temps sur mobile, le multiprocessing a été retiré car produisant un bottle
 &lt;h1&gt;Ce n'est qu'un au revoir&lt;/h1&gt;
 &lt;p&gt;Un dinosaure qui disparait d'internet, &lt;a href="http://www.readability.com"&gt;Readability&lt;/a&gt; ferme ses portes le 30 de ce mois, à vos API, à vos migrations de service, de préférence vers Wallabag ;)&lt;/p&gt;
 &lt;h1&gt;C U&lt;/h1&gt;
-&lt;p&gt;A bientôt !&lt;/p&gt;</content><category term="Django"></category><category term="indexerror"></category><category term="python"></category><category term="samsung"></category><category term="pixel"></category><category term="apple"></category><category term="docker"></category><category term="firefox"></category></entry></feed>
+&lt;p&gt;A bientôt !&lt;/p&gt;</content><category term="Techno"></category><category term="Django"></category><category term="indexerror"></category><category term="python"></category><category term="samsung"></category><category term="pixel"></category><category term="apple"></category><category term="docker"></category><category term="firefox"></category></entry><entry><title>Apparition subliminiale de TriggerHappy au PHPTour 2016 avec Wallabag</title><link href="https://foxmask.net/post/2016/06/01/trigger-happy-apparition-subliminale-phptour-2016-wallabag/" rel="alternate"></link><published>2016-06-01T15:00:00+02:00</published><updated>2016-06-01T15:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-06-01:/post/2016/06/01/trigger-happy-apparition-subliminale-phptour-2016-wallabag/</id><summary type="html">&lt;p&gt;Le mois dernier s'est déroulé le PHPTour 2016 à Clermont Ferrand.&lt;/p&gt;
+&lt;p&gt;Lors de cet évènement, TriggerHappy fit une apparation subliminale ;) lors de la présentation, par le project &lt;a href="https://wallabag.org"&gt;wallabag&lt;/a&gt;, de la migration version Symfony 3.&lt;/p&gt;
+&lt;p&gt;La présentation de &lt;a href="https://github.com/nicosomb"&gt;@nicosomb&lt;/a&gt; et de son binôme &lt;a href="https://twitter.com/j0k"&gt;@j0k&lt;/a&gt; est disponible &lt;a href="https://nicosomb.github.io/talk-phptour-2016/"&gt;ici&lt;/a&gt;. Et "l'apparition" &lt;a href="https://nicosomb.github.io/talk-phptour-2016/#/9/2"&gt;ici&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Mais …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Le mois dernier s'est déroulé le PHPTour 2016 à Clermont Ferrand.&lt;/p&gt;
+&lt;p&gt;Lors de cet évènement, TriggerHappy fit une apparation subliminale ;) lors de la présentation, par le project &lt;a href="https://wallabag.org"&gt;wallabag&lt;/a&gt;, de la migration version Symfony 3.&lt;/p&gt;
+&lt;p&gt;La présentation de &lt;a href="https://github.com/nicosomb"&gt;@nicosomb&lt;/a&gt; et de son binôme &lt;a href="https://twitter.com/j0k"&gt;@j0k&lt;/a&gt; est disponible &lt;a href="https://nicosomb.github.io/talk-phptour-2016/"&gt;ici&lt;/a&gt;. Et "l'apparition" &lt;a href="https://nicosomb.github.io/talk-phptour-2016/#/9/2"&gt;ici&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Mais ... je vous vois venir faire votre "Géronte" et me sortir "Mais que diable allait il faire dans cette galère" (genre : "mélanger des projets PHP et Python mais quelle hérésie") mais en fait, ce n'est pas du tout le cas.&lt;/p&gt;
+&lt;p&gt;Wallabag dans sa mouture 2.0, pourvue de son API, laisse toute latitude et on a franchement plaisir à y mettre ses découvertes au gré du buttinage sur la toie ou à faire sa veille techno en recupérant régulièrement les infos de ses sites favoris, spécialisés.
+En plus, ce qui ne gâte rien, c'est l'existence de plugin pour Firefox et d'une application Android. &lt;/p&gt;
+&lt;p&gt;Ca en fait un bon projet bien complet à mon sens, qui surpasse le classique troll de PHP vs Python.&lt;/p&gt;
+&lt;p&gt;Alors "ayez confiaaaance" et laissez vous tenter par les 2 :)&lt;/p&gt;</content><category term="Techno"></category><category term="TriggerHappy"></category><category term="python"></category><category term="php"></category><category term="wallabag"></category></entry><entry><title>Panda, Le gros nounours noir et blanc est passé</title><link href="https://foxmask.net/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/" rel="alternate"></link><published>2016-05-14T13:00:00+02:00</published><updated>2016-05-14T13:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2016-05-14:/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/</id><summary type="html">&lt;p&gt;En lisant ma pile d'articles de veille techno dans mon instance &lt;a href="https://walabag.org"&gt;wallabag&lt;/a&gt;, je suis tombé sur un article mesurant le temps passé sur ses projets.
+Rien de nouveau au soleil puisque tout à chacun connait bien &lt;a href="https://pypi.python.org/pypi/pandas"&gt;pandas&lt;/a&gt; :)&lt;/p&gt;
+&lt;p&gt;Cependant, après un petit coup de &lt;code&gt;pip install git-pandas&lt;/code&gt; et en exécutant &lt;a href="https://github.com/wdm0006/git-pandas/blob/master/examples/hours_estimate.py"&gt;ce …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;En lisant ma pile d'articles de veille techno dans mon instance &lt;a href="https://walabag.org"&gt;wallabag&lt;/a&gt;, je suis tombé sur un article mesurant le temps passé sur ses projets.
+Rien de nouveau au soleil puisque tout à chacun connait bien &lt;a href="https://pypi.python.org/pypi/pandas"&gt;pandas&lt;/a&gt; :)&lt;/p&gt;
+&lt;p&gt;Cependant, après un petit coup de &lt;code&gt;pip install git-pandas&lt;/code&gt; et en exécutant &lt;a href="https://github.com/wdm0006/git-pandas/blob/master/examples/hours_estimate.py"&gt;ce script panda&lt;/a&gt; on peut donc mesurer le temps passé directos sur ses dépots, et donc pour bibi, il en ressort ceci &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python hours_estimate.py &lt;span class="p"&gt;|&lt;/span&gt;grep -v &lt;span class="m"&gt;0&lt;/span&gt;.00000
+
+            committer       hours         repository
+&lt;span class="m"&gt;0&lt;/span&gt;             foxmask    &lt;span class="m"&gt;2&lt;/span&gt;.603889          django-th
+&lt;span class="m"&gt;3&lt;/span&gt;       Olivier Demah  &lt;span class="m"&gt;134&lt;/span&gt;.288056          django-th
+&lt;span class="m"&gt;4&lt;/span&gt;             FoxMaSk    &lt;span class="m"&gt;3&lt;/span&gt;.017500          django-th
+&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;3&lt;/span&gt;.000000  django-th-ansible
+&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;3&lt;/span&gt;.877222       wallabag_api
+&lt;span class="m"&gt;0&lt;/span&gt;       Olivier Demah    &lt;span class="m"&gt;8&lt;/span&gt;.882778        dj-diabetes
+&lt;span class="m"&gt;1&lt;/span&gt;             foxmask    &lt;span class="m"&gt;1&lt;/span&gt;.000000        dj-diabetes
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;En tout 140heures pour Trigger Happy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Si je pars sur des journées de 6heures ca fait 23jours ou 46jours en codant "à temps perdu", en gros un bon mois et demi non stop quoi.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4hres pour l'API &lt;a href="https://github.com/foxmask/wallabag_api"&gt;wallabag&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;9hres pour le projet de "&lt;a href="https://github.com/foxmask/dj-diabetes"&gt;gestion de son diabete au quotidien&lt;/a&gt;"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pas de quoi fouetter un chat, mais ca donne une idée du temps que j'ai dépensé ;)
+Evidement la dedans on ne peut pas quantifier les durées pour le temps passé à tester moult techno pour arriver au resultat escompté. Mais ça donne un ordre de grandeur !&lt;/p&gt;</content><category term="Techno"></category><category term="TriggerHappy"></category><category term="python"></category><category term="Pandas"></category></entry></feed>

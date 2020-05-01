@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -135,14 +135,14 @@ dump ... à leur demande de surcroit.</p>
 <p>Ainsi donc il dégaina une requête pour leur envoyer un bon coup de pompe
 dans le derrière.</p>
 <p>Pour trouver la/les connexions existantes sur un schéma oracle on fait :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">sid</span><span class="p">,</span><span class="nb">serial</span><span class="o">#</span><span class="p">,</span><span class="n">osuser</span><span class="p">,</span><span class="n">status</span> <span class="k">from</span> <span class="n">v$session</span> <span class="k">where</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">sid</span><span class="p">,</span><span class="nb">serial</span><span class="o">#</span><span class="p">,</span><span class="n">osuser</span><span class="p">,</span><span class="n">status</span> <span class="k">from</span> <span class="n">v$session</span> <span class="k">where</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>et on indique le nom du schéma voulu.</p>
 <p>Quand on a une session on peut encore se faire "à la main" le fameux :</p>
-<div class="highlight"><pre><span></span><span class="k">alter</span> <span class="k">system</span> <span class="n">kill</span> <span class="k">session</span> <span class="s1">&#39;,&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">alter</span> <span class="k">system</span> <span class="n">kill</span> <span class="k">session</span> <span class="s1">&#39;,&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>Mais quand vous avez une ribambelle de têtes de mule, il faut employer
@@ -151,21 +151,21 @@ pénible et on maudit encore plus ces utilisateurs.</p>
 <p>Donc on produit un script SQL, nommons le <strong>generate-kill.sql</strong>, qui va
 produire un "rapport" redirigeant les fautifs dans un script SQL qu'on
 lancera ensuite.</p>
-<div class="highlight"><pre><span></span><span class="k">set</span> <span class="n">head</span> <span class="k">off</span>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> <span class="n">head</span> <span class="k">off</span>
 <span class="n">spool</span> <span class="n">kill_session</span><span class="p">.</span><span class="k">sql</span>
 <span class="k">select</span> <span class="s1">&#39;alter system kill session &#39;&#39;&#39;</span><span class="o">||</span><span class="n">sid</span><span class="o">||</span><span class="s1">&#39;,&#39;</span><span class="o">||</span><span class="nb">serial</span><span class="o">#||</span><span class="s1">&#39;&#39;&#39;;&#39;</span> <span class="k">from</span> <span class="n">v$session</span> <span class="k">where</span> <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
 <span class="n">spool</span> <span class="k">off</span>
 <span class="n">exit</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>On se connecte en tant que sysdba et on tape</p>
-<div class="highlight"><pre><span></span><span class="o">@</span><span class="n">kill_session</span><span class="p">.</span><span class="k">sql</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="o">@</span><span class="n">kill_session</span><span class="p">.</span><span class="k">sql</span>
+</code></pre></div>
 
 
 <p>bye bye :</p>
-<div class="highlight"><pre><span></span><span class="k">System</span> <span class="n">altered</span><span class="p">.</span>
+<div class="highlight"><pre><span></span><code><span class="k">System</span> <span class="n">altered</span><span class="p">.</span>
 
 <span class="k">System</span> <span class="n">altered</span><span class="p">.</span>
 
@@ -186,7 +186,7 @@ lancera ensuite.</p>
 <span class="k">System</span> <span class="n">altered</span><span class="p">.</span>
 
 <span class="k">System</span> <span class="n">altered</span><span class="p">.</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Et on peut enfin faire son <strong>drop user/create user</strong> pépère pour
@@ -247,23 +247,23 @@ remonter le dump .</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -277,7 +277,7 @@ remonter le dump .</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -286,7 +286,7 @@ remonter le dump .</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -304,7 +304,7 @@ remonter le dump .</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -356,7 +356,7 @@ remonter le dump .</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

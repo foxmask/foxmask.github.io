@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -129,7 +129,7 @@ Le Free de la Passion            </a>
                 </div>
                 <p>Voici une requete SQL dans l'arsenal du DBA, nommons la <strong>locks.sql</strong>,
 permettant d'identifier les locks en cours sur un schema oracle :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span>   <span class="cm">/*+ choose */</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>   <span class="cm">/*+ choose */</span>
           <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Blocking User&quot;</span><span class="p">,</span>
           <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;DB User&quot;</span><span class="p">,</span>
           <span class="n">ws</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Waiting User&quot;</span><span class="p">,</span>
@@ -207,14 +207,14 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
 <span class="k">AND</span>      <span class="n">a</span><span class="p">.</span><span class="n">object_id</span><span class="o">=</span><span class="n">b</span><span class="p">.</span><span class="n">object_id</span>
 <span class="k">AND</span>      <span class="n">HK</span><span class="p">.</span><span class="n">sid</span><span class="o">=</span><span class="n">a</span><span class="p">.</span><span class="n">SESSION_ID</span>
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="mi">1</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Oui hein ! ça s'invente pas ;)</p>
 <p>Une seconde <strong>current_request.sql</strong> vous donnant les requêtes en cours
 :</p>
 <p>Avec Oracle 9i :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">sesion</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">sesion</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span>
        <span class="n">sesion</span><span class="p">.</span><span class="n">username</span><span class="p">,</span>
        <span class="n">optimizer_mode</span><span class="p">,</span>
        <span class="n">hash_value</span><span class="p">,</span>
@@ -226,20 +226,20 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
  <span class="k">WHERE</span> <span class="n">sesion</span><span class="p">.</span><span class="n">sql_hash_value</span> <span class="o">=</span> <span class="n">sqlarea</span><span class="p">.</span><span class="n">hash_value</span>
    <span class="k">AND</span> <span class="n">sesion</span><span class="p">.</span><span class="n">sql_address</span>    <span class="o">=</span> <span class="n">sqlarea</span><span class="p">.</span><span class="n">address</span>
    <span class="k">AND</span> <span class="n">sesion</span><span class="p">.</span><span class="n">username</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><em>Mais ca c'était avant</em></p>
 <p>Ci dessous la même en "encore plus longue" pour les versions oracle >
 9i</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">sql_text</span><span class="p">,</span> <span class="n">STATUS</span> <span class="k">FROM</span> <span class="n">v$session</span><span class="p">,</span> <span class="n">v$sqlarea</span> <span class="k">WHERE</span> <span class="n">v$session</span><span class="p">.</span><span class="n">sql_id</span><span class="o">=</span><span class="n">v$sqlarea</span><span class="p">.</span><span class="n">sql_id</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">sql_text</span><span class="p">,</span> <span class="n">STATUS</span> <span class="k">FROM</span> <span class="n">v$session</span><span class="p">,</span> <span class="n">v$sqlarea</span> <span class="k">WHERE</span> <span class="n">v$session</span><span class="p">.</span><span class="n">sql_id</span><span class="o">=</span><span class="n">v$sqlarea</span><span class="p">.</span><span class="n">sql_id</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>Ah oui ça tranche hein !</p>
 <p>Pour avoir la liste des sessions en cours un petit script
 <strong>session.sql</strong> :</p>
-<div class="highlight"><pre><span></span><span class="k">SET</span> <span class="n">echo</span> <span class="k">off</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="n">echo</span> <span class="k">off</span><span class="p">;</span>
 <span class="k">SET</span> <span class="n">termout</span> <span class="k">ON</span><span class="p">;</span>
 <span class="k">SET</span> <span class="n">linesize</span> <span class="mi">180</span><span class="p">;</span>
 <span class="k">SET</span> <span class="n">pagesize</span> <span class="mi">60</span><span class="p">;</span>
@@ -279,12 +279,12 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">spid</span><span class="p">;</span>
 <span class="n">ttitle</span> <span class="k">off</span><span class="p">;</span>
 <span class="n">spool</span> <span class="k">off</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Pour obtenir les requêtes en cours d'annulation (rollback),
 <strong>session_undo.sql</strong> :</p>
-<div class="highlight"><pre><span></span><span class="k">COLUMN</span> <span class="n">username</span> <span class="n">FORMAT</span> <span class="n">A15</span>
+<div class="highlight"><pre><span></span><code><span class="k">COLUMN</span> <span class="n">username</span> <span class="n">FORMAT</span> <span class="n">A15</span>
 
 <span class="k">SELECT</span> <span class="n">s</span><span class="p">.</span><span class="n">username</span><span class="p">,</span>
        <span class="n">s</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span>
@@ -302,7 +302,7 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
 <span class="k">AND</span>    <span class="n">t</span><span class="p">.</span><span class="n">xidusn</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">usn</span>
 <span class="k">AND</span>    <span class="n">rs</span><span class="p">.</span><span class="n">segment_id</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="n">xidusn</span>
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">t</span><span class="p">.</span><span class="n">used_ublk</span> <span class="k">DESC</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Voilà, ça sera tout pour aujourd'hui</p>
@@ -362,23 +362,23 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -392,7 +392,7 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -401,7 +401,7 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -419,7 +419,7 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -471,7 +471,7 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

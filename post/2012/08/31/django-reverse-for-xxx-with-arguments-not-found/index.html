@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -130,35 +130,35 @@ Le Free de la Passion            </a>
                 <p>Nombreux sont ceux qui tombent dans le piège de cette erreur qui semble
 être une erreur de noobs ...<br>
 Cette erreur la voici :</p>
-<div class="highlight"><pre><span></span><span class="n">Erreur</span> <span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="n">Erreur</span> <span class="p">:</span>
 <span class="n">NoReverseMatch</span> <span class="n">at</span> <span class="o">/</span><span class="n">histo</span><span class="o">/</span>
 <span class="n">Reverse</span> <span class="k">for</span> <span class="s1">&#39;&#39;</span><span class="n">histo_save</span><span class="s1">&#39;&#39;</span> <span class="k">with</span> <span class="n">arguments</span> <span class="s1">&#39;()&#39;</span> <span class="ow">and</span> <span class="n">keyword</span> 
-<span class="n">arguments</span> <span class="s1">&#39;{}&#39;</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
-</pre></div>
+<span class="n">arguments</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span> <span class="ow">not</span> <span class="n">found</span><span class="o">.</span>
+</code></pre></div>
 
 
 <p>Pour autant tout semble être correct, le fichier <strong>urls.py</strong> contient</p>
-<div class="highlight"><pre><span></span><span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^histo/$&#39;</span><span class="p">,</span><span class="s1">&#39;tglr.views.histo&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;histo&#39;</span><span class="p">),</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^histo/$&#39;</span><span class="p">,</span><span class="s1">&#39;tglr.views.histo&#39;</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;histo&#39;</span><span class="p">),</span>
+</code></pre></div>
 
 
 <p>Tantdis que le <strong>template</strong> lui contient</p>
 <p>``` {language="python"}</p>
 <p>{% csrf_token %}</p>
-<div class="highlight"><pre><span></span>Donc tout semble parfaitement tourner rond sauf que ... dans la console
-saute aux yeux :
+<div class="highlight"><pre><span></span><code><span class="n">Donc</span> <span class="n">tout</span> <span class="n">semble</span> <span class="n">parfaitement</span> <span class="n">tourner</span> <span class="n">rond</span> <span class="n">sauf</span> <span class="n">que</span> <span class="p">...</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">console</span>
+<span class="n">saute</span> <span class="n">aux</span> <span class="n">yeux</span> <span class="p">:</span>
 
-```shell
-/usr/local/lib/python2.6/dist-packages/django/template/defaulttags.py:1235: 
-DeprecationWarning: The syntax for the url template tag is changing.
-Load the `url` tag from the `future` tag library to start using the new behavior.
-category=DeprecationWarning)
-</pre></div>
+<span class="ss">```shell</span>
+<span class="ss">/usr/local/lib/python2.6/dist-packages/django/template/defaulttags.py:1235: </span>
+<span class="ss">DeprecationWarning: The syntax for the url template tag is changing.</span>
+<span class="ss">Load the `</span><span class="n">url</span><span class="ss">` tag from the `</span><span class="n">future</span><span class="o">`</span> <span class="n">tag</span> <span class="n">library</span> <span class="k">to</span> <span class="n">start</span> <span class="k">using</span> <span class="n">the</span> <span class="n">new</span> <span class="n">behavior</span><span class="p">.</span>
+<span class="n">category</span><span class="o">=</span><span class="n">DeprecationWarning</span><span class="p">)</span>
+</code></pre></div>
 
 
 <p>Okkkayyyyy donc dans le template on rajoutera :</p>
-<div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">url</span> <span class="kn">from</span> <span class="nn">future</span> <span class="o">%</span><span class="p">}</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">url</span> <span class="kn">from</span> <span class="nn">future</span> <span class="o">%</span><span class="p">}</span>
+</code></pre></div>
 
 
 <p>et tout rentrera dans l'ordre</p>
@@ -170,7 +170,7 @@ toto %} est déprécié</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
+        <li><a href="https://foxmask.net/post/2020/05/01/trigger-happy-archive-yeoboseyo/">Trigger Happy archivé</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
         <li><a href="https://foxmask.net/post/2016/07/03/django-et-https/">Django et HTTPS</a></li>
@@ -221,23 +221,23 @@ toto %} est déprécié</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -251,7 +251,7 @@ toto %} est déprécié</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -260,7 +260,7 @@ toto %} est déprécié</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -278,7 +278,7 @@ toto %} est déprécié</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -330,7 +330,7 @@ toto %} est déprécié</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

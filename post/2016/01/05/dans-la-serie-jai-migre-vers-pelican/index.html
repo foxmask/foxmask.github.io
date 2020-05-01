@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -151,19 +151,19 @@ Or avec Wordpress, on décompresse l'archive, on transfert via FTP chez son héb
 <p>Du coup ca m'a donné l'idée d'également exploiter l'interface markdown de github, pour, ce coup-ci, créer directement des fichiers dans le dossier <strong>content</strong>.
 Puis une fois fait, sur le serveur hébergeant le blog, déclencher, via une <em>crontab</em>, un <em>git pull</em>, et lancer la génération du nouveau billet.</p>
 <p>La tâche dans ma crontab donne ceci :</p>
-<div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">0</span> * * * . /foxhome/.keychain/<span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span>-sh <span class="o">&amp;&amp;</span> . /foxblog/bin/activate <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /foxblog/website <span class="o">&amp;&amp;</span> git pull <span class="o">&amp;&amp;</span> make html
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="m">0</span> <span class="m">0</span> * * * . /foxhome/.keychain/<span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span>-sh <span class="o">&amp;&amp;</span> . /foxblog/bin/activate <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /foxblog/website <span class="o">&amp;&amp;</span> git pull <span class="o">&amp;&amp;</span> make html
+</code></pre></div>
 
 
 <p>(on passera sur le fait que j'ai un venv dans /foxblog:)</p>
 <p>L'astuce ici consiste à utiliser <strong>keychain</strong>, pour que le <em>git pull</em> ne reste pas stuck sur la demande de votre passphrase lors de l'exécution de la tâche</p>
 <p>En effet, après l'installation de keychain, on lanche la commande</p>
-<div class="highlight"><pre><span></span>keychain <span class="nv">$HOME</span>/.ssh/id_dsa
-</pre></div>
+<div class="highlight"><pre><span></span><code>keychain <span class="nv">$HOME</span>/.ssh/id_dsa
+</code></pre></div>
 
 
 <p>ce qui produit</p>
-<div class="highlight"><pre><span></span>$ keychain ~/.ssh/id_rsa
+<div class="highlight"><pre><span></span><code>$ keychain ~/.ssh/id_rsa
 
  * keychain <span class="m">2</span>.7.1 ~ http://www.funtoo.org
  * Starting ssh-agent...
@@ -171,7 +171,7 @@ Puis une fois fait, sur le serveur hébergeant le blog, déclencher, via une <em
  * Adding <span class="m">1</span> ssh key<span class="o">(</span>s<span class="o">)</span>: /foxhome/.ssh/id_rsa
 Enter passphrase <span class="k">for</span> /foxhome/.ssh/id_rsa:
  * ssh-add: Identities added: /foxhome/.ssh/id_rsa
-</pre></div>
+</code></pre></div>
 
 
 <p>Cette commande n'est à taper qu'une seule fois, par exemple après un reboot du serveur.
@@ -188,9 +188,9 @@ Ca permet de relire plusieurs fois avant de commit 'n' fois pour rien le nouveau
     <ul>
         <li><a href="https://foxmask.net/post/2016/01/02/de-wordpress-a-pelican/">De wordpress à pelican</a></li>
         <li><a href="https://foxmask.net/post/2015/12/29/une-autre-histoire/">Une autre histoire</a></li>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
-        <li><a href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/">Mais vous etes fou ? Hoo Oui !</a></li>
         <li><a href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
+        <li><a href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
     </ul>
 </section>
     <hr/>
@@ -237,23 +237,23 @@ Ca permet de relire plusieurs fois avant de commit 'n' fois pour rien le nouveau
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -267,7 +267,7 @@ Ca permet de relire plusieurs fois avant de commit 'n' fois pour rien le nouveau
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -276,7 +276,7 @@ Ca permet de relire plusieurs fois avant de commit 'n' fois pour rien le nouveau
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -294,7 +294,7 @@ Ca permet de relire plusieurs fois avant de commit 'n' fois pour rien le nouveau
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -346,7 +346,7 @@ Ca permet de relire plusieurs fois avant de commit 'n' fois pour rien le nouveau
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

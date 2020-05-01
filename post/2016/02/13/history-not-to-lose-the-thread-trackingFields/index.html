@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -137,14 +137,14 @@ Le Free de la Passion            </a>
 <p>To do so, I takes you into the world of the 7th art, come, we will redo StarWars!</p>
 <p>One model, one form, a view, a template and that will be finished </p>
 <h2>the models.py</h2>
-<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 
 
     <span class="k">class</span> <span class="nc">Movie</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            Movie</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -161,11 +161,11 @@ Le Free de la Passion            </a>
 
         <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>the forms.py, very mini mini</h2>
-<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
     <span class="kn">from</span> <span class="nn">django.forms.models</span> <span class="kn">import</span> <span class="n">inlineformset_factory</span>
 
     <span class="kn">from</span> <span class="nn">starwars.models</span> <span class="kn">import</span> <span class="n">Movie</span><span class="p">,</span> <span class="n">Episode</span>
@@ -184,11 +184,11 @@ Le Free de la Passion            </a>
 
     <span class="c1"># a formeset based on the model of the Mother &quot;Movie&quot; and Child &quot;Episode&quot; + 1 new empty lines</span>
     <span class="n">EpisodeFormSet</span> <span class="o">=</span> <span class="n">inlineformset_factory</span><span class="p">(</span><span class="n">Movie</span><span class="p">,</span> <span class="n">Episode</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;scenario&#39;</span><span class="p">),</span> <span class="n">extra</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>the views.py very very very DRY :)</h2>
-<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponseRedirect</span>
     <span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
     <span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">CreateView</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">,</span> <span class="n">ListView</span>
 
@@ -212,7 +212,7 @@ Le Free de la Passion            </a>
             <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="s2">&quot;home&quot;</span><span class="p">)</span>
 
         <span class="k">def</span> <span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
-            <span class="n">formset</span> <span class="o">=</span> <span class="n">EpisodeFormSet</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span> <span class="ow">or</span> <span class="bp">None</span><span class="p">),</span> <span class="n">instance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
+            <span class="n">formset</span> <span class="o">=</span> <span class="n">EpisodeFormSet</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">),</span> <span class="n">instance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">formset</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
                 <span class="n">formset</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
@@ -239,12 +239,12 @@ Le Free de la Passion            </a>
 <span class="sd">            ... and I&#39;m DRY :D</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">pass</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>To finish to set the scene and the costumes : the templates</h2>
 <h3>base.html</h3>
-<div class="highlight"><pre><span></span>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre><span></span><code>    <span class="cp">&lt;!DOCTYPE html&gt;</span>
     <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;fr&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Manage stories for StarWars<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -262,11 +262,11 @@ Le Free de la Passion            </a>
     {% endblock %}
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3>movie_form.htlm (the template used by UpdateView &amp; CreateView)</h3>
-<div class="highlight"><pre><span></span>    {% extends &quot;base.html&quot; %}
+<div class="highlight"><pre><span></span><code>    {% extends &quot;base.html&quot; %}
     {% block content %}
     <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
         {% csrf_token %}
@@ -280,12 +280,12 @@ Le Free de la Passion            </a>
         <span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Save<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
     {% endblock %}
-</pre></div>
+</code></pre></div>
 
 
 <h2>Update of the database</h2>
 <p>this is necessary  :</p>
-<div class="highlight"><pre><span></span><span class="o">(</span>starwars<span class="o">)</span> foxmask@foxmask:~/DjangoVirtualEnv/starwars/starwars $  ./manage.py migrate
+<div class="highlight"><pre><span></span><code><span class="o">(</span>starwars<span class="o">)</span> foxmask@foxmask:~/DjangoVirtualEnv/starwars/starwars $  ./manage.py migrate
 
 Operations to perform:
   Synchronize unmigrated apps: messages, starwars, staticfiles
@@ -296,7 +296,7 @@ Synchronizing apps without migrations:
     Creating table starwars_episode
     Running deferred SQL...
   Installing custom SQL...
-</pre></div>
+</code></pre></div>
 
 
 <p>Here we are, ready, I can now create my double Trilogy like Georges Lucas</p>
@@ -306,7 +306,7 @@ what they will do my "baby", I add a "tracker changes" in my application, not to
 <h3>Installation of Tracking Fields</h3>
 <p>as a prerequisites, if you want to also track who change thing, and not what data have been whanged, you will need<br>
 django-current-user, so the pip command to use will be this one </p>
-<div class="highlight"><pre><span></span>    <span class="p">(</span><span class="n">starwars</span><span class="p">)</span> <span class="n">foxmask</span><span class="nd">@foxmask</span><span class="p">:</span><span class="o">~/</span><span class="n">DjangoVirtualEnv</span><span class="o">/</span><span class="n">starwars</span><span class="o">/</span><span class="n">starwars</span> <span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span>
+<div class="highlight"><pre><span></span><code>    <span class="p">(</span><span class="n">starwars</span><span class="p">)</span> <span class="n">foxmask</span><span class="nd">@foxmask</span><span class="p">:</span><span class="o">~/</span><span class="n">DjangoVirtualEnv</span><span class="o">/</span><span class="n">starwars</span><span class="o">/</span><span class="n">starwars</span> <span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span>
     <span class="n">Collecting</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span>
       <span class="n">Downloading</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mf">6.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="p">(</span><span class="mi">58</span><span class="n">kB</span><span class="p">)</span>
         <span class="mi">100</span><span class="o">%</span> <span class="o">|</span><span class="err">████████████████████████████████</span><span class="o">|</span> <span class="mi">61</span><span class="n">kB</span> <span class="mi">104</span><span class="n">kB</span><span class="o">/</span><span class="n">s</span> 
@@ -317,11 +317,11 @@ django-current-user, so the pip command to use will be this one </p>
       <span class="n">Running</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span> <span class="k">for</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span> <span class="o">...</span> <span class="n">done</span>
       <span class="n">Running</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span> <span class="k">for</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span> <span class="o">...</span> <span class="n">done</span>
     <span class="n">Successfully</span> <span class="n">installed</span> <span class="n">django</span><span class="o">-</span><span class="n">cuser</span><span class="o">-</span><span class="mf">2014.9</span><span class="o">.</span><span class="mi">28</span> <span class="n">django</span><span class="o">-</span><span class="n">tracking</span><span class="o">-</span><span class="n">fields</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">6</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>the necessary changes in  <strong>settings.py</strong> :</p>
-<div class="highlight"><pre><span></span>    <span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
         <span class="o">...</span>
         <span class="s1">&#39;cuser&#39;</span><span class="p">,</span>
         <span class="s1">&#39;tracking_fields&#39;</span><span class="p">,</span>
@@ -338,11 +338,11 @@ django-current-user, so the pip command to use will be this one </p>
         <span class="s1">&#39;django.middleware.security.SecurityMiddleware&#39;</span><span class="p">,</span>
         <span class="s1">&#39;cuser.middleware.CuserMiddleware&#39;</span><span class="p">,</span>  <span class="c1">## &lt;=== do not forget to catch the badass who make change on my movies;)</span>
     <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>the little migrate that fit our needs, to add the tables for our modeles of django-tracking-fields</p>
-<div class="highlight"><pre><span></span>    <span class="p">(</span><span class="n">starwars</span><span class="p">)</span> <span class="n">foxmask</span><span class="nd">@foxmask</span><span class="p">:</span><span class="o">~/</span><span class="n">DjangoVirtualEnv</span><span class="o">/</span><span class="n">starwars</span><span class="o">/</span><span class="n">starwars</span> <span class="err">$</span>  <span class="o">./</span><span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
+<div class="highlight"><pre><span></span><code>    <span class="p">(</span><span class="n">starwars</span><span class="p">)</span> <span class="n">foxmask</span><span class="nd">@foxmask</span><span class="p">:</span><span class="o">~/</span><span class="n">DjangoVirtualEnv</span><span class="o">/</span><span class="n">starwars</span><span class="o">/</span><span class="n">starwars</span> <span class="err">$</span>  <span class="o">./</span><span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
     <span class="n">Operations</span> <span class="n">to</span> <span class="n">perform</span><span class="p">:</span>
       <span class="n">Synchronize</span> <span class="n">unmigrated</span> <span class="n">apps</span><span class="p">:</span> <span class="n">staticfiles</span><span class="p">,</span> <span class="n">messages</span><span class="p">,</span> <span class="n">cuser</span><span class="p">,</span> <span class="n">starwars</span>
       <span class="n">Apply</span> <span class="nb">all</span> <span class="n">migrations</span><span class="p">:</span> <span class="n">auth</span><span class="p">,</span> <span class="n">sessions</span><span class="p">,</span> <span class="n">contenttypes</span><span class="p">,</span> <span class="n">tracking_fields</span><span class="p">,</span> <span class="n">admin</span>
@@ -352,9 +352,9 @@ django-current-user, so the pip command to use will be this one </p>
       <span class="n">Installing</span> <span class="n">custom</span> <span class="n">SQL</span><span class="o">...</span>
     <span class="n">Running</span> <span class="n">migrations</span><span class="p">:</span>
       <span class="n">Rendering</span> <span class="n">model</span> <span class="n">states</span><span class="o">...</span> <span class="n">DONE</span>
-      <span class="n">Applying</span> <span class="n">tracking_fields</span><span class="o">.</span><span class="mo">0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
-      <span class="n">Applying</span> <span class="n">tracking_fields</span><span class="o">.</span><span class="mo">0002</span><span class="n">_auto_20160203_1048</span><span class="o">...</span> <span class="n">OK</span>
-</pre></div>
+      <span class="n">Applying</span> <span class="n">tracking_fields</span><span class="o">.</span><span class="mi">0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
+      <span class="n">Applying</span> <span class="n">tracking_fields</span><span class="o">.</span><span class="mi">0002</span><span class="n">_auto_20160203_1048</span><span class="o">...</span> <span class="n">OK</span>
+</code></pre></div>
 
 
 <p>and here we are ready to play with the trackers</p>
@@ -368,7 +368,7 @@ En effet, TrackingEvent repose sur <a href="https://docs.djangoproject.com/fr/1.
 If you already played with the permission management, you should have already  meet it before;)</p>
 <p>To make it short, this will give :</p>
 <h4>models.py</h4>
-<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
     <span class="kn">from</span> <span class="nn">django.contrib.contenttypes.fields</span> <span class="kn">import</span> <span class="n">GenericRelation</span>
 
     <span class="kn">from</span> <span class="nn">tracking_fields.decorators</span> <span class="kn">import</span> <span class="n">track</span>
@@ -380,7 +380,7 @@ If you already played with the permission management, you should have already  m
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            Movie</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
         <span class="n">histo</span> <span class="o">=</span> <span class="n">GenericRelation</span><span class="p">(</span><span class="n">TrackingEvent</span><span class="p">,</span> <span class="n">content_type_field</span><span class="o">=</span><span class="s1">&#39;object_content_type&#39;</span><span class="p">)</span>
 
@@ -402,13 +402,13 @@ If you already played with the permission management, you should have already  m
 
         <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">return</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>so, here, it is very simple like a pancake recipe: 3 imports, the decorator, the  GenericRelation, we mix all of them and that give what follow.
 I have, in the meantime, added a function <code>episodes</code> to my Movie class, I will explain it too later ;)</p>
 <h3>the template of the expected DetailView</h3>
-<div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>History of the modification of {{ object }} <span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Old Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>New Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>By<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>at<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
@@ -421,7 +421,7 @@ I have, in the meantime, added a function <code>episodes</code> to my Movie clas
     {% endfor %}
        <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Now if I go the my page to modify the story of one episode, my template below, wont display thoses modifications !
@@ -430,7 +430,7 @@ The issue </p>
 <h3>Let's fix it</h3>
 <p>this is here, that enter if the game, the function <code>episodes</code> of my Movie class to permit to loop on it and display of the needed stuff </p>
 <h3>the template of the expected DetailView (again :)</h3>
-<div class="highlight"><pre><span></span>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>History of the modifications of {{ object }} <span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Old Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>New Value<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>By<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;</span><span class="nt">th</span><span class="p">&gt;</span>at<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
@@ -463,7 +463,7 @@ The issue </p>
      <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
         {% endif %}
     {% endfor %}
-</pre></div>
+</code></pre></div>
 
 
 <p>And voilà !
@@ -487,11 +487,11 @@ one application named <a href="https://github.com/makinacorpus/django-tracking-f
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
         <li><a href="https://foxmask.net/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
         <li><a href="https://foxmask.net/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
+        <li><a href="https://foxmask.net/post/2015/08/18/django-trigger-happy-0-11-0-english-version/">Django Trigger Happy 0.11.0 English Version</a></li>
     </ul>
 </section>
     <hr/>
@@ -538,23 +538,23 @@ one application named <a href="https://github.com/makinacorpus/django-tracking-f
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -568,7 +568,7 @@ one application named <a href="https://github.com/makinacorpus/django-tracking-f
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -577,7 +577,7 @@ one application named <a href="https://github.com/makinacorpus/django-tracking-f
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -595,7 +595,7 @@ one application named <a href="https://github.com/makinacorpus/django-tracking-f
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -647,7 +647,7 @@ one application named <a href="https://github.com/makinacorpus/django-tracking-f
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -149,7 +149,7 @@ This project has been inspired by the good parts of Celery, </p>
 <li>to not break the existing way (with Celery) that (almost) works perfectly, I changed few details in the tasks.py module :</li>
 </ol>
 <p>before </p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">shared_task</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">shared_task</span>
 
 <span class="nd">@shared_task</span>
 <span class="k">def</span> <span class="nf">reading</span><span class="p">(</span><span class="n">service</span><span class="p">):</span>
@@ -158,11 +158,11 @@ This project has been inspired by the good parts of Celery, </p>
 <span class="nd">@shared_task</span>
 <span class="k">def</span> <span class="nf">publishing</span><span class="p">(</span><span class="n">service</span><span class="p">):</span>
     <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>after </p>
-<div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">django_rq</span> <span class="kn">import</span> <span class="n">job</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="kn">from</span> <span class="nn">celery</span> <span class="kn">import</span> <span class="n">shared_task</span>
@@ -178,7 +178,7 @@ This project has been inspired by the good parts of Celery, </p>
 <span class="nd">@shared_task</span>
 <span class="k">def</span> <span class="nf">publishing</span><span class="p">(</span><span class="n">service</span><span class="p">):</span>
     <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Those tasks are executed by celery with the decorator <strong>@shared_task</strong> (with its own scheduler) or by the RQ with the <strong>@job</strong> decorator, through some crontab tasks, with management commands. As RQ asole use my_tasks.delay(), I dont have to change anything else, other than just adding a @job decorator.</p>
@@ -188,14 +188,14 @@ It's just for testing purpose :) That way, I'm able to compare performance betwe
 <p>As my project is not so overloaded I can say that the cursor between something a "little bit slow" and something "out of order" is quickly choosen :)</p>
 <p>So at least if you want to give a try to <a href="http://python-rq.org">RQ</a> with TriggerHappy, the stuff that will need to be handle, will continue to work.</p>
 <p>Here I provide the line I enter in my crontab :</p>
-<div class="highlight"><pre><span></span>*/12 * * * * . /my/env/bin/activate <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /my/env/th/ <span class="o">&amp;&amp;</span> ./manage.py fire_read_data <span class="o">&amp;&amp;</span> ../bin/rqworker-default-burst.sh
+<div class="highlight"><pre><span></span><code>*/12 * * * * . /my/env/bin/activate <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /my/env/th/ <span class="o">&amp;&amp;</span> ./manage.py fire_read_data <span class="o">&amp;&amp;</span> ../bin/rqworker-default-burst.sh
 */15 * * * * . /my/env/bin/activate <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /my/env/th/ <span class="o">&amp;&amp;</span> ./manage.py fire_publish_data <span class="o">&amp;&amp;</span> ../bin/rqworker-high-burst.sh
 */20 * * * * . /my/env/bin/activate <span class="o">&amp;&amp;</span> <span class="nb">cd</span> /my/env/th/ <span class="o">&amp;&amp;</span> ./manage.py fire_get_outside_data <span class="o">&amp;&amp;</span> ../bin/rqworker-low-burst.sh
-</pre></div>
+</code></pre></div>
 
 
 <p>and the content of, for example, rqworker-default-burst.sh</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 python manage.py rqworker default --burst <span class="p">&amp;</span>
 python manage.py rqworker default --burst <span class="p">&amp;</span>
 python manage.py rqworker default --burst <span class="p">&amp;</span> 
@@ -207,7 +207,7 @@ python manage.py rqworker default --burst <span class="p">&amp;</span>
 python manage.py rqworker default --burst <span class="p">&amp;</span>
 python manage.py rqworker default --burst <span class="p">&amp;</span>
 python manage.py rqworker default --burst <span class="p">&amp;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Yes I like to spawn a lot :)</p>
@@ -216,7 +216,7 @@ python manage.py rqworker default --burst <span class="p">&amp;</span>
 <p>If I want to support Celery and RQ for my tasks, one should I write a decorator that could handle each of them.
 Is there a way to write a generic decorator that will permit to be inherited to handle each of them ?</p>
 <p>Thus in my tasks.py I'll be able to just do </p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django_th.my_powerful_decorator</span> <span class="kn">import</span> <span class="n">jobth</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django_th.my_powerful_decorator</span> <span class="kn">import</span> <span class="n">jobth</span>
 
 
 <span class="p">[</span><span class="o">...</span><span class="p">]</span>
@@ -224,7 +224,7 @@ Is there a way to write a generic decorator that will permit to be inherited to 
 <span class="nd">@jobth</span>
 <span class="k">def</span> <span class="nf">reading</span><span class="p">():</span>
    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>and <strong>jobth</strong> will check which of the two Queueing system is here and handled the right decorator</p>
@@ -284,23 +284,23 @@ Is there a way to write a generic decorator that will permit to be inherited to 
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -314,7 +314,7 @@ Is there a way to write a generic decorator that will permit to be inherited to 
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -323,7 +323,7 @@ Is there a way to write a generic decorator that will permit to be inherited to 
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -341,7 +341,7 @@ Is there a way to write a generic decorator that will permit to be inherited to 
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -393,7 +393,7 @@ Is there a way to write a generic decorator that will permit to be inherited to 
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

@@ -44,7 +44,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -146,7 +146,7 @@ So I finally could finish the <a href="https://github.com/foxmask/wallabag_api">
 <p>And now there is no more barrier to each of us to host our own Wallabag and TriggerHappy instance for our own pleasure ;)</p>
 <h1>How to create a post in wallabag ?</h1>
 <p>Here is a snipset to create a entry in your wallabag account :</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">wallabag_api.wallabag</span> <span class="kn">import</span> <span class="n">Wallabag</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">wallabag_api.wallabag</span> <span class="kn">import</span> <span class="n">Wallabag</span>
 <span class="c1"># settings</span>
 <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;foxmask&#39;</span><span class="p">,</span>
           <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;mypass&#39;</span><span class="p">,</span>
@@ -164,7 +164,7 @@ So I finally could finish the <a href="https://github.com/foxmask/wallabag_api">
 <span class="n">my_tags</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;wallabag&#39;</span><span class="p">]</span>
 
 <span class="n">wall</span><span class="o">.</span><span class="n">post_entries</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">my_url</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">my_title</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="n">my_tags</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>this will give you something like this </p>
@@ -225,23 +225,23 @@ So I finally could finish the <a href="https://github.com/foxmask/wallabag_api">
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -255,7 +255,7 @@ So I finally could finish the <a href="https://github.com/foxmask/wallabag_api">
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -264,7 +264,7 @@ So I finally could finish the <a href="https://github.com/foxmask/wallabag_api">
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -282,7 +282,7 @@ So I finally could finish the <a href="https://github.com/foxmask/wallabag_api">
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -334,7 +334,7 @@ So I finally could finish the <a href="https://github.com/foxmask/wallabag_api">
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

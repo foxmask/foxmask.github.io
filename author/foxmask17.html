@@ -91,99 +91,6 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <h2><a href="https://foxmask.net/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">Oracle et taille de schema, tablespace</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2012-01-10T12:00:00+01:00"> mar. 10 janvier 2012</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Pour obtenir la taille d'un schéma, avec son script
-<strong>size_of_schema.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
-</pre></div>
-
-
-<p>à l'invite, donnez lui le nom du schema et roule ;)</p>
-<p>Pour obtenir le paramètre de la base "Undo Retention", avec son script
-<strong>undo_retention.sql</strong></p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2011/11/05/linux-live-usb-persistent-failed/">Linux Live USB Persistent : failed</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-11-05T17:01:00+01:00"> sam. 05 novembre 2011</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Suite à <a href="/post/2011/10/22/linux-sur-laptop-sans-disque-dur/" title="Laptop sous linux sans dique dur">cette
-mésaventure</a>,
-j'ai fait les frais d'une clé USB 32Go, et de 2 soirées d'affilées à la
-recherche d'images ISO qui soit exploitable sur le (vieux) portable
-recyclé pour ma fille.</p>
-<p>Mon "cahier des charges" étant :</p>
-<ol>
-<li>
-<p>Hardware</p>
-<ol>
-<li>RAM utilisable 512Mo</li>
-<li>Wifi sur une clef USB à prendre en …</li></ol></li></ol>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2011/11/05/linux-live-usb-persistent-failed/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2011/10/22/linux-sur-laptop-sans-disque-dur/">Linux sur laptop sans disque dur</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2011-10-22T19:35:00+02:00"> sam. 22 octobre 2011</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/linux.html">linux</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Hmm naaaaaaaaaaaaaaaaannnnnnnnnnnnn, le disque dur du portable qui me
-lâche :(</p>
-<p>Quelqu'un aurait une idée pour utiliser linux sur un (vieux) portable
-sans disque dur ?</p>
-<p>j'imaginerai juste pouvoir stocker le /home sur clé usb au moins, genre
-pour conserver les préférences de firefox et puis c'est tout.</p>
-<p>est-ce possible ?</p>
-<p>nota : le …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2011/10/22/linux-sur-laptop-sans-disque-dur/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
                 <h2><a href="https://foxmask.net/post/2011/10/19/jelix-php5-framework-version-1-3-dans-les-bacs/">Jelix PHP5 Framework, version 1.3.0 dans les bacs</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -392,6 +299,112 @@ Je garderai juste un oeil sur le projet mais de loin …</p>
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2010/03/27/jelix-versions-1-1-6-1-0-12-et-bitbucket/">Jelix versions 1.1.6 1.0.12 et Bitbucket</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2010-03-27T14:21:00+01:00"> sam. 27 mars 2010</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+        /
+	<a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p><em>Oyé Oyé Braves Gens</em></p>
+<p>Voici Quelques nouvelles de
+<a href="http://www.jelix.org" title="Jelix PHP5 Framework">Jelix</a>.</p>
+<p><strong>Nouvelles versions</strong> :<br>
+A commencer par 2 nouvelles versions de mises à jour de maintenance
+pour les branches
+<a href="http://jelix.org/articles/fr/telechargement/stable/1.1" title="Version 1.1.6">1.1</a>
+et
+<a href="http://jelix.org/articles/fr/telechargement/stable/1.0" title="Version 1.0.12">1.0</a></p>
+<p>Où pour la version 1.1.6, <a href="http://jelix.org/fr/news/post/sortie%20de-jelix-1.0.12-et-1.1.6">une petite
+manipulation</a>
+est nécessaire suite au support des champs binaires dans …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2010/03/27/jelix-versions-1-1-6-1-0-12-et-bitbucket/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2009/11/10/havefnubb-hook-system-2/">HaveFnuBB Hook System</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-11-10T17:26:00+01:00"> mar. 10 novembre 2009</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+        /
+	<a href="https://foxmask.net/tag/havefnubb.html">HaveFnuBB</a>
+        /
+	<a href="https://foxmask.net/tag/jelix.html">Jelix</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Parmi les forums bien pensés, existent des systèmes d'extension (ou
+hook) laissant libre cours à la créativité des développeurs de ces
+hooks.</p>
+<p>Dans HaveFnuBB (le forum que je réalise), <a href="http://forge.jelix.org/projects/havefnubb/browser/trunk/havefnubb/plugins/tpl/html/function.hook.php">il m'aura fallu un plugin de
+10
+lignes</a>
+pour permettre à tout développeur, d'enrichir ses templates avec une
+souplesse déconcertante.</p>
+<p>L'idée …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2009/11/10/havefnubb-hook-system-2/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2009/10/25/irssi-dans-tout-sa-splendeur/">IRSSI dans tout sa splendeur</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2009-10-25T09:59:00+01:00"> dim. 25 octobre 2009</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Utilisateur du <a href="http://fr.wikipedia.org/wiki/Liste_de_clients_IRC">client
+IRC</a>
+<a href="http://irssi.org">IRSSI</a> depuis <em>des siècles</em> on en découvre toujours
+:)</p>
+<p>Sur <a href="http://www.freenode.org">Freenode</a> il arrive qu'on soit redirigé
+sur #freenode-fr après s'y être connecté</p>
+<p>voici la config pour l'accès à freenode</p>
+<div class="highlight"><pre><span></span><code><span class="err">servers = ( {</span>
+<span class="err">      address = &quot;irc.freenode.org&quot;;</span>
+<span class="err">     chatnet = &quot;freenode&quot;;</span>
+<span class="err">     port = &quot;6667&quot;;</span>
+<span class="err">     autoconnect = &quot;yes&quot;;</span>
+<span class="err">     term_type = &quot;utf-8&quot;;</span>
+<span class="err">     });</span>
+</code></pre></div>
+
+
+<p>Donc Pourquoi la redirection vers …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2009/10/25/irssi-dans-tout-sa-splendeur/">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://foxmask.net/author/foxmask16.html">&laquo;</a>
@@ -448,23 +461,23 @@ Je garderai juste un oeil sur le projet mais de loin …</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -478,7 +491,7 @@ Je garderai juste un oeil sur le projet mais de loin …</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -487,7 +500,7 @@ Je garderai juste un oeil sur le projet mais de loin …</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -505,7 +518,7 @@ Je garderai juste un oeil sur le projet mais de loin …</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -557,7 +570,7 @@ Je garderai juste un oeil sur le projet mais de loin …</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

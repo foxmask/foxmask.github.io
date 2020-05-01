@@ -104,90 +104,6 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <h2><a href="https://foxmask.net/post/2013/01/21/django-__unicode__-et-form_as_p-mes-amis/">Django __unicode__ et form.as_p mes amis</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-01-21T10:00:00+01:00"> lun. 21 janvier 2013</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/django.html">Django</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Toujours dans mes périgrinations de débutant, voici un coup qui m'a pris
-du temps à trouver seul, donc si ça peut servir à d'autres ;)</p>
-<p>Donc voici,</p>
-<p><strong>Chapitre Un __unicode__</strong></p>
-<p>je veux produire une page pour afficher un formulaire composé de 2
-listes déroulantes issues d'un autre modèle + un champ de …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/21/django-__unicode__-et-form_as_p-mes-amis/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">Oracle Identifications des Locks, Process, Sessions en cours</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-01-17T10:00:00+01:00"> jeu. 17 janvier 2013</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Voici une requete SQL dans l'arsenal du DBA, nommons la <strong>locks.sql</strong>,
-permettant d'identifier les locks en cours sur un schema oracle :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span>   <span class="cm">/*+ choose */</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Blocking User&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;DB User&quot;</span><span class="p">,</span>
-          <span class="n">ws</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Waiting User&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">sid</span> <span class="ss">&quot;SID&quot;</span><span class="p">,</span>
-          <span class="n">ws</span><span class="p">.</span><span class="n">sid</span> <span class="ss">&quot;WSID&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">sql_address</span> <span class="ss">&quot;address&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">sql_hash_value</span> <span class="ss">&quot;Sql hash&quot;</span><span class="p">,</span>
-          <span class="n">bs …</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/">Oracle des expdp et impdp en réseau, si c'est possible</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2013-01-16T16:49:00+01:00"> mer. 16 janvier 2013</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>A l'heure actuelle, la version d'Oracle est la 11G R2 (à tes souhaits
-pourrait rétorqué 6P0 à R2D2 :P), et avec cette version il est de
-coutume de ne plus employer pour ses sauvegardes/gestions de dumps, que
-le fameux duo expdp et impdp pour produire ce qu'on appelle des …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
                 <h2><a href="https://foxmask.net/post/2013/01/14/de-php-a-python-tous-ensemble/">de PHP à Python : tous ensemble</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -237,14 +153,14 @@ auto extend sur ses tablespaces, il arrive (souvant) qu'on se mange des
 erreurs parce que le tablespace est full.</p>
 <p>Donc ;</p>
 <p>Pour lister ses tablespace on tapera :</p>
-<div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">file_name</span> <span class="k">FROM</span> <span class="n">dba_data_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">file_name</span> <span class="k">FROM</span> <span class="n">dba_data_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 
 <p>affichera</p>
-<div class="highlight"><pre><span></span><span class="n">FILE_NAME</span>
+<div class="highlight"><pre><span></span><code><span class="n">FILE_NAME</span>
 <span class="c1">--------------------------------------------------------------------------------</span>
-<span class="o">/</span><span class="n">u02</span><span class="o">/</span><span class="n">oradata …</span></pre></div>
+<span class="o">/</span><span class="n">u02</span><span class="o">/</span><span class="n">oradata …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/10/oracle-gestion-des-tablespace/">more ...</a>
                 </div>
             </article>
@@ -296,17 +212,17 @@ images le paquet ;)</p>
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Le script suivant, nommons le export_pkg, vous permet d'exporter une
 proc de votre choix :</p>
-<div class="highlight"><pre><span></span>SET heading off
-SET pagesize 0
-SET linesize 255
-SET trimspool ON
-SET feedback off
-SET verify off
+<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="n">heading</span> <span class="k">off</span>
+<span class="k">SET</span> <span class="n">pagesize</span> <span class="mi">0</span>
+<span class="k">SET</span> <span class="n">linesize</span> <span class="mi">255</span>
+<span class="k">SET</span> <span class="n">trimspool</span> <span class="k">ON</span>
+<span class="k">SET</span> <span class="n">feedback</span> <span class="k">off</span>
+<span class="k">SET</span> <span class="n">verify</span> <span class="k">off</span>
 
 
-spool &amp;&amp;1\.pkg
-SELECT &#39;CREATE OR REPLACE &#39; FROM dual;
-SELECT TEXT FROM user_source WHERE TYPE=&#39;PACKAGE&#39; AND NAME …</pre></div>
+<span class="n">spool</span> <span class="o">&amp;&amp;</span><span class="mi">1</span><span class="err">\</span><span class="p">.</span><span class="n">pkg</span>
+<span class="k">SELECT</span> <span class="s1">&#39;CREATE OR REPLACE &#39;</span> <span class="k">FROM</span> <span class="n">dual</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="nb">TEXT</span> <span class="k">FROM</span> <span class="n">user_source</span> <span class="k">WHERE</span> <span class="k">TYPE</span><span class="o">=</span><span class="s1">&#39;PACKAGE&#39;</span> <span class="k">AND</span> <span class="n">NAME …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2013/01/03/oracle-exporter-une-proc/">more ...</a>
                 </div>
             </article>
@@ -333,7 +249,7 @@ n'a pas la main sur l'histoirique comme on l'a avec votre shell BASH en
 pressant la touche flèché du haut.</p>
 <p>Donc pour tout de même se retrouver dans un "univers" familier on peut
 faire ceci</p>
-<div class="highlight"><pre><span></span>define …</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">define …</span></code></pre></div>
                     <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/12/27/oracle-changer-lediteur-sql/">more ...</a>
                 </div>
             </article>
@@ -393,6 +309,93 @@ Instance Oracle on s'est connecté et avec quel Utilisateur et à …</p>
                 </div>
             </article>
             <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2012/12/19/quand-django-reste-muet-a-vous-rendre-dingue/">Quand Django reste muet à vous rendre dingue</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-19T22:59:00+01:00"> mer. 19 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/django.html">Django</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Voici un truc qui m'a usé les nerfs (de noob mais pas que :P) avec
+<a href="https://docs.djangoproject.com/" title="Django Project - the web framework for perfectionnists with deadline">Django</a>.</p>
+<p>je me fais un template principale, con à souhait, dans lequel je fais un
+include, "QQ la praline", comme suit :</p>
+<p><strong>base.html</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">static</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">staticfiles</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">i18n</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">url</span> <span class="kn">from</span> <span class="nn">future</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="s2">&quot;mark_forum …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/12/19/quand-django-reste-muet-a-vous-rendre-dingue/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/">Debian, amour et désamour</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-17T14:31:00+01:00"> lun. 17 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/debian.html">debian</a>
+        /
+	<a href="https://foxmask.net/tag/linux.html">linux</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Utilisateur de <a href="http://www.debian.org">Debian</a> depuis <em>Le toutou
+elastic</em> aka "Slink" (version 2.1), je n'ai jamais eu à me plaindre. Je
+me suis toujours éclater avec cette distribution Linux, même si j'ai
+croisé sur le chemin SlackWare, Mandrake, RedHat, Suse etc...</p>
+<p>J'utilise actuellement Debian Squeeze (version 6 donc) que j'ai pu …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/12/17/debian-amour-et-desamour/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://foxmask.net/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">Oracle bottant le train des réfractaires</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-13T11:08:00+01:00"> jeu. 13 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.net/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Voici le début d'une suite de billets dédiée à Oracle, One of my Job in
+Professional life :)</p>
+<p>Il était une fois un DBA qui en avait plein les bottes de demander aux
+utilisateurs de bien vouloir se déconnecter du schéma pour remonter un
+dump ... à leur demande de surcroit.</p>
+<p>Ainsi …</p>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.net/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://foxmask.net/index14.html">&laquo;</a>
@@ -449,23 +452,23 @@ Instance Oracle on s'est connecté et avec quel Utilisateur et à …</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -479,7 +482,7 @@ Instance Oracle on s'est connecté et avec quel Utilisateur et à …</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -488,7 +491,7 @@ Instance Oracle on s'est connecté et avec quel Utilisateur et à …</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -506,7 +509,7 @@ Instance Oracle on s'est connecté et avec quel Utilisateur et à …</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -558,7 +561,7 @@ Instance Oracle on s'est connecté et avec quel Utilisateur et à …</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

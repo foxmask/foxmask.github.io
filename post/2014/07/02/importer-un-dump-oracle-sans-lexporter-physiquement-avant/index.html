@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -134,21 +134,21 @@ solution ultime subsiste, quand même, pour nous autre "pauvres" petits
 <p>Comment ça ?<br>
 La subtilité réside dans la possibilité d'Oracle à importer les données
 dans le schéma cible, via un
-<a href="http://fr.wikipedia.org/wiki/DBLink" title=" un DBLink, ou database link est un objet d'une base de données permettant d'exécuter des requêtes sur une autre base de données, qu'elle se trouve physiquement sur la même machine ou qu'elle soit distante.">DBLink</a>.</p>
+<a href="http://fr.wikipedia.org/wiki/DBLink" title="un DBLink, ou database link est un objet d'une base de données permettant d'exécuter des requêtes sur une autre base de données, qu'elle se trouve physiquement sur la même machine ou qu'elle soit distante.">DBLink</a>.</p>
 <p>Pas croyable hein ?</p>
 <p>let's voyons this right maintenant:</p>
 <p>Creation du DBLink sur le serveur "cible" :</p>
-<div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">LINK</span> <span class="n">chicago</span> 
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="n">LINK</span> <span class="n">chicago</span> 
    <span class="k">CONNECT</span> <span class="k">TO</span> <span class="n">admin1</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="n">windy</span>
    <span class="k">USING</span> <span class="s1">&#39;CHI&#39;</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ici, le nom du schema "source" est <strong>admin1</strong>, le nom du DBLink chicago.</p>
 <p>Ensuite vient l'import lui même sur le serveur "cible"</p>
-<div class="highlight"><pre><span></span><span class="n">impdp</span> <span class="n">admin2</span><span class="o">/</span><span class="n">market</span> <span class="n">TABLES</span><span class="o">=</span><span class="n">customers</span><span class="p">,</span><span class="n">sales</span> <span class="n">DIRECTORY</span><span class="o">=</span><span class="n">dpump1</span>
+<div class="highlight"><pre><span></span><code><span class="n">impdp</span> <span class="n">admin2</span><span class="o">/</span><span class="n">market</span> <span class="n">TABLES</span><span class="o">=</span><span class="n">customers</span><span class="p">,</span><span class="n">sales</span> <span class="n">DIRECTORY</span><span class="o">=</span><span class="n">dpump1</span>
   <span class="n">NETWORK_LINK</span><span class="o">=</span><span class="n">chicago</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>ici l'import (la commande impdp) demande à oracle de se connecter avec
@@ -165,11 +165,11 @@ traite.</p>
 <p>Si on a plusieurs schémas, il faut que le user du dblink ait les droits
 d'y accéder sur la source.<br>
 Si c'est le cas, ensuite on peut faire :</p>
-<div class="highlight"><pre><span></span><span class="n">impdp</span> <span class="n">admin2</span><span class="o">/</span><span class="n">market</span> <span class="n">SCHEMAS</span><span class="o">=</span><span class="n">schema1</span><span class="p">,</span><span class="n">schema2</span> 
+<div class="highlight"><pre><span></span><code><span class="n">impdp</span> <span class="n">admin2</span><span class="o">/</span><span class="n">market</span> <span class="n">SCHEMAS</span><span class="o">=</span><span class="n">schema1</span><span class="p">,</span><span class="n">schema2</span> 
   <span class="n">REMAP_SCHEMA</span><span class="o">=</span><span class="n">schema1</span><span class="p">:</span><span class="n">mon_nouveau_schema1</span><span class="p">,</span><span class="n">schema2</span><span class="p">:</span><span class="n">mon_nouveau_schema2</span> 
   <span class="n">DIRECTORY</span><span class="o">=</span><span class="n">dpump1</span>
   <span class="n">NETWORK_LINK</span><span class="o">=</span><span class="n">chicago</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et roule ma poule</p>
@@ -229,23 +229,23 @@ Si c'est le cas, ensuite on peut faire :</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -259,7 +259,7 @@ Si c'est le cas, ensuite on peut faire :</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -268,7 +268,7 @@ Si c'est le cas, ensuite on peut faire :</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -286,7 +286,7 @@ Si c'est le cas, ensuite on peut faire :</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -338,7 +338,7 @@ Si c'est le cas, ensuite on peut faire :</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

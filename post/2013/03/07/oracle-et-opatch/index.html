@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -132,29 +132,29 @@ Le Free de la Passion            </a>
 <p>On récupère un patch chez Oracle, on le décompresse, on tape opatch
 apply et hop !</p>
 <p>Donc après la décompression, ça donne :</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> path_ou_on_a_decompresse_le_path
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> path_ou_on_a_decompresse_le_path
+</code></pre></div>
 
 
 <p>application du patch oracle</p>
-<div class="highlight"><pre><span></span>opatch apply
-</pre></div>
+<div class="highlight"><pre><span></span><code>opatch apply
+</code></pre></div>
 
 
 <p>Si vous rencontrez un erreur du genre :</p>
-<div class="highlight"><pre><span></span>OPatch cannot find a valid oraInst.loc file to locate Central Inventory.
-</pre></div>
+<div class="highlight"><pre><span></span><code>OPatch cannot find a valid oraInst.loc file to locate Central Inventory.
+</code></pre></div>
 
 
 <p>Alors taper la commande suivante :</p>
-<div class="highlight"><pre><span></span>opatch apply -invPtrLoc /u01/app/oracle/product/11.2.0.1.0/db/oraInst.loc
-</pre></div>
+<div class="highlight"><pre><span></span><code>opatch apply -invPtrLoc /u01/app/oracle/product/11.2.0.1.0/db/oraInst.loc
+</code></pre></div>
 
 
 <p>le paramètre invPtrLoc indique à opatch, où se trouve le fameux "Central
 Inventory"</p>
 <p>ce qui donnera par exemple pour le patch 8795792</p>
-<div class="highlight"><pre><span></span>Invoking OPatch <span class="m">11</span>.2.0.1.6
+<div class="highlight"><pre><span></span><code>Invoking OPatch <span class="m">11</span>.2.0.1.6
 
 Oracle Interim Patch Installer version <span class="m">11</span>.2.0.1.6
 Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">2011</span>, Oracle Corporation.  All rights reserved.
@@ -187,7 +187,7 @@ Patch <span class="m">8795792</span> successfully applied
 Log file location: /u01/app/oracle/product/11.2.0.1.0/db/cfgtoollogs/opatch/opatch2011-07-29_15-37-22PM.log
 
 OPatch succeeded.
-</pre></div>
+</code></pre></div>
 
 
 <p>Une fois fait, relancer la base Oracle que vous aurez bien évidemment
@@ -249,23 +249,23 @@ lire avant de commencer ;)</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -279,7 +279,7 @@ lire avant de commencer ;)</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -288,7 +288,7 @@ lire avant de commencer ;)</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -306,7 +306,7 @@ lire avant de commencer ;)</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -358,7 +358,7 @@ lire avant de commencer ;)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

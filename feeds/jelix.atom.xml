@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Jelix</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/jelix.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2013-05-01T13:20:00+02:00</updated><entry><title>HaveFnuBB les archives sont de retour du futur</title><link href="https://foxmask.net/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/" rel="alternate"></link><published>2013-05-01T13:20:00+02:00</published><updated>2013-05-01T13:20:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-05-01:/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/</id><summary type="html">&lt;p&gt;Avec mon déménagement de site web du projet HaveFnuBB (le forum sous GPL
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Jelix</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/jelix.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2013-05-01T13:20:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>HaveFnuBB les archives sont de retour du futur</title><link href="https://foxmask.net/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/" rel="alternate"></link><published>2013-05-01T13:20:00+02:00</published><updated>2013-05-01T13:20:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-05-01:/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/</id><summary type="html">&lt;p&gt;Avec mon déménagement de site web du projet HaveFnuBB (le forum sous GPL
 produit avec &lt;a href="http://jelix.org"&gt;Jelix&lt;/a&gt;), j'ai malencontreusement oublié
 de récupérer mes archives du forum que je vous proposais au
 téléchargement. Rien que ça :-)&lt;/p&gt;
@@ -18,7 +18,7 @@ les versions&lt;/p&gt;
 &lt;li&gt;1.5.0 pour jelix 1.2 (aussi)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href="http://havefnubb.foxmask.info/downloads/" title="téléchargement de Havefunbb"&gt;Tout est
-là&lt;/a&gt;&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>Jelix PHP5 Framework : version 1.5.0 out</title><link href="https://foxmask.net/post/2013/02/20/jelix-1-5-0-out/" rel="alternate"></link><published>2013-02-20T15:11:00+01:00</published><updated>2013-02-20T15:11:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-20:/post/2013/02/20/jelix-1-5-0-out/</id><summary type="html">&lt;p&gt;Le fameux &lt;a href="http://www.jelix.org"&gt;Framework PHP5 Jelix&lt;/a&gt; sort sa version
+là&lt;/a&gt;&lt;/p&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>Jelix PHP5 Framework : version 1.5.0 out</title><link href="https://foxmask.net/post/2013/02/20/jelix-1-5-0-out/" rel="alternate"></link><published>2013-02-20T15:11:00+01:00</published><updated>2013-02-20T15:11:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-20:/post/2013/02/20/jelix-1-5-0-out/</id><summary type="html">&lt;p&gt;Le fameux &lt;a href="http://www.jelix.org"&gt;Framework PHP5 Jelix&lt;/a&gt; sort sa version
 1.5.0&lt;/p&gt;
 &lt;p&gt;Les contributeurs se sont mis en 4 pour sortir cette dernière version
 dont voici le menu des nouveautés :&lt;/p&gt;
@@ -64,7 +64,7 @@ Je vous invite donc à &lt;a href="http://jelix.org/articles/fr/telechargement/s
 1.5.0&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Et la v 1.6.0 est déjà sur les rails, &lt;a href="https://github.com/jelix/jelix" title="Forker Jelix"&gt;viendez
 forker&lt;/a&gt; ;)&lt;/p&gt;
-&lt;p&gt;Have Fnu ! :D&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB sous le domaine exactement</title><link href="https://foxmask.net/post/2013/02/07/havefnubb-sous-le-domaine-exactement/" rel="alternate"></link><published>2013-02-07T11:26:00+01:00</published><updated>2013-02-07T11:26:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-07:/post/2013/02/07/havefnubb-sous-le-domaine-exactement/</id><summary type="html">&lt;p&gt;&lt;a href="/static/2011/04/havefnubb.png"&gt;&lt;img alt="havefnubb" src="/static/2011/04/havefnubb.png"&gt;&lt;/a&gt;
+&lt;p&gt;Have Fnu ! :D&lt;/p&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB sous le domaine exactement</title><link href="https://foxmask.net/post/2013/02/07/havefnubb-sous-le-domaine-exactement/" rel="alternate"></link><published>2013-02-07T11:26:00+01:00</published><updated>2013-02-07T11:26:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-07:/post/2013/02/07/havefnubb-sous-le-domaine-exactement/</id><summary type="html">&lt;p&gt;&lt;a href="/static/2011/04/havefnubb.png"&gt;&lt;img alt="havefnubb" src="/static/2011/04/havefnubb.png"&gt;&lt;/a&gt;
 Amis lecteurs, vous savez que j'ai produit HaveFnuBB, ce projet de forum
 opensource en PHP5 avec &lt;a href="http://jelix.org" title="PHP5 Framework"&gt;Jelix&lt;/a&gt;,
 démarré en 2008, je vous en avais même parlé dans &lt;a href="/post/2012/12/29/havefnubb-en-2008-cetait-ca/" title="HaveFnuBB en 2008 c’était ça"&gt;un billet de retour
@@ -90,7 +90,7 @@ domaine &lt;a href="http://havefnubb.foxmask.info"&gt;http://havefnubb.foxmask.i
 téléchargement.&lt;/p&gt;
 &lt;p&gt;Et comme d'hab' si vous avez envie de contribuer, le projet &lt;a href="https://github.com/havefnubb"&gt;havefnubb
 sur github&lt;/a&gt; se trouve. Viendez tous forker
-ensemble ;)&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>Jelix et un minify avant les fêtes</title><link href="https://foxmask.net/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/" rel="alternate"></link><published>2012-12-21T23:58:00+01:00</published><updated>2012-12-21T23:58:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-12-21:/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/</id><summary type="html">&lt;p&gt;Hey !!!&lt;/p&gt;
+ensemble ;)&lt;/p&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>Jelix et un minify avant les fêtes</title><link href="https://foxmask.net/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/" rel="alternate"></link><published>2012-12-21T23:58:00+01:00</published><updated>2012-12-21T23:58:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-12-21:/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/</id><summary type="html">&lt;p&gt;Hey !!!&lt;/p&gt;
 &lt;p&gt;Ca faisait une éternité que je ne m'étais pas arrêté sur Jelix et
 proposé un billet sur le sujet ;)&lt;/p&gt;
 &lt;p&gt;Bon au menu de ce soir un truc très court mais utile si on ne veut pas
@@ -144,7 +144,7 @@ copie du dossier lui même.&lt;/p&gt;
 &lt;p&gt;En rechargeant ma page ce coup ci tout était bleu (sans éléPHPant :D )
 et sans plus l'erreur 400.&lt;/p&gt;
 &lt;p&gt;&lt;a href="/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/2012-12-22-00-13-39/"&gt;&lt;img alt="éléPHPant Minifiant" src="/static/2012/12/2012-12-22-00.13.39-300x225.jpg"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Sur ce passez un bon réveillon à tous ;)&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB 1.5.0</title><link href="https://foxmask.net/post/2012/04/02/havefnubb-1-5-0/" rel="alternate"></link><published>2012-04-02T09:00:00+02:00</published><updated>2012-04-02T09:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-04-02:/post/2012/04/02/havefnubb-1-5-0/</id><summary type="html">&lt;p&gt;cette nouvelle version, 1 an après la précédente quasiment jour pour
+&lt;p&gt;Sur ce passez un bon réveillon à tous ;)&lt;/p&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB 1.5.0</title><link href="https://foxmask.net/post/2012/04/02/havefnubb-1-5-0/" rel="alternate"></link><published>2012-04-02T09:00:00+02:00</published><updated>2012-04-02T09:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-04-02:/post/2012/04/02/havefnubb-1-5-0/</id><summary type="html">&lt;p&gt;cette nouvelle version, 1 an après la précédente quasiment jour pour
 jour,&lt;br&gt;
 est marquée par de nombreuses corrections de bugs et d'importantes
 améliorations de performances.&lt;/p&gt;
@@ -236,7 +236,7 @@ La ligne de commandes
 
 &lt;/ul&gt;
 
-&lt;p&gt;Have Fnu !&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>Jelix PHP 5 Bouillon de Cultures</title><link href="https://foxmask.net/post/2012/01/12/jelix-php-5-bouillon-de-cultures/" rel="alternate"></link><published>2012-01-12T10:13:00+01:00</published><updated>2012-01-12T10:13:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-01-12:/post/2012/01/12/jelix-php-5-bouillon-de-cultures/</id><summary type="html">&lt;p&gt;Je ne vous présente plus &lt;a href="http://jelix.org" title="PHP5 framework"&gt;Jelix&lt;/a&gt;, le
+&lt;p&gt;Have Fnu !&lt;/p&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry><entry><title>Jelix PHP 5 Bouillon de Cultures</title><link href="https://foxmask.net/post/2012/01/12/jelix-php-5-bouillon-de-cultures/" rel="alternate"></link><published>2012-01-12T10:13:00+01:00</published><updated>2012-01-12T10:13:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2012-01-12:/post/2012/01/12/jelix-php-5-bouillon-de-cultures/</id><summary type="html">&lt;p&gt;Je ne vous présente plus &lt;a href="http://jelix.org" title="PHP5 framework"&gt;Jelix&lt;/a&gt;, le
 &lt;a href="http://fr.wikipedia.org/wiki/Framework"&gt;framework&lt;/a&gt;
 &lt;a href="http://php.net"&gt;PHP&lt;/a&gt;5, voici juste quelques news de ce dernier qui
 pourront vous intéresser ;-)&lt;/p&gt;
@@ -297,7 +297,7 @@ alors venez nous en parler !&lt;/p&gt;
     Jelix&lt;/a&gt; et &lt;a href="http://developer.jelix.org/wiki/fr/sources"&gt;travailler
     avec les sources&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/jelix/"&gt;Le dépôt GitHub de Jelix&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>Jelix PHP5 Framework, version 1.3.0 dans les bacs</title><link href="https://foxmask.net/post/2011/10/19/jelix-php5-framework-version-1-3-dans-les-bacs/" rel="alternate"></link><published>2011-10-19T13:06:00+02:00</published><updated>2011-10-19T13:06:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-10-19:/post/2011/10/19/jelix-php5-framework-version-1-3-dans-les-bacs/</id><summary type="html">&lt;p&gt;Le framework PHP5, &lt;a href="http://jelix.org" title="Jelix PHP5 Framework"&gt;Jelix&lt;/a&gt;,
+&lt;/ul&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>Jelix PHP5 Framework, version 1.3.0 dans les bacs</title><link href="https://foxmask.net/post/2011/10/19/jelix-php5-framework-version-1-3-dans-les-bacs/" rel="alternate"></link><published>2011-10-19T13:06:00+02:00</published><updated>2011-10-19T13:06:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-10-19:/post/2011/10/19/jelix-php5-framework-version-1-3-dans-les-bacs/</id><summary type="html">&lt;p&gt;Le framework PHP5, &lt;a href="http://jelix.org" title="Jelix PHP5 Framework"&gt;Jelix&lt;/a&gt;,
 sort une nouvelle version majeure (*) : &lt;strong&gt;1.3&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Cette dernière a mis l'accent sur de &lt;a href="http://jelix.org/articles/fr/changelog/1.3"&gt;nombreuses améliorations et
 nouveautés&lt;/a&gt;, dont&lt;/p&gt;
@@ -335,7 +335,7 @@ le portail des ressources Jelix produites par tout à chacun.&lt;/p&gt;
     complet&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;[*] &lt;a href="http://jelix.org/articles/fr/telechargement/stable/1.3" title="Télécharger Jelix 1.3.0"&gt;Télécharger la version
     1.3.0&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB Thème Twitter Bootstrap</title><link href="https://foxmask.net/post/2011/10/02/havefnubb-theme-twitter-bootstrap/" rel="alternate"></link><published>2011-10-02T14:38:00+02:00</published><updated>2011-10-02T14:38:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-10-02:/post/2011/10/02/havefnubb-theme-twitter-bootstrap/</id><summary type="html">&lt;p&gt;Après de longs mois sans trop faire avancer le projet (la faute aux
+&lt;/ul&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB Thème Twitter Bootstrap</title><link href="https://foxmask.net/post/2011/10/02/havefnubb-theme-twitter-bootstrap/" rel="alternate"></link><published>2011-10-02T14:38:00+02:00</published><updated>2011-10-02T14:38:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-10-02:/post/2011/10/02/havefnubb-theme-twitter-bootstrap/</id><summary type="html">&lt;p&gt;Après de longs mois sans trop faire avancer le projet (la faute aux
 vacances et à &lt;a href="http://booster.jelix.org"&gt;Booster.jelix.org&lt;/a&gt; ;) )&lt;br&gt;
 voici donc après quelques temps d'adaptation au toolkit tout en un
 qu'est &lt;a href="twitter.github.com/bootstrap/" title="BootStrap"&gt;Twitter BootStrap&lt;/a&gt;,
@@ -368,7 +368,7 @@ twboot" src="/static/2011/10/hfnu_theme_twboot_home-300x268.png" title="Page d'a
 &lt;p&gt;&lt;strong&gt;La liste des messages&lt;/strong&gt;&lt;br&gt;
 &lt;a href="/static/2011/10/hfnu_theme_twboot_postlist.png" title="Cliquer pour agrandir"&gt;&lt;img alt="Liste des
 Messages" src="/static/2011/10/hfnu_theme_twboot_postlist-300x277.png" title="Liste des Message HaveFnuBB thème twboot - Cliquer pour agrandirs"&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Encore quelques pages et ca devrait être pas mal au final.&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>Jelix PHP5 Framework tout neuf</title><link href="https://foxmask.net/post/2011/09/23/jelix-php5-framework-tout-neuf/" rel="alternate"></link><published>2011-09-23T16:18:00+02:00</published><updated>2011-09-23T16:18:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-09-23:/post/2011/09/23/jelix-php5-framework-tout-neuf/</id><summary type="html">&lt;p&gt;Bonjour,&lt;/p&gt;
+&lt;p&gt;Encore quelques pages et ca devrait être pas mal au final.&lt;/p&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>Jelix PHP5 Framework tout neuf</title><link href="https://foxmask.net/post/2011/09/23/jelix-php5-framework-tout-neuf/" rel="alternate"></link><published>2011-09-23T16:18:00+02:00</published><updated>2011-09-23T16:18:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-09-23:/post/2011/09/23/jelix-php5-framework-tout-neuf/</id><summary type="html">&lt;p&gt;Bonjour,&lt;/p&gt;
 &lt;p&gt;En ces temps de "rentrée", Jelix annonce, lui, plusieurs "sorties" !&lt;/p&gt;
 &lt;p&gt;Number one : &lt;strong&gt;nouveau serveur&lt;/strong&gt; dédié pour le projet !&lt;br&gt;
 Le précédent avait été gracieusement offert par
@@ -404,7 +404,7 @@ cours dont la mise à jour du forum, la 1.3 finale, un passage à
 place dans le projet depuis 3ans que je m'y suis interessé, franchement
 un bon grand "kiffe" que cette aventure, comme 'ils' disent ! Et une
 mention spéciale pour &lt;a href="http://florianlb.fr/" title="FlorianLB"&gt;FlorianLB&lt;/a&gt; avec
-qui je prends beaucoup de plaisir à coder Booster.&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB! 1.4.0</title><link href="https://foxmask.net/post/2011/04/03/havefnubb-1-4-0/" rel="alternate"></link><published>2011-04-03T18:03:00+02:00</published><updated>2011-04-03T18:03:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-04-03:/post/2011/04/03/havefnubb-1-4-0/</id><summary type="html">&lt;p&gt;&lt;a href="/static/2011/04/havefnubb.png"&gt;&lt;img alt="havefnubb" src="/static/2011/04/havefnubb.png" title="havefnubb"&gt;&lt;/a&gt;
+qui je prends beaucoup de plaisir à coder Booster.&lt;/p&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="Jelix"></category></entry><entry><title>HaveFnuBB! 1.4.0</title><link href="https://foxmask.net/post/2011/04/03/havefnubb-1-4-0/" rel="alternate"></link><published>2011-04-03T18:03:00+02:00</published><updated>2011-04-03T18:03:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2011-04-03:/post/2011/04/03/havefnubb-1-4-0/</id><summary type="html">&lt;p&gt;&lt;a href="/static/2011/04/havefnubb.png"&gt;&lt;img alt="havefnubb" src="/static/2011/04/havefnubb.png" title="havefnubb"&gt;&lt;/a&gt;
 Bonjour,&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;(ré)Intro : HaveFnuBB est un logiciel de gestion de Forums OpenSource
 (sous licence GPL 2.0) avec pour buts d'être : Rapide, Léger et Agréable
@@ -431,4 +431,4 @@ remis plein de choses à leur place ;)&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://www.havefnubb.org/forums/forum/4-dernieres-versions/posts/278-278-havefnubb-1-4-0"&gt;L'annonce
 complète&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="http://www.havefnubb.org/downloads/downloads_files/havefnubb-1-4-0"&gt;Télécharger HaveFnuBB!
-1.4.0&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</content><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry></feed>
+1.4.0&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</content><category term="Techno"></category><category term="ApacheMySqlPHP"></category><category term="HaveFnuBB"></category><category term="Jelix"></category></entry></feed>

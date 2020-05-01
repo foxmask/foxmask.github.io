@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -133,18 +133,18 @@ Le Free de la Passion            </a>
                 <p>Quand on a besoin de faire un <code>yum update</code> suivi d'un
 <code>yum install foobar</code> il peut arriver que sur votre CentOS vous ayez un
 problème avec vos packages Oracle :</p>
-<div class="highlight"><pre><span></span>warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
+<div class="highlight"><pre><span></span><code>warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
 Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 
 
 GPG key retrieval failed: <span class="o">[</span>Errno <span class="m">14</span><span class="o">]</span> Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
-</pre></div>
+</code></pre></div>
 
 
 <p>Pour y remédier 2 commandes et puis s'en va</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># rpm --import http://oss.oracle.com/ol6/RPM-GPG-KEY-oracle</span>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># rpm --import http://oss.oracle.com/ol6/RPM-GPG-KEY-oracle</span>
 <span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># rpm -q gpg-pubkey-ec551f03-4c2d256a</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et au yum install suivant tout glisse.</p>
@@ -205,23 +205,23 @@ GPG key retrieval failed: <span class="o">[</span>Errno <span class="m">14</span
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -235,7 +235,7 @@ GPG key retrieval failed: <span class="o">[</span>Errno <span class="m">14</span
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -244,7 +244,7 @@ GPG key retrieval failed: <span class="o">[</span>Errno <span class="m">14</span
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -262,7 +262,7 @@ GPG key retrieval failed: <span class="o">[</span>Errno <span class="m">14</span
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -314,7 +314,7 @@ GPG key retrieval failed: <span class="o">[</span>Errno <span class="m">14</span
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

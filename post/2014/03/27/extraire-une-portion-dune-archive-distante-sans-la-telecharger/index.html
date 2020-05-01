@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -134,14 +134,14 @@ de suite.</p>
 <p>Le truc ici va consister à être une partie d'une archive sans avoir à la
 télécharger.</p>
 <p>On fait comme ca :</p>
-<div class="highlight"><pre><span></span>wget -O - url <span class="p">|</span>tar -xvzf - <span class="o">[</span>dossier<span class="p">|</span>path/vers/fichier<span class="o">]</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>wget -O - url <span class="p">|</span>tar -xvzf - <span class="o">[</span>dossier<span class="p">|</span>path/vers/fichier<span class="o">]</span>
+</code></pre></div>
 
 
 <p>je vous laisse jouer sur les options de tar mais l'idée est là ;)</p>
 <p>genre ça fait quelques années lumières que je n'ai pas vu la tête d'une
 archive du kernel linux de près, let's go dancing :</p>
-<div class="highlight"><pre><span></span> wget -O - ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz<span class="p">|</span>tar tvzf -
+<div class="highlight"><pre><span></span><code> wget -O - ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz<span class="p">|</span>tar tvzf -
 --2014-03-25 <span class="m">01</span>:42:05--  ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz
            <span class="o">=</span>&gt; «-»
 Résolution de ftp.kernel.org <span class="o">(</span>ftp.kernel.org<span class="o">)</span>... <span class="m">198</span>.145.20.140, <span class="m">149</span>.20.4.69, <span class="m">199</span>.204.44.194
@@ -179,12 +179,12 @@ drwxrwxr-x root/root         <span class="m">0</span> <span class="m">2013</span
 -rw-rw-r-- root/root       <span class="m">751</span> <span class="m">2013</span>-08-18 <span class="m">23</span>:36 linux-3.11-rc6/Documentation/ABI/removed/video1394
 drwxrwxr-x root/root         <span class="m">0</span> <span class="m">2013</span>-08-18 <span class="m">23</span>:36 linux-3.11-rc6/Documentation/ABI/stable/
 -rw-rw-r-- root/root      <span class="m">4140</span> <span class="m">2013</span>-08-18 <span class="m">23</span>:36 linux-3.11-rc6/Documentation/ABI/stable/firewire-cdev
-</pre></div>
+</code></pre></div>
 
 
 <p>Vous pouvez faire varier les plaisirs avec un grep au bout evidement,
 genre je ne veux que ce qui cause crypto :</p>
-<div class="highlight"><pre><span></span> wget -O - ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz<span class="p">|</span>tar tvzf - <span class="p">|</span>grep crypto
+<div class="highlight"><pre><span></span><code> wget -O - ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz<span class="p">|</span>tar tvzf - <span class="p">|</span>grep crypto
 
 
 --2014-03-25 <span class="m">01</span>:50:56--  ftp://ftp.kernel.org/pub/linux/kernel/v3.x/testing/linux-3.11-rc6.tar.gz
@@ -211,7 +211,7 @@ drwxrwxr-x root/root         <span class="m">0</span> <span class="m">2013</span
 -rw-rw-r-- root/root       <span class="m">544</span> <span class="m">2013</span>-08-18 <span class="m">23</span>:36 linux-3.11-rc6/Documentation/devicetree/bindings/crypto/mv_cesa.txt
 -rw-rw-r-- root/root       <span class="m">789</span> <span class="m">2013</span>-08-18 <span class="m">23</span>:36 linux-3.11-rc6/Documentation/devicetree/bindings/crypto/picochip-spacc.txt
  <span class="m">2</span>% <span class="o">[==</span>&gt;                                                                                                                                  <span class="o">]</span> <span class="m">3</span> <span class="m">075</span> <span class="m">552</span>   <span class="m">1</span>,31M/s 
-</pre></div>
+</code></pre></div>
 
 
 <p>L'intérêt est de ne pas encombrer son HDD de saloperies "temporaires"
@@ -274,23 +274,23 @@ dans l'ancien temps avec mes doigts"</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -304,7 +304,7 @@ dans l'ancien temps avec mes doigts"</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -313,7 +313,7 @@ dans l'ancien temps avec mes doigts"</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -331,7 +331,7 @@ dans l'ancien temps avec mes doigts"</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -383,7 +383,7 @@ dans l'ancien temps avec mes doigts"</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

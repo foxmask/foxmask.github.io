@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - AIX</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/aix.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-01-13T23:00:00+01:00</updated><entry><title>AIX fsck et demarrer des services</title><link href="https://foxmask.net/post/2016/01/13/aix-fsck-demarrer-des-services/" rel="alternate"></link><published>2016-01-13T23:00:00+01:00</published><updated>2016-01-13T23:00:00+01:00</updated><author><name>FoxMaSk</name></author><id>tag:foxmask.net,2016-01-13:/post/2016/01/13/aix-fsck-demarrer-des-services/</id><summary type="html">&lt;p&gt;Sur AIX, lors d'un reboot (malencontreux?) il peut arriver que des folders soient vides (aïe bobo partout)&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - AIX</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/aix.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2016-01-13T23:00:00+01:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>AIX fsck et demarrer des services</title><link href="https://foxmask.net/post/2016/01/13/aix-fsck-demarrer-des-services/" rel="alternate"></link><published>2016-01-13T23:00:00+01:00</published><updated>2016-01-13T23:00:00+01:00</updated><author><name>FoxMaSk</name></author><id>tag:foxmask.net,2016-01-13:/post/2016/01/13/aix-fsck-demarrer-des-services/</id><summary type="html">&lt;p&gt;Sur AIX, lors d'un reboot (malencontreux?) il peut arriver que des folders soient vides (aïe bobo partout)&lt;/p&gt;
 &lt;p&gt;Bon du coup ca peut provenir du "simple" fait de "dirty" partitions qui ont besoin qu'on leur fasse faire un check &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fsck /opt/websphere
 &lt;/pre&gt;&lt;/div&gt;
@@ -26,4 +26,4 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;et on respire !&lt;/p&gt;</content><category term="AIX"></category></entry></feed>
+&lt;p&gt;et on respire !&lt;/p&gt;</content><category term="Techno"></category><category term="AIX"></category></entry></feed>

@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -153,7 +153,7 @@ JUnit (issue du monde Java)</p>
 <p>Voici donc un <strong>script
 <a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/test.php" title="télécharger les sources">test.php</a></strong>
 contenant ce qui suit :</p>
-<div class="highlight"><pre><span></span><span class="x">cal = new Calc();</span>
+<div class="highlight"><pre><span></span><code><span class="x">cal = new Calc();</span>
 <span class="x">    }</span>
 <span class="x">    public function testMoyenne() {</span>
 <span class="x">        $this-&gt;assertEquals($this-&gt;cal-&gt;moyenne(array(1,2,3)),2);</span>
@@ -167,12 +167,12 @@ contenant ce qui suit :</p>
 <span class="x">    }</span>
 <span class="x">}</span>
 <span class="x">?&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><strong><a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/calculs.php" title="télécharger les sources">calculs.php</a></strong>
 quant à lui contient :</p>
-<div class="highlight"><pre><span></span><span class="x">J&#39;ai volontairement éluder la question de la division par zéro, on va le voir plus tard.</span>
+<div class="highlight"><pre><span></span><code><span class="x">J&#39;ai volontairement éluder la question de la division par zéro, on va le voir plus tard.</span>
 <span class="x">le resultat du test donne ceci :</span>
 
 <span class="x">phpunit test.php </span>
@@ -182,7 +182,7 @@ quant à lui contient :</p>
 <span class="x">Time: 0 seconds, Memory: 6.50Mb</span>
 
 <span class="x">OK (2 tests, 3 assertions)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Et "voilà" :)</p>
@@ -203,7 +203,7 @@ its respective language.</p>
 </blockquote>
 <p>voici
 <strong><a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/test.py" title="télécharger les sources">test.py</a></strong></p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">unittest</span>
 
 <span class="kn">from</span> <span class="nn">calculs</span> <span class="kn">import</span> <span class="n">moyenne</span>
 <span class="kn">from</span> <span class="nn">calculs</span> <span class="kn">import</span> <span class="n">division</span>
@@ -219,12 +219,12 @@ its respective language.</p>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et
 <strong><a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/calculs.py" title="télécharger les sources">calculs.py</a></strong></p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
@@ -234,28 +234,28 @@ its respective language.</p>
 
 <span class="k">def</span> <span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>ce qui donne un fois lancé :</p>
-<div class="highlight"><pre><span></span>python test.py 
+<div class="highlight"><pre><span></span><code>python test.py 
 ..
 ----------------------------------------------------------------------
 Ran <span class="m">2</span> tests in <span class="m">0</span>.000s
 
 OK
-</pre></div>
+</code></pre></div>
 
 
 <p>Quant à la division par Zéro volontairement omise voici en Python
 comment on la gère et la teste :</p>
-<div class="highlight"><pre><span></span><span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="o">...</span><span class="p">]</span>
 <span class="k">class</span> <span class="nc">CalculsTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>   
 <span class="p">[</span><span class="o">...</span><span class="p">]</span>
     <span class="k">def</span> <span class="nf">test_division</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="n">division</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">ZeroDivisionError</span><span class="p">,</span> <span class="n">division</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Pour PHPUnit, on n'a semble-t-il toujours rien en magasin qui permette
@@ -274,7 +274,7 @@ code source à la recherche de texte ressemblant à un session python et
 une fois trouvé, exécutera justement la session python.</p>
 <p>Exemple :
 <a href="https://raw.github.com/foxmask/de_php_a_python/les_tests_unitaires/mynameis.py" title="télécharger les sources">mynameis.py</a></p>
-<div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">&gt;&gt;&gt; my_name_is(&quot;foxmask&quot;)</span>
 <span class="sd">&#39;foxmask&#39;</span>
 <span class="sd">&quot;&quot;&quot;</span>
@@ -284,18 +284,18 @@ une fois trouvé, exécutera justement la session python.</p>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">doctest</span>
     <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>pour tester on fera :</p>
-<div class="highlight"><pre><span></span>$ python mynameis.py
+<div class="highlight"><pre><span></span><code>$ python mynameis.py
 $
-</pre></div>
+</code></pre></div>
 
 
 <p>rien s'affiche, donc pas d'erreur - bon voyons le mode verbose quand
 même puisqu'on est curieux :</p>
-<div class="highlight"><pre><span></span>python mynameis.py  -v
+<div class="highlight"><pre><span></span><code>python mynameis.py  -v
 Trying:
     my_name_is<span class="o">(</span><span class="s2">&quot;foxmask&quot;</span><span class="o">)</span>
 Expecting:
@@ -308,7 +308,7 @@ ok
 <span class="m">1</span> tests in <span class="m">2</span> items.
 <span class="m">1</span> passed and <span class="m">0</span> failed.
 Test passed.
-</pre></div>
+</code></pre></div>
 
 
 <p>Vous pourriez vous demander pourquoi faire 2 outils pour la même chose
@@ -381,23 +381,23 @@ github</a>;)</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -411,7 +411,7 @@ github</a>;)</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -420,7 +420,7 @@ github</a>;)</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -438,7 +438,7 @@ github</a>;)</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -490,7 +490,7 @@ github</a>;)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

@@ -42,7 +42,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -147,7 +147,7 @@ feront à l'aide de zones  </p>
 <p>Donc pour cela je défini un contrôleur "modules" avec une action "index"
 par défaut :</p>
 <p><strong>le contrôleur</strong></p>
-<div class="highlight"><pre><span></span><span class="x">class modulesCtrl extends jController {</span>
+<div class="highlight"><pre><span></span><code><span class="x">class modulesCtrl extends jController {</span>
 <span class="x"> </span>
 <span class="x">function index() {</span>
 <span class="x">$rep = $this-&gt;getResponse(&#39;html&#39;);</span>
@@ -156,12 +156,12 @@ par défaut :</p>
 <span class="x">return $rep;</span>
 <span class="x">}</span>
 <span class="x">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>la ligne intéressante ici est :</p>
-<div class="highlight"><pre><span></span><span class="x">$tpl-&gt;assign(&#39;modules&#39;,jEvent::notify(&#39;HfnuAboutModule&#39;)-&gt;getResponse());</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="x">$tpl-&gt;assign(&#39;modules&#39;,jEvent::notify(&#39;HfnuAboutModule&#39;)-&gt;getResponse());</span>
+</code></pre></div>
 
 
 <p>cette ligne fait 3 choses en même temps :</p>
@@ -172,12 +172,12 @@ par défaut :</p>
 </ol>
 <p>la ligne suivante indique à Jelix, le nom du template "module", qui
 affichera les données</p>
-<div class="highlight"><pre><span></span><span class="x">$rep-&gt;body-&gt;assign(&#39;MAIN&#39;,$tpl-&gt;fetch(&#39;modules&#39;));</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="x">$rep-&gt;body-&gt;assign(&#39;MAIN&#39;,$tpl-&gt;fetch(&#39;modules&#39;));</span>
+</code></pre></div>
 
 
 <p><strong>le template</strong></p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Liste des modules <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Liste des modules <span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 {if count($modules)}
 {assign $count = count($modules)}
 {for $i=0; $i<span class="err">&lt;</span>$count;$i++}
@@ -188,7 +188,7 @@ affichera les données</p>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 {/for}
 {/if}
-</pre></div>
+</code></pre></div>
 
 
 <p>Bon ok on visualise un peu ce qui va se passer "à la fin" mais comment
@@ -202,23 +202,23 @@ définir un listener comme suite en 2 temps :</p>
 <li>définition du listener lui-même.</li>
 </ol>
 <p><strong>fichier events.xml</strong></p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</span>
 <span class="nt">&lt;events</span> <span class="na">xmlns=</span><span class="s">&quot;http://jelix.org/ns/events/1.0&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;listener</span> <span class="na">name=</span><span class="s">&quot;hfnuadmin&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;HfnuAboutModule&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/listener&gt;</span>   <span class="nt">&lt;/events&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>On retrouve bien ici le nom de l'évènement <code>HfnuAboutModule</code> auquel le
 listener <code>hfnuadmin</code> va se charger de répondre</p>
 <p><strong>le listener</strong></p>
-<div class="highlight"><pre><span></span><span class="x">class hfnuadminListener extends jEventListener{</span>
+<div class="highlight"><pre><span></span><code><span class="x">class hfnuadminListener extends jEventListener{</span>
 <span class="x"> </span>
 <span class="x">function onHfnuAboutModule ($event) {</span>
 <span class="x">$event-&gt;add( jZone::get(&#39;hfnuadmin~about&#39;,array(&#39;modulename&#39;=&gt;&#39;hfnuadmin&#39;)) );</span>
 <span class="x">}   }</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>lorsque <code>HfnuAboutModule</code> est déclenché, alors <code>onHfnuAboutModule</code> entre
@@ -229,7 +229,7 @@ précédants
 articles</a>)
 nommée "about"</p>
 <p><strong>la zone</strong></p>
-<div class="highlight"><pre><span></span><span class="x">class aboutZone extends jZone {</span>
+<div class="highlight"><pre><span></span><code><span class="x">class aboutZone extends jZone {</span>
 <span class="x">protected $_tplname=&#39;zone.about&#39;;</span>
 <span class="x"> </span>
 <span class="x">protected function _prepareTpl(){</span>
@@ -239,13 +239,13 @@ nommée "about"</p>
 <span class="x">jClasses::inc(&#39;havefnubb~modulexml&#39;);</span>
 <span class="x">$moduleInfo = modulexml::parse($moduleName);                 $this-&gt;_tpl-&gt;assign(&#39;moduleInfo&#39;,$moduleInfo);             }</span>
 <span class="x">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>notre zone ici récupère le paramètre du nom du module, puis parse le
 fichier module.xml et affecte le résultat au template zone.about</p>
 <p><strong>le template</strong></p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{$moduleInfo[&#39;name&#39;]}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{$moduleInfo[&#39;name&#39;]}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.version@} :<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> {$moduleInfo[&#39;version&#39;]} ({@hfnuadmin~hfnuabout.about.date.create@} {$moduleInfo[&#39;dateCreate&#39;]})<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.label@} :<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> {$moduleInfo[&#39;label&#39;]|escxml}<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
@@ -258,91 +258,91 @@ fichier module.xml et affecte le résultat au template zone.about</p>
 {/foreach}
 <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.links@}<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;&lt;</span><span class="nt">dd</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{$moduleInfo[&#39;homepageURL&#39;]}&quot;</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.homepageURL@}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> - <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{$moduleInfo[&#39;updateURL&#39;]}&quot;</span><span class="p">&gt;</span>{@hfnuadmin~hfnuabout.about.updateURL@}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Résultat :</p>
 <p>Liste des modules</p>
 <p>News!</p>
 <p>Version :</p>
-<div class="highlight"><pre><span></span>   stable 1.1.2 (du 2008-12-16)
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   stable 1.1.2 (du 2008-12-16)</span>
+</code></pre></div>
 
 
 <p>Libellé :</p>
-<div class="highlight"><pre><span></span>   <span class="k">Module</span> <span class="nn">de</span> <span class="n">gestion</span> <span class="n">de</span> <span class="n">nouvelles</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code>   <span class="k">Module</span> <span class="nn">de</span> <span class="n">gestion</span> <span class="n">de</span> <span class="n">nouvelles</span>
+</code></pre></div>
 
 
 <p>Description :</p>
-<div class="highlight"><pre><span></span>   Ce module permet de gerer les nouvelles de son site web
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   Ce module permet de gerer les nouvelles de son site web</span>
+</code></pre></div>
 
 
 <p>Notes :</p>
-<div class="highlight"><pre><span></span>   N/A
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   N/A</span>
+</code></pre></div>
 
 
 <p>License :</p>
-<div class="highlight"><pre><span></span>   GNU General Public Licence
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   GNU General Public Licence</span>
+</code></pre></div>
 
 
 <p>Copyright :</p>
-<div class="highlight"><pre><span></span>   2008 FoxMaSk
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   2008 FoxMaSk</span>
+</code></pre></div>
 
 
 <p>Auteurs :</p>
-<div class="highlight"><pre><span></span>   FoxMaSk
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   FoxMaSk</span>
+</code></pre></div>
 
 
 <p>Liens :</p>
-<div class="highlight"><pre><span></span>   Page d&#39;accueil du module - Lien mise à jour
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   Page d&#39;accueil du module - Lien mise à jour</span>
+</code></pre></div>
 
 
 <p>Wiki</p>
 <p>Version :</p>
-<div class="highlight"><pre><span></span>   stable 1.0.2 (du 2009-01-25)
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   stable 1.0.2 (du 2009-01-25)</span>
+</code></pre></div>
 
 
 <p>Libellé :</p>
-<div class="highlight"><pre><span></span>   Wiki
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   Wiki</span>
+</code></pre></div>
 
 
 <p>Description :</p>
-<div class="highlight"><pre><span></span>   Wiki maison pour la documentation du site web
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   Wiki maison pour la documentation du site web</span>
+</code></pre></div>
 
 
 <p>Notes :</p>
-<div class="highlight"><pre><span></span>   N/A
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   N/A</span>
+</code></pre></div>
 
 
 <p>License :</p>
-<div class="highlight"><pre><span></span>   GNU General Public Licence
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   GNU General Public Licence</span>
+</code></pre></div>
 
 
 <p>Copyright :</p>
-<div class="highlight"><pre><span></span>   2008 FoxMaSk
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   2008 FoxMaSk</span>
+</code></pre></div>
 
 
 <p>Auteurs :</p>
-<div class="highlight"><pre><span></span>   FoxMaSk
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   FoxMaSk</span>
+</code></pre></div>
 
 
 <p>Liens</p>
-<div class="highlight"><pre><span></span>   Page d&#39;accueil du module - Lien mise à jour
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">   Page d&#39;accueil du module - Lien mise à jour</span>
+</code></pre></div>
 
 
 <p>PS : ici je n'ai pas détaillé tous les events.xml des 3 modules ni les 3
@@ -414,23 +414,23 @@ module</a></p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -444,7 +444,7 @@ module</a></p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -453,7 +453,7 @@ module</a></p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -471,7 +471,7 @@ module</a></p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -523,7 +523,7 @@ module</a></p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

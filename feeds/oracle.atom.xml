@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - oracle</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/oracle.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2014-10-17T08:36:00+02:00</updated><entry><title>CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</title><link href="https://foxmask.net/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/" rel="alternate"></link><published>2014-10-17T08:36:00+02:00</published><updated>2014-10-17T08:36:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-10-17:/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/</id><summary type="html">&lt;p&gt;Quand on a besoin de faire un &lt;code&gt;yum update&lt;/code&gt; suivi d'un
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - oracle</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/oracle.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2014-10-17T08:36:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</title><link href="https://foxmask.net/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/" rel="alternate"></link><published>2014-10-17T08:36:00+02:00</published><updated>2014-10-17T08:36:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-10-17:/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/</id><summary type="html">&lt;p&gt;Quand on a besoin de faire un &lt;code&gt;yum update&lt;/code&gt; suivi d'un
 &lt;code&gt;yum install foobar&lt;/code&gt; il peut arriver que sur votre CentOS vous ayez un
 problème avec vos packages Oracle :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
@@ -24,7 +24,7 @@ GPG key retrieval failed: &lt;span class="o"&gt;[&lt;/span&gt;Errno &lt;span cla
 
 
 &lt;p&gt;et au yum install suivant tout glisse.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://community.oracle.com/thread/3539099?start=0&amp;amp;tstart=0"&gt;source&lt;/a&gt;&lt;/p&gt;</content><category term="centos"></category><category term="oracle"></category></entry><entry><title>Installation Oracle 10G en mode spéléo</title><link href="https://foxmask.net/post/2014/10/09/installation-oracle-10g-gui/" rel="alternate"></link><published>2014-10-09T10:24:00+02:00</published><updated>2014-10-09T10:24:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-10-09:/post/2014/10/09/installation-oracle-10g-gui/</id><summary type="html">&lt;p&gt;Bon, j'avais un wiki, au temps jadis, que j'avais basardé parce que je
+&lt;p&gt;&lt;a href="https://community.oracle.com/thread/3539099?start=0&amp;amp;tstart=0"&gt;source&lt;/a&gt;&lt;/p&gt;</content><category term="Techno"></category><category term="centos"></category><category term="oracle"></category></entry><entry><title>Installation Oracle 10G en mode spéléo</title><link href="https://foxmask.net/post/2014/10/09/installation-oracle-10g-gui/" rel="alternate"></link><published>2014-10-09T10:24:00+02:00</published><updated>2014-10-09T10:24:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-10-09:/post/2014/10/09/installation-oracle-10g-gui/</id><summary type="html">&lt;p&gt;Bon, j'avais un wiki, au temps jadis, que j'avais basardé parce que je
 m'étais dit "Oracle 10 n'est plus supporté, je n'aurai plus à me faire
 suer pour l'installer" ... Et c'est toujours dans ces cas de figure
 qu'on se maudit quand le moment poindre le bout du nez.&lt;/p&gt;
@@ -184,7 +184,7 @@ nième noeud à mon mouchoir pour pouvoir lancer le GUI :P&lt;/p&gt;
 (&lt;code&gt;-reponseFile /full/path/to/responsefile.rsp&lt;/code&gt;) contenant déjà tout le
 paramétrage qui va bien. Mais souvent les fichiers de réponse ne sont
 pas à jour. Ne serait-ce que la structure du fichier d'une version
-mineure à l'autre de Oracle. Je l'ai juste citée en cas de besoin ;)&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Importer un dump Oracle sans l'exporter physiquement avant</title><link href="https://foxmask.net/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/" rel="alternate"></link><published>2014-07-02T15:13:00+02:00</published><updated>2014-07-02T15:13:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-07-02:/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/</id><summary type="html">&lt;p&gt;Donc s'il vous arrive (comme bibi) d'être short en place disque pour
+mineure à l'autre de Oracle. Je l'ai juste citée en cas de besoin ;)&lt;/p&gt;</content><category term="Techno"></category><category term="oracle"></category></entry><entry><title>Importer un dump Oracle sans l'exporter physiquement avant</title><link href="https://foxmask.net/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/" rel="alternate"></link><published>2014-07-02T15:13:00+02:00</published><updated>2014-07-02T15:13:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2014-07-02:/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/</id><summary type="html">&lt;p&gt;Donc s'il vous arrive (comme bibi) d'être short en place disque pour
 faire vos backups oracle pour ensuite importer le(s) schéma(s), une
 solution ultime subsiste, quand même, pour nous autre "pauvres" petits
 "exportateurs" de données :P&lt;/p&gt;
@@ -234,7 +234,7 @@ Si c'est le cas, ensuite on peut faire :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;et roule ma poule&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>SQL Full Table Scan vs Index - The Usual Suspects</title><link href="https://foxmask.net/post/2013/11/15/sql-full-table-scan-vs-index/" rel="alternate"></link><published>2013-11-15T17:49:00+01:00</published><updated>2013-11-15T17:49:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-11-15:/post/2013/11/15/sql-full-table-scan-vs-index/</id><summary type="html">&lt;p&gt;Hello,&lt;br&gt;
+&lt;p&gt;et roule ma poule&lt;/p&gt;</content><category term="Techno"></category><category term="oracle"></category></entry><entry><title>SQL Full Table Scan vs Index - The Usual Suspects</title><link href="https://foxmask.net/post/2013/11/15/sql-full-table-scan-vs-index/" rel="alternate"></link><published>2013-11-15T17:49:00+01:00</published><updated>2013-11-15T17:49:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-11-15:/post/2013/11/15/sql-full-table-scan-vs-index/</id><summary type="html">&lt;p&gt;Hello,&lt;br&gt;
 Voici un condensé sur ma semaine de formation au Tuning Oracle ;)&lt;br&gt;
 Un condensé de conneries à proscrire pour avoir un RDBMS qui marche
 mieux du point de vue du dev, tout du moins, parce que je n'irai pas
@@ -327,7 +327,7 @@ peut s'avérer monstrueux si chacun code comme il le veut dans son coin
 sa requête SQL.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt; : alors oui j'ai parlé de Oracle mais coté PostGreSQL et
 vraie RDBMS opensource, il y a fort à parier que de tels comportements
-se produisent au détriment de l'application bien sûr.&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle Migrer un schéma ISO en UTF8</title><link href="https://foxmask.net/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/" rel="alternate"></link><published>2013-03-14T10:00:00+01:00</published><updated>2013-03-14T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-03-14:/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/</id><summary type="html">&lt;p&gt;Vous avez sous la main un dump en ISO et vous souhaitez l'importer en
+se produisent au détriment de l'application bien sûr.&lt;/p&gt;</content><category term="Techno"></category><category term="oracle"></category></entry><entry><title>Oracle Migrer un schéma ISO en UTF8</title><link href="https://foxmask.net/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/" rel="alternate"></link><published>2013-03-14T10:00:00+01:00</published><updated>2013-03-14T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-03-14:/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/</id><summary type="html">&lt;p&gt;Vous avez sous la main un dump en ISO et vous souhaitez l'importer en
 UTF8, tout un programme !&lt;/p&gt;
 &lt;p&gt;La marche à suivre est la suivante :&lt;/p&gt;
 &lt;ol&gt;
@@ -377,7 +377,7 @@ nohup exp &lt;span class="nv"&gt;userid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/
 &lt;p&gt;l'important ici est la variable d'environnement NLS_LANG à positionner
 à AMERICAN_AMERICA.UTF8&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Import du dump en UTF-8&lt;/strong&gt;&lt;br&gt;
-idem ci dessus, c'est simple à souhait ;)&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle et Opatch</title><link href="https://foxmask.net/post/2013/03/07/oracle-et-opatch/" rel="alternate"></link><published>2013-03-07T10:00:00+01:00</published><updated>2013-03-07T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-03-07:/post/2013/03/07/oracle-et-opatch/</id><summary type="html">&lt;p&gt;A une époque, patcher Oracle était un sinécure :P&lt;/p&gt;
+idem ci dessus, c'est simple à souhait ;)&lt;/p&gt;</content><category term="Techno"></category><category term="oracle"></category></entry><entry><title>Oracle et Opatch</title><link href="https://foxmask.net/post/2013/03/07/oracle-et-opatch/" rel="alternate"></link><published>2013-03-07T10:00:00+01:00</published><updated>2013-03-07T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-03-07:/post/2013/03/07/oracle-et-opatch/</id><summary type="html">&lt;p&gt;A une époque, patcher Oracle était un sinécure :P&lt;/p&gt;
 &lt;p&gt;Depuis avec OPatch c'est on ne peut plus simple !&lt;/p&gt;
 &lt;p&gt;On récupère un patch chez Oracle, on le décompresse, on tape opatch
 apply et hop !&lt;/p&gt;
@@ -456,7 +456,7 @@ OPatch succeeded.
 
 &lt;p&gt;Une fois fait, relancer la base Oracle que vous aurez bien évidemment
 stoppée avant de commencer, je ne vous l'avais pas dit ? ba il faut tout
-lire avant de commencer ;)&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle Sauvegarder avec Impdp / Expdp et le Parfile</title><link href="https://foxmask.net/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/" rel="alternate"></link><published>2013-02-28T10:00:00+01:00</published><updated>2013-02-28T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-28:/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/</id><summary type="html">&lt;p&gt;&lt;a href="/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/" title="Oracle des expdp et impdp en réseau, si c’est possible"&gt;Dans un billet précédent j'avais abordé ces 2 outils pour se faire des
+lire avant de commencer ;)&lt;/p&gt;</content><category term="Techno"></category><category term="oracle"></category></entry><entry><title>Oracle Sauvegarder avec Impdp / Expdp et le Parfile</title><link href="https://foxmask.net/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/" rel="alternate"></link><published>2013-02-28T10:00:00+01:00</published><updated>2013-02-28T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-28:/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/</id><summary type="html">&lt;p&gt;&lt;a href="/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/" title="Oracle des expdp et impdp en réseau, si c’est possible"&gt;Dans un billet précédent j'avais abordé ces 2 outils pour se faire des
 backups "en
 réseau"&lt;/a&gt;,
 voici à présent plus en détail, le fonctionnement des ces 2 outils.&lt;/p&gt;
@@ -546,7 +546,7 @@ morceaux etant la valeur donnée à l'option parallel, exemple :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;That's all folk ;)&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle Trouver les tablespaces utilisés par un schéma</title><link href="https://foxmask.net/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/" rel="alternate"></link><published>2013-02-14T10:00:00+01:00</published><updated>2013-02-14T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-14:/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/</id><summary type="html">&lt;p&gt;Tout comme Roméo a sa Juliette, une base Oracle possède son tablespace
+&lt;p&gt;That's all folk ;)&lt;/p&gt;</content><category term="Techno"></category><category term="oracle"></category></entry><entry><title>Oracle Trouver les tablespaces utilisés par un schéma</title><link href="https://foxmask.net/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/" rel="alternate"></link><published>2013-02-14T10:00:00+01:00</published><updated>2013-02-14T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-02-14:/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/</id><summary type="html">&lt;p&gt;Tout comme Roméo a sa Juliette, une base Oracle possède son tablespace
 ;)&lt;/p&gt;
 &lt;p&gt;Donc pour trouver ce(s) dernier(s) tout se résume à interroger la table
 dba_segment dont le tablespace_name ne contient aucun de ceux des TB
@@ -577,7 +577,7 @@ dba_segment dont le tablespace_name ne contient aucun de ceux des TB
 
 &lt;p&gt;Ceci permet ensuite d'interroger dba_data_files pour trouver les noms
 de fichiers qui constituent le Tablespace cherché pour l'agrandir par
-exemple.&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle Identifications des Locks, Process, Sessions en cours</title><link href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/" rel="alternate"></link><published>2013-01-17T10:00:00+01:00</published><updated>2013-01-17T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-01-17:/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/</id><summary type="html">&lt;p&gt;Voici une requete SQL dans l'arsenal du DBA, nommons la &lt;strong&gt;locks.sql&lt;/strong&gt;,
+exemple.&lt;/p&gt;</content><category term="Techno"></category><category term="oracle"></category></entry><entry><title>Oracle Identifications des Locks, Process, Sessions en cours</title><link href="https://foxmask.net/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/" rel="alternate"></link><published>2013-01-17T10:00:00+01:00</published><updated>2013-01-17T10:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-01-17:/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/</id><summary type="html">&lt;p&gt;Voici une requete SQL dans l'arsenal du DBA, nommons la &lt;strong&gt;locks.sql&lt;/strong&gt;,
 permettant d'identifier les locks en cours sur un schema oracle :&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;SELECT&lt;/span&gt;   &lt;span class="cm"&gt;/*+ choose */&lt;/span&gt;
           &lt;span class="n"&gt;bs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Blocking User&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
@@ -765,7 +765,7 @@ permettant d'identifier les locks en cours sur un schema oracle :&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;Voilà, ça sera tout pour aujourd'hui&lt;/p&gt;</content><category term="oracle"></category></entry><entry><title>Oracle des expdp et impdp en réseau, si c'est possible</title><link href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/" rel="alternate"></link><published>2013-01-16T16:49:00+01:00</published><updated>2013-01-16T16:49:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-01-16:/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/</id><summary type="html">&lt;p&gt;A l'heure actuelle, la version d'Oracle est la 11G R2 (à tes souhaits
+&lt;p&gt;Voilà, ça sera tout pour aujourd'hui&lt;/p&gt;</content><category term="Techno"></category><category term="oracle"></category></entry><entry><title>Oracle des expdp et impdp en réseau, si c'est possible</title><link href="https://foxmask.net/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/" rel="alternate"></link><published>2013-01-16T16:49:00+01:00</published><updated>2013-01-16T16:49:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2013-01-16:/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/</id><summary type="html">&lt;p&gt;A l'heure actuelle, la version d'Oracle est la 11G R2 (à tes souhaits
 pourrait rétorqué 6P0 à R2D2 :P), et avec cette version il est de
 coutume de ne plus employer pour ses sauvegardes/gestions de dumps, que
 le fameux duo expdp et impdp pour produire ce qu'on appelle des …&lt;/p&gt;</summary><content type="html">&lt;p&gt;A l'heure actuelle, la version d'Oracle est la 11G R2 (à tes souhaits
@@ -884,4 +884,4 @@ course)&lt;/p&gt;
 
 
 &lt;p&gt;et là au joie, le dump partira clopin-clopant sur le NAS bouffer
-l'espace disque ailleurs ;)&lt;/p&gt;</content><category term="oracle"></category></entry></feed>
+l'espace disque ailleurs ;)&lt;/p&gt;</content><category term="Techno"></category><category term="oracle"></category></entry></feed>

@@ -45,7 +45,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -142,7 +142,7 @@ So the moment comes when we have to use <a href="https://docs.python.org/dev/lib
 <p>In the following text, you should spot some evidence related to django ;)</p>
 <h1>Function to mock</h1>
 <p>here is the piece of code I will "mock" :</p>
-<div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">save_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trigger_id</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">save_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">trigger_id</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            let&#39;s save the data</span>
 
@@ -153,32 +153,32 @@ So the moment comes when we have to use <a href="https://docs.python.org/dev/lib
 <span class="sd">            :return: the status of the save statement</span>
 <span class="sd">            :rtype: boolean</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">status</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="c1"># set the title and content of the data</span>
         <span class="n">title</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ServiceTwitter</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">save_data</span><span class="p">(</span>
             <span class="n">trigger_id</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 
-            <span class="n">content</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;{title} {link}&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{title}</span><span class="s2"> </span><span class="si">{link}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
                 <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">link</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">))</span>
 
             <span class="n">content</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_tags</span><span class="p">(</span><span class="n">trigger_id</span><span class="p">)</span>
 
             <span class="k">try</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">twitter_api</span><span class="o">.</span><span class="n">update_status</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
-                <span class="n">status</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="kc">True</span>
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">inst</span><span class="p">:</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;Twitter ERR {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">inst</span><span class="p">))</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;Twitter ERR </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">inst</span><span class="p">))</span>
                 <span class="n">update_result</span><span class="p">(</span><span class="n">trigger_id</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">inst</span><span class="p">)</span>
-                <span class="n">status</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="n">status</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">return</span> <span class="n">status</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2>Mock a complet function</h2>
 <p>the piece of unittest with the mock applied to <code>save_data</code> :</p>
-<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>
 
     <span class="k">def</span> <span class="nf">test_save_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">token</span>
@@ -196,38 +196,38 @@ So the moment comes when we have to use <a href="https://docs.python.org/dev/lib
             <span class="n">se</span> <span class="o">=</span> <span class="n">ServiceTwitter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">token</span><span class="p">)</span>
             <span class="n">se</span><span class="o">.</span><span class="n">save_data</span><span class="p">(</span><span class="n">trigger_id</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
         <span class="n">mock_save_data</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="n">trigger_id</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>then the testing show us </p>
-<div class="highlight"><pre><span></span>coverage run --source=&#39;.&#39; manage.py test -v2
-...
-test_save_data (th_twitter.tests.ServiceTwitterTest) ... ok
-...
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">coverage run --source=&#39;.&#39; manage.py test -v2</span>
+<span class="err">...</span>
+<span class="err">test_save_data (th_twitter.tests.ServiceTwitterTest) ... ok</span>
+<span class="err">...</span>
+</code></pre></div>
 
 
 <p>Fine !</p>
 <p>But the coverage report (in html) shows us </p>
 <p><img alt="Twitter mocking save_data" src="/static/twitter_mock_save_data.png"></p>
 <p>and the % </p>
-<div class="highlight"><pre><span></span>[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter
-th_twitter/__init__.py                                2      0   100%   
-th_twitter/forms.py                                  12      0   100%   
-th_twitter/models.py                                 21      0   100%   
-th_twitter/my_twitter.py                            117     56    52%   119-121, 138-173, 190-209, 219-231, 241-250, 256, 273-278
-th_twitter/tests.py                                  80      0   100%   
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter</span>
+<span class="err">th_twitter/__init__.py                                2      0   100%   </span>
+<span class="err">th_twitter/forms.py                                  12      0   100%   </span>
+<span class="err">th_twitter/models.py                                 21      0   100%   </span>
+<span class="err">th_twitter/my_twitter.py                            117     56    52%   119-121, 138-173, 190-209, 219-231, 241-250, 256, 273-278</span>
+<span class="err">th_twitter/tests.py                                  80      0   100%   </span>
+</code></pre></div>
 
 
 <h2>Mock one FunctionB in a FunctionA</h2>
 <p>It's fine, but in our quest of the perfect tests and to be sharper, we would like to test the content of <code>save_data</code> and only mock the function that makes the call to the Twitter API (named Twython).</p>
 <p>To do so we can use the manager like previously, or a decorator. </p>
 <p>Just have a look :</p>
-<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>            
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>            
 
 
-    <span class="nd">@patch.object</span><span class="p">(</span><span class="n">Twython</span><span class="p">,</span> <span class="s1">&#39;update_status&#39;</span><span class="p">)</span>
+    <span class="nd">@patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Twython</span><span class="p">,</span> <span class="s1">&#39;update_status&#39;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">test_save_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock1</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_twitter</span><span class="p">()</span>
         <span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">token</span>
@@ -244,28 +244,28 @@ th_twitter/tests.py                                  80      0   100%
         <span class="n">se</span> <span class="o">=</span> <span class="n">ServiceTwitter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">token</span><span class="p">)</span>
         <span class="n">se</span><span class="o">.</span><span class="n">save_data</span><span class="p">(</span><span class="n">trigger_id</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
         <span class="n">mock1</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>And this time the coverage report show us </p>
 <p><img alt="Twitter mocking save_data" src="/static/twitter_mock_save_data2.png"></p>
 <p>and the % </p>
-<div class="highlight"><pre><span></span>[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter
-th_twitter/__init__.py                                2      0   100%   
-th_twitter/forms.py                                  12      0   100%   
-th_twitter/models.py                                 21      0   100%   
-th_twitter/my_twitter.py                            117     40    66%   119-121, 138-173, 205-208, 241-250, 256, 273-278
-th_twitter/tests.py                                  80      0   100%   
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">[foxmask:~/DjangoVirtualEnv/django-trigger-happy/django-th] [django-trigger-happy] coverage report -m |grep twitter</span>
+<span class="err">th_twitter/__init__.py                                2      0   100%   </span>
+<span class="err">th_twitter/forms.py                                  12      0   100%   </span>
+<span class="err">th_twitter/models.py                                 21      0   100%   </span>
+<span class="err">th_twitter/my_twitter.py                            117     40    66%   119-121, 138-173, 205-208, 241-250, 256, 273-278</span>
+<span class="err">th_twitter/tests.py                                  80      0   100%   </span>
+</code></pre></div>
 
 
 <h2>Mock (2 or more functions) FunctionB and FunctionC in a FunctionA</h2>
 <p>Let's suppose you want to mock several functions in <code>save_data</code>, we will do something like this :</p>
-<div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>            
+<div class="highlight"><pre><span></span><code>    <span class="kn">from</span> <span class="nn">unittest.mock</span> <span class="kn">import</span> <span class="n">patch</span>            
 
     <span class="c1"># be careful with the order of the decorator </span>
-    <span class="nd">@patch.object</span><span class="p">(</span><span class="n">Twython</span><span class="p">,</span> <span class="s1">&#39;update_status&#39;</span><span class="p">)</span>  <span class="c1"># will go to mock2</span>
-    <span class="nd">@patch.object</span><span class="p">(</span><span class="n">AnotherService</span><span class="p">,</span> <span class="s1">&#39;other_method&#39;</span><span class="p">)</span>  <span class="c1"># will go to mock1</span>
+    <span class="nd">@patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">Twython</span><span class="p">,</span> <span class="s1">&#39;update_status&#39;</span><span class="p">)</span>  <span class="c1"># will go to mock2</span>
+    <span class="nd">@patch</span><span class="o">.</span><span class="n">object</span><span class="p">(</span><span class="n">AnotherService</span><span class="p">,</span> <span class="s1">&#39;other_method&#39;</span><span class="p">)</span>  <span class="c1"># will go to mock1</span>
     <span class="k">def</span> <span class="nf">test_save_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mock1</span><span class="p">,</span> <span class="n">mock2</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_twitter</span><span class="p">()</span>
         <span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">token</span>
@@ -283,7 +283,7 @@ th_twitter/tests.py                                  80      0   100%
         <span class="n">se</span><span class="o">.</span><span class="n">save_data</span><span class="p">(</span><span class="n">trigger_id</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
         <span class="n">mock1</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">()</span>  
         <span class="n">mock2</span><span class="o">.</span><span class="n">assert_called_once_with</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>/!\ Here, be really very carefull with the order of the decorator: </p>
@@ -298,10 +298,10 @@ but if they don't, be sure to set the right parm to the right 'mock'</p>
     <h4>Related Posts:</h4>
     <ul>
         <li><a href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
-        <li><a href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/">Mais vous etes fou ? Hoo Oui !</a></li>
         <li><a href="https://foxmask.net/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
         <li><a href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
+        <li><a href="https://foxmask.net/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/">Fabric, sa var 'env' et nos variables dynamiques !</a></li>
     </ul>
 </section>
     <hr/>
@@ -348,23 +348,23 @@ but if they don't, be sure to set the right parm to the right 'mock'</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -378,7 +378,7 @@ but if they don't, be sure to set the right parm to the right 'mock'</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -387,7 +387,7 @@ but if they don't, be sure to set the right parm to the right 'mock'</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -405,7 +405,7 @@ but if they don't, be sure to set the right parm to the right 'mock'</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -457,7 +457,7 @@ but if they don't, be sure to set the right parm to the right 'mock'</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

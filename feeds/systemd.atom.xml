@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - systemd</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/systemd.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-05-03T14:45:00+02:00</updated><entry><title>Gnome SystemD, Debian 8, *BSD</title><link href="https://foxmask.net/post/2015/05/03/gnome-systemd-debian-8-bsd/" rel="alternate"></link><published>2015-05-03T14:45:00+02:00</published><updated>2015-05-03T14:45:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-03:/post/2015/05/03/gnome-systemd-debian-8-bsd/</id><summary type="html">&lt;p&gt;Il était une fois une distrib que j'utilise depuis plus de 10ans ... et
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - systemd</title><link href="https://foxmask.net/" rel="alternate"></link><link href="https://foxmask.net/feeds/systemd.atom.xml" rel="self"></link><id>https://foxmask.net/</id><updated>2015-05-03T14:45:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Gnome SystemD, Debian 8, *BSD</title><link href="https://foxmask.net/post/2015/05/03/gnome-systemd-debian-8-bsd/" rel="alternate"></link><published>2015-05-03T14:45:00+02:00</published><updated>2015-05-03T14:45:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.net,2015-05-03:/post/2015/05/03/gnome-systemd-debian-8-bsd/</id><summary type="html">&lt;p&gt;Il était une fois une distrib que j'utilise depuis plus de 10ans ... et
 qui, comme elle prend un chemin de traverse qui ne me sied guère, va
 dégager de mes ordinateurs...&lt;/p&gt;
 &lt;p&gt;Comme je ne suis qu'une poussière l'ocean, les dev de debian s'en
@@ -86,4 +86,4 @@ de ne pas se poser de question lors de la mise en prod.&lt;/p&gt;
 &lt;li&gt;BSD est fait pour le desktop ? si oui lequel et avec quel window
     manager périn ?&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;En gros je me pose un tas de questions... et c'est pas fini&lt;/p&gt;</content><category term="bsd"></category><category term="debian"></category><category term="linux"></category><category term="systemd"></category></entry></feed>
+&lt;p&gt;En gros je me pose un tas de questions... et c'est pas fini&lt;/p&gt;</content><category term="Techno"></category><category term="bsd"></category><category term="debian"></category><category term="linux"></category><category term="systemd"></category></entry></feed>

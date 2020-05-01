@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -147,7 +147,7 @@ grosso merdo;) Vivendi qui s'en sert en gere 10x plus ;)</p>
 <p>Ici je n'en extrairai que le nom de l'application/software et l'URL</p>
 <p><strong>de PHP ...</strong><br>
 la version PHP donne ceci avec un coup de DOMXPath :</p>
-<div class="highlight"><pre><span></span><span class="x">Load(&#39;ConfigurationWrapper&#39;);</span>
+<div class="highlight"><pre><span></span><code><span class="x">Load(&#39;ConfigurationWrapper&#39;);</span>
 <span class="x">$xpath  = new DOMXPath($doc);</span>
 
 <span class="x">$app = find_archive($xpath,$envName,&#39;/applicationservers/applicationserver/applications/application&#39;);</span>
@@ -161,20 +161,20 @@ la version PHP donne ceci avec un coup de DOMXPath :</p>
 <span class="x">        echo $entry-&gt;getAttribute(&#39;name&#39;)  . &#39; &#39; . $entry-&gt;getAttribute(&#39;uri&#39;) .&quot;\n&quot;;</span>
 <span class="x">    }</span>
 <span class="x">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>affichera :</p>
-<div class="highlight"><pre><span></span>app1 http://maven.intranet.mycompany.com/repository/my-app1.tar.gz
+<div class="highlight"><pre><span></span><code>app1 http://maven.intranet.mycompany.com/repository/my-app1.tar.gz
 app2 http://maven.intranet.mycompany.com/repository/my-app2.tar.gz
 My Oracle Upgrade http://maven.intranet.mycompany.com/repository/my-oracle-upgrade.tar.gz
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>... à Python</strong><br>
 Le même process en Python avec cette fois ci le <a href="http://lxml.de/tutorial.html">module
 LXML</a> donne ceci :</p>
-<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
 <span class="kn">from</span> <span class="nn">lxml.etree</span> <span class="kn">import</span> <span class="n">Element</span>  
 
@@ -186,8 +186,8 @@ LXML</a> donne ceci :</p>
     <span class="n">my_nodes</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//environments/environment[@name=&quot;&#39;</span><span class="o">+</span><span class="n">env_name</span><span class="o">+</span><span class="s1">&#39;&quot;]&#39;</span><span class="o">+</span><span class="n">xpath</span><span class="p">);</span>
 
     <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">my_nodes</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;uri&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">print</span> <span class="s2">&quot;{name} {uri}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">),</span><span class="n">uri</span><span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;uri&#39;</span><span class="p">,</span><span class="bp">None</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;uri&#39;</span><span class="p">,</span><span class="kc">None</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="s2">&quot;</span><span class="si">{name}</span><span class="s2"> </span><span class="si">{uri}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span><span class="n">uri</span><span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;uri&#39;</span><span class="p">,</span><span class="kc">None</span><span class="p">))</span>
 
 <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">autodeploy_filename</span><span class="p">)</span>
 
@@ -196,14 +196,14 @@ LXML</a> donne ceci :</p>
 
 <span class="c1">#get the name of the Software</span>
 <span class="n">find_archive</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="n">tree</span><span class="p">,</span><span class="s1">&#39;/softwares/software&#39;</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>affichera :</p>
-<div class="highlight"><pre><span></span>app1 http://maven.intranet.mycompany.com/repository/my-app1.tar.gz
+<div class="highlight"><pre><span></span><code>app1 http://maven.intranet.mycompany.com/repository/my-app1.tar.gz
 app2 http://maven.intranet.mycompany.com/repository/my-app2.tar.gz
 My Oracle Upgrade http://maven.intranet.mycompany.com/repository/my-oracle-upgrade.tar.gz
-</pre></div>
+</code></pre></div>
 
 
 <p>Actuellement sur l'intranet j'ai une appli en
@@ -275,23 +275,23 @@ PHP/Python, une histoire de <em>petite souris</em> mais je n'en dirais pas plus
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -305,7 +305,7 @@ PHP/Python, une histoire de <em>petite souris</em> mais je n'en dirais pas plus
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -314,7 +314,7 @@ PHP/Python, une histoire de <em>petite souris</em> mais je n'en dirais pas plus
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -332,7 +332,7 @@ PHP/Python, une histoire de <em>petite souris</em> mais je n'en dirais pas plus
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -384,7 +384,7 @@ PHP/Python, une histoire de <em>petite souris</em> mais je n'en dirais pas plus
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

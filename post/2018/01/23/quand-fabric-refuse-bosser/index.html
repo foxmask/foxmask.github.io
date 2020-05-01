@@ -43,7 +43,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -133,7 +133,7 @@ Le Free de la Passion            </a>
                 <p>Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une <code>command</code> (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...</p>
 <p>Je pose ça là vite fait pour qui rencontrerait le problème à son tour</p>
 <p>J'ai un script, le plus con du monde qui execute la commande id sur le serveur de mon choix, comme suit :</p>
-<div class="highlight"><pre><span></span><span class="c1"># coding: utf-8</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
 <span class="kn">from</span> <span class="nn">fabric.api</span> <span class="kn">import</span> <span class="n">env</span><span class="p">,</span> <span class="n">local</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">settings</span>
 <span class="kn">from</span> <span class="nn">fabric.colors</span> <span class="kn">import</span> <span class="n">blue</span><span class="p">,</span> <span class="n">yellow</span>
 
@@ -142,8 +142,8 @@ Le Free de la Passion            </a>
 
 <span class="k">def</span> <span class="nf">the_log</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">new_f</span><span class="p">(</span><span class="n">server</span><span class="p">):</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;[{0}] {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">blue</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;[</span><span class="si">{0}</span><span class="s2">] </span><span class="si">{1}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">blue</span><span class="p">(</span><span class="n">msg</span><span class="p">))</span>
         <span class="n">f</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">new_f</span>
@@ -153,33 +153,33 @@ Le Free de la Passion            </a>
 <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">server</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This is my main function that will triggers anything&quot;&quot;&quot;</span>
 
-    <span class="k">with</span> <span class="n">settings</span><span class="p">(</span><span class="n">warn_only</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">settings</span><span class="p">(</span><span class="n">warn_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 
         <span class="n">output</span> <span class="o">=</span> <span class="n">local</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">yellow</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">yellow</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
 
         <span class="n">output</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span>
-                     <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-                     <span class="n">combine_stderr</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">blue</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
-</pre></div>
+                     <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                     <span class="n">combine_stderr</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">blue</span><span class="p">(</span><span class="n">output</span><span class="p">))</span>
+</code></pre></div>
 
 
 <p>Quand ce script tourne il fait :</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>foxmask:~/DjangoVirtualEnv/monitoring/monitoring<span class="o">]</span> <span class="o">[</span>monitoring<span class="o">]</span> $ fab main:server<span class="o">=</span>server1 -H server1
+<div class="highlight"><pre><span></span><code><span class="o">[</span>foxmask:~/DjangoVirtualEnv/monitoring/monitoring<span class="o">]</span> <span class="o">[</span>monitoring<span class="o">]</span> $ fab main:server<span class="o">=</span>server1 -H server1
 <span class="o">[</span>server1<span class="o">]</span> Executing task <span class="s1">&#39;main&#39;</span>
 <span class="o">[</span>server1<span class="o">]</span> This is my main <span class="k">function</span> that will triggers anything
 <span class="o">[</span>localhost<span class="o">]</span> local: id
 <span class="nv">uid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>foxmask<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>foxmask<span class="o">)</span> <span class="nv">groupes</span><span class="o">=</span><span class="m">1000</span><span class="o">(</span>foxmask<span class="o">)</span>,24<span class="o">(</span>cdrom<span class="o">)</span>,25<span class="o">(</span>floppy<span class="o">)</span>,29<span class="o">(</span>audio<span class="o">)</span>,30<span class="o">(</span>dip<span class="o">)</span>,44<span class="o">(</span>video<span class="o">)</span>,46<span class="o">(</span>plugdev<span class="o">)</span>,100<span class="o">(</span>users<span class="o">)</span>,103<span class="o">(</span>scanner<span class="o">)</span>,112<span class="o">(</span>netdev<span class="o">)</span>
 
 <span class="o">[</span>server1<span class="o">]</span> run: id
-</pre></div>
+</code></pre></div>
 
 
 <p>on voit le resultat des 2 commandes... la seconde ne fonctionne pas et pourtant un ssh passe lui</p>
-<div class="highlight"><pre><span></span>ssh root@server1 id
+<div class="highlight"><pre><span></span><code>ssh root@server1 id
 <span class="nv">uid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span> <span class="nv">groupes</span><span class="o">=</span><span class="m">0</span><span class="o">(</span>root<span class="o">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>après avoir écrèmé la toile à la recherche de config SSH que j'aurai raté, je testé le meme script sur un serveur. 
@@ -191,7 +191,7 @@ Je mets à jour OpenSSH sur la Redhat mais j'arrive tout juste à la 5.3.13.</p>
 Et je tombe sur cette page <a href="http://www.fabfile.org/troubleshooting.html?highlight=ssh">http://www.fabfile.org/troubleshooting.html?highlight=ssh</a></p>
 <p>Où je fais un bon copier coller du code sous le paragraphe "Enable Paramiko-level debug logging"
 Et là à l'execution ca donne :</p>
-<div class="highlight"><pre><span></span><span class="o">[</span>foxmask:~/DjangoVirtualEnv/monitoring/monitoring<span class="o">]</span> <span class="o">[</span>monitoring<span class="o">]</span> $ fab -f main main:server<span class="o">=</span>server1 -H server1 -p pass1
+<div class="highlight"><pre><span></span><code><span class="o">[</span>foxmask:~/DjangoVirtualEnv/monitoring/monitoring<span class="o">]</span> <span class="o">[</span>monitoring<span class="o">]</span> $ fab -f main main:server<span class="o">=</span>server1 -H server1 -p pass1
 <span class="o">[</span>server1<span class="o">]</span> Executing task <span class="s1">&#39;main&#39;</span>
 <span class="o">[</span>server1<span class="o">]</span> This is my main <span class="k">function</span> that will triggers anything
 <span class="o">[</span>localhost<span class="o">]</span> local: id
@@ -214,7 +214,7 @@ DEBUG:paramiko.transport:Switch to new keys ...
 DEBUG:paramiko.transport:Trying discovered key b<span class="s1">&#39;8fbb1c6beb76bcc6767eccfcbef3730e&#39;</span> in /home/foxmask/.ssh/id_rsa
 DEBUG:paramiko.transport:userauth is OK
 INFO:paramiko.transport:Authentication <span class="o">(</span>publickey<span class="o">)</span> failed.
-</pre></div>
+</code></pre></div>
 
 
 <p>du coup me v'la frais avec un paramiko qui met son caca en trouvant bien que l'userauth est ok mais pas la publickey. Ca te ferait mal de me laisser passer puisque tu as vu que le user/pass etait ok ?</p>
@@ -229,8 +229,8 @@ INFO:paramiko.transport:Authentication <span class="o">(</span>publickey<span cl
         <li><a href="https://foxmask.net/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
         <li><a href="https://foxmask.net/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/">Fabric, sa var 'env' et nos variables dynamiques !</a></li>
         <li><a href="https://foxmask.net/post/2013/10/24/fabric-importerror-no-module-named-main/">fabric ImportError: No module named main</a></li>
-        <li><a href="https://foxmask.net/post/2019/05/02/de-django-a-startlette/">De Django à Starlette</a></li>
-        <li><a href="https://foxmask.net/post/2019/04/23/mais-tu-es-fou-hoo-oui/">Mais vous etes fou ? Hoo Oui !</a></li>
+        <li><a href="https://foxmask.net/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.net/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
     </ul>
 </section>
     <hr/>
@@ -277,23 +277,23 @@ INFO:paramiko.transport:Authentication <span class="o">(</span>publickey<span cl
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -307,7 +307,7 @@ INFO:paramiko.transport:Authentication <span class="o">(</span>publickey<span cl
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -316,7 +316,7 @@ INFO:paramiko.transport:Authentication <span class="o">(</span>publickey<span cl
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -334,7 +334,7 @@ INFO:paramiko.transport:Authentication <span class="o">(</span>publickey<span cl
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -386,7 +386,7 @@ INFO:paramiko.transport:Authentication <span class="o">(</span>publickey<span cl
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

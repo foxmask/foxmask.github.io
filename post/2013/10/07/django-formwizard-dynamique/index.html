@@ -44,7 +44,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -186,7 +186,7 @@ gré. Non, là on restera à 5 pages, toutes obligatoires.</p>
 <p>voici en peu de lignes, le résumé du wizard statique "avant" que je ne
 le remanie:</p>
 <p><strong>views.py</strong></p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">th_rss.forms</span> <span class="kn">import</span> <span class="n">RssForm</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">th_rss.forms</span> <span class="kn">import</span> <span class="n">RssForm</span>
 <span class="kn">from</span> <span class="nn">th_evernote.forms</span> <span class="kn">import</span> <span class="n">EvernoteForm</span>
 <span class="kn">from</span> <span class="nn">django_th.forms.base</span> <span class="kn">import</span> <span class="n">ServicesDescriptionForm</span>
 
@@ -201,13 +201,13 @@ le remanie:</p>
 
 
 <span class="k">class</span> <span class="nc">UserServiceWizard</span><span class="p">(</span><span class="n">SessionWizardView</span><span class="p">):</span>
-    <span class="n">instance</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">instance</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">get_form_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Provides us with an instance of the Project Model to save on completion</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span>
 
@@ -223,7 +223,7 @@ le remanie:</p>
         <span class="n">trigger</span><span class="o">.</span><span class="n">consummer</span> <span class="o">=</span> <span class="n">UserService</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ServiceEvernote&#39;</span><span class="p">,</span>
                                                     <span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
         <span class="n">trigger</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
-        <span class="n">trigger</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="n">trigger</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="c1"># save the trigger</span>
         <span class="n">trigger</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
         <span class="c1">#...then create the related services from the wizard</span>
@@ -244,7 +244,7 @@ le remanie:</p>
                     <span class="n">trigger</span><span class="o">=</span><span class="n">trigger</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Comme on le voit ici, tout est purement statique, ça marche pour ce que
@@ -256,19 +256,19 @@ interceptant les données saisies dans la page de choix des services.<br>
 <strong>urls.py</strong><br>
 tout d'abord j'ai mis les formulaires de mon wizard dans urls.py comme
 ceci:</p>
-<div class="highlight"><pre><span></span>    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^service/create/$&#39;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^service/create/$&#39;</span><span class="p">,</span>
         <span class="n">UserServiceWizard</span><span class="o">.</span><span class="n">as_view</span><span class="p">([</span><span class="n">ProviderForm</span><span class="p">,</span>
                                    <span class="n">DummyForm</span><span class="p">,</span>
                                    <span class="n">ConsummerForm</span><span class="p">,</span>
                                    <span class="n">DummyForm</span><span class="p">,</span>
                                    <span class="n">ServicesDescriptionForm</span><span class="p">]),</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>si ca vous botte vous pouvez aussi la jouer comme ceci :</p>
-<div class="highlight"><pre><span></span>    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^service/create/$&#39;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code>    <span class="n">url</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^service/create/$&#39;</span><span class="p">,</span>
         <span class="n">UserServiceWizard</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="s1">&#39;django_th.views.get_my_form_list&#39;</span><span class="p">),</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>et définir une methode get_my_form_list() dans votre views.py et
@@ -292,7 +292,7 @@ C'est à ces endroits que je les remplacerai par les form des services
 choisis dans ProviderForm et ConsummerForm.</p>
 <p>Voici à présent le FormWizard :<br>
 <strong>views.py</strong></p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">importlib</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">importlib</span>
 <span class="k">def</span> <span class="nf">class_for_name</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">class_name</span><span class="p">):</span>
    <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">      import the class from the given module and class</span>
@@ -308,7 +308,7 @@ choisis dans ProviderForm et ConsummerForm.</p>
         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">UserServiceWizard</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_form_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">instance</span> <span class="o">=</span> <span class="n">UserService</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">instance</span>
 
@@ -330,7 +330,7 @@ choisis dans ProviderForm et ConsummerForm.</p>
         <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">UserServiceWizard</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="n">form</span><span class="o">=</span><span class="n">form</span><span class="p">,</span>
                                   <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">context</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ça marche super bien... j'ai bien écrasé le form DumyForm par celui que
@@ -353,12 +353,12 @@ sur StackOverFlow, ce qui m'a permit de trouver la voie !</p>
 tout le temps remis aux valeurs indiquées dans mon <strong>urls.py</strong>, il
 fallait laisser choir <strong>get_context_data()</strong> pour le simplissime
 <strong>get_form()</strong> comme suit :</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">get_form</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        change the form instance dynamically from the data we entered</span>
 <span class="sd">        at the previous step</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span><span class="o">.</span><span class="n">current</span>
 
     <span class="k">if</span> <span class="n">step</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
@@ -386,7 +386,7 @@ fallait laisser choir <strong>get_context_data()</strong> pour le simplissime
         <span class="c1"># get the default form</span>
         <span class="n">form</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">UserServiceWizard</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_form</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">form</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>c'est un peu verbeux et aurait pû être plus court pour tenir sur une
@@ -418,7 +418,7 @@ Ensuite je grabbe les info saisies pour le formulaire que je nomme
 modèles le lien vers le modèle <strong>TriggerService</strong> (c'est dans mon MCD
 pour pouvoir revenir modifier mon trigger)</p>
 <p>Now, follow me ;)</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">importlib</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">importlib</span>
 <span class="k">def</span> <span class="nf">class_for_name</span><span class="p">(</span><span class="n">module_name</span><span class="p">,</span> <span class="n">class_name</span><span class="p">):</span>
     <span class="c1"># load the module, will raise ImportError if module cannot be loaded</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">module_name</span><span class="p">)</span>
@@ -469,7 +469,7 @@ pour pouvoir revenir modifier mon trigger)</p>
     <span class="c1"># save the trigger</span>
     <span class="n">trigger</span> <span class="o">=</span> <span class="n">TriggerService</span><span class="p">(</span>
         <span class="n">provider</span><span class="o">=</span><span class="n">trigger_provider</span><span class="p">,</span> <span class="n">consummer</span><span class="o">=</span><span class="n">trigger_consummer</span><span class="p">,</span>
-        <span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+        <span class="n">user</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">description</span><span class="o">=</span><span class="n">trigger_description</span><span class="p">)</span>
     <span class="n">trigger</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
 
@@ -485,26 +485,26 @@ pour pouvoir revenir modifier mon trigger)</p>
             <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
                 <span class="n">model_fields</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">field</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">field</span><span class="p">]})</span>
             <span class="c1"># additionnal properties</span>
-            <span class="n">model_fields</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;trigger_id&#39;</span><span class="p">:</span> <span class="n">trigger</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+            <span class="n">model_fields</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;trigger_id&#39;</span><span class="p">:</span> <span class="n">trigger</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
             <span class="n">model_provider</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">**</span><span class="n">model_fields</span><span class="p">)</span>
         <span class="c1"># get the data for the consummer service</span>
         <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
                 <span class="n">model_fields</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">field</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">field</span><span class="p">]})</span>
             <span class="c1"># additionnal properties</span>
-            <span class="n">model_fields</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;trigger_id&#39;</span><span class="p">:</span> <span class="n">trigger</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="bp">True</span><span class="p">})</span>
+            <span class="n">model_fields</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;trigger_id&#39;</span><span class="p">:</span> <span class="n">trigger</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
             <span class="n">model_consummer</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">**</span><span class="n">model_fields</span><span class="p">)</span>
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>le début est surtout de la tambouille interne à mon workflow ; ce qui
 import ici c'est l'usage de :</p>
-<div class="highlight"><pre><span></span><span class="n">model_provider</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">**</span><span class="n">model_fields</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">model_provider</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">**</span><span class="n">model_fields</span><span class="p">)</span>
 <span class="n">model_consummer</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">**</span><span class="n">model_fields</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>qui permet pour un modèle inconnu d'y stocker des properties via un
@@ -594,23 +594,23 @@ un certain Spoutnik ;)</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -624,7 +624,7 @@ un certain Spoutnik ;)</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -633,7 +633,7 @@ un certain Spoutnik ;)</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -651,7 +651,7 @@ un certain Spoutnik ;)</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -703,7 +703,7 @@ un certain Spoutnik ;)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>

@@ -44,7 +44,7 @@
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.net/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.net/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -181,7 +181,7 @@ bien visualiser les explications ci dessous je prendrai comme exemple
 <p>L'architecturationnesseeee en elle-même est identique à celle d'un
 dossier d'un module django.</p>
 <p>Exemple :</p>
-<div class="highlight"><pre><span></span><span class="n">th_pocket</span><span class="o">/</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code><span class="n">th_pocket</span><span class="o">/</span><span class="p">:</span>
 <span class="n">forms</span><span class="o">.</span><span class="n">py</span>
 <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
 <span class="n">models</span><span class="o">.</span><span class="n">py</span>
@@ -193,13 +193,13 @@ dossier d'un module django.</p>
 
 <span class="n">th_pocket</span><span class="o">/</span><span class="n">templates</span><span class="o">/</span><span class="n">pocketprovider</span><span class="p">:</span>
 <span class="n">edit_provider</span><span class="o">.</span><span class="n">html</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>En détails, fichier par fichier</strong><br>
 Pas de panique c'est court !</p>
 <p><strong>En premier le modèle : models.py</strong></p>
-<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">django_th.models.services</span> <span class="kn">import</span> <span class="n">Services</span>
@@ -207,38 +207,38 @@ Pas de panique c'est court !</p>
 
 <span class="k">class</span> <span class="nc">Pocket</span><span class="p">(</span><span class="n">Services</span><span class="p">):</span>
 
-    <span class="n">tag</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">tag</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">url</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">URLField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
-    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="n">tweet_id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">tweet_id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">trigger</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;TriggerService&#39;</span><span class="p">)</span>
 
     <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">app_label</span> <span class="o">=</span> <span class="s1">&#39;django_th&#39;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>ici 2 impératifs,<br>
 1) appeler le modèle service de Trigger Happy pour en hériter, soit :</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django_th.models.services</span> <span class="kn">import</span> <span class="n">Services</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django_th.models.services</span> <span class="kn">import</span> <span class="n">Services</span>
 
 
 <span class="k">class</span> <span class="nc">Pocket</span><span class="p">(</span><span class="n">Services</span><span class="p">):</span>
 <span class="o">...</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>2) pour la lisibilite de votre base mettre un app_label cohérent, soit
 :</p>
-<div class="highlight"><pre><span></span>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
         <span class="n">app_label</span> <span class="o">=</span> <span class="s1">&#39;django_th&#39;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>En second, le formulaire : forms.py</strong><br>
 C'est un simple formulaire Django, un ModelForm banal, qui appellera le
 modèle susmentionné</p>
-<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
 <span class="kn">from</span> <span class="nn">th_pocket.models</span> <span class="kn">import</span> <span class="n">Pocket</span>
@@ -260,7 +260,7 @@ modèle susmentionné</p>
 
 <span class="k">class</span> <span class="nc">PocketConsummerForm</span><span class="p">(</span><span class="n">PocketForm</span><span class="p">):</span>
     <span class="k">pass</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Ici en sus, on fournit 2 classes supplémentaires <em>PocketProviderForm</em> et
@@ -306,7 +306,7 @@ français dans le texte, le but du module :</p>
 <li>) enregistrer les données provenant d'un service 'Provider' (via la
     méthode save_data)</li>
 </ol>
-<div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># -*- coding: utf-8 -*-</span>
 
 <span class="c1"># django_th classes</span>
 <span class="kn">from</span> <span class="nn">django_th.services.services</span> <span class="kn">import</span> <span class="n">ServicesMgr</span>
@@ -346,7 +346,7 @@ français dans le texte, le but du module :</p>
         <span class="n">date_triggered</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
             <span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">timetuple</span><span class="p">(</span><span class="n">date_triggered</span><span class="p">)))</span>
 
-        <span class="k">if</span> <span class="n">token</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">token</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
             <span class="n">pocket_instance</span> <span class="o">=</span> <span class="n">pocket</span><span class="o">.</span><span class="n">Pocket</span><span class="p">(</span>
                 <span class="n">settings</span><span class="o">.</span><span class="n">TH_POCKET</span><span class="p">[</span><span class="s1">&#39;consummer_key&#39;</span><span class="p">],</span> <span class="n">token</span><span class="p">)</span>
@@ -384,7 +384,7 @@ français dans le texte, le but du module :</p>
             <span class="n">item_id</span> <span class="o">=</span> <span class="n">pocket_instance</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
                 <span class="n">url</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;link&#39;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">tags</span><span class="o">=</span><span class="p">(</span><span class="n">trigger</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
 
-            <span class="n">sentance</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;pocket {} created&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;link&#39;</span><span class="p">])</span>
+            <span class="n">sentance</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;pocket </span><span class="si">{}</span><span class="s1"> created&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;link&#39;</span><span class="p">])</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">sentance</span><span class="p">)</span>
 
         <span class="k">else</span><span class="p">:</span>
@@ -438,14 +438,14 @@ français dans le texte, le but du module :</p>
             <span class="k">return</span> <span class="s1">&#39;/&#39;</span>
 
         <span class="k">return</span> <span class="s1">&#39;pocket/callback.html&#39;</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>enfin comme on peut l'apercevoir dans le code, des appels à la
 configuration du module ont lieu, voici donc à quoi elle ressemblerait
 pour le module Trigger Happy Pocket:</p>
 <p><strong>settings.py</strong></p>
-<div class="highlight"><pre><span></span><span class="n">TH_SERVICES</span> <span class="o">=</span> <span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">TH_SERVICES</span> <span class="o">=</span> <span class="p">(</span>
    <span class="o">...</span>
     <span class="s1">&#39;th_pocket.my_pocket.ServicePocket&#39;</span><span class="p">,</span>
    <span class="o">...</span>
@@ -460,7 +460,7 @@ pour le module Trigger Happy Pocket:</p>
 <span class="n">TH_POCKET</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;consumer_key&#39;</span><span class="p">:</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span><span class="p">,</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Si vous ne connaissez pas IFTTT et/ou pour les plus courageux qui se
@@ -542,23 +542,23 @@ my_pocket, my_evernote, etc, et joue son scénario !</p>
 <li class="list-group-item">
   <a href="https://foxmask.net/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/autobahn.html">autobahn</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.net/tag/django.html">django</a>
+      <a href="https://foxmask.net/tag/django.html">Django</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/evernote.html">Evernote</a>
@@ -572,7 +572,7 @@ my_pocket, my_evernote, etc, et joue son scénario !</p>
     <li class="list-group-item tag-1">
       <a href="https://foxmask.net/tag/jelix.html">Jelix</a>
     </li>
-    <li class="list-group-item tag-3">
+    <li class="list-group-item tag-4">
       <a href="https://foxmask.net/tag/joplin.html">Joplin</a>
     </li>
     <li class="list-group-item tag-2">
@@ -581,7 +581,7 @@ my_pocket, my_evernote, etc, et joue son scénario !</p>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.net/tag/oracle.html">oracle</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
@@ -599,7 +599,7 @@ my_pocket, my_evernote, etc, et joue son scénario !</p>
     <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wallabag.html">wallabag</a>
     </li>
-    <li class="list-group-item tag-4">
+    <li class="list-group-item tag-3">
       <a href="https://foxmask.net/tag/wampws.html">wampws</a>
     </li>
   </ul>
@@ -651,7 +651,7 @@ my_pocket, my_evernote, etc, et joue son scénario !</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2019 FoxMaSk
+         <div class="col-xs-10">&copy; 2020 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
