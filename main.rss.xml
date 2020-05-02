@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Le Free de la Passion</title><link>https://foxmask.net/</link><description>La passion de la liberté</description><lastBuildDate>Fri, 01 May 2020 22:00:00 +0200</lastBuildDate><item><title>Trigger Happy archivé</title><link>https://foxmask.net/post/2020/05/01/trigger-happy-archive-yeoboseyo/</link><description>&lt;h1&gt;Trigger Happy Archivé - Yeoboseyo ?&lt;/h1&gt;
+<rss version="2.0"><channel><title>Le Free de la Passion</title><link>https://foxmask.net/</link><description>La passion de la liberté</description><lastBuildDate>Fri, 01 May 2020 22:00:00 +0200</lastBuildDate><item><title>Trigger Happy archivé - Yeoboseyo !</title><link>https://foxmask.net/post/2020/05/01/trigger-happy-archive-yeoboseyo/</link><description>&lt;h1&gt;Trigger Happy Archivé - Yeoboseyo ?&lt;/h1&gt;
 &lt;p&gt;Voici le post de l'année ;)&lt;/p&gt;
 &lt;h2&gt;Bye Bye TriggerHappy&lt;/h2&gt;
-&lt;p&gt;Je viens de mettre en mode archivé le projet au 1300 etoiles et des poussieres &lt;a href="Trigger Happy"&gt;https://github.com/push-things/django-th&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Je viens de mettre en mode archivé le projet au 1300 etoiles et des poussieres &lt;a href="https://github.com/push-things/django-th"&gt;Trigger Happy&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;En effet, je l'ai maintenu autant que j'ai pu, mais avec le temps : &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;de moins en moins de …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Fri, 01 May 2020 22:00:00 +0200</pubDate><guid isPermaLink="false">tag:foxmask.net,2020-05-01:/post/2020/05/01/trigger-happy-archive-yeoboseyo/</guid><category>Techno</category><category>Django</category><category>Starlette</category><category>Yeoboseyo</category></item><item><title>De django à starlette</title><link>https://foxmask.net/post/2019/05/02/de-django-a-starlette/</link><description>&lt;h1&gt;Flashback&lt;/h1&gt;
+&lt;p&gt;de moins en moins de gens s'y sont …&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Fri, 01 May 2020 22:00:00 +0200</pubDate><guid isPermaLink="false">tag:foxmask.net,2020-05-01:/post/2020/05/01/trigger-happy-archive-yeoboseyo/</guid><category>Techno</category><category>Django</category><category>Starlette</category><category>Yeoboseyo</category></item><item><title>De django à starlette</title><link>https://foxmask.net/post/2019/05/02/de-django-a-starlette/</link><description>&lt;h1&gt;Flashback&lt;/h1&gt;
 
 &lt;p&gt;fin 2012, je créais un petit projet et en mai 2013, je sortais une version de ce dernier, nommé "&lt;a href="https://foxmask.net/post/2013/05/27/django-trigger-happy/"&gt;Trigger Happy&lt;/a&gt;",  entierement conçu avec l'excellentissime framework web &lt;a href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;.&lt;/p&gt;
 
