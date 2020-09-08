@@ -1,5 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Techno</title><link href="https://foxmask.github.io/" rel="alternate"></link><link href="https://foxmask.github.io/feeds/techno.atom.xml" rel="self"></link><id>https://foxmask.github.io/</id><updated>2020-05-01T22:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Trigger Happy archivé - Yeoboseyo !</title><link href="https://foxmask.github.io/post/2020/05/01/trigger-happy-archive-yeoboseyo/" rel="alternate"></link><published>2020-05-01T22:00:00+02:00</published><updated>2020-05-01T22:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2020-05-01:/post/2020/05/01/trigger-happy-archive-yeoboseyo/</id><summary type="html">&lt;h1&gt;Trigger Happy Archivé - Yeoboseyo ?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Techno</title><link href="https://foxmask.github.io/" rel="alternate"></link><link href="https://foxmask.github.io/feeds/techno.atom.xml" rel="self"></link><id>https://foxmask.github.io/</id><updated>2020-09-08T18:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>뉴스 - Nyuseu - News</title><link href="https://foxmask.github.io/post/2020/09/08/nyuseu-news/" rel="alternate"></link><published>2020-09-08T18:00:00+02:00</published><updated>2020-09-08T18:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2020-09-08:/post/2020/09/08/nyuseu-news/</id><summary type="html">&lt;h1&gt;뉴스 - Nyuseu - News&lt;/h1&gt;
+&lt;p&gt;Waza ?&lt;/p&gt;
+&lt;p&gt;Un billet sur le/la COVID19 ?&lt;/p&gt;
+&lt;p&gt;Nan&lt;/p&gt;
+&lt;p&gt;Un billet sur les vacances ? &lt;/p&gt;
+&lt;p&gt;Nan&lt;/p&gt;
+&lt;p&gt;Sam revient ? &lt;/p&gt;
+&lt;p&gt;NAn !&lt;/p&gt;
+&lt;p&gt;J'ai changé de boulot ?&lt;/p&gt;
+&lt;p&gt;Nannnnnnnnnnnn !&lt;/p&gt;
+&lt;p&gt;J'abandonne le coréen ? &lt;/p&gt;
+&lt;p&gt;Naaan !&lt;/p&gt;
+&lt;p&gt;Bé alors quoi ?&lt;/p&gt;
+&lt;p&gt;Bon ben, j'ai refait un truc inutile !&lt;/p&gt;
+&lt;p&gt;Un nouveau projet me permettant de lire des flux de données …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;뉴스 - Nyuseu - News&lt;/h1&gt;
+&lt;p&gt;Waza ?&lt;/p&gt;
+&lt;p&gt;Un billet sur le/la COVID19 ?&lt;/p&gt;
+&lt;p&gt;Nan&lt;/p&gt;
+&lt;p&gt;Un billet sur les vacances ? &lt;/p&gt;
+&lt;p&gt;Nan&lt;/p&gt;
+&lt;p&gt;Sam revient ? &lt;/p&gt;
+&lt;p&gt;NAn !&lt;/p&gt;
+&lt;p&gt;J'ai changé de boulot ?&lt;/p&gt;
+&lt;p&gt;Nannnnnnnnnnnn !&lt;/p&gt;
+&lt;p&gt;J'abandonne le coréen ? &lt;/p&gt;
+&lt;p&gt;Naaan !&lt;/p&gt;
+&lt;p&gt;Bé alors quoi ?&lt;/p&gt;
+&lt;p&gt;Bon ben, j'ai refait un truc inutile !&lt;/p&gt;
+&lt;p&gt;Un nouveau projet me permettant de lire des flux de données dans mon navigateur.&lt;/p&gt;
+&lt;p&gt;Dans le même genre gratuit, mais pas opensource, vous avez Feedly, Inoreader, dans le genre opensource vous avez Wallabag.&lt;/p&gt;
+&lt;p&gt;Alors pourquoi celui là ? &lt;/p&gt;
+&lt;p&gt;Ben j'avais du temps à perdre :P entre 2 pages de 한국 et quelques écoutes de &lt;a href="http://world.kbs.co.kr/service/contents_list.htm?lang=f&amp;amp;menu_cate=learnkorean"&gt;podcast&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Puis Wallabag c'est en PHP :P &lt;/p&gt;
+&lt;p&gt;Du coup j'ai fait le bidule en Python3.8 / Django3.1 et Bootsrap4, tranquillou. Ni plus ni moins.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/foxmask/nyuseu/master/nyuseu/doc/screenshot.png"&gt;&lt;/p&gt;
+&lt;p&gt;C'est "con comme la lune" ;)&lt;/p&gt;
+&lt;p&gt;On peut importer des fichiers OPML pour demarrer sur des flux qu'on choie.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python manage.py opml_load ~/Download/feedly-e2343e92-9e71-4345-b045-cef7e1736cd2-2020-05-14.opml 
+Nyuseu Server - 뉴스 - Feeds Reader Server - Starlette powered
+Humor Le blog d&lt;span class="s1"&gt;&amp;#39;un odieux connard&lt;/span&gt;
+&lt;span class="s1"&gt;Dev Vue.js News&lt;/span&gt;
+&lt;span class="s1"&gt;Dev Real Python&lt;/span&gt;
+&lt;span class="s1"&gt;Dev PyCharm Blog&lt;/span&gt;
+&lt;span class="s1"&gt;Dev Python Insider&lt;/span&gt;
+&lt;span class="s1"&gt;Dev The Django weblog&lt;/span&gt;
+&lt;span class="s1"&gt;Dev Ned Batchelder&amp;#39;&lt;/span&gt;s blog
+Dev Pythonic News: Latest
+Dev Caktus Blog
+Dev The Official Vue News
+Android Les Numériques
+Android Frandroid
+Dys Fédération Française des DYS
+Gaming NoFrag
+Gaming Gameblog
+Gaming Gamekult - Jeux vidéo PC et consoles: tout l&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;univers des joueurs
+Gaming PlayStation.Blog
+Gaming jeuxvideo.com - PlayStation &lt;span class="m"&gt;4&lt;/span&gt;
+Nyuseu Server - 뉴스 - Feeds Loaded
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Après le moteur se charge dans une crontab de vous rapatrier les données et les mettre dans la base.&lt;/p&gt;
+&lt;p&gt;Si on n'a pas envie de demarrer le serveur on peut toujours utiliser la console pour lire les flux :P &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python manage.py nyuseu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Liste des articles&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Articles List" src="https://github.com/foxmask/nyuseu/raw/master/nyuseu/doc/nyuseu_articles_list.png"&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python manage.py nyuseu -id &lt;span class="m"&gt;1158&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;un article&lt;/p&gt;
+&lt;p&gt;&lt;img alt="An Article" src="https://github.com/foxmask/nyuseu/raw/master/nyuseu/doc/nyuseu_an_article.png"&gt;&lt;/p&gt;
+&lt;p&gt;Cela reste somme toute, tout à fait lisible :P&lt;/p&gt;
+&lt;p&gt;PS: pour le nom vous l'aurez devinez, &lt;code&gt;뉴스&lt;/code&gt; se prononce &lt;code&gt;niousseu&lt;/code&gt;  (en français) qui veut dire &lt;code&gt;News&lt;/code&gt; not in French :P&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/foxmask/nyuseu"&gt;Les sources sont par ici&lt;/a&gt;&lt;/p&gt;</content><category term="Techno"></category><category term="Django"></category><category term="python"></category></entry><entry><title>Trigger Happy archivé - Yeoboseyo !</title><link href="https://foxmask.github.io/post/2020/05/01/trigger-happy-archive-yeoboseyo/" rel="alternate"></link><published>2020-05-01T22:00:00+02:00</published><updated>2020-05-01T22:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2020-05-01:/post/2020/05/01/trigger-happy-archive-yeoboseyo/</id><summary type="html">&lt;h1&gt;Trigger Happy Archivé - Yeoboseyo ?&lt;/h1&gt;
 &lt;p&gt;Voici le post de l'année ;)&lt;/p&gt;
 &lt;h2&gt;Bye Bye TriggerHappy&lt;/h2&gt;
 &lt;p&gt;Je viens de mettre en mode archivé le projet au 1300 etoiles et des poussieres &lt;a href="https://github.com/push-things/django-th"&gt;Trigger Happy&lt;/a&gt;&lt;/p&gt;
@@ -1095,39 +1172,4 @@ We feel to be part of something bigger than us, and at the same time, a little g
 &lt;p&gt;Each year, when you are a lonly developer, there are a lot of moments where you don't have the mood to dive into anything, and moments where you are very motivated and ready to redo the world. Thus, I have many ideas about my main project for the next year, and i'd be glad to exchange with future contributors.&lt;/p&gt;
 &lt;p&gt;Finally, 2018 will be the year of my 20 years of contributions in the OpenSource world. &lt;/p&gt;
 &lt;p&gt;I will post about the path I followed since then, that cuold be fun to have a look at of thoses years :)&lt;/p&gt;
-&lt;p&gt;I wish you the best for the celebretion of Christmas&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category></entry><entry><title>Coverage, install, upload results</title><link href="https://foxmask.github.io/post/2017/10/14/coverage-install-upload-results/" rel="alternate"></link><published>2017-10-14T17:00:00+02:00</published><updated>2017-10-14T17:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2017-10-14:/post/2017/10/14/coverage-install-upload-results/</id><summary type="html">&lt;p&gt;Creating coverage report, I put that here, as a reminder for a later use.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Installation of Coverage&lt;/h1&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;coverage&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;running on a django project :&lt;/p&gt;
-&lt;h1&gt;Running coverage&lt;/h1&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;coverage&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;source&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.&amp;#39;&lt;/span&gt;  &lt;span class="o"&gt;./&lt;/span&gt;&lt;span class="n"&gt;manage&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v2&lt;/span&gt;
-&lt;span class="n"&gt;coverage&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt;
-&lt;span class="n"&gt;coverage&lt;/span&gt; &lt;span class="n"&gt;report&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h1&gt;Publishing the results with covveralls.io&lt;/h1&gt;
-&lt;p&gt;On https://coveralls.io/github/foxmask/django-th get the token, then install&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;coveralls&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Now the command &lt;code&gt;coveralls&lt;/code&gt; is available&lt;/p&gt;
-&lt;p&gt;As I don't use Travis (but not in pro) and don't have private repo, I don't put the token in a .coveralls.yml at all, so to share the result we use the command line :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;COVERALLS_REPO_TOKEN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;_the_long_string_of_the_token&lt;/span&gt; &lt;span class="n"&gt;coveralls&lt;/span&gt;
-&lt;span class="n"&gt;INFO&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;coveralls&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;
-&lt;span class="n"&gt;INFO&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;coveralls&lt;/span&gt;&lt;span class="p"&gt;:{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;message&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Job ##1.1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;https://coveralls.io/jobs/30251510&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;If you go back to coveralls.io, you will find the job and the result of the coverage&lt;/p&gt;
-&lt;p&gt;Then add the following to your README.rst (for example) &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;..&lt;/span&gt; &lt;span class="ow"&gt;image&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt; https://coveralls.io/repos/github/foxmask/django-th/badge.svg
-    &lt;span class="nc"&gt;:target:&lt;/span&gt; https://coveralls.io/github/foxmask/django-th
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h1&gt;End&lt;/h1&gt;
-&lt;p&gt;Ready to go !&lt;/p&gt;</content><category term="Techno"></category><category term="test"></category><category term="coverage"></category><category term="python"></category></entry></feed>
+&lt;p&gt;I wish you the best for the celebretion of Christmas&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category></entry></feed>

@@ -1,5 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://foxmask.github.io/" rel="alternate"></link><link href="https://foxmask.github.io/feeds/all.atom.xml" rel="self"></link><id>https://foxmask.github.io/</id><updated>2020-05-01T22:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Trigger Happy archivé - Yeoboseyo !</title><link href="https://foxmask.github.io/post/2020/05/01/trigger-happy-archive-yeoboseyo/" rel="alternate"></link><published>2020-05-01T22:00:00+02:00</published><updated>2020-05-01T22:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2020-05-01:/post/2020/05/01/trigger-happy-archive-yeoboseyo/</id><summary type="html">&lt;h1&gt;Trigger Happy Archivé - Yeoboseyo ?&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://foxmask.github.io/" rel="alternate"></link><link href="https://foxmask.github.io/feeds/all.atom.xml" rel="self"></link><id>https://foxmask.github.io/</id><updated>2020-09-08T18:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>뉴스 - Nyuseu - News</title><link href="https://foxmask.github.io/post/2020/09/08/nyuseu-news/" rel="alternate"></link><published>2020-09-08T18:00:00+02:00</published><updated>2020-09-08T18:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2020-09-08:/post/2020/09/08/nyuseu-news/</id><summary type="html">&lt;h1&gt;뉴스 - Nyuseu - News&lt;/h1&gt;
+&lt;p&gt;Waza ?&lt;/p&gt;
+&lt;p&gt;Un billet sur le/la COVID19 ?&lt;/p&gt;
+&lt;p&gt;Nan&lt;/p&gt;
+&lt;p&gt;Un billet sur les vacances ? &lt;/p&gt;
+&lt;p&gt;Nan&lt;/p&gt;
+&lt;p&gt;Sam revient ? &lt;/p&gt;
+&lt;p&gt;NAn !&lt;/p&gt;
+&lt;p&gt;J'ai changé de boulot ?&lt;/p&gt;
+&lt;p&gt;Nannnnnnnnnnnn !&lt;/p&gt;
+&lt;p&gt;J'abandonne le coréen ? &lt;/p&gt;
+&lt;p&gt;Naaan !&lt;/p&gt;
+&lt;p&gt;Bé alors quoi ?&lt;/p&gt;
+&lt;p&gt;Bon ben, j'ai refait un truc inutile !&lt;/p&gt;
+&lt;p&gt;Un nouveau projet me permettant de lire des flux de données …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;뉴스 - Nyuseu - News&lt;/h1&gt;
+&lt;p&gt;Waza ?&lt;/p&gt;
+&lt;p&gt;Un billet sur le/la COVID19 ?&lt;/p&gt;
+&lt;p&gt;Nan&lt;/p&gt;
+&lt;p&gt;Un billet sur les vacances ? &lt;/p&gt;
+&lt;p&gt;Nan&lt;/p&gt;
+&lt;p&gt;Sam revient ? &lt;/p&gt;
+&lt;p&gt;NAn !&lt;/p&gt;
+&lt;p&gt;J'ai changé de boulot ?&lt;/p&gt;
+&lt;p&gt;Nannnnnnnnnnnn !&lt;/p&gt;
+&lt;p&gt;J'abandonne le coréen ? &lt;/p&gt;
+&lt;p&gt;Naaan !&lt;/p&gt;
+&lt;p&gt;Bé alors quoi ?&lt;/p&gt;
+&lt;p&gt;Bon ben, j'ai refait un truc inutile !&lt;/p&gt;
+&lt;p&gt;Un nouveau projet me permettant de lire des flux de données dans mon navigateur.&lt;/p&gt;
+&lt;p&gt;Dans le même genre gratuit, mais pas opensource, vous avez Feedly, Inoreader, dans le genre opensource vous avez Wallabag.&lt;/p&gt;
+&lt;p&gt;Alors pourquoi celui là ? &lt;/p&gt;
+&lt;p&gt;Ben j'avais du temps à perdre :P entre 2 pages de 한국 et quelques écoutes de &lt;a href="http://world.kbs.co.kr/service/contents_list.htm?lang=f&amp;amp;menu_cate=learnkorean"&gt;podcast&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Puis Wallabag c'est en PHP :P &lt;/p&gt;
+&lt;p&gt;Du coup j'ai fait le bidule en Python3.8 / Django3.1 et Bootsrap4, tranquillou. Ni plus ni moins.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/foxmask/nyuseu/master/nyuseu/doc/screenshot.png"&gt;&lt;/p&gt;
+&lt;p&gt;C'est "con comme la lune" ;)&lt;/p&gt;
+&lt;p&gt;On peut importer des fichiers OPML pour demarrer sur des flux qu'on choie.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python manage.py opml_load ~/Download/feedly-e2343e92-9e71-4345-b045-cef7e1736cd2-2020-05-14.opml 
+Nyuseu Server - 뉴스 - Feeds Reader Server - Starlette powered
+Humor Le blog d&lt;span class="s1"&gt;&amp;#39;un odieux connard&lt;/span&gt;
+&lt;span class="s1"&gt;Dev Vue.js News&lt;/span&gt;
+&lt;span class="s1"&gt;Dev Real Python&lt;/span&gt;
+&lt;span class="s1"&gt;Dev PyCharm Blog&lt;/span&gt;
+&lt;span class="s1"&gt;Dev Python Insider&lt;/span&gt;
+&lt;span class="s1"&gt;Dev The Django weblog&lt;/span&gt;
+&lt;span class="s1"&gt;Dev Ned Batchelder&amp;#39;&lt;/span&gt;s blog
+Dev Pythonic News: Latest
+Dev Caktus Blog
+Dev The Official Vue News
+Android Les Numériques
+Android Frandroid
+Dys Fédération Française des DYS
+Gaming NoFrag
+Gaming Gameblog
+Gaming Gamekult - Jeux vidéo PC et consoles: tout l&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;univers des joueurs
+Gaming PlayStation.Blog
+Gaming jeuxvideo.com - PlayStation &lt;span class="m"&gt;4&lt;/span&gt;
+Nyuseu Server - 뉴스 - Feeds Loaded
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Après le moteur se charge dans une crontab de vous rapatrier les données et les mettre dans la base.&lt;/p&gt;
+&lt;p&gt;Si on n'a pas envie de demarrer le serveur on peut toujours utiliser la console pour lire les flux :P &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python manage.py nyuseu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Liste des articles&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Articles List" src="https://github.com/foxmask/nyuseu/raw/master/nyuseu/doc/nyuseu_articles_list.png"&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python manage.py nyuseu -id &lt;span class="m"&gt;1158&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;un article&lt;/p&gt;
+&lt;p&gt;&lt;img alt="An Article" src="https://github.com/foxmask/nyuseu/raw/master/nyuseu/doc/nyuseu_an_article.png"&gt;&lt;/p&gt;
+&lt;p&gt;Cela reste somme toute, tout à fait lisible :P&lt;/p&gt;
+&lt;p&gt;PS: pour le nom vous l'aurez devinez, &lt;code&gt;뉴스&lt;/code&gt; se prononce &lt;code&gt;niousseu&lt;/code&gt;  (en français) qui veut dire &lt;code&gt;News&lt;/code&gt; not in French :P&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/foxmask/nyuseu"&gt;Les sources sont par ici&lt;/a&gt;&lt;/p&gt;</content><category term="Techno"></category><category term="Django"></category><category term="python"></category></entry><entry><title>Trigger Happy archivé - Yeoboseyo !</title><link href="https://foxmask.github.io/post/2020/05/01/trigger-happy-archive-yeoboseyo/" rel="alternate"></link><published>2020-05-01T22:00:00+02:00</published><updated>2020-05-01T22:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2020-05-01:/post/2020/05/01/trigger-happy-archive-yeoboseyo/</id><summary type="html">&lt;h1&gt;Trigger Happy Archivé - Yeoboseyo ?&lt;/h1&gt;
 &lt;p&gt;Voici le post de l'année ;)&lt;/p&gt;
 &lt;h2&gt;Bye Bye TriggerHappy&lt;/h2&gt;
 &lt;p&gt;Je viens de mettre en mode archivé le projet au 1300 etoiles et des poussieres &lt;a href="https://github.com/push-things/django-th"&gt;Trigger Happy&lt;/a&gt;&lt;/p&gt;
@@ -1105,35 +1182,4 @@ INFO:paramiko.transport:Authentication &lt;span class="o"&gt;(&lt;/span&gt;publi
 &lt;p&gt;du coup me v'la frais avec un paramiko qui met son caca en trouvant bien que l'userauth est ok mais pas la publickey. Ca te ferait mal de me laisser passer puisque tu as vu que le user/pass etait ok ?&lt;/p&gt;
 &lt;p&gt;Etape suivante, trouver comment forcer &lt;a href="https://serverfault.com/questions/283722/authentication-order-with-ssh"&gt;SSH à utiliser le mot de passe et basta&lt;/a&gt; ... &lt;/p&gt;
 &lt;p&gt;Je n'ai pas encore mis la main sur une solution , je mettrai à jour si j'en trouve une d'ici là :)&lt;/p&gt;
-&lt;p&gt;@Tchao :)&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category><category term="Fabric"></category></entry><entry><title>2017 at a glance</title><link href="https://foxmask.github.io/post/2017/12/21/2017-at-a-glance/" rel="alternate"></link><published>2017-12-21T20:00:00+01:00</published><updated>2017-12-21T20:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2017-12-21:/post/2017/12/21/2017-at-a-glance/</id><summary type="html">&lt;h1&gt;2017 a special year&lt;/h1&gt;
-&lt;p&gt;this year was plenty of differents and rich activities from differents aspects&lt;/p&gt;
-&lt;h2&gt;OpenSource activities&lt;/h2&gt;
-&lt;p&gt;In 2015 my github activity concerned 90 contributions where in 2016 I increased by 400%, and finally by 50% more in 2017.&lt;/p&gt;
-&lt;p&gt;During this year, I published 7 releases for the project …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;2017 a special year&lt;/h1&gt;
-&lt;p&gt;this year was plenty of differents and rich activities from differents aspects&lt;/p&gt;
-&lt;h2&gt;OpenSource activities&lt;/h2&gt;
-&lt;p&gt;In 2015 my github activity concerned 90 contributions where in 2016 I increased by 400%, and finally by 50% more in 2017.&lt;/p&gt;
-&lt;p&gt;During this year, I published 7 releases for the project TriggerHappy, from 1.3.0 to 1.5.2. &lt;/p&gt;
-&lt;h3&gt;New ideas, new needs&lt;/h3&gt;
-&lt;p&gt;I started a new project with VueJS and Django to produce an a11y editor, with OpenDyslexia font, speech2text and text2speech.&lt;/p&gt;
-&lt;p&gt;I could quickly make something simple that works perfectly, but not for speech2text/text2speech where I still don't know how I could manage that part.&lt;/p&gt;
-&lt;p&gt;That project allowed me to discover a new world between VueJS and DRF. That was a real pleasure. &lt;/p&gt;
-&lt;p&gt;Now VueJS has progressed a lot, and other projects to bootstrap Django project with VueJS have been created to simplify everything, every steps, of the integration.&lt;/p&gt;
-&lt;h3&gt;Hacktoberfest (october 2017)&lt;/h3&gt;
-&lt;p&gt;An event that allows to meet dev arround the Trigger Happy project with the issues I opened and with other projects I submitted PR like Twython, Requests, Mastodon.py, Cozy-debian, Dropbox Paper, Django Channels and so on.&lt;/p&gt;
-&lt;p&gt;At the end of the month I released a special "Hacktoberfest version 1.5.0" to thank every contributors.&lt;/p&gt;
-&lt;h3&gt;Meetup&lt;/h3&gt;
-&lt;p&gt;I went to just two meetups this year, the Django Paris meetup in september, and one about VueJS/NextJS early this year. I hope to be able to go and see more of them next year.&lt;/p&gt;
-&lt;h3&gt;Donation&lt;/h3&gt;
-&lt;p&gt;As there are projects where I can't contribute, I make donations instead. This year was for Django Rest Framework.
-This is a really great project that is so powerful in its simplicity, and managed by really nice guys.&lt;/p&gt;
-&lt;h3&gt;PSF Member&lt;/h3&gt;
-&lt;p&gt;I joined the &lt;a href="http://pyfound.blogspot.fr/"&gt;PSF&lt;/a&gt; also, and i'm now a &lt;a href="https://www.python.org/users/foxmask/"&gt;PSF member&lt;/a&gt; in the middle of the armada of all the talented developers.
-We feel to be part of something bigger than us, and at the same time, a little grain of dust in the Python galaxy ;)&lt;/p&gt;
-&lt;h2&gt;Journée des Femmes (march 2017)&lt;/h2&gt;
-&lt;p&gt;A special day, where I offered the place of my blog, for women I knew, to publish articles on any subjects.&lt;/p&gt;
-&lt;h1&gt;2018, End and Conclusion&lt;/h1&gt;
-&lt;p&gt;Each year, when you are a lonly developer, there are a lot of moments where you don't have the mood to dive into anything, and moments where you are very motivated and ready to redo the world. Thus, I have many ideas about my main project for the next year, and i'd be glad to exchange with future contributors.&lt;/p&gt;
-&lt;p&gt;Finally, 2018 will be the year of my 20 years of contributions in the OpenSource world. &lt;/p&gt;
-&lt;p&gt;I will post about the path I followed since then, that cuold be fun to have a look at of thoses years :)&lt;/p&gt;
-&lt;p&gt;I wish you the best for the celebretion of Christmas&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category></entry></feed>
+&lt;p&gt;@Tchao :)&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category><category term="Fabric"></category></entry></feed>

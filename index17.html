@@ -104,6 +104,37 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://foxmask.github.io/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">Oracle et taille de schema, tablespace</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-01-10T12:00:00+01:00"> mar. 10 janvier 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.github.io/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Pour obtenir la taille d'un schéma, avec son script
+<strong>size_of_schema.sql</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p>à l'invite, donnez lui le nom du schema et roule ;)</p>
+<p>Pour obtenir le paramètre de la base "Undo Retention", avec son script
+<strong>undo_retention.sql</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://foxmask.github.io/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://foxmask.github.io/post/2011/11/05/linux-live-usb-persistent-failed/">Linux Live USB Persistent : failed</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -374,41 +405,6 @@ Je garderai juste un oeil sur le projet mais de loin …</p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="https://foxmask.github.io/post/2010/03/27/jelix-versions-1-1-6-1-0-12-et-bitbucket/">Jelix versions 1.1.6 1.0.12 et Bitbucket</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2010-03-27T14:21:00+01:00"> sam. 27 mars 2010</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.github.io/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-        /
-	<a href="https://foxmask.github.io/tag/jelix.html">Jelix</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p><em>Oyé Oyé Braves Gens</em></p>
-<p>Voici Quelques nouvelles de
-<a href="http://www.jelix.org" title="Jelix PHP5 Framework">Jelix</a>.</p>
-<p><strong>Nouvelles versions</strong> :<br>
-A commencer par 2 nouvelles versions de mises à jour de maintenance
-pour les branches
-<a href="http://jelix.org/articles/fr/telechargement/stable/1.1" title="Version 1.1.6">1.1</a>
-et
-<a href="http://jelix.org/articles/fr/telechargement/stable/1.0" title="Version 1.0.12">1.0</a></p>
-<p>Où pour la version 1.1.6, <a href="http://jelix.org/fr/news/post/sortie%20de-jelix-1.0.12-et-1.1.6">une petite
-manipulation</a>
-est nécessaire suite au support des champs binaires dans …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.github.io/post/2010/03/27/jelix-versions-1-1-6-1-0-12-et-bitbucket/">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         <ul class="pagination">
                 <li class="prev"><a href="https://foxmask.github.io/index16.html">&laquo;</a>
@@ -508,7 +504,7 @@ est nécessaire suite au support des champs binaires dans …</p>
       <a href="https://foxmask.github.io/tag/pycharm.html">PyCharm</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.github.io/tag/python.html">Python</a>
+      <a href="https://foxmask.github.io/tag/python.html">python</a>
     </li>
     <li class="list-group-item tag-2">
       <a href="https://foxmask.github.io/tag/pythonerie.html">pythonerie</a>
