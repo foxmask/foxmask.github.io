@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://foxmask.github.io/" rel="alternate"></link><link href="https://foxmask.github.io/main.atom.xml" rel="self"></link><id>https://foxmask.github.io/</id><updated>2020-09-08T18:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>뉴스 - Nyuseu - News</title><link href="https://foxmask.github.io/post/2020/09/08/nyuseu-news/" rel="alternate"></link><published>2020-09-08T18:00:00+02:00</published><updated>2020-09-08T18:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2020-09-08:/post/2020/09/08/nyuseu-news/</id><summary type="html">&lt;h1&gt;뉴스 - Nyuseu - News&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://foxmask.github.io/" rel="alternate"></link><link href="https://foxmask.github.io/main.atom.xml" rel="self"></link><id>https://foxmask.github.io/</id><updated>2021-05-24T13:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Out Of Korea</title><link href="https://foxmask.github.io/post/2021/05/24/out-of-korea/" rel="alternate"></link><published>2021-05-24T13:00:00+02:00</published><updated>2021-05-24T13:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2021-05-24:/post/2021/05/24/out-of-korea/</id><summary type="html">&lt;h2&gt;Petit poucet&lt;/h2&gt;
+&lt;p&gt;A détour d'un petit mot sur mastodon, une personne bien motivée, a fini par retrouver mes traces de petit poucet, malgré les avoir (bien mal) effacées ! ^^&lt;/p&gt;
+&lt;p&gt;En effet, j'ai laché Joplin, et en fait, quasiment tous les projets libres, et migré de GitHub sur Gitlab peu ou prou …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Petit poucet&lt;/h2&gt;
+&lt;p&gt;A détour d'un petit mot sur mastodon, une personne bien motivée, a fini par retrouver mes traces de petit poucet, malgré les avoir (bien mal) effacées ! ^^&lt;/p&gt;
+&lt;p&gt;En effet, j'ai laché Joplin, et en fait, quasiment tous les projets libres, et migré de GitHub sur Gitlab peu ou prou d'entre eux, zigouillé TOUS les projects portant sur joplin, ou les ai archivé, ou supprimé le support de Joplin. Je n'ai pas une dent contre le projet, je ne veux plus juste voir "et pourquoi tu arretes et pourquoi l'application joplin-web marche pas et pourquoi et pourquoi et pourquoi"&lt;/p&gt;
+&lt;h2&gt;Twitter/Masto&lt;/h2&gt;
+&lt;p&gt;Je ne publie quasiment plus rien nulle part (twitter / mastodon).&lt;/p&gt;
+&lt;h2&gt;OutOfAfrica :P&lt;/h2&gt;
+&lt;p&gt;En cause, un ras le bol général apres plus de 20ans à participer à des projets libres (j'ai retrouvé des traces de bibi en 2000 sur linuxfr.org en tant que contributeur :) et n'avoir aucun retour. Ca fait un peu beaucoup "prêcher dans le desert", on a beau se retourner, il n'y a personne derrière soi avec qui on partageait quoi que se soit. Ce sont les aléas des logiciels libres. Mener des projets seuls de front est fun au debut mais épuisant à la fin. Quand bien même on reçoit des (rares) encouragements (et pas de contribution), resté seul pèse.&lt;/p&gt;
+&lt;h2&gt;OutOfKorea :D&lt;/h2&gt;
+&lt;h3&gt;Cool&lt;/h3&gt;
+&lt;p&gt;Du coup je me suis réorienté sur d'autres univers. Je suis des cours de coréen depuis septembre 2020 :P
+Nouvelle langue, nouvel alphabet, nouvelles coutumes, nouvelle gastronomie...&lt;/p&gt;
+&lt;p&gt;Dans le sillage de cet apprentissage, j'ai pondu des projets sur Gitlab avec des noms imprononcables :) pour me faciliter un peu plus la vie.
+Plein de sites Coréens sont en français et permettent de se mettre à leur langue.&lt;/p&gt;
+&lt;p&gt;Exemple sur KBS, ils vous passent une video de quelques secondes de leur série et en extrait "une expression" du jour.
+L'extrait est decortiqué grammaticalement et la vocabulaire analysé.&lt;/p&gt;
+&lt;p&gt;Du coup pour avoir cette mine d'or à porter de la main, j'ai fait un petit projet avec Scrapy pour créer une note en markdown par article qu'a créée KBS.
+Une fois les notes générées sur le laptop, avec syncthing, tout est recupere sur le smartphone.
+Solution légère et satisfaisante.&lt;/p&gt;
+&lt;h3&gt;Pas Cool&lt;/h3&gt;
+&lt;p&gt;Pour approfondir l'apprentissage, et confontrer avec des natifs, ce que j'ai appris, je me suis ensuite inscrit sur des appli d'echanges linguistiques.
+Tout se passait pour le mieux, j'avais reussi à sympatiser avec des Coréens et Coréennes mais un jour, l'une d'entre elles a fini par m'avour qu'elle m'avait pris au début pour un scammer... Apres quelques jours elle avait saisi que je n'en etais pas un mais elle avait cru que j'en etais un car mes photos de profil sur l'appli d'échanges linguistiques... trainaient sur des appli de rencontres, genre tinder...
+j'ai contacté le service privacy de l'appli concernée qui m'a dit que rien avait leaké de leur coté et qu'ils ne pouvaient rien contre les gens qui prennaient en photos... mes photos...
+Quand bien même ce serait vrai, comme j'etais devenu une cible au moindre de mes posts, j'ai dû tout lacher en prévenant "mes correspondants" de ma mésaventure et qu'on pourrait continuer sur d'autres services de messageries.
+Ces appli sont des pièges à nana.... j'ai pu discuter avec certaines entre elles et leur rapport aux mecs qui trainent là dessus.
+Ca va du mec cul-cul comme moi, là pour l'échange linguistique, aux crétins qui insultent des femmes parce qu'elles ignorent le rentre-dedans et sont sans cesse harceler.&lt;/p&gt;
+&lt;h3&gt;Ca craint&lt;/h3&gt;
+&lt;p&gt;Il y a aussi les nanas qui tombent dans le piège du gentil coréen ... https://www.youtube.com/watch?v=eSqk59dZjj8
+Cette video égratigne l'image d'Epinal que la gente féminine peut se faire des Coréens. La vigilence encore et toujours...
+Ce qui me gène le plus dans ces videos sur youtube où des français témoignent... C'est qu'une fois en face des forces de l'ordre, la police ne croira pas le touriste... Donc éviter les frasques et les altercations est archi important si on va là-bas, quand bien même on maitrise la langue.&lt;/p&gt;
+&lt;p&gt;... Et le français n'est pas non plus blanc-bleu... https://www.youtube.com/watch?v=Y_UoERGRFGU&lt;/p&gt;
+&lt;h3&gt;N'empeche&lt;/h3&gt;
+&lt;p&gt;Il y a des tarés partout mais on va pas s'arreter de vivre pour eux.&lt;/p&gt;
+&lt;p&gt;La majorité du temps "tout se passe bien" ;)&lt;/p&gt;</content><category term="General"></category><category term="Life"></category><category term="Korea"></category></entry><entry><title>뉴스 - Nyuseu - News</title><link href="https://foxmask.github.io/post/2020/09/08/nyuseu-news/" rel="alternate"></link><published>2020-09-08T18:00:00+02:00</published><updated>2020-09-08T18:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2020-09-08:/post/2020/09/08/nyuseu-news/</id><summary type="html">&lt;h1&gt;뉴스 - Nyuseu - News&lt;/h1&gt;
 &lt;p&gt;Waza ?&lt;/p&gt;
 &lt;p&gt;Un billet sur le/la COVID19 ?&lt;/p&gt;
 &lt;p&gt;Nan&lt;/p&gt;
@@ -1090,96 +1124,4 @@ Donc en gros quand on se tape une zone corrompue, il faut y aller blinder de mun
 &lt;p&gt;Avec le niveau du jeu choisi (qu'on peut accentuer pendant la partie ou adoucir) on prend le temps de faire le tour des mondes.&lt;/p&gt;
 &lt;p&gt;Perso, le seul truc qui ne m'intéresse pas ; ce sont les dialogues entre Aloy et les personnes qu'elle croise. Je cherche l'action (des relents de FPS ca :)&lt;/p&gt;
 &lt;p&gt;Par contre les enfants, qui au début ne s'intéressaient pas à ce jeu, scotchés sur StarWars BF2, s'y sont mis finalement et eux aiment justement les échangent entre les personnages, articuler comme un film... tout pareil.&lt;/p&gt;
-&lt;p&gt;Au final tout peut se résumer à "Graphisme superbe &amp;amp; Univers immersif avec très grande modularité du personnage et liberté de choix". Et pour un jeu qui payait pas de mine, Sony semble faire un carton avec ce jeu inattendu.&lt;/p&gt;</content><category term="Games"></category><category term="HzD"></category></entry><entry><title>Quand Fabric refuse de bosser</title><link href="https://foxmask.github.io/post/2018/01/23/quand-fabric-refuse-bosser/" rel="alternate"></link><published>2018-01-23T16:45:00+01:00</published><updated>2018-01-23T16:45:00+01:00</updated><author><name>foxmask</name></author><id>tag:foxmask.github.io,2018-01-23:/post/2018/01/23/quand-fabric-refuse-bosser/</id><summary type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
-&lt;p&gt;Je pose ça là vite fait pour qui rencontrerait le problème à son tour&lt;/p&gt;
-&lt;p&gt;J'ai un script, le plus …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Un comportement completement fou se produit pour moi avec Fabric, il n'execute absolument pas une &lt;code&gt;command&lt;/code&gt; (run ici) en se faisant jetter par le serveur où il devrait executer celle ci...&lt;/p&gt;
-&lt;p&gt;Je pose ça là vite fait pour qui rencontrerait le problème à son tour&lt;/p&gt;
-&lt;p&gt;J'ai un script, le plus con du monde qui execute la commande id sur le serveur de mon choix, comme suit :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# coding: utf-8&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;fabric.api&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;fabric.colors&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yellow&lt;/span&gt;
-
-&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;
-&lt;span class="n"&gt;env&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;root&amp;#39;&lt;/span&gt;
-
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;the_log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;new_f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="n"&gt;msg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;[&lt;/span&gt;&lt;span class="si"&gt;{0}&lt;/span&gt;&lt;span class="s2"&gt;] &lt;/span&gt;&lt;span class="si"&gt;{1}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="vm"&gt;__doc__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-        &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;new_f&lt;/span&gt;
-
-
-&lt;span class="nd"&gt;@the_log&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;This is my main function that will triggers anything&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-
-    &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;warn_only&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-
-        &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;yellow&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-
-        &lt;span class="n"&gt;output&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                     &lt;span class="n"&gt;shell&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                     &lt;span class="n"&gt;combine_stderr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;blue&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;output&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Quand ce script tourne il fait :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;foxmask:~/DjangoVirtualEnv/monitoring/monitoring&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;monitoring&lt;span class="o"&gt;]&lt;/span&gt; $ fab main:server&lt;span class="o"&gt;=&lt;/span&gt;server1 -H server1
-&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; Executing task &lt;span class="s1"&gt;&amp;#39;main&amp;#39;&lt;/span&gt;
-&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; This is my main &lt;span class="k"&gt;function&lt;/span&gt; that will triggers anything
-&lt;span class="o"&gt;[&lt;/span&gt;localhost&lt;span class="o"&gt;]&lt;/span&gt; local: id
-&lt;span class="nv"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;groupes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt;,24&lt;span class="o"&gt;(&lt;/span&gt;cdrom&lt;span class="o"&gt;)&lt;/span&gt;,25&lt;span class="o"&gt;(&lt;/span&gt;floppy&lt;span class="o"&gt;)&lt;/span&gt;,29&lt;span class="o"&gt;(&lt;/span&gt;audio&lt;span class="o"&gt;)&lt;/span&gt;,30&lt;span class="o"&gt;(&lt;/span&gt;dip&lt;span class="o"&gt;)&lt;/span&gt;,44&lt;span class="o"&gt;(&lt;/span&gt;video&lt;span class="o"&gt;)&lt;/span&gt;,46&lt;span class="o"&gt;(&lt;/span&gt;plugdev&lt;span class="o"&gt;)&lt;/span&gt;,100&lt;span class="o"&gt;(&lt;/span&gt;users&lt;span class="o"&gt;)&lt;/span&gt;,103&lt;span class="o"&gt;(&lt;/span&gt;scanner&lt;span class="o"&gt;)&lt;/span&gt;,112&lt;span class="o"&gt;(&lt;/span&gt;netdev&lt;span class="o"&gt;)&lt;/span&gt;
-
-&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; run: id
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;on voit le resultat des 2 commandes... la seconde ne fonctionne pas et pourtant un ssh passe lui&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ssh root@server1 id
-&lt;span class="nv"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;root&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;root&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;groupes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;root&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;après avoir écrèmé la toile à la recherche de config SSH que j'aurai raté, je testé le meme script sur un serveur. 
-Et la entre serveurs tout passe.
-La difference avec ma station, OpenSSH 7.1 vs OpenSSH 5.3
-Donc me dis que c'est quand même gonflé qu'une diff d'openssh me mette dedans
-Je mets à jour OpenSSH sur la Redhat mais j'arrive tout juste à la 5.3.13.&lt;/p&gt;
-&lt;p&gt;Je mets du PDB partout pour voir qu'est-ce qui n'irait pas.
-Et je tombe sur cette page &lt;a href="http://www.fabfile.org/troubleshooting.html?highlight=ssh"&gt;http://www.fabfile.org/troubleshooting.html?highlight=ssh&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Où je fais un bon copier coller du code sous le paragraphe "Enable Paramiko-level debug logging"
-Et là à l'execution ca donne :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;foxmask:~/DjangoVirtualEnv/monitoring/monitoring&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;monitoring&lt;span class="o"&gt;]&lt;/span&gt; $ fab -f main main:server&lt;span class="o"&gt;=&lt;/span&gt;server1 -H server1 -p pass1
-&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; Executing task &lt;span class="s1"&gt;&amp;#39;main&amp;#39;&lt;/span&gt;
-&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; This is my main &lt;span class="k"&gt;function&lt;/span&gt; that will triggers anything
-&lt;span class="o"&gt;[&lt;/span&gt;localhost&lt;span class="o"&gt;]&lt;/span&gt; local: id
-&lt;span class="nv"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;gid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;groupes&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;foxmask&lt;span class="o"&gt;)&lt;/span&gt;,24&lt;span class="o"&gt;(&lt;/span&gt;cdrom&lt;span class="o"&gt;)&lt;/span&gt;,25&lt;span class="o"&gt;(&lt;/span&gt;floppy&lt;span class="o"&gt;)&lt;/span&gt;,29&lt;span class="o"&gt;(&lt;/span&gt;audio&lt;span class="o"&gt;)&lt;/span&gt;,30&lt;span class="o"&gt;(&lt;/span&gt;dip&lt;span class="o"&gt;)&lt;/span&gt;,44&lt;span class="o"&gt;(&lt;/span&gt;video&lt;span class="o"&gt;)&lt;/span&gt;,46&lt;span class="o"&gt;(&lt;/span&gt;plugdev&lt;span class="o"&gt;)&lt;/span&gt;,100&lt;span class="o"&gt;(&lt;/span&gt;users&lt;span class="o"&gt;)&lt;/span&gt;,103&lt;span class="o"&gt;(&lt;/span&gt;scanner&lt;span class="o"&gt;)&lt;/span&gt;,112&lt;span class="o"&gt;(&lt;/span&gt;netdev&lt;span class="o"&gt;)&lt;/span&gt;
-
-&lt;span class="o"&gt;[&lt;/span&gt;server1&lt;span class="o"&gt;]&lt;/span&gt; run: id
-DEBUG:paramiko.transport:starting thread &lt;span class="o"&gt;(&lt;/span&gt;client mode&lt;span class="o"&gt;)&lt;/span&gt;: 0x66aed748
-DEBUG:paramiko.transport:Local version/idstring: SSH-2.0-paramiko_2.4.0
-DEBUG:paramiko.transport:Remote version/idstring: SSH-2.0-OpenSSH_5.3
-INFO:paramiko.transport:Connected &lt;span class="o"&gt;(&lt;/span&gt;version &lt;span class="m"&gt;2&lt;/span&gt;.0, client OpenSSH_5.3&lt;span class="o"&gt;)&lt;/span&gt;
-DEBUG:paramiko.transport:kex algos:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;diffie-hellman-group-exchange-sha256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;diffie-hellman-group-exchange-sha1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;diffie-hellman-group14-sha1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;diffie-hellman-group1-sha1&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server key:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ssh-rsa&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;ssh-dss&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; client encrypt:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;aes128-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes192-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes256-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour128&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes128-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;3des-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;blowfish-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;cast128-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes192-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes256-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;rijndael-cbc@lysator.liu.se&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server encrypt:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;aes128-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes192-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes256-ctr&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour128&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes128-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;3des-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;blowfish-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;cast128-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes192-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;aes256-cbc&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;arcfour&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;rijndael-cbc@lysator.liu.se&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; client mac:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hmac-md5&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;umac-64@openssh.com&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha2-256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha2-512&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-ripemd160&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-ripemd160@openssh.com&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha1-96&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-md5-96&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server mac:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;hmac-md5&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha1&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;umac-64@openssh.com&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha2-256&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha2-512&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-ripemd160&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-ripemd160@openssh.com&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-sha1-96&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;hmac-md5-96&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; client compress:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;none&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;zlib@openssh.com&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server compress:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;none&amp;#39;&lt;/span&gt;, &lt;span class="s1"&gt;&amp;#39;zlib@openssh.com&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; client lang:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; server lang:&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt; kex follows?False
-DEBUG:paramiko.transport:Kex agreed: diffie-hellman-group-exchange-sha256
-DEBUG:paramiko.transport:HostKey agreed: ssh-rsa
-DEBUG:paramiko.transport:Cipher agreed: aes128-ctr
-DEBUG:paramiko.transport:MAC agreed: hmac-sha2-256
-DEBUG:paramiko.transport:Compression agreed: none
-DEBUG:paramiko.transport:Got server p &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2048&lt;/span&gt; bits&lt;span class="o"&gt;)&lt;/span&gt;
-DEBUG:paramiko.transport:kex engine KexGexSHA256 specified hash_algo &amp;lt;built-in &lt;span class="k"&gt;function&lt;/span&gt; openssl_sha256&amp;gt;
-DEBUG:paramiko.transport:Switch to new keys ...
-DEBUG:paramiko.transport:Trying discovered key b&lt;span class="s1"&gt;&amp;#39;8fbb1c6beb76bcc6767eccfcbef3730e&amp;#39;&lt;/span&gt; in /home/foxmask/.ssh/id_rsa
-DEBUG:paramiko.transport:userauth is OK
-INFO:paramiko.transport:Authentication &lt;span class="o"&gt;(&lt;/span&gt;publickey&lt;span class="o"&gt;)&lt;/span&gt; failed.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;du coup me v'la frais avec un paramiko qui met son caca en trouvant bien que l'userauth est ok mais pas la publickey. Ca te ferait mal de me laisser passer puisque tu as vu que le user/pass etait ok ?&lt;/p&gt;
-&lt;p&gt;Etape suivante, trouver comment forcer &lt;a href="https://serverfault.com/questions/283722/authentication-order-with-ssh"&gt;SSH à utiliser le mot de passe et basta&lt;/a&gt; ... &lt;/p&gt;
-&lt;p&gt;Je n'ai pas encore mis la main sur une solution , je mettrai à jour si j'en trouve une d'ici là :)&lt;/p&gt;
-&lt;p&gt;@Tchao :)&lt;/p&gt;</content><category term="Techno"></category><category term="python"></category><category term="Fabric"></category></entry></feed>
+&lt;p&gt;Au final tout peut se résumer à "Graphisme superbe &amp;amp; Univers immersif avec très grande modularité du personnage et liberté de choix". Et pour un jeu qui payait pas de mine, Sony semble faire un carton avec ce jeu inattendu.&lt;/p&gt;</content><category term="Games"></category><category term="HzD"></category></entry></feed>

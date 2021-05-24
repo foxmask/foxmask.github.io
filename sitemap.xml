@@ -5,35 +5,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://foxmask.github.io/</loc>
-<lastmod>2020-09-08T18:37:07-00:00</lastmod>
+<lastmod>2021-05-24T13:53:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.github.io/categories.html</loc>
-<lastmod>2020-09-08T18:37:07-00:00</lastmod>
+<lastmod>2021-05-24T13:53:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.github.io/tags.html</loc>
-<lastmod>2020-09-08T18:37:07-00:00</lastmod>
+<lastmod>2021-05-24T13:53:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.github.io/archives.html</loc>
-<lastmod>2020-09-08T18:37:07-00:00</lastmod>
+<lastmod>2021-05-24T13:53:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://foxmask.github.io/search.html</loc>
-<lastmod>2020-09-08T18:37:07-00:00</lastmod>
+<lastmod>2021-05-24T13:53:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -41,6 +41,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://foxmask.github.io/pages/a-propos</loc>
 <lastmod>2010-03-20T20:42:00+01:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.github.io/post/2021/05/24/out-of-korea/</loc>
+<lastmod>2021-05-24T13:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1363,7 +1370,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://foxmask.github.io/category/general.html</loc>
-<lastmod>2017-04-07T13:30:00+00:09</lastmod>
+<lastmod>2021-05-24T13:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1378,6 +1385,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://foxmask.github.io/category/techno.html</loc>
 <lastmod>2020-09-08T18:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.github.io/tag/life.html</loc>
+<lastmod>2021-05-24T13:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.github.io/tag/korea.html</loc>
+<lastmod>2021-05-24T13:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -1993,7 +2014,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://foxmask.github.io/author/foxmask.html</loc>
-<lastmod>2020-09-08T18:00:00+00:09</lastmod>
+<lastmod>2021-05-24T13:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
