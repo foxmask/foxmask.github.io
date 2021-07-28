@@ -188,7 +188,7 @@ monit status -g server
 </code></pre></div>
 
 
-<p>you will need to change the default value when the <code>programOutput</code> will become to be large (with custom pograms for example)</p>
+<p>you will need to change the default value of each of them when the <code>programOutput</code> content will become larger (with custom programs for example)</p>
 <ul>
 <li>sending mail</li>
 </ul>
@@ -343,7 +343,7 @@ monit status -g server
 <li>WebSphere</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="c1"># check the PID of the appserver</span>
-<span class="na">check process BKCFBHD_was with pidfile &quot;/opt/IBM/WebSphere/AppServer/profiles/foxmask/logs/server1/server1.pid&quot;</span>
+<span class="na">check process WASINSTANCE with pidfile &quot;/opt/IBM/WebSphere/AppServer/profiles/foxmask/logs/server1/server1.pid&quot;</span>
       <span class="na">if failed</span>
       <span class="na">port 9093</span>
       <span class="na">for 3 cycles</span>
@@ -382,9 +382,9 @@ monit status -g server
     <span class="na">alert joe.doe@company0.com</span>
     <span class="na">alert jane.doe@company0.com</span>
        <span class="na">with mail-format {</span>
-            <span class="na">from: IT_Support@company.com</span>
-            <span class="na">subject: [$HOME] partner.company1.com does not respond $DATE</span>
-            <span class="na">message: The application at the URL https://check host partner_server with address partner.company1.com/GAMES/ is unavailable</span>
+            <span class="na">from: IT_Support@company0.com</span>
+            <span class="na">subject: [$HOST] partner.company1.com does not respond $DATE</span>
+            <span class="na">message: The application at the URL https://partner.company1.com with address https://partner.company1.com/GAMES/ is unavailable</span>
        <span class="na">}</span>
     <span class="na">every &quot;13 8-19 * * 1-5&quot;</span>
     <span class="na">group server</span>
@@ -398,9 +398,9 @@ monit status -g server
     <span class="na">alert joe.doe@company0.com</span>
     <span class="na">alert jane.doe@company0.com</span>
       <span class="na">with mail-format {</span>
-           <span class="na">from: DL_CFTech@se.linedata.com</span>
-           <span class="na">subject:  the server server101 server-tfsf-prdapp02 does not respond $DATE</span>
-           <span class="na">message:  Ping has failed to server server101 $DATE</span>
+           <span class="na">from: IT_Support@company0.com</span>
+           <span class="na">subject: [$HOST] partner.company1.com does not respond $DATE</span>
+           <span class="na">message: Ping has failed to server server101 $DATE</span>
       <span class="na">}</span>
    <span class="na">every &quot;0,5,10,15,20,25,30,35,40,45,50,55 8-19 * * *&quot;</span>
    <span class="na">group server</span>

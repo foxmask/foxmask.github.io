@@ -56,7 +56,7 @@ monit status -g server
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;you will need to change the default value when the &lt;code&gt;programOutput&lt;/code&gt; will become to be large (with custom pograms for example)&lt;/p&gt;
+&lt;p&gt;you will need to change the default value of each of them when the &lt;code&gt;programOutput&lt;/code&gt; content will become larger (with custom programs for example)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;sending mail&lt;/li&gt;
 &lt;/ul&gt;
@@ -211,7 +211,7 @@ monit status -g server
 &lt;li&gt;WebSphere&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# check the PID of the appserver&lt;/span&gt;
-&lt;span class="na"&gt;check process BKCFBHD_was with pidfile &amp;quot;/opt/IBM/WebSphere/AppServer/profiles/foxmask/logs/server1/server1.pid&amp;quot;&lt;/span&gt;
+&lt;span class="na"&gt;check process WASINSTANCE with pidfile &amp;quot;/opt/IBM/WebSphere/AppServer/profiles/foxmask/logs/server1/server1.pid&amp;quot;&lt;/span&gt;
       &lt;span class="na"&gt;if failed&lt;/span&gt;
       &lt;span class="na"&gt;port 9093&lt;/span&gt;
       &lt;span class="na"&gt;for 3 cycles&lt;/span&gt;
@@ -250,9 +250,9 @@ monit status -g server
     &lt;span class="na"&gt;alert joe.doe@company0.com&lt;/span&gt;
     &lt;span class="na"&gt;alert jane.doe@company0.com&lt;/span&gt;
        &lt;span class="na"&gt;with mail-format {&lt;/span&gt;
-            &lt;span class="na"&gt;from: IT_Support@company.com&lt;/span&gt;
-            &lt;span class="na"&gt;subject: [$HOME] partner.company1.com does not respond $DATE&lt;/span&gt;
-            &lt;span class="na"&gt;message: The application at the URL https://check host partner_server with address partner.company1.com/GAMES/ is unavailable&lt;/span&gt;
+            &lt;span class="na"&gt;from: IT_Support@company0.com&lt;/span&gt;
+            &lt;span class="na"&gt;subject: [$HOST] partner.company1.com does not respond $DATE&lt;/span&gt;
+            &lt;span class="na"&gt;message: The application at the URL https://partner.company1.com with address https://partner.company1.com/GAMES/ is unavailable&lt;/span&gt;
        &lt;span class="na"&gt;}&lt;/span&gt;
     &lt;span class="na"&gt;every &amp;quot;13 8-19 * * 1-5&amp;quot;&lt;/span&gt;
     &lt;span class="na"&gt;group server&lt;/span&gt;
@@ -266,9 +266,9 @@ monit status -g server
     &lt;span class="na"&gt;alert joe.doe@company0.com&lt;/span&gt;
     &lt;span class="na"&gt;alert jane.doe@company0.com&lt;/span&gt;
       &lt;span class="na"&gt;with mail-format {&lt;/span&gt;
-           &lt;span class="na"&gt;from: DL_CFTech@se.linedata.com&lt;/span&gt;
-           &lt;span class="na"&gt;subject:  the server server101 server-tfsf-prdapp02 does not respond $DATE&lt;/span&gt;
-           &lt;span class="na"&gt;message:  Ping has failed to server server101 $DATE&lt;/span&gt;
+           &lt;span class="na"&gt;from: IT_Support@company0.com&lt;/span&gt;
+           &lt;span class="na"&gt;subject: [$HOST] partner.company1.com does not respond $DATE&lt;/span&gt;
+           &lt;span class="na"&gt;message: Ping has failed to server server101 $DATE&lt;/span&gt;
       &lt;span class="na"&gt;}&lt;/span&gt;
    &lt;span class="na"&gt;every &amp;quot;0,5,10,15,20,25,30,35,40,45,50,55 8-19 * * *&amp;quot;&lt;/span&gt;
    &lt;span class="na"&gt;group server&lt;/span&gt;
