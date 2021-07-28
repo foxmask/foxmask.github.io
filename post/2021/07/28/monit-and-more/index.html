@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Monit ... and more - Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://foxmask.github.io/post/2021/07/28/monit-and-more/">
+
+        <meta name="author" content="foxmask" />
+        <meta name="keywords" content="python,django,monit" />
+        <meta name="description" content="Intro I use monit intensively in my daily pro life, and I plugged that to a django application to always know how the ~300 VM are going. In that article in the first part, I will describe all the possibilities I found with monit and the second, how to get …" />
+
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Monit ... and more"/>
+        <meta property="og:url" content="https://foxmask.github.io/post/2021/07/28/monit-and-more/"/>
+        <meta property="og:description" content="Intro I use monit intensively in my daily pro life, and I plugged that to a django application to always know how the ~300 VM are going. In that article in the first part, I will describe all the possibilities I found with monit and the second, how to get …"/>
+        <meta property="article:published_time" content="2021-07-28" />
+            <meta property="article:section" content="Techno" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:tag" content="django" />
+            <meta property="article:tag" content="monit" />
+            <meta property="article:author" content="foxmask" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://foxmask.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://foxmask.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="https://foxmask.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://foxmask.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+
+        <link href="https://foxmask.github.io/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion Techno ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://foxmask.github.io/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://foxmask.github.io/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://foxmask.github.io/category/entrevues.html">Entrevues</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.github.io/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.github.io/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://foxmask.github.io/category/news.html">News</a>
+                        </li>
+                        <li class="active">
+                            <a href="https://foxmask.github.io/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="https://foxmask.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="https://foxmask.github.io/post/2021/07/28/monit-and-more/"
+                       rel="bookmark"
+                       title="Permalink to Monit ... and more">
+                        Monit ... and more
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2021-07-28T19:00:00+02:00"> mer. 28 juillet 2021</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://foxmask.github.io/tag/python.html">python</a>
+        /
+	<a href="https://foxmask.github.io/tag/django.html">django</a>
+        /
+	<a href="https://foxmask.github.io/tag/monit.html">monit</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h1>Intro</h1>
+<p>I use monit intensively in my daily pro life, and I plugged that to a django application to always know how the ~300 VM are going.</p>
+<p>In that article in the first part, I will describe all the possibilities I found with monit and the second, how to get the results of the probes and put that in a django app.</p>
+<p>As I said, as I manage ~300VM, all the installation and configuration of monit is done with 2 ansible playbook, one to install the package, one to set monit and add new probes for all services (like oracle, tomcat, jboss, business services and so on) on each server</p>
+<h1>I - Monit</h1>
+<h2>Install</h2>
+<div class="highlight"><pre><span></span><code><span class="err">yum install monit</span>
+</code></pre></div>
+
+
+<p>or</p>
+<div class="highlight"><pre><span></span><code>apt install monit
+</code></pre></div>
+
+
+<h2>Commands</h2>
+<div class="highlight"><pre><span></span><code>monit summary
+monit status
+</code></pre></div>
+
+
+<p>monit allows us to "group" the result of probe with a tag group eg</p>
+<div class="highlight"><pre><span></span><code>monit summary -g server
+monit status -g server
+</code></pre></div>
+
+
+<p><code>monit summary</code> will render a table ; <code>monit status</code> will render the details of each probe </p>
+<h2>Settings</h2>
+<p>depending on your OS or even version of distribution the config file can be <code>/etc/monit/monitrc</code> or <code>/etc/monit/monit.conf</code></p>
+<h3>sections of the config file</h3>
+<ul>
+<li>run monit each ...</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">set daemon 30</span>
+</code></pre></div>
+
+
+<ul>
+<li>limit of various tests</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">set limits {</span>
+    <span class="na">programOutput:     2 MB,      # check program&#39;s output truncate limit</span>
+    <span class="na">sendExpectBuffer:  256 B,      # limit for send/expect protocol test</span>
+    <span class="na">fileContentBuffer: 512 B,      # limit for file content test</span>
+    <span class="na">httpContentBuffer: 1 MB,       # limit for HTTP content test</span>
+    <span class="na">networkTimeout:    5 seconds   # timeout for network I/O</span>
+    <span class="na">programTimeout:    300 seconds # timeout for check program</span>
+    <span class="na">stopTimeout:       30 seconds  # timeout for service stop</span>
+    <span class="na">startTimeout:      30 seconds  # timeout for service start</span>
+    <span class="na">restartTimeout:    30 seconds  # timeout for service restart</span>
+<span class="na">}</span>
+</code></pre></div>
+
+
+<p>you will need to change the default value when the <code>programOutput</code> will become to be large (with custom pograms for example)</p>
+<ul>
+<li>sending mail</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">set mailserver localhost</span>
+</code></pre></div>
+
+
+<p>we set the name of the server that will send mail when alerts will occur</p>
+<ul>
+<li>mail content</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">set mail-format {</span>
+  <span class="na">from:    Monit &lt;monit@$HOST&gt;</span>
+  <span class="na">subject: monit alert --  $EVENT $SERVICE</span>
+  <span class="na">message: $EVENT Service $SERVICE</span>
+                <span class="na">Date:        $DATE</span>
+                <span class="na">Action:      $ACTION</span>
+                <span class="na">Host:        $HOST</span>
+                <span class="na">Description: $DESCRIPTION</span>
+
+
+            <span class="na">Your faithful employee,</span>
+            <span class="na">Monit</span>
+<span class="na">--8&lt;--</span>
+<span class="na">}</span>
+</code></pre></div>
+
+
+<p>this will be the content of the mail that will be send when alerts will occur</p>
+<ul>
+<li>email to receive alert</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">set alert john@doe.com not on { instance, action }</span>
+</code></pre></div>
+
+
+<ul>
+<li>allow the http console to be accessing from a browser or curl</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">set httpd port 2812 and use address nameoftheserver_or_localhost</span>
+    <span class="c1"># use address localhost  # only accept connection from localhost (drop if you use M/Monit)</span>
+    <span class="na">allow localhost        # allow localhost to connect to the server and</span>
+    <span class="na">allow admin:monit      # require user &#39;admin&#39; with password &#39;monit&#39;</span>
+    <span class="c1">#with ssl {            # enable SSL/TLS and set path to server certificate</span>
+    <span class="c1">#    pemfile: /etc/ssl/certs/monit.pem</span>
+    <span class="c1">#}</span>
+</code></pre></div>
+
+
+<ul>
+<li>checking system</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">check system $HOST</span>
+  <span class="na">if loadavg (1min) &gt; 22 for 20 cycles then alert</span>
+  <span class="na">if loadavg (5min) &gt; 17 for 20 cycles then alert</span>
+  <span class="na">if cpu usage &gt; 95% for 10 cycles then alert</span>
+  <span class="na">if memory usage &gt; 75% for 20 cycles then alert</span>
+  <span class="na">if swap usage &gt; 25% for 20 cycles then alert</span>
+</code></pre></div>
+
+
+<ul>
+<li>check filesystem</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">check filesystem root with path /</span>
+    <span class="na">if space usage &gt; 90% then alert</span>
+    <span class="na">group server</span>
+
+<span class="na">check filesystem home with path /home</span>
+    <span class="na">if space usage &gt; 90% then alert</span>
+    <span class="na">group server</span>
+</code></pre></div>
+
+
+<p>this will check 2 partitions <code>/</code> and <code>/home</code></p>
+<h3>checking other services</h3>
+<p>we can check the existence of the PID file or a process matching a path like as follow</p>
+<ul>
+<li>nginx</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">check process nginx with pidfile /var/run/nginx.pid</span>
+    <span class="na">start program</span> <span class="o">=</span> <span class="s">&quot;/usr/sbin/service nginx start&quot; with timeout 60 seconds</span>
+<span class="s">    stop program = &quot;/usr/sbin/service nginx stop&quot;</span>
+<span class="s">    if cpu &gt; 60% for 2 cycles then alert</span>
+<span class="s">    if cpu &gt; 80% for 5 cycles then restart</span>
+<span class="s">    if totalmem &gt; 200.0 MB for 5 cycles then restart</span>
+<span class="s">    if children &gt; 250 then restart</span>
+<span class="s">    if disk read &gt; 500 kb/s for 10 cycles then alert</span>
+<span class="s">    if disk write &gt; 500 kb/s for 10 cycles then alert</span>
+<span class="s">    if failed host localhost port 80 protocol http and request &quot;/index.html&quot; then restart</span>
+<span class="s">    if 3 restarts within 5 cycles then unmonitor</span>
+<span class="s">    group server</span>
+</code></pre></div>
+
+
+<ul>
+<li>postgresql</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">check process postgresql with pidfile /var/lib/pgsql/13/data/postmaster.pid</span>
+   <span class="na">start program</span> <span class="o">=</span> <span class="s">&quot;/usr/sbin/service postgresql-13 start&quot;</span>
+<span class="s">   stop  program = &quot;/usr/sbin/service postgresql-13 stop&quot;</span>
+<span class="s">   if failed host localhost port 5432 protocol pgsql then alert</span>
+<span class="s">   group database</span>
+</code></pre></div>
+
+
+<p>if the pid file disepears, an alert is raised</p>
+<ul>
+<li>oracle</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">check process MYORACLEDB matching &quot;ora_pmon_MYORACLEDB&quot;</span>
+   <span class="na">if failed port 1521 then alert</span>
+   <span class="na">group database</span>
+</code></pre></div>
+
+
+<p>we just check the pmon process and its default 1521 port</p>
+<ul>
+<li>redis</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">check process redis matching &quot;/usr/bin/redis-server&quot;</span>
+      <span class="na">start program</span> <span class="o">=</span> <span class="s">&quot;/usr/sbin/service redis start&quot;</span>
+<span class="s">      stop program = &quot;/usr/sbin/service redis stop&quot;</span>
+<span class="s">      if 2 restarts within 3 cycles then timeout</span>
+<span class="s">      if totalmem &gt; 100 Mb then alert</span>
+<span class="s">      if children &gt; 255 for 5 cycles then stop</span>
+<span class="s">      if cpu usage &gt; 95% for 3 cycles then restart</span>
+<span class="s">      if failed host 127.0.0.1 port 6379 then restart</span>
+<span class="s">      if 5 restarts within 5 cycles then timeout</span>
+<span class="s">    group server</span>
+
+<span class="na">check process redis-sentinel matching &quot;/usr/bin/redis-sentinel&quot;</span>
+      <span class="na">if failed port 26379 then alert</span>
+    <span class="na">group server</span>
+</code></pre></div>
+
+
+<ul>
+<li>jboss and tomcat same thing (except for the match string)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">check process MYJBOSS matching &quot;Djboss.home.dir</span><span class="o">=</span><span class="s">/var/lib/MYJBOSS&quot;</span>
+<span class="s">      if failed</span>
+<span class="s">      port 8082</span>
+<span class="s">      for 3 cycles</span>
+<span class="s">   then unmonitor</span>
+<span class="s">   group appserver</span>
+</code></pre></div>
+
+
+<p>we check that a process matches the expected string + check if the port 8082 is opened</p>
+<ul>
+<li>WebSphere</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># check the PID of the appserver</span>
+<span class="na">check process BKCFBHD_was with pidfile &quot;/opt/IBM/WebSphere/AppServer/profiles/foxmask/logs/server1/server1.pid&quot;</span>
+      <span class="na">if failed</span>
+      <span class="na">port 9093</span>
+      <span class="na">for 3 cycles</span>
+   <span class="na">then unmonitor</span>
+   <span class="na">group appserver</span>
+</code></pre></div>
+
+
+<ul>
+<li>checking a django project</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">check process myproject with pidfile &#39;/home/foxmask/Projects/nyuseu/gunicorn_nyuseu.pid&#39;</span>
+    <span class="na">if failed port 8001 for 2 cycles then alert</span>
+    <span class="na">group server</span>
+</code></pre></div>
+
+
+<ul>
+<li>running "a ping" to check if one of my 'server' is still here</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="na">check host the_name_i_want_for_my_probe with address anotherserver</span>
+   <span class="na">if failed ping then alert  # IPv4 or IPv6</span>
+   <span class="na">every &quot;0,5,10,15,20,25,30,35,40,45,50,55 8-19 * * *&quot;</span>
+   <span class="na">group server</span>
+</code></pre></div>
+
+
+<h3>custom mail alert content</h3>
+<p>you may want to receive email with few of more details from a given probe that return an alert. Here is an example to send an alert with a different 'default' format we saw earlier.</p>
+<div class="highlight"><pre><span></span><code><span class="na">check host partner_server with address partner.company1.com</span>
+    <span class="na">if failed</span>
+        <span class="na">port 443 protocol https</span>
+        <span class="na">and request /GAMES/ with content</span> <span class="o">=</span> <span class="s">&quot;Login&quot;</span>
+<span class="s">    then alert</span>
+
+    <span class="na">alert joe.doe@company0.com</span>
+    <span class="na">alert jane.doe@company0.com</span>
+       <span class="na">with mail-format {</span>
+            <span class="na">from: IT_Support@company.com</span>
+            <span class="na">subject: [$HOME] partner.company1.com does not respond $DATE</span>
+            <span class="na">message: The application at the URL https://check host partner_server with address partner.company1.com/GAMES/ is unavailable</span>
+       <span class="na">}</span>
+    <span class="na">every &quot;13 8-19 * * 1-5&quot;</span>
+    <span class="na">group server</span>
+</code></pre></div>
+
+
+<p>thus here, each 13 min from 8h to 19h from Monday to Friday, the server partner.company1.com is checked and if the https://partner.company1.com/GAMES/ is not found, raise an alert send to joe and jane with the given </p>
+<h4>sending alert to a Slack channel</h4>
+<div class="highlight"><pre><span></span><code><span class="na">check host server101 with address server101</span>
+    <span class="na">if failed ping then exec &quot;/home/foxmask/scripts/slack.sh&quot; else if succeeded then exec &quot;/home/foxmask/scripts/slack.sh&quot;</span>
+    <span class="na">alert joe.doe@company0.com</span>
+    <span class="na">alert jane.doe@company0.com</span>
+      <span class="na">with mail-format {</span>
+           <span class="na">from: DL_CFTech@se.linedata.com</span>
+           <span class="na">subject:  the server server101 server-tfsf-prdapp02 does not respond $DATE</span>
+           <span class="na">message:  Ping has failed to server server101 $DATE</span>
+      <span class="na">}</span>
+   <span class="na">every &quot;0,5,10,15,20,25,30,35,40,45,50,55 8-19 * * *&quot;</span>
+   <span class="na">group server</span>
+</code></pre></div>
+
+
+<p><code>slack.sh</code> will look like this </p>
+<div class="highlight"><pre><span></span><code><span class="na">set -e</span>
+<span class="na">set -u</span>
+
+<span class="na">URL</span><span class="o">=</span><span class="s">https://hooks.slack.com/services/&lt;THE ID OR YOUR CUSTOM HOOK&gt;</span>
+
+<span class="na">if test -z $URL</span>
+<span class="na">then</span>
+        <span class="na">&gt;&amp;2 echo &quot;No Slack webhook URL provided&quot;</span>
+        <span class="na">exit 1</span>
+<span class="na">fi</span>
+
+<span class="na">CHANNEL</span><span class="o">=</span><span class="s">projet</span>
+<span class="na">STATUS</span><span class="o">=</span><span class="s">${MONIT_EVENT:-unknown}</span>
+<span class="na">SERVICE</span><span class="o">=</span><span class="s">${MONIT_SERVICE:-?}</span>
+
+<span class="na">PAYLOAD</span><span class="o">=</span><span class="s">&quot;{</span>
+<span class="s">        \&quot;channel\&quot;: \&quot;#${CHANNEL:-alerts}\&quot;,</span>
+<span class="s">        \&quot;username\&quot;: \&quot;Monit\&quot;,</span>
+<span class="s">        \&quot;icon_emoji\&quot;: \&quot;:robot_face:\&quot;,</span>
+<span class="s">        \&quot;attachments\&quot;: [{</span>
+<span class="s">                \&quot;fallback\&quot;: \&quot;${SERVICE} – ${MONIT_DESCRIPTION:-?}\&quot;,</span>
+<span class="s">                \&quot;mrkdwn_in\&quot;: [\&quot;pretext\&quot;],</span>
+<span class="s">                \&quot;pretext\&quot;: \&quot;*${SERVICE}*\&quot;,</span>
+<span class="s">                \&quot;text\&quot;: \&quot;${MONIT_DESCRIPTION:-?}\&quot;,</span>
+<span class="s">                \&quot;color\&quot;: \&quot;${MONIT_COLOR:-$([[ $STATUS == *&quot;succeeded&quot;* ]] &amp;&amp; echo good || echo danger)}\&quot;,</span>
+<span class="s">                \&quot;fields\&quot;: [</span>
+<span class="s">                        { \&quot;title\&quot;: \&quot;Date\&quot;, \&quot;value\&quot;: \&quot;${MONIT_DATE:-$(date -R)}\&quot;, \&quot;short\&quot;: true },</span>
+<span class="s">                        { \&quot;title\&quot;: \&quot;Host\&quot;, \&quot;value\&quot;: \&quot;${MONIT_HOST:-$(hostname)}\&quot;, \&quot;short\&quot;: true },</span>
+<span class="s">                        { \&quot;title\&quot;: \&quot;Service\&quot;, \&quot;value\&quot;: \&quot;${SERVICE}\&quot;, \&quot;short\&quot;: true },</span>
+<span class="s">                        { \&quot;title\&quot;: \&quot;Status\&quot;, \&quot;value\&quot;: \&quot;${STATUS}\&quot;, \&quot;short\&quot;: true }</span>
+<span class="s">                ]}</span>
+<span class="s">        ]</span>
+<span class="na">}&quot;</span>
+
+<span class="na">curl -s -X POST --data-urlencode &quot;payload</span><span class="o">=</span><span class="s">$PAYLOAD&quot; $URL</span>
+</code></pre></div>
+
+
+<p>(source <a href="https://peteris.rocks/blog/monit-configuration-with-slack/">https://peteris.rocks/blog/monit-configuration-with-slack/</a>)</p>
+<p>in the previous example, "group server", "group database" allow us to requests status of probe grouped by this keyword, for exemple :</p>
+<div class="highlight"><pre><span></span><code>$ monit summary -g server
+$ monit status -g server
+$ monit status -g database
+</code></pre></div>
+
+
+<h1>II - Django application</h1>
+<p>After all those configuration, </p>
+<ul>
+<li>I made a management command that will read the "Servers" model</li>
+<li>run curl -XGET http://login:pass@server/_status?format=xml for each server</li>
+<li>convert the XML into a dict (thanks to xmltodict)</li>
+<li>update the data (probes) of the server into the database</li>
+</ul>
+<p><code>models.py</code></p>
+<p>a model a little bit long with manager with a <code>Service</code> models that matches all monit use case.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+
+<span class="k">class</span> <span class="nc">Server</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Server</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">watch</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">swap_limit</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+    <span class="n">cpu_limit</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+    <span class="n">vm</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ServicesQS</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">QuerySet</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;System&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">system_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;System&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">system_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;System&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">filesystem</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;FileSystem&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">filesystem_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;FileSystem&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">file_system_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;FileSystem&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Network&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">network_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Network&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">network_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Network&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Files&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">files_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Files&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">files_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Files&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">directory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Directory&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">directory_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Directory&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">directory_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Directory&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">host</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Host&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">host_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Host&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">host_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Host&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Process&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">process_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Process&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">process_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Process&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">services</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Services&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">services_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Services&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">services_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Services&quot;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ServicesMgr</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Manager</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ServicesQS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">using</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="p">)</span>  <span class="c1"># Important!</span>
+
+    <span class="k">def</span> <span class="nf">ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">ko</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">system_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">system_ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">system_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">system_ko</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">file_system</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">filesystem</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">filesystem_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">filesystem_ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">filesystem_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">file_system_ko</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">network</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">network</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">network_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">network_ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">network_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">network_ko</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">files</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">files</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">files_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">files_ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">files_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">files_ko</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">directory</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">directory</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">directory_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">directory_ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">directory_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">directory_ko</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">host</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">host</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">host_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">host_ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">host_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">host_ko</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">process</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">process_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">process_ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">process_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">process_ko</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">services</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">services</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">services_ok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">services_ok</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">services_ko</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span><span class="o">.</span><span class="n">services_ko</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">Services</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Service</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">server</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Server</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+    <span class="n">date_created</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">()</span>
+    <span class="n">status_string</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">data_collected</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="nb">type</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">objects</span> <span class="o">=</span> <span class="n">ServicesMgr</span><span class="p">()</span>  <span class="c1"># manager to get the status ok/ko</span>
+
+
+
+<span class="k">class</span> <span class="nc">MonitServers</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        MonitServer</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">server</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span>
+        <span class="n">Server</span><span class="p">,</span>
+        <span class="n">related_name</span><span class="o">=</span><span class="s2">&quot;monit&quot;</span><span class="p">,</span>
+        <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">monit_user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">monit_pass</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">monit_ip</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">monit_port</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+</code></pre></div>
+
+
+<p><code>admin.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+
+<span class="kn">from</span> <span class="nn">monitoring.models</span> <span class="kn">import</span> <span class="n">Server</span><span class="p">,</span> <span class="n">Services</span><span class="p">,</span> <span class="n">MonitServers</span>
+
+<span class="k">class</span> <span class="nc">ServerAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;vm&#39;</span><span class="p">,</span> <span class="s1">&#39;swap_limit&#39;</span><span class="p">,</span> <span class="s1">&#39;cpu_limit&#39;</span><span class="p">)</span>
+    <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;watch&#39;</span><span class="p">,</span> <span class="s1">&#39;swap_limit&#39;</span><span class="p">,</span> <span class="s1">&#39;cpu_limit&#39;</span><span class="p">,</span> <span class="s1">&#39;vm&#39;</span><span class="p">)</span>
+
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">ServicesAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;server&#39;</span><span class="p">,</span> <span class="s1">&#39;status&#39;</span><span class="p">,</span> <span class="s1">&#39;data_collected&#39;</span><span class="p">)</span>
+    <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;server__name&#39;</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">MonitServersAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;server&#39;</span><span class="p">,</span> <span class="s1">&#39;monit_user&#39;</span><span class="p">,</span> <span class="s1">&#39;monit_ip&#39;</span><span class="p">,</span> <span class="s1">&#39;monit_port&#39;</span><span class="p">)</span>
+    <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;server&#39;</span><span class="p">]</span>
+    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;server__name&#39;</span><span class="p">]</span>
+
+
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Server</span><span class="p">,</span> <span class="n">ServerAdmin</span><span class="p">)</span>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Services</span><span class="p">,</span> <span class="n">ServicesAdmin</span><span class="p">)</span>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">MonitServers</span><span class="p">,</span> <span class="n">MonitServersAdmin</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p><code>management/commands/monit.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">django.core.management.base</span> <span class="kn">import</span> <span class="n">BaseCommand</span>
+<span class="kn">from</span> <span class="nn">logging</span> <span class="kn">import</span> <span class="n">getLogger</span>
+<span class="kn">from</span> <span class="nn">monitoring.models</span> <span class="kn">import</span> <span class="n">Server</span><span class="p">,</span> <span class="n">MonitServers</span>
+<span class="kn">from</span> <span class="nn">rich.console</span> <span class="kn">import</span> <span class="n">Console</span>
+<span class="kn">import</span> <span class="nn">xmltodict</span>
+
+
+<span class="c1"># create logger</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;monitoring.monit&#39;</span><span class="p">)</span>
+
+<span class="n">console</span> <span class="o">=</span> <span class="n">Console</span><span class="p">()</span>
+<span class="n">console_warning</span> <span class="o">=</span> <span class="s2">&quot;bold yellow&quot;</span>
+<span class="n">console_danger</span> <span class="o">=</span> <span class="s2">&quot;bold red&quot;</span>
+<span class="n">console_info</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+<span class="n">console_success</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">get_monit_json</span><span class="p">(</span><span class="n">monit_obj</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    get the status of the server</span>
+<span class="sd">    :param server:</span>
+<span class="sd">    :param monit_ip:</span>
+<span class="sd">    :return: stats in json</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">allstat</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;monit&#39;</span><span class="p">:</span> <span class="p">{}}</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://</span><span class="si">{monit_ip}</span><span class="s2">:</span><span class="si">{monit_port}</span><span class="s2">/_status?format=xml&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">monit_ip</span><span class="o">=</span><span class="n">monit_obj</span><span class="o">.</span><span class="n">monit_ip</span><span class="p">,</span>
+                                                                     <span class="n">monit_port</span><span class="o">=</span><span class="n">monit_obj</span><span class="o">.</span><span class="n">monit_port</span><span class="p">)</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">monit_obj</span><span class="o">.</span><span class="n">monit_ip</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">console_info</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">monit_obj</span><span class="o">.</span><span class="n">monit_user</span><span class="p">,</span> <span class="n">monit_obj</span><span class="o">.</span><span class="n">monit_pass</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">allstat</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">xmltodict</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)))</span>
+            <span class="k">except</span> <span class="n">xml</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">expat</span><span class="o">.</span><span class="n">ExpatError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger_error</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">console_warning</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">ConnectionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">logger_error</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">console_warning</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">allstat</span><span class="p">[</span><span class="s1">&#39;monit&#39;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">server_check_service</span><span class="p">(</span><span class="n">allstat</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># server info</span>
+    <span class="n">server_memory</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">allstat</span><span class="p">[</span><span class="s1">&#39;platform&#39;</span><span class="p">][</span><span class="s1">&#39;memory&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">server_swap</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">allstat</span><span class="p">[</span><span class="s1">&#39;platform&#39;</span><span class="p">][</span><span class="s1">&#39;swap&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="mi">1024</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="c1"># services</span>
+    <span class="n">services</span> <span class="o">=</span> <span class="n">allstat</span><span class="p">[</span><span class="s1">&#39;service&#39;</span><span class="p">]</span>
+    <span class="c1"># read the service returned by the curl for example</span>
+
+    <span class="k">for</span> <span class="n">service</span> <span class="ow">in</span> <span class="n">services</span><span class="p">:</span>
+        <span class="c1"># type = FileSystem</span>
+        <span class="k">if</span> <span class="n">service</span><span class="p">[</span><span class="s1">&#39;@type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+            <span class="n">programs</span> <span class="o">=</span> <span class="n">add_filesystem</span><span class="p">(</span><span class="n">programs</span><span class="p">,</span> <span class="n">service</span><span class="p">)</span>
+        <span class="c1"># type = directory</span>
+        <span class="k">elif</span> <span class="n">service</span><span class="p">[</span><span class="s1">&#39;@type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
+            <span class="n">programs</span> <span class="o">=</span> <span class="n">add_dir</span><span class="p">(</span><span class="n">programs</span><span class="p">,</span> <span class="n">service</span><span class="p">)</span>
+        <span class="c1"># type = file</span>
+        <span class="k">elif</span> <span class="n">service</span><span class="p">[</span><span class="s1">&#39;@type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
+            <span class="n">programs</span> <span class="o">=</span> <span class="n">add_files</span><span class="p">(</span><span class="n">programs</span><span class="p">,</span> <span class="n">service</span><span class="p">)</span>
+        <span class="c1"># type = process</span>
+        <span class="k">elif</span> <span class="n">service</span><span class="p">[</span><span class="s1">&#39;@type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;3&#39;</span><span class="p">:</span>
+            <span class="n">programs</span> <span class="o">=</span> <span class="n">add_process</span><span class="p">(</span><span class="n">programs</span><span class="p">,</span> <span class="n">service</span><span class="p">)</span>
+        <span class="c1"># type = host</span>
+        <span class="k">elif</span> <span class="n">service</span><span class="p">[</span><span class="s1">&#39;@type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;4&#39;</span><span class="p">:</span>
+            <span class="n">programs</span> <span class="o">=</span> <span class="n">add_hosts</span><span class="p">(</span><span class="n">programs</span><span class="p">,</span> <span class="n">service</span><span class="p">)</span>
+        <span class="c1"># type = info Operating System</span>
+        <span class="k">elif</span> <span class="n">service</span><span class="p">[</span><span class="s1">&#39;@type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;5&#39;</span><span class="p">:</span>
+            <span class="n">programs</span> <span class="o">=</span> <span class="n">add_os</span><span class="p">(</span><span class="n">programs</span><span class="p">,</span> <span class="n">service</span><span class="p">,</span> <span class="n">server_memory</span><span class="p">,</span> <span class="n">server_swap</span><span class="p">)</span>
+        <span class="c1"># type = &#39;custom probe&#39; not covered in that blog post ;)</span>
+        <span class="c1"># elif service[&#39;@type&#39;] == &#39;7&#39;:</span>
+        <span class="c1">#  [...]</span>
+    <span class="k">return</span> <span class="n">programs</span>
+
+
+<span class="k">class</span> <span class="nc">Command</span><span class="p">(</span><span class="n">BaseCommand</span><span class="p">):</span>
+
+    <span class="n">help</span> <span class="o">=</span> <span class="s1">&#39;Check the status of the servers&#39;</span>
+
+    <span class="k">def</span> <span class="nf">add_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parser</span><span class="p">):</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;server&#39;</span><span class="p">,</span>
+                            <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
+                            <span class="n">help</span><span class="o">=</span><span class="s1">&#39;server name or &quot;ALL&quot;&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Begin : Check services&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">console_success</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;server&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;ALL&#39;</span><span class="p">:</span>
+            <span class="n">servers</span> <span class="o">=</span> <span class="n">Server</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">servers</span> <span class="o">=</span> <span class="n">Server</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;server&#39;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">servers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">log</span> <span class="o">=</span> <span class="s2">&quot;server </span><span class="si">{server}</span><span class="s2"> not found&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;server&#39;</span><span class="p">))</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">log</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">console_danger</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">servers</span><span class="p">:</span>
+
+            <span class="n">log</span> <span class="o">=</span> <span class="s2">&quot;Reresh data of </span><span class="si">{line}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="p">)</span>
+            <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">log</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">console_info</span><span class="p">)</span>
+
+            <span class="n">monit_obj</span><span class="p">,</span> <span class="n">created</span> <span class="o">=</span> <span class="n">MonitServers</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span>
+                <span class="n">server</span><span class="o">=</span><span class="n">line</span><span class="p">,</span>
+                <span class="n">defaults</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;monit_user&#39;</span><span class="p">:</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
+                          <span class="s1">&#39;monit_pass&#39;</span><span class="p">:</span> <span class="s1">&#39;monit&#39;</span><span class="p">,</span>
+                          <span class="s1">&#39;monit_ip&#39;</span><span class="p">:</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span>
+                          <span class="s1">&#39;monit_port&#39;</span><span class="p">:</span> <span class="mi">2812</span><span class="p">},</span>
+            <span class="p">)</span>
+            <span class="n">programs</span> <span class="o">=</span> <span class="n">get_monit_json</span><span class="p">(</span><span class="n">monit_obj</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">programs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">trace</span> <span class="o">=</span> <span class="s2">&quot;Getting services from </span><span class="si">{server}</span><span class="s2"> failed from &quot;</span> \
+                        <span class="s2">&quot;http://</span><span class="si">{monit_user}</span><span class="s2">:***@</span><span class="si">{monit_ip}</span><span class="s2">:</span><span class="si">{monit_port}</span><span class="s2">/_status?format=xml&quot;</span>
+                <span class="n">trace</span> <span class="o">=</span> <span class="n">trace</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">server</span><span class="o">=</span><span class="n">monit_obj</span><span class="p">,</span>
+                                     <span class="n">monit_user</span><span class="o">=</span><span class="n">monit_obj</span><span class="o">.</span><span class="n">monit_user</span><span class="p">,</span>
+                                     <span class="n">monit_ip</span><span class="o">=</span><span class="n">monit_obj</span><span class="o">.</span><span class="n">monit_ip</span><span class="p">,</span>
+                                     <span class="n">monit_port</span><span class="o">=</span><span class="n">monit_obj</span><span class="o">.</span><span class="n">monit_port</span><span class="p">)</span>
+                <span class="n">logger_error</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">trace</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">console_danger</span><span class="p">)</span>
+                <span class="k">return</span>       
+
+            <span class="k">if</span> <span class="n">programs</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">program</span> <span class="ow">in</span> <span class="n">programs</span><span class="p">:</span>
+                    <span class="n">log</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">program</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">program</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">],</span> <span class="n">program</span><span class="p">[</span><span class="s1">&#39;status_string&#39;</span><span class="p">])</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+                    <span class="c1"># [...]</span>
+                    <span class="c1"># update Services model</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;End : Check services&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="n">console_success</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>this command will launch a curl for each server which will requests  the "monit" data then will convert XML to Dict and then update the model <code>Service</code></p>
+<p><code>views.py</code></p>
+<p>a short view which display the list of services by server + the details of all service for the choosen server</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># coding: utf-8</span>
+<span class="kn">from</span> <span class="nn">django.db.models</span> <span class="kn">import</span> <span class="n">Count</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">ListView</span><span class="p">,</span> <span class="n">DetailView</span>
+<span class="kn">from</span> <span class="nn">monitoring.models</span> <span class="kn">import</span> <span class="n">Server</span>
+
+
+<span class="k">class</span> <span class="nc">Home</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Home page</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s2">&quot;servers_list&quot;</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;monitoring/home.html&#39;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Server</span>
+
+    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Server</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">num_services</span><span class="o">=</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;services&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">num_services__gt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+
+
+
+<span class="k">class</span> <span class="nc">MonitoringServerDetail</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Detail page of a server</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Server</span>
+    <span class="n">slug_field</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;monitoring/server_detail.html&#39;</span>
+
+    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Server</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;slug&#39;</span><span class="p">])</span>
+</code></pre></div>
+
+
+<p><code>templates/monitoring/home.html</code></p>
+<p>that page will display all the server and the status of each probe</p>
+<div class="highlight"><pre><span></span><code>{% extends &quot;base.html&quot; %}
+{% load static %}
+{% block title %}Server Monitoring{% endblock %}
+{% block menu_left %}
+{% endblock %}
+{% block bootstrap_css %}
+<span class="c">&lt;!-- CSS --&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>
+{% endblock %}
+{% block content %}
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-lg-12 col-md-12&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Monitoring - <span class="p">&lt;</span><span class="nt">small</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-muted&quot;</span><span class="p">&gt;</span>Server status<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;row row-cols-4 row-cols-md-4&quot;</span><span class="p">&gt;</span>
+        {% for server in servers_list %}
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-deck mb-3&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card&quot;</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-body&quot;</span><span class="p">&gt;</span>
+                      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card_title&quot;</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;View details of server&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;monitoring_server_detail&#39; server.name %}&quot;</span><span class="p">&gt;</span>{{ server.name }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+                      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-text&quot;</span><span class="p">&gt;</span>
+                      <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-hover&quot;</span><span class="p">&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>System<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s">                            {% if server.services_set.system_ok.count &gt; 0 and server.services_set.system_ko.count == 0 %}table-success</span>
+<span class="s">                            {% elif server.services_set.system_ok.count &gt; 0 and server.services_set.system_ko.count &gt; 0 %}table-warning</span>
+<span class="s">                            {% elif server.services_set.system_ok.count == 0 and server.services_set.system_ko.count == 0 %}table-secondary</span>
+<span class="s">                            {% else %}table-danger{% endif %}</span>
+<span class="s">                            &quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Filesystem<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s">                            {% if server.services_set.filesystem_ok.count &gt; 0 and server.services_set.filesystem_ko.count == 0 %}table-success</span>
+<span class="s">                            {% elif server.services_set.filesystem_ok.count &gt; 0 and server.services_set.filesystem_ko.count &gt; 0 %}table-warning</span>
+<span class="s">                            {% elif server.services_set.filesystem_ok.count == 0 and server.services_set.filesystem_ko.count == 0 %}table-secondary</span>
+<span class="s">                            {% else %}table-danger{% endif %}&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>File<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s">                            {% if server.services_set.files_ok.count &gt; 0 and server.services_set.files_ko.count == 0 %}table-success</span>
+<span class="s">                            {% elif server.services_set.files_ok.count &gt; 0 and server.services_set.files_ko.count &gt; 0 %}table-warning</span>
+<span class="s">                            {% elif server.services_set.files_ok.count == 0 and server.services_set.files_ko.count == 0 %}table-secondary</span>
+<span class="s">                            {% else %}table-danger{% endif %}&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Directory<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s">                            {% if server.services_set.directory_ok.count &gt; 0 and server.services_set.directory_ko.count == 0 %}table-success</span>
+<span class="s">                            {% elif server.services_set.directory_ok.count &gt; 0 and server.services_set.directory_ko.count &gt; 0 %}table-warning</span>
+<span class="s">                            {% elif server.services_set.directory_ok.count == 0 and server.services_set.directory_ko.count == 0 %}table-secondary</span>
+<span class="s">                            {% else %}table-danger{% endif %}&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Network<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s">                            {% if server.services_set.network_ok.count &gt; 0 and server.services_set.network_ko.count == 0 %}table-success</span>
+<span class="s">                            {% elif server.services_set.network_ok.count &gt; 0 and server.services_set.network_ko.count &gt; 0 %}table-warning</span>
+<span class="s">                            {% elif server.services_set.network_ok.count == 0 and server.services_set.network_ko.count == 0 %}table-secondary</span>
+<span class="s">                            {% else %}table-danger{% endif %}&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Host<span class="p">&lt;/</span><span class="nt">t</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s">                            {% if server.services_set.host_ok.count &gt; 0 and server.services_set.host_ko.count == 0 %}table-success</span>
+<span class="s">                            {% elif server.services_set.host_ok.count &gt; 0 and server.services_set.host_ko.count &gt; 0 %}table-warning</span>
+<span class="s">                            {% elif server.services_set.host_ok.count == 0 and server.services_set.host_ko.count == 0 %}table-secondary</span>
+<span class="s">                            {% else %}table-danger{% endif %}&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Services<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s">                            {% if server.services_set.services_ok.count &gt; 0 and server.services_set.services_ko.count == 0 %}table-success</span>
+<span class="s">                            {% elif server.services_set.services_ok.count &gt; 0 and server.services_set.services_ko.count &gt; 0 %}table-warning</span>
+<span class="s">                            {% elif server.services_set.services_ok.count == 0 and server.services_set.services_ko.count == 0 %}table-secondary</span>
+<span class="s">                            {% else %}table-danger{% endif %}&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                          <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Process<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;</span>
+<span class="s">                            {% if server.services_set.process_ok.count &gt; 0 and server.services_set.process_ko.count == 0 %}table-success</span>
+<span class="s">                            {% elif server.services_set.process_ok.count &gt; 0 and server.services_set.process_ko.count &gt; 0 %}table-warning</span>
+<span class="s">                            {% elif server.services_set.process_ok.count == 0 and server.services_set.process_ko.count == 0 %}table-secondary</span>
+<span class="s">                            {% else %}table-danger{% endif %}&quot;</span><span class="p">&gt;</span> <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+                          <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+                        <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+                      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+                    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>                    
+                <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        {% endfor %}
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>       
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge btn btn-success&quot;</span><span class="p">&gt;</span> all is ok <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge btn btn-warning&quot;</span><span class="p">&gt;</span> some services are ko <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge btn btn-danger &quot;</span><span class="p">&gt;</span> all is ko <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;badge btn btn-secondary&quot;</span><span class="p">&gt;</span> non monitored <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{% endblock %}
+{% block bootstrap_js %}
+<span class="c">&lt;!-- jQuery and JS bundle w/ Popper.js --&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://code.jquery.com/jquery-3.5.1.slim.min.js&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js&quot;</span> <span class="na">integrity</span><span class="o">=</span><span class="s">&quot;sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+{% endblock bootstrap_js %}
+</code></pre></div>
+
+
+<p>that page will display the status details of one server </p>
+<p><code>templates/monitoring/server_detail.html</code></p>
+<div class="highlight"><pre><span></span><code>{% extends &quot;base.html&quot; %}
+{% block title %}Service monitoring - {{ object }}{% endblock %}
+{% block menu_left %}
+{% endblock %}
+{% block content %}
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-sm-12 col-md-12&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{% url &#39;monitoring_home&#39; %}&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-arrow-left btn btn-success&quot;</span><span class="p">&gt;</span> Retour<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;thumbnail&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;caption&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-tasks&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> {{ server.name }}<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;nav nav-tabs&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tablist&quot;</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;presentation&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;active&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#system_{{ server.name }}&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;system_{{ server.name }}&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tab&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-hdd&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> System<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;presentation&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#filesystem_{{ server.name }}&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;fileystem_{{ server.name }}&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tab&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-list&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> FileSystem<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;presentation&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#file_{{ server.name }}&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;file_{{ server.name }}&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tab&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-list&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> File<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;presentation&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#directory_{{ server.name }}&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;directory_{{ server.name }}&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tab&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-folder-open&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> Directory<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;presentation&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#network_{{ server.name }}&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;network_{{ server.name }}&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tab&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-signal&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> Network<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;presentation&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#host_{{ server.name }}&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;host_{{ server.name }}&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tab&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-home&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> Host<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;presentation&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#process_{{ server.name }}&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;process_{{ server.name }}&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tab&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-home&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> Process<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;presentation&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#services_{{ server.name }}&quot;</span> <span class="na">aria-controls</span><span class="o">=</span><span class="s">&quot;services_{{ server.name }}&quot;</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tab&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tab&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-retweet&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span> Services<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;tab-content&quot;</span><span class="p">&gt;</span>
+        {% include &quot;monitoring/probes.html&quot; with probe_name=&quot;system&quot; server_name=server.name services_ko=server.services_set.system_ko services_ok=server.services_set.system_ok %}
+        {% include &quot;monitoring/probes.html&quot; with probe_name=&quot;filesystem&quot; server_name=server.name services_ko=server.services_set.filesystem_ko services_ok=server.services_set.filesystem_ok %}
+        {% include &quot;monitoring/probes.html&quot; with probe_name=&quot;file&quot; server_name=server.name services_ko=server.services_set.file_ko services_ok=server.services_set.files_ok %}
+        {% include &quot;monitoring/probes.html&quot; with probe_name=&quot;directory&quot; server_name=server.name services_ko=server.services_set.directory_ko services_ok=server.services_set.directory_ok %}
+        {% include &quot;monitoring/probes.html&quot; with probe_name=&quot;network&quot; server_name=server.name services_ko=server.services_set.network_ko services_ok=server.services_set.network_ok %}
+        {% include &quot;monitoring/probes.html&quot; with probe_name=&quot;host&quot; server_name=server.name services_ko=server.services_set.host_ko services_ok=server.services_set.host_ok %}
+        {% include &quot;monitoring/probes.html&quot; with probe_name=&quot;services&quot; server_name=server.name services_ko=server.services_set.services_ko services_ok=server.services_set.services_ok %}
+        {% include &quot;monitoring/probes.html&quot; with probe_name=&quot;process&quot; server_name=server.name services_ko=server.services_set.process_ko services_ok=server.services_set.process_ok %}
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+{% endblock %}
+{% block extrajs %}
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+<span class="c1">//&lt;![CDATA[</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-toggle=&quot;tooltip&quot;]&#39;</span><span class="p">).</span><span class="nx">tooltip</span><span class="p">()</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-toggle=&quot;popover&quot;]&#39;</span><span class="p">).</span><span class="nx">popover</span><span class="p">()</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li.connection-top&#39;</span><span class="p">).</span><span class="nx">hide</span><span class="p">()</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p.connection-middle&#39;</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li.connection-top&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">)</span>
+        <span class="p">});</span>
+    <span class="p">},</span> <span class="mi">4000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">//]]&gt;</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+{% endblock extrajs %}
+</code></pre></div>
+
+
+<p><code>templates/monitoring/probes.html</code></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">role</span><span class="o">=</span><span class="s">&quot;tabpanel&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;tab-pane fade {% if probe_name == &#39;system&#39; %} in active {% endif %}&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;{{ probe_name }}_{{ server_name }}&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table table-striped table-hover&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+    {% for service in services_ko %}
+    <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table-success&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ service.name }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-lg btn-danger&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tooltips&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;{{ service.status_string }}&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-minus-sign&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    {% endfor %}
+    {% for service in services_ok %}
+    <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;table-danger&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ service.name }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-lg btn-success&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tooltips&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;{{ service.status_string }}&quot;</span><span class="p">&gt;&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;glyphicon glyphicon-ok-sign&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    {% endfor %}
+    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+
+<p>And , <em>That's all Folks!!</em></p>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://foxmask.github.io/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
+        <li><a href="https://foxmask.github.io/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
+        <li><a href="https://foxmask.github.io/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
+        <li><a href="https://foxmask.github.io/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/">History not to lose the thread : TrackingFields</a></li>
+        <li><a href="https://foxmask.github.io/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
+        <li><a href="https://foxmask.github.io/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
+        <li><a href="https://foxmask.github.io/post/2015/08/18/django-trigger-happy-0-11-0-english-version/">Django Trigger Happy 0.11.0 English Version</a></li>
+        <li><a href="https://foxmask.github.io/post/2015/08/17/django-trigger-happy-0-11-0/">Django Trigger Happy 0.11.0</a></li>
+    </ul>
+</section>
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+                    var disqus_identifier = 'monit-and-more';
+                var disqus_url = 'https://foxmask.github.io/post/2021/07/28/monit-and-more/';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="https://foxmask.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group list-inline tagcloud" id="tags">
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.github.io/tag/ansible.html">ansible</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.github.io/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.github.io/tag/autobahn.html">autobahn</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.github.io/tag/crossbar.html">crossbar</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.github.io/tag/debian.html">debian</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.github.io/tag/django.html">django</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.github.io/tag/evernote.html">Evernote</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.github.io/tag/fabric.html">Fabric</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.github.io/tag/havefnubb.html">HaveFnuBB</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.github.io/tag/jelix.html">Jelix</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.github.io/tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.github.io/tag/oracle.html">oracle</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.github.io/tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.github.io/tag/pycharm.html">PyCharm</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.github.io/tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="https://foxmask.github.io/tag/pythonerie.html">pythonerie</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="https://foxmask.github.io/tag/starlette.html">Starlette</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="https://foxmask.github.io/tag/triggerhappy.html">triggerhappy</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.github.io/tag/wallabag.html">wallabag</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="https://foxmask.github.io/tag/wampws.html">wampws</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+  <a href="https://github.com/foxmask">@foxmask</a> on GitHub
+</li>
+<!-- End Sidebar/Github -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="/feeds/all.rss.xml" target="_blank">RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="/feeds/all.atom.xml" target="_blank">Atom</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2021 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://foxmask.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://foxmask.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://foxmask.github.io/theme/js/respond.min.js"></script>
+
+
+    <script src="https://foxmask.github.io/theme/js/bodypadding.js"></script>
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = 'https://foxmask.github.io/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'foxmask',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="https://foxmask.github.io/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+
+
+</body>
+</html>
