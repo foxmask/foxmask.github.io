@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.github.io/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/">
+<link rel="canonical" href="https://foxmask.org/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="python,Fabric" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Fabric, sa var &#39;env&#39; et nos variables dynamiques !"/>
-        <meta property="og:url" content="https://foxmask.github.io/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/"/>
+        <meta property="og:url" content="https://foxmask.org/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/"/>
         <meta property="og:description" content="Fabric est un sérieux concurrent face à ansible, quoiqu&#39;on en pense. Intro : J&#39;ai eu à faire à ansible pendant plus d&#39;un an pour automatiser des installations d&#39;applications java sur tous les types de serveur d&#39;applications du marché. Mais comme à mon habitude, je n&#39;utilise pas des outils de DevOps pour …"/>
         <meta property="article:published_time" content="2017-07-06" />
             <meta property="article:section" content="Techno" />
@@ -29,21 +29,21 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.github.io/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.github.io/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.github.io/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.github.io/theme/css/style.css" type="text/css"/>
+    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
 
 
-        <link href="https://foxmask.github.io/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://foxmask.org/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 
 </head>
@@ -58,28 +58,28 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.github.io/" class="navbar-brand">
+            <a href="https://foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.github.io/pages/a-propos">
+                         <li><a href="https://foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.github.io/category/entrevues.html">Entrevues</a>
+                            <a href="https://foxmask.org/category/entrevues.html">Entrevues</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.github.io/category/games.html">Games</a>
+                            <a href="https://foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.github.io/category/general.html">General</a>
+                            <a href="https://foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.github.io/category/news.html">News</a>
+                            <a href="https://foxmask.org/category/news.html">News</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.github.io/category/techno.html">Techno</a>
+                            <a href="https://foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -88,7 +88,7 @@ Le Free de la Passion            </a>
                   <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
                 </form></span>
               </li>
-              <li><a href="https://foxmask.github.io/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -103,7 +103,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.github.io/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/"
+                    <a href="https://foxmask.org/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/"
                        rel="bookmark"
                        title="Permalink to Fabric, sa var 'env' et nos variables dynamiques !">
                         Fabric, sa var 'env' et nos variables dynamiques !
@@ -124,9 +124,9 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.github.io/tag/python.html">python</a>
+	<a href="https://foxmask.org/tag/python.html">python</a>
         /
-	<a href="https://foxmask.github.io/tag/fabric.html">Fabric</a>
+	<a href="https://foxmask.org/tag/fabric.html">Fabric</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -193,14 +193,14 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.github.io/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
-        <li><a href="https://foxmask.github.io/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
-        <li><a href="https://foxmask.github.io/post/2013/10/24/fabric-importerror-no-module-named-main/">fabric ImportError: No module named main</a></li>
-        <li><a href="https://foxmask.github.io/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
-        <li><a href="https://foxmask.github.io/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
-        <li><a href="https://foxmask.github.io/post/2019/04/24/mais-tu-es-fou-hoo-oui/">Mais tu es fou ? Hooo Oui</a></li>
-        <li><a href="https://foxmask.github.io/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
-        <li><a href="https://foxmask.github.io/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
+        <li><a href="https://foxmask.org/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
+        <li><a href="https://foxmask.org/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
+        <li><a href="https://foxmask.org/post/2013/10/24/fabric-importerror-no-module-named-main/">fabric ImportError: No module named main</a></li>
+        <li><a href="https://foxmask.org/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
+        <li><a href="https://foxmask.org/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
+        <li><a href="https://foxmask.org/post/2019/04/24/mais-tu-es-fou-hoo-oui/">Mais tu es fou ? Hooo Oui</a></li>
+        <li><a href="https://foxmask.org/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
+        <li><a href="https://foxmask.org/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
     </ul>
 </section>
     <hr/>
@@ -213,7 +213,7 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
             var disqus_shortname = 'foxmasktriggerhappyeu'; // required: replace example with your forum shortname
 
                     var disqus_identifier = 'fabric-sa-var-env-nos-variables-dynamiques';
-                var disqus_url = 'https://foxmask.github.io/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/';
+                var disqus_url = 'https://foxmask.org/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/';
 
             var disqus_config = function () {
                 this.language = "en";
@@ -245,67 +245,67 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
 
 <!-- Sidebar/Tag Cloud -->
 <li class="list-group-item">
-  <a href="https://foxmask.github.io/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
   <ul class="list-group list-inline tagcloud" id="tags">
     <li class="list-group-item tag-3">
-      <a href="https://foxmask.github.io/tag/ansible.html">ansible</a>
+      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.github.io/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
     </li>
     <li class="list-group-item tag-3">
-      <a href="https://foxmask.github.io/tag/autobahn.html">autobahn</a>
+      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
     </li>
     <li class="list-group-item tag-3">
-      <a href="https://foxmask.github.io/tag/crossbar.html">crossbar</a>
+      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="https://foxmask.github.io/tag/debian.html">debian</a>
+      <a href="https://foxmask.org/tag/debian.html">debian</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.github.io/tag/django.html">django</a>
+      <a href="https://foxmask.org/tag/django.html">django</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="https://foxmask.github.io/tag/evernote.html">Evernote</a>
+      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
     </li>
     <li class="list-group-item tag-3">
-      <a href="https://foxmask.github.io/tag/fabric.html">Fabric</a>
+      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="https://foxmask.github.io/tag/havefnubb.html">HaveFnuBB</a>
+      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.github.io/tag/jelix.html">Jelix</a>
+      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="https://foxmask.github.io/tag/linux.html">linux</a>
+      <a href="https://foxmask.org/tag/linux.html">linux</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="https://foxmask.github.io/tag/oracle.html">oracle</a>
+      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
     </li>
     <li class="list-group-item tag-3">
-      <a href="https://foxmask.github.io/tag/pelican.html">pelican</a>
+      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
     </li>
     <li class="list-group-item tag-3">
-      <a href="https://foxmask.github.io/tag/pycharm.html">PyCharm</a>
+      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.github.io/tag/python.html">python</a>
+      <a href="https://foxmask.org/tag/python.html">python</a>
     </li>
     <li class="list-group-item tag-2">
-      <a href="https://foxmask.github.io/tag/pythonerie.html">pythonerie</a>
+      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
     </li>
     <li class="list-group-item tag-4">
-      <a href="https://foxmask.github.io/tag/starlette.html">Starlette</a>
+      <a href="https://foxmask.org/tag/starlette.html">Starlette</a>
     </li>
     <li class="list-group-item tag-1">
-      <a href="https://foxmask.github.io/tag/triggerhappy.html">triggerhappy</a>
+      <a href="https://foxmask.org/tag/triggerhappy.html">triggerhappy</a>
     </li>
     <li class="list-group-item tag-3">
-      <a href="https://foxmask.github.io/tag/wallabag.html">wallabag</a>
+      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
     </li>
     <li class="list-group-item tag-3">
-      <a href="https://foxmask.github.io/tag/wampws.html">wampws</a>
+      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
     </li>
   </ul>
 </li>
@@ -353,16 +353,16 @@ ce qui est la chianli quand on fait un os.path.join(env.CLE_A, 'sous_dossier')  
       </div>
    </div>
 </footer>
-<script src="https://foxmask.github.io/theme/js/jquery.min.js"></script>
+<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.github.io/theme/js/bootstrap.min.js"></script>
+<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.github.io/theme/js/respond.min.js"></script>
+<script src="https://foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.github.io/theme/js/bodypadding.js"></script>
+    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
 
 <!-- GitHub JS Code -->
 <script type="text/javascript">
@@ -370,7 +370,7 @@ $(document).ready(function () {
   if (!window.jXHR) {
     var jxhr = document.createElement('script');
     jxhr.type = 'text/javascript';
-    jxhr.src = 'https://foxmask.github.io/theme/js/jXHR.js';
+    jxhr.src = 'https://foxmask.org/theme/js/jXHR.js';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(jxhr, s);
   }
@@ -383,7 +383,7 @@ $(document).ready(function () {
   });
 });
 </script>
-<script src="https://foxmask.github.io/theme/js/github.js" type="text/javascript"></script>
+<script src="https://foxmask.org/theme/js/github.js" type="text/javascript"></script>
 <!-- End GitHub JS Code -->
     <!-- Disqus -->
     <script type="text/javascript">
