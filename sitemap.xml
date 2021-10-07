@@ -4,2051 +4,2016 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://blog.foxmask.org/</loc>
-<lastmod>2021-10-03T22:18:50-00:00</lastmod>
+<loc>https://foxmask.org/</loc>
+<lastmod>2021-10-07T19:04:08-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/categories.html</loc>
-<lastmod>2021-10-03T22:18:50-00:00</lastmod>
+<loc>https://foxmask.org/categories.html</loc>
+<lastmod>2021-10-07T19:04:08-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tags.html</loc>
-<lastmod>2021-10-03T22:18:50-00:00</lastmod>
+<loc>https://foxmask.org/tags.html</loc>
+<lastmod>2021-10-07T19:04:08-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/archives.html</loc>
-<lastmod>2021-10-03T22:18:50-00:00</lastmod>
+<loc>https://foxmask.org/archives.html</loc>
+<lastmod>2021-10-07T19:04:08-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/search.html</loc>
-<lastmod>2021-10-03T22:18:50-00:00</lastmod>
+<loc>https://foxmask.org/search.html</loc>
+<lastmod>2021-10-07T19:04:08-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/pages/a-propos</loc>
+<loc>https://foxmask.org/pages/a-propos</loc>
 <lastmod>2010-03-20T20:42:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2021/09/27/home-sweet-home/</loc>
+<loc>https://foxmask.org/post/2021/09/27/home-sweet-home/</loc>
 <lastmod>2021-09-27T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2021/07/28/monit-and-more/</loc>
+<loc>https://foxmask.org/post/2021/07/28/monit-and-more/</loc>
 <lastmod>2021-07-28T19:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2021/05/24/out-of-korea/</loc>
+<loc>https://foxmask.org/post/2021/05/24/out-of-korea/</loc>
 <lastmod>2021-05-24T13:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2020/09/08/nyuseu-news/</loc>
+<loc>https://foxmask.org/post/2020/09/08/nyuseu-news/</loc>
 <lastmod>2020-09-08T18:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2020/05/01/trigger-happy-archive-yeoboseyo/</loc>
+<loc>https://foxmask.org/post/2020/05/01/trigger-happy-archive-yeoboseyo/</loc>
 <lastmod>2020-05-01T22:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2019/05/02/de-django-a-starlette/</loc>
+<loc>https://foxmask.org/post/2019/05/02/de-django-a-starlette/</loc>
 <lastmod>2019-05-02T22:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2019/04/24/mais-tu-es-fou-hoo-oui/</loc>
+<loc>https://foxmask.org/post/2019/04/24/mais-tu-es-fou-hoo-oui/</loc>
 <lastmod>2019-04-24T22:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2018/03/20/sfr-8-mois-calvaire/</loc>
+<loc>https://foxmask.org/post/2018/03/20/sfr-8-mois-calvaire/</loc>
 <lastmod>2018-03-20T20:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2018/03/17/migrer-evernote-joplin/</loc>
+<loc>https://foxmask.org/post/2018/03/17/migrer-evernote-joplin/</loc>
 <lastmod>2018-03-17T12:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2018/03/15/comparatif-editeurs-partie2-boostnote-vs-joplin/</loc>
+<loc>https://foxmask.org/post/2018/03/15/comparatif-editeurs-partie2-boostnote-vs-joplin/</loc>
 <lastmod>2018-03-15T23:45:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2018/03/07/comparatif-editeurs/</loc>
+<loc>https://foxmask.org/post/2018/03/07/comparatif-editeurs/</loc>
 <lastmod>2018-03-07T12:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2018/02/05/horizon-zero-dawn-aparte/</loc>
+<loc>https://foxmask.org/post/2018/02/05/horizon-zero-dawn-aparte/</loc>
 <lastmod>2018-02-05T07:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2018/01/23/quand-fabric-refuse-bosser/</loc>
+<loc>https://foxmask.org/post/2018/01/23/quand-fabric-refuse-bosser/</loc>
 <lastmod>2018-01-23T16:45:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2017/12/21/2017-at-a-glance/</loc>
+<loc>https://foxmask.org/post/2017/12/21/2017-at-a-glance/</loc>
 <lastmod>2017-12-21T20:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2017/10/14/coverage-install-upload-results/</loc>
+<loc>https://foxmask.org/post/2017/10/14/coverage-install-upload-results/</loc>
 <lastmod>2017-10-14T17:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2017/08/31/clients-mastodon/</loc>
+<loc>https://foxmask.org/post/2017/08/31/clients-mastodon/</loc>
 <lastmod>2017-08-31T12:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2017/07/10/fabric-contrib-django/</loc>
+<loc>https://foxmask.org/post/2017/07/10/fabric-contrib-django/</loc>
 <lastmod>2017-07-10T14:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/</loc>
+<loc>https://foxmask.org/post/2017/07/06/fabric-sa-var-env-nos-variables-dynamiques/</loc>
 <lastmod>2017-07-06T20:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2017/04/25/orotangi-pour-se-jouer-dyslexie/</loc>
-<lastmod>2017-04-25T16:00:00+02:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/post/2017/04/07/premieres-fois/</loc>
+<loc>https://foxmask.org/post/2017/04/07/premieres-fois/</loc>
 <lastmod>2017-04-07T13:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2017/03/08/journee-des-femmes-8mars-2017/</loc>
+<loc>https://foxmask.org/post/2017/03/08/journee-des-femmes-8mars-2017/</loc>
 <lastmod>2017-03-08T00:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2017/02/09/orotangi/</loc>
-<lastmod>2017-02-09T09:00:00+01:00</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/post/2016/11/26/trigger-happy-two-weeks-after-strong-storm/</loc>
+<loc>https://foxmask.org/post/2016/11/26/trigger-happy-two-weeks-after-strong-storm/</loc>
 <lastmod>2016-11-26T18:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/11/26/say-thanks/</loc>
+<loc>https://foxmask.org/post/2016/11/26/say-thanks/</loc>
 <lastmod>2016-11-26T16:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/10/21/test-coverage-mock/</loc>
+<loc>https://foxmask.org/post/2016/10/21/test-coverage-mock/</loc>
 <lastmod>2016-10-21T20:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/</loc>
+<loc>https://foxmask.org/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/</loc>
 <lastmod>2016-09-08T08:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/09/01/pycharm-pro-for-free/</loc>
+<loc>https://foxmask.org/post/2016/09/01/pycharm-pro-for-free/</loc>
 <lastmod>2016-09-01T12:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/07/03/django-et-https/</loc>
+<loc>https://foxmask.org/post/2016/07/03/django-et-https/</loc>
 <lastmod>2016-07-03T22:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/06/02/evernote-de-pire-en-pire/</loc>
+<loc>https://foxmask.org/post/2016/06/02/evernote-de-pire-en-pire/</loc>
 <lastmod>2016-06-02T22:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/06/01/trigger-happy-apparition-subliminale-phptour-2016-wallabag/</loc>
+<loc>https://foxmask.org/post/2016/06/01/trigger-happy-apparition-subliminale-phptour-2016-wallabag/</loc>
 <lastmod>2016-06-01T15:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/</loc>
+<loc>https://foxmask.org/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/</loc>
 <lastmod>2016-05-14T13:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/05/07/evernote-opensource-alternative/</loc>
+<loc>https://foxmask.org/post/2016/05/07/evernote-opensource-alternative/</loc>
 <lastmod>2016-05-07T18:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/04/22/wallabag-api-1.0.1/</loc>
+<loc>https://foxmask.org/post/2016/04/22/wallabag-api-1.0.1/</loc>
 <lastmod>2016-04-22T20:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/</loc>
+<loc>https://foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/</loc>
 <lastmod>2016-04-14T10:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/03/23/actionform-django-a-la-rescousse/</loc>
+<loc>https://foxmask.org/post/2016/03/23/actionform-django-a-la-rescousse/</loc>
 <lastmod>2016-03-23T22:30:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/03/18/le-dev-cet-artiste-qui-signore/</loc>
+<loc>https://foxmask.org/post/2016/03/18/le-dev-cet-artiste-qui-signore/</loc>
 <lastmod>2016-03-18T07:30:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/03/04/integration-continue-de-github-a-pypi-via-travis-ci/</loc>
+<loc>https://foxmask.org/post/2016/03/04/integration-continue-de-github-a-pypi-via-travis-ci/</loc>
 <lastmod>2016-03-04T19:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/02/17/pycharm-running-flake8/</loc>
+<loc>https://foxmask.org/post/2016/02/17/pycharm-running-flake8/</loc>
 <lastmod>2016-02-17T19:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/02/15/trigger-happy-running-softly-with-rq/</loc>
+<loc>https://foxmask.org/post/2016/02/15/trigger-happy-running-softly-with-rq/</loc>
 <lastmod>2016-02-15T19:30:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/</loc>
+<loc>https://foxmask.org/post/2016/02/13/history-not-to-lose-the-thread-trackingFields/</loc>
 <lastmod>2016-02-13T17:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/02/10/pycharm-raccourcis-pour-obtenir-les-comportements-sublimetext-firefox/</loc>
+<loc>https://foxmask.org/post/2016/02/10/pycharm-raccourcis-pour-obtenir-les-comportements-sublimetext-firefox/</loc>
 <lastmod>2016-02-10T21:30:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/02/03/ifttt-se-prend-les-pieds-dans-le-superbowl/</loc>
+<loc>https://foxmask.org/post/2016/02/03/ifttt-se-prend-les-pieds-dans-le-superbowl/</loc>
 <lastmod>2016-02-03T10:10:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/</loc>
+<loc>https://foxmask.org/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/</loc>
 <lastmod>2016-02-02T01:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/01/13/aix-fsck-demarrer-des-services/</loc>
+<loc>https://foxmask.org/post/2016/01/13/aix-fsck-demarrer-des-services/</loc>
 <lastmod>2016-01-13T23:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/</loc>
+<loc>https://foxmask.org/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/</loc>
 <lastmod>2016-01-12T12:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/01/05/dans-la-serie-jai-migre-vers-pelican/</loc>
+<loc>https://foxmask.org/post/2016/01/05/dans-la-serie-jai-migre-vers-pelican/</loc>
 <lastmod>2016-01-05T12:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2016/01/02/de-wordpress-a-pelican/</loc>
+<loc>https://foxmask.org/post/2016/01/02/de-wordpress-a-pelican/</loc>
 <lastmod>2016-01-02T17:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/12/29/une-autre-histoire/</loc>
+<loc>https://foxmask.org/post/2015/12/29/une-autre-histoire/</loc>
 <lastmod>2015-12-29T17:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/11/30/django-test_runner-exploitant-settings-installed_apps/</loc>
+<loc>https://foxmask.org/post/2015/11/30/django-test_runner-exploitant-settings-installed_apps/</loc>
 <lastmod>2015-11-30T22:19:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/11/27/sam-max-board-suivez-lactu-de-la-communaute/</loc>
+<loc>https://foxmask.org/post/2015/11/27/sam-max-board-suivez-lactu-de-la-communaute/</loc>
 <lastmod>2015-11-27T14:28:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/10/02/trigger-happy-stats-requete-et-proposition/</loc>
+<loc>https://foxmask.org/post/2015/10/02/trigger-happy-stats-requete-et-proposition/</loc>
 <lastmod>2015-10-02T11:04:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/</loc>
+<loc>https://foxmask.org/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/</loc>
 <lastmod>2015-09-08T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/08/31/entrevue-en-toute-simplicite-sam-max/</loc>
+<loc>https://foxmask.org/post/2015/08/31/entrevue-en-toute-simplicite-sam-max/</loc>
 <lastmod>2015-08-31T10:45:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/</loc>
+<loc>https://foxmask.org/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/</loc>
 <lastmod>2015-08-24T10:57:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/08/18/django-trigger-happy-0-11-0-english-version/</loc>
+<loc>https://foxmask.org/post/2015/08/18/django-trigger-happy-0-11-0-english-version/</loc>
 <lastmod>2015-08-18T10:43:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/08/17/django-trigger-happy-0-11-0/</loc>
+<loc>https://foxmask.org/post/2015/08/17/django-trigger-happy-0-11-0/</loc>
 <lastmod>2015-08-17T14:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/08/11/ansible-les-variables-definies-a-la-volee/</loc>
+<loc>https://foxmask.org/post/2015/08/11/ansible-les-variables-definies-a-la-volee/</loc>
 <lastmod>2015-08-11T10:45:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/08/10/todoist-vs-trello-rapidos-prise-en-main/</loc>
+<loc>https://foxmask.org/post/2015/08/10/todoist-vs-trello-rapidos-prise-en-main/</loc>
 <lastmod>2015-08-10T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/08/07/revue-technique-semaine-du-03082015/</loc>
+<loc>https://foxmask.org/post/2015/08/07/revue-technique-semaine-du-03082015/</loc>
 <lastmod>2015-08-07T19:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/</loc>
+<loc>https://foxmask.org/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/</loc>
 <lastmod>2015-08-05T10:45:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/08/03/entrevue-en-tout-simplicite-debnet/</loc>
+<loc>https://foxmask.org/post/2015/08/03/entrevue-en-tout-simplicite-debnet/</loc>
 <lastmod>2015-08-03T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/</loc>
+<loc>https://foxmask.org/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/</loc>
 <lastmod>2015-07-29T09:48:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/07/27/entrevue-en-toute-simplicite-ashgan/</loc>
+<loc>https://foxmask.org/post/2015/07/27/entrevue-en-toute-simplicite-ashgan/</loc>
 <lastmod>2015-07-27T09:45:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/07/20/entrevue-en-toute-simplicite-spout/</loc>
+<loc>https://foxmask.org/post/2015/07/20/entrevue-en-toute-simplicite-spout/</loc>
 <lastmod>2015-07-20T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/07/17/revue-technique-django-inside-semaine-du-13-juillet-2015/</loc>
+<loc>https://foxmask.org/post/2015/07/17/revue-technique-django-inside-semaine-du-13-juillet-2015/</loc>
 <lastmod>2015-07-17T15:11:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/06/19/supervisor-celery-django-orchestration/</loc>
+<loc>https://foxmask.org/post/2015/06/19/supervisor-celery-django-orchestration/</loc>
 <lastmod>2015-06-19T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/06/19/revue-technique-du-15062015-django-again/</loc>
+<loc>https://foxmask.org/post/2015/06/19/revue-technique-du-15062015-django-again/</loc>
 <lastmod>2015-06-19T10:16:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/05/29/revue-technique-de-la-semaine-du-25052015/</loc>
+<loc>https://foxmask.org/post/2015/05/29/revue-technique-de-la-semaine-du-25052015/</loc>
 <lastmod>2015-05-29T21:49:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/05/21/revue-technique-de-la-semaine-du-1805/</loc>
+<loc>https://foxmask.org/post/2015/05/21/revue-technique-de-la-semaine-du-1805/</loc>
 <lastmod>2015-05-21T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/</loc>
+<loc>https://foxmask.org/post/2015/05/16/debian-8-sans-systemd-mais-avec-le-systeme-d/</loc>
 <lastmod>2015-05-16T14:18:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/</loc>
+<loc>https://foxmask.org/post/2015/05/15/debian-update-wheezy-a-jessie-quand-votre-grub-fait-boom/</loc>
 <lastmod>2015-05-15T22:28:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/</loc>
+<loc>https://foxmask.org/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/</loc>
 <lastmod>2015-05-12T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/05/08/openbsd-configurer-le-wifi/</loc>
+<loc>https://foxmask.org/post/2015/05/08/openbsd-configurer-le-wifi/</loc>
 <lastmod>2015-05-08T13:55:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/05/07/quete-wampws-et-autobahn-episode-2-demarrage-en-trombe/</loc>
+<loc>https://foxmask.org/post/2015/05/07/quete-wampws-et-autobahn-episode-2-demarrage-en-trombe/</loc>
 <lastmod>2015-05-07T22:29:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/05/03/gnome-systemd-debian-8-bsd/</loc>
+<loc>https://foxmask.org/post/2015/05/03/gnome-systemd-debian-8-bsd/</loc>
 <lastmod>2015-05-03T14:45:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/04/23/django-trigger-happy-0-10-x-and-his-friends/</loc>
+<loc>https://foxmask.org/post/2015/04/23/django-trigger-happy-0-10-x-and-his-friends/</loc>
 <lastmod>2015-04-23T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/04/21/django-trigger-happy-0-10-x-et-ses-amis/</loc>
+<loc>https://foxmask.org/post/2015/04/21/django-trigger-happy-0-10-x-et-ses-amis/</loc>
 <lastmod>2015-04-21T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/04/19/pypi-nous-saoule-avec-son-erreur-400/</loc>
+<loc>https://foxmask.org/post/2015/04/19/pypi-nous-saoule-avec-son-erreur-400/</loc>
 <lastmod>2015-04-19T22:45:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/</loc>
+<loc>https://foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/</loc>
 <lastmod>2015-04-03T11:41:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2015/02/27/quete-wampws-et-autobahn-episode-1/</loc>
+<loc>https://foxmask.org/post/2015/02/27/quete-wampws-et-autobahn-episode-1/</loc>
 <lastmod>2015-02-27T14:45:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/12/01/trigger-happy-creer-un-module/</loc>
+<loc>https://foxmask.org/post/2014/12/01/trigger-happy-creer-un-module/</loc>
 <lastmod>2014-12-01T09:59:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/11/27/django-paris-numa-novembre-2014-demo-live/</loc>
+<loc>https://foxmask.org/post/2014/11/27/django-paris-numa-novembre-2014-demo-live/</loc>
 <lastmod>2014-11-27T19:10:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/11/06/django-tutorial-app-telechargeable/</loc>
+<loc>https://foxmask.org/post/2014/11/06/django-tutorial-app-telechargeable/</loc>
 <lastmod>2014-11-06T10:45:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/10/22/django-trigger-happy-declenche-heureuse-rafale-maj/</loc>
+<loc>https://foxmask.org/post/2014/10/22/django-trigger-happy-declenche-heureuse-rafale-maj/</loc>
 <lastmod>2014-10-22T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/</loc>
+<loc>https://foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/</loc>
 <lastmod>2014-10-17T08:36:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/10/09/installation-oracle-10g-gui/</loc>
+<loc>https://foxmask.org/post/2014/10/09/installation-oracle-10g-gui/</loc>
 <lastmod>2014-10-09T10:24:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/09/23/django-le-magic-system-ty-es-fou/</loc>
+<loc>https://foxmask.org/post/2014/09/23/django-le-magic-system-ty-es-fou/</loc>
 <lastmod>2014-09-23T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/09/07/debian-et-le-menu-principal-perdu/</loc>
+<loc>https://foxmask.org/post/2014/09/07/debian-et-le-menu-principal-perdu/</loc>
 <lastmod>2014-09-07T13:40:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/07/15/django-form-sous-ses-plus-beaux-atours/</loc>
+<loc>https://foxmask.org/post/2014/07/15/django-form-sous-ses-plus-beaux-atours/</loc>
 <lastmod>2014-07-15T11:43:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/</loc>
+<loc>https://foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/</loc>
 <lastmod>2014-07-02T15:13:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/07/01/django-formset-et-match/</loc>
+<loc>https://foxmask.org/post/2014/07/01/django-formset-et-match/</loc>
 <lastmod>2014-07-01T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/06/29/gerer-son-diabete-il-y-a-une-appli-web-pour-ca/</loc>
+<loc>https://foxmask.org/post/2014/06/29/gerer-son-diabete-il-y-a-une-appli-web-pour-ca/</loc>
 <lastmod>2014-06-29T21:27:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/06/03/debian-network-manager-et-eth0-non-geree/</loc>
+<loc>https://foxmask.org/post/2014/06/03/debian-network-manager-et-eth0-non-geree/</loc>
 <lastmod>2014-06-03T09:54:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/05/14/django-trigger-happy-0-9-0-is-la-python-3-4-0/</loc>
+<loc>https://foxmask.org/post/2014/05/14/django-trigger-happy-0-9-0-is-la-python-3-4-0/</loc>
 <lastmod>2014-05-14T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/05/14/django-trigger-happy-0-9-0-is-out-python-3-4-0/</loc>
+<loc>https://foxmask.org/post/2014/05/14/django-trigger-happy-0-9-0-is-out-python-3-4-0/</loc>
 <lastmod>2014-05-14T10:37:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/05/06/django-filtrer-listview/</loc>
+<loc>https://foxmask.org/post/2014/05/06/django-filtrer-listview/</loc>
 <lastmod>2014-05-06T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/04/17/export-display-from-vmware/</loc>
+<loc>https://foxmask.org/post/2014/04/17/export-display-from-vmware/</loc>
 <lastmod>2014-04-17T11:06:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/04/01/trigger-happy-avenir-en-bleu/</loc>
+<loc>https://foxmask.org/post/2014/04/01/trigger-happy-avenir-en-bleu/</loc>
 <lastmod>2014-04-01T12:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/04/01/djangocong-euh-2014-rencontrez-sametmax/</loc>
+<loc>https://foxmask.org/post/2014/04/01/djangocong-euh-2014-rencontrez-sametmax/</loc>
 <lastmod>2014-04-01T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/03/27/extraire-une-portion-dune-archive-distante-sans-la-telecharger/</loc>
+<loc>https://foxmask.org/post/2014/03/27/extraire-une-portion-dune-archive-distante-sans-la-telecharger/</loc>
 <lastmod>2014-03-27T14:46:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2014/01/06/trigger-happy-lire-plus-tard-avec-agitilite/</loc>
+<loc>https://foxmask.org/post/2014/01/06/trigger-happy-lire-plus-tard-avec-agitilite/</loc>
 <lastmod>2014-01-06T10:30:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/12/17/trigger-happy-met-un-elephant-dans-sa-poche/</loc>
+<loc>https://foxmask.org/post/2013/12/17/trigger-happy-met-un-elephant-dans-sa-poche/</loc>
 <lastmod>2013-12-17T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/12/09/trigger-happy-comment-pondre-son-propre-module/</loc>
+<loc>https://foxmask.org/post/2013/12/09/trigger-happy-comment-pondre-son-propre-module/</loc>
 <lastmod>2013-12-09T15:49:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/12/03/trigger-happy-in-ze-pocket/</loc>
+<loc>https://foxmask.org/post/2013/12/03/trigger-happy-in-ze-pocket/</loc>
 <lastmod>2013-12-03T11:01:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/</loc>
+<loc>https://foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/</loc>
 <lastmod>2013-11-15T17:49:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/11/05/incontournables-pythonerie-importerror-no-module-named-dans-un-virtualenv/</loc>
+<loc>https://foxmask.org/post/2013/11/05/incontournables-pythonerie-importerror-no-module-named-dans-un-virtualenv/</loc>
 <lastmod>2013-11-05T16:22:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/10/24/fabric-importerror-no-module-named-main/</loc>
+<loc>https://foxmask.org/post/2013/10/24/fabric-importerror-no-module-named-main/</loc>
 <lastmod>2013-10-24T16:38:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/10/16/django-formwizard-dynamique-encore-plus-loin/</loc>
+<loc>https://foxmask.org/post/2013/10/16/django-formwizard-dynamique-encore-plus-loin/</loc>
 <lastmod>2013-10-16T16:05:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/10/07/django-formwizard-dynamique/</loc>
+<loc>https://foxmask.org/post/2013/10/07/django-formwizard-dynamique/</loc>
 <lastmod>2013-10-07T16:54:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/09/26/django-aptana-pythonpath-virtualenv/</loc>
+<loc>https://foxmask.org/post/2013/09/26/django-aptana-pythonpath-virtualenv/</loc>
 <lastmod>2013-09-26T22:33:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/08/29/relatorio-secret-release-story/</loc>
+<loc>https://foxmask.org/post/2013/08/29/relatorio-secret-release-story/</loc>
 <lastmod>2013-08-29T16:07:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/08/13/trigger-happy-eu-souvr-eu/</loc>
+<loc>https://foxmask.org/post/2013/08/13/trigger-happy-eu-souvr-eu/</loc>
 <lastmod>2013-08-13T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/07/01/incontournables-pythonerie-le-fichier-requirements-txt/</loc>
+<loc>https://foxmask.org/post/2013/07/01/incontournables-pythonerie-le-fichier-requirements-txt/</loc>
 <lastmod>2013-07-01T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/06/30/django-cbv-qui-donne-mal-au-crane/</loc>
+<loc>https://foxmask.org/post/2013/06/30/django-cbv-qui-donne-mal-au-crane/</loc>
 <lastmod>2013-06-30T12:23:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/06/24/incontournables-pythonerie-publier-son-appli-django-sans-la-config-perso/</loc>
+<loc>https://foxmask.org/post/2013/06/24/incontournables-pythonerie-publier-son-appli-django-sans-la-config-perso/</loc>
 <lastmod>2013-06-24T14:15:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/06/21/djngo-trigger-happy-0-3/</loc>
+<loc>https://foxmask.org/post/2013/06/21/djngo-trigger-happy-0-3/</loc>
 <lastmod>2013-06-21T23:15:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/06/17/django-trigger-happy-0-2/</loc>
+<loc>https://foxmask.org/post/2013/06/17/django-trigger-happy-0-2/</loc>
 <lastmod>2013-06-17T10:53:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/06/04/django-trigger-happy-un-ifttt-like-en-images/</loc>
+<loc>https://foxmask.org/post/2013/06/04/django-trigger-happy-un-ifttt-like-en-images/</loc>
 <lastmod>2013-06-04T12:43:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/05/27/django-trigger-happy/</loc>
+<loc>https://foxmask.org/post/2013/05/27/django-trigger-happy/</loc>
 <lastmod>2013-05-27T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/</loc>
+<loc>https://foxmask.org/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/</loc>
 <lastmod>2013-05-06T18:16:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/</loc>
+<loc>https://foxmask.org/post/2013/05/01/havefnubb-les-archives-sont-de-retour-du-futur/</loc>
 <lastmod>2013-05-01T13:20:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/04/11/django-think-twice-another-day-for-you-and-me-in-paradise/</loc>
+<loc>https://foxmask.org/post/2013/04/11/django-think-twice-another-day-for-you-and-me-in-paradise/</loc>
 <lastmod>2013-04-11T15:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/03/20/pythonthon-cest-regle-python-la-psf-sont-sauf/</loc>
+<loc>https://foxmask.org/post/2013/03/20/pythonthon-cest-regle-python-la-psf-sont-sauf/</loc>
 <lastmod>2013-03-20T12:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/03/18/incontournables-pythonerie-pack-de-12/</loc>
+<loc>https://foxmask.org/post/2013/03/18/incontournables-pythonerie-pack-de-12/</loc>
 <lastmod>2013-03-18T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/03/14/rss-rss-quoi-jai-une-gueule-drss/</loc>
+<loc>https://foxmask.org/post/2013/03/14/rss-rss-quoi-jai-une-gueule-drss/</loc>
 <lastmod>2013-03-14T15:20:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/</loc>
+<loc>https://foxmask.org/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/</loc>
 <lastmod>2013-03-14T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/03/13/incontournables-pythonerie-parse-parse-parsera-la-derniere-la-derniere/</loc>
+<loc>https://foxmask.org/post/2013/03/13/incontournables-pythonerie-parse-parse-parsera-la-derniere-la-derniere/</loc>
 <lastmod>2013-03-13T15:04:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/03/11/incontournable-pythonerie-bigbrother-is-logging-you/</loc>
+<loc>https://foxmask.org/post/2013/03/11/incontournable-pythonerie-bigbrother-is-logging-you/</loc>
 <lastmod>2013-03-11T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/03/07/oracle-et-opatch/</loc>
+<loc>https://foxmask.org/post/2013/03/07/oracle-et-opatch/</loc>
 <lastmod>2013-03-07T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/03/04/de-php-a-python-minie-petite-souris/</loc>
+<loc>https://foxmask.org/post/2013/03/04/de-php-a-python-minie-petite-souris/</loc>
 <lastmod>2013-03-04T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/</loc>
+<loc>https://foxmask.org/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/</loc>
 <lastmod>2013-02-28T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/25/incontournables-pythonerie-oh-ho-ho-geant-vert/</loc>
+<loc>https://foxmask.org/post/2013/02/25/incontournables-pythonerie-oh-ho-ho-geant-vert/</loc>
 <lastmod>2013-02-25T14:24:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/25/incontournables-pythonerie-die-arg/</loc>
+<loc>https://foxmask.org/post/2013/02/25/incontournables-pythonerie-die-arg/</loc>
 <lastmod>2013-02-25T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/25/de-php-a-python-meetgeek/</loc>
+<loc>https://foxmask.org/post/2013/02/25/de-php-a-python-meetgeek/</loc>
 <lastmod>2013-02-25T09:44:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/20/jelix-1-5-0-out/</loc>
+<loc>https://foxmask.org/post/2013/02/20/jelix-1-5-0-out/</loc>
 <lastmod>2013-02-20T15:11:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/18/de-php-a-python-x-aime-l/</loc>
+<loc>https://foxmask.org/post/2013/02/18/de-php-a-python-x-aime-l/</loc>
 <lastmod>2013-02-18T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/16/pythonthon/</loc>
+<loc>https://foxmask.org/post/2013/02/16/pythonthon/</loc>
 <lastmod>2013-02-16T15:19:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/15/incontournables-pythonerie/</loc>
+<loc>https://foxmask.org/post/2013/02/15/incontournables-pythonerie/</loc>
 <lastmod>2013-02-15T11:54:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/</loc>
+<loc>https://foxmask.org/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/</loc>
 <lastmod>2013-02-14T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/12/de-php-a-python-les-tests-unitaires/</loc>
+<loc>https://foxmask.org/post/2013/02/12/de-php-a-python-les-tests-unitaires/</loc>
 <lastmod>2013-02-12T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/07/havefnubb-sous-le-domaine-exactement/</loc>
+<loc>https://foxmask.org/post/2013/02/07/havefnubb-sous-le-domaine-exactement/</loc>
 <lastmod>2013-02-07T11:26:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/02/04/gangam-style/</loc>
+<loc>https://foxmask.org/post/2013/02/04/gangam-style/</loc>
 <lastmod>2013-02-04T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/01/28/de-php-a-python-de-composer-a-setuptools/</loc>
+<loc>https://foxmask.org/post/2013/01/28/de-php-a-python-de-composer-a-setuptools/</loc>
 <lastmod>2013-01-28T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/01/21/django-__unicode__-et-form_as_p-mes-amis/</loc>
+<loc>https://foxmask.org/post/2013/01/21/django-__unicode__-et-form_as_p-mes-amis/</loc>
 <lastmod>2013-01-21T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/</loc>
+<loc>https://foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/</loc>
 <lastmod>2013-01-17T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/</loc>
+<loc>https://foxmask.org/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/</loc>
 <lastmod>2013-01-16T16:49:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/01/14/de-php-a-python-tous-ensemble/</loc>
+<loc>https://foxmask.org/post/2013/01/14/de-php-a-python-tous-ensemble/</loc>
 <lastmod>2013-01-14T17:40:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/01/10/oracle-gestion-des-tablespace/</loc>
+<loc>https://foxmask.org/post/2013/01/10/oracle-gestion-des-tablespace/</loc>
 <lastmod>2013-01-10T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/</loc>
+<loc>https://foxmask.org/post/2013/01/08/sam-max-le-papa-noel-descendu-du-ciel/</loc>
 <lastmod>2013-01-08T19:58:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2013/01/03/oracle-exporter-une-proc/</loc>
+<loc>https://foxmask.org/post/2013/01/03/oracle-exporter-une-proc/</loc>
 <lastmod>2013-01-03T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/12/27/oracle-changer-lediteur-sql/</loc>
+<loc>https://foxmask.org/post/2012/12/27/oracle-changer-lediteur-sql/</loc>
 <lastmod>2012-12-27T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/</loc>
+<loc>https://foxmask.org/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/</loc>
 <lastmod>2012-12-21T23:58:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/12/20/oracle-personnalisation-du-prompt-sqlplus/</loc>
+<loc>https://foxmask.org/post/2012/12/20/oracle-personnalisation-du-prompt-sqlplus/</loc>
 <lastmod>2012-12-20T10:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/12/19/quand-django-reste-muet-a-vous-rendre-dingue/</loc>
+<loc>https://foxmask.org/post/2012/12/19/quand-django-reste-muet-a-vous-rendre-dingue/</loc>
 <lastmod>2012-12-19T22:59:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/12/17/debian-amour-et-desamour/</loc>
+<loc>https://foxmask.org/post/2012/12/17/debian-amour-et-desamour/</loc>
 <lastmod>2012-12-17T14:31:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/12/13/oracle-bottant-le-train-des-refractaires/</loc>
+<loc>https://foxmask.org/post/2012/12/13/oracle-bottant-le-train-des-refractaires/</loc>
 <lastmod>2012-12-13T11:08:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/10/15/django-blocktrans-indigestion-variable/</loc>
+<loc>https://foxmask.org/post/2012/10/15/django-blocktrans-indigestion-variable/</loc>
 <lastmod>2012-10-15T11:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/10/13/django-template-tag-boussole-template/</loc>
+<loc>https://foxmask.org/post/2012/10/13/django-template-tag-boussole-template/</loc>
 <lastmod>2012-10-13T16:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/09/30/django-shortener-clap-une-premiere/</loc>
+<loc>https://foxmask.org/post/2012/09/30/django-shortener-clap-une-premiere/</loc>
 <lastmod>2012-09-30T21:32:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/09/10/python-pip-freeze/</loc>
+<loc>https://foxmask.org/post/2012/09/10/python-pip-freeze/</loc>
 <lastmod>2012-09-10T21:57:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/08/31/django-reverse-for-xxx-with-arguments-not-found/</loc>
+<loc>https://foxmask.org/post/2012/08/31/django-reverse-for-xxx-with-arguments-not-found/</loc>
 <lastmod>2012-08-31T10:30:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/04/02/havefnubb-1-5-0/</loc>
+<loc>https://foxmask.org/post/2012/04/02/havefnubb-1-5-0/</loc>
 <lastmod>2012-04-02T09:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/01/12/jelix-php-5-bouillon-de-cultures/</loc>
+<loc>https://foxmask.org/post/2012/01/12/jelix-php-5-bouillon-de-cultures/</loc>
 <lastmod>2012-01-12T10:13:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2012/01/10/oracle-et-taille-de-schema-tablespace/</loc>
+<loc>https://foxmask.org/post/2012/01/10/oracle-et-taille-de-schema-tablespace/</loc>
 <lastmod>2012-01-10T12:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2011/11/05/linux-live-usb-persistent-failed/</loc>
+<loc>https://foxmask.org/post/2011/11/05/linux-live-usb-persistent-failed/</loc>
 <lastmod>2011-11-05T17:01:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2011/10/22/linux-sur-laptop-sans-disque-dur/</loc>
+<loc>https://foxmask.org/post/2011/10/22/linux-sur-laptop-sans-disque-dur/</loc>
 <lastmod>2011-10-22T19:35:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2011/10/19/jelix-php5-framework-version-1-3-dans-les-bacs/</loc>
+<loc>https://foxmask.org/post/2011/10/19/jelix-php5-framework-version-1-3-dans-les-bacs/</loc>
 <lastmod>2011-10-19T13:06:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2011/10/02/havefnubb-theme-twitter-bootstrap/</loc>
+<loc>https://foxmask.org/post/2011/10/02/havefnubb-theme-twitter-bootstrap/</loc>
 <lastmod>2011-10-02T14:38:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2011/09/23/jelix-php5-framework-tout-neuf/</loc>
+<loc>https://foxmask.org/post/2011/09/23/jelix-php5-framework-tout-neuf/</loc>
 <lastmod>2011-09-23T16:18:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2011/07/16/erreur-403-pour-validator-w3c-et-google/</loc>
+<loc>https://foxmask.org/post/2011/07/16/erreur-403-pour-validator-w3c-et-google/</loc>
 <lastmod>2011-07-16T23:53:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2011/04/03/havefnubb-1-4-0/</loc>
+<loc>https://foxmask.org/post/2011/04/03/havefnubb-1-4-0/</loc>
 <lastmod>2011-04-03T18:03:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2010/08/24/django-doc-en-pdf-cest-mieux/</loc>
+<loc>https://foxmask.org/post/2010/08/24/django-doc-en-pdf-cest-mieux/</loc>
 <lastmod>2010-08-24T23:23:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2010/04/01/jelix-cest-fini/</loc>
+<loc>https://foxmask.org/post/2010/04/01/jelix-cest-fini/</loc>
 <lastmod>2010-04-01T09:21:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2010/03/27/jelix-versions-1-1-6-1-0-12-et-bitbucket/</loc>
+<loc>https://foxmask.org/post/2010/03/27/jelix-versions-1-1-6-1-0-12-et-bitbucket/</loc>
 <lastmod>2010-03-27T14:21:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/11/10/havefnubb-hook-system-2/</loc>
+<loc>https://foxmask.org/post/2009/11/10/havefnubb-hook-system-2/</loc>
 <lastmod>2009-11-10T17:26:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/10/25/irssi-dans-tout-sa-splendeur/</loc>
+<loc>https://foxmask.org/post/2009/10/25/irssi-dans-tout-sa-splendeur/</loc>
 <lastmod>2009-10-25T09:59:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/10/20/forumphp-2009-avec-jelix-et-havefnubb-2/</loc>
+<loc>https://foxmask.org/post/2009/10/20/forumphp-2009-avec-jelix-et-havefnubb-2/</loc>
 <lastmod>2009-10-20T13:44:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/10/01/jelix-dev-summit-episode-1-9-octobre-2009/</loc>
+<loc>https://foxmask.org/post/2009/10/01/jelix-dev-summit-episode-1-9-octobre-2009/</loc>
 <lastmod>2009-10-01T10:32:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/09/15/jelix-le-module-jcommunity-2/</loc>
+<loc>https://foxmask.org/post/2009/09/15/jelix-le-module-jcommunity-2/</loc>
 <lastmod>2009-09-15T07:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/09/01/havefnubb-et-son-installeur-automatique-aka-wizard/</loc>
+<loc>https://foxmask.org/post/2009/09/01/havefnubb-et-son-installeur-automatique-aka-wizard/</loc>
 <lastmod>2009-09-01T01:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/08/18/jelix-et-la-communication-inter-modules-2/</loc>
+<loc>https://foxmask.org/post/2009/08/18/jelix-et-la-communication-inter-modules-2/</loc>
 <lastmod>2009-08-18T01:05:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/06/24/jelix-est-son-nom/</loc>
+<loc>https://foxmask.org/post/2009/06/24/jelix-est-son-nom/</loc>
 <lastmod>2009-06-24T07:21:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/06/07/havefnubb-fait-son-entree-sur-freshmeat/</loc>
+<loc>https://foxmask.org/post/2009/06/07/havefnubb-fait-son-entree-sur-freshmeat/</loc>
 <lastmod>2009-06-07T13:37:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/04/13/havefnubb-s-installe-sur-la-toile/</loc>
+<loc>https://foxmask.org/post/2009/04/13/havefnubb-s-installe-sur-la-toile/</loc>
 <lastmod>2009-04-13T01:51:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/03/08/jelix-et-votre-portail-dans-la-langue-de-lutilisateur/</loc>
+<loc>https://foxmask.org/post/2009/03/08/jelix-et-votre-portail-dans-la-langue-de-lutilisateur/</loc>
 <lastmod>2009-03-08T11:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2009/03/06/havefnubb-le-forum-made-in-jelix/</loc>
+<loc>https://foxmask.org/post/2009/03/06/havefnubb-le-forum-made-in-jelix/</loc>
 <lastmod>2009-03-06T21:56:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2008/12/14/jelix-token-le-revelateur/</loc>
+<loc>https://foxmask.org/post/2008/12/14/jelix-token-le-revelateur/</loc>
 <lastmod>2008-12-14T13:05:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2008/11/03/jelix-appmgr-ou-linstalleur-de-modules-jelix/</loc>
+<loc>https://foxmask.org/post/2008/11/03/jelix-appmgr-ou-linstalleur-de-modules-jelix/</loc>
 <lastmod>2008-11-03T10:58:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/post/2008/09/10/j-ai-l-x/</loc>
+<loc>https://foxmask.org/post/2008/09/10/j-ai-l-x/</loc>
 <lastmod>2008-09-10T12:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/category/entrevues.html</loc>
-<lastmod>2015-08-31T10:45:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/category/games.html</loc>
+<loc>https://foxmask.org/category/games.html</loc>
 <lastmod>2018-02-05T07:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/category/general.html</loc>
+<loc>https://foxmask.org/category/general.html</loc>
 <lastmod>2021-05-24T13:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/category/news.html</loc>
-<lastmod>2016-11-26T16:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/category/techno.html</loc>
-<lastmod>2021-07-28T19:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/category/web.html</loc>
+<loc>https://foxmask.org/category/korea.html</loc>
 <lastmod>2021-09-27T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/hosting.html</loc>
+<loc>https://foxmask.org/category/techno.html</loc>
+<lastmod>2021-07-28T19:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.org/tag/hosting.html</loc>
 <lastmod>2021-09-27T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/python.html</loc>
+<loc>https://foxmask.org/tag/korea.html</loc>
+<lastmod>2021-09-27T00:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.org/tag/python.html</loc>
 <lastmod>2021-07-28T19:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/django.html</loc>
+<loc>https://foxmask.org/tag/django.html</loc>
 <lastmod>2021-07-28T19:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/monit.html</loc>
+<loc>https://foxmask.org/tag/monit.html</loc>
 <lastmod>2021-07-28T19:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/life.html</loc>
+<loc>https://foxmask.org/tag/life.html</loc>
 <lastmod>2021-05-24T13:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/korea.html</loc>
-<lastmod>2021-05-24T13:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/tag/starlette.html</loc>
+<loc>https://foxmask.org/tag/starlette.html</loc>
 <lastmod>2020-05-01T22:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/yeoboseyo.html</loc>
+<loc>https://foxmask.org/tag/yeoboseyo.html</loc>
 <lastmod>2020-05-01T22:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/anki.html</loc>
+<loc>https://foxmask.org/tag/anki.html</loc>
 <lastmod>2019-04-24T22:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/sfr.html</loc>
+<loc>https://foxmask.org/tag/sfr.html</loc>
 <lastmod>2018-03-20T20:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/joplin.html</loc>
+<loc>https://foxmask.org/tag/joplin.html</loc>
 <lastmod>2018-03-17T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/evernote.html</loc>
+<loc>https://foxmask.org/tag/evernote.html</loc>
 <lastmod>2018-03-17T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/boostnote.html</loc>
+<loc>https://foxmask.org/tag/boostnote.html</loc>
 <lastmod>2018-03-15T23:45:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/dropbox.html</loc>
+<loc>https://foxmask.org/tag/dropbox.html</loc>
 <lastmod>2018-03-07T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/onenote.html</loc>
+<loc>https://foxmask.org/tag/onenote.html</loc>
 <lastmod>2018-03-07T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/simplenote.html</loc>
+<loc>https://foxmask.org/tag/simplenote.html</loc>
 <lastmod>2018-03-07T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/nimbus.html</loc>
+<loc>https://foxmask.org/tag/nimbus.html</loc>
 <lastmod>2018-03-07T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/google-keep.html</loc>
+<loc>https://foxmask.org/tag/google-keep.html</loc>
 <lastmod>2018-03-07T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/turtl.html</loc>
+<loc>https://foxmask.org/tag/turtl.html</loc>
 <lastmod>2018-03-07T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/paperwork.html</loc>
+<loc>https://foxmask.org/tag/paperwork.html</loc>
 <lastmod>2018-03-07T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/hzd.html</loc>
+<loc>https://foxmask.org/tag/hzd.html</loc>
 <lastmod>2018-02-05T07:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/fabric.html</loc>
+<loc>https://foxmask.org/tag/fabric.html</loc>
 <lastmod>2018-01-23T16:45:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/test.html</loc>
+<loc>https://foxmask.org/tag/test.html</loc>
 <lastmod>2017-10-14T17:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/coverage.html</loc>
+<loc>https://foxmask.org/tag/coverage.html</loc>
 <lastmod>2017-10-14T17:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/orotangi.html</loc>
-<lastmod>2017-02-09T09:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/tag/triggerhappy.html</loc>
-<lastmod>2017-02-09T09:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/tag/ifttt.html</loc>
-<lastmod>2017-02-09T09:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/tag/wallabag.html</loc>
-<lastmod>2017-02-09T09:00:00+00:09</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://blog.foxmask.org/tag/linxufr.html</loc>
+<loc>https://foxmask.org/tag/linxufr.html</loc>
 <lastmod>2016-11-26T18:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/hackernews.html</loc>
+<loc>https://foxmask.org/tag/hackernews.html</loc>
 <lastmod>2016-11-26T18:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/korben.html</loc>
+<loc>https://foxmask.org/tag/korben.html</loc>
 <lastmod>2016-11-26T18:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/mock.html</loc>
+<loc>https://foxmask.org/tag/triggerhappy.html</loc>
+<lastmod>2016-11-26T18:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.org/tag/mock.html</loc>
 <lastmod>2016-10-21T20:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/indexerror.html</loc>
+<loc>https://foxmask.org/tag/indexerror.html</loc>
 <lastmod>2016-09-08T08:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/samsung.html</loc>
+<loc>https://foxmask.org/tag/samsung.html</loc>
 <lastmod>2016-09-08T08:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/pixel.html</loc>
+<loc>https://foxmask.org/tag/pixel.html</loc>
 <lastmod>2016-09-08T08:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/apple.html</loc>
+<loc>https://foxmask.org/tag/apple.html</loc>
 <lastmod>2016-09-08T08:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/docker.html</loc>
+<loc>https://foxmask.org/tag/docker.html</loc>
 <lastmod>2016-09-08T08:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/firefox.html</loc>
+<loc>https://foxmask.org/tag/firefox.html</loc>
 <lastmod>2016-09-08T08:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/pycharm.html</loc>
+<loc>https://foxmask.org/tag/pycharm.html</loc>
 <lastmod>2016-09-01T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/jetbrains.html</loc>
+<loc>https://foxmask.org/tag/jetbrains.html</loc>
 <lastmod>2016-09-01T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/https.html</loc>
+<loc>https://foxmask.org/tag/https.html</loc>
 <lastmod>2016-07-03T22:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/php.html</loc>
+<loc>https://foxmask.org/tag/php.html</loc>
 <lastmod>2016-06-01T15:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/pandas.html</loc>
+<loc>https://foxmask.org/tag/wallabag.html</loc>
+<lastmod>2016-06-01T15:00:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.org/tag/pandas.html</loc>
 <lastmod>2016-05-14T13:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/opensource.html</loc>
+<loc>https://foxmask.org/tag/opensource.html</loc>
 <lastmod>2016-05-07T18:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/multiprocessing.html</loc>
+<loc>https://foxmask.org/tag/multiprocessing.html</loc>
 <lastmod>2016-04-14T10:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/activemq.html</loc>
+<loc>https://foxmask.org/tag/activemq.html</loc>
 <lastmod>2016-04-14T10:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/celery.html</loc>
+<loc>https://foxmask.org/tag/celery.html</loc>
 <lastmod>2016-04-14T10:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/rq.html</loc>
+<loc>https://foxmask.org/tag/rq.html</loc>
 <lastmod>2016-04-14T10:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/beanstalkd.html</loc>
+<loc>https://foxmask.org/tag/beanstalkd.html</loc>
 <lastmod>2016-04-14T10:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/actionform.html</loc>
+<loc>https://foxmask.org/tag/actionform.html</loc>
 <lastmod>2016-03-23T22:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/poeme.html</loc>
+<loc>https://foxmask.org/tag/poeme.html</loc>
 <lastmod>2016-03-18T07:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/pypi.html</loc>
+<loc>https://foxmask.org/tag/pypi.html</loc>
 <lastmod>2016-03-04T19:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/travisci.html</loc>
+<loc>https://foxmask.org/tag/travisci.html</loc>
 <lastmod>2016-03-04T19:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/github.html</loc>
+<loc>https://foxmask.org/tag/github.html</loc>
 <lastmod>2016-03-04T19:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/flake8.html</loc>
+<loc>https://foxmask.org/tag/flake8.html</loc>
 <lastmod>2016-02-17T19:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/devops.html</loc>
+<loc>https://foxmask.org/tag/ifttt.html</loc>
+<lastmod>2016-02-03T10:10:00+00:09</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://foxmask.org/tag/devops.html</loc>
 <lastmod>2016-02-02T01:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/ansible.html</loc>
+<loc>https://foxmask.org/tag/ansible.html</loc>
 <lastmod>2016-02-02T01:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/meetup.html</loc>
+<loc>https://foxmask.org/tag/meetup.html</loc>
 <lastmod>2016-02-02T01:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/aix.html</loc>
+<loc>https://foxmask.org/tag/aix.html</loc>
 <lastmod>2016-01-13T23:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/centos.html</loc>
+<loc>https://foxmask.org/tag/centos.html</loc>
 <lastmod>2016-01-12T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/postgresql.html</loc>
+<loc>https://foxmask.org/tag/postgresql.html</loc>
 <lastmod>2016-01-12T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/psycopg2.html</loc>
+<loc>https://foxmask.org/tag/psycopg2.html</loc>
 <lastmod>2016-01-12T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/pelican.html</loc>
+<loc>https://foxmask.org/tag/pelican.html</loc>
 <lastmod>2016-01-05T12:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/todoist.html</loc>
+<loc>https://foxmask.org/tag/todoist.html</loc>
 <lastmod>2015-08-10T10:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/trello.html</loc>
+<loc>https://foxmask.org/tag/trello.html</loc>
 <lastmod>2015-08-10T10:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/linux.html</loc>
+<loc>https://foxmask.org/tag/linux.html</loc>
 <lastmod>2015-08-05T10:45:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/debian.html</loc>
+<loc>https://foxmask.org/tag/debian.html</loc>
 <lastmod>2015-07-29T09:48:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/oneplus.html</loc>
+<loc>https://foxmask.org/tag/oneplus.html</loc>
 <lastmod>2015-07-29T09:48:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/flask.html</loc>
+<loc>https://foxmask.org/tag/flask.html</loc>
 <lastmod>2015-07-27T09:45:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/supervisor.html</loc>
+<loc>https://foxmask.org/tag/supervisor.html</loc>
 <lastmod>2015-06-19T10:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/angular.html</loc>
+<loc>https://foxmask.org/tag/angular.html</loc>
 <lastmod>2015-05-29T21:49:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/wordpress.html</loc>
+<loc>https://foxmask.org/tag/wordpress.html</loc>
 <lastmod>2015-05-29T21:49:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/twisted.html</loc>
+<loc>https://foxmask.org/tag/twisted.html</loc>
 <lastmod>2015-05-21T10:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/xcfe4.html</loc>
+<loc>https://foxmask.org/tag/xcfe4.html</loc>
 <lastmod>2015-05-16T14:18:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/autobahn.html</loc>
+<loc>https://foxmask.org/tag/autobahn.html</loc>
 <lastmod>2015-05-12T11:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/crossbar.html</loc>
+<loc>https://foxmask.org/tag/crossbar.html</loc>
 <lastmod>2015-05-12T11:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/wampws.html</loc>
+<loc>https://foxmask.org/tag/wampws.html</loc>
 <lastmod>2015-05-12T11:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/bsd.html</loc>
+<loc>https://foxmask.org/tag/bsd.html</loc>
 <lastmod>2015-05-08T13:55:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/systemd.html</loc>
+<loc>https://foxmask.org/tag/systemd.html</loc>
 <lastmod>2015-05-03T14:45:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/oracle.html</loc>
+<loc>https://foxmask.org/tag/oracle.html</loc>
 <lastmod>2014-10-17T08:36:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/dj-diabetes.html</loc>
+<loc>https://foxmask.org/tag/dj-diabetes.html</loc>
 <lastmod>2014-07-01T11:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/vmware.html</loc>
+<loc>https://foxmask.org/tag/vmware.html</loc>
 <lastmod>2014-04-17T11:06:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/readability.html</loc>
+<loc>https://foxmask.org/tag/readability.html</loc>
 <lastmod>2014-01-06T10:30:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/pocket.html</loc>
+<loc>https://foxmask.org/tag/pocket.html</loc>
 <lastmod>2013-12-17T10:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/pythonerie.html</loc>
+<loc>https://foxmask.org/tag/pythonerie.html</loc>
 <lastmod>2013-11-05T16:22:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/aptana.html</loc>
+<loc>https://foxmask.org/tag/aptana.html</loc>
 <lastmod>2013-09-26T22:33:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/relatorio.html</loc>
+<loc>https://foxmask.org/tag/relatorio.html</loc>
 <lastmod>2013-08-29T16:07:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/apachemysqlphp.html</loc>
+<loc>https://foxmask.org/tag/apachemysqlphp.html</loc>
 <lastmod>2013-05-01T13:20:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/havefnubb.html</loc>
+<loc>https://foxmask.org/tag/havefnubb.html</loc>
 <lastmod>2013-05-01T13:20:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/jelix.html</loc>
+<loc>https://foxmask.org/tag/jelix.html</loc>
 <lastmod>2013-05-01T13:20:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/tag/razer.html</loc>
+<loc>https://foxmask.org/tag/razer.html</loc>
 <lastmod>2013-01-08T19:58:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://blog.foxmask.org/author/foxmask.html</loc>
+<loc>https://foxmask.org/author/foxmask.html</loc>
 <lastmod>2021-09-27T00:00:00+00:09</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
