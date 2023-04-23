@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/">
+<link rel="canonical" href="https://www.foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="TriggerHappy,multiprocessing,activemq,celery,rq,beanstalkd" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Quand Les &#34;job queue&#34; et les amis &#34;brokers de messages&#34; sont mis au rancart par la stdlib"/>
-        <meta property="og:url" content="https://foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/"/>
         <meta property="og:description" content="Intro Ce post n&#39;est autre qu&#39;un simple retour d&#39;XP sur l&#39;utilisation et tests de diverses solutions (almost)ready-to-use de job queue et brokers de messages. Présentation de l&#39;archi du projet Comme vous pouvez l&#39;imaginer avec IFTTT si vous connaissez ce service, j&#39;ai des triggers qui permettent de récupérer des données …"/>
         <meta property="article:published_time" content="2016-04-14" />
             <meta property="article:section" content="Techno" />
@@ -33,19 +33,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -59,34 +58,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -104,7 +98,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/"
+                    <a href="https://www.foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/"
                        rel="bookmark"
                        title="Permalink to Quand Les "job queue" et les amis "brokers de messages" sont mis au rancart par la stdlib">
                         Quand Les "job queue" et les amis "brokers de messages" sont mis au rancart par la stdlib
@@ -125,17 +119,17 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
+	<a href="https://www.foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
         /
-	<a href="https://foxmask.org/tag/multiprocessing.html">multiprocessing</a>
+	<a href="https://www.foxmask.org/tag/multiprocessing.html">multiprocessing</a>
         /
-	<a href="https://foxmask.org/tag/activemq.html">activemq</a>
+	<a href="https://www.foxmask.org/tag/activemq.html">activemq</a>
         /
-	<a href="https://foxmask.org/tag/celery.html">celery</a>
+	<a href="https://www.foxmask.org/tag/celery.html">celery</a>
         /
-	<a href="https://foxmask.org/tag/rq.html">rq</a>
+	<a href="https://www.foxmask.org/tag/rq.html">rq</a>
         /
-	<a href="https://foxmask.org/tag/beanstalkd.html">beanstalkd</a>
+	<a href="https://www.foxmask.org/tag/beanstalkd.html">beanstalkd</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -180,7 +174,6 @@ Celery cessant de fonctionner sans raison apparente (aucune info dans les logs n
         <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>chez moi <code>settings.DJANGO_TH['processes']</code> vaut 5. Je vous fais grâce de la fonction <code>publishing</code> ;)</p>
 <h3>Publication des données :</h3>
 <p>j'ai voulu charger la mule (toute proportion gardée:) en rajoutant 21 triggers de plus (entre autre traquer #django sur twitter), hé bien je suis passé à 12 secondes pour publier les données de 61 consumers (quand ceux ci ont des données à fournir évidemment) (donc ca fait un coup de 305triggers/min)</p>
@@ -210,42 +203,41 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
 <li>toutes les 13min, la récupération des données a lieu</li>
 </ul>
 <p>ne sont pas affichées, les logs qui n'ont pas de données à traiter, mais qui évidement, consomme du temps. Ce qui explique que de 14:00:00 à 14:00:06 il ne s'affiche rien.</p>
-<div class="highlight"><pre><span></span><code><span class="m">2016</span>-04-13 <span class="m">13</span>:26:02,928 INFO tasks <span class="m">3902</span> foxmask - ServiceRss - ServicePocket - Frandroid - pocket - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:26:06,156 INFO tasks <span class="m">3903</span> foxmask - ServiceRss - ServiceEvernote - LinuxFr - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:26:06,802 INFO tasks <span class="m">3902</span> foxmask - ServiceTwitter - ServicePocket - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:26:07,137 INFO tasks <span class="m">3906</span> foxmask - ServiceTwitter - ServiceTrello - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:26:08,504 INFO tasks <span class="m">3903</span> foxmask - ServiceTwitter - ServiceReadability - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:30:03,616 INFO tasks <span class="m">3946</span> foxmask - ServiceRss - ServicePocket - Frandroid - pocket - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:30:04,152 INFO tasks <span class="m">3949</span> foxmask - ServiceTwitter - ServicePocket - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:30:04,931 INFO tasks <span class="m">3947</span> foxmask - ServiceTwitter - ServiceReadability - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:30:07,977 INFO tasks <span class="m">3948</span> foxmask - ServiceRss - ServiceEvernote - LinuxFr - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:30:09,572 INFO tasks <span class="m">3950</span> foxmask - ServiceTwitter - ServiceTrello - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:39:05,783 INFO tasks <span class="m">4348</span> foxmask - ServiceRss - ServicePocket - TheVerge - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:42:02,482 INFO tasks <span class="m">4383</span> recycle of cache <span class="k">done</span>!
-<span class="m">2016</span>-04-13 <span class="m">13</span>:52:03,933 INFO tasks <span class="m">4462</span> foxmask - ServiceRss - ServicePocket - TheVerge - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:52:06,910 INFO tasks <span class="m">4462</span> foxmask - ServiceTwitter - ServiceTrello - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:52:07,632 INFO tasks <span class="m">4461</span> foxmask - ServiceRss - ServiceReadability - Numerama - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:52:07,993 INFO tasks <span class="m">4463</span> foxmask - ServiceTwitter - ServicePocket - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">13</span>:52:09,537 INFO tasks <span class="m">4463</span> foxmask - ServiceTwitter - ServiceReadability - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:06,192 INFO tasks <span class="m">4524</span> recycle of cache <span class="k">done</span>!
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:06,309 INFO tasks <span class="m">4539</span> foxmask - ServiceRss - ServicePocket - TheVerge - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:06,788 INFO tasks <span class="m">4540</span> foxmask - ServiceTwitter - ServicePocket - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:07,321 INFO tasks <span class="m">4536</span> foxmask - ServiceRss - ServicePocket - TheVerge - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:07,497 INFO tasks <span class="m">4538</span> foxmask - ServiceRss - ServiceReadability - Numerama - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:07,751 INFO tasks <span class="m">4535</span> foxmask - ServiceTwitter - ServiceReadability - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:10,278 INFO tasks <span class="m">4536</span> foxmask - ServiceTwitter - ServiceTrello - Django - <span class="m">5</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:10,875 INFO tasks <span class="m">4542</span> foxmask - ServiceRss - ServiceEvernote - Korben - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:11,279 INFO tasks <span class="m">4536</span> foxmask - ServiceRss - ServiceEvernote - BeGeek - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:11,461 INFO tasks <span class="m">4536</span> foxmask - ServiceRss - ServiceEvernote - Google high-tech - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:11,717 INFO tasks <span class="m">4543</span> foxmask - ServiceTwitter - ServiceTrello - Django - <span class="m">2</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:11,793 INFO tasks <span class="m">4542</span> foxmask - ServiceTwitter - ServicePocket - Django - <span class="m">5</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:12,634 INFO tasks <span class="m">4536</span> foxmask - ServiceTwitter - ServiceReadability - Django - <span class="m">5</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:14,414 INFO tasks <span class="m">4537</span> foxmask - ServiceRss - ServiceReadability - Korden - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:15,533 INFO tasks <span class="m">4534</span> foxmask - ServiceRss - ServiceReadability - Numerama - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:16,498 INFO tasks <span class="m">4543</span> foxmask - ServiceRss - ServiceEvernote - BeGeek - <span class="m">1</span> new data
-<span class="m">2016</span>-04-13 <span class="m">14</span>:00:17,206 INFO tasks <span class="m">4542</span> foxmask - ServiceRss - ServiceReadability - BeGeek - <span class="m">1</span> new data
+<div class="highlight"><pre><span></span><code><span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:26:02,928<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3902</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>Frandroid<span class="w"> </span>-<span class="w"> </span>pocket<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:26:06,156<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3903</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceEvernote<span class="w"> </span>-<span class="w"> </span>LinuxFr<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:26:06,802<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3902</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:26:07,137<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3906</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceTrello<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:26:08,504<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3903</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:30:03,616<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3946</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>Frandroid<span class="w"> </span>-<span class="w"> </span>pocket<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:30:04,152<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3949</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:30:04,931<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3947</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:30:07,977<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3948</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceEvernote<span class="w"> </span>-<span class="w"> </span>LinuxFr<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:30:09,572<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">3950</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceTrello<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:39:05,783<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4348</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>TheVerge<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:42:02,482<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4383</span><span class="w"> </span>recycle<span class="w"> </span>of<span class="w"> </span>cache<span class="w"> </span><span class="k">done</span>!
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:52:03,933<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4462</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>TheVerge<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:52:06,910<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4462</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceTrello<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:52:07,632<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4461</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>Numerama<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:52:07,993<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4463</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">13</span>:52:09,537<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4463</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:06,192<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4524</span><span class="w"> </span>recycle<span class="w"> </span>of<span class="w"> </span>cache<span class="w"> </span><span class="k">done</span>!
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:06,309<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4539</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>TheVerge<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:06,788<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4540</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:07,321<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4536</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>TheVerge<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:07,497<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4538</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>Numerama<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:07,751<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4535</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:10,278<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4536</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceTrello<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">5</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:10,875<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4542</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceEvernote<span class="w"> </span>-<span class="w"> </span>Korben<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:11,279<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4536</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceEvernote<span class="w"> </span>-<span class="w"> </span>BeGeek<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:11,461<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4536</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceEvernote<span class="w"> </span>-<span class="w"> </span>Google<span class="w"> </span>high-tech<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:11,717<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4543</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceTrello<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">2</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:11,793<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4542</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServicePocket<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">5</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:12,634<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4536</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceTwitter<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>Django<span class="w"> </span>-<span class="w"> </span><span class="m">5</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:14,414<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4537</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>Korden<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:15,533<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4534</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>Numerama<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:16,498<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4543</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceEvernote<span class="w"> </span>-<span class="w"> </span>BeGeek<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
+<span class="m">2016</span>-04-13<span class="w"> </span><span class="m">14</span>:00:17,206<span class="w"> </span>INFO<span class="w"> </span>tasks<span class="w"> </span><span class="m">4542</span><span class="w"> </span>foxmask<span class="w"> </span>-<span class="w"> </span>ServiceRss<span class="w"> </span>-<span class="w"> </span>ServiceReadability<span class="w"> </span>-<span class="w"> </span>BeGeek<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="w"> </span>new<span class="w"> </span>data
 </code></pre></div>
-
 
 <h2>Conclusion</h2>
 <p>Cette fois ci l'éternel insatisfait que je suis, se sent un peu mieux avec cette solution (... quoi que ya encore un truc à gratter pour que ca soit 'encore mieux';)</p>
@@ -254,14 +246,14 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2016/11/26/trigger-happy-two-weeks-after-strong-storm/">Trigger Happy two weeks after a strong Storm...</a></li>
-        <li><a href="https://foxmask.org/post/2016/06/01/trigger-happy-apparition-subliminale-phptour-2016-wallabag/">Apparition subliminiale de TriggerHappy au PHPTour 2016 avec Wallabag</a></li>
-        <li><a href="https://foxmask.org/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/">Panda, Le gros nounours noir et blanc est passé</a></li>
-        <li><a href="https://foxmask.org/post/2016/04/22/wallabag-api-1.0.1/">Wallabag API 1.0.1</a></li>
-        <li><a href="https://foxmask.org/post/2016/02/15/trigger-happy-running-softly-with-rq/">Trigger Happy running softly with RQ</a></li>
-        <li><a href="https://foxmask.org/post/2016/02/03/ifttt-se-prend-les-pieds-dans-le-superbowl/">IFTTT se prend les pieds dans le SuperBowl</a></li>
-        <li><a href="https://foxmask.org/post/2015/10/02/trigger-happy-stats-requete-et-proposition/">Trigger-Happy, stats, requête et proposition</a></li>
-        <li><a href="https://foxmask.org/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/">Trigger Happy, de tout, de rien, la vie</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/11/26/trigger-happy-two-weeks-after-strong-storm/">Trigger Happy two weeks after a strong Storm...</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/06/01/trigger-happy-apparition-subliminale-phptour-2016-wallabag/">Apparition subliminiale de TriggerHappy au PHPTour 2016 avec Wallabag</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/05/14/le-gros-nounours-noir-et-blanc-est-passe/">Panda, Le gros nounours noir et blanc est passé</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/04/22/wallabag-api-1.0.1/">Wallabag API 1.0.1</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/02/15/trigger-happy-running-softly-with-rq/">Trigger Happy running softly with RQ</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/02/03/ifttt-se-prend-les-pieds-dans-le-superbowl/">IFTTT se prend les pieds dans le SuperBowl</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/10/02/trigger-happy-stats-requete-et-proposition/">Trigger-Happy, stats, requête et proposition</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/">Trigger Happy, de tout, de rien, la vie</a></li>
     </ul>
 </section>
         </article>
@@ -273,74 +265,6 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -385,7 +309,7 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -394,16 +318,16 @@ Du coup j'ai dû m'orienter vers <code>apply_async</code> vs <code>map_async</co
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

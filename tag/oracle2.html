@@ -17,23 +17,22 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="Le Free de la Passion"/>
-        <meta property="og:url" content="https://foxmask.org"/>
+        <meta property="og:url" content="https://www.foxmask.org"/>
         <meta property="og:description" content="Le Free de la Passion"/>
 
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
 
 </head>
@@ -48,34 +47,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -90,7 +84,7 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <h2><a href="https://foxmask.org/post/2013/01/10/oracle-gestion-des-tablespace/">Oracle Gestion des Tablespaces</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2013/01/10/oracle-gestion-des-tablespace/">Oracle Gestion des Tablespaces</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -103,7 +97,7 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Quand on n'a pas demandé à Oracle de gérer l'espace disque avec l'option
@@ -111,20 +105,19 @@ auto extend sur ses tablespaces, il arrive (souvant) qu'on se mange des
 erreurs parce que le tablespace est full.</p>
 <p>Donc ;</p>
 <p>Pour lister ses tablespace on tapera :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">file_name</span> <span class="k">FROM</span> <span class="n">dba_data_files</span> <span class="k">WHERE</span> <span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">file_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dba_data_files</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>affichera</p>
 <div class="highlight"><pre><span></span><code><span class="n">FILE_NAME</span>
 <span class="c1">--------------------------------------------------------------------------------</span>
 <span class="o">/</span><span class="n">u02</span><span class="o">/</span><span class="n">oradata …</span></code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2013/01/10/oracle-gestion-des-tablespace/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2013/01/10/oracle-gestion-des-tablespace/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2013/01/03/oracle-exporter-une-proc/">Oracle Exporter une Proc</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2013/01/03/oracle-exporter-une-proc/">Oracle Exporter une Proc</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -137,28 +130,28 @@ erreurs parce que le tablespace est full.</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Le script suivant, nommons le export_pkg, vous permet d'exporter une
 proc de votre choix :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="n">heading</span> <span class="k">off</span>
-<span class="k">SET</span> <span class="n">pagesize</span> <span class="mi">0</span>
-<span class="k">SET</span> <span class="n">linesize</span> <span class="mi">255</span>
-<span class="k">SET</span> <span class="n">trimspool</span> <span class="k">ON</span>
-<span class="k">SET</span> <span class="n">feedback</span> <span class="k">off</span>
-<span class="k">SET</span> <span class="n">verify</span> <span class="k">off</span>
+<div class="highlight"><pre><span></span><code><span class="nv">SET</span><span class="w"> </span><span class="nv">heading</span><span class="w"> </span><span class="nv">off</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">pagesize</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">linesize</span><span class="w"> </span><span class="mi">255</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">trimspool</span><span class="w"> </span><span class="nv">ON</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">feedback</span><span class="w"> </span><span class="nv">off</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">verify</span><span class="w"> </span><span class="nv">off</span>
 
 
-<span class="n">spool</span> <span class="o">&amp;&amp;</span><span class="mi">1</span><span class="err">\</span><span class="p">.</span><span class="n">pkg</span>
-<span class="k">SELECT</span> <span class="s1">&#39;CREATE OR REPLACE &#39;</span> <span class="k">FROM</span> <span class="n">dual</span><span class="p">;</span>
-<span class="k">SELECT</span> <span class="nb">TEXT</span> <span class="k">FROM</span> <span class="n">user_source</span> <span class="k">WHERE</span> <span class="k">TYPE</span><span class="o">=</span><span class="s1">&#39;PACKAGE&#39;</span> <span class="k">AND</span> <span class="n">NAME …</span></code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2013/01/03/oracle-exporter-une-proc/">more ...</a>
+<span class="nv">spool</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="mi">1</span>\.<span class="nv">pkg</span>
+<span class="nv">SELECT</span><span class="w"> </span><span class="s1">&#39;CREATE OR REPLACE &#39;</span><span class="w"> </span><span class="nv">FROM</span><span class="w"> </span><span class="nv">dual</span><span class="c1">;</span>
+<span class="nv">SELECT</span><span class="w"> </span><span class="nv">TEXT</span><span class="w"> </span><span class="nv">FROM</span><span class="w"> </span><span class="nv">user_source</span><span class="w"> </span><span class="nv">WHERE</span><span class="w"> </span><span class="nv">TYPE</span><span class="o">=</span><span class="s1">&#39;PACKAGE&#39;</span><span class="w"> </span><span class="nv">AND</span><span class="w"> </span><span class="nv">NAME …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2013/01/03/oracle-exporter-une-proc/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2012/12/27/oracle-changer-lediteur-sql/">Oracle Changer l'éditeur SQL</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2012/12/27/oracle-changer-lediteur-sql/">Oracle Changer l'éditeur SQL</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -171,7 +164,7 @@ proc de votre choix :</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Maints fois on se retrouve à taper une connerie dans SQL*Plus mais on
@@ -179,13 +172,13 @@ n'a pas la main sur l'histoirique comme on l'a avec votre shell BASH en
 pressant la touche flèché du haut.</p>
 <p>Donc pour tout de même se retrouver dans un "univers" familier on peut
 faire ceci</p>
-<div class="highlight"><pre><span></span><code><span class="err">define …</span></code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2012/12/27/oracle-changer-lediteur-sql/">more ...</a>
+<div class="highlight"><pre><span></span><code>define …</code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/12/27/oracle-changer-lediteur-sql/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2012/12/20/oracle-personnalisation-du-prompt-sqlplus/">Oracle Personnalisation du Prompt SQL*Plus</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2012/12/20/oracle-personnalisation-du-prompt-sqlplus/">Oracle Personnalisation du Prompt SQL*Plus</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -198,19 +191,19 @@ faire ceci</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Tout comme un admin système adore faire joujou en personnalisant son
 prompt de son shell chéri en rajoutant le nom du host et l'heure, on
 peut tout aussi bien le faire avec SQL*Plus afin de savoir sur quelle
 Instance Oracle on s'est connecté et avec quel Utilisateur et à …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2012/12/20/oracle-personnalisation-du-prompt-sqlplus/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/12/20/oracle-personnalisation-du-prompt-sqlplus/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">Oracle bottant le train des réfractaires</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">Oracle bottant le train des réfractaires</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -223,7 +216,7 @@ Instance Oracle on s'est connecté et avec quel Utilisateur et à …</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Voici le début d'une suite de billets dédiée à Oracle, One of my Job in
@@ -232,12 +225,12 @@ Professional life :)</p>
 utilisateurs de bien vouloir se déconnecter du schéma pour remonter un
 dump ... à leur demande de surcroit.</p>
 <p>Ainsi …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">Oracle et taille de schema, tablespace</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">Oracle et taille de schema, tablespace</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -250,31 +243,30 @@ dump ... à leur demande de surcroit.</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Pour obtenir la taille d'un schéma, avec son script
 <strong>size_of_schema.sql</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">FROM</span> <span class="n">dba_segments</span> <span class="k">WHERE</span> <span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="k">SUM</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dba_segments</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">owner</span><span class="o">=</span><span class="s1">&#39;&amp;1&#39;</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>à l'invite, donnez lui le nom du schema et roule ;)</p>
 <p>Pour obtenir le paramètre de la base "Undo Retention", avec son script
 <strong>undo_retention.sql</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">name</span><span class="p">,</span><span class="n">VALUE</span> <span class="k">FROM</span> <span class="n">v …</span></code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">more ...</a>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="n">VALUE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">v …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/01/10/oracle-et-taille-de-schema-tablespace/">more ...</a>
                 </div>
             </article>
             <hr/>
 
         <ul class="pagination">
-                <li class="prev"><a href="https://foxmask.org/tag/oracle.html">&laquo;</a>
+                <li class="prev"><a href="https://www.foxmask.org/tag/oracle.html">&laquo;</a>
                 </li>
                     <li class=""><a
-                            href="https://foxmask.org/tag/oracle.html">1</a></li>
+                            href="https://www.foxmask.org/tag/oracle.html">1</a></li>
                     <li class="active"><a
-                            href="https://foxmask.org/tag/oracle2.html">2</a></li>
+                            href="https://www.foxmask.org/tag/oracle2.html">2</a></li>
                 <li class="next disabled"><a href="#">&raquo;</a></li>
         </ul>
         </div>
@@ -283,74 +275,6 @@ dump ... à leur demande de surcroit.</p>
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -404,16 +328,16 @@ dump ... à leur demande de surcroit.</p>
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

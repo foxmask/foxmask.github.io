@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/">
+<link rel="canonical" href="https://www.foxmask.org/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="linux" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Tuto linux : trouver le process qui a ouvert un port"/>
-        <meta property="og:url" content="https://foxmask.org/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/"/>
         <meta property="og:description" content="A qui ca n&#39;est pas arrivé de voir un process se planter parce que &#34;port already bound&#34; ... Comment repérer le process qui a ouvert le port dont on a besoin ? imaginons les ports 8009 et 8080 on commence par un $ netstat -an|grep 8009 tcp 0 0 0.0.0 …"/>
         <meta property="article:published_time" content="2015-08-05" />
             <meta property="article:section" content="Techno" />
@@ -28,19 +28,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -54,34 +53,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -99,7 +93,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/"
+                    <a href="https://www.foxmask.org/post/2015/08/05/tuto-linux-trouver-le-process-qui-a-ouvert-un-port/"
                        rel="bookmark"
                        title="Permalink to Tuto linux : trouver le process qui a ouvert un port">
                         Tuto linux : trouver le process qui a ouvert un port
@@ -120,7 +114,7 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/linux.html">linux</a>
+	<a href="https://www.foxmask.org/tag/linux.html">linux</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -129,55 +123,50 @@ already bound" ...</p>
 <p>Comment repérer le process qui a ouvert le port dont on a besoin ?</p>
 <p>imaginons les ports 8009 et 8080</p>
 <p>on commence par un</p>
-<div class="highlight"><pre><span></span><code>$ netstat -an<span class="p">|</span>grep <span class="m">8009</span>
-tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">0</span>.0.0.0:8009                <span class="m">0</span>.0.0.0:*                   LISTEN      
-tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">127</span>.0.0.1:8009              <span class="m">127</span>.0.0.1:15561             ESTABLISHED 
-tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">127</span>.0.0.1:15477             <span class="m">127</span>.0.0.1:8009              ESTABLISHED 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>netstat<span class="w"> </span>-an<span class="p">|</span>grep<span class="w"> </span><span class="m">8009</span>
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.0.0.0:8009<span class="w">                </span><span class="m">0</span>.0.0.0:*<span class="w">                   </span>LISTEN<span class="w">      </span>
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:8009<span class="w">              </span><span class="m">127</span>.0.0.1:15561<span class="w">             </span>ESTABLISHED<span class="w"> </span>
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:15477<span class="w">             </span><span class="m">127</span>.0.0.1:8009<span class="w">              </span>ESTABLISHED<span class="w"> </span>
 
-$ netstat -an<span class="p">|</span>grep <span class="m">8080</span>
-tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">0</span>.0.0.0:8080                <span class="m">0</span>.0.0.0:*                   LISTEN      
-tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">127</span>.0.0.1:8080              <span class="m">127</span>.0.0.1:60159             ESTABLISHED 
-tcp        <span class="m">0</span>      <span class="m">0</span> <span class="m">127</span>.0.0.1:58230             <span class="m">127</span>.0.0.1:8080              TIME_WAIT   
+$<span class="w"> </span>netstat<span class="w"> </span>-an<span class="p">|</span>grep<span class="w"> </span><span class="m">8080</span>
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>.0.0.0:8080<span class="w">                </span><span class="m">0</span>.0.0.0:*<span class="w">                   </span>LISTEN<span class="w">      </span>
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:8080<span class="w">              </span><span class="m">127</span>.0.0.1:60159<span class="w">             </span>ESTABLISHED<span class="w"> </span>
+tcp<span class="w">        </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span><span class="m">127</span>.0.0.1:58230<span class="w">             </span><span class="m">127</span>.0.0.1:8080<span class="w">              </span>TIME_WAIT<span class="w">   </span>
 </code></pre></div>
-
 
 <p>pour s'assurer que ces ports soient bien ouverts, histoire de voir qu'on
 a bien les yeux en face des trous</p>
 <p>Ensuite je vais pour utiliser <strong>lsof</strong> :</p>
-<div class="highlight"><pre><span></span><code>$ lsof -i <span class="p">|</span>grep <span class="m">8009</span> 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lsof<span class="w"> </span>-i<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span><span class="m">8009</span><span class="w"> </span>
 
-httpd     <span class="m">20944</span>     apache   14u  IPv4 <span class="m">48859942</span>      0t0  TCP localhost:15588-&gt;localhost:8009 <span class="o">(</span>ESTABLISHED<span class="o">)</span>
-httpd     <span class="m">20945</span>     apache   14u  IPv4 <span class="m">48858055</span>      0t0  TCP localhost:15478-&gt;localhost:8009 <span class="o">(</span>ESTABLISHED<span class="o">)</span>
-java      <span class="m">23193</span>      jboss  283u  IPv4 <span class="m">48833112</span>      0t0  TCP *:8009 <span class="o">(</span>LISTEN<span class="o">)</span>
-java      <span class="m">23193</span>      jboss  830u  IPv4 <span class="m">48858029</span>      0t0  TCP localhost:8009-&gt;localhost:15473 <span class="o">(</span>ESTABLISHED<span class="o">)</span>
-java      <span class="m">23193</span>      jboss  833u  IPv4 <span class="m">48858251</span>      0t0  TCP localhost:8009-&gt;localhost:15487 <span class="o">(</span>ESTABLISHED<span class="o">)</span>
+httpd<span class="w">     </span><span class="m">20944</span><span class="w">     </span>apache<span class="w">   </span>14u<span class="w">  </span>IPv4<span class="w"> </span><span class="m">48859942</span><span class="w">      </span>0t0<span class="w">  </span>TCP<span class="w"> </span>localhost:15588-&gt;localhost:8009<span class="w"> </span><span class="o">(</span>ESTABLISHED<span class="o">)</span>
+httpd<span class="w">     </span><span class="m">20945</span><span class="w">     </span>apache<span class="w">   </span>14u<span class="w">  </span>IPv4<span class="w"> </span><span class="m">48858055</span><span class="w">      </span>0t0<span class="w">  </span>TCP<span class="w"> </span>localhost:15478-&gt;localhost:8009<span class="w"> </span><span class="o">(</span>ESTABLISHED<span class="o">)</span>
+java<span class="w">      </span><span class="m">23193</span><span class="w">      </span>jboss<span class="w">  </span>283u<span class="w">  </span>IPv4<span class="w"> </span><span class="m">48833112</span><span class="w">      </span>0t0<span class="w">  </span>TCP<span class="w"> </span>*:8009<span class="w"> </span><span class="o">(</span>LISTEN<span class="o">)</span>
+java<span class="w">      </span><span class="m">23193</span><span class="w">      </span>jboss<span class="w">  </span>830u<span class="w">  </span>IPv4<span class="w"> </span><span class="m">48858029</span><span class="w">      </span>0t0<span class="w">  </span>TCP<span class="w"> </span>localhost:8009-&gt;localhost:15473<span class="w"> </span><span class="o">(</span>ESTABLISHED<span class="o">)</span>
+java<span class="w">      </span><span class="m">23193</span><span class="w">      </span>jboss<span class="w">  </span>833u<span class="w">  </span>IPv4<span class="w"> </span><span class="m">48858251</span><span class="w">      </span>0t0<span class="w">  </span>TCP<span class="w"> </span>localhost:8009-&gt;localhost:15487<span class="w"> </span><span class="o">(</span>ESTABLISHED<span class="o">)</span>
 </code></pre></div>
-
 
 <p>Parfait je vois qui m'enquiquine sur ce port j'ai le pid 23193 :P</p>
 <p>puis la meme pour le port 8080</p>
-<div class="highlight"><pre><span></span><code>$ lsof -i<span class="p">|</span>grep <span class="m">8080</span>
-$ 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lsof<span class="w"> </span>-i<span class="p">|</span>grep<span class="w"> </span><span class="m">8080</span>
+$<span class="w"> </span>
 </code></pre></div>
-
 
 <p>mais là, rien ne s'affiche, wtf ?</p>
 <p>c'est parce que lsof -i affiche les process ayant ouvert des ports dont
 les services sont "connus" de <code>/etc/services</code></p>
 <p>donc d'abord il faut faire un</p>
-<div class="highlight"><pre><span></span><code>$ grep <span class="m">8080</span> /etc/services 
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>grep<span class="w"> </span><span class="m">8080</span><span class="w"> </span>/etc/services<span class="w"> </span>
 
-webcache        <span class="m">8080</span>/tcp        http-alt        <span class="c1"># WWW caching service</span>
-webcache        <span class="m">8080</span>/udp        http-alt        <span class="c1"># WWW caching service</span>
+webcache<span class="w">        </span><span class="m">8080</span>/tcp<span class="w">        </span>http-alt<span class="w">        </span><span class="c1"># WWW caching service</span>
+webcache<span class="w">        </span><span class="m">8080</span>/udp<span class="w">        </span>http-alt<span class="w">        </span><span class="c1"># WWW caching service</span>
 </code></pre></div>
-
 
 <p>pour localiser le NOM dudit service lié au port 8008, puis on conclut
 par</p>
-<div class="highlight"><pre><span></span><code>$ lsof -i <span class="p">|</span>grep webcache
-java      <span class="m">23193</span>      jboss  284u  IPv4 <span class="m">48833113</span>      0t0  TCP *:webcache <span class="o">(</span>LISTEN<span class="o">)</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>lsof<span class="w"> </span>-i<span class="w"> </span><span class="p">|</span>grep<span class="w"> </span>webcache
+java<span class="w">      </span><span class="m">23193</span><span class="w">      </span>jboss<span class="w">  </span>284u<span class="w">  </span>IPv4<span class="w"> </span><span class="m">48833113</span><span class="w">      </span>0t0<span class="w">  </span>TCP<span class="w"> </span>*:webcache<span class="w"> </span><span class="o">(</span>LISTEN<span class="o">)</span>
 </code></pre></div>
-
 
 <p>et voilà j'ai trouvé mes coupables ;)</p>
             </div>
@@ -185,13 +174,13 @@ java      <span class="m">23193</span>      jboss  284u  IPv4 <span class="m">48
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2015/05/03/gnome-systemd-debian-8-bsd/">Gnome SystemD, Debian 8, *BSD</a></li>
-        <li><a href="https://foxmask.org/post/2014/06/03/debian-network-manager-et-eth0-non-geree/">Debian Network Manager et Eth0 non gérée</a></li>
-        <li><a href="https://foxmask.org/post/2014/03/27/extraire-une-portion-dune-archive-distante-sans-la-telecharger/">extraire une portion d'une archive distante sans la télécharger</a></li>
-        <li><a href="https://foxmask.org/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/">Debian 7 Wheezy - re mise à jour du driver NVIDIA</a></li>
-        <li><a href="https://foxmask.org/post/2012/12/17/debian-amour-et-desamour/">Debian, amour et désamour</a></li>
-        <li><a href="https://foxmask.org/post/2011/11/05/linux-live-usb-persistent-failed/">Linux Live USB Persistent : failed</a></li>
-        <li><a href="https://foxmask.org/post/2011/10/22/linux-sur-laptop-sans-disque-dur/">Linux sur laptop sans disque dur</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/05/03/gnome-systemd-debian-8-bsd/">Gnome SystemD, Debian 8, *BSD</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/06/03/debian-network-manager-et-eth0-non-geree/">Debian Network Manager et Eth0 non gérée</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/03/27/extraire-une-portion-dune-archive-distante-sans-la-telecharger/">extraire une portion d'une archive distante sans la télécharger</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/05/06/debian-7-wheezy-re-mise-a-jour-du-driver-nvidia/">Debian 7 Wheezy - re mise à jour du driver NVIDIA</a></li>
+        <li><a href="https://www.foxmask.org/post/2012/12/17/debian-amour-et-desamour/">Debian, amour et désamour</a></li>
+        <li><a href="https://www.foxmask.org/post/2011/11/05/linux-live-usb-persistent-failed/">Linux Live USB Persistent : failed</a></li>
+        <li><a href="https://www.foxmask.org/post/2011/10/22/linux-sur-laptop-sans-disque-dur/">Linux sur laptop sans disque dur</a></li>
     </ul>
 </section>
         </article>
@@ -203,74 +192,6 @@ java      <span class="m">23193</span>      jboss  284u  IPv4 <span class="m">48
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -315,7 +236,7 @@ java      <span class="m">23193</span>      jboss  284u  IPv4 <span class="m">48
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -324,16 +245,16 @@ java      <span class="m">23193</span>      jboss  284u  IPv4 <span class="m">48
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

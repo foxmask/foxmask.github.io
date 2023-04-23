@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Le Free de la Passion</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="https://www.foxmask.org">
+        <meta name="author" content="FoxMaSk" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="Le Free de la Passion" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Le Free de la Passion"/>
+        <meta property="og:url" content="https://www.foxmask.org"/>
+        <meta property="og:description" content="Le Free de la Passion"/>
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
+
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Le Free de la Passion ATOM Feed"/>
+
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+              title="Le Free de la Passion RSS Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="https://www.foxmask.org/" class="navbar-brand">
+Le Free de la Passion            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
+                             À propos
+                          </a></li>
+                        <li >
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
+                        </li>
+                        <li >
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
+                        </li>
+                        <li >
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
+                        </li>
+                        <li >
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<style>
+	#banner{
+	    background-image:url("https://www.foxmask.org//static/banner.jpg");
+	}
+</style>
+
+<div id="banner">
+	<div class="container">
+		<div class="copy">
+			<h1>Le Free de la Passion</h1>
+				<p class="intro">La passion de la liberté</p>
+		</div>
+	</div>
+</div><!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2013/01/03/oracle-exporter-une-proc/">Oracle Exporter une Proc</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-01-03T10:00:00+01:00"> jeu. 03 janvier 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Le script suivant, nommons le export_pkg, vous permet d'exporter une
+proc de votre choix :</p>
+<div class="highlight"><pre><span></span><code><span class="nv">SET</span><span class="w"> </span><span class="nv">heading</span><span class="w"> </span><span class="nv">off</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">pagesize</span><span class="w"> </span><span class="mi">0</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">linesize</span><span class="w"> </span><span class="mi">255</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">trimspool</span><span class="w"> </span><span class="nv">ON</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">feedback</span><span class="w"> </span><span class="nv">off</span>
+<span class="nv">SET</span><span class="w"> </span><span class="nv">verify</span><span class="w"> </span><span class="nv">off</span>
+
+
+<span class="nv">spool</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="mi">1</span>\.<span class="nv">pkg</span>
+<span class="nv">SELECT</span><span class="w"> </span><span class="s1">&#39;CREATE OR REPLACE &#39;</span><span class="w"> </span><span class="nv">FROM</span><span class="w"> </span><span class="nv">dual</span><span class="c1">;</span>
+<span class="nv">SELECT</span><span class="w"> </span><span class="nv">TEXT</span><span class="w"> </span><span class="nv">FROM</span><span class="w"> </span><span class="nv">user_source</span><span class="w"> </span><span class="nv">WHERE</span><span class="w"> </span><span class="nv">TYPE</span><span class="o">=</span><span class="s1">&#39;PACKAGE&#39;</span><span class="w"> </span><span class="nv">AND</span><span class="w"> </span><span class="nv">NAME …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2013/01/03/oracle-exporter-une-proc/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2012/12/27/oracle-changer-lediteur-sql/">Oracle Changer l'éditeur SQL</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-27T10:00:00+01:00"> jeu. 27 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Maints fois on se retrouve à taper une connerie dans SQL*Plus mais on
+n'a pas la main sur l'histoirique comme on l'a avec votre shell BASH en
+pressant la touche flèché du haut.</p>
+<p>Donc pour tout de même se retrouver dans un "univers" familier on peut
+faire ceci</p>
+<div class="highlight"><pre><span></span><code>define …</code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/12/27/oracle-changer-lediteur-sql/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/">Jelix et un minify avant les fêtes</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-21T23:58:00+01:00"> ven. 21 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
+        /
+	<a href="https://www.foxmask.org/tag/jelix.html">Jelix</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Hey !!!</p>
+<p>Ca faisait une éternité que je ne m'étais pas arrêté sur Jelix et
+proposé un billet sur le sujet ;)</p>
+<p>Bon au menu de ce soir un truc très court mais utile si on ne veut pas
+se bourrer de dolipranes à en avance sur les fêtes ;)</p>
+<p>Donc voici :</p>
+<p><strong>Minify …</strong></p>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/12/21/jelix-et-un-minify-avant-les-fetes/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2012/12/20/oracle-personnalisation-du-prompt-sqlplus/">Oracle Personnalisation du Prompt SQL*Plus</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-20T10:00:00+01:00"> jeu. 20 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Tout comme un admin système adore faire joujou en personnalisant son
+prompt de son shell chéri en rajoutant le nom du host et l'heure, on
+peut tout aussi bien le faire avec SQL*Plus afin de savoir sur quelle
+Instance Oracle on s'est connecté et avec quel Utilisateur et à …</p>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/12/20/oracle-personnalisation-du-prompt-sqlplus/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2012/12/19/quand-django-reste-muet-a-vous-rendre-dingue/">Quand Django reste muet à vous rendre dingue</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-19T22:59:00+01:00"> mer. 19 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Voici un truc qui m'a usé les nerfs (de noob mais pas que :P) avec
+<a href="https://docs.djangoproject.com/" title="Django Project - the web framework for perfectionnists with deadline">Django</a>.</p>
+<p>je me fais un template principale, con à souhait, dans lequel je fais un
+include, "QQ la praline", comme suit :</p>
+<p><strong>base.html</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">static</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">staticfiles</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">i18n</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">url</span> <span class="kn">from</span> <span class="nn">future</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">include</span> <span class="s2">&quot;mark_forum …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/12/19/quand-django-reste-muet-a-vous-rendre-dingue/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2012/12/17/debian-amour-et-desamour/">Debian, amour et désamour</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-17T14:31:00+01:00"> lun. 17 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/debian.html">debian</a>
+        /
+	<a href="https://www.foxmask.org/tag/linux.html">linux</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Utilisateur de <a href="http://www.debian.org">Debian</a> depuis <em>Le toutou
+elastic</em> aka "Slink" (version 2.1), je n'ai jamais eu à me plaindre. Je
+me suis toujours éclater avec cette distribution Linux, même si j'ai
+croisé sur le chemin SlackWare, Mandrake, RedHat, Suse etc...</p>
+<p>J'utilise actuellement Debian Squeeze (version 6 donc) que j'ai pu …</p>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/12/17/debian-amour-et-desamour/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">Oracle bottant le train des réfractaires</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-12-13T11:08:00+01:00"> jeu. 13 décembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Voici le début d'une suite de billets dédiée à Oracle, One of my Job in
+Professional life :)</p>
+<p>Il était une fois un DBA qui en avait plein les bottes de demander aux
+utilisateurs de bien vouloir se déconnecter du schéma pour remonter un
+dump ... à leur demande de surcroit.</p>
+<p>Ainsi …</p>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/12/13/oracle-bottant-le-train-des-refractaires/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2012/10/15/django-blocktrans-indigestion-variable/">Django blocktrans et l'indigestion de variables</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-10-15T11:00:00+02:00"> lun. 15 octobre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Dans mes tribulations (d'un Djangonaute en Poneyland) d'exploitation de
+modules tiers comme <a href="http://docs.b-list.org/django-registration/0.8/">django
+registration</a>, le
+template permettant l'envoi de mail est très "free style", comprendre
+qu'il est tellement explicite qu'on en perd son latin, du coup dans mes
+"débuts" je me suis carrément pris la tête à dépiauter tout la …</p>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/10/15/django-blocktrans-indigestion-variable/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2012/10/13/django-template-tag-boussole-template/">Django, un template tag, une boussole dans le template</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-10-13T16:30:00+02:00"> sam. 13 octobre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Dans un template utilisé tout au long de son site, tel un menu, je
+voulais trouver un moyen de savoir quelle vue l'avait appelé afin de
+positionner une classe CSS 'active' au bon endroit.</p>
+<p>Dans mes recherches j'ai trouvé <a href="http://gnuvince.wordpress.com/2007/09/14/a-django-template-tag-for-the-current-active-page/">A Django template tag for the current
+active
+page</a>,
+où au …</p>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/10/13/django-template-tag-boussole-template/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2012/09/30/django-shortener-clap-une-premiere/">Django Shortener clap une première</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2012-09-30T21:32:00+02:00"> dim. 30 septembre 2012</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Ce soir, me suis fendu d'un mini module django permettant de gérer son
+propre service de raccourcisseurs d'URL tel bitly et ses amis.</p>
+<p><strong>Premier effet kisskool : un service "con comme la lune"</strong></p>
+<p>On dépose une longue URL, le module vous en retourne une version courte.</p>
+<p>2 petits paramètres sont nécessaire …</p>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/09/30/django-shortener-clap-une-premiere/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
+        <ul class="pagination">
+                <li class="prev"><a href="https://www.foxmask.org/index33.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index.html">1</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index2.html">2</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index3.html">3</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index4.html">4</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index5.html">5</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index6.html">6</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index7.html">7</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index8.html">8</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index9.html">9</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index10.html">10</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index11.html">11</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index12.html">12</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index13.html">13</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index14.html">14</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index15.html">15</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index16.html">16</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index17.html">17</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index18.html">18</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index19.html">19</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index20.html">20</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index21.html">21</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index22.html">22</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index23.html">23</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index24.html">24</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index25.html">25</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index26.html">26</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index27.html">27</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index28.html">28</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index29.html">29</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index30.html">30</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index31.html">31</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index32.html">32</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index33.html">33</a></li>
+                    <li class="active"><a
+                            href="https://www.foxmask.org/index34.html">34</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index35.html">35</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index36.html">36</a></li>
+                    <li class=""><a
+                            href="https://www.foxmask.org/index37.html">37</a></li>
+                <li class="next"><a
+                        href="https://www.foxmask.org/index35.html">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="/feeds/all.rss.xml" target="_blank">FoxMaSk RSS</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://python.org/" target="_blank">Python</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://pycon.fr/" target="_blank">PyConFr</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://pycon.kr/" target="_blank">PyConKr</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.djangoproject.com/" target="_blank">Django</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.django-rest-framework.org/" target="_blank">DRF</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.ansible.com/" target="_blank">Ansible</a>
+    </li>
+    <li class="list-group-item">
+      <a href="https://www.coree-culture.org/?lang=fr" target="_blank">Centre Culturel Coréen</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
+
+
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
+
+
+</body>
+</html>

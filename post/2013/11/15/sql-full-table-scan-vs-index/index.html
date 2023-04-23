@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/">
+<link rel="canonical" href="https://www.foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="oracle" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="SQL Full Table Scan vs Index - The Usual Suspects"/>
-        <meta property="og:url" content="https://foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/"/>
         <meta property="og:description" content="Hello, Voici un condensé sur ma semaine de formation au Tuning Oracle ;) Un condensé de conneries à proscrire pour avoir un RDBMS qui marche mieux du point de vue du dev, tout du moins, parce que je n&#39;irai pas saouler le dev avec des noms barbares sur la ram et …"/>
         <meta property="article:published_time" content="2013-11-15" />
             <meta property="article:section" content="Techno" />
@@ -28,19 +28,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -54,34 +53,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -99,7 +93,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/"
+                    <a href="https://www.foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/"
                        rel="bookmark"
                        title="Permalink to SQL Full Table Scan vs Index - The Usual Suspects">
                         SQL Full Table Scan vs Index - The Usual Suspects
@@ -120,7 +114,7 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -132,9 +126,8 @@ saouler le dev avec des noms barbares sur la ram et tout le bataclan :)</p>
 <p>Ainsi voici une liste de requêtes SQL à éviter à tout prix au risque de
 vous retrouver à faire faire des full scan sur vos "petites" tables.<br>
 <strong>Requête moisie n°1</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">salarie</span> <span class="k">WHERE</span> <span class="n">salaire</span><span class="o">*</span><span class="mi">12</span> <span class="o">&gt;</span> <span class="mi">6000</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">salarie</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salaire</span><span class="o">*</span><span class="mi">12</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">6000</span>
 </code></pre></div>
-
 
 <p>ici on voudrait les salariés ayant un salaire mensuel supérieur à 60000
 par an.<br>
@@ -143,22 +136,19 @@ bien en Full Scan. La preuve avec l'exécution du "plan d'exécution" aka
 "explain plan" qui vous le sortira la preuve par neuf ;)</p>
 <p>Pour que cette requête fasse son effet avec l'index il faut l'écrire
 ainsi :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">salarie</span> <span class="k">WHERE</span> <span class="n">salaire</span> <span class="o">&gt;</span> <span class="mi">60000</span><span class="o">/</span><span class="mi">12</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">salarie</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">salaire</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">60000</span><span class="o">/</span><span class="mi">12</span>
 </code></pre></div>
-
 
 <p><strong>Requête moisie n°2</strong><br>
 Un autre exemple avec celle-ci</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="k">upper</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;FOXMASK&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="k">upper</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;FOXMASK&#39;</span>
 </code></pre></div>
-
 
 <p>les fonctions sur les index partent en full scan systématiquement.<br>
 Si vous tenez à faire cela, il faut explicitement pondre un "function
 index" avec, lui aussi upper(name) dessus.</p>
-<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">func_upper</span> <span class="k">ON</span> <span class="k">TABLE</span><span class="p">(</span><span class="k">UPPER</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">func_upper</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">TABLE</span><span class="p">(</span><span class="k">UPPER</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
 </code></pre></div>
-
 
 <p><strong>Requête moisie n°3 sur index non discriminant</strong><br>
 Autre cas de figure avec des index inutiles :</p>
@@ -175,17 +165,15 @@ en cadeau bonusque pour ceux ce que ca nain téreeserrait, 2 trucs :</p>
 <p>1) Cas d'une requête entre grosses tables :<br>
 postulat : j'ai 2 tables une A, de quelques millions de lignes, une B
 de quelque milliers de lignes</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">where</span> <span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">B</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
 </code></pre></div>
-
 
 <p>Là, la requête c'est de la bonne daube puisqu'on se farcie l'inner join
 pour chaque ID de B et A .<br>
 Or l'ordre dans la clause where compte. Donc pour limiter le coût de la
 requête il faudrait la faire comme suit :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">where</span> <span class="n">B</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span>
 </code></pre></div>
-
 
 <p>Évidemment, le moteur du RDBMS devrait trouver le plan d'exécution le
 plus adapté mais des fois ce n'est pas le cas, et il faut en passer par
@@ -193,15 +181,13 @@ des HINT.</p>
 <p>2) Cas des requêtes retournant les mêmes résultats mais identifiées
 différentes : comment est-ce possible ?<br>
 Ceci :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span> <span class="k">WHERE</span> <span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">B</span><span class="p">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">id</span><span class="o">=</span><span class="n">B</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">B</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
 </code></pre></div>
-
 
 <p>et Cela (nota j'ai dû shooter la coloration syntaxique qui corrigeait
 tout seul ma prose ;)</p>
 <div class="highlight"><pre><span></span><code>select * from A, B where A.id=B.id and B.status = 1
 </code></pre></div>
-
 
 <p>donneront le même résultat c'est sûr mais consommera de la mémoire 2
 fois au lieu d'une car elles ne sont pas écrites de la même façon... le
@@ -219,14 +205,14 @@ se produisent au détriment de l'application bien sûr.</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
-        <li><a href="https://foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">Installation Oracle 10G en mode spéléo</a></li>
-        <li><a href="https://foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/">Importer un dump Oracle sans l'exporter physiquement avant</a></li>
-        <li><a href="https://foxmask.org/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/">Oracle Migrer un schéma ISO en UTF8</a></li>
-        <li><a href="https://foxmask.org/post/2013/03/07/oracle-et-opatch/">Oracle et Opatch</a></li>
-        <li><a href="https://foxmask.org/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/">Oracle Sauvegarder avec Impdp / Expdp et le Parfile</a></li>
-        <li><a href="https://foxmask.org/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/">Oracle Trouver les tablespaces utilisés par un schéma</a></li>
-        <li><a href="https://foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">Oracle Identifications des Locks, Process, Sessions en cours</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">Installation Oracle 10G en mode spéléo</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/">Importer un dump Oracle sans l'exporter physiquement avant</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/">Oracle Migrer un schéma ISO en UTF8</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/03/07/oracle-et-opatch/">Oracle et Opatch</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/">Oracle Sauvegarder avec Impdp / Expdp et le Parfile</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/">Oracle Trouver les tablespaces utilisés par un schéma</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">Oracle Identifications des Locks, Process, Sessions en cours</a></li>
     </ul>
 </section>
         </article>
@@ -238,74 +224,6 @@ se produisent au détriment de l'application bien sûr.</p>
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -350,7 +268,7 @@ se produisent au détriment de l'application bien sûr.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -359,16 +277,16 @@ se produisent au détriment de l'application bien sûr.</p>
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

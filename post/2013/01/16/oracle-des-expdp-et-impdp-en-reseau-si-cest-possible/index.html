@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/">
+<link rel="canonical" href="https://www.foxmask.org/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="oracle" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Oracle des expdp et impdp en réseau, si c&#39;est possible"/>
-        <meta property="og:url" content="https://foxmask.org/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/"/>
         <meta property="og:description" content="A l&#39;heure actuelle, la version d&#39;Oracle est la 11G R2 (à tes souhaits pourrait rétorqué 6P0 à R2D2 :P), et avec cette version il est de coutume de ne plus employer pour ses sauvegardes/gestions de dumps, que le fameux duo expdp et impdp pour produire ce qu&#39;on appelle des …"/>
         <meta property="article:published_time" content="2013-01-16" />
             <meta property="article:section" content="Techno" />
@@ -28,19 +28,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -54,34 +53,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -99,7 +93,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/"
+                    <a href="https://www.foxmask.org/post/2013/01/16/oracle-des-expdp-et-impdp-en-reseau-si-cest-possible/"
                        rel="bookmark"
                        title="Permalink to Oracle des expdp et impdp en réseau, si c'est possible">
                         Oracle des expdp et impdp en réseau, si c'est possible
@@ -120,7 +114,7 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -135,31 +129,28 @@ commandes exp/imp qu'on se trainaient depuis Oracle 8i&amp;9i.</p>
 bouffe l'espace disque !</p>
 <p><strong>Avant expdp / impdp</strong></p>
 <p>avec "exp", on pouvait compresser ses dumps like that :</p>
-<div class="highlight"><pre><span></span><code>mknod pipe p
-gzip &lt; pipe &gt; FOX_DUMP.gz  <span class="p">&amp;</span>
-nohup exp LOGIN/PASS <span class="nv">file</span><span class="o">=</span>pipe <span class="nv">grants</span><span class="o">=</span>n <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>mknod<span class="w"> </span>pipe<span class="w"> </span>p
+gzip<span class="w"> </span>&lt;<span class="w"> </span>pipe<span class="w"> </span>&gt;<span class="w"> </span>FOX_DUMP.gz<span class="w">  </span><span class="p">&amp;</span>
+nohup<span class="w"> </span>exp<span class="w"> </span>LOGIN/PASS<span class="w"> </span><span class="nv">file</span><span class="o">=</span>pipe<span class="w"> </span><span class="nv">grants</span><span class="o">=</span>n<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
-
 
 <p>j'exporte mon dump dans le pipe qui le compresse à la volée, magie magie
 ;) Qui dit mieux ? ben pas oracle 11G :P</p>
 <p>je vous note la même chose à l'envers pour un import avec imp</p>
-<div class="highlight"><pre><span></span><code>mknod pipe p
-gunzip &lt; FOX_DUMP.gz &gt; pipe  <span class="p">&amp;</span>
-nohup imp LOGIN/PASS <span class="nv">file</span><span class="o">=</span>pipe <span class="nv">grants</span><span class="o">=</span>n <span class="nv">ignore</span><span class="o">=</span>y <span class="nv">fromuser</span><span class="o">=</span>OLDLOGIN <span class="nv">touser</span><span class="o">=</span>LOGIN <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>mknod<span class="w"> </span>pipe<span class="w"> </span>p
+gunzip<span class="w"> </span>&lt;<span class="w"> </span>FOX_DUMP.gz<span class="w"> </span>&gt;<span class="w"> </span>pipe<span class="w">  </span><span class="p">&amp;</span>
+nohup<span class="w"> </span>imp<span class="w"> </span>LOGIN/PASS<span class="w"> </span><span class="nv">file</span><span class="o">=</span>pipe<span class="w"> </span><span class="nv">grants</span><span class="o">=</span>n<span class="w"> </span><span class="nv">ignore</span><span class="o">=</span>y<span class="w"> </span><span class="nv">fromuser</span><span class="o">=</span>OLDLOGIN<span class="w"> </span><span class="nv">touser</span><span class="o">=</span>LOGIN<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
-
 
 <p>Bon ok on a pige la compression / décompression à la volée.</p>
 <p>A présent supposons que j'ai vraiment des soucis de place disque, même
 pour produire le dump compressé localement à mon serveur oracle.</p>
 <p>On procédait ainsi : depuis une autre machine disposant des outils
 oracle (il faut un minimum hein;)</p>
-<div class="highlight"><pre><span></span><code>mknod pipe p
-gunzip &lt; FOX_DUMP.gz &gt; pipe  <span class="p">&amp;</span>
-nohup imp LOGIN/PASS@FOX-SERV <span class="nv">file</span><span class="o">=</span>pipe <span class="nv">grants</span><span class="o">=</span>n <span class="nv">ignore</span><span class="o">=</span>y <span class="nv">fromuser</span><span class="o">=</span>OLDLOGIN <span class="nv">touser</span><span class="o">=</span>LOGIN <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>mknod<span class="w"> </span>pipe<span class="w"> </span>p
+gunzip<span class="w"> </span>&lt;<span class="w"> </span>FOX_DUMP.gz<span class="w"> </span>&gt;<span class="w"> </span>pipe<span class="w">  </span><span class="p">&amp;</span>
+nohup<span class="w"> </span>imp<span class="w"> </span>LOGIN/PASS@FOX-SERV<span class="w"> </span><span class="nv">file</span><span class="o">=</span>pipe<span class="w"> </span><span class="nv">grants</span><span class="o">=</span>n<span class="w"> </span><span class="nv">ignore</span><span class="o">=</span>y<span class="w"> </span><span class="nv">fromuser</span><span class="o">=</span>OLDLOGIN<span class="w"> </span><span class="nv">touser</span><span class="o">=</span>LOGIN<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
-
 
 <p>Ici la subtilité réside dans ce qui suit le @ ; ceci demande à oracle
 "vas voir dans le fichier tnsnames.ora et trouves moi la référence
@@ -169,16 +160,15 @@ local, l'ORACLE_SID quoi) qu'en réseau car le tnsnames.ora contient
 tout ce qu'il faut pour trouver le serveur, le port d'écoute et
 l'instance</p>
 <p>exemple :</p>
-<div class="highlight"><pre><span></span><code><span class="n">FOX</span><span class="o">-</span><span class="n">SERVER</span> <span class="o">=</span> <span class="p">(</span><span class="n">DESCRIPTION</span> <span class="o">=</span>
-            <span class="p">(</span><span class="n">ADDRESS_LIST</span> <span class="o">=</span>
-                <span class="p">(</span><span class="n">ADDRESS</span> <span class="o">=</span> <span class="p">(</span><span class="n">PROTOCOL</span> <span class="o">=</span> <span class="n">TCP</span><span class="p">)(</span><span class="k">HOST</span> <span class="o">=</span> <span class="n">fox</span><span class="p">.</span><span class="n">somewhere</span><span class="p">.</span><span class="n">other</span><span class="p">.</span><span class="n">the</span><span class="p">.</span><span class="n">rainbow</span><span class="p">)(</span><span class="n">PORT</span> <span class="o">=</span> <span class="mi">1523</span><span class="p">))</span>
-            <span class="p">)</span>
-            <span class="p">(</span><span class="n">CONNECT_DATA</span> <span class="o">=</span>
-                <span class="p">(</span><span class="n">SID</span> <span class="o">=</span> <span class="n">V11UTF8</span><span class="p">)</span>
-            <span class="p">)</span>
-    <span class="p">)</span>   
+<div class="highlight"><pre><span></span><code><span class="n">FOX</span><span class="o">-</span><span class="n">SERVER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">DESCRIPTION</span><span class="w"> </span><span class="o">=</span>
+<span class="w">            </span><span class="p">(</span><span class="n">ADDRESS_LIST</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="p">(</span><span class="n">ADDRESS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">PROTOCOL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TCP</span><span class="p">)(</span><span class="k">HOST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fox</span><span class="p">.</span><span class="n">somewhere</span><span class="p">.</span><span class="n">other</span><span class="p">.</span><span class="n">the</span><span class="p">.</span><span class="n">rainbow</span><span class="p">)(</span><span class="n">PORT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1523</span><span class="p">))</span>
+<span class="w">            </span><span class="p">)</span>
+<span class="w">            </span><span class="p">(</span><span class="n">CONNECT_DATA</span><span class="w"> </span><span class="o">=</span>
+<span class="w">                </span><span class="p">(</span><span class="n">SID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">V11UTF8</span><span class="p">)</span>
+<span class="w">            </span><span class="p">)</span>
+<span class="w">    </span><span class="p">)</span><span class="w">   </span>
 </code></pre></div>
-
 
 <p>Ainsi, il m'etait facile de balancer un dump à trifouilli-les-oies avec
 exp :P</p>
@@ -200,21 +190,20 @@ Ok, super on a vu comment on gérait <em>avant</em>, à présent comment fait-on
 oracle à la volée pour lui dire "mon dump est là / est à mettre là", nan
 nan ça ça marche plus !</p>
 <p>Le directory oracle est donc localisable comme suit :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span> <span class="n">conn</span> <span class="o">/</span><span class="k">AS</span> <span class="n">sysdba</span>
+<div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">/</span><span class="k">AS</span><span class="w"> </span><span class="n">sysdba</span>
 <span class="n">Connected</span><span class="p">.</span>
-<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">dba_directories</span><span class="p">;</span>
+<span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">dba_directories</span><span class="p">;</span>
 
-<span class="k">OWNER</span>                  <span class="n">DIRECTORY_NAME</span>
+<span class="k">OWNER</span><span class="w">                  </span><span class="n">DIRECTORY_NAME</span>
 <span class="c1">------------------------------ ------------------------------</span>
 <span class="n">DIRECTORY_PATH</span>
 <span class="c1">--------------------------------------------------------------------------------</span>
-<span class="n">SYS</span>                <span class="n">ORACLE_OCM_CONFIG_DIR</span>
+<span class="n">SYS</span><span class="w">                </span><span class="n">ORACLE_OCM_CONFIG_DIR</span>
 <span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">oracle</span><span class="o">/</span><span class="n">product</span><span class="o">/</span><span class="mi">11</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="n">db</span><span class="o">/</span><span class="n">ccr</span><span class="o">/</span><span class="k">state</span>
 
-<span class="n">SYS</span>                <span class="n">DATA_PUMP_DIR</span>
+<span class="n">SYS</span><span class="w">                </span><span class="n">DATA_PUMP_DIR</span>
 <span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">oracle</span><span class="o">/</span><span class="n">product</span><span class="o">/</span><span class="mi">11</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span><span class="o">/</span><span class="n">db</span><span class="o">/</span><span class="n">rdbms</span><span class="o">/</span><span class="n">log</span><span class="o">/</span>
 </code></pre></div>
-
 
 <p>Donc comme on le voit ici, ce sont des dossiers propre à Oracle créés
 lors de l'installation.</p>
@@ -224,20 +213,18 @@ pointant sur un des dossiers (qu'on dit "exportés") de mon NAS en NFS,
 disons que le dossier sera dans <em>/mnt/dump_oracle</em> et je le "mount" (of
 course)</p>
 <p>Reste alors à ajouter ce dossier à oracle :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span> <span class="n">conn</span> <span class="o">/</span><span class="k">AS</span> <span class="n">sysdba</span>
+<div class="highlight"><pre><span></span><code><span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">/</span><span class="k">AS</span><span class="w"> </span><span class="n">sysdba</span>
 <span class="n">Connected</span><span class="p">.</span>
-<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">create</span> <span class="n">directory</span> <span class="n">fox_dump_oracle</span> <span class="k">as</span> <span class="s1">&#39;/mnt/dump_oracle&#39;</span><span class="p">;</span>
+<span class="k">SQL</span><span class="o">&gt;</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="n">directory</span><span class="w"> </span><span class="n">fox_dump_oracle</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="s1">&#39;/mnt/dump_oracle&#39;</span><span class="p">;</span>
 
-<span class="n">Directory</span> <span class="n">created</span><span class="p">.</span>
+<span class="n">Directory</span><span class="w"> </span><span class="n">created</span><span class="p">.</span>
 
 <span class="k">SQL</span><span class="o">&gt;</span>
 </code></pre></div>
 
-
 <p>A présent reste à finir ses affaires :</p>
-<div class="highlight"><pre><span></span><code>expdp LOGIN/PASS <span class="nv">dumpfile</span><span class="o">=</span>exp_FOX_SCHEMA.dmp <span class="nv">directory</span><span class="o">=</span>fox_dump_oracle <span class="nv">logfile</span><span class="o">=</span>fox_dump_oracle.log <span class="p">&amp;</span>
+<div class="highlight"><pre><span></span><code>expdp<span class="w"> </span>LOGIN/PASS<span class="w"> </span><span class="nv">dumpfile</span><span class="o">=</span>exp_FOX_SCHEMA.dmp<span class="w"> </span><span class="nv">directory</span><span class="o">=</span>fox_dump_oracle<span class="w"> </span><span class="nv">logfile</span><span class="o">=</span>fox_dump_oracle.log<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
-
 
 <p>et là au joie, le dump partira clopin-clopant sur le NAS bouffer
 l'espace disque ailleurs ;)</p>
@@ -246,14 +233,14 @@ l'espace disque ailleurs ;)</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
-        <li><a href="https://foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">Installation Oracle 10G en mode spéléo</a></li>
-        <li><a href="https://foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/">Importer un dump Oracle sans l'exporter physiquement avant</a></li>
-        <li><a href="https://foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/">SQL Full Table Scan vs Index - The Usual Suspects</a></li>
-        <li><a href="https://foxmask.org/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/">Oracle Migrer un schéma ISO en UTF8</a></li>
-        <li><a href="https://foxmask.org/post/2013/03/07/oracle-et-opatch/">Oracle et Opatch</a></li>
-        <li><a href="https://foxmask.org/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/">Oracle Sauvegarder avec Impdp / Expdp et le Parfile</a></li>
-        <li><a href="https://foxmask.org/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/">Oracle Trouver les tablespaces utilisés par un schéma</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">Installation Oracle 10G en mode spéléo</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/">Importer un dump Oracle sans l'exporter physiquement avant</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/">SQL Full Table Scan vs Index - The Usual Suspects</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/">Oracle Migrer un schéma ISO en UTF8</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/03/07/oracle-et-opatch/">Oracle et Opatch</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/">Oracle Sauvegarder avec Impdp / Expdp et le Parfile</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/">Oracle Trouver les tablespaces utilisés par un schéma</a></li>
     </ul>
 </section>
         </article>
@@ -265,74 +252,6 @@ l'espace disque ailleurs ;)</p>
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -377,7 +296,7 @@ l'espace disque ailleurs ;)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -386,16 +305,16 @@ l'espace disque ailleurs ;)</p>
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

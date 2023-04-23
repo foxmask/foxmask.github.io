@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/">
+<link rel="canonical" href="https://www.foxmask.org/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="centos,python,postgresql,psycopg2" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Centos et la galère galère des installations recentes PostgresSQL 9.4 et du driver psycopg2"/>
-        <meta property="og:url" content="https://foxmask.org/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/"/>
         <meta property="og:description" content="Parfois il arrive qu&#39;on croise des distributions qui nous rebutent... mais avec lesquelles il faut composer. Aussi voici un rapide retour d&#39;XP sur l&#39;installation de PostgreSQL 9.4 pour Centos et de son driver psycopg2 pour son virtualenv... Pour l&#39;installation de PostgreSQL 9.4 je vous renvois à la doc …"/>
         <meta property="article:published_time" content="2016-01-12" />
             <meta property="article:section" content="Techno" />
@@ -31,19 +31,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -57,34 +56,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -102,7 +96,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/"
+                    <a href="https://www.foxmask.org/post/2016/01/12/centos-galere-galere-postgresql-pyscopg2/"
                        rel="bookmark"
                        title="Permalink to Centos et la galère galère des installations recentes PostgresSQL 9.4 et du driver psycopg2">
                         Centos et la galère galère des installations recentes PostgresSQL 9.4 et du driver psycopg2
@@ -123,13 +117,13 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/centos.html">centos</a>
+	<a href="https://www.foxmask.org/tag/centos.html">centos</a>
         /
-	<a href="https://foxmask.org/tag/python.html">python</a>
+	<a href="https://www.foxmask.org/tag/python.html">python</a>
         /
-	<a href="https://foxmask.org/tag/postgresql.html">postgresql</a>
+	<a href="https://www.foxmask.org/tag/postgresql.html">postgresql</a>
         /
-	<a href="https://foxmask.org/tag/psycopg2.html">psycopg2</a>
+	<a href="https://www.foxmask.org/tag/psycopg2.html">psycopg2</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -137,56 +131,52 @@ Le Free de la Passion            </a>
 <p>Aussi voici un rapide retour d'XP sur l'installation de PostgreSQL 9.4 pour Centos et de son driver psycopg2 pour son virtualenv...</p>
 <p>Pour l'installation de PostgreSQL 9.4 je vous renvois <a href="https://wiki.postgresql.org/wiki/YUM_Installation">à la doc</a> super bien faite que je ne vais pas vous remettre en intégralité ici</p>
 <p>Ensuite pour l'installation du driver dans son virtualenv, c'est pas de la tarte, voici :</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ pip install psycopg2
-Collecting psycopg2
-  Using cached psycopg2-2.6.1.tar.gz
-    Complete output from <span class="nb">command</span> python setup.py egg_info:
-    running egg_info
-    creating pip-egg-info/psycopg2.egg-info
-    writing pip-egg-info/psycopg2.egg-info/PKG-INFO
-    writing top-level names to pip-egg-info/psycopg2.egg-info/top_level.txt
-    writing dependency_links to pip-egg-info/psycopg2.egg-info/dependency_links.txt
-    writing manifest file <span class="s1">&#39;pip-egg-info/psycopg2.egg-info/SOURCES.txt&#39;</span>
-    warning: manifest_maker: standard file <span class="s1">&#39;-c&#39;</span> not found
+<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase<span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>psycopg2
+Collecting<span class="w"> </span>psycopg2
+<span class="w">  </span>Using<span class="w"> </span>cached<span class="w"> </span>psycopg2-2.6.1.tar.gz
+<span class="w">    </span>Complete<span class="w"> </span>output<span class="w"> </span>from<span class="w"> </span><span class="nb">command</span><span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>egg_info:
+<span class="w">    </span>running<span class="w"> </span>egg_info
+<span class="w">    </span>creating<span class="w"> </span>pip-egg-info/psycopg2.egg-info
+<span class="w">    </span>writing<span class="w"> </span>pip-egg-info/psycopg2.egg-info/PKG-INFO
+<span class="w">    </span>writing<span class="w"> </span>top-level<span class="w"> </span>names<span class="w"> </span>to<span class="w"> </span>pip-egg-info/psycopg2.egg-info/top_level.txt
+<span class="w">    </span>writing<span class="w"> </span>dependency_links<span class="w"> </span>to<span class="w"> </span>pip-egg-info/psycopg2.egg-info/dependency_links.txt
+<span class="w">    </span>writing<span class="w"> </span>manifest<span class="w"> </span>file<span class="w"> </span><span class="s1">&#39;pip-egg-info/psycopg2.egg-info/SOURCES.txt&#39;</span>
+<span class="w">    </span>warning:<span class="w"> </span>manifest_maker:<span class="w"> </span>standard<span class="w"> </span>file<span class="w"> </span><span class="s1">&#39;-c&#39;</span><span class="w"> </span>not<span class="w"> </span>found
 
-    Error: pg_config executable not found.
+<span class="w">    </span>Error:<span class="w"> </span>pg_config<span class="w"> </span>executable<span class="w"> </span>not<span class="w"> </span>found.
 
-    Please add the directory containing pg_config to the PATH
-    or specify the full executable path with the option:
+<span class="w">    </span>Please<span class="w"> </span>add<span class="w"> </span>the<span class="w"> </span>directory<span class="w"> </span>containing<span class="w"> </span>pg_config<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>PATH
+<span class="w">    </span>or<span class="w"> </span>specify<span class="w"> </span>the<span class="w"> </span>full<span class="w"> </span>executable<span class="w"> </span>path<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>option:
 
-        python setup.py build_ext --pg-config /path/to/pg_config build ...
+<span class="w">        </span>python<span class="w"> </span>setup.py<span class="w"> </span>build_ext<span class="w"> </span>--pg-config<span class="w"> </span>/path/to/pg_config<span class="w"> </span>build<span class="w"> </span>...
 
-    or with the pg_config option in <span class="s1">&#39;setup.cfg&#39;</span>.
+<span class="w">    </span>or<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>pg_config<span class="w"> </span>option<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;setup.cfg&#39;</span>.
 </code></pre></div>
-
 
 <p>c'est pas de la tarte, parce qu'evidement le setup.py du dossier courant concerne l'installtion de mon app et pas celle du driver</p>
 <p>Alors on fera une recherche sur son moteur de recherche favori pour tomber sur <a href="https://stackoverflow.com/questions/11618898/pg-config-executable-not-found">un post de stackoverflow</a> qui nous explique qu'il "suffit" d'installer le package python-devel ... </p>
 <p>Seulement quand le package est déjà là-bas, alors ne reste plus qu'une solution ... altéré le PATH ... </p>
 <p>Encore faut-il trouver où est planquée postgresql avec l'installation pas "ordinaire" resultante de la doc ci dessus</p>
 <p>Comme chuis une trume pour mémoriser les noms de packages à rallonge de centos, je fais un :</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ ps aux<span class="p">|</span>grep post
-postgres  <span class="m">2274</span>  <span class="m">0</span>.0  <span class="m">0</span>.1 <span class="m">324636</span> <span class="m">14452</span> ?        S    <span class="m">08</span>:39   <span class="m">0</span>:00 /usr/pgsql-9.4/bin/postmaster -D /var/lib/pgsql/9.4/data
+<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase<span class="w"> </span>$<span class="w"> </span>ps<span class="w"> </span>aux<span class="p">|</span>grep<span class="w"> </span>post
+postgres<span class="w">  </span><span class="m">2274</span><span class="w">  </span><span class="m">0</span>.0<span class="w">  </span><span class="m">0</span>.1<span class="w"> </span><span class="m">324636</span><span class="w"> </span><span class="m">14452</span><span class="w"> </span>?<span class="w">        </span>S<span class="w">    </span><span class="m">08</span>:39<span class="w">   </span><span class="m">0</span>:00<span class="w"> </span>/usr/pgsql-9.4/bin/postmaster<span class="w"> </span>-D<span class="w"> </span>/var/lib/pgsql/9.4/data
 </code></pre></div>
-
 
 <p>donc plus qu'à faire un petit export PATH</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/pgsql-9.4/bin/:<span class="nv">$PATH</span>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase<span class="w"> </span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>/usr/pgsql-9.4/bin/:<span class="nv">$PATH</span>
 </code></pre></div>
-
 
 <p>puis ENFIN, de relancer l'installation du driver,</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase $ pip install psycopg2
-Collecting psycopg2
-  Using cached psycopg2-2.6.1.tar.gz
-Building wheels <span class="k">for</span> collected packages: psycopg2
-  Running setup.py bdist_wheel <span class="k">for</span> psycopg2
-  Stored in directory: /home/ekip/.cache/pip/wheels/e2/9a/5e/7b620848bbc7cfb9084aafea077be11618c2b5067bd532f329
-Successfully built psycopg2
-Installing collected packages: psycopg2
-Successfully installed psycopg2-2.6.1
+<div class="highlight"><pre><span></span><code><span class="o">(</span>foxmask<span class="o">)</span>foxmask@localhost:~/icibase<span class="w"> </span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>psycopg2
+Collecting<span class="w"> </span>psycopg2
+<span class="w">  </span>Using<span class="w"> </span>cached<span class="w"> </span>psycopg2-2.6.1.tar.gz
+Building<span class="w"> </span>wheels<span class="w"> </span><span class="k">for</span><span class="w"> </span>collected<span class="w"> </span>packages:<span class="w"> </span>psycopg2
+<span class="w">  </span>Running<span class="w"> </span>setup.py<span class="w"> </span>bdist_wheel<span class="w"> </span><span class="k">for</span><span class="w"> </span>psycopg2
+<span class="w">  </span>Stored<span class="w"> </span><span class="k">in</span><span class="w"> </span>directory:<span class="w"> </span>/home/ekip/.cache/pip/wheels/e2/9a/5e/7b620848bbc7cfb9084aafea077be11618c2b5067bd532f329
+Successfully<span class="w"> </span>built<span class="w"> </span>psycopg2
+Installing<span class="w"> </span>collected<span class="w"> </span>packages:<span class="w"> </span>psycopg2
+Successfully<span class="w"> </span>installed<span class="w"> </span>psycopg2-2.6.1
 </code></pre></div>
-
 
 <p>and Voilà ! :)</p>
             </div>
@@ -194,14 +184,14 @@ Successfully installed psycopg2-2.6.1
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/">Revue Technique de la semaine du 27/07/2015</a></li>
-        <li><a href="https://foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
-        <li><a href="https://foxmask.org/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
-        <li><a href="https://foxmask.org/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
-        <li><a href="https://foxmask.org/post/2019/04/24/mais-tu-es-fou-hoo-oui/">Mais tu es fou ? Hooo Oui</a></li>
-        <li><a href="https://foxmask.org/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
-        <li><a href="https://foxmask.org/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
-        <li><a href="https://foxmask.org/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/07/29/revue-technique-de-la-semaine-du-27072015/">Revue Technique de la semaine du 27/07/2015</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
+        <li><a href="https://www.foxmask.org/post/2022/01/02/des-news-mais-alloo/">Des news ? Mais Allo !</a></li>
+        <li><a href="https://www.foxmask.org/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
+        <li><a href="https://www.foxmask.org/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
+        <li><a href="https://www.foxmask.org/post/2019/04/24/mais-tu-es-fou-hoo-oui/">Mais tu es fou ? Hooo Oui</a></li>
+        <li><a href="https://www.foxmask.org/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
+        <li><a href="https://www.foxmask.org/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
     </ul>
 </section>
         </article>
@@ -213,74 +203,6 @@ Successfully installed psycopg2-2.6.1
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -325,7 +247,7 @@ Successfully installed psycopg2-2.6.1
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -334,16 +256,16 @@ Successfully installed psycopg2-2.6.1
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

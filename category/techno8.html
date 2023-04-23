@@ -17,25 +17,24 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="website"/>
         <meta property="og:title" content="Le Free de la Passion"/>
-        <meta property="og:url" content="https://foxmask.org"/>
+        <meta property="og:url" content="https://www.foxmask.org"/>
         <meta property="og:description" content="Le Free de la Passion"/>
 
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -49,34 +48,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -91,7 +85,75 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
-                <h2><a href="https://foxmask.org/post/2014/12/01/trigger-happy-creer-un-module/">Trigger Happy : Créer un module - la doc</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/">Django Migration 1.7 à 1.8, FormWizard, InlineFormSet, Url from Future</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-04-03T11:41:00+02:00"> ven. 03 avril 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
+        /
+	<a href="https://www.foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Même si la la doc est superbement complète, je m'en vais vous narrer ci
+et là les surprises qui ont jonché le chemin de ma migration</p>
+<p>Comme tout à chacun j'ai donc fait :</p>
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">django</span> 
+<span class="o">...</span>
+<span class="o">./</span><span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
+</code></pre></div>
+
+<p>Je suis tombé sur des erreurs sur django-debug-toolbar parce que …</p>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2015/02/27/quete-wampws-et-autobahn-episode-1/">Quête  WampWS et Autobahn - épisode 1</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2015-02-27T14:45:00+01:00"> ven. 27 février 2015</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/autobahn.html">autobahn</a>
+        /
+	<a href="https://www.foxmask.org/tag/crossbar.html">crossbar</a>
+        /
+	<a href="https://www.foxmask.org/tag/python.html">python</a>
+        /
+	<a href="https://www.foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
+        /
+	<a href="https://www.foxmask.org/tag/wampws.html">wampws</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p><strong>Une contré fort fort lointaine</strong></p>
+<p><em>L'était une fois ... des druides, des gueux, des recettes magiques et
+un gentilhomme</em></p>
+<p>En chemin pour une contré fort fort lointaine, un gentilhomme (qu'on
+appellera <em>DaveLooper</em>), passa par maintes tribulations et turpitudes
+tantôt armé de son <strong>lance pierres Perl</strong>, tantôt de son <strong>arbalète
+PHP</strong>, tantôt …</p>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2015/02/27/quete-wampws-et-autobahn-episode-1/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="https://www.foxmask.org/post/2014/12/01/trigger-happy-creer-un-module/">Trigger Happy : Créer un module - la doc</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -104,11 +166,11 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/django.html">Django</a>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
         /
-	<a href="https://foxmask.org/tag/python.html">python</a>
+	<a href="https://www.foxmask.org/tag/python.html">python</a>
         /
-	<a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
+	<a href="https://www.foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Hello,</p>
@@ -119,12 +181,12 @@ plugin/module, et j'avais répondu que non, "un peu trop vite".</p>
 <p>En effet j'avais déjà abordé le sujet <a href="/post/2013/12/09/trigger-happy-comment-pondre-son-propre-module/" title="Trigger Happy comment pondre son propre module">dans un précédant
 billet</a>,
 mais plutôt que de le laisser végéter dans un coin …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/12/01/trigger-happy-creer-un-module/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2014/12/01/trigger-happy-creer-un-module/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2014/11/27/django-paris-numa-novembre-2014-demo-live/">Django Paris - Novembre 2014 - Numa : Demo Live</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2014/11/27/django-paris-numa-novembre-2014-demo-live/">Django Paris - Novembre 2014 - Numa : Demo Live</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -137,11 +199,11 @@ mais plutôt que de le laisser végéter dans un coin …</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/django.html">Django</a>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
         /
-	<a href="https://foxmask.org/tag/python.html">python</a>
+	<a href="https://www.foxmask.org/tag/python.html">python</a>
         /
-	<a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
+	<a href="https://www.foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Voici un cours billet qui devrait tomber rapidement sur mon compte
@@ -150,12 +212,12 @@ Et illustrant l'utilisation de Trigger Happy, avec le talk en live
 <a href="http://trigger-happy.eu/static/django-paris-novembre-2014/">dispo ici</a></p>
 <p>Aussi... la petite image qui va bien (ouais ya pas que des chats sur
 l'net), pour illustrer qu'avec Evernote tout est …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/11/27/django-paris-numa-novembre-2014-demo-live/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2014/11/27/django-paris-numa-novembre-2014-demo-live/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2014/11/06/django-tutorial-app-telechargeable/">Django Tutorial, une App Téléchargeable ?</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2014/11/06/django-tutorial-app-telechargeable/">Django Tutorial, une App Téléchargeable ?</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -168,7 +230,7 @@ l'net), pour illustrer qu'avec Evernote tout est …</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/django.html">Django</a>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>"Hey J'ai une idée" (dans la veine <a href="http://sametmax.com/des-idees-que-jaurais-jamais-le-temps-de-faire/">des idées que j'aurais pas le temps
@@ -181,12 +243,12 @@ Linovia</a> (dont un truc zarbi avec
 makemigration), je lui dis grosso modo :</p>
 <blockquote>
 <p>Tiens j'ai pas encore vu …</p></blockquote>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/11/06/django-tutorial-app-telechargeable/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2014/11/06/django-tutorial-app-telechargeable/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2014/10/22/django-trigger-happy-declenche-heureuse-rafale-maj/">Django Trigger Happy - déclenche une heureuse rafale de mises à jour</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2014/10/22/django-trigger-happy-declenche-heureuse-rafale-maj/">Django Trigger Happy - déclenche une heureuse rafale de mises à jour</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -199,11 +261,11 @@ makemigration), je lui dis grosso modo :</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/django.html">Django</a>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
         /
-	<a href="https://foxmask.org/tag/python.html">python</a>
+	<a href="https://www.foxmask.org/tag/python.html">python</a>
         /
-	<a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
+	<a href="https://www.foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Après quelques mois de tests et tergiversations, j'ai fini par me fendre
@@ -212,12 +274,12 @@ d'une nouvelle version du projet "Trigger Happy" et de tous ses modules.</p>
 (<a href="/post/2013/06/04/django-trigger-happy-un-ifttt-like-en-images/">et en images</a>)</p>
 <p>Voici la listes des nouveautés &amp; améliorations produites.</p>
 <h3>A- Mises …</h3>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/10/22/django-trigger-happy-declenche-heureuse-rafale-maj/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2014/10/22/django-trigger-happy-declenche-heureuse-rafale-maj/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -230,25 +292,25 @@ d'une nouvelle version du projet "Trigger Happy" et de tous ses modules.</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/centos.html">centos</a>
+	<a href="https://www.foxmask.org/tag/centos.html">centos</a>
         /
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Quand on a besoin de faire un <code>yum update</code> suivi d'un
 <code>yum install foobar</code> il peut arriver que sur votre CentOS vous ayez un
 problème avec vos packages Oracle :</p>
-<div class="highlight"><pre><span></span><code>warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
-Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+<div class="highlight"><pre><span></span><code>warning:<span class="w"> </span>rpmts_HdrFromFdno:<span class="w"> </span>Header<span class="w"> </span>V3<span class="w"> </span>RSA/SHA256<span class="w"> </span>Signature,<span class="w"> </span>key<span class="w"> </span>ID<span class="w"> </span>ec551f03:<span class="w"> </span>NOKEY
+Retrieving<span class="w"> </span>key<span class="w"> </span>from<span class="w"> </span>file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
 
 
-GPG key …</code></pre></div>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">more ...</a>
+GPG<span class="w"> </span>key …</code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">Installation Oracle 10G en mode spéléo</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">Installation Oracle 10G en mode spéléo</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -261,7 +323,7 @@ GPG key …</code></pre></div>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Bon, j'avais un wiki, au temps jadis, que j'avais basardé parce que je
@@ -269,12 +331,12 @@ m'étais dit "Oracle 10 n'est plus supporté, je n'aurai plus à me faire
 suer pour l'installer" ... Et c'est toujours dans ces cas de figure
 qu'on se maudit quand le moment poindre le bout du nez.</p>
 <p>Voilà donc …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2014/09/23/django-le-magic-system-ty-es-fou/">Django, Le Magic System T'y Es Fou !</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2014/09/23/django-le-magic-system-ty-es-fou/">Django, Le Magic System T'y Es Fou !</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -287,9 +349,9 @@ qu'on se maudit quand le moment poindre le bout du nez.</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/django.html">Django</a>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
         /
-	<a href="https://foxmask.org/tag/python.html">python</a>
+	<a href="https://www.foxmask.org/tag/python.html">python</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Voici viendu la billet django de la rentrée, zenfin !</p>
@@ -299,12 +361,12 @@ forms</a>,
 me voici parti sur une nouvelle aventure, celle de la <a href="https://docs.djangoproject.com/en/1.7/howto/custom-management-commands/">Management
 Commands</a>.</p>
 <p>Dans la suite nous verrons comment, avant …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/09/23/django-le-magic-system-ty-es-fou/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2014/09/23/django-le-magic-system-ty-es-fou/">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="https://foxmask.org/post/2014/09/07/debian-et-le-menu-principal-perdu/">Debian et le "Menu Principal" perdu</a></h2>
+                <h2><a href="https://www.foxmask.org/post/2014/09/07/debian-et-le-menu-principal-perdu/">Debian et le "Menu Principal" perdu</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
     <span class="label label-default">Date</span>
@@ -317,118 +379,60 @@ Commands</a>.</p>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/debian.html">debian</a>
+	<a href="https://www.foxmask.org/tag/debian.html">debian</a>
     
 </footer><!-- /.post-info -->                    </div>
                 <div class="summary"><p>Je mets ça là au cas où ...</p>
 <p>Pour une raison qui m'échappe, je n'ai plus eu de menu "Menu Principal",
-accessible en principe depuis le menu "Activités" > "Applications"</p>
+accessible en principe depuis le menu "Activités" &gt; "Applications"</p>
 <p>Or sans ce dernier, pour rajouter des applications qui ne sont pas
 issues de package debian, au hasard, un éditeur particulier, c'est …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/09/07/debian-et-le-menu-principal-perdu/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.org/post/2014/07/15/django-form-sous-ses-plus-beaux-atours/">Django Form sous ses plus beaux atours</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-07-15T11:43:00+02:00"> mar. 15 juillet 2014</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/django.html">Django</a>
-        /
-	<a href="https://foxmask.org/tag/python.html">python</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Les forms django sont vraiment indéniablement très bien foutus.</p>
-<p>Par contre si on aime l'aspect brute on est servie ;)</p>
-<p><a href="/static/2014/07/form_sans_bt3.png"><img alt="Django Forms sans habillage" src="/static/2014/07/form_sans_bt3.png"></a></p>
-<p>La mouvance étant à ~~la fainéantise~~ Twitter Bootstrap3, je revêts les
-plus beaux atours pour mes formulaires.</p>
-<p><a href="/static/2014/07/form_avec_bt3.png"><img alt="Django Forms &quot;habillé&quot; en prêt à porté (incomplet:P)" src="/static/2014/07/form_avec_bt3.png"></a></p>
-<p>Pour l'exemple, voici une liste déroulante customisée<br>
-Là je me la joue cool parce …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/07/15/django-form-sous-ses-plus-beaux-atours/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/">Importer un dump Oracle sans l'exporter physiquement avant</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-07-02T15:13:00+02:00"> mer. 02 juillet 2014</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Donc s'il vous arrive (comme bibi) d'être short en place disque pour
-faire vos backups oracle pour ensuite importer le(s) schéma(s), une
-solution ultime subsiste, quand même, pour nous autre "pauvres" petits
-"exportateurs" de données :P</p>
-<p>Comment ça ?<br>
-La subtilité réside dans la possibilité d'Oracle à importer les …</p>
-                    <a class="btn btn-default btn-xs" href="https://foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/">more ...</a>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2014/09/07/debian-et-le-menu-principal-perdu/">more ...</a>
                 </div>
             </article>
             <hr/>
 
         <ul class="pagination">
-                <li class="prev"><a href="https://foxmask.org/category/techno7.html">&laquo;</a>
+                <li class="prev"><a href="https://www.foxmask.org/category/techno7.html">&laquo;</a>
                 </li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno.html">1</a></li>
+                            href="https://www.foxmask.org/category/techno.html">1</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno2.html">2</a></li>
+                            href="https://www.foxmask.org/category/techno2.html">2</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno3.html">3</a></li>
+                            href="https://www.foxmask.org/category/techno3.html">3</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno4.html">4</a></li>
+                            href="https://www.foxmask.org/category/techno4.html">4</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno5.html">5</a></li>
+                            href="https://www.foxmask.org/category/techno5.html">5</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno6.html">6</a></li>
+                            href="https://www.foxmask.org/category/techno6.html">6</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno7.html">7</a></li>
+                            href="https://www.foxmask.org/category/techno7.html">7</a></li>
                     <li class="active"><a
-                            href="https://foxmask.org/category/techno8.html">8</a></li>
+                            href="https://www.foxmask.org/category/techno8.html">8</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno9.html">9</a></li>
+                            href="https://www.foxmask.org/category/techno9.html">9</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno10.html">10</a></li>
+                            href="https://www.foxmask.org/category/techno10.html">10</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno11.html">11</a></li>
+                            href="https://www.foxmask.org/category/techno11.html">11</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno12.html">12</a></li>
+                            href="https://www.foxmask.org/category/techno12.html">12</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno13.html">13</a></li>
+                            href="https://www.foxmask.org/category/techno13.html">13</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno14.html">14</a></li>
+                            href="https://www.foxmask.org/category/techno14.html">14</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno15.html">15</a></li>
+                            href="https://www.foxmask.org/category/techno15.html">15</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno16.html">16</a></li>
+                            href="https://www.foxmask.org/category/techno16.html">16</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno17.html">17</a></li>
+                            href="https://www.foxmask.org/category/techno17.html">17</a></li>
                     <li class=""><a
-                            href="https://foxmask.org/category/techno18.html">18</a></li>
+                            href="https://www.foxmask.org/category/techno18.html">18</a></li>
                 <li class="next"><a
-                        href="https://foxmask.org/category/techno9.html">&raquo;</a></li>
+                        href="https://www.foxmask.org/category/techno9.html">&raquo;</a></li>
         </ul>
         </div>
         <div class="col-sm-3" id="sidebar">
@@ -436,74 +440,6 @@ La subtilité réside dans la possibilité d'Oracle à importer les …</p>
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -548,7 +484,7 @@ La subtilité réside dans la possibilité d'Oracle à importer les …</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -557,16 +493,16 @@ La subtilité réside dans la possibilité d'Oracle à importer les …</p>
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2015/08/11/ansible-les-variables-definies-a-la-volee/">
+<link rel="canonical" href="https://www.foxmask.org/post/2015/08/11/ansible-les-variables-definies-a-la-volee/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="ansible,python" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Ansible : les variables définies à la volée"/>
-        <meta property="og:url" content="https://foxmask.org/post/2015/08/11/ansible-les-variables-definies-a-la-volee/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2015/08/11/ansible-les-variables-definies-a-la-volee/"/>
         <meta property="og:description" content="Ansible : comment définir des variables à la volée dans son playbook Imaginons que j&#39;ai besoin de définir des variables au fur et à mesure que le processus avance Cas concret déployer des WAR issues d&#39;une &#34;nightly build&#34; depuis des repo maven : je demarre par une tâche allant à la pêche …"/>
         <meta property="article:published_time" content="2015-08-11" />
             <meta property="article:section" content="Techno" />
@@ -29,19 +29,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -55,34 +54,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -100,7 +94,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2015/08/11/ansible-les-variables-definies-a-la-volee/"
+                    <a href="https://www.foxmask.org/post/2015/08/11/ansible-les-variables-definies-a-la-volee/"
                        rel="bookmark"
                        title="Permalink to Ansible : les variables définies à la volée">
                         Ansible : les variables définies à la volée
@@ -121,9 +115,9 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/ansible.html">ansible</a>
+	<a href="https://www.foxmask.org/tag/ansible.html">ansible</a>
         /
-	<a href="https://foxmask.org/tag/python.html">python</a>
+	<a href="https://www.foxmask.org/tag/python.html">python</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -133,20 +127,18 @@ que le processus avance</p>
 <p>Cas concret déployer des WAR issues d'une "nightly build" depuis des
 repo maven :</p>
 <p>je demarre par une tâche allant à la pêche aux SNAPSHOT</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Find last snapshot</span>
-  <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ssh {{</span><span class="err"> </span><span class="l l-Scalar l-Scalar-Plain">server_repo }} ls -d {{ maven_repository</span><span class="err"> </span><span class="l l-Scalar l-Scalar-Plain">}}/standard/{{ branch }}.*-SNAPSHOT | sort</span>
-  <span class="nt">register</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">snapshot</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Find last snapshot</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ssh {{</span><span class="err"> </span><span class="l l-Scalar l-Scalar-Plain">server_repo }} ls -d {{ maven_repository</span><span class="err"> </span><span class="l l-Scalar l-Scalar-Plain">}}/standard/{{ branch }}.*-SNAPSHOT | sort</span>
+<span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snapshot</span>
 </code></pre></div>
-
 
 <p>ici <em>register</em> va me permettre d'utiliser "snapshot" par la suite.
 Disons <em>command</em> m'a permit de trouver FOOBAR-1.2.3-SNAPSHOT</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">let&#39;s define &quot;war_path&quot;</span>
-  <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">echo {{ path }}{{ snapshot.stdout | basename }}.war</span>
-  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">snapshot</span>
-  <span class="nt">register</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">let&#39;s define &quot;war_path&quot;</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo {{ path }}{{ snapshot.stdout | basename }}.war</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snapshot</span>
+<span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">war_path</span>
 </code></pre></div>
-
 
 <p>ici 2 choses et une astuce :</p>
 <p>1) j'utilise de nouveau <em>register</em> pour pouvoir télécharger le war plus
@@ -159,39 +151,34 @@ export FOO=BAR, et sur la ligne de <em>command</em> on utilise
 n'est qu'une chaine et pas une liste.
 Ce qui, avec les filtres "basename" et la concaténation avec ".war ",
 me donne grosso modo comme résultat un tout QQ :</p>
-<div class="highlight"><pre><span></span><code>  <span class="nb">echo</span> /un/jolie/path/FOOBAR-1.2.3-SNAPSHOT.war
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nb">echo</span><span class="w"> </span>/un/jolie/path/FOOBAR-1.2.3-SNAPSHOT.war
 </code></pre></div>
-
 
 <p>tâche suivante :</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path download from server_repo</span>
-  <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">scp -pr {{ server_repo }}:{{ war_path.stdout }} /temp</span>
-  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">war_path download from server_repo</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">scp -pr {{ server_repo }}:{{ war_path.stdout }} /temp</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">war_path</span>
 </code></pre></div>
-
 
 <p>ici un simple scp, on remarquera <em>war_path</em> qui est la tasks <em>register</em>
 juste au dessus et le <em>when</em> qui utilise <em>war_path</em></p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path check is here</span>
-  <span class="nt">stat</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">path=/temp/{{ war_path.stdout | basename}}</span>
-  <span class="nt">register</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path_exists</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">war_path check is here</span>
+<span class="w">  </span><span class="nt">stat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">path=/temp/{{ war_path.stdout | basename}}</span>
+<span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">war_path_exists</span>
 </code></pre></div>
-
 
 <p>ici vérification que le transfert a eu lieu</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path fail to download</span>
-  <span class="nt">fail</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">file /temp/{{ war_path.stdout | basename}} does not exists</span>
-  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path_exists.stat.exists == False</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">war_path fail to download</span>
+<span class="w">  </span><span class="nt">fail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">file /temp/{{ war_path.stdout | basename}} does not exists</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">war_path_exists.stat.exists == False</span>
 </code></pre></div>
-
 
 <p>ici on peut vérifier que ça a foiré, on se contente d'un message
 d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path Extract</span>
-  <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">chdir={{ home }}/{{ target }}-tomcat/webapps/{{ foobar }} {{ java_home }}/bin/jar xf /temp/{{ war_path.stdout | basename }}</span>
-  <span class="nt">when</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">war_path</span>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">war_path Extract</span>
+<span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">chdir={{ home }}/{{ target }}-tomcat/webapps/{{ foobar }} {{ java_home }}/bin/jar xf /temp/{{ war_path.stdout | basename }}</span>
+<span class="w">  </span><span class="nt">when</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">war_path</span>
 </code></pre></div>
-
 
 <p>et on acheve par la décompression du war</p>
 <p>je vous fais grâce du restart tomcat :)</p>
@@ -202,14 +189,14 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
-        <li><a href="https://foxmask.org/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
-        <li><a href="https://foxmask.org/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
-        <li><a href="https://foxmask.org/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
-        <li><a href="https://foxmask.org/post/2019/04/24/mais-tu-es-fou-hoo-oui/">Mais tu es fou ? Hooo Oui</a></li>
-        <li><a href="https://foxmask.org/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
-        <li><a href="https://foxmask.org/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
-        <li><a href="https://foxmask.org/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/02/02/revue-technique-de-la-semaine-du-02022016/">Revue Technique de la semaine du 02/02/2016</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
+        <li><a href="https://www.foxmask.org/post/2022/01/02/des-news-mais-alloo/">Des news ? Mais Allo !</a></li>
+        <li><a href="https://www.foxmask.org/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
+        <li><a href="https://www.foxmask.org/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
+        <li><a href="https://www.foxmask.org/post/2019/04/24/mais-tu-es-fou-hoo-oui/">Mais tu es fou ? Hooo Oui</a></li>
+        <li><a href="https://www.foxmask.org/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
+        <li><a href="https://www.foxmask.org/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
     </ul>
 </section>
         </article>
@@ -221,74 +208,6 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -333,7 +252,7 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -342,16 +261,16 @@ d'erreur mais on aurait pu faire péter un mail au service IT :P</p>
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

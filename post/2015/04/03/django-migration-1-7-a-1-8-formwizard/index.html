@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/">
+<link rel="canonical" href="https://www.foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="Django,TriggerHappy" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Django Migration 1.7 à 1.8, FormWizard, InlineFormSet, Url from Future"/>
-        <meta property="og:url" content="https://foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/"/>
         <meta property="og:description" content="Même si la la doc est superbement complète, je m&#39;en vais vous narrer ci et là les surprises qui ont jonché le chemin de ma migration Comme tout à chacun j&#39;ai donc fait : pip install -U django ... ./manage.py test Je suis tombé sur des erreurs sur django-debug-toolbar parce que …"/>
         <meta property="article:published_time" content="2015-04-03" />
             <meta property="article:section" content="Techno" />
@@ -29,19 +29,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -55,34 +54,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -100,7 +94,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/"
+                    <a href="https://www.foxmask.org/post/2015/04/03/django-migration-1-7-a-1-8-formwizard/"
                        rel="bookmark"
                        title="Permalink to Django Migration 1.7 à 1.8, FormWizard, InlineFormSet, Url from Future">
                         Django Migration 1.7 à 1.8, FormWizard, InlineFormSet, Url from Future
@@ -121,9 +115,9 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/django.html">Django</a>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
         /
-	<a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
+	<a href="https://www.foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -134,7 +128,6 @@ et là les surprises qui ont jonché le chemin de ma migration</p>
 <span class="o">...</span>
 <span class="o">./</span><span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
 </code></pre></div>
-
 
 <p>Je suis tombé sur des erreurs sur django-debug-toolbar parce que resté
 en 0.9.5, donc estompées dès la 1.3.0 mise à jour.</p>
@@ -175,7 +168,6 @@ en 0.9.5, donc estompées dès la 1.3.0 mise à jour.</p>
 <span class="ne">ImportError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="n">formtools</span><span class="o">.</span><span class="n">wizard</span><span class="o">.</span><span class="n">views</span>
 </code></pre></div>
 
-
 <p>Alors là, le désagrément majeure pour bibi et "<a href="http://trigger-happy.eu">Trigger
 Happy</a>", c'est que toutes mes pages permettant
 de créer des services, reposent entierement sur le Wizard...</p>
@@ -188,7 +180,6 @@ un</p>
 <div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span><span class="o">-</span><span class="n">formtools</span>
 </code></pre></div>
 
-
 <p>Puis on relance les tests :</p>
 <div class="highlight"><pre><span></span><code> <span class="o">./</span><span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">test</span>
 <span class="n">Creating</span> <span class="n">test</span> <span class="n">database</span> <span class="k">for</span> <span class="n">alias</span> <span class="s1">&#39;default&#39;</span><span class="o">...</span>
@@ -199,7 +190,6 @@ un</p>
 <span class="n">OK</span>
 <span class="n">Destroying</span> <span class="n">test</span> <span class="n">database</span> <span class="k">for</span> <span class="n">alias</span> <span class="s1">&#39;default&#39;</span><span class="o">...</span>
 </code></pre></div>
-
 
 <p>ou avec un petit coup de</p>
 <div class="highlight"><pre><span></span><code><span class="n">Creating</span> <span class="n">test</span> <span class="n">database</span> <span class="k">for</span> <span class="n">alias</span> <span class="s1">&#39;default&#39;</span> <span class="p">(</span><span class="s1">&#39;:memory:&#39;</span><span class="p">)</span><span class="o">...</span>
@@ -218,16 +208,16 @@ un</p>
   <span class="n">Installing</span> <span class="n">custom</span> <span class="n">SQL</span><span class="o">...</span>
 <span class="n">Running</span> <span class="n">migrations</span><span class="p">:</span>
   <span class="n">Rendering</span> <span class="n">model</span> <span class="n">states</span><span class="o">...</span> <span class="n">DONE</span>
-  <span class="n">Applying</span> <span class="n">contenttypes</span><span class="o">.</span><span class="mi">0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
-  <span class="n">Applying</span> <span class="n">auth</span><span class="o">.</span><span class="mi">0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
-  <span class="n">Applying</span> <span class="n">admin</span><span class="o">.</span><span class="mi">0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
-  <span class="n">Applying</span> <span class="n">contenttypes</span><span class="o">.</span><span class="mi">0002</span><span class="n">_remove_content_type_name</span><span class="o">...</span> <span class="n">OK</span>
-  <span class="n">Applying</span> <span class="n">auth</span><span class="o">.</span><span class="mi">0002</span><span class="n">_alter_permission_name_max_length</span><span class="o">...</span> <span class="n">OK</span>
-  <span class="n">Applying</span> <span class="n">auth</span><span class="o">.</span><span class="mi">0003</span><span class="n">_alter_user_email_max_length</span><span class="o">...</span> <span class="n">OK</span>
-  <span class="n">Applying</span> <span class="n">auth</span><span class="o">.</span><span class="mi">0004</span><span class="n">_alter_user_username_opts</span><span class="o">...</span> <span class="n">OK</span>
-  <span class="n">Applying</span> <span class="n">auth</span><span class="o">.</span><span class="mi">0005</span><span class="n">_alter_user_last_login_null</span><span class="o">...</span> <span class="n">OK</span>
-  <span class="n">Applying</span> <span class="n">auth</span><span class="o">.</span><span class="mi">0006</span><span class="n">_require_contenttypes_0002</span><span class="o">...</span> <span class="n">OK</span>
-  <span class="n">Applying</span> <span class="n">sessions</span><span class="o">.</span><span class="mi">0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">contenttypes</span><span class="mf">.0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">auth</span><span class="mf">.0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">admin</span><span class="mf">.0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">contenttypes</span><span class="mf">.0002</span><span class="n">_remove_content_type_name</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">auth</span><span class="mf">.0002</span><span class="n">_alter_permission_name_max_length</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">auth</span><span class="mf">.0003</span><span class="n">_alter_user_email_max_length</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">auth</span><span class="mf">.0004</span><span class="n">_alter_user_username_opts</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">auth</span><span class="mf">.0005</span><span class="n">_alter_user_last_login_null</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">auth</span><span class="mf">.0006</span><span class="n">_require_contenttypes_0002</span><span class="o">...</span> <span class="n">OK</span>
+  <span class="n">Applying</span> <span class="n">sessions</span><span class="mf">.0001</span><span class="n">_initial</span><span class="o">...</span> <span class="n">OK</span>
 <span class="n">test_servicesactivated</span> <span class="p">(</span><span class="n">django_th</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">test_models_and_services</span><span class="o">.</span><span class="n">ServicesActivatedTest</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
 <span class="n">test_invalid_form</span> <span class="p">(</span><span class="n">django_th</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">test_models_and_services</span><span class="o">.</span><span class="n">TriggerServiceTest</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
 <span class="n">test_triggerservice</span> <span class="p">(</span><span class="n">django_th</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">test_models_and_services</span><span class="o">.</span><span class="n">TriggerServiceTest</span><span class="p">)</span> <span class="o">...</span> <span class="n">ok</span>
@@ -249,7 +239,6 @@ un</p>
 <span class="n">OK</span>
 <span class="n">Destroying</span> <span class="n">test</span> <span class="n">database</span> <span class="k">for</span> <span class="n">alias</span> <span class="s1">&#39;default&#39;</span> <span class="p">(</span><span class="s1">&#39;:memory:&#39;</span><span class="p">)</span><span class="o">...</span>
 </code></pre></div>
-
 
 <p><a href="https://docs.djangoproject.com/en/dev/internals/release-process/#internal-release-deprecation-policy">si vous voulez voir la politique de dépréciation de
 Django</a>.
@@ -280,25 +269,21 @@ d'écrire</a>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">BookFormSet</span> <span class="o">=</span> <span class="n">inlineformset_factory</span><span class="p">(</span><span class="n">Author</span><span class="p">,</span> <span class="n">Book</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>mais ceci ne va plus du tout, il faut bien spécifier une liste de fields
 pleine ou vide (si ca vous chante:)</p>
 <div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">django.forms.models</span> <span class="kn">import</span> <span class="n">inlineformset_factory</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">BookFormSet</span> <span class="o">=</span> <span class="n">inlineformset_factory</span><span class="p">(</span><span class="n">Author</span><span class="p">,</span> <span class="n">Book</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,))</span>
 </code></pre></div>
 
-
 <p><strong>edit du 12/04</strong><br>
 une nouvelle erreur qui saute aux yeux :</p>
-<div class="highlight"><pre><span></span><code><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">foxmask</span><span class="o">/</span><span class="n">Django</span><span class="o">-</span><span class="n">VirtualEnv</span><span class="o">/</span><span class="n">django</span><span class="o">-</span><span class="n">trigger</span><span class="o">-</span><span class="n">happy</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="o">.</span><span class="mi">7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">django</span><span class="o">/</span><span class="n">templatetags</span><span class="o">/</span><span class="n">future</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span> <span class="n">RemovedInDjango19Warning</span><span class="p">:</span> <span class="n">Loading</span> <span class="n">the</span> <span class="err">`</span><span class="n">url</span><span class="err">`</span> <span class="n">tag</span> <span class="kn">from</span> <span class="nn">the</span> <span class="err">`</span><span class="n">future</span><span class="err">`</span> <span class="n">library</span> <span class="ow">is</span> <span class="n">deprecated</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">be</span> <span class="n">removed</span> <span class="ow">in</span> <span class="n">Django</span> <span class="mf">1.9</span><span class="o">.</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">default</span> <span class="err">`</span><span class="n">url</span><span class="err">`</span> <span class="n">tag</span> <span class="n">instead</span><span class="o">.</span>
+<div class="highlight"><pre><span></span><code><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">foxmask</span><span class="o">/</span><span class="n">Django</span><span class="o">-</span><span class="n">VirtualEnv</span><span class="o">/</span><span class="n">django</span><span class="o">-</span><span class="n">trigger</span><span class="o">-</span><span class="n">happy</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">django</span><span class="o">/</span><span class="n">templatetags</span><span class="o">/</span><span class="n">future</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span> <span class="n">RemovedInDjango19Warning</span><span class="p">:</span> <span class="n">Loading</span> <span class="n">the</span> <span class="err">`</span><span class="n">url</span><span class="err">`</span> <span class="n">tag</span> <span class="kn">from</span> <span class="nn">the</span> <span class="err">`</span><span class="n">future</span><span class="err">`</span> <span class="n">library</span> <span class="ow">is</span> <span class="n">deprecated</span> <span class="ow">and</span> <span class="n">will</span> <span class="n">be</span> <span class="n">removed</span> <span class="ow">in</span> <span class="n">Django</span> <span class="mf">1.9</span><span class="o">.</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">default</span> <span class="err">`</span><span class="n">url</span><span class="err">`</span> <span class="n">tag</span> <span class="n">instead</span><span class="o">.</span>
   <span class="n">RemovedInDjango19Warning</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>celle ci est dûe à un</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">url</span> <span class="kn">from</span> <span class="nn">future</span> <span class="o">%</span><span class="p">}</span>
 </code></pre></div>
-
 
 <p>dans les templates</p>
             </div>
@@ -306,14 +291,14 @@ une nouvelle erreur qui saute aux yeux :</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2016/02/15/trigger-happy-running-softly-with-rq/">Trigger Happy running softly with RQ</a></li>
-        <li><a href="https://foxmask.org/post/2015/10/02/trigger-happy-stats-requete-et-proposition/">Trigger-Happy, stats, requête et proposition</a></li>
-        <li><a href="https://foxmask.org/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/">Trigger Happy, de tout, de rien, la vie</a></li>
-        <li><a href="https://foxmask.org/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
-        <li><a href="https://foxmask.org/post/2015/08/18/django-trigger-happy-0-11-0-english-version/">Django Trigger Happy 0.11.0 English Version</a></li>
-        <li><a href="https://foxmask.org/post/2015/08/17/django-trigger-happy-0-11-0/">Django Trigger Happy 0.11.0</a></li>
-        <li><a href="https://foxmask.org/post/2015/07/17/revue-technique-django-inside-semaine-du-13-juillet-2015/">Revue Technique, Django Inside, semaine du 13/07/2015</a></li>
-        <li><a href="https://foxmask.org/post/2015/04/23/django-trigger-happy-0-10-x-and-his-friends/">Django Trigger Happy 0.10.x and his friends</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/02/15/trigger-happy-running-softly-with-rq/">Trigger Happy running softly with RQ</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/10/02/trigger-happy-stats-requete-et-proposition/">Trigger-Happy, stats, requête et proposition</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/09/08/trigger-happy-de-tout-de-rien-la-vie/">Trigger Happy, de tout, de rien, la vie</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/08/24/shoot-an-arrow-with-ansible-in-the-triggerhappy-target/">Shoot an Arrow with Ansible in the TriggerHappy target</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/08/18/django-trigger-happy-0-11-0-english-version/">Django Trigger Happy 0.11.0 English Version</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/08/17/django-trigger-happy-0-11-0/">Django Trigger Happy 0.11.0</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/07/17/revue-technique-django-inside-semaine-du-13-juillet-2015/">Revue Technique, Django Inside, semaine du 13/07/2015</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/04/23/django-trigger-happy-0-10-x-and-his-friends/">Django Trigger Happy 0.10.x and his friends</a></li>
     </ul>
 </section>
         </article>
@@ -325,74 +310,6 @@ une nouvelle erreur qui saute aux yeux :</p>
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -437,7 +354,7 @@ une nouvelle erreur qui saute aux yeux :</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -446,16 +363,16 @@ une nouvelle erreur qui saute aux yeux :</p>
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2015/06/19/supervisor-celery-django-orchestration/">
+<link rel="canonical" href="https://www.foxmask.org/post/2015/06/19/supervisor-celery-django-orchestration/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="Celery,Django,Supervisor" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Supervisor Celery Django : Orchestration"/>
-        <meta property="og:url" content="https://foxmask.org/post/2015/06/19/supervisor-celery-django-orchestration/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2015/06/19/supervisor-celery-django-orchestration/"/>
         <meta property="og:description" content="Dans ce billet je vais aborder un triplet que chacun connait surement et a déjà dû le mettre en place, mais j&#39;irai posé là, comme à mon habitude, un retour d&#39;xp qui m&#39;est propre et pourrait servir à de nouveaux venus sur django et l&#39;administration de nos instances avec ce …"/>
         <meta property="article:published_time" content="2015-06-19" />
             <meta property="article:section" content="Techno" />
@@ -30,19 +30,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -56,34 +55,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -101,7 +95,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2015/06/19/supervisor-celery-django-orchestration/"
+                    <a href="https://www.foxmask.org/post/2015/06/19/supervisor-celery-django-orchestration/"
                        rel="bookmark"
                        title="Permalink to Supervisor Celery Django : Orchestration">
                         Supervisor Celery Django : Orchestration
@@ -122,11 +116,11 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/celery.html">Celery</a>
+	<a href="https://www.foxmask.org/tag/celery.html">Celery</a>
         /
-	<a href="https://foxmask.org/tag/django.html">Django</a>
+	<a href="https://www.foxmask.org/tag/django.html">Django</a>
         /
-	<a href="https://foxmask.org/tag/supervisor.html">Supervisor</a>
+	<a href="https://www.foxmask.org/tag/supervisor.html">Supervisor</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -180,7 +174,6 @@ des applications django indiquées dans le settings.INSTALLED_APPS.</p>
 <span class="n">app</span><span class="o">.</span><span class="n">autodiscover_tasks</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">INSTALLED_APPS</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Ensuite on pourrait avoir besoin de tâches récurrentes qui doivent être
 définies dans le settings de son projet (et pas dans celery.py comme je
 l'ai cru en parcourant la doc celery)</p>
@@ -197,7 +190,6 @@ l'ai cru en parcourant la doc celery)</p>
 <span class="p">}</span>
 </code></pre></div>
 
-
 <p>Bizarreries :</p>
 <p>Ici j'étais parti pour écrire, telle une vraie crontab,</p>
 <div class="highlight"><pre><span></span><code><span class="n">CELERYBEAT_SCHEDULE</span> <span class="o">=</span> <span class="p">{</span>
@@ -211,7 +203,6 @@ l'ai cru en parcourant la doc celery)</p>
     <span class="p">},</span>
 <span class="p">}</span>
 </code></pre></div>
-
 
 <p>Seulement au lancement du "beat" je me suis mangé une erreur sur le
 contenu de <code>minute</code> qui doit être compris en 1 et 59... Or dans une
@@ -239,10 +230,9 @@ Même comportement avec <code>*/59</code> (à la place de */60), il démarre bie
         <span class="o">...</span>
 </code></pre></div>
 
-
 <p>au lancement du beat (qui gère la crontab) on obtient donc :</p>
 <div class="highlight"><pre><span></span><code> <span class="err">$</span> <span class="n">celery</span> <span class="o">-</span><span class="n">A</span> <span class="n">th</span> <span class="n">beat</span> <span class="o">-</span><span class="n">l</span> <span class="n">debug</span>
-<span class="n">celery</span> <span class="n">beat</span> <span class="n">v3</span><span class="o">.</span><span class="mf">1.18</span> <span class="p">(</span><span class="n">Cipater</span><span class="p">)</span> <span class="ow">is</span> <span class="n">starting</span><span class="o">.</span>
+<span class="n">celery</span> <span class="n">beat</span> <span class="n">v3</span><span class="mf">.1.18</span> <span class="p">(</span><span class="n">Cipater</span><span class="p">)</span> <span class="ow">is</span> <span class="n">starting</span><span class="o">.</span>
 <span class="n">__</span>    <span class="o">-</span>    <span class="o">...</span> <span class="n">__</span>   <span class="o">-</span>        <span class="n">_</span>
 <span class="n">Configuration</span> <span class="o">-&gt;</span>
     <span class="o">.</span> <span class="n">broker</span> <span class="o">-&gt;</span> <span class="n">redis</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">6379</span><span class="o">/</span><span class="mi">10</span>
@@ -261,7 +251,6 @@ Même comportement avec <code>*/59</code> (à la place de */60), il démarre bie
 <span class="p">[</span><span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">18</span> <span class="mi">21</span><span class="p">:</span><span class="mi">32</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">169</span><span class="p">:</span> <span class="n">DEBUG</span><span class="o">/</span><span class="n">MainProcess</span><span class="p">]</span> <span class="n">beat</span><span class="p">:</span> <span class="n">Waking</span> <span class="n">up</span> <span class="ow">in</span> <span class="mf">5.00</span> <span class="n">minutes</span><span class="o">.</span>
 </code></pre></div>
 
-
 <p>le lancement du worker donne ceci à son tour</p>
 <div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">celery</span> <span class="o">-</span><span class="n">A</span> <span class="n">th</span> <span class="n">worker</span> <span class="o">--</span><span class="n">autoscale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span> <span class="o">-</span><span class="n">l</span> <span class="n">debug</span>
 <span class="p">[</span><span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">18</span> <span class="mi">21</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="mi">087</span><span class="p">:</span> <span class="n">DEBUG</span><span class="o">/</span><span class="n">MainProcess</span><span class="p">]</span> <span class="o">|</span> <span class="n">Worker</span><span class="p">:</span> <span class="n">Preparing</span> <span class="n">bootsteps</span><span class="o">.</span>
@@ -270,12 +259,12 @@ Même comportement avec <code>*/59</code> (à la place de */60), il démarre bie
 <span class="p">[</span><span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">18</span> <span class="mi">21</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="mi">116</span><span class="p">:</span> <span class="n">DEBUG</span><span class="o">/</span><span class="n">MainProcess</span><span class="p">]</span> <span class="o">|</span> <span class="n">Consumer</span><span class="p">:</span> <span class="n">Preparing</span> <span class="n">bootsteps</span><span class="o">.</span>
 <span class="p">[</span><span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">18</span> <span class="mi">21</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="mi">117</span><span class="p">:</span> <span class="n">DEBUG</span><span class="o">/</span><span class="n">MainProcess</span><span class="p">]</span> <span class="o">|</span> <span class="n">Consumer</span><span class="p">:</span> <span class="n">Building</span> <span class="n">graph</span><span class="o">...</span>
 <span class="p">[</span><span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">18</span> <span class="mi">21</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="mi">136</span><span class="p">:</span> <span class="n">DEBUG</span><span class="o">/</span><span class="n">MainProcess</span><span class="p">]</span> <span class="o">|</span> <span class="n">Consumer</span><span class="p">:</span> <span class="n">New</span> <span class="n">boot</span> <span class="n">order</span><span class="p">:</span> <span class="p">{</span><span class="n">Connection</span><span class="p">,</span> <span class="n">Agent</span><span class="p">,</span> <span class="n">Events</span><span class="p">,</span> <span class="n">Mingle</span><span class="p">,</span> <span class="n">Gossip</span><span class="p">,</span> <span class="n">Tasks</span><span class="p">,</span> <span class="n">Control</span><span class="p">,</span> <span class="n">Heart</span><span class="p">,</span> <span class="n">event</span> <span class="n">loop</span><span class="p">}</span>
-<span class="p">[</span><span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">18</span> <span class="mi">21</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="mi">140</span><span class="p">:</span> <span class="n">WARNING</span><span class="o">/</span><span class="n">MainProcess</span><span class="p">]</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">sites</span><span class="o">/</span><span class="n">trigger</span><span class="o">-</span><span class="n">happy</span><span class="o">.</span><span class="n">eu</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="o">.</span><span class="mi">7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">celery</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">worker</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">161</span><span class="p">:</span> <span class="n">CDeprecationWarning</span><span class="p">:</span> 
+<span class="p">[</span><span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">18</span> <span class="mi">21</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span><span class="mi">140</span><span class="p">:</span> <span class="n">WARNING</span><span class="o">/</span><span class="n">MainProcess</span><span class="p">]</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">sites</span><span class="o">/</span><span class="n">trigger</span><span class="o">-</span><span class="n">happy</span><span class="o">.</span><span class="n">eu</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python2</span><span class="mf">.7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">celery</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">worker</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">161</span><span class="p">:</span> <span class="n">CDeprecationWarning</span><span class="p">:</span> 
 <span class="n">Starting</span> <span class="kn">from</span> <span class="nn">version</span> <span class="mf">3.2</span> <span class="n">Celery</span> <span class="n">will</span> <span class="n">refuse</span> <span class="n">to</span> <span class="n">accept</span> <span class="n">pickle</span> <span class="n">by</span> <span class="n">default</span><span class="o">.</span>
 
- <span class="o">--------------</span> <span class="n">celery</span><span class="nd">@monserver</span> <span class="n">v3</span><span class="o">.</span><span class="mf">1.18</span> <span class="p">(</span><span class="n">Cipater</span><span class="p">)</span>
+ <span class="o">--------------</span> <span class="n">celery</span><span class="nd">@monserver</span> <span class="n">v3</span><span class="mf">.1.18</span> <span class="p">(</span><span class="n">Cipater</span><span class="p">)</span>
 <span class="o">----</span> <span class="o">****</span> <span class="o">-----</span> 
-<span class="o">---</span> <span class="o">*</span> <span class="o">***</span>  <span class="o">*</span> <span class="o">--</span> <span class="n">Linux</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mi">32</span><span class="o">-</span><span class="mi">042</span><span class="n">stab106</span><span class="o">.</span><span class="mi">4</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">debian</span><span class="o">-</span><span class="mf">8.1</span>
+<span class="o">---</span> <span class="o">*</span> <span class="o">***</span>  <span class="o">*</span> <span class="o">--</span> <span class="n">Linux</span><span class="o">-</span><span class="mf">2.6.32</span><span class="o">-</span><span class="mi">042</span><span class="n">stab106</span><span class="mf">.4</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">debian</span><span class="o">-</span><span class="mf">8.1</span>
 <span class="o">--</span> <span class="o">*</span> <span class="o">-</span> <span class="o">****</span> <span class="o">---</span> 
 <span class="o">-</span> <span class="o">**</span> <span class="o">----------</span> <span class="p">[</span><span class="n">config</span><span class="p">]</span>
 <span class="o">-</span> <span class="o">**</span> <span class="o">----------</span> <span class="o">.&gt;</span> <span class="n">app</span><span class="p">:</span>         <span class="n">th</span><span class="p">:</span><span class="mh">0x7f85f6883b50</span>
@@ -328,12 +317,10 @@ Même comportement avec <code>*/59</code> (à la place de */60), il démarre bie
 <span class="p">[</span><span class="mi">2015</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">18</span> <span class="mi">21</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">41</span><span class="p">,</span><span class="mi">264</span><span class="p">:</span> <span class="n">DEBUG</span><span class="o">/</span><span class="n">MainProcess</span><span class="p">]</span> <span class="n">basic</span><span class="o">.</span><span class="n">qos</span><span class="p">:</span> <span class="n">prefetch_count</span><span class="o">-&gt;</span><span class="mi">8</span>
 </code></pre></div>
 
-
 <p>si on est joueur comme moi, on peut rajouter au lancement du worker un
 petit coup de <code>--autoscale=10,3</code></p>
 <div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">celery</span> <span class="o">-</span><span class="n">A</span> <span class="n">th</span> <span class="n">worker</span> <span class="o">--</span><span class="n">autoscale</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span> <span class="o">-</span><span class="n">l</span> <span class="n">info</span>
 </code></pre></div>
-
 
 <p>ce qui fera qu'au démarrage du beat, il demarrera 3 workers d'un coup et
 si les ressources systemes le permettent, pourra monter à 10 workers
@@ -349,7 +336,6 @@ workers font la teuf parce que j'ai ecrit ce qui suit :</p>
     <span class="k">for</span> <span class="n">stuff</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
         <span class="n">put_in_cache</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>C'est une task (<code>read_data</code>) qui en enchaine d'autres</p>
 <p>Ici, grosso modo ici je récupère tous les flux RSS de <code>UnModele</code> et pour
@@ -396,7 +382,6 @@ voici à quoi ca ressemble dans le fichier
 <span class="n">stderr_logfile</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">sites</span><span class="o">/</span><span class="n">mon</span><span class="o">-</span><span class="n">projet</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">trigger</span><span class="o">-</span><span class="n">happy</span><span class="o">-</span><span class="n">beat</span><span class="o">-</span><span class="n">err</span><span class="o">.</span><span class="n">log</span>
 </code></pre></div>
 
-
 <ul>
 <li><code>command</code> gere le lancement du process cible</li>
 <li><code>directory</code> est le dossier où on a mis le projet django</li>
@@ -410,7 +395,6 @@ beat) afin de séparer les logs et les process plutot que de lancer
 celery comme ceci :</p>
 <div class="highlight"><pre><span></span><code><span class="n">celery</span> <span class="n">worker</span> <span class="o">-</span><span class="n">B</span>
 </code></pre></div>
-
 
 <p>Ce qui n'est pas recommandé par la doc de Celery.</p>
 <p>un autre exemple de conf où j'ai utilisé supervisor : <strong>sentry</strong> :</p>
@@ -435,7 +419,6 @@ celery comme ceci :</p>
 <span class="n">stderr_logfile</span><span class="o">=/</span><span class="n">home</span><span class="o">/</span><span class="n">sites</span><span class="o">/</span><span class="n">sentry</span><span class="o">/</span><span class="n">sentry</span><span class="o">-</span><span class="n">err</span><span class="o">.</span><span class="n">log</span>
 </code></pre></div>
 
-
 <p>la façon de lancer le worker n'est pas recommandée mais utilise une
 version de celery plus ancienne.</p>
 <h3>Alternatives à Celery</h3>
@@ -455,14 +438,14 @@ réussi à le faire fonctionner (ca remonte à des mois)</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/">Quand Les "job queue" et les amis "brokers de messages" sont mis au rancart par la stdlib</a></li>
-        <li><a href="https://foxmask.org/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
-        <li><a href="https://foxmask.org/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
-        <li><a href="https://foxmask.org/post/2020/05/01/trigger-happy-archive-yeoboseyo/">Trigger Happy archivé - Yeoboseyo !</a></li>
-        <li><a href="https://foxmask.org/post/2019/05/02/de-django-a-starlette/">De django à starlette</a></li>
-        <li><a href="https://foxmask.org/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
-        <li><a href="https://foxmask.org/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
-        <li><a href="https://foxmask.org/post/2016/07/03/django-et-https/">Django et HTTPS</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/04/14/job-queue-and-messages-broker-out/">Quand Les "job queue" et les amis "brokers de messages" sont mis au rancart par la stdlib</a></li>
+        <li><a href="https://www.foxmask.org/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
+        <li><a href="https://www.foxmask.org/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
+        <li><a href="https://www.foxmask.org/post/2020/05/01/trigger-happy-archive-yeoboseyo/">Trigger Happy archivé - Yeoboseyo !</a></li>
+        <li><a href="https://www.foxmask.org/post/2019/05/02/de-django-a-starlette/">De django à starlette</a></li>
+        <li><a href="https://www.foxmask.org/post/2017/07/10/fabric-contrib-django/">Fabric, et la contrib django pour acceder à tous vos joujoux</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/09/08/revue-technique-de-la-semaine-du-05092016/">Revue Technique de la semaine du 05/09/2016</a></li>
+        <li><a href="https://www.foxmask.org/post/2016/07/03/django-et-https/">Django et HTTPS</a></li>
     </ul>
 </section>
         </article>
@@ -474,74 +457,6 @@ réussi à le faire fonctionner (ca remonte à des mois)</p>
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -586,7 +501,7 @@ réussi à le faire fonctionner (ca remonte à des mois)</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -595,16 +510,16 @@ réussi à le faire fonctionner (ca remonte à des mois)</p>
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

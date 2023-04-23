@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/">
+<link rel="canonical" href="https://www.foxmask.org/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="autobahn,crossbar,python,wampws" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Quête WampWS et Autobahn - Episode 3 - Crossbar config"/>
-        <meta property="og:url" content="https://foxmask.org/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/"/>
         <meta property="og:description" content="Dans les épisodes précédants je vous ai montré qu&#39;il était possible de débuter un projet from scratch rapidement, et comment 2 composants se parlaient. Donc dans la continuité, de ces 2 épisodes, ici nous allons aborder comment on configure crossbar, pour qu&#39;il ait connaissance de nos components, dès son démarrage …"/>
         <meta property="article:published_time" content="2015-05-12" />
             <meta property="article:section" content="Techno" />
@@ -31,19 +31,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -57,34 +56,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -102,7 +96,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/"
+                    <a href="https://www.foxmask.org/post/2015/05/12/quete-wampws-et-autobahn-episode-3-crossbar-config/"
                        rel="bookmark"
                        title="Permalink to Quête WampWS et Autobahn - Episode 3 - Crossbar config">
                         Quête WampWS et Autobahn - Episode 3 - Crossbar config
@@ -123,13 +117,13 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
+	<a href="https://www.foxmask.org/tag/autobahn.html">autobahn</a>
         /
-	<a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
+	<a href="https://www.foxmask.org/tag/crossbar.html">crossbar</a>
         /
-	<a href="https://foxmask.org/tag/python.html">python</a>
+	<a href="https://www.foxmask.org/tag/python.html">python</a>
         /
-	<a href="https://foxmask.org/tag/wampws.html">wampws</a>
+	<a href="https://www.foxmask.org/tag/wampws.html">wampws</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
@@ -159,7 +153,6 @@ config de crossbar ensuite.</p>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DB Connection pool started&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">db</span> <span class="o">=</span> <span class="n">pool</span>
 </code></pre></div>
-
 
 <p>Or, mettre en dur des info de config dans le code, c'est sale.<br>
 La version proprette donne plutôt ceci :</p>
@@ -195,7 +188,6 @@ La version proprette donne plutôt ceci :</p>
     <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">RssComponent</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>Et voilou.</p>
 <p>Dans le détails cela donne :</p>
 <p>dans le <code>onJoin</code>, on récupère <code>self.config.extra</code> qui provient du parm
@@ -207,11 +199,9 @@ crossbar.</p>
    <span class="o">...</span>
 </code></pre></div>
 
-
 <p>ensuite on passe <code>dbconfig</code> à la connexion</p>
 <div class="highlight"><pre><span></span><code><span class="k">yield</span> <span class="bp">self</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">dbconfig</span><span class="p">)</span>
 </code></pre></div>
-
 
 <p>ce qui donne pour le compoent Rss de l'épisode 1</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># -*- coding: utf-8 -*-</span>
@@ -236,7 +226,7 @@ crossbar.</p>
 
 <span class="k">class</span> <span class="nc">RssComponent</span><span class="p">(</span><span class="n">ApplicationSession</span><span class="p">):</span>
 
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        An application component that publishes an event</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -272,7 +262,7 @@ crossbar.</p>
     <span class="nd">@wamp</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="sa">u</span><span class="s1">&#39;eu.trigger-happy.rss.feeds_url&#39;</span><span class="p">)</span>
     <span class="nd">@inlineCallbacks</span>
     <span class="k">def</span> <span class="nf">get_feeds_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            get the URL stored in the database</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT date_triggered, name, url, trigger_id, user_id FROM &quot;</span>
@@ -301,14 +291,14 @@ crossbar.</p>
         <span class="n">returnValue</span><span class="p">(</span><span class="n">feeds</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">right_now</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">arrow</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">hour</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">minute</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">second</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">extra</span><span class="p">[</span><span class="s1">&#39;TIME_ZONE&#39;</span><span class="p">])</span>
 
     <span class="k">def</span> <span class="nf">reworked_feeds</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">parms</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            get the feeds and &quot;translate&quot; the time.struct_time()</span>
 <span class="sd">            from Feedparser to a classical timestamp</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -365,7 +355,6 @@ crossbar.</p>
     <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">RssComponent</span><span class="p">)</span>
 </code></pre></div>
 
-
 <p>A présent, je peux exécuter mon script en ligne de commande, il
 utilisera ce qui est défini après le <code>if __name__</code>.<br>
 Par rapport à la version de l'épisode 1 ca ne change pas grand chose au
@@ -379,106 +368,105 @@ Dans l'épisode 2 on en était resté à une configuration définissant
 l'accès à un simple composant Hello.</p>
 <p>Voyons ce que ca donne avec mon composant en plus :</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-   <span class="nt">&quot;controller&quot;</span><span class="p">:</span> <span class="p">{},</span>
-   <span class="nt">&quot;workers&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;router&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;realms&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-               <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
-               <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
-                  <span class="p">{</span>
-                     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;anonymous&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;permissions&quot;</span><span class="p">:</span> <span class="p">[</span>
-                        <span class="p">{</span>
-                           <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-                           <span class="nt">&quot;publish&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                           <span class="nt">&quot;subscribe&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                           <span class="nt">&quot;call&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-                           <span class="nt">&quot;register&quot;</span><span class="p">:</span> <span class="kc">true</span>
-                        <span class="p">}</span>
-                     <span class="p">]</span>
-                  <span class="p">}</span>
-               <span class="p">]</span>
-            <span class="p">}</span>
-         <span class="p">],</span>
-         <span class="nt">&quot;transports&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;web&quot;</span><span class="p">,</span>
-               <span class="nt">&quot;endpoint&quot;</span><span class="p">:</span> <span class="p">{</span>
-                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
-                  <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8080</span>
-               <span class="p">},</span>
-               <span class="nt">&quot;paths&quot;</span><span class="p">:</span> <span class="p">{</span>
-                  <span class="nt">&quot;/&quot;</span><span class="p">:</span> <span class="p">{</span>
-                     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;static&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;directory&quot;</span><span class="p">:</span> <span class="s2">&quot;../web&quot;</span>
-                  <span class="p">},</span>
-                  <span class="nt">&quot;ws&quot;</span><span class="p">:</span> <span class="p">{</span>
-                     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;websocket&quot;</span>
-                  <span class="p">}</span>
-               <span class="p">}</span>
-            <span class="p">}</span>
-         <span class="p">]</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;container&quot;</span><span class="p">,</span>
-         <span class="nt">&quot;options&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]</span>
-         <span class="p">},</span>
-         <span class="nt">&quot;components&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">{</span>
-               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;class&quot;</span><span class="p">,</span>
-               <span class="nt">&quot;classname&quot;</span><span class="p">:</span> <span class="s2">&quot;components.th_rss.back.RssComponent&quot;</span><span class="p">,</span>
-               <span class="nt">&quot;realm&quot;</span><span class="p">:</span> <span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
-               <span class="nt">&quot;transport&quot;</span><span class="p">:</span> <span class="p">{</span>
-                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;websocket&quot;</span><span class="p">,</span>
-                  <span class="nt">&quot;endpoint&quot;</span><span class="p">:</span> <span class="p">{</span>
-                     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8080</span>
-                  <span class="p">},</span>
-                  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://127.0.0.1:8080/ws&quot;</span>
-               <span class="p">},</span>
-               <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
-                  <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="p">{</span>
-                     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
-                     <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span>
-                  <span class="p">}</span>
-               <span class="p">}</span>               
-            <span class="p">},</span>
-            <span class="p">{</span>
-               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;class&quot;</span><span class="p">,</span>
-               <span class="nt">&quot;classname&quot;</span><span class="p">:</span> <span class="s2">&quot;components.th_evernote.front.EvernoteComponent&quot;</span><span class="p">,</span>
-               <span class="nt">&quot;realm&quot;</span><span class="p">:</span> <span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
-               <span class="nt">&quot;transport&quot;</span><span class="p">:</span> <span class="p">{</span>
-                  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;websocket&quot;</span><span class="p">,</span>
-                  <span class="nt">&quot;endpoint&quot;</span><span class="p">:</span> <span class="p">{</span>
-                     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">8080</span>
-                  <span class="p">},</span>
-                  <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;ws://127.0.0.1:8080/ws&quot;</span>
-               <span class="p">},</span>
-               <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
-                  <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="p">{</span>
-                     <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">5432</span><span class="p">,</span>
-                     <span class="nt">&quot;database&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
-                     <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;foobar&quot;</span>
-                  <span class="p">}</span>
-               <span class="p">}</span>
-            <span class="p">}</span>
-         <span class="p">]</span>
-      <span class="p">}</span>
-   <span class="p">]</span>
+<span class="w">   </span><span class="nt">&quot;controller&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">   </span><span class="nt">&quot;workers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;router&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;realms&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;roles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                  </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anonymous&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;permissions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                           </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span><span class="p">,</span>
+<span class="w">                           </span><span class="nt">&quot;publish&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                           </span><span class="nt">&quot;subscribe&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                           </span><span class="nt">&quot;call&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                           </span><span class="nt">&quot;register&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                     </span><span class="p">]</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">],</span>
+<span class="w">         </span><span class="nt">&quot;transports&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;web&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8080</span>
+<span class="w">               </span><span class="p">},</span>
+<span class="w">               </span><span class="nt">&quot;paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;/&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;static&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;directory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;../web&quot;</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="nt">&quot;ws&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;websocket&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">         </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;container&quot;</span><span class="p">,</span>
+<span class="w">         </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]</span>
+<span class="w">         </span><span class="p">},</span>
+<span class="w">         </span><span class="nt">&quot;components&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;class&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;classname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;components.th_rss.back.RssComponent&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;realm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;transport&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;websocket&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8080</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws://127.0.0.1:8080/ws&quot;</span>
+<span class="w">               </span><span class="p">},</span>
+<span class="w">               </span><span class="nt">&quot;extra&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5432</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span><span class="w">               </span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">               </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;class&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;classname&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;components.th_evernote.front.EvernoteComponent&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;realm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;realm1&quot;</span><span class="p">,</span>
+<span class="w">               </span><span class="nt">&quot;transport&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;websocket&quot;</span><span class="p">,</span>
+<span class="w">                  </span><span class="nt">&quot;endpoint&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tcp&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8080</span>
+<span class="w">                  </span><span class="p">},</span>
+<span class="w">                  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ws://127.0.0.1:8080/ws&quot;</span>
+<span class="w">               </span><span class="p">},</span>
+<span class="w">               </span><span class="nt">&quot;extra&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                  </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                     </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5432</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span><span class="p">,</span>
+<span class="w">                     </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;foobar&quot;</span>
+<span class="w">                  </span><span class="p">}</span>
+<span class="w">               </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">         </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">   </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-
 
 <p>avec cette configuration, dès le lancement de crossbar, il chargera les
 2 composants qui demarreront respectivement le code se trouvant dans le
@@ -487,33 +475,30 @@ l'accès à un simple composant Hello.</p>
 <p>Cette config crossbar tient compte d'un fait important :</p>
 <p>mes composants sont dans le path de crossbar et donc sont en python 2.7<br>
 ceci m'est révélé par le paramètre</p>
-<div class="highlight"><pre><span></span><code>         <span class="s2">&quot;options&quot;</span><span class="err">:</span> <span class="p">{</span>
-            <span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]</span>
-         <span class="p">}</span><span class="err">,</span>
+<div class="highlight"><pre><span></span><code><span class="w">         </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">]</span>
+<span class="w">         </span><span class="p">},</span>
 </code></pre></div>
-
 
 <p>Par contre, ce n'est pas parceque Crossbar n'est pas en python 3, que
 Autobahn|Python ne l'est pas, donc je peux tout à fait avoir des
 composants python 3 ailleurs, et si je veux que crossbar me charge mes
 composants, je lui fourni le path vers ceux ci comme suit (par exemple)
 :</p>
-<div class="highlight"><pre><span></span><code>         <span class="s2">&quot;options&quot;</span><span class="err">:</span> <span class="p">{</span>
-            <span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">,</span><span class="s2">&quot;/home/foxmask/Django-Virtualenv/wamp-th/wamp-th/&quot;</span><span class="p">]</span>
-         <span class="p">}</span><span class="err">,</span>
+<div class="highlight"><pre><span></span><code><span class="w">         </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">,</span><span class="s2">&quot;/home/foxmask/Django-Virtualenv/wamp-th/wamp-th/&quot;</span><span class="p">]</span>
+<span class="w">         </span><span class="p">},</span>
 </code></pre></div>
-
 
 <p>et ça ne dérangera pas Crossbar pour un sou (au contraire:)</p>
 <p>un goodies en plus, on peut nommer le process qui se charge de gerer mes
 components, pour cela j'ajoute à mon parm "options", "title" comme suit
 :</p>
-<div class="highlight"><pre><span></span><code>         <span class="s2">&quot;options&quot;</span><span class="err">:</span> <span class="p">{</span>
-            <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;triggerhappy&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">,</span><span class="s2">&quot;/home/foxmask/Django-Virtualenv/wamp-th/wamp-th/&quot;</span><span class="p">]</span>
-         <span class="p">}</span><span class="err">,</span>
+<div class="highlight"><pre><span></span><code><span class="w">         </span><span class="nt">&quot;options&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;triggerhappy&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;pythonpath&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;..&quot;</span><span class="p">,</span><span class="s2">&quot;/home/foxmask/Django-Virtualenv/wamp-th/wamp-th/&quot;</span><span class="p">]</span>
+<span class="w">         </span><span class="p">},</span>
 </code></pre></div>
-
 
 <p>enfin on trouve bien évidement les mêmes noeuds "config/extras"
 qu'indiqués dans le <code>if __name__</code> de chacun des composants pour définir
@@ -528,14 +513,14 @@ de plus sur les nouveautés que j'aurai pu exploiter.</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2015/05/07/quete-wampws-et-autobahn-episode-2-demarrage-en-trombe/">Quête WampWS et Autobahn : Épisode 2 - démarrage en trombe</a></li>
-        <li><a href="https://foxmask.org/post/2015/02/27/quete-wampws-et-autobahn-episode-1/">Quête  WampWS et Autobahn - épisode 1</a></li>
-        <li><a href="https://foxmask.org/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
-        <li><a href="https://foxmask.org/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
-        <li><a href="https://foxmask.org/post/2019/04/24/mais-tu-es-fou-hoo-oui/">Mais tu es fou ? Hooo Oui</a></li>
-        <li><a href="https://foxmask.org/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
-        <li><a href="https://foxmask.org/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
-        <li><a href="https://foxmask.org/post/2017/10/14/coverage-install-upload-results/">Coverage, install, upload results</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/05/07/quete-wampws-et-autobahn-episode-2-demarrage-en-trombe/">Quête WampWS et Autobahn : Épisode 2 - démarrage en trombe</a></li>
+        <li><a href="https://www.foxmask.org/post/2015/02/27/quete-wampws-et-autobahn-episode-1/">Quête  WampWS et Autobahn - épisode 1</a></li>
+        <li><a href="https://www.foxmask.org/post/2022/01/02/des-news-mais-alloo/">Des news ? Mais Allo !</a></li>
+        <li><a href="https://www.foxmask.org/post/2021/07/28/monit-and-more/">Monit ... and more</a></li>
+        <li><a href="https://www.foxmask.org/post/2020/09/08/nyuseu-news/">뉴스 - Nyuseu - News</a></li>
+        <li><a href="https://www.foxmask.org/post/2019/04/24/mais-tu-es-fou-hoo-oui/">Mais tu es fou ? Hooo Oui</a></li>
+        <li><a href="https://www.foxmask.org/post/2018/01/23/quand-fabric-refuse-bosser/">Quand Fabric refuse de bosser</a></li>
+        <li><a href="https://www.foxmask.org/post/2017/12/21/2017-at-a-glance/">2017 at a glance</a></li>
     </ul>
 </section>
         </article>
@@ -547,74 +532,6 @@ de plus sur les nouveautés que j'aurai pu exploiter.</p>
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -659,7 +576,7 @@ de plus sur les nouveautés que j'aurai pu exploiter.</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -668,16 +585,16 @@ de plus sur les nouveautés que j'aurai pu exploiter.</p>
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>

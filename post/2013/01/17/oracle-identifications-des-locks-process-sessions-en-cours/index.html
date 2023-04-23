@@ -9,7 +9,7 @@
 
 
 
-<link rel="canonical" href="https://foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">
+<link rel="canonical" href="https://www.foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/">
 
         <meta name="author" content="foxmask" />
         <meta name="keywords" content="oracle" />
@@ -18,7 +18,7 @@
         <meta property="og:site_name" content="Le Free de la Passion" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Oracle Identifications des Locks, Process, Sessions en cours"/>
-        <meta property="og:url" content="https://foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/"/>
+        <meta property="og:url" content="https://www.foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/"/>
         <meta property="og:description" content="Voici une requete SQL dans l&#39;arsenal du DBA, nommons la locks.sql, permettant d&#39;identifier les locks en cours sur un schema oracle : SELECT /*+ choose */ bs.username &#34;Blocking User&#34;, bs.username &#34;DB User&#34;, ws.username &#34;Waiting User&#34;, bs.sid &#34;SID&#34;, ws.sid &#34;WSID&#34;, bs.sql_address &#34;address&#34;, bs.sql_hash_value &#34;Sql hash&#34;, bs …"/>
         <meta property="article:published_time" content="2013-01-17" />
             <meta property="article:section" content="Techno" />
@@ -28,19 +28,18 @@
 
 
     <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="https://foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.foxmask.org/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="https://foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
-    <link href="https://foxmask.org/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://foxmask.org/theme/css/style.css" type="text/css"/>
+    <link href="https://www.foxmask.org/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.foxmask.org/theme/css/style.css" type="text/css"/>
 
-        <link href="https://foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion ATOM Feed"/>
 
-        <link href="https://foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Le Free de la Passion RSS Feed"/>
-        <link href="https://foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
+        <link href="https://www.foxmask.org/feeds/techno.atom.xml" type="application/atom+xml" rel="alternate"
               title="Le Free de la Passion Techno ATOM Feed"/>
 </head>
 <body>
@@ -54,34 +53,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="https://foxmask.org/" class="navbar-brand">
+            <a href="https://www.foxmask.org/" class="navbar-brand">
 Le Free de la Passion            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="https://foxmask.org/pages/a-propos">
+                         <li><a href="https://www.foxmask.org/pages/a-propos">
                              À propos
                           </a></li>
                         <li >
-                            <a href="https://foxmask.org/category/games.html">Games</a>
+                            <a href="https://www.foxmask.org/category/games.html">Games</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/general.html">General</a>
+                            <a href="https://www.foxmask.org/category/general.html">General</a>
                         </li>
                         <li >
-                            <a href="https://foxmask.org/category/korea.html">Korea</a>
+                            <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
                         <li class="active">
-                            <a href="https://foxmask.org/category/techno.html">Techno</a>
+                            <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><span>
-                <form class="navbar-search" action="/search.html">
-                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
-                </form></span>
-              </li>
-              <li><a href="https://foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+              <li><a href="https://www.foxmask.org/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -99,7 +93,7 @@ Le Free de la Passion            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="https://foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/"
+                    <a href="https://www.foxmask.org/post/2013/01/17/oracle-identifications-des-locks-process-sessions-en-cours/"
                        rel="bookmark"
                        title="Permalink to Oracle Identifications des Locks, Process, Sessions en cours">
                         Oracle Identifications des Locks, Process, Sessions en cours
@@ -120,187 +114,182 @@ Le Free de la Passion            </a>
 
 
 <span class="label label-default">Tags</span>
-	<a href="https://foxmask.org/tag/oracle.html">oracle</a>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p>Voici une requete SQL dans l'arsenal du DBA, nommons la <strong>locks.sql</strong>,
 permettant d'identifier les locks en cours sur un schema oracle :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>   <span class="cm">/*+ choose */</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Blocking User&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;DB User&quot;</span><span class="p">,</span>
-          <span class="n">ws</span><span class="p">.</span><span class="n">username</span> <span class="ss">&quot;Waiting User&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">sid</span> <span class="ss">&quot;SID&quot;</span><span class="p">,</span>
-          <span class="n">ws</span><span class="p">.</span><span class="n">sid</span> <span class="ss">&quot;WSID&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">sql_address</span> <span class="ss">&quot;address&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">sql_hash_value</span> <span class="ss">&quot;Sql hash&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">program</span> <span class="ss">&quot;Blocking App&quot;</span><span class="p">,</span>
-          <span class="n">ws</span><span class="p">.</span><span class="n">program</span> <span class="ss">&quot;Waiting App&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">machine</span> <span class="ss">&quot;Blocking Machine&quot;</span><span class="p">,</span>
-          <span class="n">ws</span><span class="p">.</span><span class="n">machine</span> <span class="ss">&quot;Waiting Machine&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="n">osuser</span> <span class="ss">&quot;Blocking OS User&quot;</span><span class="p">,</span>
-          <span class="n">ws</span><span class="p">.</span><span class="n">osuser</span> <span class="ss">&quot;Waiting OS User&quot;</span><span class="p">,</span>
-          <span class="n">bs</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span> <span class="ss">&quot;Serial#&quot;</span><span class="p">,</span>
-          <span class="n">DECODE</span> <span class="p">(</span>
-             <span class="n">wk</span><span class="p">.</span><span class="k">TYPE</span><span class="p">,</span>
-             <span class="s1">&#39;MR&#39;</span><span class="p">,</span> <span class="s1">&#39;Media Recovery&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;RT&#39;</span><span class="p">,</span> <span class="s1">&#39;Redo Thread&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;UN&#39;</span><span class="p">,</span> <span class="s1">&#39;USER Name&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;TX&#39;</span><span class="p">,</span> <span class="s1">&#39;Transaction&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;TM&#39;</span><span class="p">,</span> <span class="s1">&#39;DML&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;UL&#39;</span><span class="p">,</span> <span class="s1">&#39;PL/SQL USER LOCK&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;DX&#39;</span><span class="p">,</span> <span class="s1">&#39;Distributed Xaction&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;CF&#39;</span><span class="p">,</span> <span class="s1">&#39;Control FILE&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;IS&#39;</span><span class="p">,</span> <span class="s1">&#39;Instance State&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;FS&#39;</span><span class="p">,</span> <span class="s1">&#39;FILE SET&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;IR&#39;</span><span class="p">,</span> <span class="s1">&#39;Instance Recovery&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;ST&#39;</span><span class="p">,</span> <span class="s1">&#39;Disk SPACE Transaction&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;TS&#39;</span><span class="p">,</span> <span class="s1">&#39;Temp Segment&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;IV&#39;</span><span class="p">,</span> <span class="s1">&#39;Library Cache Invalidation&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;LS&#39;</span><span class="p">,</span> <span class="s1">&#39;LOG START OR Switch&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;RW&#39;</span><span class="p">,</span> <span class="s1">&#39;ROW Wait&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;SQ&#39;</span><span class="p">,</span> <span class="s1">&#39;Sequence Number&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;TE&#39;</span><span class="p">,</span> <span class="s1">&#39;Extend TABLE&#39;</span><span class="p">,</span>
-             <span class="s1">&#39;TT&#39;</span><span class="p">,</span> <span class="s1">&#39;Temp TABLE&#39;</span><span class="p">,</span>
-             <span class="n">wk</span><span class="p">.</span><span class="k">TYPE</span>
-          <span class="p">)</span> <span class="n">lock_type</span><span class="p">,</span>
-          <span class="n">DECODE</span> <span class="p">(</span>
-             <span class="n">hk</span><span class="p">.</span><span class="n">lmode</span><span class="p">,</span>
-             <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span>
-             <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NULL&#39;</span><span class="p">,</span>
-             <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;ROW-S (SS)&#39;</span><span class="p">,</span>
-             <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;ROW-X (SX)&#39;</span><span class="p">,</span>
-             <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;SHARE&#39;</span><span class="p">,</span>
-             <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;S/ROW-X (SSX)&#39;</span><span class="p">,</span>
-             <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;EXCLUSIVE&#39;</span><span class="p">,</span>
-             <span class="n">TO_CHAR</span> <span class="p">(</span><span class="n">hk</span><span class="p">.</span><span class="n">lmode</span><span class="p">)</span>
-          <span class="p">)</span> <span class="n">mode_held</span><span class="p">,</span>
-          <span class="n">DECODE</span> <span class="p">(</span>
-             <span class="n">wk</span><span class="p">.</span><span class="n">request</span><span class="p">,</span>
-             <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span>
-             <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;NULL&#39;</span><span class="p">,</span>
-             <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;ROW-S (SS)&#39;</span><span class="p">,</span>
-             <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;ROW-X (SX)&#39;</span><span class="p">,</span>
-             <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;SHARE&#39;</span><span class="p">,</span>
-             <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;S/ROW-X (SSX)&#39;</span><span class="p">,</span>
-             <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;EXCLUSIVE&#39;</span><span class="p">,</span>
-             <span class="n">TO_CHAR</span> <span class="p">(</span><span class="n">wk</span><span class="p">.</span><span class="n">request</span><span class="p">)</span>
-          <span class="p">)</span> <span class="n">mode_requested</span><span class="p">,</span>
-        <span class="n">object_name</span> <span class="p">,</span>
-          <span class="n">TO_CHAR</span> <span class="p">(</span><span class="n">hk</span><span class="p">.</span><span class="n">id1</span><span class="p">)</span> <span class="n">lock_id1</span><span class="p">,</span>
-          <span class="n">TO_CHAR</span> <span class="p">(</span><span class="n">hk</span><span class="p">.</span><span class="n">id2</span><span class="p">)</span> <span class="n">lock_id2</span>
-<span class="k">FROM</span>     <span class="n">v$lock</span> <span class="n">hk</span><span class="p">,</span> <span class="n">v$session</span> <span class="n">bs</span><span class="p">,</span> <span class="n">v$lock</span> <span class="n">wk</span><span class="p">,</span> <span class="n">v$session</span> <span class="n">ws</span> <span class="p">,</span>
-<span class="n">V$LOCKED_OBJECT</span> <span class="n">a</span> <span class="p">,</span>
-<span class="n">dba_objects</span> <span class="n">b</span>
-<span class="k">WHERE</span>    <span class="n">hk</span><span class="p">.</span><span class="n">BLOCK</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="k">AND</span>      <span class="n">hk</span><span class="p">.</span><span class="n">lmode</span> <span class="o">!=</span> <span class="mi">0</span>
-<span class="k">AND</span>      <span class="n">hk</span><span class="p">.</span><span class="n">lmode</span> <span class="o">!=</span> <span class="mi">1</span>
-<span class="k">AND</span>      <span class="n">wk</span><span class="p">.</span><span class="n">request</span> <span class="o">!=</span> <span class="mi">0</span>
-<span class="k">AND</span>      <span class="n">wk</span><span class="p">.</span><span class="k">TYPE</span><span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">=</span> <span class="n">hk</span><span class="p">.</span><span class="k">TYPE</span>
-<span class="k">AND</span>      <span class="n">wk</span><span class="p">.</span><span class="n">id1</span><span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">=</span> <span class="n">hk</span><span class="p">.</span><span class="n">id1</span>
-<span class="k">AND</span>      <span class="n">wk</span><span class="p">.</span><span class="n">id2</span><span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">=</span> <span class="n">hk</span><span class="p">.</span><span class="n">id2</span>
-<span class="k">AND</span>      <span class="n">hk</span><span class="p">.</span><span class="n">sid</span> <span class="o">=</span> <span class="n">bs</span><span class="p">.</span><span class="n">sid</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
-<span class="k">AND</span>      <span class="n">wk</span><span class="p">.</span><span class="n">sid</span> <span class="o">=</span> <span class="n">ws</span><span class="p">.</span><span class="n">sid</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
-<span class="k">AND</span>      <span class="n">a</span><span class="p">.</span><span class="n">object_id</span><span class="o">=</span><span class="n">b</span><span class="p">.</span><span class="n">object_id</span>
-<span class="k">AND</span>      <span class="n">HK</span><span class="p">.</span><span class="n">sid</span><span class="o">=</span><span class="n">a</span><span class="p">.</span><span class="n">SESSION_ID</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="mi">1</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w">   </span><span class="cm">/*+ choose */</span>
+<span class="w">          </span><span class="n">bs</span><span class="p">.</span><span class="n">username</span><span class="w"> </span><span class="ss">&quot;Blocking User&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">bs</span><span class="p">.</span><span class="n">username</span><span class="w"> </span><span class="ss">&quot;DB User&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">ws</span><span class="p">.</span><span class="n">username</span><span class="w"> </span><span class="ss">&quot;Waiting User&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">bs</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="ss">&quot;SID&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">ws</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="ss">&quot;WSID&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">bs</span><span class="p">.</span><span class="n">sql_address</span><span class="w"> </span><span class="ss">&quot;address&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">bs</span><span class="p">.</span><span class="n">sql_hash_value</span><span class="w"> </span><span class="ss">&quot;Sql hash&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">bs</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="ss">&quot;Blocking App&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">ws</span><span class="p">.</span><span class="n">program</span><span class="w"> </span><span class="ss">&quot;Waiting App&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">bs</span><span class="p">.</span><span class="n">machine</span><span class="w"> </span><span class="ss">&quot;Blocking Machine&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">ws</span><span class="p">.</span><span class="n">machine</span><span class="w"> </span><span class="ss">&quot;Waiting Machine&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">bs</span><span class="p">.</span><span class="n">osuser</span><span class="w"> </span><span class="ss">&quot;Blocking OS User&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">ws</span><span class="p">.</span><span class="n">osuser</span><span class="w"> </span><span class="ss">&quot;Waiting OS User&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">bs</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span><span class="w"> </span><span class="ss">&quot;Serial#&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="n">DECODE</span><span class="w"> </span><span class="p">(</span>
+<span class="w">             </span><span class="n">wk</span><span class="p">.</span><span class="k">TYPE</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;MR&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Media Recovery&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;RT&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Redo Thread&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;UN&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;USER Name&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;TX&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Transaction&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;TM&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;DML&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;UL&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;PL/SQL USER LOCK&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;DX&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Distributed Xaction&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;CF&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Control FILE&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;IS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Instance State&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;FS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;FILE SET&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;IR&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Instance Recovery&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;ST&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Disk SPACE Transaction&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;TS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Temp Segment&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;IV&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Library Cache Invalidation&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;LS&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;LOG START OR Switch&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;RW&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ROW Wait&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;SQ&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Sequence Number&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;TE&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Extend TABLE&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="s1">&#39;TT&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Temp TABLE&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="n">wk</span><span class="p">.</span><span class="k">TYPE</span>
+<span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="n">lock_type</span><span class="p">,</span>
+<span class="w">          </span><span class="n">DECODE</span><span class="w"> </span><span class="p">(</span>
+<span class="w">             </span><span class="n">hk</span><span class="p">.</span><span class="n">lmode</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;None&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NULL&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ROW-S (SS)&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ROW-X (SX)&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SHARE&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;S/ROW-X (SSX)&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;EXCLUSIVE&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="n">TO_CHAR</span><span class="w"> </span><span class="p">(</span><span class="n">hk</span><span class="p">.</span><span class="n">lmode</span><span class="p">)</span>
+<span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="n">mode_held</span><span class="p">,</span>
+<span class="w">          </span><span class="n">DECODE</span><span class="w"> </span><span class="p">(</span>
+<span class="w">             </span><span class="n">wk</span><span class="p">.</span><span class="n">request</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;None&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;NULL&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ROW-S (SS)&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;ROW-X (SX)&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;SHARE&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;S/ROW-X (SSX)&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;EXCLUSIVE&#39;</span><span class="p">,</span>
+<span class="w">             </span><span class="n">TO_CHAR</span><span class="w"> </span><span class="p">(</span><span class="n">wk</span><span class="p">.</span><span class="n">request</span><span class="p">)</span>
+<span class="w">          </span><span class="p">)</span><span class="w"> </span><span class="n">mode_requested</span><span class="p">,</span>
+<span class="w">        </span><span class="n">object_name</span><span class="w"> </span><span class="p">,</span>
+<span class="w">          </span><span class="n">TO_CHAR</span><span class="w"> </span><span class="p">(</span><span class="n">hk</span><span class="p">.</span><span class="n">id1</span><span class="p">)</span><span class="w"> </span><span class="n">lock_id1</span><span class="p">,</span>
+<span class="w">          </span><span class="n">TO_CHAR</span><span class="w"> </span><span class="p">(</span><span class="n">hk</span><span class="p">.</span><span class="n">id2</span><span class="p">)</span><span class="w"> </span><span class="n">lock_id2</span>
+<span class="k">FROM</span><span class="w">     </span><span class="n">v$lock</span><span class="w"> </span><span class="n">hk</span><span class="p">,</span><span class="w"> </span><span class="n">v$session</span><span class="w"> </span><span class="n">bs</span><span class="p">,</span><span class="w"> </span><span class="n">v$lock</span><span class="w"> </span><span class="n">wk</span><span class="p">,</span><span class="w"> </span><span class="n">v$session</span><span class="w"> </span><span class="n">ws</span><span class="w"> </span><span class="p">,</span>
+<span class="n">V$LOCKED_OBJECT</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">,</span>
+<span class="n">dba_objects</span><span class="w"> </span><span class="n">b</span>
+<span class="k">WHERE</span><span class="w">    </span><span class="n">hk</span><span class="p">.</span><span class="n">BLOCK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">hk</span><span class="p">.</span><span class="n">lmode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">hk</span><span class="p">.</span><span class="n">lmode</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">wk</span><span class="p">.</span><span class="n">request</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">wk</span><span class="p">.</span><span class="k">TYPE</span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hk</span><span class="p">.</span><span class="k">TYPE</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">wk</span><span class="p">.</span><span class="n">id1</span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hk</span><span class="p">.</span><span class="n">id1</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">wk</span><span class="p">.</span><span class="n">id2</span><span class="p">(</span><span class="o">+</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hk</span><span class="p">.</span><span class="n">id2</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">hk</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bs</span><span class="p">.</span><span class="n">sid</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">wk</span><span class="p">.</span><span class="n">sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ws</span><span class="p">.</span><span class="n">sid</span><span class="p">(</span><span class="o">+</span><span class="p">)</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">a</span><span class="p">.</span><span class="n">object_id</span><span class="o">=</span><span class="n">b</span><span class="p">.</span><span class="n">object_id</span>
+<span class="k">AND</span><span class="w">      </span><span class="n">HK</span><span class="p">.</span><span class="n">sid</span><span class="o">=</span><span class="n">a</span><span class="p">.</span><span class="n">SESSION_ID</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>Oui hein ! ça s'invente pas ;)</p>
 <p>Une seconde <strong>current_request.sql</strong> vous donnant les requêtes en cours
 :</p>
 <p>Avec Oracle 9i :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">sesion</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span>
-       <span class="n">sesion</span><span class="p">.</span><span class="n">username</span><span class="p">,</span>
-       <span class="n">optimizer_mode</span><span class="p">,</span>
-       <span class="n">hash_value</span><span class="p">,</span>
-       <span class="n">address</span><span class="p">,</span>
-       <span class="n">cpu_time</span><span class="p">,</span>
-       <span class="n">elapsed_time</span><span class="p">,</span>
-       <span class="n">sql_text</span>
-  <span class="k">FROM</span> <span class="n">v$sqlarea</span> <span class="n">sqlarea</span><span class="p">,</span> <span class="n">v$session</span> <span class="n">sesion</span>
- <span class="k">WHERE</span> <span class="n">sesion</span><span class="p">.</span><span class="n">sql_hash_value</span> <span class="o">=</span> <span class="n">sqlarea</span><span class="p">.</span><span class="n">hash_value</span>
-   <span class="k">AND</span> <span class="n">sesion</span><span class="p">.</span><span class="n">sql_address</span>    <span class="o">=</span> <span class="n">sqlarea</span><span class="p">.</span><span class="n">address</span>
-   <span class="k">AND</span> <span class="n">sesion</span><span class="p">.</span><span class="n">username</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sesion</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span>
+<span class="w">       </span><span class="n">sesion</span><span class="p">.</span><span class="n">username</span><span class="p">,</span>
+<span class="w">       </span><span class="n">optimizer_mode</span><span class="p">,</span>
+<span class="w">       </span><span class="n">hash_value</span><span class="p">,</span>
+<span class="w">       </span><span class="n">address</span><span class="p">,</span>
+<span class="w">       </span><span class="n">cpu_time</span><span class="p">,</span>
+<span class="w">       </span><span class="n">elapsed_time</span><span class="p">,</span>
+<span class="w">       </span><span class="n">sql_text</span>
+<span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">v$sqlarea</span><span class="w"> </span><span class="n">sqlarea</span><span class="p">,</span><span class="w"> </span><span class="n">v$session</span><span class="w"> </span><span class="n">sesion</span>
+<span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">sesion</span><span class="p">.</span><span class="n">sql_hash_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqlarea</span><span class="p">.</span><span class="n">hash_value</span>
+<span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">sesion</span><span class="p">.</span><span class="n">sql_address</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">sqlarea</span><span class="p">.</span><span class="n">address</span>
+<span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">sesion</span><span class="p">.</span><span class="n">username</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
 </code></pre></div>
-
 
 <p><em>Mais ca c'était avant</em></p>
-<p>Ci dessous la même en "encore plus longue" pour les versions oracle >
+<p>Ci dessous la même en "encore plus longue" pour les versions oracle &gt;
 9i</p>
-<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">sql_text</span><span class="p">,</span> <span class="n">STATUS</span> <span class="k">FROM</span> <span class="n">v$session</span><span class="p">,</span> <span class="n">v$sqlarea</span> <span class="k">WHERE</span> <span class="n">v$session</span><span class="p">.</span><span class="n">sql_id</span><span class="o">=</span><span class="n">v$sqlarea</span><span class="p">.</span><span class="n">sql_id</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">sql_text</span><span class="p">,</span><span class="w"> </span><span class="n">STATUS</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">v$session</span><span class="p">,</span><span class="w"> </span><span class="n">v$sqlarea</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">v$session</span><span class="p">.</span><span class="n">sql_id</span><span class="o">=</span><span class="n">v$sqlarea</span><span class="p">.</span><span class="n">sql_id</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>Ah oui ça tranche hein !</p>
 <p>Pour avoir la liste des sessions en cours un petit script
 <strong>session.sql</strong> :</p>
-<div class="highlight"><pre><span></span><code><span class="k">SET</span> <span class="n">echo</span> <span class="k">off</span><span class="p">;</span>
-<span class="k">SET</span> <span class="n">termout</span> <span class="k">ON</span><span class="p">;</span>
-<span class="k">SET</span> <span class="n">linesize</span> <span class="mi">180</span><span class="p">;</span>
-<span class="k">SET</span> <span class="n">pagesize</span> <span class="mi">60</span><span class="p">;</span>
-<span class="k">SET</span> <span class="n">newpage</span> <span class="mi">0</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">SET</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="k">off</span><span class="p">;</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">termout</span><span class="w"> </span><span class="k">ON</span><span class="p">;</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">linesize</span><span class="w"> </span><span class="mi">180</span><span class="p">;</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">pagesize</span><span class="w"> </span><span class="mi">60</span><span class="p">;</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">newpage</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
 <span class="k">SELECT</span>
-   <span class="n">rpad</span><span class="p">(</span><span class="k">c</span><span class="p">.</span><span class="n">name</span><span class="o">||</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span><span class="o">||</span><span class="n">rpad</span><span class="p">(</span><span class="s1">&#39; current logons=&#39;</span><span class="o">||</span>
-   <span class="p">(</span><span class="n">to_number</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">sessions_current</span><span class="p">)),</span><span class="mi">20</span><span class="p">)</span><span class="o">||</span><span class="s1">&#39;cumulative logons=&#39;</span><span class="o">||</span>
-   <span class="n">rpad</span><span class="p">(</span><span class="n">substr</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">VALUE</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span><span class="o">||</span><span class="s1">&#39;highwater mark=&#39;</span><span class="o">||</span>
-   <span class="n">b</span><span class="p">.</span><span class="n">sessions_highwater</span> <span class="n">Information</span>
+<span class="w">   </span><span class="n">rpad</span><span class="p">(</span><span class="k">c</span><span class="p">.</span><span class="n">name</span><span class="o">||</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span><span class="o">||</span><span class="n">rpad</span><span class="p">(</span><span class="s1">&#39; current logons=&#39;</span><span class="o">||</span>
+<span class="w">   </span><span class="p">(</span><span class="n">to_number</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">sessions_current</span><span class="p">)),</span><span class="mi">20</span><span class="p">)</span><span class="o">||</span><span class="s1">&#39;cumulative logons=&#39;</span><span class="o">||</span>
+<span class="w">   </span><span class="n">rpad</span><span class="p">(</span><span class="n">substr</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">VALUE</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="mi">10</span><span class="p">)</span><span class="o">||</span><span class="s1">&#39;highwater mark=&#39;</span><span class="o">||</span>
+<span class="w">   </span><span class="n">b</span><span class="p">.</span><span class="n">sessions_highwater</span><span class="w"> </span><span class="n">Information</span>
 <span class="k">FROM</span>
-   <span class="n">v$sysstat</span> <span class="n">a</span><span class="p">,</span>
-   <span class="n">v$license</span> <span class="n">b</span><span class="p">,</span>
-   <span class="n">v$database</span> <span class="k">c</span>
+<span class="w">   </span><span class="n">v$sysstat</span><span class="w"> </span><span class="n">a</span><span class="p">,</span>
+<span class="w">   </span><span class="n">v$license</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+<span class="w">   </span><span class="n">v$database</span><span class="w"> </span><span class="k">c</span>
 <span class="k">WHERE</span>
-   <span class="n">a</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;logons cumulative&#39;</span>
+<span class="w">   </span><span class="n">a</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;logons cumulative&#39;</span>
 <span class="p">;</span>
 
-<span class="n">ttitle</span> <span class="ss">&quot;dbname Database|UNIX/Oracle Sessions&quot;</span><span class="p">;</span>
+<span class="n">ttitle</span><span class="w"> </span><span class="ss">&quot;dbname Database|UNIX/Oracle Sessions&quot;</span><span class="p">;</span>
 
-<span class="k">SET</span> <span class="n">heading</span> <span class="k">off</span><span class="p">;</span>
-<span class="k">SELECT</span> <span class="s1">&#39;Sessions on database &#39;</span><span class="o">||</span><span class="n">substr</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">v$database</span><span class="p">;</span>
-<span class="k">SET</span> <span class="n">heading</span> <span class="k">ON</span><span class="p">;</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">heading</span><span class="w"> </span><span class="k">off</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;Sessions on database &#39;</span><span class="o">||</span><span class="n">substr</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">v$database</span><span class="p">;</span>
+<span class="k">SET</span><span class="w"> </span><span class="n">heading</span><span class="w"> </span><span class="k">ON</span><span class="p">;</span>
 <span class="k">SELECT</span>
-       <span class="n">substr</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">spid</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span> <span class="n">pid</span><span class="p">,</span>
-       <span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span> <span class="n">sid</span><span class="p">,</span>
-       <span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span> <span class="n">ser</span><span class="o">#</span><span class="p">,</span>
-       <span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">machine</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span> <span class="n">box</span><span class="p">,</span>
-       <span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">username</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span> <span class="n">username</span><span class="p">,</span>
+<span class="w">       </span><span class="n">substr</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">spid</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="n">pid</span><span class="p">,</span>
+<span class="w">       </span><span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="n">sid</span><span class="p">,</span>
+<span class="w">       </span><span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span><span class="w"> </span><span class="n">ser</span><span class="o">#</span><span class="p">,</span>
+<span class="w">       </span><span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">machine</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="n">box</span><span class="p">,</span>
+<span class="w">       </span><span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">username</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="n">username</span><span class="p">,</span>
 <span class="c1">--       b.server,</span>
-       <span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">osuser</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">28</span><span class="p">)</span> <span class="n">os_user</span><span class="p">,</span>
-       <span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">program</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span> <span class="n">program</span>
-<span class="k">FROM</span> <span class="n">v$session</span> <span class="n">b</span><span class="p">,</span> <span class="n">v$process</span> <span class="n">a</span>
- <span class="k">WHERE</span>
-<span class="n">b</span><span class="p">.</span><span class="n">paddr</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">addr</span>
-<span class="k">AND</span> <span class="k">TYPE</span><span class="o">=</span><span class="s1">&#39;USER&#39;</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">spid</span><span class="p">;</span>
-<span class="n">ttitle</span> <span class="k">off</span><span class="p">;</span>
-<span class="n">spool</span> <span class="k">off</span><span class="p">;</span>
+<span class="w">       </span><span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">osuser</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">28</span><span class="p">)</span><span class="w"> </span><span class="n">os_user</span><span class="p">,</span>
+<span class="w">       </span><span class="n">substr</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">program</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span><span class="w"> </span><span class="n">program</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">v$session</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">v$process</span><span class="w"> </span><span class="n">a</span>
+<span class="w"> </span><span class="k">WHERE</span>
+<span class="n">b</span><span class="p">.</span><span class="n">paddr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">addr</span>
+<span class="k">AND</span><span class="w"> </span><span class="k">TYPE</span><span class="o">=</span><span class="s1">&#39;USER&#39;</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">spid</span><span class="p">;</span>
+<span class="n">ttitle</span><span class="w"> </span><span class="k">off</span><span class="p">;</span>
+<span class="n">spool</span><span class="w"> </span><span class="k">off</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>Pour obtenir les requêtes en cours d'annulation (rollback),
 <strong>session_undo.sql</strong> :</p>
-<div class="highlight"><pre><span></span><code><span class="k">COLUMN</span> <span class="n">username</span> <span class="n">FORMAT</span> <span class="n">A15</span>
+<div class="highlight"><pre><span></span><code><span class="k">COLUMN</span><span class="w"> </span><span class="n">username</span><span class="w"> </span><span class="n">FORMAT</span><span class="w"> </span><span class="n">A15</span>
 
-<span class="k">SELECT</span> <span class="n">s</span><span class="p">.</span><span class="n">username</span><span class="p">,</span>
-       <span class="n">s</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span>
-       <span class="n">s</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span><span class="p">,</span>
-       <span class="n">t</span><span class="p">.</span><span class="n">used_ublk</span><span class="p">,</span>
-       <span class="n">t</span><span class="p">.</span><span class="n">used_urec</span><span class="p">,</span>
-       <span class="n">rs</span><span class="p">.</span><span class="n">segment_name</span><span class="p">,</span>
-       <span class="n">r</span><span class="p">.</span><span class="n">rssize</span><span class="p">,</span>
-       <span class="n">r</span><span class="p">.</span><span class="n">STATUS</span>
-<span class="k">FROM</span>   <span class="n">v$transaction</span> <span class="n">t</span><span class="p">,</span>
-       <span class="n">v$session</span> <span class="n">s</span><span class="p">,</span>
-       <span class="n">v$rollstat</span> <span class="n">r</span><span class="p">,</span>
-       <span class="n">dba_rollback_segs</span> <span class="n">rs</span>
-<span class="k">WHERE</span>  <span class="n">s</span><span class="p">.</span><span class="n">saddr</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="n">ses_addr</span>
-<span class="k">AND</span>    <span class="n">t</span><span class="p">.</span><span class="n">xidusn</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">usn</span>
-<span class="k">AND</span>    <span class="n">rs</span><span class="p">.</span><span class="n">segment_id</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="n">xidusn</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">t</span><span class="p">.</span><span class="n">used_ublk</span> <span class="k">DESC</span><span class="p">;</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">username</span><span class="p">,</span>
+<span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="n">sid</span><span class="p">,</span>
+<span class="w">       </span><span class="n">s</span><span class="p">.</span><span class="nb">serial</span><span class="o">#</span><span class="p">,</span>
+<span class="w">       </span><span class="n">t</span><span class="p">.</span><span class="n">used_ublk</span><span class="p">,</span>
+<span class="w">       </span><span class="n">t</span><span class="p">.</span><span class="n">used_urec</span><span class="p">,</span>
+<span class="w">       </span><span class="n">rs</span><span class="p">.</span><span class="n">segment_name</span><span class="p">,</span>
+<span class="w">       </span><span class="n">r</span><span class="p">.</span><span class="n">rssize</span><span class="p">,</span>
+<span class="w">       </span><span class="n">r</span><span class="p">.</span><span class="n">STATUS</span>
+<span class="k">FROM</span><span class="w">   </span><span class="n">v$transaction</span><span class="w"> </span><span class="n">t</span><span class="p">,</span>
+<span class="w">       </span><span class="n">v$session</span><span class="w"> </span><span class="n">s</span><span class="p">,</span>
+<span class="w">       </span><span class="n">v$rollstat</span><span class="w"> </span><span class="n">r</span><span class="p">,</span>
+<span class="w">       </span><span class="n">dba_rollback_segs</span><span class="w"> </span><span class="n">rs</span>
+<span class="k">WHERE</span><span class="w">  </span><span class="n">s</span><span class="p">.</span><span class="n">saddr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">ses_addr</span>
+<span class="k">AND</span><span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">xidusn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">usn</span>
+<span class="k">AND</span><span class="w">    </span><span class="n">rs</span><span class="p">.</span><span class="n">segment_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">xidusn</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">used_ublk</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
 </code></pre></div>
-
 
 <p>Voilà, ça sera tout pour aujourd'hui</p>
             </div>
@@ -308,14 +297,14 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="https://foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
-        <li><a href="https://foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">Installation Oracle 10G en mode spéléo</a></li>
-        <li><a href="https://foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/">Importer un dump Oracle sans l'exporter physiquement avant</a></li>
-        <li><a href="https://foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/">SQL Full Table Scan vs Index - The Usual Suspects</a></li>
-        <li><a href="https://foxmask.org/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/">Oracle Migrer un schéma ISO en UTF8</a></li>
-        <li><a href="https://foxmask.org/post/2013/03/07/oracle-et-opatch/">Oracle et Opatch</a></li>
-        <li><a href="https://foxmask.org/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/">Oracle Sauvegarder avec Impdp / Expdp et le Parfile</a></li>
-        <li><a href="https://foxmask.org/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/">Oracle Trouver les tablespaces utilisés par un schéma</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/10/17/centos-oracle-could-not-openread-fileetcpkirpm-gpgrpm-gpg-key-oracle/">CentOs Oracle Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/10/09/installation-oracle-10g-gui/">Installation Oracle 10G en mode spéléo</a></li>
+        <li><a href="https://www.foxmask.org/post/2014/07/02/importer-un-dump-oracle-sans-lexporter-physiquement-avant/">Importer un dump Oracle sans l'exporter physiquement avant</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/11/15/sql-full-table-scan-vs-index/">SQL Full Table Scan vs Index - The Usual Suspects</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/03/14/oracle-migrer-un-schema-iso-en-utf8/">Oracle Migrer un schéma ISO en UTF8</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/03/07/oracle-et-opatch/">Oracle et Opatch</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/02/28/oracle-sauvegarder-avec-impdp-expdp-et-le-parfile/">Oracle Sauvegarder avec Impdp / Expdp et le Parfile</a></li>
+        <li><a href="https://www.foxmask.org/post/2013/02/14/oracle-trouver-les-tablespaces-utilises-par-un-schema/">Oracle Trouver les tablespaces utilisés par un schéma</a></li>
     </ul>
 </section>
         </article>
@@ -327,74 +316,6 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
 <!-- Sidebar -->
 <section class="well well-sm">
   <ul class="list-group list-group-flush">
-
-<!-- Sidebar/Tag Cloud -->
-<li class="list-group-item">
-  <a href="https://foxmask.org/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-  <ul class="list-group list-inline tagcloud" id="tags">
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/ansible.html">ansible</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/apachemysqlphp.html">ApacheMySqlPHP</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/autobahn.html">autobahn</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/crossbar.html">crossbar</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/debian.html">debian</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/django.html">django</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/evernote.html">Evernote</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/fabric.html">Fabric</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/havefnubb.html">HaveFnuBB</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/jelix.html">Jelix</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/korea.html">Korea</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/linux.html">linux</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/oracle.html">oracle</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/pelican.html">pelican</a>
-    </li>
-    <li class="list-group-item tag-3">
-      <a href="https://foxmask.org/tag/pycharm.html">PyCharm</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/python.html">python</a>
-    </li>
-    <li class="list-group-item tag-2">
-      <a href="https://foxmask.org/tag/pythonerie.html">pythonerie</a>
-    </li>
-    <li class="list-group-item tag-1">
-      <a href="https://foxmask.org/tag/triggerhappy.html">TriggerHappy</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wallabag.html">wallabag</a>
-    </li>
-    <li class="list-group-item tag-4">
-      <a href="https://foxmask.org/tag/wampws.html">wampws</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Tag Cloud -->
 
 <!-- Sidebar/Links -->
 <li class="list-group-item">
@@ -439,7 +360,7 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2021 FoxMaSk
+         <div class="col-xs-10">&copy; 2023 FoxMaSk
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>Unless otherwise stated, all articles are published under the <a href="http://www.wtfpl.net/about/">WTFPL</a> license.</small></p>
@@ -448,16 +369,16 @@ permettant d'identifier les locks en cours sur un schema oracle :</p>
       </div>
    </div>
 </footer>
-<script src="https://foxmask.org/theme/js/jquery.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/jquery.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://foxmask.org/theme/js/bootstrap.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="https://foxmask.org/theme/js/respond.min.js"></script>
+<script src="https://www.foxmask.org/theme/js/respond.min.js"></script>
 
 
-    <script src="https://foxmask.org/theme/js/bodypadding.js"></script>
+    <script src="https://www.foxmask.org/theme/js/bodypadding.js"></script>
 
 
 </body>
