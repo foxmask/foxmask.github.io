@@ -2974,12 +2974,12 @@ Du coup j'ai dû m'orienter vers &lt;code&gt;apply_async&lt;/code&gt; vs &lt;cod
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;password&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;secure&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;le_mot_de_passe_crypte&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;Tags&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;ici je ne vous ai mis que la tâche &lt;code&gt;deploy&lt;/code&gt; chargée de s'occuper de l'installation de vos sources sur pypi sous la forme d'une archive, en respectant le nommage défini dans votre &lt;code&gt;setup.py&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="creation de l'archive" src="/static/2016/03/django_th_uploaded_on_pypi_0.png"&gt;&lt;/p&gt;
-&lt;p&gt;2) sur Travis-CI, détection de l'application d'un tag sur le projet, via le déclencheur &lt;code&gt;on: tags: true&lt;/code&gt;, et enchaînement de la tâche &lt;code&gt;deploy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;2) sur Travis-CI, détection de l'application d'un tag sur le projet, via le déclencheur &lt;code&gt;on: Tags: true&lt;/code&gt;, et enchaînement de la tâche &lt;code&gt;deploy&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img alt="deployment sur pypi" src="/static/2016/03/django_th_uploaded_on_pypi.png"&gt;&lt;/p&gt;
 &lt;p&gt;C'est tout QQ et tout simple comme on aime et, évidemment très efficace !&lt;/p&gt;</content><category term="Techno"></category><category term="pypi"></category><category term="travisci"></category><category term="github"></category></entry><entry><title>PyCharm running Flake8</title><link href="https://www.foxmask.org/post/2016/02/17/pycharm-running-flake8/" rel="alternate"></link><published>2016-02-17T19:00:00+01:00</published><updated>2016-02-17T19:00:00+01:00</updated><author><name>foxmask</name></author><id>tag:www.foxmask.org,2016-02-17:/post/2016/02/17/pycharm-running-flake8/</id><summary type="html">&lt;h2&gt;The Ugly&lt;/h2&gt;
 &lt;p&gt;As I like clean things, I like when python tells me that I made ugly things to be able to fix them.&lt;/p&gt;

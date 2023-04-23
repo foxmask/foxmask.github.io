@@ -72,6 +72,9 @@ Le Free de la Passion            </a>
                         <li >
                             <a href="https://www.foxmask.org/category/korea.html">Korea</a>
                         </li>
+                        <li >
+                            <a href="https://www.foxmask.org/category/link.html">Link</a>
+                        </li>
                         <li class="active">
                             <a href="https://www.foxmask.org/category/techno.html">Techno</a>
                         </li>
@@ -136,16 +139,22 @@ Le Free de la Passion            </a>
 <span class="w">  </span><span class="n">password</span><span class="o">:</span>
 <span class="w">    </span><span class="n">secure</span><span class="o">:</span><span class="w"> </span><span class="n">le_mot_de_passe_crypte</span>
 <span class="w">  </span><span class="n">on</span><span class="o">:</span>
-<span class="w">    </span><span class="n">tags</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="n">Tags</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
 </code></pre></div>
 
 <p>ici je ne vous ai mis que la tâche <code>deploy</code> chargée de s'occuper de l'installation de vos sources sur pypi sous la forme d'une archive, en respectant le nommage défini dans votre <code>setup.py</code></p>
 <p><img alt="creation de l'archive" src="/static/2016/03/django_th_uploaded_on_pypi_0.png"></p>
-<p>2) sur Travis-CI, détection de l'application d'un tag sur le projet, via le déclencheur <code>on: tags: true</code>, et enchaînement de la tâche <code>deploy</code></p>
+<p>2) sur Travis-CI, détection de l'application d'un tag sur le projet, via le déclencheur <code>on: Tags: true</code>, et enchaînement de la tâche <code>deploy</code></p>
 <p><img alt="deployment sur pypi" src="/static/2016/03/django_th_uploaded_on_pypi.png"></p>
 <p>C'est tout QQ et tout simple comme on aime et, évidemment très efficace !</p>
             </div>
             <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="https://www.foxmask.org/post/2022/02/28/gitlab-cicd-and-gitlab-pypi-repository-medium/">Gitlab-CI/CD and GitLab PyPi Repository - medium</a></li>
+    </ul>
+</section>
         </article>
     </section>
 
