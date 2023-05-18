@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Techno</title><link href="https://www.foxmask.org/" rel="alternate"></link><link href="https://www.foxmask.org/feeds/techno.atom.xml" rel="self"></link><id>https://www.foxmask.org/</id><updated>2023-01-22T00:00:00+01:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>SFR L'enfer sur la planete FIBRE</title><link href="https://www.foxmask.org/post/2023/01/22/sfr-enfer-planete-fibre/" rel="alternate"></link><published>2023-01-22T00:00:00+01:00</published><updated>2023-01-22T00:00:00+01:00</updated><author><name>FoxMaSk</name></author><id>tag:www.foxmask.org,2023-01-22:/post/2023/01/22/sfr-enfer-planete-fibre/</id><summary type="html">&lt;h1&gt;SFR  L'enfer sur la planete FIBRE&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - Techno</title><link href="https://www.foxmask.org/" rel="alternate"></link><link href="https://www.foxmask.org/feeds/techno.atom.xml" rel="self"></link><id>https://www.foxmask.org/</id><updated>2023-05-18T17:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Python ChatGPT, CCBV, Metaclasses</title><link href="https://www.foxmask.org/post/2023/05/18/pythno-chatgpt-ccbv-metaclasses/" rel="alternate"></link><published>2023-05-18T17:00:00+02:00</published><updated>2023-05-18T17:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:www.foxmask.org,2023-05-18:/post/2023/05/18/pythno-chatgpt-ccbv-metaclasses/</id><summary type="html">&lt;h1&gt;Python et ChatGPT : attention !&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ChatGPT: Your Personal Python Coding Mentor&lt;/p&gt;
+&lt;p&gt;Beware of Incorrect and Irrelevant Information&lt;a href="https://realpython.com/chatgpt-coding-mentor-python/#beware-of-incorrect-and-irrelevant-information" title="Permanent link"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now that you’ve signed up for ChatGPT, you probably want to give it a spin! But before you hit the throttle, it’s important to know what kinds of issues you might run …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h1&gt;Python et ChatGPT : attention !&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ChatGPT: Your Personal Python Coding Mentor&lt;/p&gt;
+&lt;p&gt;Beware of Incorrect and Irrelevant Information&lt;a href="https://realpython.com/chatgpt-coding-mentor-python/#beware-of-incorrect-and-irrelevant-information" title="Permanent link"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now that you’ve signed up for ChatGPT, you probably want to give it a spin! But before you hit the throttle, it’s important to know what kinds of issues you might run into. While large language models offer several new possibilities for enhancing your studies, you need to remember the potentially negative effects of using ChatGPT as your coding mentor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Overreliance:&lt;/strong&gt; Leaning too heavily on ChatGPT for answers can hinder your own learning. You build brain paths by thinking, struggling, checking your understanding, and memorizing information.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accuracy:&lt;/strong&gt; ChatGPT’s responses may often be inaccurate or irrelevant. You need to fact-check all of its answers! Otherwise, you might learn wrong concepts and bad practices.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;https://realpython.com/chatgpt-coding-mentor-python/&lt;/p&gt;
+&lt;p&gt;Un petit passage sur le &lt;a href="https://www.afpy.org/discord"&gt;discord de l'afpy&lt;/a&gt; pour demander un coup de main (sans en être gêné) devrait largement vous aider  &lt;/p&gt;
+&lt;h1&gt;Les Metaclasses&lt;/h1&gt;
+&lt;p&gt;La &lt;a href="https://docs.python.org/3/reference/datamodel.html#metaclasses"&gt;doc python&lt;/a&gt; etant un poil légère sur la question, chez &lt;a href="https://realpython.com/python-metaclasses/"&gt;RealPython&lt;/a&gt;, on nous explique la magie derrière les Metaclasses utilisées par Django et SQLAlchemy. La meme notion abordée chez &lt;a href="https://zestedesavoir.com/tutoriels/954/notions-de-python-avancees/4-classes/2-metaclasses/"&gt;Zest de Savoir&lt;/a&gt; pour les francophones.&lt;/p&gt;
+&lt;h1&gt;CCBV.co.uk et DRF.co&lt;/h1&gt;
+&lt;p&gt;à toutes finzutiles &lt;/p&gt;
+&lt;p&gt;1 - Quand on veut creuser les &lt;code&gt;ClassBasedView&lt;/code&gt;  en allant directement à l'essentiel et decouvrir qui herite de qui et quoi, où chopper tel parms de l'url, ou comment paginer ou  passer un self.request.user dans une ListView.&lt;/p&gt;
+&lt;p&gt;2 - Egalement, on est souvent devant les questions du genre 
+- mais où je suis dans le workflow des methodes des CBV ?
+- quand puis je utiliser &lt;code&gt;get_context_data&lt;/code&gt; plutot que &lt;code&gt;get_queryset&lt;/code&gt; ou quand me servir des 2 ?&lt;/p&gt;
+&lt;p&gt;Le kiff, vous verrez, quand on commence à bien saisir la chose, c'est de se faire ses propres Mixins pour reduire le code à peau de chagrin en evitant de retrouver 'n' fois le meme code dans 'n' xxxViews differentes.&lt;/p&gt;
+&lt;p&gt;Django fourni une quantité astronomique de &lt;code&gt;Mixins&lt;/code&gt; évidement, comme le très très connu &lt;code&gt;LoginRequiredMixin&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Qui permet avec ce bout de code &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Home&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;LoginRequiredMixin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MySoftwareVersionMixin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CreateView&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;de permettre de créer un object si et seulement si, l'utilisateur est connecté.&lt;/p&gt;
+&lt;p&gt;Vous verrez dans les regles d'utilisations des mixins, qu'il faut toujours les mettre avant la View. 
+Le mixin &lt;code&gt;MySoftwareVersionMixin&lt;/code&gt; pourrait servir à peupler le context d'une page (dans (&lt;code&gt;get_context_data&lt;/code&gt; de la View) pour afficher la version de son soft dans un pied de page for example&lt;/p&gt;
+&lt;p&gt;Avec https://ccbv.co.uk/ et son petit frere pour Django Rest Framework https://www.cdrf.co/ , vous voilà pourvus&lt;/p&gt;
+&lt;h1&gt;Django 5 - Resultat des elections du conseil de pilotage&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.djangoproject.com/weblog/2023/may/16/django-5x-steering-council-election-results/"&gt;En un coup d'oeil&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Django release de secu&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.djangoproject.com/weblog/2023/may/03/security-releases/"&gt;pour les versions 4.2.1, 4.1.9, 3.2.19 (la version LTS)&lt;/a&gt; &lt;/p&gt;
+&lt;h1&gt;Pastèque : Le Pastebin de de l'afpy&lt;/h1&gt;
+&lt;p&gt;Lachez les autres site de "copier/coller de code" pour celui de l'afpy :D&lt;/p&gt;
+&lt;p&gt;https://p.afpy.org/&lt;/p&gt;
+&lt;h1&gt;HTTPX : requests en meuh !&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/encode/httpx/releases/tag/0.24.1"&gt;Version 0.24.1&lt;/a&gt; is Sortie !&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.python-httpx.org/"&gt;HTTPX&lt;/a&gt; continue son bonhomme de chemin https://github.com/encode/httpx/releases !
+Les releases sortent avec dichotomie&lt;/p&gt;</content><category term="Techno"></category><category term="chatgpt"></category><category term="python"></category><category term="cbv"></category><category term="metaclasses"></category><category term="django"></category></entry><entry><title>SFR L'enfer sur la planete FIBRE</title><link href="https://www.foxmask.org/post/2023/01/22/sfr-enfer-planete-fibre/" rel="alternate"></link><published>2023-01-22T00:00:00+01:00</published><updated>2023-01-22T00:00:00+01:00</updated><author><name>FoxMaSk</name></author><id>tag:www.foxmask.org,2023-01-22:/post/2023/01/22/sfr-enfer-planete-fibre/</id><summary type="html">&lt;h1&gt;SFR  L'enfer sur la planete FIBRE&lt;/h1&gt;
 &lt;p&gt;je m'en vais vous compter un florilège de défaillances chez tous les operateurs et à tous les niveaux&lt;/p&gt;
 &lt;h2&gt;Intro :&lt;/h2&gt;
 &lt;p&gt;je ne souscrit aucun abo avec engagement... ca me laisse la liberté de partir dès que l'operateur se fout de nous&lt;/p&gt;
@@ -9905,241 +9950,4 @@ drwxr-xr-x&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&g
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;elle convient bien mieux et fab est content avec son pitit message
-"done" final qui me sied tout autant. :)&lt;/p&gt;</content><category term="Techno"></category><category term="fabric"></category><category term="python"></category></entry><entry><title>Django FormWizard Dynamique, encore plus loin</title><link href="https://www.foxmask.org/post/2013/10/16/django-formwizard-dynamique-encore-plus-loin/" rel="alternate"></link><published>2013-10-16T16:05:00+02:00</published><updated>2013-10-16T16:05:00+02:00</updated><author><name>foxmask</name></author><id>tag:www.foxmask.org,2013-10-16:/post/2013/10/16/django-formwizard-dynamique-encore-plus-loin/</id><summary type="html">&lt;h2&gt;Le FormWizard encore plus loin&lt;/h2&gt;
-&lt;p&gt;&lt;a href="/post/2013/10/07/django-formwizard-dynamique/" title="Django FormWizard Dynamique"&gt;Dans le billet
-précédent&lt;/a&gt;
-traitant en détail de comment afficher un formulaire en fonction d'un
-choix fait dans un formulaire précédent, j'ai poussé le bouchon encore
-plus loin.&lt;/p&gt;
-&lt;p&gt;En effet, dans mon workflow des 5 formulaires, les formulaires 1 et 3
-listent les services disponibles …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Le FormWizard encore plus loin&lt;/h2&gt;
-&lt;p&gt;&lt;a href="/post/2013/10/07/django-formwizard-dynamique/" title="Django FormWizard Dynamique"&gt;Dans le billet
-précédent&lt;/a&gt;
-traitant en détail de comment afficher un formulaire en fonction d'un
-choix fait dans un formulaire précédent, j'ai poussé le bouchon encore
-plus loin.&lt;/p&gt;
-&lt;p&gt;En effet, dans mon workflow des 5 formulaires, les formulaires 1 et 3
-listent les services disponibles. Or bien évidement, quand j'en ai pris
-un sur le formulaire 1, inutile de le réafficher dans ma liste sur le
-formulaire 3.&lt;/p&gt;
-&lt;p&gt;Ainsi donc le code suivant qui fonctionne, ne convient plus à ce
-"nouveau" prérequis :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_form&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;        change the form instance dynamically from the data we entered&lt;/span&gt;
-&lt;span class="sd"&gt;        at the previous step&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;
-
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# change the form&lt;/span&gt;
-        &lt;span class="n"&gt;prev_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prev_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Service&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="n"&gt;class_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;th_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.forms&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ProviderForm&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;class_for_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;class_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;form_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;form_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# change the form&lt;/span&gt;
-        &lt;span class="n"&gt;prev_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prev_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;consummer&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Service&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="n"&gt;class_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;th_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.forms&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ConsummerForm&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;class_for_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;class_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;form_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;form_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# get the default form&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;UserServiceWizard&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_form&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;step&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;form&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Il faut intervenir lors de l'affichage du formulaire 3, correspondant au
-"step2", ce qui donne :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_form&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;        change the form instance dynamically from the data we entered&lt;/span&gt;
-&lt;span class="sd"&gt;        at the previous step&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;
-
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# change the form&lt;/span&gt;
-        &lt;span class="n"&gt;prev_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prev_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Service&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="n"&gt;class_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;th_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.forms&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ProviderForm&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;class_for_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;class_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;form_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;form_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-   &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
-        &lt;span class="c1"&gt;# je veux recuperer les données du premier formulaire &lt;/span&gt;
-        &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="c1"&gt;# initialisation du form avec la liste deroulante sans la valeur saisie au step 0&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ConsummerForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;initial&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]})&lt;/span&gt;
-    &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# change the form&lt;/span&gt;
-        &lt;span class="n"&gt;prev_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prev_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;consummer&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Service&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="n"&gt;class_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;th_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.forms&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ConsummerForm&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;class_for_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;class_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;form_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;form_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# get the default form&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;UserServiceWizard&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_form&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;step&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;form&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;et dans mon &lt;strong&gt;forms.py&lt;/strong&gt; ca donne :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django_th.models&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ServicesActivated&lt;/span&gt;
-&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.utils.translation&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ugettext&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ServiceChoiceForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Form&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;activated_services&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;        get the activated services added from the administrator&lt;/span&gt;
-&lt;span class="sd"&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-        &lt;span class="n"&gt;services&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ServicesActivated&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;objects&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-        &lt;span class="n"&gt;choices&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-        &lt;span class="n"&gt;datas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt;
-
-        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;provider&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;services&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;services&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exclude&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;name__exact&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;class_name&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-            &lt;span class="n"&gt;datas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;class_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;class_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rsplit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Service&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-            &lt;span class="n"&gt;choices&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;datas&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-
-        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;choices&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ProviderForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ServiceChoiceForm&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-
-    &lt;span class="n"&gt;provider&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ChoiceField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ProviderForm&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fields&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choices&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;activated_services&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ConsummerForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ServiceChoiceForm&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-
-    &lt;span class="n"&gt;consummer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ChoiceField&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-
-    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-        &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ConsummerForm&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="c1"&gt;# get the list of service without the one selected in&lt;/span&gt;
-        &lt;span class="c1"&gt;# the provider form&lt;/span&gt;
-        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fields&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;consummer&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;choices&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;activated_services&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-            &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;initial&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ServicesDescriptionForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Form&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-
-    &lt;span class="n"&gt;description&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CharField&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-        &lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TextInput&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attrs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;placeholder&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-                                      &lt;span class="n"&gt;_&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;A description for your new service&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)})&lt;/span&gt;
-    &lt;span class="p"&gt;)&lt;/span&gt;
-
-
-&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;DummyForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;forms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Form&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;pass&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2&gt;... et le Fail !&lt;/h2&gt;
-&lt;p&gt;Ainsi au formulaire 1 (step 0) j'utilise &lt;strong&gt;ProviderForm&lt;/strong&gt; qui récupère
-tous les services activés.&lt;br&gt;
-Au formulaire 3 (step 2) j'utilise &lt;strong&gt;ConsummerForm&lt;/strong&gt; qui récupère tous
-les services en excluant celui saisi dans le formulaire 1&lt;/p&gt;
-&lt;p&gt;C'est le but du bout de code suivante de ma &lt;strong&gt;views.py&lt;/strong&gt; :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;   &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
-        &lt;span class="c1"&gt;# je veux recuperer les données du premier formulaire &lt;/span&gt;
-        &lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="c1"&gt;# initialisation du form avec la liste deroulante &amp;quot;moins&amp;quot; la valeur saisi au step 0&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ConsummerForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;initial&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Tout ça est super et ... ne marche pas !&lt;/p&gt;
-&lt;p&gt;Nan nan nan ca marche pas !&lt;/p&gt;
-&lt;p&gt;Ca fait une boucle infinie ... A chaque submit du formulaire 3 je
-retourne dessus quoique je fasse...&lt;/p&gt;
-&lt;p&gt;Pourtant c'est tout beau tout propre hein ?&lt;/p&gt;
-&lt;p&gt;Après avoir bien creusé 2jours ; enquiquiné StackOverflow (pour rien
-puisque pas eu de réponse :) et #django-fr @ freenode (merci magopian
-pour PDB :) j'ai entrevu la lumière que je vous montre à présent :&lt;/p&gt;
-&lt;h2&gt;And ze Winner iz&lt;/h2&gt;
-&lt;p&gt;La solution est dans la views.py... pour changer ;)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;   &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
-        &lt;span class="n"&gt;step0_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ConsummerForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-            &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;initial&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;step0_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]})&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;tadaaaa !!!&lt;/p&gt;
-&lt;p&gt;Qu'est-ce qui change ?&lt;/p&gt;
-&lt;p&gt;avant :&lt;/p&gt;
-&lt;p&gt;"data" contenait les données saisies du formulaire 0. Donc en validant
-le formulaire, django pensait que j'avais à faire à ProviderForm (pour
-schématiser) et me sortait en background une erreur "champ obligatoire"
-sur le field provider au lieu consummer. (un vrai sac de noeuds à
-débuger)&lt;/p&gt;
-&lt;p&gt;après :&lt;/p&gt;
-&lt;p&gt;je récupère les données du formulaire 0, non pas dans ma variable
-"data", mais dans une autre variable "step0_data", et évite de toucher
-à "data" passée à get_form() pour ensuite les refiler proprement à mon
-form "ConsummerForm()" qui exclue les données non souhaitées et le tour
-est joué.&lt;/p&gt;
-&lt;p&gt;voici la méthode complète de &lt;strong&gt;get_form&lt;/strong&gt; dans &lt;strong&gt;views.py&lt;/strong&gt; :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_form&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-&lt;span class="sd"&gt;        change the form instance dynamically from the data we entered&lt;/span&gt;
-&lt;span class="sd"&gt;        at the previous step&lt;/span&gt;
-&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;steps&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;current&lt;/span&gt;
-
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# change the form&lt;/span&gt;
-        &lt;span class="n"&gt;prev_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prev_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Service&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="n"&gt;class_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;th_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.forms&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ProviderForm&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;class_for_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;class_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;form_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;form_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-   &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
-        &lt;span class="n"&gt;step0_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ConsummerForm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
-            &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;initial&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;step0_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;provider&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]})&lt;/span&gt;
-    &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;step&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# change the form&lt;/span&gt;
-        &lt;span class="n"&gt;prev_data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_cleaned_data_for_step&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;prev_data&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;consummer&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Service&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-        &lt;span class="n"&gt;class_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;th_&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.forms&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_name&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;service_name&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ConsummerForm&amp;#39;&lt;/span&gt;
-        &lt;span class="n"&gt;form_class&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;class_for_name&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;class_name&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;form_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;form_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-        &lt;span class="c1"&gt;# get the default form&lt;/span&gt;
-        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;UserServiceWizard&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_form&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;step&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;files&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;form&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;et cette fois ci tout glisse jusqu'au bout !&lt;/p&gt;
-&lt;h2&gt;Cheminements menant à la solution&lt;/h2&gt;
-&lt;p&gt;Ce qui m'a mis la puce à l'oreille c'est en comparant le code des autres
-"step" (1 et 3) avec le step2 :&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;        &lt;span class="n"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;form_class&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;en effet ici j'appelle la class "form_class" d'un formulaire lambda
-tout en lui passant les données de la variable "data".&lt;/p&gt;
-&lt;p&gt;la différence avec le step2 c'est qu'en plus il me fallait fournir une
-valeur initiale via &lt;strong&gt;initial={}&lt;/strong&gt;. J'avais bien capté ce qu'il fallait
-faire pour passer une valeur initiale mais m'étais troué en passant au
-travers du passage de data au form &lt;strong&gt;ConsummerForm()&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Vala qui clot un nouveau chapitre sur mes pérégrinations FormWizard ;)&lt;/p&gt;</content><category term="Techno"></category><category term="Django"></category><category term="python"></category><category term="TriggerHappy"></category></entry></feed>
+"done" final qui me sied tout autant. :)&lt;/p&gt;</content><category term="Techno"></category><category term="fabric"></category><category term="python"></category></entry></feed>

@@ -88,6 +88,39 @@ Le Free de la Passion            </a>
     <div class="row">
         <div class="col-sm-9">
             <article>
+                <h2><a href="https://www.foxmask.org/post/2013/01/10/oracle-gestion-des-tablespace/">Oracle Gestion des Tablespaces</a></h2>
+                    <div class="well well-sm">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-01-10T10:00:00+01:00"> jeu. 10 janvier 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://www.foxmask.org/tag/oracle.html">oracle</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                <div class="summary"><p>Quand on n'a pas demandé à Oracle de gérer l'espace disque avec l'option
+auto extend sur ses tablespaces, il arrive (souvant) qu'on se mange des
+erreurs parce que le tablespace est full.</p>
+<p>Donc ;</p>
+<p>Pour lister ses tablespace on tapera :</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">file_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dba_data_files</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">tablespace_name</span><span class="o">=</span><span class="s1">&#39;MONBEAUTBSPC&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+<p>affichera</p>
+<div class="highlight"><pre><span></span><code><span class="n">FILE_NAME</span>
+<span class="c1">--------------------------------------------------------------------------------</span>
+<span class="o">/</span><span class="n">u02</span><span class="o">/</span><span class="n">oradata …</span></code></pre></div>
+                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2013/01/10/oracle-gestion-des-tablespace/">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="https://www.foxmask.org/post/2013/01/03/oracle-exporter-une-proc/">Oracle Exporter une Proc</a></h2>
                     <div class="well well-sm">
 <footer class="post-info">
@@ -342,32 +375,6 @@ active
 page</a>,
 où au …</p>
                     <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/10/13/django-template-tag-boussole-template/">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="https://www.foxmask.org/post/2012/09/30/django-shortener-clap-une-premiere/">Django Shortener clap une première</a></h2>
-                    <div class="well well-sm">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2012-09-30T21:32:00+02:00"> dim. 30 septembre 2012</time>
-    </span>
-
-
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="https://www.foxmask.org/tag/django.html">Django</a>
-    
-</footer><!-- /.post-info -->                    </div>
-                <div class="summary"><p>Ce soir, me suis fendu d'un mini module django permettant de gérer son
-propre service de raccourcisseurs d'URL tel bitly et ses amis.</p>
-<p><strong>Premier effet kisskool : un service "con comme la lune"</strong></p>
-<p>On dépose une longue URL, le module vous en retourne une version courte.</p>
-<p>2 petits paramètres sont nécessaire …</p>
-                    <a class="btn btn-default btn-xs" href="https://www.foxmask.org/post/2012/09/30/django-shortener-clap-une-premiere/">more ...</a>
                 </div>
             </article>
             <hr/>

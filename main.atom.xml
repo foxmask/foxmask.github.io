@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://www.foxmask.org/" rel="alternate"></link><link href="https://www.foxmask.org/main.atom.xml" rel="self"></link><id>https://www.foxmask.org/</id><updated>2023-01-22T00:00:00+01:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>SFR L'enfer sur la planete FIBRE</title><link href="https://www.foxmask.org/post/2023/01/22/sfr-enfer-planete-fibre/" rel="alternate"></link><published>2023-01-22T00:00:00+01:00</published><updated>2023-01-22T00:00:00+01:00</updated><author><name>FoxMaSk</name></author><id>tag:www.foxmask.org,2023-01-22:/post/2023/01/22/sfr-enfer-planete-fibre/</id><summary type="html">&lt;h1&gt;SFR  L'enfer sur la planete FIBRE&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion</title><link href="https://www.foxmask.org/" rel="alternate"></link><link href="https://www.foxmask.org/main.atom.xml" rel="self"></link><id>https://www.foxmask.org/</id><updated>2023-05-18T17:00:00+02:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>Python ChatGPT, CCBV, Metaclasses</title><link href="https://www.foxmask.org/post/2023/05/18/pythno-chatgpt-ccbv-metaclasses/" rel="alternate"></link><published>2023-05-18T17:00:00+02:00</published><updated>2023-05-18T17:00:00+02:00</updated><author><name>foxmask</name></author><id>tag:www.foxmask.org,2023-05-18:/post/2023/05/18/pythno-chatgpt-ccbv-metaclasses/</id><summary type="html">&lt;h1&gt;Python et ChatGPT : attention !&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ChatGPT: Your Personal Python Coding Mentor&lt;/p&gt;
+&lt;p&gt;Beware of Incorrect and Irrelevant Information&lt;a href="https://realpython.com/chatgpt-coding-mentor-python/#beware-of-incorrect-and-irrelevant-information" title="Permanent link"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now that you’ve signed up for ChatGPT, you probably want to give it a spin! But before you hit the throttle, it’s important to know what kinds of issues you might run …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h1&gt;Python et ChatGPT : attention !&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ChatGPT: Your Personal Python Coding Mentor&lt;/p&gt;
+&lt;p&gt;Beware of Incorrect and Irrelevant Information&lt;a href="https://realpython.com/chatgpt-coding-mentor-python/#beware-of-incorrect-and-irrelevant-information" title="Permanent link"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now that you’ve signed up for ChatGPT, you probably want to give it a spin! But before you hit the throttle, it’s important to know what kinds of issues you might run into. While large language models offer several new possibilities for enhancing your studies, you need to remember the potentially negative effects of using ChatGPT as your coding mentor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Overreliance:&lt;/strong&gt; Leaning too heavily on ChatGPT for answers can hinder your own learning. You build brain paths by thinking, struggling, checking your understanding, and memorizing information.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accuracy:&lt;/strong&gt; ChatGPT’s responses may often be inaccurate or irrelevant. You need to fact-check all of its answers! Otherwise, you might learn wrong concepts and bad practices.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;https://realpython.com/chatgpt-coding-mentor-python/&lt;/p&gt;
+&lt;p&gt;Un petit passage sur le &lt;a href="https://www.afpy.org/discord"&gt;discord de l'afpy&lt;/a&gt; pour demander un coup de main (sans en être gêné) devrait largement vous aider  &lt;/p&gt;
+&lt;h1&gt;Les Metaclasses&lt;/h1&gt;
+&lt;p&gt;La &lt;a href="https://docs.python.org/3/reference/datamodel.html#metaclasses"&gt;doc python&lt;/a&gt; etant un poil légère sur la question, chez &lt;a href="https://realpython.com/python-metaclasses/"&gt;RealPython&lt;/a&gt;, on nous explique la magie derrière les Metaclasses utilisées par Django et SQLAlchemy. La meme notion abordée chez &lt;a href="https://zestedesavoir.com/tutoriels/954/notions-de-python-avancees/4-classes/2-metaclasses/"&gt;Zest de Savoir&lt;/a&gt; pour les francophones.&lt;/p&gt;
+&lt;h1&gt;CCBV.co.uk et DRF.co&lt;/h1&gt;
+&lt;p&gt;à toutes finzutiles &lt;/p&gt;
+&lt;p&gt;1 - Quand on veut creuser les &lt;code&gt;ClassBasedView&lt;/code&gt;  en allant directement à l'essentiel et decouvrir qui herite de qui et quoi, où chopper tel parms de l'url, ou comment paginer ou  passer un self.request.user dans une ListView.&lt;/p&gt;
+&lt;p&gt;2 - Egalement, on est souvent devant les questions du genre 
+- mais où je suis dans le workflow des methodes des CBV ?
+- quand puis je utiliser &lt;code&gt;get_context_data&lt;/code&gt; plutot que &lt;code&gt;get_queryset&lt;/code&gt; ou quand me servir des 2 ?&lt;/p&gt;
+&lt;p&gt;Le kiff, vous verrez, quand on commence à bien saisir la chose, c'est de se faire ses propres Mixins pour reduire le code à peau de chagrin en evitant de retrouver 'n' fois le meme code dans 'n' xxxViews differentes.&lt;/p&gt;
+&lt;p&gt;Django fourni une quantité astronomique de &lt;code&gt;Mixins&lt;/code&gt; évidement, comme le très très connu &lt;code&gt;LoginRequiredMixin&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Qui permet avec ce bout de code &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Home&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;LoginRequiredMixin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;MySoftwareVersionMixin&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;CreateView&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+   &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;de permettre de créer un object si et seulement si, l'utilisateur est connecté.&lt;/p&gt;
+&lt;p&gt;Vous verrez dans les regles d'utilisations des mixins, qu'il faut toujours les mettre avant la View. 
+Le mixin &lt;code&gt;MySoftwareVersionMixin&lt;/code&gt; pourrait servir à peupler le context d'une page (dans (&lt;code&gt;get_context_data&lt;/code&gt; de la View) pour afficher la version de son soft dans un pied de page for example&lt;/p&gt;
+&lt;p&gt;Avec https://ccbv.co.uk/ et son petit frere pour Django Rest Framework https://www.cdrf.co/ , vous voilà pourvus&lt;/p&gt;
+&lt;h1&gt;Django 5 - Resultat des elections du conseil de pilotage&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.djangoproject.com/weblog/2023/may/16/django-5x-steering-council-election-results/"&gt;En un coup d'oeil&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Django release de secu&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.djangoproject.com/weblog/2023/may/03/security-releases/"&gt;pour les versions 4.2.1, 4.1.9, 3.2.19 (la version LTS)&lt;/a&gt; &lt;/p&gt;
+&lt;h1&gt;Pastèque : Le Pastebin de de l'afpy&lt;/h1&gt;
+&lt;p&gt;Lachez les autres site de "copier/coller de code" pour celui de l'afpy :D&lt;/p&gt;
+&lt;p&gt;https://p.afpy.org/&lt;/p&gt;
+&lt;h1&gt;HTTPX : requests en meuh !&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/encode/httpx/releases/tag/0.24.1"&gt;Version 0.24.1&lt;/a&gt; is Sortie !&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.python-httpx.org/"&gt;HTTPX&lt;/a&gt; continue son bonhomme de chemin https://github.com/encode/httpx/releases !
+Les releases sortent avec dichotomie&lt;/p&gt;</content><category term="Techno"></category><category term="chatgpt"></category><category term="python"></category><category term="cbv"></category><category term="metaclasses"></category><category term="django"></category></entry><entry><title>SFR L'enfer sur la planete FIBRE</title><link href="https://www.foxmask.org/post/2023/01/22/sfr-enfer-planete-fibre/" rel="alternate"></link><published>2023-01-22T00:00:00+01:00</published><updated>2023-01-22T00:00:00+01:00</updated><author><name>FoxMaSk</name></author><id>tag:www.foxmask.org,2023-01-22:/post/2023/01/22/sfr-enfer-planete-fibre/</id><summary type="html">&lt;h1&gt;SFR  L'enfer sur la planete FIBRE&lt;/h1&gt;
 &lt;p&gt;je m'en vais vous compter un florilège de défaillances chez tous les operateurs et à tous les niveaux&lt;/p&gt;
 &lt;h2&gt;Intro :&lt;/h2&gt;
 &lt;p&gt;je ne souscrit aucun abo avec engagement... ca me laisse la liberté de partir dès que l'operateur se fout de nous&lt;/p&gt;
@@ -1705,24 +1750,4 @@ but rather offers convenient access to search services provided by other
 independent organizations. CC has no control over the results that are
 returned. Do not assume that the results displayed in this search portal
 are under a CC license. You should always verify that the work is
-actually under a CC license by following the ...&lt;/p&gt;</content><category term="link"></category><category term="images"></category></entry><entry><title>‘Squid Game’ Becomes 1st Non-English TV Show to Earn Producers Guild Nomination - kbs</title><link href="https://www.foxmask.org/post/2022/01/28/squid-game-becomes-1st-non-english-tv-show-to-earn-producers-guild-nomination-kbs/" rel="alternate"></link><published>2022-01-28T09:16:46+00:00</published><updated>2022-01-28T09:16:46+00:00</updated><author><name>FoxMaSk</name></author><id>tag:www.foxmask.org,2022-01-28:/post/2022/01/28/squid-game-becomes-1st-non-english-tv-show-to-earn-producers-guild-nomination-kbs/</id><summary type="html">&lt;p&gt;&lt;img alt="http://worldimg.kbs.co.kr/src/images/news/202201/220128094233_80.jpg" src="http://worldimg.kbs.co.kr/src/images/news/202201/220128094233_80.jpg"&gt;&lt;/p&gt;
-&lt;h1&gt;‘Squid Game’ Becomes 1st Non-English TV Show to Earn Producers Guild Nomination - kbs&lt;/h1&gt;
-&lt;p&gt;&lt;a href="http://world.kbs.co.kr/service/news_view.htm?lang=e&amp;amp;Seq_Code=167289"&gt;‘Squid Game’ Becomes 1st Non-English TV Show to Earn Producers Guild Nomination - kbs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Photo : YONHAP News&lt;/p&gt;
-&lt;p&gt;\
-\
-The guild on Thursday announced the nominees for the 33rd Producers
-Guild Award. &amp;#34;Squid Game&amp;#34; was nominated for the Norman Felt …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="http://worldimg.kbs.co.kr/src/images/news/202201/220128094233_80.jpg" src="http://worldimg.kbs.co.kr/src/images/news/202201/220128094233_80.jpg"&gt;&lt;/p&gt;
-&lt;h1&gt;‘Squid Game’ Becomes 1st Non-English TV Show to Earn Producers Guild Nomination - kbs&lt;/h1&gt;
-&lt;p&gt;&lt;a href="http://world.kbs.co.kr/service/news_view.htm?lang=e&amp;amp;Seq_Code=167289"&gt;‘Squid Game’ Becomes 1st Non-English TV Show to Earn Producers Guild Nomination - kbs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Photo : YONHAP News&lt;/p&gt;
-&lt;p&gt;\
-\
-The guild on Thursday announced the nominees for the 33rd Producers
-Guild Award. &amp;#34;Squid Game&amp;#34; was nominated for the Norman Felt Award for
-outstanding producer of episodic television in the drama category,
-alongside \&amp;#34;The Morning Show,\&amp;#34; \&amp;#34;The Handmaid&amp;#39;s Tale,\&amp;#34; \&amp;#34;Yellowstone\&amp;#34;
-and \&amp;#34;Succession.\&amp;#34; \
-\
-Established in 1990, the Producers Guild Awards aim to honor the
-visionaries who pro...&lt;/p&gt;</content><category term="link"></category><category term="SquidGame"></category></entry></feed>
+actually under a CC license by following the ...&lt;/p&gt;</content><category term="link"></category><category term="images"></category></entry></feed>

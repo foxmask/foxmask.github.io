@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Le Free de la Passion - Techno</title><link>https://www.foxmask.org/</link><description>La passion de la liberté</description><lastBuildDate>Sun, 22 Jan 2023 00:00:00 +0100</lastBuildDate><item><title>SFR L'enfer sur la planete FIBRE</title><link>https://www.foxmask.org/post/2023/01/22/sfr-enfer-planete-fibre/</link><description>&lt;h1&gt;SFR  L'enfer sur la planete FIBRE&lt;/h1&gt;
+<rss version="2.0"><channel><title>Le Free de la Passion - Techno</title><link>https://www.foxmask.org/</link><description>La passion de la liberté</description><lastBuildDate>Thu, 18 May 2023 17:00:00 +0200</lastBuildDate><item><title>Python ChatGPT, CCBV, Metaclasses</title><link>https://www.foxmask.org/post/2023/05/18/pythno-chatgpt-ccbv-metaclasses/</link><description>&lt;h1&gt;Python et ChatGPT : attention !&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ChatGPT: Your Personal Python Coding Mentor&lt;/p&gt;
+&lt;p&gt;Beware of Incorrect and Irrelevant Information&lt;a href="https://realpython.com/chatgpt-coding-mentor-python/#beware-of-incorrect-and-irrelevant-information" title="Permanent link"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now that you’ve signed up for ChatGPT, you probably want to give it a spin! But before you hit the throttle, it’s important to know what kinds of issues you might run …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Thu, 18 May 2023 17:00:00 +0200</pubDate><guid isPermaLink="false">tag:www.foxmask.org,2023-05-18:/post/2023/05/18/pythno-chatgpt-ccbv-metaclasses/</guid><category>Techno</category><category>chatgpt</category><category>python</category><category>cbv</category><category>metaclasses</category><category>django</category></item><item><title>SFR L'enfer sur la planete FIBRE</title><link>https://www.foxmask.org/post/2023/01/22/sfr-enfer-planete-fibre/</link><description>&lt;h1&gt;SFR  L'enfer sur la planete FIBRE&lt;/h1&gt;
 &lt;p&gt;je m'en vais vous compter un florilège de défaillances chez tous les operateurs et à tous les niveaux&lt;/p&gt;
 &lt;h2&gt;Intro :&lt;/h2&gt;
 &lt;p&gt;je ne souscrit aucun abo avec engagement... ca me laisse la liberté de partir dès que l'operateur se fout de nous&lt;/p&gt;
@@ -506,11 +510,4 @@ lunettes dans la Loire*"&lt;/p&gt;
 avec des retours d'xp des plus couillons au moins balot ;)&lt;br&gt;
 Donc comme chaque nouveau sujet que je découvre je "partage" les
 aneries de débutant, histoire de bien faire marrer la grand majorité des
-pro du Python mais rassurer …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Thu, 24 Oct 2013 16:38:00 +0200</pubDate><guid isPermaLink="false">tag:www.foxmask.org,2013-10-24:/post/2013/10/24/fabric-importerror-no-module-named-main/</guid><category>Techno</category><category>fabric</category><category>python</category></item><item><title>Django FormWizard Dynamique, encore plus loin</title><link>https://www.foxmask.org/post/2013/10/16/django-formwizard-dynamique-encore-plus-loin/</link><description>&lt;h2&gt;Le FormWizard encore plus loin&lt;/h2&gt;
-&lt;p&gt;&lt;a href="/post/2013/10/07/django-formwizard-dynamique/" title="Django FormWizard Dynamique"&gt;Dans le billet
-précédent&lt;/a&gt;
-traitant en détail de comment afficher un formulaire en fonction d'un
-choix fait dans un formulaire précédent, j'ai poussé le bouchon encore
-plus loin.&lt;/p&gt;
-&lt;p&gt;En effet, dans mon workflow des 5 formulaires, les formulaires 1 et 3
-listent les services disponibles …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Wed, 16 Oct 2013 16:05:00 +0200</pubDate><guid isPermaLink="false">tag:www.foxmask.org,2013-10-16:/post/2013/10/16/django-formwizard-dynamique-encore-plus-loin/</guid><category>Techno</category><category>Django</category><category>python</category><category>TriggerHappy</category></item></channel></rss>
+pro du Python mais rassurer …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Thu, 24 Oct 2013 16:38:00 +0200</pubDate><guid isPermaLink="false">tag:www.foxmask.org,2013-10-24:/post/2013/10/24/fabric-importerror-no-module-named-main/</guid><category>Techno</category><category>fabric</category><category>python</category></item></channel></rss>
