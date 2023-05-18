@@ -13,7 +13,7 @@
 &lt;li&gt;&lt;strong&gt;Accuracy:&lt;/strong&gt; ChatGPT’s responses may often be inaccurate or irrelevant. You need to fact-check all of its answers! Otherwise, you might learn wrong concepts and bad practices.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;https://realpython.com/chatgpt-coding-mentor-python/&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://realpython.com/chatgpt-coding-mentor-python/"&gt;https://realpython.com/chatgpt-coding-mentor-python/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Un petit passage sur le &lt;a href="https://www.afpy.org/discord"&gt;discord de l'afpy&lt;/a&gt; pour demander un coup de main (sans en être gêné) devrait largement vous aider  &lt;/p&gt;
 &lt;h1&gt;Les Metaclasses&lt;/h1&gt;
 &lt;p&gt;La &lt;a href="https://docs.python.org/3/reference/datamodel.html#metaclasses"&gt;doc python&lt;/a&gt; etant un poil légère sur la question, chez &lt;a href="https://realpython.com/python-metaclasses/"&gt;RealPython&lt;/a&gt;, on nous explique la magie derrière les Metaclasses utilisées par Django et SQLAlchemy. La meme notion abordée chez &lt;a href="https://zestedesavoir.com/tutoriels/954/notions-de-python-avancees/4-classes/2-metaclasses/"&gt;Zest de Savoir&lt;/a&gt; pour les francophones.&lt;/p&gt;
@@ -33,14 +33,14 @@
 &lt;p&gt;de permettre de créer un object si et seulement si, l'utilisateur est connecté.&lt;/p&gt;
 &lt;p&gt;Vous verrez dans les regles d'utilisations des mixins, qu'il faut toujours les mettre avant la View. 
 Le mixin &lt;code&gt;MySoftwareVersionMixin&lt;/code&gt; pourrait servir à peupler le context d'une page (dans (&lt;code&gt;get_context_data&lt;/code&gt; de la View) pour afficher la version de son soft dans un pied de page for example&lt;/p&gt;
-&lt;p&gt;Avec https://ccbv.co.uk/ et son petit frere pour Django Rest Framework https://www.cdrf.co/ , vous voilà pourvus&lt;/p&gt;
+&lt;p&gt;Avec &lt;a href="https://ccbv.co.uk/"&gt;https://ccbv.co.uk/&lt;/a&gt; et son petit frere pour Django Rest Framework &lt;a href="https://www.cdrf.co/"&gt;https://www.cdrf.co/&lt;/a&gt; , vous voilà pourvus&lt;/p&gt;
 &lt;h1&gt;Django 5 - Resultat des elections du conseil de pilotage&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://www.djangoproject.com/weblog/2023/may/16/django-5x-steering-council-election-results/"&gt;En un coup d'oeil&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;Django release de secu&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://www.djangoproject.com/weblog/2023/may/03/security-releases/"&gt;pour les versions 4.2.1, 4.1.9, 3.2.19 (la version LTS)&lt;/a&gt; &lt;/p&gt;
 &lt;h1&gt;Pastèque : Le Pastebin de de l'afpy&lt;/h1&gt;
 &lt;p&gt;Lachez les autres site de "copier/coller de code" pour celui de l'afpy :D&lt;/p&gt;
-&lt;p&gt;https://p.afpy.org/&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://p.afpy.org/"&gt;https://p.afpy.org/&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;HTTPX : requests en meuh !&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://github.com/encode/httpx/releases/tag/0.24.1"&gt;Version 0.24.1&lt;/a&gt; is Sortie !&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://www.python-httpx.org/"&gt;HTTPX&lt;/a&gt; continue son bonhomme de chemin https://github.com/encode/httpx/releases !
