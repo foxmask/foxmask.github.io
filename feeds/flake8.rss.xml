@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Le Free de la Passion - flake8</title><link>https://foxmask.net/</link><description>La passion de la liberté</description><lastBuildDate>Wed, 17 Feb 2016 19:00:00 +0100</lastBuildDate><item><title>PyCharm running Flake8</title><link>https://foxmask.net/post/2016/02/17/pycharm-running-flake8/</link><description>&lt;h2&gt;The Ugly&lt;/h2&gt;
-&lt;p&gt;As I like clean things, I like when python tells me that I made ugly things to be able to fix them.&lt;/p&gt;
-&lt;p&gt;With this in mind, first of all, I used the service &lt;a href="https://codeclimate.com"&gt;CodeClimate&lt;/a&gt;.
-This one permits to tell you where your code can be improved and how …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">foxmask</dc:creator><pubDate>Wed, 17 Feb 2016 19:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.net,2016-02-17:/post/2016/02/17/pycharm-running-flake8/</guid><category>Techno</category><category>pycharm</category><category>flake8</category></item></channel></rss>
