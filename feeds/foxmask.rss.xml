@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Le Free de la Passion - FoxMaSk</title><link>https://foxmask.github.io/</link><description>La passion de la liberté</description><lastBuildDate>Thu, 23 Nov 2023 22:00:00 +0100</lastBuildDate><item><title>About</title><link>https://foxmask.github.io/a-propos.html</link><description>&lt;h2&gt;Snake charmer&lt;/h2&gt;
+<rss version="2.0"><channel><title>Le Free de la Passion - FoxMaSk</title><link>https://foxmask.eu.org/</link><description>La passion de la liberté</description><lastBuildDate>Thu, 23 Nov 2023 22:00:00 +0100</lastBuildDate><item><title>About</title><link>https://foxmask.eu.org/a-propos.html</link><description>&lt;h2&gt;Snake charmer&lt;/h2&gt;
 &lt;p&gt;An OpenSource dev since 1998 and in Python since 2012 (&lt;a href="https://git.afpy.org"&gt;some of those projects&lt;/a&gt;)&lt;/p&gt;
 &lt;h3&gt;The projects I use the most&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://python.org/"&gt;Python&lt;/a&gt; - &lt;a href="https://www.django-rest-framework.org/"&gt;DRF&lt;/a&gt; - &lt;a href="https://www.ansible.com/"&gt;Ansible&lt;/a&gt; - &lt;a href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;&lt;/p&gt;
@@ -12,4 +12,4 @@
 &lt;li&gt;&lt;a href="https://paris-web.fr/"&gt;Paris-Web&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Korea&lt;/h2&gt;
-&lt;p&gt;The Korea(n) takes a big part of my life …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">FoxMaSk</dc:creator><pubDate>Thu, 23 Nov 2023 22:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.github.io,2023-11-23:/a-propos.html</guid><category>Main</category></item></channel></rss>
+&lt;p&gt;The Korea(n) takes a big part of my life …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">FoxMaSk</dc:creator><pubDate>Thu, 23 Nov 2023 22:00:00 +0100</pubDate><guid isPermaLink="false">tag:foxmask.eu.org,2023-11-23:/a-propos.html</guid><category>Main</category></item></channel></rss>

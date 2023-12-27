@@ -5,64 +5,64 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml"
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://foxmask.github.io/</loc>
-<lastmod>2023-11-23T23:44:49-00:00</lastmod>
+<loc>https://foxmask.eu.org/</loc>
+<lastmod>2023-12-27T15:32:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://foxmask.github.io/a-propos.html</loc>
+<loc>https://foxmask.eu.org/a-propos.html</loc>
 <lastmod>2023-11-23T22:00:00+01:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://foxmask.github.io/archives.html</loc>
-<lastmod>2023-11-23T23:44:49-00:00</lastmod>
+<loc>https://foxmask.eu.org/archives.html</loc>
+<lastmod>2023-12-27T15:32:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://foxmask.github.io/author/foxmask.html</loc>
-<lastmod>2023-11-23T23:44:49-00:00</lastmod>
+<loc>https://foxmask.eu.org/author/foxmask.html</loc>
+<lastmod>2023-12-27T15:32:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://foxmask.github.io/authors.html</loc>
-<lastmod>2023-11-23T23:44:49-00:00</lastmod>
+<loc>https://foxmask.eu.org/authors.html</loc>
+<lastmod>2023-12-27T15:32:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://foxmask.github.io/categories.html</loc>
-<lastmod>2023-11-23T23:44:49-00:00</lastmod>
+<loc>https://foxmask.eu.org/categories.html</loc>
+<lastmod>2023-12-27T15:32:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://foxmask.github.io/category/main.html</loc>
-<lastmod>2023-11-23T23:44:49-00:00</lastmod>
+<loc>https://foxmask.eu.org/category/main.html</loc>
+<lastmod>2023-12-27T15:32:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://foxmask.github.io/pages/about-me.html</loc>
-<lastmod>2023-11-23T23:44:49-00:00</lastmod>
+<loc>https://foxmask.eu.org/pages/about-me.html</loc>
+<lastmod>2023-12-27T15:32:42-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://foxmask.github.io/tags.html</loc>
-<lastmod>2023-11-23T23:44:49-00:00</lastmod>
+<loc>https://foxmask.eu.org/tags.html</loc>
+<lastmod>2023-12-27T15:32:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
