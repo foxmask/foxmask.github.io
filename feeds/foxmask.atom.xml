@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Le Free de la Passion - FoxMaSk</title><link href="https://foxmask.eu.org/" rel="alternate"></link><link href="https://foxmask.eu.org/feeds/foxmask.atom.xml" rel="self"></link><id>https://foxmask.eu.org/</id><updated>2023-11-23T22:00:00+01:00</updated><subtitle>La passion de la liberté</subtitle><entry><title>About</title><link href="https://foxmask.eu.org/a-propos.html" rel="alternate"></link><published>2023-11-23T22:00:00+01:00</published><updated>2023-11-23T22:00:00+01:00</updated><author><name>FoxMaSk</name></author><id>tag:foxmask.eu.org,2023-11-23:/a-propos.html</id><summary type="html">&lt;h2&gt;Snake charmer&lt;/h2&gt;
-&lt;p&gt;An OpenSource dev since 1998 and in Python since 2012 (&lt;a href="https://git.afpy.org"&gt;some of those projects&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;An OpenSource dev since 1998 and in Python since 2012 (&lt;a href="https://github.com/foxmask"&gt;some of those projects&lt;/a&gt;)&lt;/p&gt;
 &lt;h3&gt;The projects I use the most&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://python.org/"&gt;Python&lt;/a&gt; - &lt;a href="https://www.django-rest-framework.org/"&gt;DRF&lt;/a&gt; - &lt;a href="https://www.ansible.com/"&gt;Ansible&lt;/a&gt; - &lt;a href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Tools I use&lt;/h3&gt;
@@ -13,7 +13,7 @@
 &lt;/ul&gt;
 &lt;h2&gt;Korea&lt;/h2&gt;
 &lt;p&gt;The Korea(n) takes a big part of my life …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Snake charmer&lt;/h2&gt;
-&lt;p&gt;An OpenSource dev since 1998 and in Python since 2012 (&lt;a href="https://git.afpy.org"&gt;some of those projects&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;An OpenSource dev since 1998 and in Python since 2012 (&lt;a href="https://github.com/foxmask"&gt;some of those projects&lt;/a&gt;)&lt;/p&gt;
 &lt;h3&gt;The projects I use the most&lt;/h3&gt;
 &lt;p&gt;&lt;a href="https://python.org/"&gt;Python&lt;/a&gt; - &lt;a href="https://www.django-rest-framework.org/"&gt;DRF&lt;/a&gt; - &lt;a href="https://www.ansible.com/"&gt;Ansible&lt;/a&gt; - &lt;a href="https://www.djangoproject.com/"&gt;Django&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;Tools I use&lt;/h3&gt;
